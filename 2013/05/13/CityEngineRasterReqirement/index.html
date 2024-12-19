@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在论坛上看到一篇很好的讲述如题主题的文章，很有价值，可以为CityEngine选择合适的栅格数据或者纹理，提供一些帮助，原文如下：  textures &#x2F; raster files : concepts in CityEngine &#x2F; ArcGIS Hi, Quite a few new customers and people evaluating CityEngine wh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CityEngine与ArcGIS对栅格数据的要求情况">
+<meta property="og:url" content="https://kikitamap.com/2013/05/13/CityEngineRasterReqirement/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="在论坛上看到一篇很好的讲述如题主题的文章，很有价值，可以为CityEngine选择合适的栅格数据或者纹理，提供一些帮助，原文如下：  textures &#x2F; raster files : concepts in CityEngine &#x2F; ArcGIS Hi, Quite a few new customers and people evaluating CityEngine wh">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2013-05-13T02:47:28.000Z">
+<meta property="article:modified_time" content="2016-03-18T07:48:08.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Raster">
+<meta property="article:tag" content="CityEngine">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/2013/05/13/CityEngineRasterReqirement/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2013/05/13/CityEngineRasterReqirement/","path":"2013/05/13/CityEngineRasterReqirement/","title":"CityEngine与ArcGIS对栅格数据的要求情况"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CityEngine与ArcGIS对栅格数据的要求情况 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/05/13/CityEngineRasterReqirement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CityEngine与ArcGIS对栅格数据的要求情况 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CityEngine与ArcGIS对栅格数据的要求情况
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-05-13 10:47:28" itemprop="dateCreated datePublished" datetime="2013-05-13T10:47:28+08:00">2013-05-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>549</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>在论坛上看到一篇很好的讲述如题主题的文章，很有价值，可以为CityEngine选择合适的栅格数据或者纹理，提供一些帮助，原文如下：</p>
+<hr>
+<p><strong>textures &#x2F; raster files : concepts in CityEngine &#x2F; ArcGIS</strong></p>
+<p>Hi,</p>
+<p>Quite a few new customers and people evaluating CityEngine who are working in the field of GIS ask about how CityEngine handles ‘raster files’ or ‘basemaps’ and what the best practices are concerning file resolutions.</p>
+<p>Since CityEngine works ( from a technology-POV ) very similar as many other pure 3d applications (CityEngine is a 3d Modelling Application), I wanted to point out a few differences between CityEngine and ArcGIS :</p>
+<p><strong>ArcGIS-users call bitmap files ‘raster files’ due to their grid-based nature. People usually working with 3d applications call them ‘textures’. It’s the same thing.</strong></p>
+<p>ArcGIS has technologies embedded which ‘dynamically’ load only the part of a dataset which is currently visible on screen. Thus, with this technology HUGE raster datasets (&gt; 1GB) can easily be displayed.<br>CityEngine does NOT have such a streaming service, thus raster files &#x2F; textures should be prepared with some basic knowledge how they shall be used in a CityEngine project.</p>
+<p>Important things to know :</p>
+<p>1] Arc GIS’ basemaps can not directly be loaded in CityEngine as a layer. The user must export the specific ‘area of interest’ (extent) as a texture to be used within CityEngine.<br>2] To be able to work with textures, all the textures must reside within the opened project, usually in the ‘assets’ folder general textures, respectively the ‘maps’ folder for map-&#x2F;basemap - textures (or a subdirectory).<br>3] CityEngine is a 3d application which uses a technology called ‘OpenGL’ to display the 3d models (and the scene). Displaying 3d graphics this way uses the computer’s graphics card . For this, all textures are fully loaded in thatgraphics card’s memory. [Please note that the computer has ‘main memory’, which is usually called RAM. A graphics card has it’s own RAM, often called ‘Video RAM’. ]<br>4] Since the amount of memory on graphics cards is usually quite small (~ 256 MegaBytes - 1.5 GigaBytes), one can imagine that the resources should be handled carefully !<br>5] Please note that when importing raster files from ArcGIS (e.g. GeoTIF), the file’s projection MUST MATCH the CityEngine scene’s Scene Coordinate System. CityEngine can not (yet) reproject raster files when importing into the scene (as opposed to Shapes and Graph Segments !).</p>
+<p>Since the amount of memory used per texture is directly linked to it’s resolution (e.g. 500x500 pixels) plus the bit-depth of the file, we recommend to work with as efficient files as possible :</p>
+<ul>
+<li>use graphics card drivers which are UP TO DATE !</li>
+<li>use 8 bit textures whenever possible (except the terrain’s ‘heightmap’ which usually just is 32 bit)</li>
+<li>use texture resolutions &lt;&#x3D; 1024 x 1024 px (does not need a square ratio)</li>
+<li>terrains may be higher in resolution, I’d say &lt;&#x3D; 2048 x 2048 px.</li>
+<li>higher resolution textures may be downsampled automatically by CityEngine ( for viewport display only ! ).</li>
+<li>if a texture has too large a resolution (e.g. 13’000 x 13’000 px), it will not be displayed at all.</li>
+</ul>
+<hr>
+<p>原文链接：</p>
+<p><span class="exturl" data-url="aHR0cDovL2ZvcnVtcy5hcmNnaXMuY29tL3RocmVhZHMvNTQwNzItdGV4dHVyZXMtcmFzdGVyLWZpbGVzLWNvbmNlcHRzLWluLUNpdHlFbmdpbmUtQXJjR0lT">http://forums.arcgis.com/threads/54072-textures-raster-files-concepts-in-CityEngine-ArcGIS<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Raster/" rel="tag"><i class="fa fa-tag"></i> Raster</a>
+              <a href="/tags/CityEngine/" rel="tag"><i class="fa fa-tag"></i> CityEngine</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2013/04/22/WhereArethePRJs/" rel="prev" title="ArcGIS Desktop 10.1 的系统自带的 prj 文件的去哪了?">
+                  <i class="fa fa-angle-left"></i> ArcGIS Desktop 10.1 的系统自带的 prj 文件的去哪了?
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2013/05/13/CityEgnineAnnotation/" rel="next" title="CityEngine 中的 Annotation">
+                  CityEngine 中的 Annotation <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

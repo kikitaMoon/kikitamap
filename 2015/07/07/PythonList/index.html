@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Python的列表非常好用，一些常用的操作写在这里。   在Python中创建一个列表时，解释器会在内存中创建一个类似数组（但不是数组）的数据结构来存储数据。列表中的编号从 0 开始，然后是1，依此类推。       print() 显示列表； len() 得出列表中有多少数据项； append() 在列表末尾追加一个数据项； extend() 在列表末尾增加一个数据项集合； pop() 在列表末">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python列表常用操作">
+<meta property="og:url" content="https://kikitamap.com/2015/07/07/PythonList/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="Python的列表非常好用，一些常用的操作写在这里。   在Python中创建一个列表时，解释器会在内存中创建一个类似数组（但不是数组）的数据结构来存储数据。列表中的编号从 0 开始，然后是1，依此类推。       print() 显示列表； len() 得出列表中有多少数据项； append() 在列表末尾追加一个数据项； extend() 在列表末尾增加一个数据项集合； pop() 在列表末">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/PythonList_List.png">
+<meta property="article:published_time" content="2015-07-07T09:49:58.000Z">
+<meta property="article:modified_time" content="2018-07-03T14:02:34.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/PythonList_List.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2015/07/07/PythonList/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2015/07/07/PythonList/","path":"2015/07/07/PythonList/","title":"Python列表常用操作"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python列表常用操作 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/07/07/PythonList/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Python列表常用操作 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python列表常用操作
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-07-07 17:49:58" itemprop="dateCreated datePublished" datetime="2015-07-07T17:49:58+08:00">2015-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>729</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Python的列表非常好用，一些常用的操作写在这里。</p>
+<br>
+
+<p>在Python中创建一个列表时，解释器会在内存中创建一个类似数组（但不是数组）的数据结构来存储数据。列表中的编号从 0 开始，然后是1，依此类推。</p>
+<p><img src="http://kikitamap.com/images/blogImg/PythonList_List.png"></p>
+<br>
+
+<br>
+
+
+<p><strong>print() 显示列表；</strong></p>
+<p><strong>len() 得出列表中有多少数据项；</strong></p>
+<p><strong>append() 在列表末尾追加一个数据项；</strong></p>
+<p><strong>extend() 在列表末尾增加一个数据项集合；</strong></p>
+<p><strong>pop() 在列表末尾删除一个数据项；</strong></p>
+<p><strong>remove() 在列表中删除一个特定的数据项；</strong></p>
+<p><strong>insert()  在特定位置前面增加一个数据项；</strong></p>
+<p><strong>count()  统计某个数据项在列表中出现的次数；</strong></p>
+<p><strong>reverse() 反向列表中数据项。</strong></p>
+<br>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit = [<span class="string">&quot;Apple&quot;</span>,<span class="string">&quot;Pear&quot;</span>,<span class="string">&quot;Grape&quot;</span>,<span class="string">&quot;Peach&quot;</span>,<span class="string">&quot;Bananer&quot;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">len</span>(Fruit))</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit[<span class="number">0</span>])</span><br><span class="line">Apple</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit[<span class="number">4</span>])</span><br><span class="line">Bananer</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.append(<span class="string">&quot;tomato&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Peach&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.extend([<span class="string">&quot;lemon&quot;</span>,<span class="string">&quot;coconut&quot;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Peach&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>, <span class="string">&#x27;coconut&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.pop()</span><br><span class="line"><span class="string">&#x27;coconut&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Peach&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.remove(<span class="string">&quot;Peach&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.remove(Fruit[<span class="number">0</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.insert(<span class="number">0</span>,<span class="string">&quot;Apple&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.insert(<span class="number">6</span>,<span class="string">&quot;coconut&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>, <span class="string">&#x27;coconut&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.count(<span class="string">&quot;Apple&quot;</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>用迭代显示列表中的数据项，以下的代码段中 <strong>for</strong> 和 <strong>while</strong> 完成的工作是一样的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> item <span class="keyword">in</span> Fruit:</span><br><span class="line">	<span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> count &lt; <span class="built_in">len</span>(Fruit):</span><br><span class="line">	  <span class="built_in">print</span>(Fruit[count]) </span><br><span class="line">	  count = count + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 输出结果</span><br><span class="line">Apple</span><br><span class="line">1</span><br><span class="line">Pear</span><br><span class="line">2</span><br><span class="line">Bananer</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>如果字符串中需要包含双引号，不要忘记转义 ，<strong>&quot;</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.append(<span class="string">&quot;\&quot;Tomato\&quot;&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;&quot;Tomato&quot;&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+<br>
+
+<p><strong>isinstance()</strong> 函数可以用来判断特定标识符是否包含某个特定类型的数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span>(Fruit,<span class="built_in">list</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span>(count,<span class="built_in">list</span>)</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<p>Python中列表可以嵌套，并且可以支持任意多层的嵌套，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.append([<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;&quot;Tomato&quot;&#x27;</span>, [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit[-<span class="number">1</span>].append([<span class="string">&quot;aa&quot;</span>,<span class="string">&quot;bb&quot;</span>,<span class="string">&quot;cc&quot;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;&quot;Tomato&quot;&#x27;</span>, [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>]]]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> Fruit:</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line">	</span><br><span class="line">Apple</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Pear</span><br><span class="line"><span class="number">2</span></span><br><span class="line">Bananer</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="string">&quot;Tomato&quot;</span></span><br><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>试试输出三层嵌套的列表中的各个数据项：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> Fruit:</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">isinstance</span>(i,<span class="built_in">list</span>):</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> i:</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">isinstance</span>(j,<span class="built_in">list</span>):</span><br><span class="line">				<span class="keyword">for</span> k <span class="keyword">in</span> j:</span><br><span class="line">					<span class="built_in">print</span>(k)</span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				<span class="built_in">print</span>(j)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">Apple</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Pear</span><br><span class="line"><span class="number">2</span></span><br><span class="line">Bananer</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="string">&quot;Tomato&quot;</span></span><br><span class="line">A</span><br><span class="line">B</span><br><span class="line">C</span><br><span class="line">aa</span><br><span class="line">bb</span><br><span class="line">cc</span><br></pre></td></tr></table></figure>
+
+
+<br>
+
+<br>
+
+<p>上面的循环嵌入的有点多，如果是N层嵌套的列表重复代码会很多，来点优化试试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">my_print</span>(<span class="params">mylist</span>):</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> mylist:</span><br><span class="line">		<span class="keyword">if</span> <span class="built_in">isinstance</span>(i,<span class="built_in">list</span>):</span><br><span class="line">			my_print(i)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="built_in">print</span>(i)</span><br><span class="line">		</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_print(Fruit)</span><br><span class="line"></span><br><span class="line">Apple</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Pear</span><br><span class="line"><span class="number">2</span></span><br><span class="line">Bananer</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="string">&quot;Tomato&quot;</span></span><br><span class="line">A</span><br><span class="line">B</span><br><span class="line">C</span><br><span class="line">aa</span><br><span class="line">bb</span><br><span class="line">cc</span><br></pre></td></tr></table></figure>
+
+
+<p>定义个递归函数实现，看起来好多了。</p>
+<br>
+
+<br>
+
+<p>列表操作符部分，+表示列表组合，*表示列表重复：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] + [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> mylist</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = mylist*<span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(mylist)</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>今天就写到这里吧。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/06/26/MapDesignPerformance/" rel="prev" title="ArcGIS地图设计性能优化">
+                  <i class="fa fa-angle-left"></i> ArcGIS地图设计性能优化
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/07/09/UploadCodetoPyPI/" rel="next" title="上传代码到PyPI">
+                  上传代码到PyPI <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

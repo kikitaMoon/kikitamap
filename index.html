@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/08/24/HDataHubCLI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/24/HDataHubCLI/" class="post-title-link" itemprop="url">HERE Data Hub CLI</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-24 20:03:24" itemprop="dateCreated datePublished" datetime="2020-08-24T20:03:24+08:00">2020-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>700</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>HERE Data Hub 是一个用于空间数据存储的云服务，能够使用户简便地访问、管理空间数据。上一篇 HERE Studio 就是构建在 Data Hub 之上的网页应用程序。</p>
+<p>Data Hub CLI （Command Line Interface）是基于 Node.js 的命令行接口，可以帮助用户进行一些数据管理方面的交互操作。</p>
+<br>
+
+<h2 id="1-如何安装-？"><a href="#1-如何安装-？" class="headerlink" title="1 如何安装 ？"></a>1 如何安装 ？</h2><h3 id="1-1-安装-Node-js-和-npm"><a href="#1-1-安装-Node-js-和-npm" class="headerlink" title="1.1 安装 Node.js 和 npm"></a>1.1 安装 Node.js 和 npm</h3><blockquote>
+<p>安装方式很多种，我直接搬运了 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv">Hexo 官网<i class="fa fa-external-link-alt"></i></span> 的安装指引。当年搭我这个博客时参考过，简洁好用，五星推荐：</p>
+<p>Node.js 为大多数平台提供了官方的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuL2Rvd25sb2FkLw==">安装程序<i class="fa fa-external-link-alt"></i></span>。<br>对于中国大陆地区用户，可以前往 <span class="exturl" data-url="aHR0cHM6Ly9ucG0udGFvYmFvLm9yZy9taXJyb3JzL25vZGU=">淘宝 Node.js 镜像<i class="fa fa-external-link-alt"></i></span> 下载。</p>
+<p>其它的安装方法：</p>
+<ul>
+<li>Windows：通过 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2phc29uZ2luL252cy8=">nvs<i class="fa fa-external-link-alt"></i></span>（推荐）或者<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL252bS1zaC9udm0=">nvm<i class="fa fa-external-link-alt"></i></span> 安装。</li>
+<li>Mac：使用 <span class="exturl" data-url="aHR0cHM6Ly9icmV3LnNoLw==">Homebrew<i class="fa fa-external-link-alt"></i></span> 或 <span class="exturl" data-url="aHR0cDovL3d3dy5tYWNwb3J0cy5vcmcv">MacPorts<i class="fa fa-external-link-alt"></i></span> 安装。</li>
+<li>Linux（DEB&#x2F;RPM-based）：从 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25vZGVzb3VyY2UvZGlzdHJpYnV0aW9ucw==">NodeSource<i class="fa fa-external-link-alt"></i></span> 安装。</li>
+<li>其它：使用相应的软件包管理器进行安装，可以参考由 Node.js 提供的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuL2Rvd25sb2FkL3BhY2thZ2UtbWFuYWdlci8=">指导<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<p>对于 Mac 和 Linux 同样建议使用 nvs 或者 nvm，以避免可能会出现的权限问题。</p>
+</blockquote>
+<p>验证 Node.js 安装成功。  命令 <code>node -v</code>； <code>npm -v</code> ，看到当前版本号即可：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xiamu&gt;node <span class="literal">-v</span></span><br><span class="line">v10.<span class="number">16.3</span></span><br><span class="line"></span><br><span class="line">C:\Users\xiamu&gt;npm <span class="literal">-v</span></span><br><span class="line"><span class="number">6.9</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-2-安装-Data-Hub-CLI"><a href="#1-2-安装-Data-Hub-CLI" class="headerlink" title="1.2 安装 Data Hub CLI"></a>1.2 安装 Data Hub CLI</h3><p>使用如下命令完成 Data Hub CLI 安装。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> @here/<span class="built_in">cli</span></span><br></pre></td></tr></table></figure>
+
+<p>提示：全局安装在某些环境下，需要管理员权限。</p>
+<p>验证 Data Hub CLI 安装成功，  输入命令 <code>here -V</code> :</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;here <span class="literal">-V</span></span><br><span class="line"><span class="number">1.5</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="2-连接-HERE-账号"><a href="#2-连接-HERE-账号" class="headerlink" title="2 连接 HERE 账号"></a>2 连接 HERE 账号</h2><p>安装部署成功后，连接 HERE Developer 账号，从而管理自己账号下的项目和数据集。使用命令 <code>here configure account</code>：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;here configure account</span><br><span class="line">prompt: Email:  sharon.mu@here.com</span><br><span class="line">prompt: Password:</span><br><span class="line">Secrets verified successfully</span><br><span class="line"><span class="built_in">Add-on</span> features enabled.</span><br><span class="line">Default App Selected - oyNWTbKIov6XPMlrXxCH</span><br></pre></td></tr></table></figure>
+
+<p>连接成功后，你的账号配置信息会加密存储在当前系统账户目录下，文件名为：**.herecli** 。</p>
+<p>命令 <code>here configure verify</code> 来验证当前 credentials 是否有权限使用 Data Hub APIs。</p>
+<br>
+
+<h2 id="3-常用命令"><a href="#3-常用命令" class="headerlink" title="3 常用命令"></a>3 常用命令</h2><p>Data Hub CLI 的命令都遵循如下格式：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;HERE command&gt; &lt;API command&gt;</span><br></pre></td></tr></table></figure>
+
+<p>常用命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;here <span class="literal">-h</span></span><br><span class="line">Usage: here [<span class="type">options</span>] [<span class="type">command</span>]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  <span class="literal">-V</span>, <span class="literal">--version</span>                           output the version number</span><br><span class="line">  <span class="literal">-h</span>, <span class="literal">--help</span>                              display help <span class="keyword">for</span> command</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  configure|c [<span class="type">verify</span>|<span class="type">refresh</span>]            setup configuration <span class="keyword">for</span> authentication</span><br><span class="line">  xyz|xs [<span class="type">list</span>|<span class="type">create</span>|<span class="type">upload</span>]             work with <span class="keyword">Data</span> Hub spaces</span><br><span class="line">  studio [<span class="type">list</span>|<span class="type">delete</span>|<span class="type">show</span>]               work with HERE Studio projects</span><br><span class="line">  transform|tf [<span class="type">csv2geo</span>|<span class="type">shp2geo</span>|<span class="type">gpx2geo</span>]  convert from csv/shapefile/gpx to geojson</span><br><span class="line">  geocode|<span class="built_in">gc</span>                              geocode feature</span><br><span class="line">  help [<span class="type">command</span>]                          display help <span class="keyword">for</span> command</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例：</strong></p>
+<ul>
+<li><p>List All Spaces – <code>here xyz list</code></p>
+<p><img src="http://kikitamap.com/images/blogImg/HDataHubCLI_list.jpg"></p>
+</li>
+<li><p>Create a New Space</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">here xyz create <span class="literal">-t</span> <span class="string">&quot;title for space&quot;</span> <span class="literal">-d</span> <span class="string">&quot;description for space&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Upload Data to a Space， Geojson&#x2F;CSV&#x2F;Shapefile……</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">here xyz upload YOUR_SPACE_ID <span class="operator">-f</span> /Users/xyz/data.geojson</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>更多命令示例，详见文档： <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9zdHVkaW8vbWFwX2N1c3RvbWl6YXRpb25fc3VpdGVfY2xpX2hscC9kZXZfZ3VpZGUvdG9waWNzL2NvbW1hbmRzLmh0bWw=">HERE Studio and HERE Data Hub  -  Commands<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+
+<h2 id="4-Source-Code-on-Github"><a href="#4-Source-Code-on-Github" class="headerlink" title="4 Source Code on Github"></a>4 Source Code on Github</h2><p>Data Hub CLI 是 HERE 官方提供的跨平台的开源库，如果感兴趣可以扩展定制的其功能。</p>
+<p><strong>heremaps&#x2F;here-cli</strong>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlcmVtYXBzL2hlcmUtY2xp">https://github.com/heremaps/here-cli<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/08/23/HStudio-intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/23/HStudio-intro/" class="post-title-link" itemprop="url">玩一玩 HERE Studio</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-23 23:41:29" itemprop="dateCreated datePublished" datetime="2020-08-23T23:41:29+08:00">2020-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>604</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>可能国内并没有太多人知道， HERE 也有一款轻量级的地图在线应用程序 ，可以帮助用户管理自己的数据，快速配置出一幅看起来还不错的在线地图， 它叫 **<span class="exturl" data-url="aHR0cHM6Ly9zdHVkaW8uaGVyZS5jb20v">HERE Studio<i class="fa fa-external-link-alt"></i></span>**。</p>
+<p>HERE Studio 提供了平台上的在线地图服务作为底图，并提供了常用的基础地图配置工具和样式，即使不愿意写代码，也可以配置出漂亮的地图； 当然，如果有更深入或批处理的数据管理和渲染需求，也可以使用 HERE Data Hub CLI 命令行或 RESTful API，Javascript API，因为 HERE Studio 本身就是基于 HERE Data Hub 的一个轻量级网页端应用。 </p>
+<br>
+
+<h3 id="如何获取-HERE-Studio-？"><a href="#如何获取-HERE-Studio-？" class="headerlink" title="如何获取 HERE Studio ？"></a>如何获取 HERE Studio ？</h3><p>首先，注册（Sign Up）或登录（Log In）HERE Developer 官网： <a target="_blank" rel="noopener" href="https://developer.here.com/"><em><strong>developer.here.com</strong></em></a> ；</p>
+<p>然后，创建 Project： <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJvamVjdHM=">***developer.here.com&#x2F;projects ***<i class="fa fa-external-link-alt"></i></span> ；</p>
+<p>这样个人 developer 默认就可以获得一系列的产品的试用 key， 例如 JS API， REST API， SDK 等。 当然，免费流量是有限制的，但对于个人developer了解功能做测试可以啦。</p>
+<p>除了这些 key，免费账号中还有一个很低调的描述，以至于很多用户得了宝藏，还不知道是什么：</p>
+<blockquote>
+<ul>
+<li>Data transfer per month 2.5GB</li>
+<li>Database storage per month 5GB</li>
+</ul>
+</blockquote>
+<p>YES， 这说的就是 HERE Data Hub，  包括 HERE Studio。</p>
+<p>截止到今天，HERE Studio 的最新版本为 1.8.0。</p>
+<p>最后，用 HERE Develper 账号登入： <a target="_blank" rel="noopener" href="https://studio.here.com/studio/"><em><strong>studio.here.com&#x2F;studio</strong></em></a> 。</p>
+<br>
+
+<h3 id="HERE-Studio-可以做什么？"><a href="#HERE-Studio-可以做什么？" class="headerlink" title="HERE Studio 可以做什么？"></a>HERE Studio 可以做什么？</h3><ul>
+<li><p>HERE Studio 提供了很多友好的地图数据管理与可视化的工具，能使用户便利高效地完成地图工作；</p>
+</li>
+<li><p>HERE Studio 提供了很多可供用户交互操作的 UI 组件，设置精细地地图样式就变得很容易啦， so easy；</p>
+</li>
+<li><p>所有的地图数据基于HERE Server host 的云存储，实时交互；</p>
+</li>
+<li><p>商业化服务环境的REST&#x2F;JS API 和 命令行客户端工具 CLI可调用 HERE Studio 上传的数据。</p>
+</li>
+<li><p>一键分布和分享给你的朋友或读者。</p>
+</li>
+</ul>
+<p><img src="http://kikitamap.com/images/blogImg/HStudio_homepage.jpg"></p>
+<p><img src="http://kikitamap.com/images/blogImg/HStudio_basemap.jpg"></p>
+<p><img src="http://kikitamap.com/images/blogImg/HStudio_customization.jpg"></p>
+<p><img src="http://kikitamap.com/images/blogImg/HStudio_sharing.jpg"></p>
+<br>
+
+<h3 id="PS："><a href="#PS：" class="headerlink" title="PS："></a><em>PS：</em></h3><p>如果你从产品文档中，看到 HERE XYZ *** 等产品名称，请自动脑补映射到 HERE Data Hub &#x2F; HERE Studio  即可。傲娇的产品技术团队就是这么任性，觉得产品名称不能表达他们当下的思绪时，那就改个名字吧。 开个玩笑，XYZ 是这个产品的曾用名，文档通用，大家读起来吧。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/08/22/Thinkings2020/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/22/Thinkings2020/" class="post-title-link" itemprop="url">特别的2020：一些特别的感想</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-22 21:48:45" itemprop="dateCreated datePublished" datetime="2020-08-22T21:48:45+08:00">2020-08-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>每过一段时间，对自己前一阶段工作和生活进行复盘，是很有必要的。目的很简单，总结既得经验，剖析问题原因，指导下个阶段更好地运行。</p>
+<p>而更好的运行，才能给人带来持久的满足感和幸福感。</p>
+<br>
+
+<h3 id="定义自己的工作"><a href="#定义自己的工作" class="headerlink" title="定义自己的工作"></a><strong>定义自己的工作</strong></h3><p>对于大多数人，工作占了人生的相当大一部分时间。所以先要充分理解这份工作，以及它将对自己的影响。家人经常问我，你是做什么的？我总是回答做地图搞IT云云… 但是面对自己，当然清楚行业名称并不是自己工作的JD。</p>
+<p>简而言之，我在做的是一份以地图技术为中心的不断解决各种问题的IT类工作。problem solver 曾是我认为的别人贴给我的最佳标签之一，毕竟这个世界里 problem maker 太多了。</p>
+<br>
+
+<h3 id="硬技能精进"><a href="#硬技能精进" class="headerlink" title="硬技能精进"></a><strong>硬技能精进</strong></h3><p><strong>Hard</strong> skill 方面，需要不断学习，拓展和精进产品技术。所有技术同学都懂，IT技术日新月异，一直学习都很难乘风破浪，何况随波逐流放弃治疗？任何一个”我知道”都不是信手拈来。</p>
+<p>之前在esri的几年阅读英文技术文档的习惯对我有巨大的帮助，静心读文档解题总是会有助思路。前任和现任供职的这两家公司，有个共同特点，就是产品谱系庞大，产品名录远长于一般餐厅菜单，product manual 页数动辄几千，外加一个在线产品不断更新的developer portal。时间碎片，团队迷你，克服浮躁，学习速度和用户赛跑，都是重重挑战。</p>
+<p>压力的边缘，心平气和地读完文档并研究解决实际问题，给我的是一种积极反馈。享受这个抽丝剥茧的过程，一旦上瘾也不好戒。技术工种必须保持学习，后面我会为自己分配的更多的学习时间来精进硬技能。摄入不够，输出就无力。</p>
+<br>
+
+<h3 id="软技能提升"><a href="#软技能提升" class="headerlink" title="软技能提升"></a><strong>软技能提升</strong></h3><p><strong>Soft</strong> skill 方面，是沟通和管理沟通。例如，常常需要同时至少面对3个客户企业，每个企业有2个人和我对接问题，那么外侧至少有6个人；几个问题并发，自己解决分析问题的同时，如有必要还要和不同国家不同技术团队沟通确认，内侧通常也会是同时几个人active；这是一个典型的 m:n relationship 多头沟通。</p>
+<p>工作方式类似人肉版的 large-scale matrix routing 位置服务 ，我大概就是这些stakeholder们的沟通处理server，为每对匹配的Q&amp;A 双方建立最佳路径。既要向内侧说清楚当前客户诉求，又要把解决方案客观得体地反馈给外侧，兼顾沟通过程对双方的正向促进。</p>
+<p>如上已经是理想情况，实际环境中毕竟是多方沟通，各有各的诉求，各有各的boundary和scope，如何能平衡和管理期待，取最大公约数，也是需要推敲的困难模式。论如何优雅地argue。正如，在很多个因子的统计归一化过程中，每一个因子都必要而不突出了；每个因子的最优不一定是整个算式的最优。大家好才是真的好。</p>
+<p>这个部分需要我自己时常剖析问题，完善自己认知体系，勾画个人边界，锻炼实践能力。既然是所有问题和人的接口和处理器，外部环境不以自己的意志转移时，只有通过自我提升才能优化性能。沿用企业文化金句：be true.  be bold.  win together !</p>
+<br>
+
+<h3 id="平衡生活"><a href="#平衡生活" class="headerlink" title="平衡生活"></a><strong>平衡生活</strong></h3><p>疫情期间在家办公，无论主动被动，工作和生活搅在一起。遇到紧急状况，生活时间不得不被工作侵占，而这种侵占常常是无意识的。不知不觉错过吃饭休息时间，被家人催促和说教，而我又常常流露出不耐烦，差的脾气总是给了亲近的人。在孩子最淘气的 2,3岁都是父母在默默守护。我支持了所有别人，而家人默默地支持了我。仔细思考，这不是可持续的发展。好的状态是我们能自循环，而不是汲取与被汲取是不同方。所谓平衡生活，不是平衡自己的，是平衡一家人的。</p>
+<p>厌恶标榜加班，尤其是自己在从事一份智力型工作。当出现模式化倾向，要思考陷入长期加班，是不是有什么系统性的问题？是不是模糊了某些边界和原则？是否还有合理改善的空间？如何能从本质上提高效率摆脱窘境？如果是，怎么做？如果否，现在怎么做？很多事情不是单纯延长工作时间本身能解决的。</p>
+<p>能用智力解决的问题，不要只用体力；能用体力解决的问题，不要只用精力。越来越理解：成年人的世界没有容易二字。但是我和很多人有一样的执念，喜欢自己看起来游刃有余、举重若轻、深入浅出，而无需渲染背后的努力过程。</p>
+<p><img src="http://kikitamap.com/images/blogImg/Thinkings2020.jpeg"></p>
+<p>人的一生是方方面面的。 如何做一个有趣的人？至少做一个不匮乏不枯燥的人？这是我人生探求的方向。人生各个维度的积极力量是可以相互影响的。</p>
+<p>没有什么大不了，趁着还享受现在的大多数时刻，及时地优化系统，清除垃圾，或许又是新的篇章。虽然我们没有以前那么年轻了，但现在已经是这一生最年轻的时刻了，去日无多，笃定前行。</p>
+<p>“生活不息，折腾不止”，不然不可能怎么可能发生。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/04/19/HmSDK_Positioning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/04/19/HmSDK_Positioning/" class="post-title-link" itemprop="url">HERE mSDK - Positioning</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-04-19 12:50:58" itemprop="dateCreated datePublished" datetime="2020-04-19T12:50:58+08:00">2020-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>地图技术是对真实世界既有位置的表达，定位技术是对当前位置的求解。随着各种传感器、移动设备的广泛使用，GIS和LBS通常无缝结合在同一个解决方案中。GIS更侧重于稳坐后台解决空间数据的提取、处理、分析、挖掘，LBS更侧重于深入终端实现信号收集、位置获取、轨迹追踪。GIS从一个小众而专业的领域，随着互联网的潮流，逐渐拥抱普适，增值LBS。</p>
+<p>从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一个陌生地方到了饭点儿，估计大家十有八九会打开App，看下周边地图，知道我在哪，搜下周边饭馆，然后计算路线导航过去，吃饱喝足一气呵成即可。</p>
+<p>以上面这个觅食的例子展开，从产品功能角度，至少需要如下几个模块。App首先获取设备的位置（positioning），通过这个位置请求周边map tile（map service）, 然后搜索指定Category的POI（search&amp;F&#x2F;R geocoding），然后计算路线（routing&#x2F;direction）并导航（TBT Navigation）……</p>
+<p>这一篇我想整理一下，位置服务第一步， Positioning 相关的内容。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg"></p>
+<p>HERE Mobile SDK 中不仅提供了Android 系统中自带的基础定位接口，而且特别提供了HERE增强版的定位能力，更精准，高效，可靠。这些增强版的定位能力包括：</p>
+<ul>
+<li><strong>蜂窝网络定位 - 支持 GSM, CDMA, WCDMA, TD-SCDMA ，LTE</strong></li>
+<li><strong>WiFi 网络定位</strong></li>
+<li><strong>高精度室内定位 - 支持 WiFi 和 蓝牙</strong></li>
+<li><strong>离线定位 - 无任何网络连接时，使用预先按需自动下载的定位数据缓存、辅助定位数据，实现离线定位</strong></li>
+<li><strong>定位模式自动融合，择优切换， 包括 GNSS，WiFi，蓝牙，蜂窝信号间的切换</strong></li>
+<li><strong>室内定位 -支持于室内地图结合使用，支持楼层探测。 室内地图既可以是HERE已发布的公共资源，也可以是用户私属地图</strong></li>
+<li><strong>HERE定位能力无缝覆盖全球</strong></li>
+</ul>
+<br>
+
+<p>以上功能列表解释几个点：</p>
+<p><strong>GNSS</strong>（Global Navigation Satellite System）包括除了我们熟知的 GPS，还包括 GLONASS,  Beidou, </p>
+<p>QZSS,  Galileo 这些星座。 HERE Positioning 产品族系中，还有可支持到芯片级的 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaGVyZS5jb20vcHJvZHVjdHMvdHJhY2tpbmctcG9zaXRpb25pbmctc29sdXRpb25zL2hkLWduc3M=">HD GNSS &#x2F; A-GNSS 产品<i class="fa fa-external-link-alt"></i></span>，用于显著提高首次定位时间和GNSS离线辅助定位。这里不展开了，以后有空再约起。</p>
+<p><strong>WiFi离线定位</strong>，略复杂，是室内定位中成本较低的一种，不依赖于事先部署 Beacon。从使用者角度可以理解为两个使用场景：</p>
+<ul>
+<li><p>经常连接WiFi，有时断线使用，例如在办公室等熟悉场所。</p>
+</li>
+<li><p>周围无熟悉WiFi，例如进入一个陌生的大型购物中心。</p>
+<p>前者可通过online WiFi定位的定位缓存数据解决离线问题；后者则需要大量的众包数据作为前提实现。</p>
+<p>后者是一种更黑科技的技术，但是从原理上也不是难于理解。 可以想象，大型购物中心通常布满 WiFi热点，移动设备即使无法连接这些热点，也可以探测到这些WiFi热点的信息。根据信号场强的算法黑科技，最终是从已知点位解算未知点位的数学问题。</p>
+<p>这里的问题是：已知点位怎么来？这正是源自众包、托关于定位服务器的 HERE Radio Map。采集和管理 Radio Map 实际官方也有给出工具<span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scw=="> HERE Indoor Radio Mapper<i class="fa fa-external-link-alt"></i></span> 和 <span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scy9oZWxwLXRleHQtMyNpbmRvb3ItcmFkaW8tbWFwLWFkbWluLXRvb2w=">HERE Radio Map Admin Tool<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg"></p>
+</li>
+</ul>
+<p><strong>室内地图 &#x2F;Venue Map</strong>，在实际的使用场景中，室内定位一般与3D室内地图结合使用，但始终要理解，地图是地图，定位是定位，只是为了终端用户的视觉显示时，二者才绑到了一起。室内地图的显示和制作也有单独的工具，点<span class="exturl" data-url="aHR0cHM6Ly92ZW51ZXMuaGVyZS5jb20vcHJvZHVjdHMvb3ZlcnZpZXc=">这里<i class="fa fa-external-link-alt"></i></span>看官网。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg"></p>
+<p>定位部分的开发部署，强烈建议仔细阅读开发文档，有关设备访问权限的几点一定要确保配置正确。</p>
+<ul>
+<li><p>HERE Mobile SDK - <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vMy4xNS9kZXZfZ3VpZGUvdG9waWNzL2FkdmFuY2VkLXBvc2l0aW9uaW5nLmh0bWw=">Developer Doc<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>HERE Mobile SDK on Github - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlcmVtYXBzL2hlcmUtYW5kcm9pZC1zZGstZXhhbXBsZXMvdHJlZS9tYXN0ZXIvcG9zaXRpb25pbmc=">Sample Code<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+<p>可以带手机到室外和室内试一下这个Demo，支持选择定位模式。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/03/29/HmSDK_VectorTile-MFs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/03/29/HmSDK_VectorTile-MFs/" class="post-title-link" itemprop="url">HERE mSDK - Vector Tile / Map Feedback</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-03-29 10:13:08" itemprop="dateCreated datePublished" datetime="2020-03-29T10:13:08+08:00">2020-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a href="http://kikitamap.com/2020/03/11/HmSDK_MapRendering/"><strong>上一篇</strong></a>，我们一起结合  Interactive Maps 了解了HERE Map Service 的地图渲染样式， 在此之外，HERE Mobile SDK 向开发者提供的在线地图产品中，还有 Vector Tile 和 Map Feedback service 值得拥有。</p>
+<p><em>PS：除了SDK产品之外，<a target="_blank" rel="noopener" href="https://developer.here.com/documentation#maps_section"><strong>HERE 在线地图产品</strong></a>中的 RESTful API 产品包括：Vector Tile，Image Map，Map Tile，Weather，Map Feeddback。</em></p>
+<h2 id="Vector-Tile"><a href="#Vector-Tile" class="headerlink" title="Vector Tile"></a>Vector Tile</h2><p>Vector Tile 在 HERE 产品家族中是新进一员，截至此文章的发布日期，仅在 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-sdk/dev_guide/topics/custom-map-styles-lite.html"><strong>mSDK Lite 版本</strong></a> 中有支持，目前为 Lite Edition 4.2  。我们静待 mSDK Premium Edition 的 4.x 版本吧，快了。</p>
+<p>这使用这个服务之前，可能我首先需要回答大家的十万个为什么。</p>
+<p>例如，什么是Vector Tile？为什么使用 Vector Tile ？</p>
+<p>Vector Tile 是相较于传统的 raster tile 而言的，可能很多读者会问，地图数据本身不就是vector data 吗？为什么早期的地图服务反而会是 raster tile ？哪种好？ 我该用什么？</p>
+<p>在传统的地图服务生产过程中，后台地图数据是专业复杂的数据格式（如 Oracle Spatial，shapefile，FileGDB，等一切地理数据格式），需要专业的重地图数据编辑器才能读写（如商用专业的ArcGIS Desktop&#x2F;Pro，免费的QGIS等）。当我们希望通过B&#x2F;S服务的形式提供在线地图时，对浏览器要求不高、支持友好的png，jpg，tiff等图片就成了解决方案。 将地图在服务器端按预定义的切片结构&#x2F;caching scheme 进行预渲染，然后，进行大量切片缓存工作。 在浏览器请求地图服务时，推送不同层级的图片（Raster Tile）就成了传统地图服务器的日常，其性能的保障都是依赖分布式高可用的服务器配置。例如，HERE 提供覆盖全球的地图服务（在Developer Portal可以查看具体的 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/map-tile/dev_guide/topics/coverage-map.html"><strong>map coverage level</strong></a>，就是由部署在AWS全球6个数据中心上支持的。 </p>
+<p>自 <a target="_blank" rel="noopener" href="https://github.com/mapbox/vector-tile-spec/"><strong>Mapbox</strong></a> 提出更智慧的 vector tile ，这种切片格式早已备受各大GIS、LBS厂商的青睐。vector tile 采用了与 raster tile 类似的 caching scheme，只是每片tile的内容从raster 变成了vector。 我们想象一下，如果表示几条路的一片512px×512px 的tile，用raster格式，那就需要几个512×512 的矩阵表示，而用vector格式，只需要包含数对坐标和位移的串表示。 因此，vector tile 在尺寸上有明显优势，从而传输性能就高了。这是因为这个特性，vector tile 允许用户在客户端自定义 vector style ，例如路或点状地物的颜色和符号， 不像 raster tile 是预渲染的镜像，已经是静态结果，渲染样式不能被客户端修改。</p>
+<p>如果提到vector 和 raster 哪个好？ 我想答案可能不是绝对唯一的。如果从传输性能和客户端简单符号的自定义的角度，一定是vector tile更优； 但如果从地图渲染丰富度、复杂度的支持角度，raster tile 还是占有一席之地。</p>
+<p>现在回到 HERE Vector Tile Service ，为了方便客户快速生成 vector style configuration file ，HERE 提供了在线工具 <a target="_blank" rel="noopener" href="https://enterprise.here.com/map-style-editor/"><strong>Map Style Editor</strong></a>。可以在登录 Developer Portal之后，点击前面的连接进入即可，如下图：</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_map_editor.jpg"></p>
+<ul>
+<li><p>Github 获取到 mSDK Android Lite Edition 在线地图的官方 <a target="_blank" rel="noopener" href="https://github.com/heremaps/here-sdk-examples/tree/master/examples/4.2.0.0/lite/android"><strong>代码样例</strong></a>。</p>
+</li>
+<li><p>Developer Portal 定制地图渲染样式的 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-sdk/dev_guide/topics/custom-map-styles-lite.html"><strong>说明</strong></a>。</p>
+</li>
+</ul>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Lite_Demo.jpg"></p>
+<h2 id="Map-Feedback"><a href="#Map-Feedback" class="headerlink" title="Map Feedback"></a>Map Feedback</h2><p>创建地图应用时，最常见问题之一就是“巧妇难为无米之炊” ，地图数据是“米”，之上的各种在线地图及位置能力的实现是“炊”。HERE 攒了30多年的数据采集经验，米仓充盈。在丰富的数据采集手段中，其中最平易近人的一支就是来自用户的数据问题回报。</p>
+<p>无论是商业客户，还是免费社区，全球用户都可以使用 Map Feedback API 提出数据缺漏或错误。当然可想而知，整个群体数量非常庞大，数据生产单元会根据一系列的规则评定用户的信用优先级，来管理这些回报过来的数据问题的处理策略。</p>
+<p>在 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/map-feedback/dev_guide/topics/quick-start-submit-feedback.html"><strong>Rest API</strong></a> ， <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/embedded-editor/dev_guide/topics/add-as-app-component.html"><strong>mobile SDK</strong></a> ， <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/embedded-editor/dev_guide/topics/add-to-website.html"><strong>Web SDK</strong></a> 各版本都有对数据回报的支持，其中最完整的开发文档，还是建议看 Rest API 的部分，它包含了全部可枚举的错误类型和信息上报的说明。用户也可以追踪数据问题的处理结果，例如，被采纳或拒绝，以及采纳后预计更新时间。</p>
+<ul>
+<li>Rest API - Request URL 的请见 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/examples/rest/map_feedback"><strong>样例</strong></a>。</li>
+</ul>
+<p>另外，在HERE 官方地图应用中，<a target="_blank" rel="noopener" href="http://mapcreator.here.com/"><strong>Map Creater</strong></a> 和 <a target="_blank" rel="noopener" href="https://wego.here.com/"><strong>HERE Wego</strong></a> 都包含了这个功能，只是这两个网站目前还在墙外，希望早日能与我们正式见面。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Map_Creator.jpg"></p>
+<p>关于这两个服务就说这么多了，有空再继续进行下一集。</p>
+<p>Stay tuned ！</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

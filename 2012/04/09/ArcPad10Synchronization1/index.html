@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在移动设备上，使用ArcPad可以创建、显示、查询、编辑数据。根据工作流模式的不同，我们可以采取不同的数据组织形式。 首先，先了解下ArcPad 支持哪些数据格式：   ShapeFile； ArcPad AXF 文件： 这个文件使用了SQL Server 精简版数据引擎，所以在上一篇中说部署时，需要安装SQL Server Compact for Windows Mobile； ArcPad G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一）">
+<meta property="og:url" content="https://kikitamap.com/2012/04/09/ArcPad10Synchronization1/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="在移动设备上，使用ArcPad可以创建、显示、查询、编辑数据。根据工作流模式的不同，我们可以采取不同的数据组织形式。 首先，先了解下ArcPad 支持哪些数据格式：   ShapeFile； ArcPad AXF 文件： 这个文件使用了SQL Server 精简版数据引擎，所以在上一篇中说部署时，需要安装SQL Server Compact for Windows Mobile； ArcPad G">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Extension.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Toolbar.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Tools.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Author.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Welcome.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_SelectData.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_OutOptions.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Saved.png">
+<meta property="article:published_time" content="2012-04-09T06:13:00.000Z">
+<meta property="article:modified_time" content="2018-07-03T13:34:24.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="ArcPad">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Extension.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2012/04/09/ArcPad10Synchronization1/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2012/04/09/ArcPad10Synchronization1/","path":"2012/04/09/ArcPad10Synchronization1/","title":"ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一） | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%BF%80%E6%B4%BBArcPad-Data-Manager%E6%89%A9%E5%B1%95"><span class="nav-text">一、激活ArcPad Data Manager扩展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%B8%BA-ArcGIS-Server-%E6%8E%88%E6%9D%83%E6%95%B0%E6%8D%AE"><span class="nav-text">二、为 ArcGIS Server 授权数据</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/04/09/ArcPad10Synchronization1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一） | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-04-09 14:13:00" itemprop="dateCreated datePublished" datetime="2012-04-09T14:13:00+08:00">2012-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>713</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>在移动设备上，使用ArcPad可以创建、显示、查询、编辑数据。根据工作流模式的不同，我们可以采取不同的数据组织形式。</p>
+<p>首先，先了解下ArcPad 支持哪些数据格式：</p>
+<blockquote>
+<ol>
+<li>ShapeFile；</li>
+<li>ArcPad AXF 文件： 这个文件使用了SQL Server 精简版数据引擎，所以在上一篇中说部署时，需要安装SQL Server Compact for Windows Mobile；</li>
+<li>ArcPad Graphics layer：用XML写的文件，可以储存 annotation, points, lines, and polygons；</li>
+<li>ArcPad Photo layer：用XML写的文件，用于存储引用的照片信息，需要和照片文件放置在同个文件夹中；</li>
+<li>ArcPad StreetMap 文件</li>
+<li>Raster layers，具体支持以下格式:</li>
+</ol>
+<ul>
+<li>JPEG (*.jpg)</li>
+<li>JPEG 2000 (*.jp2)</li>
+<li>MrSID Generation Two, or MG2 (*.sid)</li>
+<li>MrSID Generation Three, or MG3 (*.sid)</li>
+<li>Portable Network Graphics, or PNG (*.png)</li>
+<li>Tagged Image File Format, or TIFF, including GeoTIFF (*.tif)</li>
+<li>Windows Bitmap (*.bmp)</li>
+<li>CADRG raster maps</li>
+</ul>
+</blockquote>
+<br>
+​	
+
+<ul>
+<li>如果想要进行“从0开始”的外业作业方式，可以在ArcPad 中创建快速工程（包含了点、线、面三个shapefile层）。</li>
+<li>如果已有 shapefile 数据，只需将这些数据拷贝到移动设备中，在ArcPad添加数据时引用即可。这与ArcGIS Desktop是一致的。</li>
+<li>如果已有本地Geodatabase数据，这时，也可以使用ArcPad数据管理工具条Check out数据，然后通过check in提交数据。</li>
+<li>如果是企业级的应用，可以与ArcGIS Server 、ArcGIS Desktop 联合使用，使用ArcPad加载已发布的服务，并且进行版本编辑，同步服务器数据。</li>
+</ul>
+<p>以上提到的四种应用的场景，前三种比较好理解，也易于操作。所以最后一种，作为本文的主要总结对象，网上ArcPad的资料相对较少，遂决定梳理一下这种情况下授权、管理、编辑数据的全过程，一共我会分两次与大家分享。</p>
+<p>​	</p>
+<h1 id="一、激活ArcPad-Data-Manager扩展"><a href="#一、激活ArcPad-Data-Manager扩展" class="headerlink" title="一、激活ArcPad Data Manager扩展"></a>一、激活ArcPad Data Manager扩展</h1><p>必须先了解的是ArcPad Data Manger工具条。这个工具条是在PC上安装ArcPad时，自动安装的一个ArcGIS Desktop的扩展。</p>
+<p>既然是扩展，当然首选需要激活，在ArcMap的菜单栏中，Custom – Extensions – 勾选 “ArcPad Data Manager”，如下图：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Extension.png"><br>​	<br>这一扩展包含了ArcPad Data Manager 与 ArcPad Tools两部分，分别位于工具条与ArcToolbox具箱中。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Toolbar.png"><br><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Tools.png"></p>
+<h1 id="二、为-ArcGIS-Server-授权数据"><a href="#二、为-ArcGIS-Server-授权数据" class="headerlink" title="二、为 ArcGIS Server 授权数据"></a>二、为 ArcGIS Server 授权数据</h1><p>用于授权给ArcGIS Server的数据是有要求的，必须满足以下条件：</p>
+<p>（1）SDE GDB；（2）含有Global ID；（3）注册为版本。</p>
+<p>点击 <img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Author.png"> Author Project for ArcGIS Server”，进行数据授权。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Welcome.png"></p>
+<p>选择需要签出的数据， </p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_SelectData.png"></p>
+<p>设置空间参考范围，以及生成ArcPad地图文档的名称， </p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_OutOptions.png"></p>
+<p>设置完成后，会提示正确信息： </p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Saved.png"></p>
+<p>至此，ArcPad 数据的准备就完成了。 下一篇文章，会进入 ArcGIS Server with ArcPad Capability 的发布，ArcPad如何加载和使用ArcGIS Server 服务的主题。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ArcPad/" rel="tag"><i class="fa fa-tag"></i> ArcPad</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2012/03/28/ArcPad10Deployment/" rel="prev" title="ArcPad 10 的安装部署">
+                  <i class="fa fa-angle-left"></i> ArcPad 10 的安装部署
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2012/04/10/ArcPad10Synchronization2/" rel="next" title="ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（二）">
+                  ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（二） <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

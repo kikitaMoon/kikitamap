@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/38/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/38/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/38/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/04/09/ArcPad10Synchronization1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/04/09/ArcPad10Synchronization1/" class="post-title-link" itemprop="url">ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-04-09 14:13:00" itemprop="dateCreated datePublished" datetime="2012-04-09T14:13:00+08:00">2012-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>713</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在移动设备上，使用ArcPad可以创建、显示、查询、编辑数据。根据工作流模式的不同，我们可以采取不同的数据组织形式。</p>
+<p>首先，先了解下ArcPad 支持哪些数据格式：</p>
+<blockquote>
+<ol>
+<li>ShapeFile；</li>
+<li>ArcPad AXF 文件： 这个文件使用了SQL Server 精简版数据引擎，所以在上一篇中说部署时，需要安装SQL Server Compact for Windows Mobile；</li>
+<li>ArcPad Graphics layer：用XML写的文件，可以储存 annotation, points, lines, and polygons；</li>
+<li>ArcPad Photo layer：用XML写的文件，用于存储引用的照片信息，需要和照片文件放置在同个文件夹中；</li>
+<li>ArcPad StreetMap 文件</li>
+<li>Raster layers，具体支持以下格式:</li>
+</ol>
+<ul>
+<li>JPEG (*.jpg)</li>
+<li>JPEG 2000 (*.jp2)</li>
+<li>MrSID Generation Two, or MG2 (*.sid)</li>
+<li>MrSID Generation Three, or MG3 (*.sid)</li>
+<li>Portable Network Graphics, or PNG (*.png)</li>
+<li>Tagged Image File Format, or TIFF, including GeoTIFF (*.tif)</li>
+<li>Windows Bitmap (*.bmp)</li>
+<li>CADRG raster maps</li>
+</ul>
+</blockquote>
+<br>
+​	
+
+<ul>
+<li>如果想要进行“从0开始”的外业作业方式，可以在ArcPad 中创建快速工程（包含了点、线、面三个shapefile层）。</li>
+<li>如果已有 shapefile 数据，只需将这些数据拷贝到移动设备中，在ArcPad添加数据时引用即可。这与ArcGIS Desktop是一致的。</li>
+<li>如果已有本地Geodatabase数据，这时，也可以使用ArcPad数据管理工具条Check out数据，然后通过check in提交数据。</li>
+<li>如果是企业级的应用，可以与ArcGIS Server 、ArcGIS Desktop 联合使用，使用ArcPad加载已发布的服务，并且进行版本编辑，同步服务器数据。</li>
+</ul>
+<p>以上提到的四种应用的场景，前三种比较好理解，也易于操作。所以最后一种，作为本文的主要总结对象，网上ArcPad的资料相对较少，遂决定梳理一下这种情况下授权、管理、编辑数据的全过程，一共我会分两次与大家分享。</p>
+<p>​	</p>
+<h1 id="一、激活ArcPad-Data-Manager扩展"><a href="#一、激活ArcPad-Data-Manager扩展" class="headerlink" title="一、激活ArcPad Data Manager扩展"></a>一、激活ArcPad Data Manager扩展</h1><p>必须先了解的是ArcPad Data Manger工具条。这个工具条是在PC上安装ArcPad时，自动安装的一个ArcGIS Desktop的扩展。</p>
+<p>既然是扩展，当然首选需要激活，在ArcMap的菜单栏中，Custom – Extensions – 勾选 “ArcPad Data Manager”，如下图：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Extension.png"><br>​	<br>这一扩展包含了ArcPad Data Manager 与 ArcPad Tools两部分，分别位于工具条与ArcToolbox具箱中。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Toolbar.png"><br><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Tools.png"></p>
+<h1 id="二、为-ArcGIS-Server-授权数据"><a href="#二、为-ArcGIS-Server-授权数据" class="headerlink" title="二、为 ArcGIS Server 授权数据"></a>二、为 ArcGIS Server 授权数据</h1><p>用于授权给ArcGIS Server的数据是有要求的，必须满足以下条件：</p>
+<p>（1）SDE GDB；（2）含有Global ID；（3）注册为版本。</p>
+<p>点击 <img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Author.png"> Author Project for ArcGIS Server”，进行数据授权。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Welcome.png"></p>
+<p>选择需要签出的数据， </p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_SelectData.png"></p>
+<p>设置空间参考范围，以及生成ArcPad地图文档的名称， </p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_OutOptions.png"></p>
+<p>设置完成后，会提示正确信息： </p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization1_Saved.png"></p>
+<p>至此，ArcPad 数据的准备就完成了。 下一篇文章，会进入 ArcGIS Server with ArcPad Capability 的发布，ArcPad如何加载和使用ArcGIS Server 服务的主题。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/03/28/ArcPad10Deployment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/03/28/ArcPad10Deployment/" class="post-title-link" itemprop="url">ArcPad 10 的安装部署</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-03-28 09:19:00" itemprop="dateCreated datePublished" datetime="2012-03-28T09:19:00+08:00">2012-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>771</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ArcPad是安装在手持设备或者移动终端的一个外业ArcGIS产品，也就是说ArcPad是Esri的一款软件产品，而不是硬件设备哦。虽然不比ArcGIS Desktop功能复杂缤纷，但是对于野外作业、数据采集等工作来说，算是功能十分丰富了。</p>
+<p>说到安装，首先要了解系统要求，<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvYXJjcGFkLzEwLjAvc3lzdGVtLXJlcXVpcmVtZW50cw==">http://resources.arcgis.com/zh-cn/content/arcpad/10.0/system-requirements<i class="fa fa-external-link-alt"></i></span>。ArcPad 仅支持 Windows Mobile 移动平台（5.0以上），最高可使用Windows Mobile 6.5。</p>
+<br>
+
+<blockquote>
+<p><strong>说明：</strong></p>
+</blockquote>
+<blockquote>
+<p>  本文及后续有关ArcPad文章的截图说明的环境：<br>    ArcPad 10.0.2 （Build 30）；<br>    Windows Mobile 6.5 模拟器，<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2Rvd25sb2FkL2VuL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0xNzI4NA==">下载地址<i class="fa fa-external-link-alt"></i></span> ；<br>    Windows Mobile 5.0 基于移动设备 Trimble Juno ST；<br>    Windows 7 。</p>
+</blockquote>
+<h1 id="在PC上安装ArcPad"><a href="#在PC上安装ArcPad" class="headerlink" title="在PC上安装ArcPad"></a>在PC上安装ArcPad</h1><p>运行光盘，安装ArcPad。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Deployment_Setup.jpg"></p>
+<p>页面中还有一项”ArcGIS Server ArcPad Extension“，此项可以先不安装，在用到添加ArcGIS Server 服务、同步数据时才会用的这一项。关于这一部分的功能、要求、应用等，以后抽时间整理一下。安装过程很简单不赘述。</p>
+<p>安装过程中，提示填写注册码，可以忽略，那ArcPad就进入了评估模式，评估模式一切功能和正式版是相同的，只是使用时间为20分钟，超过20分钟ArcPad会自动退出。如果为了方便长时间使用，需要填写<strong>注册码</strong>。自己学习研究，就用这个吧：**<del>@RCP@DD00R</del>**。当然，商业用途和项目开发等要使用正式版的……</p>
+<p>安装完成后，开始菜单中会出现：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Deployment_Start.jpg"></p>
+<p>其中，第一项ArcPad 10 for Windows 是PC端的ArcPad程序，功能上与移动端ArcPad是一致的。</p>
+<p>第二项 ArcPad Deployment Manager 就是用来向手持设备部署ArcPad的。</p>
+<rb>
+
+<h1 id="手持端-ArcPad-部署"><a href="#手持端-ArcPad-部署" class="headerlink" title="手持端 ArcPad 部署"></a><strong>手持端 ArcPad 部署</strong></h1><p>1.首先安装windows同步程序。</p>
+<blockquote>
+<p>Windows XP： 安装 Microsoft ActiveSync ；<br>Windows vista 或 Windows 7： 安装 Windows Mobile Device Center。</p>
+</blockquote>
+<p>2.上述程序安装好后，连接移动设备和PC，保证连接状态正常。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Deployment_Connect1.png">  <img src="http://kikitamap.com/images/blogImg/ArcPad10Deployment_Connect2.png"></p>
+<p>3.打开 开始 — ArcGIS — ArcPad 10 — ArcPad Deployment Manager。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Deployment_DeployMan.jpg"></p>
+<p>在这个窗口勾选需要安装的项即可：</p>
+<p><strong>Arcpad for Windows Mobile</strong> 是<strong>必然</strong>需要安装的；</p>
+<ul>
+<li>如果需要移动设备的“桌面快捷方式“，<strong>今日插件（Today-Plugin）</strong>可以选择安装；</li>
+<li>如果需要 ArcPad 中文界面，可以勾选安装相应<strong>语言包</strong>；</li>
+<li><strong>Samples</strong>，示例数据是初学者探索Arcpad 的学习资源，如果需要并且存储足够，推荐安装；</li>
+<li>如果需要用到数据的check in 、check out，<strong>SQL Server Compact</strong>也需要安装了；</li>
+<li>如果涉及到一些脚本的应用 <strong>VBScript Runtime</strong>也需要安装；</li>
+<li>剩下两个没说到的，**Streetmap **和 **Datum **的，不需要安装，不适宜国内用户的需求。</li>
+</ul>
+<p>做好选择之后，点击”Deploy“，就开始了Arcpad的自动部署。当然过程中不要忘记响应移动设备的询问。</p>
+<p>4.至此，Arcpad 安装完成。</p>
+<p>在移动设备的 开始 – 程序 中，打开ArcPad：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcPad10Deployment_Success.gif"></p>
+<br>
+
+<p>O了，可以开始使用ArcPad了。</p>
+<p>学习资源主要还是ArcPad 官方帮助，在线帮助：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS9lbi9hcmNwYWQvMTAuMC9oZWxwL2luZGV4Lmh0bWw=">http://help.arcgis.com/en/arcpad/10.0/help/index.html<i class="fa fa-external-link-alt"></i></span>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/28/ArcMapExportPDF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/28/ArcMapExportPDF/" class="post-title-link" itemprop="url">ArcMap中将地图导出至PDF</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-28 15:35:00" itemprop="dateCreated datePublished" datetime="2012-02-28T15:35:00+08:00">2012-02-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在使用ArcMap导出地图时，ArcGIS提供了很多种格式，其中，由于PDF方便存档、共享、查询等，就成为了不少用户喜爱的格式。在这里一起学习总结下有关地图导出成PDF的知识和设置~</p>
+<p>ArcMap的【文件】下的【导出地图…】，选择PDF格式后，我们可以对导出PDF进行设置。</p>
+<br>
+
+
+<p><strong>常规设置：</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcMapExportPDF_Option.gif"></p>
+<p><strong>分辨率：</strong>此参数用于设置输出图像的DPI（Dots Per Inch &#x2F; 每英寸的点数）。这个值越高，图像就会越清楚，当然文档的大小和处理的时间也会随之增加。<span style="font-family: 'Microsoft YaHei';"></p>
+<p><strong>输出图像质量：</strong>此控件是用来打印导出地图时对栅格进行重采样的。对于带有栅格数据和透明矢量图层的地图，调整此值有显著效果，可以缩减处理时间和文档大小。</p>
+<p><strong>格式：</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcMapExportPDF_Format.gif"></p>
+<p><strong>目标颜色空间：</strong>控制在输出文件中指定颜色的颜色空间。**RGB **是默认颜色空间，通常用于屏幕显示、喷墨打印机、激光打印机打印。CMYK 模式用于商业性印刷生产。</p>
+<p><strong>压缩向量图形：</strong>导出压缩的文件。此选项仅对矢量部分和文字进行压缩。对于影像的压缩需要采用下面的选项。</p>
+<p><strong>图像压缩：</strong>选择一种压缩方案。选项提供了：无（None）、RLE、LZW、压缩（Deflate）、JPEG、自适应（Adaptive）。此选项对于PDF文件，仅会对文件中的影像和栅格数据进行处理。自适应（Adaptive）模式可生成最小的文件，但也会在输出图像上产生压缩伪影。要获得对于 PDF 中栅格图像的无损压缩，可使用压缩（Deflate）模式。</p>
+<p><strong>JPEG质量：</strong>这个比较好理解，对于JPEG，质量越高，地图月清晰，文件也会越大。</p>
+<p><strong>图片符号：</strong>此选项用于指定图片标记符号（BMP、EMF）和图片填充符号是否转换为矢量或栅格化。</p>
+<p><strong>将标记符号转换为面：</strong>此选项是将基于字符的标记符号转为面。在某些符号字体不可用或者无法被嵌入的情况下，可以勾选此选项，用来保证正确显示。但是，需要了解，此选项勾选后，会对所有基于字符的标记符号禁用字体嵌入，这就可能导致符号外观发生变化。</p>
+<p><strong>嵌入所有文档字体：</strong>此选项勾选后，可将文档本身内部使用的字体都嵌入到文档内部。这样的好处就是，导出的PDF文件，即使在没有安装文档中字体的机器上，也能正常打开。这个还是很常用，建议一直勾选。但是还是提醒下：某些字体不支持嵌入，即使选中此选项也不会嵌入。</p>
+<p><strong>高级：</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcMapExportPDF_Advanced.gif"></p>
+<p>除了用作地图的交换格式之外，从 ArcMap 导出的 PDF 文件还具有其他高级功能。PDF 文件可以包含来自 ArcMap 内容列表（TOC）中的图层，这样就可以在PDF文档中开启和禁用图层的可见性；还可以包含要素的属性以及每个地图数据框的地理配准信息。在 Adobe Reader 或 Adobe Acrobat 中查看 PDF 文档的任何用户都可以使用 Acrobat Analysis 工具检查要素属性并查找和识别地理坐标。</p>
+<p><strong>图层和属性：</strong></p>
+<p>通过设置此选项，ArcMap 导出的 PDF 中可以包含图层，用户可在 Adobe Acrobat 和 Reader 6.0 及其更高版本中控制这些图层的可见性。</p>
+<p>凭借 Adobe Acrobat 和 Adobe Reader 的内置功能，从 ArcGIS 导出的 PDF 文件可以包含要素属性表中的要素属性。在要素属性表中字段的可见性确定了在生成的 PDF 中将导出哪些字段。我们可在 Adobe Acrobat 和 Adobe Reader 中通过对象数据工具访问这些属性。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcMapExportPDF_Layers.gif"></p>
+<p><strong>导出地理配准信息：</strong></p>
+<p>Adobe Acrobat 和 Adobe Reader  9 以上版本可以查看 PDF 文件内部编码的地图坐标和地理配准信息。在启用导出地图地理配准信息选项的情况下导出地图，将记录 PDF 内部每个数据框的地理配准信息。在兼容的查看器（如 Adobe Reader 9）中打开地理配准的 PDF 时，用户可以访问地理空间功能（如坐标值读数和查找 x,y）。</p>
+<p>另外，导出PDF还支持数据驱动页面以及导出后加密。数据驱动以后会专门再总结一篇。</p>
+<p><strong>加密PDF：</strong></p>
+<p>可以使用简单的 arcpy.mapping 脚本来加密 PDF 文档和并为其设置密码保护，如下示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pdfDoc = arcpy.mapping.PDFDocumentOpen(<span class="string">r&quot;C:\Project.pdf&quot;</span>)</span><br><span class="line">pdfDoc.updateDocSecurity(<span class="string">&quot;secret&quot;</span>, <span class="string">&quot;secret&quot;</span>)</span><br><span class="line">pdfDoc.saveAndClose()</span><br><span class="line"><span class="keyword">del</span> pdfDoc</span><br></pre></td></tr></table></figure>
+
+<p>步骤：将地图导出成PDF之后，记下文件位置，替换第一行的路径；设置密码，代替示例密码“secret”；将脚本复制进Python窗口，运行即可。</p>
+<p>以上就是地图导出成PDF时，全部设置的总结啦 ~</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/17/GodaddyEmailFailure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/17/GodaddyEmailFailure/" class="post-title-link" itemprop="url">解决Godaddy邮箱无法收信的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-17 16:46:00" itemprop="dateCreated datePublished" datetime="2012-02-17T16:46:00+08:00">2012-02-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>380</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Godaddy上面有附送免费的邮箱，每申请一个域名，都可以获得赠送一个1G的邮箱，同时空间的话可以获得5个邮箱。这些邮箱可以按照我们自己的意愿来设置域名后缀，这对中小型的外贸企业来说是个不错的选择。尤其是中国大部分的邮件服务器垃圾邮件成灾的时候！ </p>
+<p>我们使用Godaddy附送的邮箱可以尽可能的避免我们的邮件被归类到垃圾邮件！（虽然Godaddy的免费邮箱速度不快，面板也不是太方便。但是结合foxmail可以很好的使用！） </p>
+<p>上次在设置Godaddy邮箱的时候遇到了邮箱可以发送邮件，但是无法收邮件的问题，下面是解决方法，希望可以帮到大家！ </p>
+<p>Godaddy域名附赠邮箱能发送邮件但无法接收邮件解决方法如下： </p>
+<p>1.登录你的Godaddy帐号. </p>
+<p>2.点击 My Account. </p>
+<p>3.点击左侧栏中的 Free Products </p>
+<p>4.在右侧栏中的Products列表点击 Email Account List. </p>
+<p>5.在出现的邮件管理页面中选择Free email addresses for yourdomain.com(yourdomain.com是你的域名)，然后点击右边的 Manage Account. </p>
+<p>6.选择 Domains 标签 </p>
+<p>7.选择你要修正MX记录的邮件帐号，然后点击Server Addresses. </p>
+<p>8.点击 Update my MX records for me 让系统自动帮你修正MX记录 </p>
+<br>
+
+<p>到此问题就解决了！<br>出处：<span class="exturl" data-url="aHR0cDovL2x0bDM4ODQuaXRleWUuY29tL2Jsb2cvMTI3Njc5Mw==">http://ltl3884.iteye.com/blog/1276793<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/08/HowPointtoRasterWorks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/08/HowPointtoRasterWorks/" class="post-title-link" itemprop="url">Point to Raster 工作原理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-08 08:58:00" itemprop="dateCreated datePublished" datetime="2012-02-08T08:58:00+08:00">2012-02-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>612</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>点在栅格中，表示为一个像元。通常，如果有两个或更多个点落入某像元范围内，ArcGIS 在为像元赋值时会随机选择这些点中的一个点。但在使用“Point to Raster”工具时，可选择像元值分配类型（频率最高、求和、平均值、标准差、最大值、最小值、范围、数目）。具有值的像元数有可能少于要转换的点数。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HowPointtoRasterWorks_Tool.gif"></p>
+<p><strong>工具说明：</strong></p>
+<p>A．可以将包含点或多点要素的任意要素类（地理数据库、shapefile 或 coverage）转换为栅格数据集。</p>
+<p>B．输入字段类型决定输出栅格的类型。如果字段是整型，则输出栅格也是整型；如果字段是浮点型，则输出栅格也是浮点型。</p>
+<p>C．如果输入字段包含字符串值，则输出栅格将包含一个整数值字段和一个字符串字段。</p>
+<p>D．Priority Field仅与像元分配类型的 MOST_FREQUENT 选项一起使用。如果一个像元中存在多个点，优先级高的值被采用，如果优先级相同的，属性值出现频率最高的被采用，如果优先级和出现频率全都相同，采取FID最小的。如下图情况所示：</p>
+<p><img src="http://kikitamap.com/images/blogImg/HowPointtoRasterWorks_RasterValue.gif"></p>
+<p>若要素位于单元边界，则遵循<strong>边界规则</strong>。</p>
+<ul>
+<li>下图举例说明了要素恰巧落在单元边界上时适用的规则。</li>
+<li>如果要素落在单元边界上，则使用它上面的单元；如果它上面没有单元，则使用下面的单元。 </li>
+<li>如果左侧有一个单元，则使用此单元；如果没有，则使用右侧的单元。</li>
+</ul>
+<p><img src="http://kikitamap.com/images/blogImg/HowPointtoRasterWorks_Boundary.gif"></p>
+<p>与之相应的，还有一个Raster to Point 工具。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HowPointtoRasterWorks_Raster2Point.gif"></p>
+<p><strong>工具说明：</strong></p>
+<p>A. 允许输入整形或者浮点型的栅格数据；输入栅格的栅格单元大小可以任意，并且可以属于任何有效的栅格数据集。</p>
+<p>B. 针对输入栅格数据集的每个栅格单元，都会在输出要素类中创建一个点。这些点将定位于它们所代表的栅格单元的中心。NoData 栅格单元不会转换为点。</p>
+<p>C. Field参数可选，来设置栅格数据的某个字段转换为生成点要素的属性字段。此字段可以是整型、浮点型、字符型。如果不选，默认使用Value字段。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/37/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><span class="page-number current">38</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/39/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

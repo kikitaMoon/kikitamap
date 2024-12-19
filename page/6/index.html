@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/6/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/6/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/6/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/30/textureinCE2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/30/textureinCE2/" class="post-title-link" itemprop="url">CityEngine中纹理贴图之道(二)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-30 14:54:44" itemprop="dateCreated datePublished" datetime="2018-03-30T14:54:44+08:00">2018-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>486</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>​        接着<a href="http://kikitamap.com/2018/03/22/textureinCE/">上一篇</a>。</p>
+<p>​       <img src="http://kikitamap.com/images/blogImg/textureinCE_6.png"></p>
+<p>​        为了让脚本看起来更连贯，无需跳转上一篇，我们从头开始。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    MyTestforBaseTexure.cga</span></span><br><span class="line"><span class="comment"> * Created: 30 Mar 2018 08:16:37 GMT</span></span><br><span class="line"><span class="comment"> * Author:  Xiaoyan Mu</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2017.1&quot;</span></span><br><span class="line">attr height = <span class="number">10</span></span><br><span class="line">attr groundfloor_height = <span class="number">4</span></span><br><span class="line">attr floor_height = <span class="number">3.5</span></span><br><span class="line">attr tile_width = <span class="number">3.5</span></span><br><span class="line"></span><br><span class="line">wall_tex        = <span class="string">&quot;facades/textures/brickwall.jpg&quot;</span></span><br><span class="line">dirt_tex        = <span class="string">&quot;facades/textures/dirtmap.15.tif&quot;</span></span><br><span class="line">graffiti_tex    = <span class="string">&quot;facades/textures/Graffiti.jpg&quot;</span></span><br><span class="line">window_tex      = <span class="string">&quot;facades/textures/window.5.tif&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Lot</span> --&gt; <span class="title function_">extrude</span>(height) <span class="title class_">Building</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Building</span> --&gt; <span class="title function_">comp</span>(<span class="params">f</span>) &#123;front : <span class="title class_">Sidefacade</span>&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​        假设我希望在这面墙上“凿”出窗户，就需要将<code>Sidefacade</code>进行细化切割。贴纹理时也要注意一下新的技巧，也就是在细分表面之前先定义纹理UV，细分之后再用上一篇中提到的贴纹理的方法应用到<code>Wall</code>，这样就可以得到连续的墙体贴图。这样的做的原因在于，CE中的shape都是被不断迭代替换的，如果不在细分之前定义UV，<code>Sidefacade</code>对象在细分之后已经消亡了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"># <span class="title class_">Sidefacade</span> is modified</span><br><span class="line"></span><br><span class="line"><span class="title class_">Sidefacade</span> --&gt;  </span><br><span class="line">    # <span class="title class_">Setup</span> texturing</span><br><span class="line">    <span class="title function_">setupProjection</span>(<span class="number">1</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>) </span><br><span class="line">    <span class="title function_">setupProjection</span>(<span class="number">2</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>, scope.<span class="property">sy</span>)</span><br><span class="line">    # <span class="title class_">Divide</span> <span class="title class_">Sidefacade</span></span><br><span class="line"> 	<span class="title function_">split</span>(<span class="params">y</span>)&#123; <span class="attr">groundfloor_height</span>: <span class="title class_">Wall</span> | &#123;~floor_height : <span class="title class_">Floor</span>&#125;* &#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Floor</span> --&gt;</span><br><span class="line">	<span class="title function_">split</span>(<span class="params">x</span>)&#123; <span class="number">1</span> : <span class="title class_">Wall</span> | &#123; ~tile_width : <span class="title class_">Tile</span> &#125;* | <span class="number">1</span> : <span class="title class_">Wall</span> &#125;            </span><br><span class="line"><span class="title class_">Tile</span> --&gt;</span><br><span class="line">	<span class="title function_">split</span>(<span class="params">x</span>)&#123; ~<span class="number">1</span> : <span class="title class_">Wall</span> |  <span class="number">2</span> : <span class="title function_">split</span>(<span class="params">y</span>)&#123; ~<span class="number">1</span>: <span class="title class_">Wall</span> | <span class="number">1.5</span>: <span class="title class_">Window</span> | ~<span class="number">1</span>: <span class="title class_">Wall</span> &#125; | ~<span class="number">1</span> : <span class="title class_">Wall</span> &#125;	</span><br><span class="line"></span><br><span class="line"><span class="title class_">Wall</span> --&gt;</span><br><span class="line">    # <span class="title class_">Apply</span> the texture         </span><br><span class="line">    <span class="title function_">set</span>(material.<span class="property">bumpmap</span>,wall_tex)</span><br><span class="line">    <span class="title function_">set</span>(material.<span class="property">dirtmap</span>, dirt_tex)</span><br><span class="line">    <span class="title function_">projectUV</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="title function_">projectUV</span>(<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line"><span class="title class_">Window</span> --&gt;</span><br><span class="line">    <span class="title function_">offset</span>(<span class="number">0.05</span>) </span><br><span class="line">    <span class="title function_">comp</span>(<span class="params">f</span>) &#123; <span class="attr">inside</span>: <span class="title class_">WondowInner</span> | <span class="attr">border</span>: <span class="title class_">WondowFrame</span> &#125;</span><br><span class="line">    <span class="title class_">WondowInner</span> --&gt;</span><br><span class="line">	  <span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>) </span><br><span class="line">	  <span class="title function_">texture</span>(window_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">0</span>)      </span><br><span class="line">      <span class="title class_">WondowFrame</span> --&gt;</span><br><span class="line">      <span class="title function_">extrude</span>(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="material-opacitymap"><a href="#material-opacitymap" class="headerlink" title="material.opacitymap"></a>material.opacitymap</h2><p><code>material.opacitymap</code> 通道可以用于控制纹理的透明度。</p>
+<p><img src="http://kikitamap.com/images/blogImg/textureinCE_7.png"></p>
+<p>继续上面的例子，如果希望做出透明的窗户效果，可以将Window的代码替换为如下的样子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Window</span> --&gt;</span><br><span class="line">    <span class="title function_">offset</span>(<span class="number">0.05</span>) </span><br><span class="line">    <span class="title function_">comp</span>(<span class="params">f</span>) &#123; <span class="attr">inside</span>: <span class="title class_">WondowInner</span> | <span class="attr">border</span>: <span class="title class_">WondowFrame</span> &#125;</span><br><span class="line">    <span class="title class_">WondowInner</span> --&gt;    </span><br><span class="line">      <span class="title function_">setupProjection</span>(<span class="number">4</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>) </span><br><span class="line">      <span class="title function_">set</span>(material.<span class="property">opacitymap</span>, window_tex)</span><br><span class="line">      <span class="title function_">projectUV</span>(<span class="number">4</span>) </span><br><span class="line">    <span class="title class_">WondowFrame</span> --&gt;</span><br><span class="line">    <span class="title function_">extrude</span>(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="material-specularmap"><a href="#material-specularmap" class="headerlink" title="material.specularmap"></a>material.specularmap</h2><p>为了虚拟现实，窗户玻璃来点反光效果吧。</p>
+<p><img src="http://kikitamap.com/images/blogImg/textureinCE_8.png"></p>
+<p>上代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Window</span> --&gt;</span><br><span class="line">    <span class="title function_">offset</span>(<span class="number">0.05</span>)   </span><br><span class="line">    <span class="title function_">comp</span>(<span class="params">f</span>) &#123; <span class="attr">inside</span>: <span class="title class_">WondowInner</span> | <span class="attr">border</span>: <span class="title class_">WondowFrame</span> &#125;</span><br><span class="line">    <span class="title class_">WondowInner</span> --&gt;   </span><br><span class="line">	 <span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>) </span><br><span class="line">	 <span class="title function_">texture</span>(window_tex)</span><br><span class="line">	 <span class="title function_">projectUV</span>(<span class="number">0</span>)</span><br><span class="line">	 <span class="title function_">set</span>(material.<span class="property">specular</span>.<span class="property">r</span>, <span class="number">1</span>) </span><br><span class="line">     <span class="title function_">set</span>(material.<span class="property">specular</span>.<span class="property">g</span>, <span class="number">1</span>)   </span><br><span class="line">     <span class="title function_">set</span>(material.<span class="property">specular</span>.<span class="property">b</span>, <span class="number">1</span>)</span><br><span class="line">	 <span class="title function_">set</span>(material.<span class="property">shininess</span>, <span class="number">2</span>)	</span><br><span class="line">	 <span class="title function_">setupProjection</span>(<span class="number">3</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>)</span><br><span class="line">	 <span class="title function_">set</span>(material.<span class="property">specularmap</span>, specular_tex)</span><br><span class="line">	 <span class="title function_">projectUV</span>(<span class="number">3</span>)</span><br><span class="line">    <span class="title class_">WondowFrame</span> --&gt;</span><br><span class="line">    <span class="title function_">extrude</span>(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>剩下最后的 normalmap了，法向贴图。手里没有什么好例子，找到一篇<span class="exturl" data-url="aHR0cDovL3d3dy5vcGVuZ2wtdHV0b3JpYWwub3JnL2NuL2ludGVybWVkaWF0ZS10dXRvcmlhbHMvdHV0b3JpYWwtMTMtbm9ybWFsLW1hcHBpbmcv">OpenGL的文档<i class="fa fa-external-link-alt"></i></span>，帮助理解。</p>
+<p>完结。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/22/textureinCE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/22/textureinCE/" class="post-title-link" itemprop="url">CityEngine中纹理贴图之道(一)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-22 17:39:33" itemprop="dateCreated datePublished" datetime="2018-03-22T17:39:33+08:00">2018-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>854</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>​        </p>
+<p>​        经常看到官微、公众号的各种推送，了解到很多轰动一时的大片和电游的视觉制作都有CityEngine 助力过。CityEngine 在影娱视觉行业早已硕果累累，而对于GIS大众，CityEngine 算是刚从幕后走到了台前，从神秘娱乐圈走近了烟火人间。这几年来，这个不姓“Arc”的非主流产品在不断地推陈出新，吸引着慕名围观的用户去了解。3D模型的纹理贴图问题通常是建模中的高频问题，作为前排围观群众之一，我今天就用CityEngine做一面“墙”娱乐一下吧。</p>
+<blockquote>
+<p>环境： Esri City Engine 2017.1</p>
+</blockquote>
+<p>​        在 CityEngine中的 <code>shape</code> 对象具有<code>material </code>属性，这一属性可以控制模型的纹理贴图、阴影效果、外观等。CityEngine 支持的纹理图片的格式有：**.bmp、.gif、.jpg&#x2F;.jpeg、.png、.tif&#x2F;.tiff**。 CityEngine贴图支持6个纹理通道，它们通过特定的关键字来表达，如下：</p>
+<table>
+<thead>
+<tr>
+<th>uv-set</th>
+<th>Texture Layer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>colormap</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bumpmap</td>
+</tr>
+<tr>
+<td>2</td>
+<td>dirtmap</td>
+</tr>
+<tr>
+<td>3</td>
+<td>specularmap</td>
+</tr>
+<tr>
+<td>4</td>
+<td>opacitymap</td>
+</tr>
+<tr>
+<td>5</td>
+<td>normalmap</td>
+</tr>
+</tbody></table>
+<p><strong>下面我通过几个实例来说明下它们的用途：</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/textureinCE_1.png"></p>
+<p>​        基于共同的基础脚本向下进行，这里不再解释，相信你一看即懂。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    MyTestforBaseTexure.cga</span></span><br><span class="line"><span class="comment"> * Created: 21 Mar 2018 08:26:37 GMT</span></span><br><span class="line"><span class="comment"> * Author:  Xiaoyan Mu</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2017.1&quot;</span></span><br><span class="line">attr height = <span class="number">6</span></span><br><span class="line">wall_tex        = <span class="string">&quot;facades/textures/brickwall.jpg&quot;</span></span><br><span class="line">dirt_tex        = <span class="string">&quot;facades/textures/dirtmap.15.tif&quot;</span></span><br><span class="line">graffiti_tex    = <span class="string">&quot;facades/kiktia/Graffiti.jpg&quot;</span></span><br><span class="line"><span class="title class_">Lot</span> --&gt; <span class="title function_">extrude</span>(height) <span class="title class_">Building</span></span><br><span class="line"><span class="title class_">Building</span> --&gt; <span class="title function_">comp</span>(<span class="params">f</span>) &#123;side : <span class="title class_">Sidefacade</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="material-colormap"><a href="#material-colormap" class="headerlink" title="material.colormap"></a>material.colormap</h2><p><img src="http://kikitamap.com/images/blogImg/textureinCE_2.png"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Sidefacade</span> --&gt;</span><br><span class="line">	<span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">	<span class="title function_">texture</span>(wall_tex)  # <span class="title function_">set</span>(material.<span class="property">colormap</span>,wall_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">0</span>) </span><br></pre></td></tr></table></figure>
+
+<p>​        <code>texture(wall_tex)</code> ，实际是 <code>set(material.colormap,wall_tex)</code> 的简写，这个函数仅用于为当前shape指定纹理图片，而没有创建纹理坐标系。因此事先需要使用 <code>setupProjection()</code> ，用于指定贴图表面上的UV坐标系，以及贴图矩阵的排布样式。最后使用 <code>ProjectUV()</code>将贴图UV坐标系应用到贴图表面，这个过程有时被称为“烘焙（bake）”。相关函数的具体语法请查 <a target="_blank" rel="noopener" href="http://cehelp.esri.com/help/index.jsp?topic=/com.procedural.cityengine.help/html/toc.html"><strong>帮助</strong></a>。</p>
+<p>​        “烘焙”是个形象生动的词，是个3D建模领域的常用词，对于GIS圈子的朋友可能有点陌生，在一个**<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmxlbmRlcmFydGlzdHMub3JnL2ZvcnVtL3Nob3d0aHJlYWQucGhwPzExNjI1OS13aGF0LWlzLXRleHR1cmUtYmFraW5n">论坛<i class="fa fa-external-link-alt"></i></span>**里找到一个描述觉得不错分享大家。</p>
+<blockquote>
+<p>“Baking” generally refers to the process of recording as an image, some aspect of the Material or Mesh characteristics of a model. One value of this is that certain kinds of Material parameters can take longer to compute and apply to a model than an Image Texture, so it saves rendering time. Baking is usually done once a Material or Mesh is finalized. </p>
+<p>In texture baking, for example, what is originally a procedural texture can be recorded as an image. Sometimes various “channels” of a material can be consolidated into a single image, simplifying the number of texture images used. Material colors applied in Texture Paint mode can be saved to an image. Texture baking can also help with disguising seams on a UV unwrap, a somewhat complicated but very useful process.</p>
+<p>In normal baking, the mesh normals (which affect how light appears to reflect from the model’s surface) can be recorded – this results in very specialized images with RGB values based on normal vectors.</p>
+<p>Usually baking requires having the model UV-unwrapped and -mapped, so the resulting image is properly fit to the model.</p>
+</blockquote>
+<h2 id="material-bumpmap"><a href="#material-bumpmap" class="headerlink" title="material.bumpmap"></a>material.bumpmap</h2><p>​    <code>material.bumpmap</code> 可以实现贴图的浮雕效果。</p>
+<p><img src="http://kikitamap.com/images/blogImg/textureinCE_3.png"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Sidefacade</span> --&gt;</span><br><span class="line">	<span class="title function_">setupProjection</span>(<span class="number">1</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">	<span class="title function_">set</span>(material.<span class="property">bumpmap</span>,wall_tex)  </span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="material-dirtmap"><a href="#material-dirtmap" class="headerlink" title="material.dirtmap"></a>material.dirtmap</h2><p>​        如果想使这面墙更逼真，来点“做旧”的感觉，可以使用 <code>material.dirtmap</code> 通道来增加图片镶嵌的效果。</p>
+<p><img src="http://kikitamap.com/images/blogImg/textureinCE_4.png"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Sidefacade</span> --&gt;</span><br><span class="line">	<span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">	<span class="title function_">texture</span>(wall_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">0</span>) </span><br><span class="line">    # <span class="title class_">Add</span> dirtmap channel</span><br><span class="line">    <span class="title function_">setupProjection</span>(<span class="number">2</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>, scope.<span class="property">sy</span>)</span><br><span class="line">	<span class="title function_">set</span>(material.<span class="property">dirtmap</span>, dirt_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>​        相同的方法来做一面涂鸦墙也可以哦。（涂鸦图片来自网络，侵删）</p>
+<p>​        将dirtmap换张图，  <code>set(material.dirtmap, graffiti_tex)</code></p>
+<p><img src="http://kikitamap.com/images/blogImg/textureinCE_5.png"></p>
+<p>先到这里，下篇继续……</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/21/importingmodels/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/21/importingmodels/" class="post-title-link" itemprop="url">导入3D模型至CityEngine</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-21 11:06:12" itemprop="dateCreated datePublished" datetime="2018-03-21T11:06:12+08:00">2018-03-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>270</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我们可以将2D矢量数据、3D模型格式导入到CityEngine 中使用，前者一般作为CityEngine shape 来使用，后者作为模型来使用。</p>
+<p>OBJ，DAE，FBX这几种模型格式导入时可以作为两种角色来使用，shape 或 static model。这是由导入窗口中的 <code>Import as static model</code> 设置控制的。</p>
+<blockquote>
+<p><strong>Import as static model</strong></p>
+<p>When checked, the file will be imported ‘as is’ and will not be modifiable by cga rules.</p>
+<ul>
+<li>Shapes—Serve as a base for CGA generation. A typical example is footprint data.</li>
+<li>Static models—Can be scaled, rotated, and translated after import but cannot be processed further with CGA.</li>
+</ul>
+</blockquote>
+<p>通过如上说明，我们可以清晰的了解到把模型转为shape或Static Model的差异。 一般实际应用中，我们会把当作“素材”使用的模型小件作为static model用；而把表示基础结构的模型作为shape来使用。</p>
+<p>static model导入之后，仍然可以再转换为shape，操作：菜单栏 Shapes-&gt;Convert  Models to Shapes。成为shapes 之后，就可以通过cga对这个模型的继续进行改造了。</p>
+<p>在如下示例图中了解：</p>
+<p><img src="http://kikitamap.com/images/blogImg/importingmodels.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/18/ScentofaWoman/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/18/ScentofaWoman/" class="post-title-link" itemprop="url">《Scent of a Woman》</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-18 12:00:00" itemprop="dateCreated datePublished" datetime="2018-03-18T12:00:00+08:00">2018-03-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>164</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这是一部老片。</p>
+<p>年少无知的时候，看到题目《闻香识女人》，暗自以为这是一部有关调情高手的电影，完全无感，从此错过。</p>
+<p>在没有很多电影可以走入内心的今天，翻看旧电影真的是种享受。竟然有几句台词可以让我记住和感动。</p>
+<blockquote>
+<hr>
+<p>Now I’ve come to the crossroad in my life. I always knew what the right path was.  Without exception.  I knew, but I never took it. You know why. It’s was too damn hard.</p>
+<hr>
+<p>But there is nothing like the sight of an amputated spirit. There is no prosthetic for that.</p>
+<hr>
+</blockquote>
+<p>我虽不是很相信人有灵魂，但我确信看到过人性的高贵。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ScentofaWoman_1.jpg"></p>
+<p><img src="http://kikitamap.com/images/blogImg/ScentofaWoman_2.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/15/osm2ce/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/15/osm2ce/" class="post-title-link" itemprop="url">OSM在ArcGIS产品线中的使用小结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-15 14:56:00" itemprop="dateCreated datePublished" datetime="2018-03-15T14:56:00+08:00">2018-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>730</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="http://kikitamap.com/images/blogImg/osm2ce_1.png"></p>
+<p>说到免费开放的数据，自然会想到 Open Street Map，这里分享下在 ArcGIS 产品线中osm数据的使用实践。</p>
+<blockquote>
+<p>环境：ArcGIS Desktop 10.6， Esri CityEngine 2017.1</p>
+</blockquote>
+<h3 id="在ArcMap中使用osm数据"><a href="#在ArcMap中使用osm数据" class="headerlink" title="在ArcMap中使用osm数据"></a><strong>在ArcMap中使用osm数据</strong></h3><p>一般情况下，我们可以在 <span class="exturl" data-url="aHR0cHM6Ly93d3cub3BlbnN0cmVldG1hcC5vcmcv">Open Street Map<i class="fa fa-external-link-alt"></i></span> 官网可以通过指定范围直接下载osm格式数据，然后在 ArcMap中直接读取。如下，以Esri中国所在的金泰大厦为中心的数据：</p>
+<p><img src="http://kikitamap.com/images/blogImg/osm2ce_2.png" alt="ArcMap直读OSM"></p>
+<p>osm数据是基于xml的数据格式，ArcMap不能直接编辑。如果希望导入地理数据库中编辑，可以利用插件，这是Esri额外提供的一个桌面端的免费开源的osm插件，<span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD0wYzRiMjQ2MDhmYzk0NTQyYmE1ZDExMzBjMDYwNjgwMg==">ArcGIS Editor for OSM 10.6.x Desktop<i class="fa fa-external-link-alt"></i></span>。 通过这个插件可以下载、更新OSM数据有关这个插件的源码、文档，可以在<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0VzcmkvYXJjZ2lzLW9zbS1lZGl0b3I=">Github<i class="fa fa-external-link-alt"></i></span>上获得。</p>
+<blockquote>
+<p>OSM is an XML-based format used to describe vector data in a map. It defines three basic data types—nodes, ways, and closed ways—which are used to describe all the other elements: </p>
+<ul>
+<li>Nodes—Points between which segments are drawn. </li>
+<li>Ways—Ordered list of nodes, displayed as connected by line segments in the editor. </li>
+<li>Closed Ways—Ways that go in a complete loop. They are used to describe areas such as parks, lakes, or islands.</li>
+</ul>
+</blockquote>
+<p>以前10.3年代的时候，整理过一次简单的说明，点<a href="http://kikitamap.com/2015/04/01/ArcGISEditorforOSM103xDesktop/">这里</a>直达。通过测试，相同的网络环境下，官网下载osm数据，之后再使用 Load OSM File 导入GDB，效率明显优于直接使用 Download OSM Data导入GDB。</p>
+<h3 id="在CityEngine中使用osm数据"><a href="#在CityEngine中使用osm数据" class="headerlink" title="在CityEngine中使用osm数据"></a><strong>在CityEngine中使用osm数据</strong></h3><p>如果osm数据用于CityEngine，那么无需事先导入GDB，CityEngine可以直接解析osm并可分类导入数据，例如下图中导入highway，Building类：</p>
+<p><img src="http://kikitamap.com/images/blogImg/osm2ce_3.png" alt="导入OSM至CityEngine场景"></p>
+<p>在CityEngine中导入osm时，可以勾选“Map OSM tags”，从而CityEngine会通过OSM street type来定义道路的宽度，并给与不同道路组成部分不同的起始规则，方便后续利用规则批量建模。如下，以金泰大厦以南的东直门大枢纽为例，复杂的交通仍然保持错落有致：</p>
+<p><img src="http://kikitamap.com/images/blogImg/osm2ce_4.png" alt="OSM Highway"></p>
+<p>选中<code>Jintai_Streets</code> 这个图层，可以在Inspect窗口中看到图层的属性，其中即为默认情况下osm数据在CityEngine中的映射规则，可以根据需要修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">//------------------------- </span><br><span class="line">// Example OSM Tag Mapping</span><br><span class="line"></span><br><span class="line">streetscale = 1  // street width scale factor</span><br><span class="line"></span><br><span class="line">width = getObjectAttr(&quot;width&quot;, false)</span><br><span class="line">lanes = getObjectAttr(&quot;lanes&quot;, false)</span><br><span class="line"></span><br><span class="line">attr streetWidth = // street width dependeding on available attributes</span><br><span class="line">    case width &gt; 0 : width       * streetscale</span><br><span class="line">    case lanes &gt; 0 : lanes * 3.5 * streetscale</span><br><span class="line">    else           : streetWidthByClass * streetscale * oneway</span><br><span class="line"></span><br><span class="line">class = getObjectAttr(&quot;highway&quot;, false)</span><br><span class="line"></span><br><span class="line">streetWidthByClass =</span><br><span class="line">    case class == &quot;primary&quot;     : 8</span><br><span class="line">    case class == &quot;secondary&quot;   : 7</span><br><span class="line">    case class == &quot;tertiary&quot;    : 6</span><br><span class="line">    case class == &quot;motorway&quot;    : 12</span><br><span class="line">    case class == &quot;trunk&quot;       : 11</span><br><span class="line">    case class == &quot;road&quot;        : 6</span><br><span class="line">    case class == &quot;residential&quot; : 5</span><br><span class="line">    case class == &quot;footway&quot;     : 2</span><br><span class="line">    case class == &quot;cycleway&quot;    : 2</span><br><span class="line">    case class == &quot;steps&quot;       : 2</span><br><span class="line">    else                        : 4</span><br><span class="line"></span><br><span class="line">oneway = // oneway width correction</span><br><span class="line">    case getObjectAttr(&quot;oneway&quot;, false) == &quot;yes&quot; : 0.5</span><br><span class="line">    else                                  : 1</span><br><span class="line"></span><br><span class="line">sidewalkscale = 1 // sidewalk width scale factor</span><br><span class="line"></span><br><span class="line">sidewalkWidth =</span><br><span class="line">    case class == &quot;primary&quot;     : 2</span><br><span class="line">    case class == &quot;secondary&quot;   : 2</span><br><span class="line">    case class == &quot;tertiary&quot;    : 2</span><br><span class="line">    case class == &quot;residential&quot; : 2</span><br><span class="line">    else                        : 0</span><br><span class="line"></span><br><span class="line">attr sidewalkWidthLeft = sidewalkWidth * sidewalkscale</span><br><span class="line">attr sidewalkWidthRight = sidewalkWidth * sidewalkscale</span><br></pre></td></tr></table></figure>
+
+<p>默认情况下，进入cityEngine中的道路数据，会使用Esri.lib库中的规则Street_Modern_Standard.cga，当然也可以自己来编写。</p>
+<p><img src="http://kikitamap.com/images/blogImg/osm2ce_5.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

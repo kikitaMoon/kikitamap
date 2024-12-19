@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="背景ArcGIS Pro像ArcMap一样，其中也嵌入了Python。 不同在于ArcGIS Pro采用了python较新的版本3.4，ArcMap仍然沿用2.x版本。 ArcGIS Pro 1.3版本开始Python环境有点小变化，为了方便包管理esri开始采用Conda。 并且不像开始 ArcGIS Pro 1.1，1.2 版本，需要单独安装Python for ArcGIS Pro，在1.3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在ArcGIS Pro 1.3之外运行arcpy独立脚本">
+<meta property="og:url" content="https://kikitamap.com/2016/08/31/ArcGISProPython/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="背景ArcGIS Pro像ArcMap一样，其中也嵌入了Python。 不同在于ArcGIS Pro采用了python较新的版本3.4，ArcMap仍然沿用2.x版本。 ArcGIS Pro 1.3版本开始Python环境有点小变化，为了方便包管理esri开始采用Conda。 并且不像开始 ArcGIS Pro 1.1，1.2 版本，需要单独安装Python for ArcGIS Pro，在1.3">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISProPython_Command.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISProPython_PY.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISProPython_Bat.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISProPython_Pycharm.png">
+<meta property="article:published_time" content="2016-08-31T01:06:23.000Z">
+<meta property="article:modified_time" content="2018-11-11T15:06:12.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="ArcGIS Pro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ArcGISProPython_Command.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2016/08/31/ArcGISProPython/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2016/08/31/ArcGISProPython/","path":"2016/08/31/ArcGISProPython/","title":"在ArcGIS Pro 1.3之外运行arcpy独立脚本"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在ArcGIS Pro 1.3之外运行arcpy独立脚本 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="nav-text">执行脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%89%A7%E8%A1%8Cpython%E5%91%BD%E4%BB%A4"><span class="nav-text">1. 交互式执行python命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%89%A7%E8%A1%8Cpy%E6%96%87%E4%BB%B6"><span class="nav-text">2 执行py文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%89%B9%E5%A4%84%E7%90%86py%E6%96%87%E4%BB%B6"><span class="nav-text">3 批处理py文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8Python-IDE"><span class="nav-text">使用Python IDE</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/08/31/ArcGISProPython/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="在ArcGIS Pro 1.3之外运行arcpy独立脚本 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在ArcGIS Pro 1.3之外运行arcpy独立脚本
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-08-31 09:06:23" itemprop="dateCreated datePublished" datetime="2016-08-31T09:06:23+08:00">2016-08-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>757</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>ArcGIS Pro像ArcMap一样，其中也嵌入了Python。 不同在于ArcGIS Pro采用了python较新的版本3.4，ArcMap仍然沿用2.x版本。 ArcGIS Pro 1.3版本开始Python环境有点小变化，为了方便包管理esri开始采用Conda。 并且不像开始 ArcGIS Pro 1.1，1.2 版本，需要单独安装Python for ArcGIS Pro，在1.3版本python包随ArcGIS Pro一同自行安装。</p>
+<p>文档的原文摘过来能更好的理解esri采用Conda的意图：</p>
+<blockquote>
+<p>Python has a rich ecosystem of preexisting packages that can be leveraged within ArcGIS, but managing which packages are installed on a system can be a complex and time-consuming task, especially when working on multiple projects or trying to share code with others.</p>
+<p>To leverage this versatility, the Python community has created methods to easily create projects in multiple versions of Python and simplifies the process of installing nearly all publicly available Python packages. Conda is the most popular and widely used Python package manager.</p>
+</blockquote>
+<p>看到这里，你也也许和我有一样的疑问，<strong>啥是Conda？</strong> 点 <a target="_blank" rel="noopener" href="http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm"><strong>这里</strong></a> 。这页文档是esri刚更新的内容，需要在英文语言版本文档中才能找到。</p>
+<br>
+
+<h1 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h1><p>这些改变，对于习惯在 ArcGIS Pro 内部的脚本命令行中执行脚本的用户并没有多大影响。 但是如果已经习惯了在ArcGIS Pro 之外独立执行脚本，那如下的改变要注意下了。</p>
+<p>ArcGIS Pro 的Python包不再是ArcMap默认安装的位置 <code>C:\Python27</code> ，而是安装在 <code>ArcGIS Pro的安装目录\bin\Python</code> 。</p>
+<p>ArcGIS Pro 采用了的Conda环境为 <strong>arcgispro-py3</strong>，有几个方式可以访问这个环境。</p>
+<br>
+
+<h2 id="1-交互式执行python命令"><a href="#1-交互式执行python命令" class="headerlink" title="1. 交互式执行python命令"></a>1. <strong>交互式执行python命令</strong></h2><p>打开ArcGIS Pro安装目录下propy.bat文件，默认位于:<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy.bat&quot;</code></p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_Command.png"></p>
+<h2 id="2-执行py文件"><a href="#2-执行py文件" class="headerlink" title="2 执行py文件"></a>2 <strong>执行py文件</strong></h2><p>CMD打开命令行窗口，通过propy文件执行脚本，例如默认位置：<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py</code><br><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_PY.png"><br>备注：MyScript内容就两行： <code>import arcpy</code>, <code>print(&quot;arcpy imported&quot;)</code></p>
+<h2 id="3-批处理py文件"><a href="#3-批处理py文件" class="headerlink" title="3 批处理py文件"></a>3 <strong>批处理py文件</strong></h2><p>通过 call 函数来调用 propy </p>
+<p><code>@echo Run my Python script call &quot;%PROGRAMFILES%\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py @echo Finished</code></p>
+<p>例子：<br><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_Bat.png"><br>备注： 三个脚本分别打印 AAA, BBB, CCC。</p>
+<br>
+
+<br>
+
+<h1 id="使用Python-IDE"><a href="#使用Python-IDE" class="headerlink" title="使用Python IDE"></a>使用Python IDE</h1><p>有一个好用IDE是件美好的事情，大家应该都有各自的真爱，我就不做任何推荐啦。 在Pro之外独立执行脚本导入arcpy站点包的时候，只要注意将Python解释器的路径指向正确即可。</p>
+<p>如果你的机器上既安装了ArcGIS Desktop，又安装了ArcGIS Server或者ArcGIS Desktop的后台64位补丁包，并且又安装了ArcGIS Pro， 那么可能在机器上有多个Python环境。</p>
+<p>我自己在用 Pycharm ，在需要导入 ArcGIS Pro 的python站点包时，注意指向： <code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe&quot;</code></p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_Pycharm.png"></p>
+<br>
+
+<p>注意，在python IDE 中<strong>不要</strong>将解释器指向这个 python.exe , <code>[&quot;C:\Program Files\ArcGIS\Pro\bin\Python\python.exe&quot;]</code></p>
+<p>否则你在导入 arcpy 模块时会遇到找不到模块的错误： <strong>ImportError: No module named ‘arcpy’</strong></p>
+<br>
+
+<p>最后推荐 <span class="exturl" data-url="aHR0cHM6Ly9nZW9uZXQuZXNyaS5jb20vZG9jcy9ET0MtODM1OQ==">一篇esri的Blog<i class="fa fa-external-link-alt"></i></span>，也详细的阐述的这件事。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/ArcGIS-Pro/" rel="tag"><i class="fa fa-tag"></i> ArcGIS Pro</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2016/06/30/QueryLayerResult/" rel="prev" title="Make Query Layer在Model Builder中的使用">
+                  <i class="fa fa-angle-left"></i> Make Query Layer在Model Builder中的使用
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2016/09/02/TripToHngKong/" rel="next" title="Trip To HngKong">
+                  Trip To HngKong <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/25/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/25/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/25/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/09/01/RasterZoneRegion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/09/01/RasterZoneRegion/" class="post-title-link" itemprop="url">栅格数据中的 Zone 与 Region</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-09-01 17:22:00" itemprop="dateCreated datePublished" datetime="2014-09-01T17:22:00+08:00">2014-09-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>260</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Zone 与 Region 在字面上都是区域的意思，但是在做分析与统计的时候二者却是有区别的。</p>
+<p><strong>什么是Zone？</strong></p>
+<p>简而言之，具有相同值的像元就属于一个Zone。也就是，Zone由栅格中所有具有相同值的像元组成，分区可以由相邻像元和&#x2F;或不相连像元组成。如下图一目了然：</p>
+<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Zone.gif"></p>
+<p><strong>什么是Region？</strong></p>
+<p>一个Zone内的每组相连像元都可视为一个Region</span>。ArcGIS 中提供了从 Zone 获得 Region 的工具 Group Region。</p>
+<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Region.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_GroupRegion.png"></p>
+<p><strong>工具的工作顺序：</strong> 扫描的第一个区域接收值 1，第二个区域接收值 2，依此类推，直到所有区域都已赋值。扫描将按从左至右、从上至下的顺序进行。赋给输出区域的值，取决于系统在扫描过程中是在什么时候遇到它们的。</p>
+<p><strong>与原始Zone的关系：</strong> 默认，生成的数据的属性表中会有 LINK 字段，记录Region从Zone的来源：</p>
+<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_table.tiff"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/08/05/ArcGlobeCacheManagement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/08/05/ArcGlobeCacheManagement/" class="post-title-link" itemprop="url">ArcGlobe 缓存管理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-08-05 11:26:08" itemprop="dateCreated datePublished" datetime="2014-08-05T11:26:08+08:00">2014-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><span style="font-family:Microsoft YaHei; font-size:14px">ArcGlobe拥有缓存机制，因此可以应对大量3D数据的可视化，下面就总结下有关缓存的知识点。</span></p>
+<span style="font-family:Microsoft YaHei; font-size:14px">
+
+</span>
+
+<p><span style="font-family:Microsoft YaHei; font-size:14px">首先，需要了解，ArcGlobe具有两种缓存机制：内存缓存，硬盘缓存。</span></p>
+<span style="font-family:Microsoft YaHei; font-size:14px">
+
+</span>
+
+<p><span style="font-family:'Microsoft YaHei'"><strong><span style="font-size:24px; color:#cc0000">内存缓存&nbsp;</span></strong><span style="font-size:14px">指的是分配可供 ArcGlobe 使用的物理内存 (RAM) 大小。要获得最佳性能，可设置对每个所使用的数据类型所分配的内存大小。ArcGlobe 通过设置内存缓存来改善 3D 视图的交互性能，可针对每个 ArcGlobe 文档（.3dd 文件）配置特定的内存值。</span></span></p>
+<p><span style="font-family:'Microsoft YaHei'"><span style="font-size:14px"><img src="http://img.blog.csdn.net/20140805102306496?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhTW9vbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
+<p></span></span></p>
+<p><span style="font-family:'Microsoft YaHei'"><span style="font-size:14px"><img src="http://img.blog.csdn.net/20140805110536867?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhTW9vbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<p></span></span></p>
+<p><span style="font-family:'Microsoft YaHei'"><span style="font-size:14px"></p>
+<p></span></span></p>
+<p><span style="font-family:'Microsoft YaHei'"><span style="font-size:14px"></p>
+<p></span></span></p>
+<p><span style="font-family:Microsoft YaHei"><strong><span style="font-size:24px; color:#cc0000">磁盘缓存&nbsp;</span></strong><span style="font-size:14px">会为 ArcGlobe 中的每个图层创建临时文件或缓存，从而有助于高效地显示和导航数据。</span></span><span style="font-size:14px; font-family:'Microsoft YaHei'">每个图层，而不是数据源，对应一“套”缓存文件，以文件夹的形式保存。文件夹通常以图层名+GUID命名。例如下图：</span></p>
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><img src="http://img.blog.csdn.net/20140805101124635?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhTW9vbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
+</span>
+
+<p><span style="font-family:Microsoft YaHei; font-size:14px"><img src="/"></p>
+</span>
+
+<p><span style="font-size:14px"><span style="font-family:Microsoft YaHei">保存 ArcGlobe 文档（*.3dd）或创建图层文件（*.lyr）</span><span style="font-family:Microsoft YaHei">可确保不会无意中删除磁盘缓存，以及保留缓存的链接以供以后使用。如果图层的显示发生更改，则会自动删除它的磁盘缓存并重新进行计算。</span></span></p>
+<p><span style="font-size:14px"><span style="font-family:Microsoft YaHei"></p>
+<p></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">默认缓存是按需进行创建，也可以进行手动创建图层的</span><span style="font-family:'Microsoft YaHei'">部分缓存、</span><span style="font-family:'Microsoft YaHei'">全部缓存。</span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"><img src="http://img.blog.csdn.net/20140805110228156?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhTW9vbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></p>
+<p></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"><img src="http://img.blog.csdn.net/20140805110245671?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhTW9vbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></p>
+<p></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"></p>
+<p></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"></p>
+<p></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">磁盘缓存的格式可以根据需要选择，ArcGlobe 支持两种磁盘缓存格式：JPEG 和 DXT。一般来说，JPEG 磁盘缓存格式占用的磁盘空间较少，而 DXT 缓存可提高渲染速度。</span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"></p>
+<p></span></span></p>
+<p><span style="font-family:'Microsoft YaHei'; font-size:14px">下面的问题引自帮助，稍加整理，放在这里辅助这两种格式的选择：</span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"></p>
+<p></span></span></p>
+<p><span style="font-size:18px; color:#ff6666"><span style="font-family:'Microsoft YaHei'; background-color:rgb(204,255,255)"><strong>JPEG 和 DXT 格式的区别是什么？</strong></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">在显卡较新的计算机上，DXT 缓存不必在渲染前解压缩。但 JPEG 缓存却需要在渲染前解压缩，因此存在性能开销。</span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">具有 16 位色彩格式的 JPEG 缓存数据要求每像素占 2 个字节内存，而 DXT 缓存数据则要求每像素仅占 1 个字节内存。这意味着，DXT 数据所占用的图形内存只占 JPEG 16 位色彩数据所占用图形内存的一半。但 DXT 缓存所占用的磁盘空间通常比 JPEG 缓存大 8 到 12 倍。</span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"></p>
+<p></span></span></p>
+<p><span style="font-size:18px; color:#ff6666"><span style="font-family:'Microsoft YaHei'; background-color:rgb(204,255,255)"><strong>JPEG 与 DXT 分别应于何时使用？</strong></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"><strong>1）显卡硬件的版本</strong></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">如果计算机的显卡版本较低，有可能不支持 DXT 格式。在此类情况下，ArcGlobe 将使用仿真软件代替硬件，使计算机支持 DXT 缓存，但这样的话，使用 DXT 磁盘缓存选项并不会提高性能。</span></span><span style="font-family:'Microsoft YaHei'; font-size:14px">版本较新的计算机则可以实现 DXT 格式的硬件支持，因此适合使用 DXT 缓存选项。如果注重应用程序的性能，则建议使用该格式。</span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"><strong>2）数据范围</strong></span></span></p>
+<p><span style="font-family:'Microsoft YaHei'; font-size:14px">决定 JPEG 和 DXT 缓存性能差异的一个关键性因素是数据范围。对于本地区域范围内的图像数据，DXT 缓存的渲染速度比 JPEG 缓存最多可快 40%（以每秒的帧数衡量）。但是，如果数据是全球范围的，则两种格式之间几乎没有差异。</span><span style="font-family:'Microsoft YaHei'; font-size:14px">但是，无论数据范围如何，DXT 磁盘缓存格式与 JPEG 磁盘缓存格式的缓存</span><span style="font-family:'Microsoft YaHei'; font-size:14px">生成时间相同</span><span style="font-family:'Microsoft YaHei'; font-size:14px">。</span></p>
+<p><span style="font-family:'Microsoft YaHei'; font-size:14px"><strong>3）物理内存的大小</strong></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">决定选择哪种格式的另一个关键性因素是计算机的物理内存大小。使用 DXT 缓存而非 JPEG 缓存时，ArcGlobe 将节省 10% 到 30% 的整体内存，从而在渲染大型数据集而计算机内存（RAM 和图形卡纹理内存）却有限的情况下可以提高性能。</span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"><strong>4）磁盘空间</strong></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">最后一个值得考虑的因素是磁盘空间。尽管 DXT 缓存的交互性能通常比 JPEG 缓存要好，但是它所占据的磁盘存储空间却会多出很多。根据数据的不同，DXT 缓存所占用的磁盘空间比 JPEG 缓存大 8 到 12 倍。</span></span><span style="font-family:'Microsoft YaHei'; font-size:14px">因此，应考虑是需要更好的性能还是更大的磁盘空间。</span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"></p>
+<p></span></span></p>
+<p><span style="font-size:18px; color:#ff6666"><span style="font-family:'Microsoft YaHei'; background-color:rgb(204,255,255)"><strong>使用 DXT 缓存时有哪些特殊注意事项？</strong></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'">能否使用 DXT 取决于 OpenGL 图形卡驱动程序和图形卡硬件。有时，一些 OpenGL 工具可能无法支持或无法正常支持 DXT 压缩。这可能导致 DXT 缓存中产生失真。要解决此类问题，可以更新显卡驱动程序版本或使用其他显卡。</p>
+<p></span></span></p>
+<p><span style="font-size:14px"><span style="font-family:'Microsoft YaHei'"></p>
+<p></span></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/07/29/AboutClippingRaster/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/07/29/AboutClippingRaster/" class="post-title-link" itemprop="url">使用矢量面裁剪栅格数据的对齐问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-07-29 11:19:31" itemprop="dateCreated datePublished" datetime="2014-07-29T11:19:31+08:00">2014-07-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>696</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近凑巧有几个比较多的栅格裁剪问题，整理如下：</p>
+<p>我们只有由于栅格与矢量数据的存储模型不相同，这就导致栅格数据的像元无法与矢量数据的点等同，从而导致裁切后的对齐问题，放大数据我们就能发现，如下图可以说明：（其中黑白色为栅格数据，每个正方形代表一个像元，红色区域为矢量面数据。）</p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_1.jpg"></p>
+<p>我们按照默认设置运行 Raster工具箱中的 Clip 工具，看看结果，蓝色的栅格部分：</p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_2.jpg"></p>
+<p>发现，栅格数据裁剪完，并不是需要的矢量数据范围，而是矢量数据压盖的最小栅格数据范围。</p>
+<p>如果我们需要得到的栅格，是矢量数据的范围，该如何做呢？</p>
+<p><strong>【旧版本】如果正在使用的是10.1以及更早期的版本：</strong></p>
+<ol>
+<li>首先将作为裁剪范围的矢量面（Feature）转为图形（Graphic），在ArcMap中，在面图层上右键，使用 Convert &nbsp;Features to Graphics… 菜单，如下图：</li>
+</ol>
+<p>（Graphic 被选中状态下，周围是有几个小方块的，与 Feature 被选中的亮蓝色不同哦…）</p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Graphic.jpg"></p>
+<p>2.在 ArcMap 中，使用图层的右键菜单中的Export功能，导出选中Graphic 范围内的数据：</p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Selected.jpg"></p>
+<p>看看结果，为了清楚，我将Graphic的填充色去掉，栅格数据左边与上边界是与矢量数据一致的，这样就尽最大范围保持了结果栅格与矢量数据范围的最大一致性：</p>
+<p><strong>PS：有人会问，为什么下边和右边边界没有完全贴合？ 需要知晓，栅格数据的行列数是矢量数据长度整除像元大小（导出的像元大小默认与源数据相同，也可以根据需要修改）得出的，而通常有余数的存在，因此没有那么严丝合缝，归根结底还是两种数据的存储模型不同导致的。</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Format.jpg"></p>
+<p><strong>【新版本】如果正在使用的是10.2以及更新期的版本：</strong></p>
+<p>新版本中 Clip 工具提供了额外的参数，可以简单的勾选就完成了上面的需求：</p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain.jpg"></p>
+<p><strong>PS：一定要注意右边的帮助哇，为了尽可能满足矢量数据边界范围，行列数是通过计算调整，也就是像元大小相比原始数据会变化，像元值会进行重采样获取。</strong></p>
+<p>看看结果吧，影线区域是矢量，玫红色区域是生成的栅格：</p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain2.jpg"></p>
+<p>最后来张全家福，对比下，哪种结果是你想要的，决定对应的选择哪种方法 ，（左侧图层顺序，即为右侧图层显示顺序）。</p>
+<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_All.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/06/25/BackgroundGeoprocessing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/06/25/BackgroundGeoprocessing/" class="post-title-link" itemprop="url">吧啦下 Background Geoprocessing</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-06-25 09:32:12" itemprop="dateCreated datePublished" datetime="2014-06-25T09:32:12+08:00">2014-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>818</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天和大家说一下后台地理处理（GP），说到后台，自然会想到前台。</p>
+<p>其实在 ArcGIS Desktop 9.X 以及更早的年代，ArcToolbox 中的工具运行的模式只有前台模式，也就是大家熟悉的情景：运行某个工具，然后工具运行窗口挡在 ArcMap的前面，窗口中的Log不停的滚动，直至工具运行完毕，ArcMap 才能使用。 并且，由于 ArcMap 和 ArcCatalog 是 32 的程序，单进程使用的系统资源是有限的。</p>
+<p>为了解决这些问题，后台地理处理就产生了，从 ArcGIS 10.0 之后的版本，后台地理处理一直存在着。如果我们现在使用的操作系统是64bit的，那还可以安装后台地理处理64位程序包，在安装光盘中可以找到 ArcGIS for Desktop Background Geoprocessing （64bit）。</p>
+<p><img src="http://kikitamap.com/images/blogImg/BackgroundGeoprocessing_Setup.jpg"></p>
+<br>
+
+<p><strong>为什么安装&nbsp;ArcGIS for Desktop Background Geoprocessing（64 位）？</strong></p>
+<p>因为，后台执行一个工具时，在后台会启动一个新的进程，我们可以理解成开了一个新的 ArcMap，只是没有界面的ArcMap。安装 ArcGIS for Desktop—Background Geoprocessing（64 位）之后，就替代了原先的常规 32 位后台处理。在 RAM 容量较大的系统中，使用 64 位后台处理，有助于处理在 32 位环境中无法处理的大数据。由于所有执行工作都在原生 64 位空间中完成，因此可使用更多系统资源。</p>
+<p>由于新开进程，所以，在打开 ArcMap 之后的第一次执行后台GP，会发现很慢有延迟，之后的几次会很快出现进度条和消息。实际上，后台处理会启动两个进程，两个 RuntimeLocalServer.exe 进程。在工具执行期间不要随便结束这两个进程，否则可能会导致结果异常。</p>
+<p><img src="http://kikitamap.com/images/blogImg/BackgroundGeoprocessing_exe.jpg"></p>
+<br>
+
+
+
+<p><strong>如何选择前台与后台GP处理？</strong></p>
+<p>实际上，如果我们只是在做一些日常的小测试，做些小数据量的处理，可能除了结果之外，响应速度是我们关心的，那还是完全可以选择前台的，毕竟省去了新开进程的时间。但是如果仅仅因为在某些情况下的不稳定放弃后台运行，不是很明智，毕竟后台执行GP可以完全不耽误你手头的工作，还能更好的利用系统的资源。 后台运行从10.0版本开始产生，早期bug缠身，但是随着版本的更新，日趋稳定，10.2之后也开始支持并行运算，后台处理GP还是个不错的选择。</p>
+<p>还是需要注意，什么情况下，后台GP不适用？</p>
+<br>
+
+
+<p><strong>后台64GP不支持的数据类型</strong> </p>
+<ul>
+<li>个人地理数据库(.mdb)，Excel表（.xls、.xlsx）</li>
+</ul>
+<p> 	</p>
+<br>
+
+
+<p><strong>不在后台运行的工具包括：</strong> </p>
+<ul>
+<li>元数据转换工具集（Metadata conversion&nbsp;）中的工具</li>
+<li>地理数据库管理工具集（Geodatabase administration）中的工具</li>
+<li>所有 Coverage 工具</li>
+<li>用于创建包（Packages）的工具</li>
+<li>绘图工具（Graphing tools）（仅针对 64 位地理处理；这些工具在传统的 32 位后台处理中运行）</li>
+<li>作者禁用后台处理的自定义脚本、模型或功能工具</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/05/29/SetupPythonWin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/05/29/SetupPythonWin/" class="post-title-link" itemprop="url">安装 PythonWin</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-05-29 16:20:12" itemprop="dateCreated datePublished" datetime="2014-05-29T16:20:12+08:00">2014-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>120</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>确定已安装Python的版本</strong></p>
+<p>在 ArcGIS Desktop 中打开命令行，输入如下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">print(sys.version)</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="http://kikitamap.com/images/blogImg/SetupPythonWin_Script.jpg"></p>
+<br>
+
+<p><strong>PythonWin下载</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/SetupPythonWin_PythonWin.png"></p>
+<p>Python IDE 有很多，采用最常用的 PythonWin。</p>
+<p>PythonWin 下载地址：<span class="exturl" data-url="aHR0cDovL3NvdXJjZWZvcmdlLm5ldC9wcm9qZWN0cy9weXdpbjMyL2ZpbGVzL3B5d2luMzIv">http://sourceforge.net/projects/pywin32/files/pywin32/<i class="fa fa-external-link-alt"></i></span></p>
+<p>在链接中选择最新的 PythonWin 可用版本。</p>
+<br>
+
+
+<p><strong>ArcGIS for Desktop 和 ArcGIS Engine 产品使用 32 位 Python 可执行文件；</strong> </p>
+<p><strong>ArcGIS for Server 和 ArcGIS for Desktop—Background Geoprocessing 产品使用 64 位 Python 可执行文件。</strong></p>
+<p><strong>Arcmap Python Window 与 PythonWin 的选择与对比：</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/SetupPythonWin_Compare.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/24/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/26/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

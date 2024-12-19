@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/4/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/4/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/4/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/09/27/partialUpdateVTPKv3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/09/27/partialUpdateVTPKv3/" class="post-title-link" itemprop="url">矢量切片局部更新工具改进与工作收尾</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-09-27 19:56:08" itemprop="dateCreated datePublished" datetime="2018-09-27T19:56:08+08:00">2018-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在<a href="http://kikitamap.com/2018/08/13/vectorTileBundle/">上一篇博客</a>中提到工具还有投影坐标系支持和切片方案（.xml）自动获取的问题尚未解决，更新这篇的目的在于说明问题已经找到了workaround，并且新的版本已经在上周五（9.21）发布了。</p>
+<h2 id="问题诊断过程"><a href="#问题诊断过程" class="headerlink" title="问题诊断过程"></a>问题诊断过程</h2><p>这两个问题其实本质上是一个问题。</p>
+<p>我们知道，当需要生成矢量切片的地图的坐标系不是 3857（web mercator）时，ArcGIS Pro 提供的 Create Vector Tile Package &#x2F; Index 工具可以自动生成与地图的坐标系统一致的切片方案（.xml）文件，默认放置于 C:\Users\当前用户\AppData\Local\ESRI\Geoprocessing 下。<br>这是个极好的功能，但是通过python调用此工具时，这个功能是没有提供接口的。此处的疑惑，也咨询了Esri US 的工程师，确实arcpy没有提供像工具UI中的自动计算功能。</p>
+<p>在最初的版本中，我尝试使用arcpy.GenerateMapServerCacheTilingScheme_server() 来生成xml文件，可以应对地理坐标系的地图。也是这个过程中遇到了切片原点传参失败<a href="http://kikitamap.com/2018/02/05/AlterXMLScheme/">这个坑</a>。<br>投影坐标系的切片原点不像是地理坐标系一样简单粗暴，不同的投影方法都会导致不同的原点坐标，我想过将常用坐标系枚举出来，可是从工具的通用角度来讲，不是个好事。最佳的解决方法还是想办法生成相同的xml，至少可以获取工具生成的xml。</p>
+<p>在上个版本的局部更新矢量切片工具中，我和马老师还自命名了“Advanced Vector Tile Package”的矢量切片包，我们在矢量切片包中还打包塞入了切片方案和切片索引面。这样，局部工具在更新这种包时，可以自动解析原包获取xml和index。但是，需要用户事先使用我们定制的 Create Advanced Vector Tile Package 工具来创建矢量切片包。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>考虑到用户在更新矢量切片之前，已经做过该地图的矢量切片，那么在User那个目录下已经有了对应的xml文件，那么我只要代码中获取了地图的坐标系，然后按照xml的命名规则顺藤摸瓜并顺手牵羊即可。<br>现实总是比想象骨感。ArcGIS Pro 的 arcpy 中提供的 Map 对象竟然没有提供查询其坐标系统的属性或方法…… 测试基于ArcGIS Pro 2.2.1，写这篇时的最新版本。相信新的版本早晚会有的。好在我还是找到了一个workaround：从map的defaultCamera属性中获取，如下图左边最下部分所示。（现在没有测试环境，图出自讨论时的聊天记录，将就看吧）<br><img src="http://kikitamap.com/images/blogImg/partialUpdateVTPKv3_defaultCamera.jpg"></p>
+<p>使用这个思路之后，解决了本文开头提到的问题，但是要求用户本机user目录下事先有相关的xml文件，没有的话需要打开创建矢量切片工具自动生产一次。</p>
+<p>工具的相关代码都进行了更新，采用了新的逻辑，目前可以支持矢量切片工具自身支持的全部坐标系统。并同时保留了，上个版本的局部更新工具中可以自动解析 Advanced Vector Tile Package 功能。<br><img src="http://kikitamap.com/images/blogImg/partialUpdateVTPKv3_AdvancedSupport.jpg"></p>
+<h2 id="工具地址"><a href="#工具地址" class="headerlink" title="工具地址"></a>工具地址</h2><p><strong>Latest Version</strong>： <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMy4xLjA=">Partially Upate ArcGIS Vector Tiles Toolbox 3.1.0<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="收尾"><a href="#收尾" class="headerlink" title="收尾"></a>收尾</h2><p>这个工具即与工作相关，又是业余之作。自己执念太重，希望在esri工作的最后一天归还机器前尽快改好发布出来，因为将来的投入时间和测试环境，不知道是否能够保证。自己可见的坑还是自己填好比较稳妥，哈。姑且把这个版本当成最后的latest版本吧。因为这个工具的更新，搞得最后一天的时间特别紧张，没有和很多同事道别，不过将来总有机会再见的。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/08/30/cloudStorageImageService/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/30/cloudStorageImageService/" class="post-title-link" itemprop="url">Testing Report for Image Service</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-30 11:30:40" itemprop="dateCreated datePublished" datetime="2018-08-30T11:30:40+08:00">2018-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>197</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>An image service of ArcGIS Server provides access to raster data through a web service.  ArcGIS Image Server is required to share a mosaic dataset.  This testing reporting indicates workflows and issues of sharing Image Service which is basing on a mosaic dataset referencing the raster dataset on a cloud storage.</p>
+<p><strong>Local Testing Environment</strong></p>
+<ul>
+<li>Latest Esri Technologies<ul>
+<li>ArcMap 10.6.1 ( both final release version and  early adopter version)</li>
+<li>ArcGIS Enterprise 10.6.1 with ArcGIS Image Server 10.6.1</li>
+</ul>
+</li>
+<li>Windows 10 Pro 64 bit English Version</li>
+</ul>
+<h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><p><strong>Steps</strong></p>
+<ol>
+<li><p>Create Huawei Cloud connection file                                                                (√)</p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_1Connection.png"></p>
+</li>
+<li><p>Add raster to a local mosaic dataset referencing the connection file          (√)</p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_2AddRaster.png"></p>
+</li>
+<li><p>Share the mosaic dataset as an image service                                                 (√)</p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_3Publishing.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_3Publishing2.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_4ServerMan.png"></p>
+</li>
+<li><p>Consume this service in various client browsers                                             (√)</p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_5MapViewer.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_6JSviewer.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_7ArcMap.png"></p>
+</li>
+</ol>
+<h2 id="Alibaba-Cloud"><a href="#Alibaba-Cloud" class="headerlink" title="Alibaba Cloud"></a>Alibaba Cloud</h2><p><strong>Steps</strong></p>
+<ol>
+<li>Create Huawei Cloud connection file                                                                (√)</li>
+<li>Add raster to a local mosaic dataset referencing the connection file          (√)</li>
+<li>Share the mosaic dataset as an image service                                                 (√)</li>
+<li>Consume this service in various client browsers                                             (×)</li>
+</ol>
+<p><strong>Explanation</strong></p>
+<ul>
+<li><p>It requires  EA version installed on English language windows OS to avoid the failure of step 1 and step 2.</p>
+</li>
+<li><p>Checkerboarding on image service at now. and new case summitted for diagnose this issue.</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNzIyMDc=">Internal Case #02172207<i class="fa fa-external-link-alt"></i></span> summited</p>
+</li>
+</ul>
+<p><img src="http://kikitamap.com/images/blogImg/cloudStorageImageService_8Issue.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/08/15/cloudStorage4MD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/15/cloudStorage4MD/" class="post-title-link" itemprop="url">Testing Report for Raster Data Source in Cloud Storage</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-15 09:50:20" itemprop="dateCreated datePublished" datetime="2018-08-15T09:50:20+08:00">2018-08-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>747</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>For the purpose of assisting and sharing ,  I will try to write in English. </p>
+</blockquote>
+<p>The new tool <strong>Create Cloud Storage Connection File</strong> is first introduced to ArcGIS Desktop 10.6.1 which is the latest version until now.  The <span class="exturl" data-url="ZmlsZTovLy9DOi9Qcm9ncmFtJTIwRmlsZXMvQXJjR0lTL1Byby9SZXNvdXJjZXMvSGVscC9wcm8tYXBwL3Rvb2wtcmVmZXJlbmNlL2RhdGEtbWFuYWdlbWVudC9jcmVhdGUtY2xvdWQtc3RvcmFnZS1jb25uZWN0aW9uLWZpbGUuaHRt">Create Cloud Storage Connection File<i class="fa fa-external-link-alt"></i></span> tool creates a connection file (***.acs**) for ArcGIS-supported cloud storage.  It allows existing raster geoprocessing tools to <strong>write</strong> cloud raster format (CRF) datasets into the cloud storage bucket or <strong>read</strong> raster datasets (not limited to CRF) stored in the cloud storage as input.</p>
+<p>This is an amazing new feature of ArcGIS Desktop, including <strong>ArcMap 10.6.1</strong> and <strong>ArcGIS Pro 2.2</strong>.  The stuff from one of our partners and I are doing some researching on the new capability.  This article is something about the testing report, which indicates the feasibility of various workflows for adding raster datasets to mosaic dataset. </p>
+<br>
+
+<p><strong>Local Testing Environment</strong></p>
+<ul>
+<li><p>Latest Esri Technologies</p>
+<ul>
+<li><p>ArcMap 10.6.1</p>
+</li>
+<li><p>ArcGIS Pro 2.2.1</p>
+</li>
+</ul>
+</li>
+<li><p>Windows 10 Pro 64 bit English Version</p>
+</li>
+</ul>
+<br>
+
+<br>
+
+<h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><h3 id="ArcMap"><a href="#ArcMap" class="headerlink" title="ArcMap"></a>ArcMap</h3><ul>
+<li><p><strong>Steps</strong></p>
+<ol>
+<li>Create Huawei Cloud connection file                              (√)</li>
+<li>Add raster to a local mosaic dataset                               (√)</li>
+</ol>
+</li>
+<li><p><strong>Conclusion</strong></p>
+<ul>
+<li>Bingo !   This workflow for source raster dataset in Huawei Cloud is perfect.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ArcGIS-Pro"><a href="#ArcGIS-Pro" class="headerlink" title="ArcGIS Pro"></a>ArcGIS Pro</h3><ul>
+<li><p><strong>Steps</strong></p>
+<ol>
+<li><p>Create Huawei Cloud connection file                             (√)</p>
+</li>
+<li><p>Add Raster to Mosaic Dataset                                         (×)</p>
+<ul>
+<li><p>Error Message as below:</p>
+<p>Failed to execute. Parameters are not valid.</p>
+<p>Error: 000732  Input Data: Dataset …\HuaWeiConnection.acs\…LGN00_MTL.txt does not exist or is not supported</p>
+</li>
+</ul>
+</li>
+<li><p>Trying  workaround:  Add Raster to Mosaic Dataset using arcpy  (python 3.x for ArcGIS Pro).   </p>
+<p>For the purpose of verification ,  Add Raster to Mosaic Dataset using arcpy  (python 2.x for ArcMap), it works.                                                                                (√)</p>
+</li>
+</ol>
+</li>
+<li><p><strong>Conclusion</strong></p>
+<ul>
+<li><p>It should be a bug of ArcGIS Pro,  that the  tool <strong>Add Rasters To Mosaic Dataset</strong> can not recognize the logical file path including cloud connection.  The tool will justify the path if it exists. The path containing cloud connection is a logical path , not a physical path.   The same input file path works in ArcMap.</p>
+</li>
+<li><p>Internal case submitted <span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNjYwNjk=">#02166069<i class="fa fa-external-link-alt"></i></span>  - <em>closed</em></p>
+<p>Related bug:  <em>BUG-000116191</em> </p>
+<p>Workaround:  Store the rasters in the root of the bucket, and add them from that location.</p>
+</li>
+</ul>
+ <br></li>
+</ul>
+<h2 id="ALiBaBa-Cloud"><a href="#ALiBaBa-Cloud" class="headerlink" title="ALiBaBa Cloud"></a>ALiBaBa Cloud</h2><p>   In China, we also call it ALiYun.</p>
+<h3 id="ArcMap-1"><a href="#ArcMap-1" class="headerlink" title="ArcMap"></a>ArcMap</h3><ul>
+<li><p><strong>Steps</strong></p>
+<ol>
+<li><p>Create ALiBaBa Cloud connection file   (×)</p>
+<p>The connection file was created,  but there was a warning:  <em>WARNING 002574: Could not connect to cloud storage</em>  in the log </p>
+</li>
+<li><p>Create a mosaic dataset in a local file geodatabase   (√)</p>
+</li>
+<li><p>Add raster to mosaic dataset   (×) </p>
+<p>An error occurred:  <em>Error: 8004205f: No new mosaic dataset item was added.</em>  </p>
+<p>This error may due to the warning before, I think.</p>
+</li>
+</ol>
+</li>
+<li><p><strong>Conclusion</strong></p>
+<ul>
+<li><p>It may be a bug related to creating connection file to ALiBaBa Cloud Storage.  ArcPy (python 27) for ArcMap didn’t work, either.</p>
+</li>
+<li><p>Extra diagnose</p>
+<ul>
+<li><p>Using Fiddler to capture the HTTP(S) requests…</p>
+<p>I have used Fiddler Software to catch the HTTP(S) requests made by ArcMap, but nothing was found. I had enable the https capture before testing. At the same time , I checked the Windows Task Manager and Resource Monitor that there was a lot of network activities.</p>
+</li>
+<li><p>Using Wireshark to  capture the network transaction …</p>
+<p>Bad TCP records were found.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ArcGIS-Pro-1"><a href="#ArcGIS-Pro-1" class="headerlink" title="ArcGIS Pro"></a>ArcGIS Pro</h3><ul>
+<li><p><strong>Steps</strong></p>
+<ol>
+<li>Create ALiBaBa Cloud connection file                              (×)</li>
+<li>Create a mosaic dataset in a local file geodatabase      (√)</li>
+<li>Add raster to mosaic dataset                                             (×)</li>
+</ol>
+</li>
+<li><p><strong>Conclusion</strong></p>
+<ul>
+<li>Same issue with using HUAWEI cloud source data, and the issue points to the tool not to the cloud itself.</li>
+<li>ArcPy (python 36) for ArcGIS Pro didn’t work, either.</li>
+</ul>
+</li>
+</ul>
+<p>Internal case submitted  <span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNTc3NjI=">#02157762<i class="fa fa-external-link-alt"></i></span></p>
+<p>Related bug:  <em>BUG-000116297</em></p>
+<p>Workaround:  Internal Version 9226</p>
+<br>
+
+
+
+<h2 id="Custom-Cloud"><a href="#Custom-Cloud" class="headerlink" title="Custom Cloud"></a>Custom Cloud</h2><p>using s3 compatible cloud, for example,  Tencent Cloud.</p>
+<ul>
+<li><p><strong>Steps</strong></p>
+<ol>
+<li>Create Tencent Cloud connection file using ArcPy (python 27) for ArcMap </li>
+<li>Capture network interaction information using WireShark<ul>
+<li>As Amazon Provider selected, the region and endpoint will request Amazon CNAME address. In this condition, I don’t think the custom cloud works for now.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Internal case submitted</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNTc3NzI=">#02157772 Can Service End Point parameter be customized by users when connecting to the cloud storage ?<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+<br>
+
+
+
+<h2 id="Other-Issue"><a href="#Other-Issue" class="headerlink" title="Other Issue"></a>Other Issue</h2><p>failure with file Geodatabase transfer</p>
+<ul>
+<li><p><strong>Details</strong></p>
+<p>When the file geodatabase was copied to a new location ,which was some scheme of path as before, on the other new machine . The mosaic dataset didn’t show up the source raster data at all. </p>
+</li>
+<li><p>Internal case submitted</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNjUyODc=">#02165287 how to transfer mosaic dataset referencing raster dataset in cloud storage<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+<br>
+
+<br>
+
+<p>The information above is valid as the day it published, I will try my best to have it up to date.</p>
+<p>Thank you for reviewing.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/08/13/vectorTileBundle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/13/vectorTileBundle/" class="post-title-link" itemprop="url">探索矢量切片的Bundle</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-13 10:13:29" itemprop="dateCreated datePublished" datetime="2018-08-13T10:13:29+08:00">2018-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>631</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>为什么会有这个需求和想法呢？还是源自于 <a href="http://kikitamap.com/2018/07/20/lovelyGit/"><strong>局部更新矢量切片</strong></a> 的想法，当我们遭遇一个海量矢量数据的矢量切片<strong>创建</strong>和<strong>更新</strong>任务时，希望尽可能少且尽可能准确地更新受影响的bundle，而不是全局，那么了解bundle的范围是十分必要的。在写上一篇<a href="http://kikitamap.com/2018/07/23/CompactCache/"><strong>《紧凑型缓存技术小结》</strong></a>的时候，目的在于在其基础之上探索矢量切片的bundle。</p>
+<p>为了确保单个bundle文件的矢量切片数据的完整性，每级每次至少需要更新一个bundle文件。当矢量切片的数据量不显著的时候，可能每级本身也就一个或几个bundle，那局部更新体现不出它的优势； 当某些等级（例如LOD比较大的级别）矢量切片bundle非常多的时候，如果更新的范围只影响了其中一个，或者几个文件时，局部更新是有必要的。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参照栅格切片的 <span class="exturl" data-url="aHR0cDovL2VudGVycHJpc2UuYXJjZ2lzLmNvbS9lbi9zZXJ2ZXIvbGF0ZXN0L3B1Ymxpc2gtc2VydmljZXMvd2luZG93cy9pbnNpZGUtdGhlLWNvbXBhY3QtY2FjaGUtc3RvcmFnZS1mb3JtYXQuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span> 中明确说明的，  “A bundle contains up to 16,384 tiles. ”   那就是 128 × 128 的关系，照搬到矢量切片是否适用呢？ 通过验证，确实如此。</p>
+<p>先上结论，第N级的矢量切片的bundle范围刚好是第N-7级的切片范围，如下图，红线是 level 6 的切片索引，刚好可以作为level 13 的bundle范围：</p>
+<p><img src="http://kikitamap.com/images/blogImg/vectorTileBundle_bundlelevel.png"></p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>为了做验证和测试，我用了美国大选的区块数据做实验，这个面数据包含182895条记录，节点较多，很适合做矢量切片。假设，需要更新的切片范围仅仅是密歇根湖的一角：</p>
+<p><img src="http://kikitamap.com/images/blogImg/vectorTileBundle_UpdateDetails.png"></p>
+<blockquote>
+<p>PS：上图是完全由 ArcGIS Pro 制作导出的，使用到了 Layout , Extent Indicator; 从制图角度来说，ArcGIS Pro 是个非常好的桌面端应用，可以继承和超越ArcMap。 </p>
+</blockquote>
+<p>以13级为例，更新的这一角仅需替换一个bundle：</p>
+<p><img src="http://kikitamap.com/images/blogImg/vectorTileBundle_BundleReplace.png"></p>
+<p>那么自定义工具 Create Part Vector Tile Package 所要做的工作，逻辑就变得非常清晰，也就是通过用户提供的待更新区域（AOI）来计算每级被影响到的bundle文件的地理范围，从而进行bundle的替换工作；包含了为其服务的，解包、打包、解析类的工作。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>Latest Version：</strong>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMi4xLjE=">Partially Upate ArcGIS Vector Tiles Toolbox 2.1.1<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>待解决的问题</strong>：</p>
+<ul>
+<li>投影坐标系和自定义坐标系支持</li>
+<li>tile scheme 原生获取</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/23/CompactCache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/23/CompactCache/" class="post-title-link" itemprop="url">紧凑型缓存技术小结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-07-23 12:49:48" itemprop="dateCreated datePublished" datetime="2018-07-23T12:49:48+08:00">2018-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Tiling-Scheme"><a href="#Tiling-Scheme" class="headerlink" title="Tiling Scheme"></a>Tiling Scheme</h2><p>每个缓存服务的切片目录中都会包含一个 <strong>Conf.xml</strong>，也是就是tile scheme 文件了。</p>
+<p>这个文件包含了很多有关切片设置的信息：</p>
+<ul>
+<li>Spatial reference information</li>
+<li>Tile origin</li>
+<li>Tile width&#x2F;height</li>
+<li>DPI</li>
+<li>LODs (Levels of detail - scales)</li>
+<li>Tile Image format</li>
+<li>Compression quality</li>
+<li>Antialiasing settings</li>
+<li>Storage method</li>
+</ul>
+<h2 id="Version-Issue"><a href="#Version-Issue" class="headerlink" title="Version Issue"></a>Version Issue</h2><p>紧凑型缓存的存储格式为**.bundle** 。但有时我们会看到缓存目录中包含**.bundlx** 这样的文件，这说明这些缓存是ArcGIS 10.2.2 或以下版本创建的。从 ArcGIS 10.3 开始，紧凑型缓存做了些改进， .bundlx（tile index information） 文件被包含到了 .bundle 文件中 ，从而进一步降低了文件的数量。</p>
+<p>你可以在缓存服务的tiling scheme “<strong>Conf.xml</strong>“ 中查看确认：</p>
+<p><em>10.3 or later (Compact cache V1)</em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">CacheStorageInfo</span> <span class="attr">xsi:type</span>=<span class="string">&#x27;typens:CacheStorageInfo&#x27;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">StorageFormat</span>&gt;</span>esriMapCacheStorageModeCompact<span class="tag">&lt;/<span class="name">StorageFormat</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">PacketSize</span>&gt;</span>128<span class="tag">&lt;/<span class="name">PacketSize</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">CacheStorageInfo</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>10.2.2 or former (Compact cache V2)</em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">CacheStorageInfo</span> <span class="attr">xsi:type</span>=<span class="string">&#x27;typens:CacheStorageInfo&#x27;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">StorageFormat</span>&gt;</span>esriMapCacheStorageModeCompactV2<span class="tag">&lt;/<span class="name">StorageFormat</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">PacketSize</span>&gt;</span>128<span class="tag">&lt;/<span class="name">PacketSize</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">CacheStorageInfo</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>10.3 及之后版本的 ArcGIS Server 仍然可以使用低版本的生产的切片来运行现有服务。如果我们需要将低版本的缓存拷贝过来给高版本的服务用，要注意这个<code>&lt;StorageFormat&gt;</code>参数的一致性。</li>
+<li>ArcToolbox工具 <strong>Upgrade Map Server Cache Storage Format</strong>  来升级缓存。升级的过程中不会重新创建切片，而是重组原有的切片。这个工具在ArcGIS Pro 中没有提供。目前，我们还只能使用ArcMap或者使用ArcGIS Server 带有的arcpy包，通过Python来调用。</li>
+<li>不支持将高版本的切片供低版本软件使用。如果希望降级，可以使用 <strong>Export Map Server Cache</strong> 工具导出紧凑型切片。</li>
+</ul>
+<h2 id="Tile-Format"><a href="#Tile-Format" class="headerlink" title="Tile Format"></a>Tile Format</h2><p>Tile Format 是指存储切片使用了何种栅格格式，而不是切片文件的本身存储格式 &#x2F; Storage Format ( Exploded &#x2F; Compact )。</p>
+<ul>
+<li><p><strong>PNG</strong>   </p>
+<p>ArcGIS 10.1开始引入的类型。选择这种类型，Server会自行确认每张切片的PNG位深，从而达到缩减磁盘占用的目的。在我们不确定使用何种PNG格式时，保持这个默认设置就不错。</p>
+<p>如果磁盘空间不在考虑范围下，而希望优先考虑切片速度，那最好选择MIXED格式了。</p>
+</li>
+<li><p><strong>PNG8</strong></p>
+<p>位深为8位的PNG图片格式；可以最多存储256色，支持布尔透明，磁盘空间占用小，并且无损。适合于颜色相对简单，并且需要透明背景的地图，例如公路数据切图。</p>
+</li>
+<li><p><strong>PNG24</strong></p>
+<p>位深为24的PNG图片格式；可以最多支持约1600万色。当地图的色彩复杂程度超过256时，你就该考虑使用这个格式。但是，PNG24不支持透明，另外不建议在IE6及以前版本浏览器中使用。</p>
+</li>
+<li><p><strong>PNG32</strong></p>
+<p>在PNG24的基础上增加了Alpha通道，因而增加了各种程度半透明的支持。当地图色彩复杂，并开启了抗锯齿功能，PNG32就是最佳选择了，并且PNG32在各个版本的浏览器中支持良好。</p>
+</li>
+<li><p><strong>JPEG</strong></p>
+<p>当切片中不需要透明背景时，JPEG是最常用的切片格式，并且JPEG可以hold住大量的复杂色彩。例如，包含影像、符号化精细程度高的矢量地图都可以使用这个格式。</p>
+<p>JPEG是种有损压缩格式，可以在1%-100%间设置压缩比率，默认值75%一般是显示质量和磁盘空间的最佳平衡。如果觉得噪点过多质量不够，可以调高这个百分比，但你需要在响应性能和图片质量之间做好博弈。</p>
+</li>
+<li><p><strong>MIXED</strong></p>
+<p>顾名思义，混合格式，在切片不透明区域使用JPEG，在透明区域使用PNG32。这是种非常智能的搭配方案，降低硬盘占用的同时，很好的解决了例如在切片边缘需要的透明需求。</p>
+</li>
+<li><p><strong>LERC</strong></p>
+<p>LERC是Esri自主研发的开源的有损压缩格式，点<span class="exturl" data-url="aHR0cDovL2VzcmkuZ2l0aHViLmlvL2xlcmMv">这里<i class="fa fa-external-link-alt"></i></span>有更多信息。推荐用于位深较大的单波段影像或高程数据服务中，如浮点型，32-bit、16-bit、12-bit的数据。 官方声称，LERC压缩方法在压缩速度和压缩质量方面分别是LZ77的5-10倍。当LERC用于整型栅格数据时，损失率在0.99或更低，几乎可以视为无损压缩。</p>
+<p>LERC压缩方式目前只支持Image Service ，而不支持 Map Service。</p>
+</li>
+</ul>
+<h2 id="Performance-Suggestion"><a href="#Performance-Suggestion" class="headerlink" title="Performance Suggestion"></a>Performance Suggestion</h2><p>紧凑型切片比松散型切片有诸多有点，详见文末的官方文档。但不是说选了紧凑型切片性能就没有继续改善的余地了，下面的这些点也是提升切片性能的一些有效建议：</p>
+<ul>
+<li>地图数据尽可能使用本地数据，共享目录的数据切片时间可能会更长些；</li>
+<li>尽可能的避免使用动态投影；</li>
+<li>设置图层的可见比例尺；</li>
+<li>谨慎设置反锯齿的级别，标注的反锯齿对切片性能影响甚微，但要素符号的反锯齿会显著增长切片的时长；</li>
+<li>建议切片期间关闭防病毒等安全软件；</li>
+<li>尽可能地使用MIXED格式</li>
+<li>在切片之前为所有数据创建空间索引</li>
+<li>CachingTools服务的最大实例数 &#x3D; 核数 + 1，这是官方给出的最佳实践建议</li>
+<li>降低日志的级别，如果在大量切图任务中把Server日志开到Debug或Verbose级别，会产生极大的资源浪费。</li>
+</ul>
+<h2 id="Tile-SuperTile-Bundle"><a href="#Tile-SuperTile-Bundle" class="headerlink" title="Tile|SuperTile|Bundle"></a>Tile|SuperTile|Bundle</h2><p>这三者的关系早在多年前就有大牛们探索发现过，见本文末的相关文章，文中有逻辑缜密且经得起时间检验的详细演绎过程……</p>
+<p>简言之，他们的关系是个简单的数学关系，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">如果：</span><br><span class="line">    Tile = <span class="number">256</span> × <span class="number">256</span> pixel             <span class="comment"># 256×256 是ArcGIS Server默认的切片大小</span></span><br><span class="line">    Supertile = <span class="number">4096</span> × <span class="number">4096</span> pixel      <span class="comment"># 未开抗锯齿情况下是 4096×4096</span></span><br><span class="line">那么：</span><br><span class="line">	Supertile = <span class="number">16</span> × <span class="number">16</span> Tile           </span><br><span class="line">已知：</span><br><span class="line">	Bundle = <span class="number">128</span> × <span class="number">128</span> Tile            </span><br><span class="line">因此：</span><br><span class="line">	Bundle 范围是 N-<span class="number">3</span> 级的 Supertile 的范围</span><br></pre></td></tr></table></figure>
+
+
+
+<p>看图说话：</p>
+<p><img src="http://kikitamap.com/images/blogImg/CompactCache_SupertileBundle.png"></p>
+<blockquote>
+<p><em>官方文档：</em></p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovL2VudGVycHJpc2UuYXJjZ2lzLmNvbS96aC1jbi9zZXJ2ZXIvbGF0ZXN0L3B1Ymxpc2gtc2VydmljZXMvd2luZG93cy9pbnNpZGUtdGhlLWNvbXBhY3QtY2FjaGUtc3RvcmFnZS1mb3JtYXQuaHRt">了解紧凑型缓存存储格式<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<p><em>相关文章：</em></p>
+<ul>
+<li><span class="exturl" data-url="aHR0cDovL2Jsb2cubmV3bmF3LmNvbS8/cD03ODk=">菩提老王的葡萄架子：ArcGIS Server 10中的切图&#x2F;缓存机制深入<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dhcnJlbnd5Zi9hcnRpY2xlL2RldGFpbHMvNjA2OTcxMQ==">牛魔王的作坊：ArcGIS 切片缓存紧凑文件格式分析与使用<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FyY2dpc19hbGwvYXJ0aWNsZS9kZXRhaWxzLzUwNTM2NTY5">ArcGIS产品与技术专栏：Esri中国ArcGIS for Server 10.3.X 新型紧凑型缓存的解读和应用<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

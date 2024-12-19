@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="今天整理下 HERE SDK的入门攻略~ HERE mobile SDK 是HERE location Servie（HLS）产品家族中重要的一部分，支持 Android 和 iOS 两大主流系统；从功能上分为 Lite（旧版本称 Starter）和 Premium 两个license level，顾名思义，前者支持较轻量级的功能，后者具有更专业更高级的功能。具体的功能清单和版本对比，可以在点击">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quick Start of HERE SDK for Android">
+<meta property="og:url" content="https://kikitamap.com/2020/03/09/HmSDK_QuickStart/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="今天整理下 HERE SDK的入门攻略~ HERE mobile SDK 是HERE location Servie（HLS）产品家族中重要的一部分，支持 Android 和 iOS 两大主流系统；从功能上分为 Lite（旧版本称 Starter）和 Premium 两个license level，顾名思义，前者支持较轻量级的功能，后者具有更专业更高级的功能。具体的功能清单和版本对比，可以在点击">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_keys.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_PackageName.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_Run.jpg">
+<meta property="article:published_time" content="2020-03-09T13:18:07.000Z">
+<meta property="article:modified_time" content="2020-03-09T13:56:06.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="HERE Map">
+<meta property="article:tag" content="HLS">
+<meta property="article:tag" content="Mobile SDK">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_keys.jpg">
+
+
+<link rel="canonical" href="https://kikitamap.com/2020/03/09/HmSDK_QuickStart/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2020/03/09/HmSDK_QuickStart/","path":"2020/03/09/HmSDK_QuickStart/","title":"Quick Start of HERE SDK for Android"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Quick Start of HERE SDK for Android | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Steps"><span class="nav-text">Steps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96Credentials%E5%8F%8ASDK%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-text">获取Credentials及SDK安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5-System-Requirments"><span class="nav-text">检查 System Requirments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E8%BF%90%E8%A1%8C-Tutorial-Example"><span class="nav-text">快速运行 Tutorial Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshooting"><span class="nav-text">Troubleshooting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="nav-text">效果图</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/03/09/HmSDK_QuickStart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Quick Start of HERE SDK for Android | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Quick Start of HERE SDK for Android
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-03-09 21:18:07" itemprop="dateCreated datePublished" datetime="2020-03-09T21:18:07+08:00">2020-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>816</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>今天整理下 HERE SDK的入门攻略~</p>
+<p>HERE mobile SDK 是HERE location Servie（HLS）产品家族中重要的一部分，支持 Android 和 iOS 两大主流系统；从功能上分为 Lite（旧版本称 Starter）和 Premium 两个license level，顾名思义，前者支持较轻量级的功能，后者具有更专业更高级的功能。具体的功能清单和版本对比，可以在点击 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJvZHVjdHMvaGVyZS1zZGs=">官网链接<i class="fa fa-external-link-alt"></i></span> 查到。</p>
+<p>HERE Developer 网站提供免费测试账号，建议大家注册一个玩一玩。每个 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJpY2luZw==">Freemium Plan<i class="fa fa-external-link-alt"></i></span> 账号下的 Project 可以拥有 Rest API、JS API、mSDK、studio 等很多产品的测试权限。对于个人 developer 来说，我认为足矣。</p>
+<blockquote>
+<p><strong>Freemium Plan 福利内容</strong></p>
+<p>Location Services</p>
+<ul>
+<li>250K Transactions per month</li>
+<li>5K SDK Monthly Active Users</li>
+<li>250 Assets per month</li>
+<li>Pay per additional Transactions</li>
+</ul>
+<p>Studio</p>
+<ul>
+<li>2.5GB Data transfer per month</li>
+<li>5GB Database storage per month</li>
+<li>Pay per additional Data transfer or Database storage</li>
+</ul>
+</blockquote>
+<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="获取Credentials及SDK安装包"><a href="#获取Credentials及SDK安装包" class="headerlink" title="获取Credentials及SDK安装包"></a>获取Credentials及SDK安装包</h2><p>登录 HERE Developer 账户之后，即可在自己创建的Project中生成每个产品对应的密钥&#x2F;credentials。</p>
+<p>在 SDK 密钥下方就有 SDK安装包可供下载。如下图即为 HERE mSDK （premium edition） 的示例：</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_keys.jpg"></p>
+<h2 id="检查-System-Requirments"><a href="#检查-System-Requirments" class="headerlink" title="检查 System Requirments"></a>检查 System Requirments</h2><p>这是安装一切软件产品之前，仔细阅读<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vZGV2X2d1aWRlL3RvcGljcy9zeXN0ZW0tcmVxdWlyZW1lbnRzLmh0bWw=">官方系统要求<i class="fa fa-external-link-alt"></i></span>，永远是不错的选择。</p>
+<h2 id="快速运行-Tutorial-Example"><a href="#快速运行-Tutorial-Example" class="headerlink" title="快速运行 Tutorial Example"></a>快速运行 Tutorial Example</h2><p>下载后的SDK 安装包中包含了 user guild，release notes，SDK libraries， tutorial example 这几大件。 如果要快速入门，tutorial example 运行起来是必须的啦。</p>
+<p>这里假设大家使用的开发环境都是 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5nb29nbGUuY24vc3R1ZGlv">Android Studio<i class="fa fa-external-link-alt"></i></span>， 解压缩 SDK 安装包后，开始吧！</p>
+<ol>
+<li><p>启动 Android Studio，选择 open an existing Android Studio project， 浏览至 tutorial example 所在目录， <code>.../HERE-sdk/tutorial/BasicMapSolution</code> 。 </p>
+</li>
+<li><p>接着会发现一条报错 <code>Error: Failed to resolve: :HERE-sdk:</code>， 这个不用担心，是因为 HERE SDK 的 libraries 默认没有包含在这个工程中。</p>
+</li>
+<li><p>在 <code>BasicMapSolution</code> 中的 <code>app</code> 文件夹下创建一个名为 <code>libs</code> 的文件夹，并将安装包中的 <code>HERE-sdk/libs</code> 下的 <code>HERE-sdk.aar</code> 复制到这里。上步遇到的问题就解决料。</p>
+</li>
+<li><p>检查 <code>app/build.gradle </code> 文件，确保如下内容已经包含：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">  flatDir &#123;</span><br><span class="line">    dirs <span class="string">&#x27;libs&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  implementation(name:<span class="string">&#x27;HERE-sdk&#x27;</span>, ext:<span class="string">&#x27;aar&#x27;</span>)</span><br><span class="line">  <span class="comment">// Depending on your specific project configuration you may have other entries here.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>准备许可。每个 application 都需要一套单独的credentials。需要注意：为app申请credentials时，填写的 package name 需要和注册的bundle identifier 完全一致。就这个 sample来说， 应该使用 package name：<code> com.here.android.tutorial</code> 。如果在文章的开始，你已经注册了credential，那也没有关系，在 developer 网站的 project 页面中，你还可以修改哦，同时密钥会重新刷一遍，请使用最新的。<br><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_PackageName.jpg"> </p>
+</li>
+<li><p>写入许可。 打开目录 <code>BasicMapSolution/app/src/main/</code> 下的<code>AndroidManifest.xml</code>文件。找到三行 <code>&lt;meta-data&gt;</code>开头的语句，填写 credentials 即可。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.appid&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_ID&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.apptoken&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_CODE&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.license.key&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_LICENSE_KEY&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连接设备，运行程序，Bingo ！</p>
+</li>
+</ol>
+<h2 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><p>测试过程中，不确定大家有没有遇到我曾遇到的问题？</p>
+<p><code>This project uses AndroidX dependencies, but the &#39;android.useAndroidX&#39; property is not enabled. Set this property to true in the gradle.properties file and retry.</code></p>
+<p>解决方法：</p>
+<p>在sample project 中的 <code>gradle.properties</code>文件中，增加一句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.useAndroidX=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>最后上图，我手头没有 Android 设备，用了 Nexus 10 模拟器：</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_Run.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/HERE-Map/" rel="tag"><i class="fa fa-tag"></i> HERE Map</a>
+              <a href="/tags/HLS/" rel="tag"><i class="fa fa-tag"></i> HLS</a>
+              <a href="/tags/Mobile-SDK/" rel="tag"><i class="fa fa-tag"></i> Mobile SDK</a>
+              <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/05/theShade/" rel="prev" title="the Shade">
+                  <i class="fa fa-angle-left"></i> the Shade
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/03/11/HmSDK_MapRendering/" rel="next" title="HERE mSDK - Map Rendering">
+                  HERE mSDK - Map Rendering <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

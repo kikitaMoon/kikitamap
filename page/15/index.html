@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/15/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/15/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/15/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/12/06/IterationinArcGISforDesktop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/12/06/IterationinArcGISforDesktop/" class="post-title-link" itemprop="url">如何在ArcGIS for Desktop中实现批量任务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-12-06 13:00:00" itemprop="dateCreated datePublished" datetime="2015-12-06T13:00:00+08:00">2015-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>ModelBuilder</strong> 是 ArcGIS for Desktop 产品中最可爱的功能之一，它可以尽可能免代码地将我们从重复劳动中解放出来。使用 ModelBuilder 的过程常常被比喻为“搭积木”，我们只需要拿着 ArcGIS for Desktop 中为我们提供的“积木”去搭建满足于自己的特定工作流模型。</p>
+<p>再打个比方，我们要实现的某个功能比作是自己做面包。首先要准备食材，例如面粉、牛奶、鸡蛋、黄油、糖、盐、酵母，类比为 <strong>地理数据</strong>； 食材齐备了，就可以顺序开始和面、发酵、烘焙，这些工作由特定的器具承担，例如各种烘焙工具、烤箱，就好比ArcGIS提供的 <strong>工具</strong>，例如 ArcToolbox中的工具们； 面包制作过程中可以根据自己口味，规定发酵时间、控制糖和盐的多少等，这就类比为工具的自定义 <strong>参数</strong> 。</p>
+<p>如果自己享受整个烘焙的过程，不厌其烦地面面俱到，那大可维持现状；可是如果你觉得做面包是个体力活，你只是想吃到自家面包，而希望把做面包的过程“外包”出去，那么面包机的市场就来了。这篇blog就和大家说说如何制作“面包机”。</p>
+<br>
+
+<h2 id="1-明确需求"><a href="#1-明确需求" class="headerlink" title="1 明确需求"></a>1 明确需求</h2><p>我们从一个简单常见的实例开始……</p>
+<p><strong>需求</strong>：现有一些表示各种研究对象的地理数据，小明希望把所有研究数据变换到需要的坐标系统，并且全部裁剪至研究范围。</p>
+<p>如果只有一份数据，小明会不假思索的找到 ArcToolbox中的 Project和Clip工具，顺序执行即可解决问题；如果是3+份数据，小明可能会想，该做个工具了。</p>
+<br>
+
+<h2 id="2-构建工作流"><a href="#2-构建工作流" class="headerlink" title="2 构建工作流"></a>2 构建工作流</h2><p>从【地理处理】菜单，打开  ModelBuilder 窗口，依次拖拽和连接 Project 和 Clip 两个工具。Project 工具的输出作为 Clip 工具的输入。</p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Grey.png"></p>
+<p>双击工具可以打开工具继续填补工具需要的参数，直至Model因参数完全而变成彩色。</p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Color.png"></p>
+<br>
+
+<h2 id="3-使用迭代器"><a href="#3-使用迭代器" class="headerlink" title="3 使用迭代器"></a>3 使用迭代器</h2><p>前一步的工具已经满足一次任务的需要了，接着就是解决批量处理的问题。ModelBuilder提供了一些额外的自带工具来满足我们的一些高级需求，其中一类就是 <strong>迭代器</strong>，它用来实现循环。</p>
+<p>在这个例子中，需要遍历的对象是表示各种研究对象的要素类，因此选择 迭代要素类 &#x2F; Iterate Feature Classes。当然也可以根据自己的实际需求选择其他迭代器。</p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Iterator.png"></p>
+<p>接下来就是把迭代器与工具串联起来。首先，双击迭代器的六边形为迭代器设置工作空间，即地理数据库&#x2F;GDB，或者文件夹目录（例如shapefile所在的目录）。这样，迭代器会在指定的工作空间遍历要素类。删除现有Project工具的输入数据，将迭代器的输出数据连接到Project工具。</p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Iterator2.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_inlineVar.png"></p>
+<p>工具基本准备完毕，但是还差了重要的一步。目前，最后的输出数据是常量，也就是说，即使前面的工具执行了N次，那结果都将被同名覆盖。那么，<strong>行内变量</strong> 就显出用武之地了。</p>
+<p>迭代器每次遍历到一个要素类，会返回一个 Name，内容是当前要素类的名称，这个Name就是行内变量。引用的方法就是使用百分号括起来，即 <strong><code>%Name%</code></strong> 。</p>
+<p>输出数据设置示例：</p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_inlineVar2.png"></p>
+<p>至此我们就完成了一次批量任务。</p>
+<br>
+
+<h2 id="4-复用工具"><a href="#4-复用工具" class="headerlink" title="4 复用工具"></a>4 复用工具</h2><p>如果我们以后想按照这个相同的需求处理数据，完全可以将其做成模型工具。将输入数据和输出数据设置为模型变量，我们就可以在“运行”状态下使用。</p>
+<p>设置方法，在需要作为参数方便后续修改的项目上右键，勾选 “模型参数”即可，然后项目的头上顶了个“<strong>P</strong>”，(￣▽￣)”。</p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Para.png"></p>
+<p>将模型保存至工具箱后，双击运行工具。现在就可以把它当成“面包机”，放入食材，等面包即可。</p>
+<p><img src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_FinalTool.png"></p>
+<br>
+
+<h2 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5  注意事项"></a>5  注意事项</h2><p>下面是些有用的提示，FYI：</p>
+<ul>
+<li><p>每个模型仅可使用<strong>唯一</strong>一个迭代器。如果模型中已经存在一个迭代器，那么用于添加迭代器的菜单就不可用了。这是限制之一。</p>
+</li>
+<li><p>如果将含有迭代器的模型<strong>导出为 Python 脚本</strong>，则导出的脚本中将不会包括迭代逻辑。这是限制之二。Python中有list函数，也可以实现类似的需求，但是需要重写。</p>
+</li>
+<li><p>尽管Model可以嵌套调用，但是迭代器的<strong>嵌套循环</strong>逻辑不佳，不建议使用。如果需要实现嵌套循环，强烈建议使用python脚本。例如，实现遍历工作空间内每个要素类中的每个要素（记录）这样的需求，可以使用 ArcPy中的函数 <strong><code>ListFeatureClasses</code></strong> 和 **<code>SearchCursor</code>**来实现。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/11/27/CanNotConnectAGSLM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/11/27/CanNotConnectAGSLM/" class="post-title-link" itemprop="url">“连不上ArcGIS License Manager” 的一点常用诊断方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-11-27 12:00:00" itemprop="dateCreated datePublished" datetime="2015-11-27T12:00:00+08:00">2015-11-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 ArcGIS Desktop 的问题库中，有一类不算做核心技术问题，但却可能会位列“最常见的问题”之一。简言之一句话，”<strong>许可服务器连不上怎么办？！</strong>“ 下面就来演绎下问题的诊断过程。</p>
+<blockquote>
+<p>本文仅适用于客户端 ArcGIS Administrator 访问 ArcGIS License Manager <strong>正式版</strong>许可的问题的诊断，目前适用于 ArcGIS for Desktop 10.x、ArcGIS Engine 10.x、CityEngine 201x 版本的浮动许可诊断问题。博主说，你可能很难找到第二篇与ArcGIS Desktop 正版授权有关的博客了…… <strong>单机版和破解版请绕行。</strong>  </p>
+</blockquote>
+<br>
+
+<h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ArcGIS License Manager <strong>已经授权完毕且成功</strong>，可用性（Availability）栏目中总计（Total）和可用（Available）的数目正常，服务器状态也运行正常。</p>
+<p><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
+<blockquote>
+<p>图中的过期栏目中的日期可忽略，内部工作使用的正式许可是限定有效日期的。如果你使用的是购买得到的正式版许可，这里会显示 永久（Permanent），也就是许可是永久有效的。</p>
+</blockquote>
+<br>
+
+<p>然而，在通过局域网访问许可服务器的其它机器上的 ArcGIS Administrator 中，连接许可服务器失败。</p>
+<p>常见错误提示： <strong>“机器名或者IP”does not have a valid Licesne Manager. Please enter a valid License Manager Server.</strong></p>
+<br>
+
+<h2 id="诊断思路"><a href="#诊断思路" class="headerlink" title="诊断思路"></a>诊断思路</h2><p>我们可以结合一些初级的网络知识，按照如下思路测试，大多数情况下，你不需要依次全做完，就发现问题已经解决或至少找到了问题的原因。</p>
+<br>
+
+<p><strong>1. 从许可服务器本机入手</strong></p>
+<p>如果情况允许，最好在许可服务器本机也安装 ArcGIS Desktop 程序，然后使用 ArcGIS Administrator 连接本机许可服务器，各次分别填写 localhost，本机IP，本机机器名，检查是否有问题。一般如果本机连接不上，就不要期待其它机器可以正常连接了。</p>
+<p>**常见处理方法： **<br>在ArcGIS License manger 中执行：重读许可服务 –&gt; 停止许可服务 –&gt; 启动许可服务<br>确保 ArcGIS Administrator 中许可类型选择正确，如 Advanced ，Standard ，Basic。</p>
+<br>
+
+
+<p><strong>2. 确保网络连通</strong></p>
+<p>可以使用<strong>ipconfig &#x2F;all</strong>观察本地网络设置是否正确。</p>
+<p>可以使用 <strong>ping</strong> 命令测试下网络情况</p>
+<ul>
+<li><p><strong>ping 127.0.0.1</strong> 如果本地址无法Ping通，则表明本地机TCP&#x2F;IP协议不能正常工作。ArcGIS的许可走的是TCP&#x2F;IP 协议</p>
+</li>
+<li><p><strong>ping本机IP地址</strong> 这样是为了检查本机的IP地址是否设置有误</p>
+</li>
+<li><p><strong>ping本网网关或本网IP地址</strong> 这样的是为了检查硬件设备是否有问题，也可以检查本机与本地网络连接是否正常</p>
+</li>
+</ul>
+<p>如果这时遇到错误提示，就该向自己单位的 IT 寻求帮助了。有了通畅的网络环境，ArcGIS许可才能有效通讯。</p>
+<br>
+
+<p><strong>3. 确认端口可用</strong></p>
+<p>如果网络通畅，然而还是无法连接许可服务器，肿么办？！那就再稍微往下深一步，博主的知识量有限，但是好奇心和倔强还是迫使她尽可能地再努力多做一点。</p>
+<p>在”<a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/get-started/license-manager-guide/configure-the-arcgis-license-manager-to-work-through-a-firewall.htm"><strong>许可服务管理器指南</strong></a>“中提到，”<strong>默认情况下，将 lmgrd 后台程序设为端口 27000</strong>“。那么，连不上许可服务器是因为端口被锁定了吗？ 有可能，动手查查才放心。</p>
+<p>听说，netstat是控制台命令,是一个监控TCP&#x2F;IP网络的非常有用的工具。那么动手吧。</p>
+<p>以管理员的身份运行命令窗口，并输入命令：**<code>netstat -abn</code>** </p>
+<p><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_cmd.png"></p>
+<p>如果找到 27000 和 lmgrd.exe 这个进程 ，并且状态 Established，可以认为端口正常。</p>
+<p><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_lmgrd.png"></p>
+<br>
+
+<p>27000-27009是ArcGIS License Manger 的默认端口段，是相对不拥挤的段。但是，如果发现这个端口被其他程序占用了，那么就要修改ArcGIS许可服务器或者其它程序的端口了。在这里我就只能说说 ArcGIS 许可服务器的端口的修改方法了。</p>
+<blockquote>
+<p><strong>如何修改 ArcGIS 许可服务的端口？</strong><br>在 ArcGIS license manager 的安装目录下，bin目录下，找到 service.txt，打开如下样子：<br><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_service.png"></p>
+<p>修改这个配置文件，例如：在 SERVER 行的结尾处，您可选择直接在 ANY 后面指定端口号。在 VENDOR 行上，添加 PORT&#x3D;####，其中 #### 是指定的特定端口号，用来将供应商后台程序锁定到特定端口，例如 1234。<br><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_newPort.png"></p>
+<p>这样我们可以在客户端使用例如 <strong>27004@许可服务器IP或机器名</strong> 的方式访问许可。</p>
+</blockquote>
+<br>
+
+<p>再看客户端机器，如果机器上有 telnet 客户端，那么还可以试试 telnet 命令测试远程主机的端口是否可用。</p>
+<p>例如：**<code>telnet 192.168.100.115 27000</code>**，其中假设许可服务器IP为 192.168.100.115。</p>
+<p>如果返回黑屏，仅左上角光标闪烁，那么可以认为可用。</p>
+<p>如果不幸提示，”Connecting to 192.168.100.115……Could not open connection<br> to the host on port 27000. Connect Failed. ”</p>
+<p>关掉许可服务器和客户端机器的防火墙试试，确认是否可以正常访问。如果真的是防火墙作祟，我们可以在防火墙上创建个例外规则，确保27000端口可以穿过防火墙。windows 防火墙的例外规则创建看看 windows 的帮助吧，点 <a target="_blank" rel="noopener" href="http://windows.microsoft.com/zh-cn/windows/open-port-windows-firewall#1TC=windows-7"><strong>这里</strong></a>，我不叨叨了。如果单位里有更高级的防火墙或安全系统，需要配置例外规则，那么还是联系 IT 吧。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/30/TriptoGreece/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/09/30/TriptoGreece/" class="post-title-link" itemprop="url">给自己做个地图故事——Trip to Greece</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-09-30 18:23:16" itemprop="dateCreated datePublished" datetime="2015-09-30T18:23:16+08:00">2015-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%9B%B8%E6%9C%BA%E9%87%8C/" itemprop="url" rel="index"><span itemprop="name">相机里</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>365</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tL3poLWNuLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事” ……</p>
+<p>国庆假期将至，放点有趣的东西。如果喜欢分享，又想记录自己的过往，动手试试不错哦。</p>
+<br>
+![](http://kikitamap.com/images/blogImg/TriptoGreece_Overview.png)
+
+<br>
+
+
+
+<p><strong>如何制作故事地图 ?</strong>    我把链接搬运过来，<a target="_blank" rel="noopener" href="http://storymaps.arcgis.com/zh-cn/how-to/"><strong>点吧</strong></a></p>
+<p>地图故事中有好多应用程序模板可选，即使不懂技术也能hold住，只需要选个要讲的“<strong>故事类型</strong>”。</p>
+<p><img src="http://kikitamap.com/images/blogImg/TriptoGreece_StoryMap.png"></p>
+<br>
+
+
+<p>比如选择 <strong>Story Map Tour</strong>，这也有**<span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tL3poLWNuL2FwcC1saXN0L21hcC10b3VyL3R1dG9yaWFsLw==">攻略<i class="fa fa-external-link-alt"></i></span>**，点这里。其实不看攻略也没关系。</p>
+<p>在 <strong>Story Map Tour Builder</strong>  中可以选择上传自己的照片，ArcGIS Online 会自动管理。如果照片是带有GPS信息的 Geo-tagged 照片，那太好了，上传之后就自动定位了。</p>
+<br>
+
+
+<p>我把自己的一次行程做成了地图故事 <a target="_blank" rel="noopener" href="http://kikitamoon.maps.arcgis.com/apps/MapTour/?appid=2ccbe03ecdfa4d0faf80126146374261"><strong>Trip to Greece</strong></a>。</p>
+<p>短链接：[<em><span class="exturl" data-url="aHR0cDovL2FyY2cuaXMvMUxMWTZmbQ==">http://arcg.is/1LLY6fm<i class="fa fa-external-link-alt"></i></span></em></p>
+<iframe width="720"   height="600"  frameborder="0"    scrolling="no"   marginheight="0"  marginwidth="0" 
+ src="http://kikitamoon.maps.arcgis.com/apps/MapTour/index.html?appid=2ccbe03ecdfa4d0faf80126146374261"></iframe>
+
+
+<br>
+
+<br>
+
+<br>
+
+<p>上面的与技术好像都不沾边，下面的可能沾点边……</p>
+<br>
+
+<p>打开ArcGIS Online 上<strong>我的组织</strong>，查看<strong>我的内容</strong>，我们看到这个地图故事的应用一共有这样几个内容：</p>
+<p><img src="http://kikitamap.com/images/blogImg/TriptoGreece_MyContent.png"></p>
+<br>
+
+<p>照片对应的点信息是通过 Feature Layer 维护的，所以在一开的时候选择上传照片时，要给 Feature Service 起个名字。</p>
+<p><img src="http://kikitamap.com/images/blogImg/TriptoGreece_FeatureService.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/27/ExplorerData/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/09/27/ExplorerData/" class="post-title-link" itemprop="url">地统计分析笔记——探索数据</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-09-27 12:00:00" itemprop="dateCreated datePublished" datetime="2015-09-27T12:00:00+08:00">2015-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>10 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在执行地统计分析之前，浏览、熟悉、检查自己的数据是至关重要的。绘制和检查数据是地统计分析过程中的必要阶段，我们可以从这些工作中获得一些先验知识，指导后续的工作。</p>
+<br>
+
+<h1 id="Stage-1-绘制数据"><a href="#Stage-1-绘制数据" class="headerlink" title="Stage 1     绘制数据"></a>Stage 1     绘制数据</h1><p>通过ArcMap的图层渲染方案绘制数据，我们可以获得对数据的第一印象。</p>
+<p>例如，使用单一符号渲染了解采样点的疏密分布，通过分类渲染了解采样点高值低值的分布，等等。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_DrawingData.png"></p>
+<br>
+
+
+<h1 id="Stage-2-检查数据"><a href="#Stage-2-检查数据" class="headerlink" title="Stage 2  检查数据"></a>Stage 2  检查数据</h1><p>绘制数据后，使用 <strong>探索性空间数据分析 (Exploratory Spatial Data Analysis，ESDA)</strong> 工具来执行数据探索的第二阶段。这些工具提供了一种比绘制数据更加量化的方式来检查数据，有助于我们更深入地了解正在研究的现象，有助于我们对插值模型的构建方式做出更加正确的决策。</p>
+<p>ESDA 工具包括：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_ESDA.png"></p>
+<br>
+
+
+<h2 id="Ⅰ-是否服从正态分布？"><a href="#Ⅰ-是否服从正态分布？" class="headerlink" title="Ⅰ 是否服从正态分布？"></a>Ⅰ 是否服从正态分布？</h2><h3 id="Histogram-直方图"><a href="#Histogram-直方图" class="headerlink" title="Histogram&#x2F;直方图"></a>Histogram&#x2F;直方图</h3><p><img src="http://kikitamap.com/images/blogImg/ExplorerData_Histogram.png"></p>
+<p>直方图用于显示感兴趣数据集的频率分布并计算汇总统计数据，如何解读图形和统计信息呢？</p>
+<ul>
+<li>如果数据服从正态分布，则平均值（mean）与中值（median）类似，偏度（skewness）应接近零，并且峰度（kurtosis）应接近 3。</li>
+<li>平均值即为数据的算数平均值。平均值提供分布中心的测量值。 中位数与累积比例 0.5 对应。如果数据以升序排列，50%的值位于中间值之下，50% 的值位于中间值之上。中间值提供了分布中心的另一个测量值。 第一和第三分位数分别与累积比例 0.25 和 0.75 对应。如果数据以升序排列，则 25% 的值位于第一分位数之下，25% 的值位于第三分位数之上。第一和第三分位数是分位数的特殊情况。</li>
+<li>偏度系数是分布对称度的测量值。对于对称的分布，偏度系数为零。如果分布具有较长的大值右尾部，则为正偏分布；如果分布具有较长的小值左尾部，则为负偏分布。对于正偏分布，平均值大于中间值；对负偏分布，平均值小于中间值。</li>
+<li>峰度取决于分布尾部的大小，提供分布产生异常值可能性的衡量指标。正态分布的峰度等于三。具有较厚尾部的分布被称为高峰态，其峰度大于三。具有较薄尾部的分布被称为低峰态，其峰度值小于三。</li>
+<li>数据的方差，通常对过高值或过低值很敏感。标准差为方差的平方根，它描述了数据在平均值周围的分散程度。方差和标准差越小，测量值聚类相对于平均值就越紧密。</li>
+</ul>
+<br>
+
+<h3 id="Normal-QQPlots-正态QQ图"><a href="#Normal-QQPlots-正态QQ图" class="headerlink" title="Normal QQPlots&#x2F;正态QQ图"></a>Normal QQPlots&#x2F;正态QQ图</h3><p><img src="http://kikitamap.com/images/blogImg/ExplorerData_NormalQQ.png"></p>
+<p>正态 QQ 图上的点可指示数据集的单变量分布的正态性。如果数据是正态分布的，点将落在 45 度参考线上。如果数据不是正态分布的，点将会偏离参考线。</p>
+<br>
+
+<h3 id="General-QQPlots-普通QQ图"><a href="#General-QQPlots-普通QQ图" class="headerlink" title="General QQPlots&#x2F;普通QQ图"></a>General QQPlots&#x2F;普通QQ图</h3><p>普通 QQ 图用于评估两个数据集的分布的相似程度。这些图的创建和所述的正态 QQ 图的过程类似，不同之处在于第二个数据集不一定要服从正态分布，使用任何数据集均可。如果两个数据集具有相同的分布，普通 QQ 图中的点将落在 45 度直线上。</p>
+<br>
+
+<br>
+
+<blockquote>
+<p><strong>### 有关数据变换</strong></p>
+<p>Geostatistical Analyst 中的一些插值方法要求数据呈正态分布。如果数据偏斜（分布不均衡），则可能需要将数据变换为正态分布。</p>
+<p><strong>Box-Cox 变换（又称幂变换）</strong><br>如果在某一部分研究区域中计数值很小，这一区域的变异性就小于计数值更大的另一区域的变异性。在这种情况下，平方根变换将<strong>有助于使整个研究区域内的方差更加恒定</strong>，通常还会使数据呈正态分布。平方根变换是 Box-Cox 变换中 λ &#x3D; ½ 时的特例。</p>
+<p><strong>对数变换</strong><br>对数变换实际上是 Box-Cox 变换中 λ &#x3D; 0 时的特例。对数变换<strong>通常用于呈正偏分布的数据</strong>。其中有些值非常大，如果这些大值位于研究区域中，对数变换有助于使方差更加恒定和归一化数据。</p>
+<p>例如数据如下分布：<br><img src="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox.png"></p>
+<p>变换前后对比：<br><img src="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox2.png"></p>
+<p><strong>反正弦变换</strong><br>反正弦变换<strong>可用于表示比例或百分比的数据</strong>。通常在数据为比例形式时，方差在接近 0 和 1 时最小，接近 0.5 时最大。反正弦变换有助于使整个研究区域内的方差更加恒定，通常还会使数据呈正态分布。</p>
+</blockquote>
+<br>
+
+<h2 id="Ⅱ-是否存在异常值？"><a href="#Ⅱ-是否存在异常值？" class="headerlink" title="Ⅱ 是否存在异常值？"></a>Ⅱ 是否存在异常值？</h2><p>全局异常值是相对于数据集中的所有值而言具有非常高值或非常低值的已测量采样点。<br>局部异常值是一个已测量采样点，其值处于整个数据集的正常值域范围内，但查看周围点时，其值则显得异常高或异常低。</p>
+<p>如果异常值是现象中的真实异常情况，那么这可能是研究和理解现象的最重要的位置点。如果异常值是由数据输入过程中的错误所导致的，那么在创建表面之前应该对其进行校正或移除。</p>
+<h3 id="Histogram-直方图-1"><a href="#Histogram-直方图-1" class="headerlink" title="Histogram&#x2F;直方图"></a>Histogram&#x2F;直方图</h3><p>如果在直方图的最左侧（极小值）或最右侧（极大值）能够看到一个孤立的条，可能表明这个条所表示的点是异常值。这种条越孤立于直方图的主条组，点是异常值的概率就越大。</p>
+<br>
+
+<h3 id="Voronoi-图"><a href="#Voronoi-图" class="headerlink" title="Voronoi 图"></a>Voronoi 图</h3><p>Voronoi 图是由采样点形成的泰森多边形地图。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi.png"></p>
+<p>在查看 Voronoi 图时，检查附近是否有面符号色彩差别很大的值。</p>
+<p>例如，下图中红色面明显异于周围值。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi2.png"></p>
+<br>
+
+<h3 id="Semivariogram-Covariance-Cloud-半变异函数-协方差云"><a href="#Semivariogram-Covariance-Cloud-半变异函数-协方差云" class="headerlink" title="Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云"></a>Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云</h3><p>半变异函数&#x2F;协方差云工具可以用来检查数据集中空间自相关的局部特征以及查找局部异常值。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_Semivariogram.png"></p>
+<p>云中的每个点表示数据集中的一对点，x 轴表示各位置间的距离，y 轴表示这些位置上的值的差值平方。半变异函数中的每个点都表示一个位置对，而不是地图上的单个位置。因此云中点的数量会随着数据集中点的数量的增加而快速增加。如果数据集中存在 n 个点，则半变异函数&#x2F;协方差云中将显示 n*(n-1)&#x2F;2 个点。因此，不建议使用点数超过几千个的数据集。如果数据集包含几千个点，那么应使用子集要素工具来随机选择点，然后在半变异函数&#x2F;协方差云中使用子集。</p>
+<p>“半变异函数&#x2F;协方差云”工具对检测局部异常值特别有用。它们显示为互相接近的点（x 轴上的低值），但在 y 轴上却是高值，表明组成点对的两个点的值有很大差异。这与所期望的结果正相反，即互相接近的点有相似的值。</p>
+<br>
+
+<h2 id="Ⅲ-是否存在趋势？"><a href="#Ⅲ-是否存在趋势？" class="headerlink" title="Ⅲ 是否存在趋势？"></a>Ⅲ 是否存在趋势？</h2><h3 id="Trend-Analyst-趋势分析"><a href="#Trend-Analyst-趋势分析" class="headerlink" title="Trend Analyst &#x2F; 趋势分析"></a>Trend Analyst &#x2F; 趋势分析</h3><p>“趋势分析”工具提供数据的三维透视图。采样点的位置绘制在 x,y 平面上，z值表示感兴趣的属性值。趋势分析工具将散点图投影到 x,z 平面和 y,z 平面上，通过多项式曲线对每个投影进行了拟合。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_Trend.png"></p>
+<p>浏览图形垂直墙面上的粗线。这些线表示趋势。一条趋势线沿 x 轴（通常表示纵向趋势），另一条显示沿 y 轴的趋势（通常表示纬度趋势）。如果经过投影点的曲线是平的，则不存在趋势；如果多项式曲线具有确切的模式（如下图的蓝线和绿线），这表明数据中存在某种趋势。</p>
+<p>另外，检查趋势时更改多项式的阶非常有用；检查不同于标准 N–S 和 E–W 方向的趋势非常有帮助，可以通过旋转趋势轴检查数据。</p>
+<br>
+
+<h2 id="Ⅳ-是否空间自相关？"><a href="#Ⅳ-是否空间自相关？" class="headerlink" title="Ⅳ 是否空间自相关？"></a>Ⅳ 是否空间自相关？</h2><p>我们可通过检查不同的位置的采样数据对来探索数据的空间自相关，仍然使用前面提到过的ESDA工具半变异函数云。</p>
+<br>
+
+<h3 id="Semivariogram-Covariance-Cloud-半变异函数-协方差云-1"><a href="#Semivariogram-Covariance-Cloud-半变异函数-协方差云-1" class="headerlink" title="Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云"></a>Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云</h3><p>如果存在空间相关性，则距离较近的点对（在 x 轴的最左侧）应具有较小的差值（在 y 轴上的值较小）。随着各个点之间的距离越来越大（点在 x 轴上向右移动），通常，差值的平方也应随之增大（在 y 轴上向上移动）。通常，平方差超过某个距离后就会保持不变。超过这个距离的位置对被视为不相关。</p>
+<p>如果半变异函数中的点对构成一条水平的直线，那么数据中可能不存在空间自相关，因而对数据进行插值也就失去了意义。</p>
+<p>地统计方法的基本假设是，对于任意两个彼此间的距离和方向都相近的位置，其差值的平方也应相近。这种关系称为<strong>平稳性</strong>。空间自相关可能仅依赖于两个位置之间的距离，这被称为<strong>各向同性</strong>。如果事物在某些方向上比在其他方向上更相似，也就是半变异函数和协方差中都存在这种方向性影响，它被称为<strong>各向异性</strong>。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_Direction.png"></p>
+<br>
+
+<h3 id="交叉协方差云"><a href="#交叉协方差云" class="headerlink" title="交叉协方差云"></a>交叉协方差云</h3><p>“交叉协方差云”工具可用于研究两个数据集之间的交叉相关。交叉协方差云显示了两个数据集间的所有位置对的经验交叉协方差，并且将其作为两位置间距离的函数对其进行绘制，与上面的工具类似，该工具也提供具有搜索方向功能的协方差表面。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExplorerData_Crosscovariance.png"></p>
+<br>
+
+<p>对数据有了第一印象，并且用 ESDA 工具对数据做了检查，我们已经对待研究的数据有了一些先验知识，那么下面就可以选择插值方法来创建表面了，下一篇继续。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/10/CreatePythonTool3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/09/10/CreatePythonTool3/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（三）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-09-10 14:42:04" itemprop="dateCreated datePublished" datetime="2015-09-10T14:42:04+08:00">2015-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>从 ArcGIS 10.1 版本开始，我们可以创建 <strong>python工具箱</strong> 来自定义脚本工具，这种工具箱相比较上一篇提到的标准工具箱。有着独特的优势，具体二者的区别总结过，看<a href="http://kikitamap.com/2015/08/31/CreatePythonTool1/">这一篇</a>。</p>
+<br>
+
+<h2 id="认识-Python工具箱"><a href="#认识-Python工具箱" class="headerlink" title="认识 Python工具箱"></a><strong>认识 Python工具箱</strong></h2><p>Python 工具箱 (.pyt) 是一个简单的文本文件，可以在任何文本编辑器中或者任何 Python IDE 中创建、查看和编辑。要确保 ArcGIS 正确识别 Python 工具箱，工具箱类的名称必须是 **<code>Toolbox</code>**。在 <strong><code>Toolbox</code></strong> 类的 <strong><code>__init__</code></strong> 方法中定义工具箱的属性，这些属性包括 alias、label 和 description，我们可以按照 <strong><span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS9lbi9kZXNrdG9wL2xhdGVzdC9hbmFseXplL2NyZWF0aW5nLXRvb2xzL2EtdGVtcGxhdGUtZm9yLXB5dGhvbi10b29sYm94ZXMuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span></strong> 中的模板构建 Python 工具箱模板。</p>
+<p>如下代码中创建了包含一个工具（名为 Tool）的 Python 工具箱：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Toolbox</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the toolbox (the name of the toolbox is the name of the</span></span><br><span class="line"><span class="string">        .pyt file).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Toolbox&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.alias = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># List of tool classes associated with this toolbox</span></span><br><span class="line">        <span class="variable language_">self</span>.tools = [Tool]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Tool</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the tool (tool name is the name of the class).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Tool&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.description = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.canRunInBackground = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getParameterInfo</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define parameter definitions&quot;&quot;&quot;</span></span><br><span class="line">        params = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> params</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isLicensed</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Set whether tool is licensed to execute.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateParameters</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the values and properties of parameters before internal</span></span><br><span class="line"><span class="string">        validation is performed.  This method is called whenever a parameter</span></span><br><span class="line"><span class="string">        has been changed.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateMessages</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the messages created by internal validation for each tool</span></span><br><span class="line"><span class="string">        parameter.  This method is called after internal validation.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, parameters, messages</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;The source code of the tool.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<h2 id="动手做做"><a href="#动手做做" class="headerlink" title="动手做做"></a><strong>动手做做</strong></h2><p>下面我就依据这个模板，写一个简单的脚本工具箱。需求是批量裁剪，我希望我只提供一个文件夹或者数据库等这样的<strong>工作空间</strong>和一个<strong>裁剪区域面</strong>，就可以批量完成工作空间内全部数据的裁剪工作，并且无视栅格还是矢量，一并裁剪。</p>
+<p>Let the scripting begin ……</p>
+<br>
+
+<h3 id="1-创建工具箱"><a href="#1-创建工具箱" class="headerlink" title="1 创建工具箱"></a>1 创建工具箱</h3><p>工具箱的name就是 .pyt 文件的名字，通常我们把工具添加到 ArcToolbox窗口中时会显示工具箱的 label。在 <strong><code>Toolbox</code></strong> 类的 <strong><code>__init__</code></strong> 方法中定义属性，例如： <strong><code>alias</code><strong>、</strong><code>label</code></strong> 和 **<code>description</code>**。</p>
+<p>工具作为<strong>类</strong>被添加至 .pyt 中，工具箱的 tools 属性必须设置为包含定义的所有工具<strong>类</strong>的<strong>列表</strong>。比如，需要做ATool，ATool，CTool三个工具，不是写三个脚本，而是创建三个<strong>类</strong>，然后将类名放入列表， <strong><code>self.tools = [ATool,ATool,CTool]</code></strong> 。</p>
+<br>
+
+<p>这里，我仅定义一个工具类 ClipWorkspace，来说明构建过程即可  ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">Source Name:   ClipWorkspace.pyt</span><br><span class="line">Author:        Kikita</span><br><span class="line">Description:   Python tool to clip spatial data in the same workspace by batch.</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">import arcpy</span><br><span class="line"></span><br><span class="line"># The class name must be &quot;Toolbox&quot; ...</span><br><span class="line">class Toolbox(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">    </span><br><span class="line">        self.label = &quot;Clip Workspace Toolbox&quot;</span><br><span class="line">        self.alias = &quot;&quot;</span><br><span class="line"></span><br><span class="line">        # List of tool classes associated with this toolbox</span><br><span class="line">        self.tools = [ClipWorkspace]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ClipWorkspace(object):</span><br><span class="line">	……</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>在 ArcGIS Desktop 中已经可以看到这个工具箱的雏形：</p>
+<p><img src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Tool.png"></p>
+<br>
+
+<h2 id="2-定义工具"><a href="#2-定义工具" class="headerlink" title="2 定义工具"></a>2 定义工具</h2><p>下面就是完善工具内部的代码。我就以 ClipVectorWorkspace 为例。</p>
+<br>
+
+<p>每个工具类应至少包括 <strong><code>__init__</code></strong> 和 <strong><code>execute</code></strong> 方法。此外，还可以选择使用 <strong><code>getParameterInfo</code><strong>、</strong><code>isLicensed</code><strong>、</strong><code>updateParameters</code></strong> 和 <strong><code>updateMessages</code></strong> 方法向工具的行为中添加其他控制。</p>
+<p>工具类中的 <strong><code>__init__</code></strong> 方法是标准 Python 类初始化方法。对于 Python 工具箱中的工具，**<code>__init__</code>** 方法用于设置该工具的属性，例如工具的标注、描述、是否允许在后台运行等。</p>
+<p>下面的例子就创建了ClipVectorWorkspace这个工具：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ClipWorkspace</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Clip Workspace&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.description = <span class="string">&quot;clip spatial data in the same workspace by batch.&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.canRunInBackground = <span class="literal">True</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>有了工具的构造函数，我们继续看如何给工具定义参数。在 Python 工具箱 (.pyt) 中，可在工具类的 <strong><code>getParameterInfo</code></strong> 方法中创建 <strong><code>Parameter</code></strong> 对象，并设置对象的属性来定义工具参数。**<code>Parameter</code><strong>的属性中</strong><code>datatype</code>**<br>包含的类型可以在帮助文档中查询，点**<span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9kZXNrdG9wL2xhdGVzdC9hbmFseXplL2NyZWF0aW5nLXRvb2xzL2RlZmluaW5nLXBhcmFtZXRlci1kYXRhLXR5cGVzLWluLWEtcHl0aG9uLXRvb2xib3guaHRt">这里<i class="fa fa-external-link-alt"></i></span>**。</p>
+<br>
+
+<p>此示例中的参数就是输入工作空间（inWorkspace）、裁剪区域面（ClipArea）、输出工作空间（outWorkspace）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">getParameterInfo</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Parameter Definitions</span></span><br><span class="line">    <span class="comment"># First parameter - Input Workspace</span></span><br><span class="line">    param0 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Input Workspace&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;inWorkspace&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEWorkspace&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Second parameter - Clip Area</span></span><br><span class="line">    param1 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Clip Area&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;CLipArea&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEFeatureClass&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Third parameter - Output Workspace</span></span><br><span class="line">    param2 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Output Workspace&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;outWorkspace&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEWorkspace&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    params = [param0,param1,param2]</span><br><span class="line">    <span class="keyword">return</span> params	</span><br></pre></td></tr></table></figure>
+
+<p><strong>PS</strong> : 在代码中，如果仔细看，或许你会疑惑，为何输出工作空间的方向是 input ，而不是 output？ 因为工具最终输出的为 Feature Class 或 Raster，输出工作空间也是作为输入参数传入工具使用的。如果不关心，也可以不在意这些细节…… 继续向下了解工具的构建过程。</p>
+<br>
+
+<p>下面就是工具的具体执行部分了，当然里面还加了些辅助了解工具执行状态的消息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, parameters, messages</span>):</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;The source code of the tool.&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get tool parameters</span></span><br><span class="line">    inWorkspace = parameters[<span class="number">0</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Input Workspace is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(inWorkspace))</span><br><span class="line"></span><br><span class="line">    ClipArea = parameters[<span class="number">1</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Clip Area is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(ClipArea))</span><br><span class="line"></span><br><span class="line">    outWorkspace =  parameters[<span class="number">2</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Out Workspace is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(outWorkspace))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Feature by Batch</span></span><br><span class="line">    arcpy.env.workspace = inWorkspace</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Vector</span></span><br><span class="line">    FeatureClasses = arcpy.ListFeatureClasses()</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;Input Workspace contains &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(FeatureClasses))</span><br><span class="line">    <span class="keyword">for</span> fc <span class="keyword">in</span> FeatureClasses:</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&gt;&gt; Clipping  &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(fc))</span><br><span class="line">        arcpy.Clip_analysis(fc,ClipArea, os.path.join(outWorkspace,fc))</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&#123;0&#125; has been clipped.&quot;</span>.<span class="built_in">format</span>(os.path.join(outWorkspace,fc)))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Raster</span></span><br><span class="line">    Rasters = arcpy.ListRasters()</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;Input Workspace contains &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(Rasters))</span><br><span class="line">    <span class="keyword">for</span> Raster <span class="keyword">in</span> Rasters:</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&gt;&gt; Clipping  &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(Raster))</span><br><span class="line">        arcpy.Clip_management(in_raster = Raster,</span><br><span class="line">                              rectangle = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                              out_raster = os.path.join(outWorkspace,Raster),</span><br><span class="line">                              in_template_dataset = ClipArea,</span><br><span class="line">                              nodata_value = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                              clipping_geometry = <span class="string">&quot;ClippingGeometry&quot;</span>,</span><br><span class="line">                              maintain_clipping_extent = <span class="string">&quot;NO_MAINTAIN_EXTENT&quot;</span>)</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&#123;0&#125; has been clipped.&quot;</span>.<span class="built_in">format</span>(os.path.join(outWorkspace,Raster)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>到这里，工具的核心部分已经完成，执行下试试。</p>
+<p><img src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Execute.png"></p>
+<br>
+
+<p>OK，应该是预期的结果：</p>
+<p><img src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Result.png"></p>
+<br>
+
+<h3 id="3-完善"><a href="#3-完善" class="headerlink" title="3 完善"></a>3 完善</h3><p>我们发现不像标准工具箱中的脚本工具和脚本文件本身是散列存储的，python工具箱以及其中的所有工具的代码都在这一个pyt文件中，维护起来便利了不少。如果想在工具箱中继续添加工具，只要继续增加一个工具类即可。</p>
+<p>经过前两步的过程，工具已经可以拿去使用。如果为了工具更友好，还可以继续调整下代码，以便遇到异常的时候，让用户了解更详细的原因，这里就再往下进行了。工具分享给别人，最后只差要丰富下工具文档了，同样在 Python 工具的 Item Description 中编辑。</p>
+<p><img src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Perfection.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/16/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

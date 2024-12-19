@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/39/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/39/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/39/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/ArcGISforAutoCAD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/ArcGISforAutoCAD/" class="post-title-link" itemprop="url">ArcGIS for AutoCAD 小结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:42:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:42:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>749</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="一、-简介"><a href="#一、-简介" class="headerlink" title="一、 简介"></a><strong>一、 简介</strong></h2><p> ArcGIS for AutoCAD是Esri提供的一个针对AutoCAD免费插件。此插件可以使AutoCAD作为ArcGIS Server的客户端加载服务；并且可以作为GIS结构编辑器来组织CAD数据，从而作为直接可用的GIS 要素类；给CAD数据定义坐标系，可以被ArcGIS产品识别。</p>
+<br>
+
+<h2 id="二、-系统要求"><a href="#二、-系统要求" class="headerlink" title="二、 系统要求"></a><strong>二、 系统要求</strong></h2><p>这里基于ArcGIS for AutoCAD 250版本。 </p>
+<p> <strong>版本:</strong> </p>
+<p>AutoCAD 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p>AutoCAD Map 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p>AutoCAD Civil 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p><strong>操作系统:</strong></p>
+<p>Windows 7 Enterprise, Ultimate, Professional, or Home  Premium</p>
+<p>Windows Vista Enterprise, Business, Ultimate, or Home  Premium (SP1 or later) </p>
+<p>Windows XP Professional or Home edition (SP3)</p>
+<p><strong>Microsoft .NET Framework:</strong>   </p>
+<p>Microsoft .NET Framework Version 3.5 (SP1 or later) </p>
+<p> <strong>Internet 方式连接ArcGIS Server:</strong>   </p>
+<p>ArcGIS Server 9.3 或更高版本发布服务 </p>
+<br>
+
+<h2 id="三、-安装与加载"><a href="#三、-安装与加载" class="headerlink" title="三、 安装与加载"></a><strong>三、 安装与加载</strong></h2><p>下面以AutoCAD 2010（x64），ArcGIS for AutoCAD 250（x64）为例，介绍一下此插件的安装使用过程。</p>
+<h3 id="1-获取并安装插件"><a href="#1-获取并安装插件" class="headerlink" title="1. 获取并安装插件"></a><strong>1. 获取并安装插件</strong></h3><p>插件的下载地址：<span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaWNoaW5hLWJqLmNuLzIwMTEvMDIyNC85NjMuaHRtbA==">http://support.esrichina-bj.cn/2011/0224/963.html<i class="fa fa-external-link-alt"></i></span><br> 注意此插件区分32bit与64bit，选择合适版本下载，我这里使用ArcGISforAutoCADDownloadx64.exe。<br> 在已经安装AutoCAD的前提下，双击运行此exe即可。</p>
+<h3 id="2-插件的加载"><a href="#2-插件的加载" class="headerlink" title="2. 插件的加载"></a><strong>2. 插件的加载</strong></h3><p>以管理员身份运行AutoCAD，在AutoCAD的命令提示行中输入：NETLOAD。出现资源管理器窗口，浏览至插件的安装目录，选择 ArcGISForAutoCAD.dll打开。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_AutoCAD.gif"></p>
+<p>之后出现插件加载画面。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_Launch.gif"></p>
+<p>加载ArcGIS for AutoCAD插件成功。</p>
+<p>加载后，会多出ArcGIS for AutoCAD插件栏，如下图：<br><img src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_Menu.gif"></p>
+<h3 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h3><p>添加ArcGIS Online服务时，可能会遇到错误：“<strong>找不到资源：</strong>‘<strong>basemapui\basemapcenter.xaml’</strong>”。</p>
+<p>解决方法：这是个已知问题，下载补丁既可以解决此问题，地址：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT1saXN0UGF0Y2hlcyZQSUQ9MTI5">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=listPatches&PID=129<i class="fa fa-external-link-alt"></i></span></p>
+<p>至此，ArcGIS for AutoCAD 插件即可以开始使用啦。</p>
+<h2 id="四、-功能与使用"><a href="#四、-功能与使用" class="headerlink" title="四、 功能与使用"></a><strong>四、 功能与使用</strong></h2><h3 id="1-Map-Service"><a href="#1-Map-Service" class="headerlink" title="1. Map Service"></a><strong>1. Map Service</strong></h3><p>有了这个插件，首先可以使AutoCAD直接加载Map Service：</p>
+<p>(1) ArcGIS Online</p>
+<p>使用Esri Map Gallery中的地图作为地图，添加到现有的CAD工程中。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_Basemap.gif"></p>
+<p>(2) ArcGIS Server</p>
+<p>向现有的CAD工程中添加ArcGIS Server服务。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_AGSServer.gif"></p>
+<h3 id="2-CAD-Feature-Class"><a href="#2-CAD-Feature-Class" class="headerlink" title="2. CAD Feature Class"></a><strong>2. CAD Feature Class</strong></h3><p>此插件可以将 AutoCAD 作为 GIS 方案编辑器，用来将 CAD 数据组织为可供 GIS 使用的要素类。</p>
+<p>类型对象过滤器是预定义的，用来约束ArcGIS Desktop支持的feature class与DWG 对象的对应关系。</p>
+<p>DWG 对象与ArcGIS 要素的强制对应关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>Feature type</th>
+<th>DWG object types</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Point</td>
+<td>Point, Insert,  shape, Hatch, Proxy</td>
+</tr>
+<tr>
+<td>Polyline</td>
+<td>Arc, Circle,  Ellipse, Line, Mline, polyline, 3D polyline Ray, spline, Xline, Trace, solid,  3Dface</td>
+</tr>
+<tr>
+<td>Polygon</td>
+<td>Circle, Solid,  Ellipse, Face, closed polyline, closed 3D polyline, Mline</td>
+</tr>
+<tr>
+<td>Annotation</td>
+<td>Text, Mtext,  Attribute, Attdef</td>
+</tr>
+<tr>
+<td>Multipatch</td>
+<td>Arc, Circle,  Ellipse, Line, Mline, polyline, 3D polyline Ray, spline, Xline, Trace, solid,  3Dface</td>
+</tr>
+</tbody></table>
+<h3 id="3-坐标系统"><a href="#3-坐标系统" class="headerlink" title="3. 坐标系统"></a><strong>3. 坐标系统</strong></h3><p>插件使用的坐标系统是通过*.prj 文件来定义的。当给DWG文件定义坐标系后，这个有效的空间参考是可以被ArcGIS Server、ArcMap、ArcCatalog以及ArcGIS 地理处理工具识别的。</p>
+<p>关于CAD与ArcGIS一体化的文章，后面会不断更新~</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/ArcGISSpatialReference/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/ArcGISSpatialReference/" class="post-title-link" itemprop="url">ArcGIS的空间参考</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:31:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:31:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>305</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>1．坐标系（CoordinateSystem）</strong></p>
+<p>主要提供了这个几种：地理坐标系或大地坐标系（GCS）、投影坐标系（PCS）、垂直坐标系（UCS）。坐标系在这先不多说，以后有时间自己整理下。</p>
+<br>
+
+<p><strong>2．分辨率（Resolution）：x，y值的最小距离</strong></p>
+<p>分辨率值的单位与相关坐标系的单位相同。</p>
+<p>默认分辨率值是 0.0001 米 (1&#x2F;10 mm)，或者为其等效值（以地图单位表示）。</p>
+<p>具有较小（较精细）的 x,y 分辨率的要素坐标可以具有更多的精度位数。但是，极小的 x,y分辨率可能会影响性能，因为使用了过多的磁盘空间以及更多的 I&#x2F;O。</p>
+<p>ESRI官方文档强烈建议，在大多数情况下使用默认的 x,y分辨率，因为默认分辨率性能非常好并且可以适用于大多数坐标精度。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Resolution.gif"></p>
+<br>
+
+<p><strong>3． 容差（Tolerance）：</strong> </p>
+<p>容差值为坐标之间的最小距离。如果一个坐标在另一个坐标的容差值范围内，则会将二者视为同一位置。 默认容差是分辨率值的 10倍，大多数情况下推荐使用此设置。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Tolerance.gif"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/ArcMapFeatureCache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/ArcMapFeatureCache/" class="post-title-link" itemprop="url">ArcMap的Feature Cache</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:28:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:28:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>457</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>一、介绍</strong></p>
+<p>使用地理数据库中存储的数据时，创建要素缓存可以加快ArcMap的执行速度。要素缓存可以将 ArcMap当前显示的要素临时存储到计算机的内存中。</p>
+<p>Arcmap 中有提供了 Feature Cache 的工具，如下：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcMapFeatureCache_Toolbar.gif"></p>
+<p>各个工具的作用如下：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcMapFeatureCache_Function.gif"></p>
+<p>值得注意的是这两个工具：</p>
+<ul>
+<li>第一个，构建要素缓存工具是在当前地图范围内构建缓存。</li>
+<li>第四个，设置自动缓存比例，也就是进行缓存的最小比例尺。注意ArcGIS自带帮助文档这里写得有误，不是最大比例尺。</li>
+<li>第五个，显示要素缓存按钮，颜色会随缓存状态变化。绿色表示已缓存，红色表示未缓存。</li>
+</ul>
+<p><strong>二、设置自动缓存</strong></p>
+<p>自动缓存通常适用于，不确定缓存边界时，或者需要缓存一系列的地图时。开启自动缓存时，会自动的去缓存超出当前已缓存范围的地图。由于自动缓存可能影响性能（占大量内存），因此应当设置自动缓存最小比例。只有当地图比例大于最小比例时，才自动创建要素缓存。</p>
+<p>使用上述工具条的，切换自动缓存按钮开启。</p>
+<p>或者在数据框属性中开启，如下图：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcMapFeatureCache_Enable.gif"></p>
+<p><strong>三、性能提升</strong></p>
+<p>对于地理数据库数据，当数据源是 ArcSDE 地理数据库时，要素缓存的优势最为显著。</p>
+<p>使用文件或个人地理数据库的要素缓存能够获得微小的性能提升。</p>
+<p>在特定地图范围内进行操作时，要素缓存尤其有用。</p>
+<p>要素缓存不适合：在较大区域跨度内频繁平移和缩放操作。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/GeodatabaseBasic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/GeodatabaseBasic/" class="post-title-link" itemprop="url">Geodatabase之基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:25:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:25:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>583</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Geodatabase是用来表达和管理地理信息的复杂数据模型，是ArcGIS的主要存储数据方式，主要存储了 featureclasses、 rasterdatasets、attributes、具有行为的高级GIS数据对象、 管理空间完整性的规则、要素栅格属性关系工具。</p>
+<p><strong>一、Geodatabase 的种类：</strong></p>
+<p>就其种类呢，无非是三种：File Geodatabase，PersonalGeodatabase，ArcSDEGeodatabase。 </p>
+<p>1、 FileGeodatabase：以文件夹形式存储。每个Dataset作为一个文件存储，最大可达1T。对于PGDB更推荐FGDB。单用户，同一个Dataset 、独立的featureclass或者table，并发只能有一人写操作，可以多人读操作。支持跨平台。</p>
+<p>2、PersonalGeodatabase：所有的Dataset都存储在MicrosoftAccess数据文件中,最大大小不超过2 GB。单用户，一个人写多人读。仅支持Windows。</p>
+<p>3、ArcSDEGeodatabase：储存在关系数据库中，可使用 Oracle,MicrosoftSQL Server, IBM DB2, IBM Informix,PostgreSQL。这些多用户的数据库要求使用ArcSDE，不限制大小和用户的数量。平台支持：Windows, UNIX,Linux。</p>
+<p><strong>二、Geodatabase中的Dateset</strong></p>
+<p>Geodatabase 中包含基本的dataset，包括：feature classes、 rasterdatasets、attributes。还包含高级地理数据类型：coordinate systems, coordinateresolution, feature classes,topologies, networks, raster catalogs,relationships, domains。</p>
+<p><strong>1、Table</strong></p>
+<p>用于存储属性等。字段类型包含：Numbers（长整型、短整型、单精度、双精度）、Text、Date（日期时间型）、BLOBs（二进制大对象，例如Symbol、CAD几何要素）、GlobalID（全局标识符）、XML。</p>
+<p><strong>2、Feature Class</strong></p>
+<p>Feature Class以一张单独的表存储，每个要素是一条记录。种类： Points、Lines、Polygons、Annotation、 Dimensions（尺寸）、MultiPoints（由多个点组成的要素，如雷达激光点）、MultiPatches（多面体）。</p>
+<p>其中要素坐标可包含Z值，表示垂直测量结果；线状要素可以包含M值，表示线性测量结果。路径是指具有唯一标识符和通用测量系统的任意线状要素（如城市街道、公路、河流或管线）。</p>
+<p>与FeatureClass相关的：FeatureDataset，subtype，AttributeDomain，RelationshipClasses，Topology，Network Dataset，Geometric network，TerrainDataset，Linear referencing，Cartographicrepresentation，versioning。</p>
+<p><strong>3、Raster</strong></p>
+<p>栅格的地理属性通常包括：坐标系，参考坐标或 X,Y 位置（通常在栅格左上角或左下角），单元大小，行计数和列计数。<br>地理数据库可以针对多种用途管理栅格：作为单个数据集、数据集的逻辑集合和表中的图片属性.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/Aboutshapefile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/Aboutshapefile/" class="post-title-link" itemprop="url">有关shape文件的说明</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:04:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:04:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>548</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>shapefile 是存储地理信息的简单文件格式，但是工作中，常会接到用户的很多问题，这里把常见的汇总下。</p>
+<p><strong>一、shape 文件到底可以多大？</strong></p>
+<p>shapefile 的每个文件都不能超过 2 GB。也就是说，存储数据的 .dbf 与.shp 分别不能超过 2GB。但是，所有文件的总大小可以超过 2 GB。</p>
+<p><strong>二、 shape 文件是怎么构成的？</strong></p>
+<p>shape 文件用 ArcGIS 查看仅显示一个文件，但是用 windows 资源管理器查看就可能看到以下文件。</p>
+<ul>
+<li>.shp - 存储要素几何的主文件；必需文件。</li>
+<li>.shx - 存储要素几何索引的索引文件；必需文件。</li>
+<li>.dbf - 存储要素属性信息的 dBASE 表；必需文件。</li>
+<li>.prj - 存储坐标系信息的文件；由 ArcGIS 使用。</li>
+<li>.xml - ArcGIS 的元数据 - 用于存储 shapefile 的相关信息。</li>
+<li>.sbn 和 .sbx - 存储要素空间索引的文件。</li>
+<li>.fbn 和 .fbx - 存储只读 shapefile 的要素空间索引的文件。</li>
+<li>.ain 和 .aih - 存储某个表中或专题属性表中活动字段属性索引的文件。</li>
+<li>.atx - .atx 文件针对各个 shapefile 或在 ArcCatalog 中创建的 dBASE属性索引而创建。</li>
+<li>.ixs - 读&#x2F;写 shapefile 的地理编码索引。</li>
+<li>.mxs - 读&#x2F;写 shapefile（ODB 格式）的地理编码索引。</li>
+<li>.cpg - 可选文件，指定用于标识要使用的字符集的代码页。</li>
+<li>强烈建议，对shape操作时，在 ArcGIS 中进行。</li>
+</ul>
+<p><strong>三、 shape 中创建字段注意什么？</strong></p>
+<p>不能对现有字段修改，可以新建字段包括自定义数据类型；字段名长度不要超过10，超过会被截断。</p>
+<p>新建字段时，有三个参数可供设置：</p>
+<ul>
+<li>precision（精度）—— 数字字段中可存储的位数；</li>
+<li>scale（标度）—— 浮点或双精度类型字段中数值的小数点右侧的位数；</li>
+<li>length（长度）—— 字符型字段的文本字段的长度。</li>
+</ul>
+<p>注意，long integer 当精度超过 10 时，会自动转为 Double 型。</p>
+<p>相关资料：</p>
+<p>由于shape文件是公开数据格式，可以很好来作为交换格式，这里是Esri官方技术描述：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vbGlicmFyeS93aGl0ZXBhcGVycy9wZGZzL3NoYXBlZmlsZS5wZGY=">shape文件技术描述<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/38/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><span class="page-number current">39</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/40/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. Add Surface Information（添加表面信息）向点、线或面要素的属性表添加表面高程信息。    要素几何 表面属性    Point 从表面上点的 XY 坐标插入的点高程。   MultiPoint 针对多点记录中所有点得到的点的最小、最大和平均高程。   Polyline 沿着表面的线的 3D 距离。  从表面上线的路径获得的最小、最大和平均高程和坡度。   Polygo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3D分析之Functional Surface工具箱">
+<meta property="og:url" content="https://kikitamap.com/2012/11/18/3DFunctionalSurface/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="1. Add Surface Information（添加表面信息）向点、线或面要素的属性表添加表面高程信息。    要素几何 表面属性    Point 从表面上点的 XY 坐标插入的点高程。   MultiPoint 针对多点记录中所有点得到的点的最小、最大和平均高程。   Polyline 沿着表面的线的 3D 距离。  从表面上线的路径获得的最小、最大和平均高程和坡度。   Polygo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DFunctionalSurface_Toolset.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DFunctionalSurface_InterpolateShape.gif">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DFunctionalSurface_IntersectLineSurface.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DFunctionalSurface_Stack.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DFunctionalSurface_Volumn.gif">
+<meta property="article:published_time" content="2012-11-18T13:51:59.000Z">
+<meta property="article:modified_time" content="2018-07-03T12:17:16.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Geoprocessing">
+<meta property="article:tag" content="3D">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/3DFunctionalSurface_Toolset.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2012/11/18/3DFunctionalSurface/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2012/11/18/3DFunctionalSurface/","path":"2012/11/18/3DFunctionalSurface/","title":"3D分析之Functional Surface工具箱"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>3D分析之Functional Surface工具箱 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Add-Surface-Information%EF%BC%88%E6%B7%BB%E5%8A%A0%E8%A1%A8%E9%9D%A2%E4%BF%A1%E6%81%AF%EF%BC%89"><span class="nav-text">1. Add Surface Information（添加表面信息）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Interpolate-shape%EF%BC%88%E6%8F%92%E5%80%BC-Shape%EF%BC%89"><span class="nav-text">2. Interpolate shape（插值 Shape）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-nbsp-Intersect-3D-Line-With-Surface%EF%BC%88-nbsp-3D%E7%BA%BF%E4%B8%8E%E8%A1%A8%E9%9D%A2%E7%9B%B8%E4%BA%A4%EF%BC%89"><span class="nav-text">3. Intersect 3D Line With Surface（ 3D线与表面相交）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-nbsp-Stack-Profile%EF%BC%88%E5%A0%86%E6%A0%88%E5%89%96%E9%9D%A2%EF%BC%89"><span class="nav-text">4. Stack Profile（堆栈剖面）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-nbsp-Surface-Volume%EF%BC%88%E8%A1%A8%E9%9D%A2%E4%BD%93%E7%A7%AF%EF%BC%89"><span class="nav-text">5. Surface Volume（表面体积）</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/11/18/3DFunctionalSurface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="3D分析之Functional Surface工具箱 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          3D分析之Functional Surface工具箱
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-11-18 21:51:59" itemprop="dateCreated datePublished" datetime="2012-11-18T21:51:59+08:00">2012-11-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>457</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="http://kikitamap.com/images/blogImg/3DFunctionalSurface_Toolset.png"></p>
+<h1 id="1-Add-Surface-Information（添加表面信息）"><a href="#1-Add-Surface-Information（添加表面信息）" class="headerlink" title="1. Add Surface Information（添加表面信息）"></a><strong>1. Add Surface Information（添加表面信息）</strong></h1><p>向点、线或面要素的属性表添加表面高程信息。</p>
+<table>
+<thead>
+<tr>
+<th><strong>要素几何</strong></th>
+<th><strong>表面属性</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Point</td>
+<td>从表面上点的 XY 坐标插入的点高程。</td>
+</tr>
+<tr>
+<td>MultiPoint</td>
+<td>针对多点记录中所有点得到的点的最小、最大和平均高程。</td>
+</tr>
+<tr>
+<td>Polyline</td>
+<td>沿着表面的线的 3D 距离。  从表面上线的路径获得的最小、最大和平均高程和坡度。</td>
+</tr>
+<tr>
+<td>Polygon</td>
+<td>面定义的表面部分的 3D 面积。  来自表面的最小、最大和平均高程和坡度。</td>
+</tr>
+</tbody></table>
+<h1 id="2-Interpolate-shape（插值-Shape）"><a href="#2-Interpolate-shape（插值-Shape）" class="headerlink" title="2. Interpolate shape（插值 Shape）"></a><strong>2. Interpolate shape（插值 Shape）</strong></h1><p>根据从栅格、不规则三角网 (TIN)、或 terrain 数据集获取的高程值为要素类插入 z 值。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3DFunctionalSurface_InterpolateShape.gif"></p>
+<h1 id="3-nbsp-Intersect-3D-Line-With-Surface（-nbsp-3D线与表面相交）"><a href="#3-nbsp-Intersect-3D-Line-With-Surface（-nbsp-3D线与表面相交）" class="headerlink" title="3.&nbsp;Intersect 3D Line With Surface（&nbsp;3D线与表面相交）"></a><strong>3.&nbsp;Intersect 3D Line With Surface（&nbsp;3D线与表面相交）</strong></h1><p>计算 3D 线要素与一个或多个表面的几何交集，并以分割线要素和点的形式返回交集。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3DFunctionalSurface_IntersectLineSurface.png"></p>
+<h1 id="4-nbsp-Stack-Profile（堆栈剖面）"><a href="#4-nbsp-Stack-Profile（堆栈剖面）" class="headerlink" title="4.&nbsp;Stack Profile（堆栈剖面）"></a><strong>4.&nbsp;Stack Profile（堆栈剖面）</strong></h1><p>创建表格和可选图表，用于说明一个或多个多面体、栅格、TIN 或 terrain 表面上的线要素的剖面。</p>
+<p>这个工具可以来制作剖面图。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3DFunctionalSurface_Stack.png"></p>
+<p>表中各个字段的含义：</p>
+<ul>
+<li>FIRST_DIST - 到剖面段中第一个折点的距离。</li>
+<li>FIRST_Z - 剖面段中第一个折点的高度。</li>
+<li>SEC_DIST - 剖面段中第二个折点的距离。</li>
+<li>SEC_Z - 剖面段中第二个折点的高度。</li>
+<li>LINE_ID - 用于定义剖面的线要素的唯一 ID。</li>
+<li>SRC_TYPE - 剖面源的数据类型，是表面或多面体。</li>
+<li>SRC_ID - 要描绘剖面的多面体要素的唯一 ID。不适用于表面输入。</li>
+<li>SRC_NAME - 剖面源的名称和路径。</li>
+</ul>
+<h1 id="5-nbsp-Surface-Volume（表面体积）"><a href="#5-nbsp-Surface-Volume（表面体积）" class="headerlink" title="5.&nbsp;Surface Volume（表面体积）"></a><strong>5.&nbsp;Surface Volume（表面体积）</strong></h1><p>可计算指定参考平面以上或以下的栅格、不规则三角网 (TIN) 或 terrain 数据集表面的面积和体积。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3DFunctionalSurface_Volumn.gif"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Geoprocessing/" rel="tag"><i class="fa fa-tag"></i> Geoprocessing</a>
+              <a href="/tags/3D/" rel="tag"><i class="fa fa-tag"></i> 3D</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2012/11/18/3D3DFeatures/" rel="prev" title="3D分析之3D要素工具箱">
+                  <i class="fa fa-angle-left"></i> 3D分析之3D要素工具箱
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2012/11/21/3DConversionTool/" rel="next" title="3D分析之常用转换工具">
+                  3D分析之常用转换工具 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

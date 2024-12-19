@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/21/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/21/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/21/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/12/26/Complete/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/26/Complete/" class="post-title-link" itemprop="url">无法正常卸载 ArcGIS 产品时，这样完全清除</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-26 12:15:20" itemprop="dateCreated datePublished" datetime="2014-12-26T12:15:20+08:00">2014-12-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>481</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>一般情况下，我们可以直接在“添加删除程序”中，对 ArcGIS 程序进行卸载，这是推荐的方法。</p>
+<p>但是，如果遇到异常，例如：被杀毒程序不完整的删除或手动删除了必要的文件等，导致 ArcGIS 无论如何也卸载不掉，或者即使使用光盘去修复程序也失败，或者使用高版本的ArcGIS程序去覆盖也报错等。</p>
+<p><strong>那就需要手动清理一下了，这是最后一招，正常卸载程序失败时再考虑这招……</strong></p>
+<p>我把有可能有的位置列在下面，对照一下，检查是否删除干净了。有些文件夹是隐藏文件夹，设置显示出来然后删除。</p>
+<h1 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹:"></a>文件夹:</h1><p>C:\Program Files (x86)\ArcGIS<br>C:\Program Files (x86)\Esri<br>C:\Program Files (x86)\Common Files\ArcGIS<br>C:\Program Files (x86)\Common Files\Esri<br>C:\Program Files\ArcGIS<br>C:\Program Files\Esri<br>C:\Program Files\Common Files\ArcGIS<br>C:\Program Files\Common Files\Esri<br>C:\Program Data\Esri<br>C:\Program Data\ArcGIS<br>C:\Program Data\FLEXnet<br>C:\Users&lt;USERNAME&gt;\AppData\Local\ESRI<br>C:\Users&lt;USERNAME&gt;\AppData\Local\ArcGIS<br>C:\Users&lt;USERNAME&gt;\AppData\Roaming\ESRI<br>C:\Users&lt;USERNAME&gt;\AppData\Roaming\ArcGIS<br>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\ArcGIS<br>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Esri</p>
+<h1 id="注册表："><a href="#注册表：" class="headerlink" title="注册表："></a>注册表：</h1><p>HKEY_LOCAL_MACHINE\SOFTWARE\ESRI<br>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ESRI<br>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Flex LM License Manager<br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall&lt;Delete Any Folder that contains ArcGIS or Esri&gt;<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\ArcGIS Server<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services&lt;Delete Any Folder that contains ArcGIS or Esri within&gt;<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\FLEXnet Licensing Service<br>HKEY_CLASSES_ROOT\Installer\Products&lt;Delete Any Folder that contains ArcGIS or Esri within&gt;<br>HKEY_CLASSES_ROOT\Installer\Assemblies&lt;Delete Any Folder that contains ArcGIS or Esri within&gt;<br>HKEY_CLASSES_ROOT&lt;Delete and Folder that contains ArcGIS or Esri within&gt;<br>HKEY_CLASSES_ROOT\Installer\Assemblies\Global&lt;Delete all Keys beginning with ESRI or ArcGIS&gt;</p>
+<h1 id="安全设置："><a href="#安全设置：" class="headerlink" title="安全设置："></a>安全设置：</h1><p>安全设置&#x2F;Security Settings -&gt; 本地策略&#x2F;Local Policies -&gt; 安全选项&#x2F;Security Options</p>
+<p>找到 “用户账户控制：以管理员批准模式运行所有管理员” &#x2F; “User Account Control: Run all administrators in Admin Approval” , 将设置从 “已启用&#x2F;Enabled” 改为 “已禁用&#x2F;Disabled”。</p>
+<p>如果有，则卸载: C:\Windows\assembly\Esri.<br>如果有，则卸载: C:\Windows\assembly\ArcGIS.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/12/25/MeasureDistances/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/25/MeasureDistances/" class="post-title-link" itemprop="url">我们可能会遇到的距离量算方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-25 15:57:46" itemprop="dateCreated datePublished" datetime="2014-12-25T15:57:46+08:00">2014-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>598</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在看空间统计相关的文档资料的时候，看到了几个有关距离丈量方法的术语词汇，诸如：欧式距离、曼哈顿距离、切比雪夫距离…… 老外习惯于使用名字来命名算法，可是对于门外汉们，是一种困惑，今天就整理下，一起温故知新。 </p>
+<br>
+
+<h2 id="1-欧式距离（Euclidean-Distance）"><a href="#1-欧式距离（Euclidean-Distance）" class="headerlink" title="1. 欧式距离（Euclidean Distance）"></a><strong>1. 欧式距离（Euclidean Distance）</strong></h2><p>欧式距离是我们在直角坐标系中最常用的距离量算方法，例如小时候学的“两点之间的最短距离是连接两点的直线距离。”这就是典型的欧式距离量算方法。 </p>
+<p>通常这这个距离的获取是基于我们熟悉的“勾股定理”，解算三角形斜边得到的。 </p>
+<p><img src="http://kikitamap.com/images/blogImg/MeasureDistances_EucDis.png"> </p>
+<p><img src="http://kikitamap.com/images/blogImg/MeasureDistances_EucDis2.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/MeasureDistances_Formula.png"> </p>
+<p>看看维基百科：<span class="exturl" data-url="aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9FdWNsaWRlYW5fZGlzdGFuY2U=">http://en.wikipedia.org/wiki/Euclidean_distance<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<h2 id="2-曼哈顿距离（Manhattan-Distance）"><a href="#2-曼哈顿距离（Manhattan-Distance）" class="headerlink" title="2. 曼哈顿距离（Manhattan Distance）"></a><strong>2. 曼哈顿距离（Manhattan Distance）</strong></h2><p>曼哈顿距离是与欧式距离不同的一种丈量方法，两点之间的距离不再是直线距离，而是投影到坐标轴的长度之和。 </p>
+<pre><code>    ![](http://kikitamap.com/images/blogImg/MeasureDistances_Manhattan.png) 
+</code></pre>
+<p>还是看图吧，图比文字更显见。 </p>
+<pre><code>    ![](http://kikitamap.com/images/blogImg/MeasureDistances_Manhattan2.png) 
+</code></pre>
+<p>图中绿色的线为欧式距离的丈量长度，红色的线即为曼哈顿距离长度，蓝色和黄色的线是这两点间曼哈顿距离的等价长度。 </p>
+<p>想想我们下象棋的时候，车炮兵之类的，是不是要走曼哈顿距离？ </p>
+<p>如果不会下象棋，没关系，看下面的例子： </p>
+<p><img src="http://kikitamap.com/images/blogImg/MeasureDistances_ManhattanMap.png"></p>
+<p>   在美国道路会像这样是很多的规则的网格状，从A到B通常无法去沿直线行走，而是会避开建筑物，走几个街区到达。    </p>
+<p>图中蓝色的线即为曼哈顿距离的典型应用场景。 </p>
+<p><em>看看维基百科：<span class="exturl" data-url="aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9UYXhpY2FiX2dlb21ldHJ5">http://en.wikipedia.org/wiki/Taxicab_geometry<i class="fa fa-external-link-alt"></i></span></em> </p>
+<br>
+
+<h2 id="3-切比雪夫距离（Chebyshev-distance）"><a href="#3-切比雪夫距离（Chebyshev-distance）" class="headerlink" title="3. 切比雪夫距离（Chebyshev distance）"></a><strong>3. 切比雪夫距离（Chebyshev distance）</strong></h2><p>数学上，切比雪夫距离是将2个点之间的距离定义为其各坐标数值差的最大值。 </p>
+<pre><code>   ![](http://kikitamap.com/images/blogImg/MeasureDistances_Chebyshev.png) 
+</code></pre>
+<p>网上搜索，好多有关这个距离的解释，大多都是采用国际象棋中的王的走步来作为例子，王可以前后左右走，还可以斜前斜后走，一共8个方向可以认为距离均等。 </p>
+<p>也就是在下面3&amp;times;3邻域内，中心网格的中心点到8个邻域网格中心点的距离相等。 </p>
+<pre><code>  ![](http://kikitamap.com/images/blogImg/MeasureDistances_Chebyshev2.png) 
+</code></pre>
+<p><em>看看维基百科：<span class="exturl" data-url="aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9DaGVieXNoZXZfZGlzdGFuY2U=">http://en.wikipedia.org/wiki/Chebyshev_distance<i class="fa fa-external-link-alt"></i></span></em>    </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/12/09/MDAnalyzeRepairMD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/09/MDAnalyzeRepairMD/" class="post-title-link" itemprop="url">镶嵌数据集工具小结（十一）分析、修复、同步镶嵌数据集</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-09 15:40:37" itemprop="dateCreated datePublished" datetime="2014-12-09T15:40:37+08:00">2014-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这是这个专题的最后一篇，将剩下的几个工具放在一起说一说。下面的这些工具在镶嵌数据集正常运行时常常会被忽略，但是一旦出现异常或者故障，这些工具就有了用武之地。 </p>
+<p><img src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Toolset.png"> </p>
+<br>
+
+<h1 id="分析镶嵌数据集"><a href="#分析镶嵌数据集" class="headerlink" title="分析镶嵌数据集"></a>分析镶嵌数据集</h1><p>当我们发现镶嵌数据集不能按照预期运行，或者性能比较差的的时候，可以使用工具 <strong>Analyze Mosaic Dataset</strong> 来分析检查存在的问题。这个工具可以发现常见问题、发出警告消息，并且给出些解决方法或者建议等。另外，当在 ArcMap 中镶嵌数据集图层的右键菜单也可以调用这个工具。 </p>
+<p><img src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Analyze.png"> </p>
+<br>
+
+<p>分析之后，在 Prepare 窗口中列出检查到的 Error，Warning，Message等，在列表的每一行上右键，都会打开相应的解决方法或者建议。 </p>
+<p><img src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Prepare.png"> </p>
+<p>使用分析镶嵌数据集工具，我们可以分析的对象有： </p>
+<blockquote>
+<p><strong>FOOTPRINT</strong> — 镶嵌数据集的轮廓线<br><strong>FUNCTION</strong>—镶嵌数据集的栅格函数<br><strong>RASTER</strong> — 栅格数据<br><strong>PATHS</strong>— 分析是否存在损坏的路径<br><strong>SOURCE_VALIDITY</strong>— 对源数据的潜在问题进行分析。此方法可以有效检测同步工作期间可能发生的问题。<br><strong>STALE</strong> — 分析镶嵌数据集项目是否过时<br><strong>PYRAMIDS</strong> — 栅格数据金字塔，测试金字塔是否有断开连接的辅助文件。<br><strong>STATISTICS</strong> —  栅格统计数据和直方图<br><strong>PERFORMANCE</strong> — 对性能相关的问题进行分析。例如，传输期间未压缩，或建议对涉及大量栅格函数的项目进行项目缓存。<br><strong>INFORMATION</strong> —  对镶嵌数据集及其项目进行分析，并会为分析结果生成信息日志。 </p>
+</blockquote>
+<br>
+
+<h1 id="计算脏区"><a href="#计算脏区" class="headerlink" title="计算脏区"></a>计算脏区</h1><p><strong>Compute Dirty Area</strong> 工具用于标识镶嵌数据集中在指定时间点之后发生更改的区域。 </p>
+<p>工具的输出结果为面要素类，在面要素类区域以内就是发生变化的区域。工具支持较多的时间格式的输入，参考工具内部格式样例填写即可。 </p>
+<br>
+
+<h1 id="镶嵌数据集的路径"><a href="#镶嵌数据集的路径" class="headerlink" title="镶嵌数据集的路径"></a>镶嵌数据集的路径</h1><p>我们知道镶嵌数据集中存储的是栅格数据源的引用信息，而不是栅格数据源本身。当我们复制或者移动镶嵌数据集到其他位置时，镶嵌数据集中的引用信息并没有发生变化。 </p>
+<p>有时，在同一台机器上，由于源数据的绝对路径没有变化，因此即使挪了镶嵌数据集的位置，也没有什么影响。但是如果是把镶嵌数据集移动或者复制到另一台机器上，或者其他原因源栅格数据的路径发生了更改，那么我们要做的就是更新或者说修复路径。 </p>
+<p>如果我们需要知道镶嵌数据集现在使用的数据源，使用 <strong>Export Mosaic Dataset Paths</strong> 工具可以将镶嵌数据集引用的路径信息导出成一张表。也可以仅将损坏的路径导出。 </p>
+<p>然后使用工具 **Repair *<em><strong>Mosaic Dataset Paths</strong> 对路径进行修复，如果要更改所有路径，可输入星号 (</em>) 作为原始路径。 </p>
+<br>
+
+<h1 id="同步镶嵌数据集"><a href="#同步镶嵌数据集" class="headerlink" title="同步镶嵌数据集"></a>同步镶嵌数据集</h1><p>工具 **Synchronize Mosaic Dataset **可以将镶嵌数据集保持为最新状态。要理解同步镶嵌数据集，理解镶嵌数据集内数据的组织方式非常重要。 </p>
+<p>1）最常见的是直接引用栅格数据的镶嵌数据集。这种镶嵌数据集与源数据有直接关系，可以称之为“源镶嵌数据集”。 </p>
+<p><img src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_SourceMD.png"> </p>
+<p>2）镶嵌数据集的数据源还可以是另外一个镶嵌数据集，也就是在创建镶嵌数据集后，添加数据的数据源是另外一个镶嵌数据集。这种可以称之为“派生镶嵌数据集”，帮助理解。当源镶嵌数据集发生变化时，为了保持派生镶嵌数据集最新，同步镶嵌数据集就非常重要了。 </p>
+<p>PS：在第一篇中提到过 “引用镶嵌数据集 &#x2F; Referenced Mosaic Dataset” ，这是一种特别的镶嵌数据集，与上文要表达的 “派生镶嵌数据集” 不是一种哦。 </p>
+<p><img src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_ReferenceMD.png"> </p>
+<p>同步镶嵌数据集是个单向操作，其中源数据中的更改可以同步到镶嵌数据集的属性表，但属性表中的更改将不会影响源数据，同步时所做的更改无法撤消。。应该在同步派生镶嵌数据集之前同步源镶嵌数据集，因为派生镶嵌数据集只能使用源镶嵌数据集中的信息进行更新。 </p>
+<p>同步镶嵌数据集工具中有一系列的参数可供配置，来细化控制参与同步的想，所见即所得，不再赘述。 </p>
+<br>
+
+<h1 id="更改镶嵌数据集方案"><a href="#更改镶嵌数据集方案" class="headerlink" title="更改镶嵌数据集方案"></a>更改镶嵌数据集方案</h1><p><strong>Alter Mosaic Dataset Schema</strong> 工具通过生成所需的表或字段准备 ArcSDE 中镶嵌数据集的方案。该工具可防止在 ArcSDE 中存储镶嵌数据集时可能发生的方案锁定问题。 </p>
+<p>只有在 ArcSDE 中创建镶嵌数据集，而且由非数据集所有者编辑镶嵌数据集时，才需要此工具。 </p>
+<p>在工具中，选择该镶嵌数据集所允许的操作。这将创建所需的必要表。如果非数据集所有者尝试执行不允许的操作，则操作会失败。 </p>
+<p>操作选项：ANALYSIS，BOUNDARY，CACHE，COLOR_CORRECTION，LEVELS，LOG，OVERVIEW，SEAMLINE，STEREO，VIEW </p>
+<p>选择该镶嵌数据集所允许的栅格类型。这将创建所需的必要字段。如果非数据集所有者使用添加栅格至镶嵌数据集工具并尝试使用该工具未指定的栅格类型，则添加栅格至镶嵌数据集的执行将会失败。 </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/12/04/MDFunctionChain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/12/04/MDFunctionChain/" class="post-title-link" itemprop="url">镶嵌数据集工具小结（十）函数链</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-12-04 16:22:10" itemprop="dateCreated datePublished" datetime="2014-12-04T16:22:10+08:00">2014-12-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>961</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>镶嵌数据集中的函数</strong></p>
+<p>在下文中会提到的工具有这几个，先摆在这里，有个初步的记忆：</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFunctionChain_Toolset.png"></p>
+<br>
+
+<p>这个主题中，一起来看一下镶嵌数据集的函数。</p>
+<p><strong>★</strong> 不过首先需要额外了解，在 ArcGIS 中，其实除了镶嵌数据集，普通的栅格数据集也可以使用函数，这并不仅仅是镶嵌数据集的特性。在 Image Analyst 窗口中，我们可以点击 fx 按钮给现有数据配置函数。</p>
+<p>例如，下面给DEM增加个临时的山影效果，而不需要在硬盘上去存储这个结果：</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFunctionChain_Hillshade.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFunctionChain_ImageAnalysis.jpg"></p>
+<p>在栅格数据上使用函数后，我们就可以直接查看函数作用后的结果栅格图层。在镶嵌数据集中创建的函数可以存储在数据库中，并且可以根据自己的需求，给栅格数据指定多个依次进行的函数，下一步的函数会使用上一步的函数的结果作为输入，称之为 <strong>函数链</strong>（Function Chain），一环扣一环，很形象。</p>
+<p>给镶嵌数据集整体进行函数运算好处就是整体连续，如果我们每幅进行各自函数运算然后镶嵌，就会发现数据是不连续的片状。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFunctionChain_Mosaic.png"></p>
+<p>我们在镶嵌数据集的属性窗口中可以看到 Function 选项卡，这就是配置函数链的主要的位置。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFunctionChain_Function.png"></p>
+<p>如果我们在建库的时候选择某种 产品定义（Product Defination），在镶嵌数据集内部镶嵌数据集项目的也会存在函数链。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFunctionChain_Production.png"></p>
+<p>ArcGIS 提供了很多可以用于栅格处理的函数，在 Web Help 文档中有每个函数的详细描述，这里我就不一一整理了。Web Help当工具书用，还是十分便利的，大家自可按需查询，点<a target="_blank" rel="noopener" href="http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//009t00000044000000"><strong>这里</strong></a>。</p>
+<br>
+
+
+<p>镶嵌数据集工具箱中有这样几个工具，涉及到了函数，就联合上面的内容一起说说，从整体的总结来看，正文才刚刚开始……</p>
+<br>
+
+<p>前面说过了，我们可以直接在镶嵌数据集上右键，Function 选项卡中增加、删除、修改函数链，我们也可以使用工具 <strong>Edit Raster Function</strong> 。</p>
+<p>如果没有特别的要使用 Model Builder或者脚本等调用这个工具，个人建议可以直接到属性中去修改，操作起来更方便直观。这个工具提供了 <strong>Insert、Replace、Remove</strong>三种修改选项，可以将 <strong>栅格函数模板文件(.rft.xml)</strong> 通过操作应用给镶嵌数据集，这种文件可以在** Function Template Editor **中保存获得。</p>
+<p>举个最简单的例子，前面用了山影函数，现在我需要换成地貌晕染函数，执行下这个工具，导入现有的函数模板替换掉即可。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFunctionChain_ShadedRelief.png"></p>
+<p>接着第二个相关的工具&nbsp;<strong>Build Mosaic Dataset Item Cache</strong>，这个工具是把 “Cached Raster Function” 函数插入到每个栅格数据函数链的顶部，这样该函数就成为链中最后实现的函数。一般是涉及到运算量较大的处理过程时，这样做可以提高性能。</p>
+<p>在这个工具中，我们可以定义、生成缓存、指定缓存的存储位置。默认情况下，会在镶嵌数据集所处位置旁的文件夹中生成和存储缓存。此文件夹的名称与地理数据库的名称相同，但扩展名为 .cache。但是，如果镶嵌数据集创建于 ArcSDE 地理数据库，则将在该地理数据库中创建缓存。</p>
+<p>如果我们想得到函数链处理之后镶嵌数据集中的各个栅格数据，就可以使用工具 <strong>Export Mosaic Dataset Items</strong>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/11/28/MDCellRange/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/11/28/MDCellRange/" class="post-title-link" itemprop="url">镶嵌数据集工具小结（九）计算像元大小范围</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-11-28 15:41:03" itemprop="dateCreated datePublished" datetime="2014-11-28T15:41:03+08:00">2014-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>828</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>计算像元大小范围</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/MDCellRange_Toolset.png"></p>
+<p>像元大小范围指的是，镶嵌数据集中的影像参加动态镶嵌的像元大小范围，也就是，动态镶嵌的过程中从栅格数据集中读取的像元大小的范围。</p>
+<p>在镶嵌数据集的属性表中，字段 <strong>LowPS</strong> 列和 <strong>HighPS</strong> 列定义镶嵌数据集从源栅格数据集中读取的像元大小的 <strong>实际范围</strong>。当我们向镶嵌数据集中添加栅格时，工具会根据源栅格数据分辨率、金字塔等级、金字塔选项中的设置 来计算属性表中 LowPS 与 HighPS 字段值。<br>例如，下图中的 LowPS &#x3D; 0.1 表示基础像素值，High &#x3D; 0.4 表示正在使用的顶级金字塔像素值。对于不包含金字塔的栅格数据集，低像素大小和高像素大小可能为相同的值，例如第一行。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDCellRange_Table.png"></p>
+<p>例如，在使用所有金字塔等级的情况下，如果栅格数据集包含 1 米的像元，且包含像元大小为 2、4、8 和 16 米的金字塔，则 LowPS 是 1，HighPS 是 16。如果在栅格金字塔选项中将最大像元大小设置为 8，则 HighPS 将为 8 而不是 16。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDCellRange_Pyramid.png"></p>
+<p>属性表中还有两列：<strong>MinPS</strong> 列和 <strong>MaxPS</strong> 列，用来定义在什么像元大小范围内请求什么栅格数据。当我们向镶嵌数据集中添加栅格数据时，选中添加栅格至镶嵌数据集对话框上的 <strong>Update Cell Size Ranges (optional)</strong> 选项，或使用工具 <strong>Calculate Cell Size Ranges</strong> 时，就会填充两列字段值；也可以手动编辑表中的值。<br>MinPS 和 MaxPS 是根据栅格数据和叠加在上面的概视图来计算的。</p>
+<p>用下面一幅图，可以看出默认情况下，MinPS，MaxPS 与 LowPS，HighPS 的关系：</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDCellRange_CellSize.png"></p>
+<p>当加入镶嵌数据集的栅格数据源有多种分辨率时，就可以利用像元大小范围来控制不同比例尺下显示不同的栅格数据。</p>
+<p>例如，在国家级别查看影像，可以使用 <span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzQyMjE1NjcuaHRtP2Zyb210aXRsZT1MYW5kc2F0JmZyb21pZD03MTk1NzY1JnR5cGU9c3lu">Landsat<i class="fa fa-external-link-alt"></i></span> 影像，约 30 米的像元大小；当放大到更高的比例，镶嵌数据集可以提供 SPOT 图像，像元大小约 5 米；进一步放大时，最终将看到航空正射影像，像元大小更小，分辨率更高。</p>
+<p>比例尺和像元大小有很大的关系，如果我们希望求取计算的话，可以参考如下公式：<br>    <strong>Scale &#x3D; CellSize * 96 &#x2F; 0.0254</strong><br>    其中，ArcGIS 中 DPI 的默认值为 96，1 英寸（Inch） &#x3D; 0.0254米，CellSize是以“米”为单位的。<br>    公式反之，可以通过比例推算像元大小：<br>    <strong>CellSize &#x3D; Scale * 0.0254 &#x2F; 96</strong></p>
+<p>如果我们访问镶嵌数据集时，不断的放大地图，最终请求的影像的 Cell Size 小于了全部的 MinPS，那么就会请求失败，不再会返回影像；反之，如果我们不断的缩小地图，最终请求的Cell Size 大于了全部的的 MaxPS，那么也会请求失败，返回黑色和白色的棋盘状图案。也就是说，镶嵌数据集的像元大小范围会直接影响我们在缩放地图时影像数据的可见性。</p>
+<p>That’s all …</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/20/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/22/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

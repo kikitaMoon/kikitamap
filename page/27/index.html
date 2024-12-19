@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/27/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/27/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/27/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/11/LASDatasetOverview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/11/LASDatasetOverview/" class="post-title-link" itemprop="url">LAS Dataset 概览</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-02-11 11:40:11" itemprop="dateCreated datePublished" datetime="2014-02-11T11:40:11+08:00">2014-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="一、了解激光雷达"><a href="#一、了解激光雷达" class="headerlink" title="一、了解激光雷达"></a><strong>一、了解激光雷达</strong></h1><p>Lidar(Light Detection And Ranging)：激光探测及测距，是一种光学遥感技术，使用激光对地球表面的密集采样，产生高精度X、Y、Z测量值。</span></p>
+<p>激光雷达系统的主要硬件组成部分包括一组车辆（飞机、直升机、车辆以及三脚架）、激光扫描系统、GPS（全球定位系统）和 INS（惯性导航系统）。INS 系统测量激光雷达系统的滚动角、俯仰角与前进方向。</span></p>
+<p>激光雷达是一个主动光学传感器，它在沿着特定的测量路径移动时向一个目标发射激光束。激光雷达传感器中的接收器会对从目标反射回来的激光进行检测和分析。这些接收器会记录激光脉冲从离开系统到返回系统的精确时间，以此计算传感器与目标之间的范围距离。这些距离测量值会与位置信息（GPS 和 INS）一起转换为对象空间中反射目标实际三维点的测量值。完成激光雷达数据采集测量之后，将通过分析激光的时间范围、激光的扫描角度、GPS 位置和 INS 信息将点数据后处理成高度精确的地理配准 x,y,z 坐标。</p>
+<p>采集到的激光雷达点的附加信息与 x、y 和 z 位置值存储在一起。为每个记录的激光脉冲保留以下激光雷达点属性：强度、回波编号、回波数、点分类值、在飞行航线边缘的点、RGB（红、绿和蓝）值、GPS 时间、扫描角度和扫描方向。</p>
+<br>
+
+<h1 id="二、激光雷达的类型："><a href="#二、激光雷达的类型：" class="headerlink" title="二、激光雷达的类型："></a><strong>二、激光雷达的类型：</span></strong></h1><p><strong>i &nbsp; 机载激光雷达（Airborne）</strong></p>
+<p>A）地形探测激光雷达（Topographic lidar）</p>
+<p>应用如如林业、水文、地貌、城市计划、景观生态、海岸工程、调查评估和体积计算等。</p>
+<p>B）深海探测激光雷达（Bathymetric lidar）</p>
+<br>
+
+<h2 id="ii-nbsp-陆地激光雷达（Terrestrial-lidar）"><a href="#ii-nbsp-陆地激光雷达（Terrestrial-lidar）" class="headerlink" title="ii &nbsp;陆地激光雷达（Terrestrial lidar）"></a><strong>ii &nbsp;陆地激光雷达（Terrestrial lidar）</strong></h2><p>A）移动（Mobile）： 可安装在车辆、火车甚至轮船上。</p>
+<p>B） 固定（Static）： 三脚架等。</p>
+<br>
+
+<h2 id="三、激光雷达的存储："><a href="#三、激光雷达的存储：" class="headerlink" title="三、激光雷达的存储："></a><strong>三、激光雷达的存储：</strong></h2><p>LAS 是美国摄影测量与遥感协会 (ASPRS) 所创建和维护的行业格式。每个 LAS 文件都在页眉块中包含激光雷达测量的元数据，然后是所记录的每个激光雷达脉冲的所有记录。每个 LAS 文件的页眉部分都保留有激光雷达测量本身的属性信息：数据范围、飞行日期、飞行时间、点记录数、返回的点数、使用的所有数据偏移以及使用的所有比例因子。为 LAS 文件的每个激光雷达脉冲保留以下激光雷达点属性：x,y,z 位置信息、GPS 时间戳、强度、回波编号、回波数目、点分类值、扫描角度、附加 RGB 值、扫描方向、飞行航线的边缘、用户数据、点源 ID 和波形信息。</p>
+<p>最初，激光雷达数据以 ASCII 格式交付。由于激光雷达数据集合非常庞大，所以不久之后，开始采用一种称为 LAS 的二进制格式来管理和标准化激光雷达数据的组织和传播方式。现在，以 LAS 表示的激光雷达数据十分常见。LAS 是一种可接受性更强的文件格式，因为 LAS 文件包含的信息更多，而且由于采用二进制，所以导入程序可以更高效地读取。</p>
+<p>ArcGIS 支持以 ASCII 或 LAS 文件格式提供的激光雷达数据。ArcGIS支持LAS版本1.0，1.1，1.2和1.3。使用 LAS 版本 1.3 时可用的波形信息不受支持。此外，支持与 1.3 版兼容的 1.4 版 LAS 文件，包含 0-5 的点记录格式。不支持包含 6-10 点记录格式的 1.4 版 LAS 文件。</p>
+<br>
+
+<h1 id="四、激光雷达点分类："><a href="#四、激光雷达点分类：" class="headerlink" title="四、激光雷达点分类："></a><strong>四、激光雷达点分类：</strong></h1><p>每个激光雷达点都可分配一种分类，用于定义反射激光雷达脉冲的对象的类型。可将激光雷达点分成很多个类别，包括地面、裸露地表、冠层顶部和水域。使用 LAS 文件中数字整数代码可定义不同的类。对于 LAS 格式 1.1、1.2 或 1.3，分类代码由美国摄影测量与遥感协会 (ASPRS) 定义。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/11/ArcGISDesktopVSExcel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/11/ArcGISDesktopVSExcel/" class="post-title-link" itemprop="url">ArcGIS Desktop 与 Excel</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-02-11 11:35:40" itemprop="dateCreated datePublished" datetime="2014-02-11T11:35:40+08:00">2014-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>690</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。</p>
+<h2 id="ArcGIS-Desktop-中访问-Excel-数据"><a href="#ArcGIS-Desktop-中访问-Excel-数据" class="headerlink" title="ArcGIS Desktop 中访问 Excel 数据"></a>ArcGIS Desktop 中访问 Excel 数据</h2><p>Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览这种表，并可将这种表作为地理处理工具的输入数据。</p>
+<p>通过 ArcGIS 进行访问Excel表时，每个工作表在 ArcGIS 中都是一个单独的表，名称末尾带有美元符号 $ 标识，但是这个$并不是表名的一部分。如果工作表的表名中包含空格，那表名称周围会括有单引号。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
+<h2 id="对于ArcGIS-Desktop-对-office-版本的支持情况"><a href="#对于ArcGIS-Desktop-对-office-版本的支持情况" class="headerlink" title="对于ArcGIS Desktop 对 office 版本的支持情况"></a>对于ArcGIS Desktop 对 office 版本的支持情况</h2><p>ArcGIS 支持 ：</p>
+<ul>
+<li>Excel 2003 以及更早版本的 .xls 文件；</li>
+<li>Excel 2007 的 .xlsx 文件。</li>
+</ul>
+<p>为什么要分开说呢？</p>
+<p>*.xls 文件可以直接在ArcGIS中以只读的形式打开，例如直接在ArcMap中添加数据、在ArcMap中添加XY数据显示为点、在ArcCatalog中进行查看等等。</p>
+<p>而 *.xlsx 文件打开时，需要有一个数据驱动。如果我们遇到这个错误：“ <strong>Failed to connect to ddatabase. An underlying database error occured. 没有注册类</strong>”，那就是缺少驱动的结果。</p>
+<p>一般如果我们安装了 MS Office 2010 或者 2013，或者根本就没有安装 Office，这个错误必然会遇到了。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Error.jpg"></p>
+<br>
+
+<p>需要安装 &nbsp;2007 Office System 驱动程序（AccessDatabaseEngine.exe），下载英文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2VuLXVzL2Rvd25sb2FkL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，中文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3poLWNuL2Rvd25sb2FkL2RldGFpbHMuYXNweD9pZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，这个包的官方说明如下：</p>
+<p>这个程序安装之后，上述错误即可解决。</p>
+<h2 id="ArcGIS访问Excel表时，字段类型的确定"><a href="#ArcGIS访问Excel表时，字段类型的确定" class="headerlink" title="ArcGIS访问Excel表时，字段类型的确定"></a>ArcGIS访问Excel表时，字段类型的确定</h2><p>ArcGIS 访问 Excel 时，字段名称从工作表各列的首行中获取。</p>
+<p>在 Excel 中指定的字段类型对 ArcGIS 中显示的字段类型不起任何决定作用。ArcGIS 中的字段类型是由该字段的头八行值扫描决定的。</p>
+<p>如果在单个字段中扫描到混合数据类型，则该字段将以字符串字段的形式返回，并且其中的值将被转换为字符串。</p>
+<p>在 ArcGIS 中，数值字段将被转换为双精度数据类型。</p>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ol>
+<li><p>如果不想安装前面的驱动，最快的办法使得ArcGIS能够访问2007以后版本的表格文档，那就另存为97-2003版本的 *.xls了。</p>
+</li>
+<li><p>想把要素类的属性表导出来以供Excel使用，那就将属性表导出为 *.dbf 格式，然后打开方式使用 Excel 即可。</p>
+</li>
+<li><p>使用工具 Export to Excel 也可以将表导出为 Excel 表。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/23/DEMRendering/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/01/23/DEMRendering/" class="post-title-link" itemprop="url">DEM渲染洼地淹没图</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-01-23 11:13:31" itemprop="dateCreated datePublished" datetime="2014-01-23T11:13:31+08:00">2014-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>113</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>首先要准备基础数据，一张DEM栅格图。</p>
+<p><img src="http://kikitamap.com/images/blogImg/DEMRendering_DEM.jpg"></p>
+<p>然后将掩膜水位以下的数据提取出来以备后用。这里我提取了高程1000以下的像元。</p>
+<p><img src="http://kikitamap.com/images/blogImg/DEMRendering_Extract.jpg"></p>
+<p>对这个图层设置分类渲染，并设置半透明：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DEMRendering_Transparent.jpg"></p>
+<p>效果：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DEMRendering_Effect.jpg"></p>
+<p>生成DEM山影图，使用空间分析工具箱中的 Hillshade</p>
+<p><img src="http://kikitamap.com/images/blogImg/DEMRendering_Hillshade.jpg"></p>
+<p>叠在一起就很漂亮了，可以表示，某个高度下水淹没的情况。</p>
+<p><img src="http://kikitamap.com/images/blogImg/DEMRendering_FInal.jpg"></p>
+<p>3D效果：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DEMRendering_3DScene.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/19/GeographicTransformation2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/01/19/GeographicTransformation2/" class="post-title-link" itemprop="url">ArcGIS中的地理坐标系转换方法参数（二）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-01-19 10:37:38" itemprop="dateCreated datePublished" datetime="2014-01-19T10:37:38+08:00">2014-01-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>899</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p> 上篇博客说的是 Project 工具中 Geographic Transformation 参数什么情况下是必填的。</p>
+<p> 另外，Project 是矢量数据的坐标系变换工具，如果数据源是栅格数据，需要使用 Project Rater 工具。</p>
+<p>&nbsp;这篇博客主要写一下，有关自定义地理变换方法。</p>
+<p>ArcGIS 中提供地理变换方法主要有这几种：Geocentric_Translation、Molodensky、Molodensky_Abridged、Position_Vector、Coordinate_Frame、Molodensky_Badekas、NADCON、HARN、NTV2、Longitude_Rotation、Unit_Change 和 Geographic_2D_Offset。可使用“创建自定义地理变换（Create Custom Geographic Transformation）”工具来创建转换方法。地理坐标系包含了基于椭圆体的基准面，因此地理变换会更改基础椭圆体。在基准面间进行变换的方法很多，这些方法具有不同的精度和范围。</p>
+<p>地理变换是针对地理坐标系的，也就是经纬度坐标进行转换，如果输入数据的坐标系中还包含了平面坐标系（投影），在使用 Project 工具的过程中会自动做相应的投影变换，转到地理坐标系，地理变换后，如果需要再转为相应的投影坐标系。</p>
+<p><img src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Method.png"></p>
+<p><strong>PS：</strong></p>
+<p>所有的自定义地理变换文件都将存储为扩展名为 .gtf 的文件，并存储在用户 Application Data 文件夹下的 <code>ESRI\&amp;lt;ArcGIS product&amp;gt;\ArcToolbox\CustomTransformations</code> 文件夹中。自定义变换文件不能进行编辑。它们为二进制文件，用来储存版本和字符串长度信息，如果在ArcGIS之外进行自行编辑，可能会被损坏。</p>
+<p>下面我们来看看常用的转换方法吧，帮助中有介绍，我下面来个精简整理版的：</p>
+<p><strong>1）Geocentric_Translation</strong></p>
+<p>地心变换，也就是我们常说的<strong>三参数变换</strong>，是最简单的基准面变换方法。地心变换在 XYZ 或 3D 直角坐标系中对两个基准面间的差异情况进行建模。定义一个基准面使其中心为 0,0,0。相距一定距离定义另一个基准面（dx,dy,dz 或 ΔX,ΔY,ΔZ，单位为米）。</p>
+<p>图示:  <img src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Graphic.gif"></p>
+<p>方程：<img src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Function.gif"></p>
+<p><strong>2）Coordinate Frame，Position Vector</strong></p>
+<p>这两种方法是我们常说的七参数变换，或者布尔沙模型。通过对三参数变换再增加四个参数可实现更复杂和精确的基准面变换。七个参数是指三个线性平移量 (dx,dy,dz)、绕各轴的三个角度旋转值 (rx,ry,rz) 和一个比例尺因子。旋转值以十进制秒为单位给定，而比例尺因子采用百万分率 (ppm)。</p>
+<p>图示：<img src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Frame.gif">&nbsp; &nbsp;</p>
+<p>方程：<img src="http://kikitamap.com/images/blogImg/GeographicTransformation2_FrameFunction.gif"></p>
+<p>为什么七参数有上面两种方法？其实可以认为是一种模型，只是不同的国家对旋转量的正负号定义标准不同而已。</p>
+<ul>
+<li>坐标框架旋转变换（coordinate frame），美国和澳大利亚的定义，逆时针旋转为正；</li>
+<li>位置矢量变换（position vector），欧洲的定义，逆时针旋转为负。</li>
+</ul>
+<p>另外，<strong>莫洛金斯基–巴德卡斯（Molodensky_Badekas）</strong> 方法是七参数方法的变型。它具有三个附加参数，用于定义旋转点的 XYZ 原点。</p>
+<p><strong>3）Molodensky，Molodensky_Abridged</strong></p>
+<p>莫洛金斯基方法直接在两种地理坐标系之间转换，实际上无需转换到 XYZ 系统。莫洛金斯基方法需要三个平移量 (dx,dy,dz) 以及两个旋转椭球体的长半轴 (Δa) 和扁率 (Δf) 的差。</p>
+<p>这种方法，相对用的少，方程我就不粘了，详见帮助：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjL25hLzAwM3IwMDAwMDAxMjAwMDAwMC8=">http://resources.arcgis.com/en/help/main/10.2/index.html#/na/003r00000012000000/<i class="fa fa-external-link-alt"></i></span></p>
+<p>OK，今天就到这里了~</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/17/GeographicTransformation1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/01/17/GeographicTransformation1/" class="post-title-link" itemprop="url">ArcGIS中的地理坐标系转换方法参数（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-01-17 18:00:00" itemprop="dateCreated datePublished" datetime="2014-01-17T18:00:00+08:00">2014-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>852</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>地理坐标系变换是数据处理过程中常遇到的问题，今天就说下这方面的问题。</p>
+<p>如果遇到这种情景：两份数据有不同的坐标系，想叠加在一起显示，作图或显示精度要求不高。</p>
+<p>这种情况使用 ArcMap 的动态投影即可，ArcMap 的内部动投影机制会解决地理坐标系变换的问题。数据在显示的过程中，会实时的被转换，但不改变数据本身。</p>
+<p>如果我们需要进行地理坐标系转换，我们知道 ArcGIS Desktop 中提供了 Project 工具。</p>
+<p>此工具界面上有个至关重要的参数：<strong>Geographic Transformation</strong>。我们发现它的后面赫然写着。依照使用其他工具的经验，这种打了 Optional 标志的参数，不就是可填可不填的意思吗？</p>
+<p>但是，它真的让你随便的可填可不填吗？ Naive！ 图样图森破！ 这个参数的填写与否，完全是受前面两个参数决定的，主要三种情景吧。</p>
+<br>
+
+<h2 id="情景1："><a href="#情景1：" class="headerlink" title="情景1："></a>情景1：</h2><p>不涉及到地理坐标系变换的坐标变换，这个参数完全不需要，而不是 optional 哦。</p>
+<p>例如：从 GCS_Xian_1980 进行投影变换，转换为 Xian_1980_3_Degree_GK_CM_120E 投影坐标系。</p>
+<p>整过转换中，仅使用了高斯克吕格投影变换，没有涉及到地理坐标变换。</p>
+<p><img src="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project.jpg"></p>
+<br />
+
+
+
+<h2 id="情景2："><a href="#情景2：" class="headerlink" title="情景2："></a>情景2：</h2><p>涉及到地理坐标系变换的坐标变换，并且ArcGIS 已知二者之间的变换方法，这个参数是必须的，在已知列表中做选择或者自定义。（自定义见：情景3）</p>
+<p>例如：从&nbsp;GCS_Beijing_1954，转换为&nbsp;GCS_WGS_1984坐标系。</p>
+<p>转换过程中涉及到地理坐标系变换，也就是进行了椭球体变换。</p>
+<p>ArcGIS 中提供了6种已知转换方法，可以根据适用范围选择之。其中如何选择，此文不做介绍，请查看我的另一篇<a href="http://kikitamap.com/2013/10/21/Beijing1954ToWGS1984/">博客</a>：</p>
+<p><img src="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project2.jpg"></p>
+<br />
+
+
+
+<h2 id="情景3："><a href="#情景3：" class="headerlink" title="情景3："></a>情景3：</h2><p>涉及到地理坐标系变换的坐标变换，并且ArcGIS 未知二者之间的变换方法，也就是ArcGIS没有提供转换方法，但是这个参数是必须的，需要自定义，这个参数前会亮绿灯，告诉用户，必须要填写。另外，上面情景2中，ArcGIS给出的方法，如果都不是自己需要的，也需要自定义。</p>
+<p>例如：从&nbsp;GCS_Beijing_1954，转换为&nbsp;GCS_Xian_1980坐标系。</p>
+<p><img src="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project3.jpg"></p>
+<p>需要使用工具 Create Custom Geographic transformation，创建一种转换方法，辅助 Project 工具。</p>
+<p>这个工具的帮助如下，就不赘述了。</p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjLy8wMDE3MDAwMDAwNzYwMDAwMDA=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//001700000076000000<i class="fa fa-external-link-alt"></i></span><br /></p>
+<p>补充：</p>
+<p>讲到这里全部的情形都涵盖了。有的同学会问，为什么会这样呢？ArcGIS为啥就不能都知道转换方法呢？为啥偏要我们自定义呢？好麻烦的耶%￥#@……</p>
+<p>有些坐标系转换的参数是不公开的，属于涉密的内容，所以ArcGIS是没有权利知道变换方法的。例如与 Xian 80 有关的变换。原文：<em>Some geographic coordinate systems do not have any publicly known transformations because that information is considered to have strategic importance to a government or company.</em></p>
+<p>好了，至此，大致就知道这个参数什么时候不需要，什么时候需要，如果没有如何得到，这几个问题。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/26/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/28/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

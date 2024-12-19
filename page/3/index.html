@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/3/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/3/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/3/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/06/Icecream_Part4_Advanced_Routing_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/06/Icecream_Part4_Advanced_Routing_1/" class="post-title-link" itemprop="url">HERE MAP API - Part4 Advanced Routing - 1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-03-06 13:18:30" itemprop="dateCreated datePublished" datetime="2019-03-06T13:18:30+08:00">2019-03-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>680</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 Part 3 中我们了解到如何调用 HERE Routing API 实现两点间路径规划，以及如何从当前位置出发规划路径。</p>
+<p>这个部分继续来看看，如何展示多条路线及其信息，并允许用户交互选择。</p>
+<h3 id="Pre-session-重构代码"><a href="#Pre-session-重构代码" class="headerlink" title="Pre-session: 重构代码"></a>Pre-session: 重构代码</h3><p>这一部分不是改进功能，而是整理思绪。磨刀不误砍柴工，放之四海而皆准。</p>
+<p>冰淇凌小网页的功能不断增多，代码也随之膨胀，我们要时不时地整理收纳一下，避免自己在找乐子的路上备受打击。</p>
+<p>在 Scripts 文件夹中，新建：</p>
+<ul>
+<li>map.js  用于存放和<strong>底图</strong>及<strong>绘制路线</strong>相关的逻辑；</li>
+<li>utils.js  用于存放<strong>辅助功能</strong>，例如，将 latlog 坐标转化成 WayPointString 以供 Routing Service 使用。</li>
+</ul>
+<p>代码与Part 3 类似，但是因为做了重构，需要注意其中的调用关系及 html页面中的加载顺序。</p>
+<p><em>complete code</em>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzFfcmVmYWN0b3I=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Multiple-Routes"><a href="#Multiple-Routes" class="headerlink" title="Multiple Routes"></a>Multiple Routes</h3><p>在日常导航出行时，多给出几条路线供用户选择，也是一个极常见的需求。</p>
+<p>使用 HERE Routing API 计算路线时，可在请求中加入参数 <code>alternatives</code> 来获得多个推荐路线。</p>
+<p>alternatives: 2； 即，1 (primary) + 2 (alternatives) &#x3D; 3  条路线。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">HEREMap</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">drawRoute</span> = <span class="keyword">function</span> (<span class="params">fromCoordinates, toCoordinates</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> routeOptions = &#123;</span><br><span class="line">        <span class="attr">mode</span>: <span class="string">&#x27;fastest;car&#x27;</span>,</span><br><span class="line">        <span class="attr">representation</span>: <span class="string">&#x27;display&#x27;</span>,</span><br><span class="line">        # add parameter</span><br><span class="line">        <span class="attr">alternatives</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">waypoint0</span>: <span class="title class_">Utils</span>.<span class="title function_">locationToWaypointString</span>(fromCoordinates),</span><br><span class="line">        <span class="attr">waypoint1</span>: <span class="title class_">Utils</span>.<span class="title function_">locationToWaypointString</span>(toCoordinates)</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">routes</span> = <span class="keyword">new</span> <span class="title class_">HERERoute</span>(<span class="variable language_">this</span>.<span class="property">map</span>, <span class="variable language_">this</span>.<span class="property">platform</span>, routeOptions);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>由于产生了多条道路，绘制道路的过程就要被执行多次，那么我们就把 <code>drawRoute</code> 函数挪到 <code>route.js</code> 中的 <code>HERERoute</code> 对象中，以供每次绘制道路调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Add drawRoute Function to HERERoute</span></span><br><span class="line">    <span class="keyword">var</span> drawRoute = <span class="keyword">function</span> (<span class="params">route</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> routeShape = route.<span class="property">shape</span>;</span><br><span class="line">        <span class="keyword">var</span> <span class="title class_">LineString</span> = <span class="keyword">new</span> H.<span class="property">geo</span>.<span class="title class_">LineString</span>();</span><br><span class="line"></span><br><span class="line">        routeShape.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">point</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> parts = point.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">            <span class="title class_">LineString</span>.<span class="title function_">pushLatLngAlt</span>(parts[<span class="number">0</span>], parts[<span class="number">1</span>]);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">var</span> routeLine = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Polyline</span>(<span class="title class_">LineString</span>, &#123;</span><br><span class="line">            <span class="attr">style</span>: &#123;</span><br><span class="line">                <span class="attr">strokeColor</span>: <span class="string">&#x27;blue&#x27;</span>,</span><br><span class="line">                <span class="attr">lineWidth</span>: <span class="number">3</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        map.<span class="title function_">addObject</span>(routeLine);</span><br><span class="line">        <span class="comment">// map.setViewBounds(routeLine.getBounds());</span></span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>与此同时，做 <code>onSuccess</code>函数的对应修改，在返回结果中依次调用 <code>drawRoute</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">       <span class="comment">// Simplify on success function</span></span><br><span class="line">       <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">           <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>;</span><br><span class="line">           <span class="title class_">Setting</span> view bounds</span><br><span class="line">           routes.<span class="title function_">forEach</span>(drawRoute);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Bingo！</p>
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part4_Advanced_Routing.png"></p>
+<h3 id="View-Bounds"><a href="#View-Bounds" class="headerlink" title="View Bounds"></a>View Bounds</h3><p>基本功能已实现，为了更好的体验，我们继续加工加工。</p>
+<p>在 Part 3 中的我们通过 <code>setViewBounds</code>  将地图显示为路线的范围，在Part 4 中显然就不适用了，因为这样只会返回跳转到最后一条路线的范围。将所有的路线加入到一个组中，然后跳转组的范围，来解决这个问题。</p>
+<p>对 <code>onSuccess</code> 进行修改：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>;</span><br><span class="line">        <span class="comment">// Setting view bounds</span></span><br><span class="line">        <span class="comment">// routes.forEach(drawRoute);</span></span><br><span class="line">        <span class="comment">// add all routes to a group</span></span><br><span class="line">        <span class="keyword">var</span> routeLines = routes.<span class="title function_">map</span>(drawRoute);</span><br><span class="line">        <span class="keyword">var</span> routeLineGroup = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Group</span>(&#123;</span><br><span class="line">            <span class="attr">objects</span>: routeLines</span><br><span class="line">        &#125;);</span><br><span class="line">        map.<span class="title function_">addObject</span>(routeLineGroup);</span><br><span class="line">        map.<span class="title function_">setViewBounds</span>(routeLineGroup.<span class="title function_">getBounds</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>同时移除 <code>drawRoute</code> 中原先的 <code>setViewBounds</code>语句，并向 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9tYXBzL3RvcGljc19hcGkvaC1tYXAtZ3JvdXAuaHRtbA==">H.map.Group<i class="fa fa-external-link-alt"></i></span> 容器中增加返回的route。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Setting view bounds using Group bounds not the last route</span></span><br><span class="line"><span class="comment">// map.addObject(routeLine);</span></span><br><span class="line"><span class="comment">// map.setViewBounds(routeLine.getBounds());</span></span><br><span class="line"><span class="keyword">return</span> routeLine;</span><br></pre></td></tr></table></figure>
+
+
+
+<br>
+
+<p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTQtYWR2YW5jZWQtcm91dGluZw==">Part4: Advanced Routing<i class="fa fa-external-link-alt"></i></span></p>
+<p><em>complete code</em>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzJfbXVsdGlSb3V0ZXM=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/05/Icecream_Part3_Basic_Routing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/05/Icecream_Part3_Basic_Routing/" class="post-title-link" itemprop="url">HERE MAP API - Part3 Basic Routing</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-03-05 16:13:16" itemprop="dateCreated datePublished" datetime="2019-03-05T16:13:16+08:00">2019-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>853</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Part 1 中我们准备了底图，Part 2 中我们获取了位置，现在终于开张了，“您有新的  ‘ 饿了乎 ’  订单到了！”  我们给外卖小哥规划下路线吧！</p>
+<h3 id="1-Routing-Service"><a href="#1-Routing-Service" class="headerlink" title="1 Routing Service"></a>1 Routing Service</h3><p>首先，HERE Map API 中提供了一个叫做 Platform 的类，实例化Platform后，我就可以借以访问 HERE Routing Service。 有关 Routing API 的帮助文档，点<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9yb3V0aW5nL3RvcGljcy93aGF0LWlzLmh0bWw=">这里<i class="fa fa-external-link-alt"></i></span>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> platform = <span class="keyword">new</span> H.<span class="property">service</span>.<span class="title class_">Platform</span>(&#123;</span><br><span class="line">		<span class="attr">app_id</span>: <span class="string">&#x27;[YOUR APP ID HERE]&#x27;</span>,</span><br><span class="line">		<span class="attr">app_code</span>: <span class="string">&#x27;[YOUR APP CODE HERE]&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> router = platform.<span class="title function_">getRoutingService</span>();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-Request-Route"><a href="#2-Request-Route" class="headerlink" title="2 Request Route"></a>2 Request Route</h3><p>在发请求之前，需要先至少定义起点和终点，或者必要的时候增加途经点，这些点是通过 <code>WayPointParameterType</code> 对象传递。</p>
+<p>为了让代码更简洁易维护，我们在 <code>scripts</code> 目录下创建一个 <code>route.js</code>文件，取代开始直接在 <code>app.js</code>中直接调用 Routing Service 的繁琐。如下，在 route.js 中增加一个用于封装 底图、platform对象、路径规划参数的 <code>HERERoute</code>函数，这个函数也会在浏览器控制台返回简单的错误日志。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// build a function to take the map and platform objects as parameters</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">HERERoute</span> (<span class="params">map, platform, routeOptions</span>) &#123;</span><br><span class="line"><span class="comment">// access the routing service by calling getRoutingService()</span></span><br><span class="line">    <span class="keyword">var</span> router = platform.<span class="title function_">getRoutingService</span>();</span><br><span class="line"><span class="comment">// error handling    </span></span><br><span class="line">    <span class="keyword">var</span> onSuccess = <span class="keyword">function</span>(<span class="params">result</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Route found!&#x27;</span>, result);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> onError = <span class="keyword">function</span>(<span class="params">error</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;Oh no! There was some communication error!&#x27;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    router.<span class="title function_">calculateRoute</span>(routeOptions, onSuccess, onError);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-Drawing-the-Route"><a href="#3-Drawing-the-Route" class="headerlink" title="3 Drawing the Route"></a>3 Drawing the Route</h3><p>现在我们可以在控制台看到 response，<strong>如何将 route 绘制到地图上呢</strong>？</p>
+<p>在成功返回结果的函数中增加如下代码，其中 Option_2 的部分用于实现向地图绘制路径：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// Option_1 Simply put the response to the console log</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Route found!&#x27;</span>, result);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Option_2 Furtherly draw the response to the map</span></span><br><span class="line">        <span class="keyword">var</span> route,</span><br><span class="line">            routeShape,</span><br><span class="line">            startPoint,</span><br><span class="line">            endPoint,</span><br><span class="line">            lineString;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Just take the first Route in the array</span></span><br><span class="line">            route = result.<span class="property">response</span>.<span class="property">route</span>[<span class="number">0</span>];</span><br><span class="line">            routeShape = route.<span class="property">shape</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// H.geo.LineString is recommended, instead of H.geo.Strip in the offical demo code</span></span><br><span class="line">            lineString = <span class="keyword">new</span> H.<span class="property">geo</span>.<span class="title class_">LineString</span>();</span><br><span class="line">            routeShape.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">point</span>) &#123;</span><br><span class="line">                <span class="keyword">var</span> parts = point.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">                lineString.<span class="title function_">pushLatLngAlt</span>(parts[<span class="number">0</span>], parts[<span class="number">1</span>]);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Utilize H.map.Polyline to draw a blue line</span></span><br><span class="line">            <span class="keyword">var</span> routeLine = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Polyline</span>(lineString, &#123;</span><br><span class="line">                <span class="attr">style</span>: &#123;</span><br><span class="line">                    <span class="attr">strokeColor</span>: <span class="string">&#x27;blue&#x27;</span>,</span><br><span class="line">                    <span class="attr">lineWidth</span>: <span class="number">10</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            map.<span class="title function_">addObject</span>(routeLine);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// update the map bounds to that of our route</span></span><br><span class="line">            map.<span class="title function_">setViewBounds</span>(routeLine.<span class="title function_">getBounds</span>());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p><strong>备注</strong></p>
+<ul>
+<li>原文写得早一些，示例代码中 <code>H.geo.Strip</code>类已经从 HERE Maps JS API v3.0.15.0 及之后弃用了，需要使用 <code>H.geo.LineString</code> 类来替换。详情点 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9tYXBzL3RvcGljc19hcGkvaC1nZW8tc3RyaXAuaHRtbA==">这里<i class="fa fa-external-link-alt"></i></span> 。</li>
+<li>如上代码是我修改后的版本。</li>
+</ul>
+</blockquote>
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing.png"></p>
+<h3 id="4-More"><a href="#4-More" class="headerlink" title="4 More"></a>4 More</h3><p>到 Steps 3 路径规划的功能基本实现了，Step 4 再增加一个获取当前位置作为起点，并将指定位置作为终点的功能吧。</p>
+<p>例如，外卖小哥要给颐和园逛公园的小朋友送去冰凉可口的冰激凌……</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a small helper which converts a location into a waypoint</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">locationToWaypointString</span>(<span class="params">coordinates</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;geo!&#x27;</span> + coordinates.<span class="property">lat</span> + <span class="string">&#x27;,&#x27;</span> + coordinates.<span class="property">lng</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// set a flag called RouteRendered</span></span><br><span class="line"><span class="comment">// to ensure that the route is only rendered the first time</span></span><br><span class="line"><span class="keyword">var</span> routeRendered = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">updatePosition</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> coordinates = &#123;</span><br><span class="line">    <span class="attr">lat</span>: event.<span class="property">coords</span>.<span class="property">latitude</span>,</span><br><span class="line">    <span class="attr">lng</span>: event.<span class="property">coords</span>.<span class="property">longitude</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates);</span><br><span class="line">  map.<span class="title function_">addObject</span>(marker);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// If the route has not been rendered yet, </span></span><br><span class="line">  <span class="comment">// calculate and render it</span></span><br><span class="line">  <span class="keyword">if</span> (!routeRendered) &#123;</span><br><span class="line">    <span class="keyword">var</span> route = <span class="keyword">new</span> <span class="title class_">HERERoute</span>(map, platform, &#123;</span><br><span class="line">      <span class="attr">mode</span>: <span class="string">&#x27;fastest;car&#x27;</span>,</span><br><span class="line">      <span class="attr">representation</span>: <span class="string">&#x27;display&#x27;</span>,</span><br><span class="line">      <span class="attr">waypoint0</span>: <span class="title function_">locationToWaypointString</span>(coordinates),</span><br><span class="line">      <span class="attr">waypoint1</span>: <span class="title function_">locationToWaypointString</span>(<span class="title class_">EndCoordinates</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">    routeRendered = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// request the user&#x27;s current location</span></span><br><span class="line">navigator.<span class="property">geolocation</span>.<span class="title function_">watchPosition</span>(updatePosition);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>结果大概是这样：</p>
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing_current.png"></p>
+<blockquote>
+<p>由于相关法律的限制，HERE Developer 网站中提供免费试用的中国境内的 HERE 在线地图是非常粗略的等级（Entry Level），如下代码仅为了展示功能，并不为了较真位置的精确程度。</p>
+<p> 当然，精密级别的 China HERE Map 也已经上线了 ，并且有 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbj92YXJpYW50PWNu">China Spec HLS API<i class="fa fa-external-link-alt"></i></span> 可供使用，只是没有默认包含在<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbj9jcmVhdGU9RnJlZW1pdW0tQmFzaWMma2VlcFN0YXRlPXRydWUmc3RlcD10ZXJtcw==">Global Freemium licenses<i class="fa fa-external-link-alt"></i></span> 之中。如果需要试用评估或购买，需要通过 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vY29udGFjdC11cyNjb250YWN0LXNhbGVz">商务途径<i class="fa fa-external-link-alt"></i></span>；也可以留言我，我也愿意帮助联系。</p>
+</blockquote>
+<p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTMtYmFzaWMtcm91dGluZw==">Part3: Basic Routing<i class="fa fa-external-link-alt"></i></span></p>
+<p><em>complete code</em>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDNfQmFzaWNfUm91dGluZw==">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/05/Icecream_Part2_Geolocation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/05/Icecream_Part2_Geolocation/" class="post-title-link" itemprop="url">HERE MAP API - Part2 Geolocation</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-03-05 15:52:54" itemprop="dateCreated datePublished" datetime="2019-03-05T15:52:54+08:00">2019-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>337</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 Part 1 地图底图准备好的基础之上，我们增加一个获取浏览器当前位置并持续更新的功能，来解决“Where am I ？”的问题。</p>
+<p>具体可以通过浏览器的 Geolocation API 来实现。在app.js 脚本中，使用 <code>navigator.geolocation</code> 对象来访问此API。 <code>navigator.geolocation</code> 对象有这样几个方法：<code>getCurrentPosition()</code>，<code>watchPosition()</code>，<code>clearWatch()</code>， 可以帮助我们实现开始的需求。</p>
+<h3 id="1-获取位置"><a href="#1-获取位置" class="headerlink" title="1 获取位置"></a>1 获取位置</h3><p>首先，通过 <code>getCurrentPosition()</code> 一次性获取浏览器当前位置，在 app.js 中使用如下代码 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.<span class="property">geolocation</span>.<span class="title function_">getCurrentPosition</span>(success[, error[, options]]);</span><br></pre></td></tr></table></figure>
+
+<p>各个浏览器都有 Geolocation API 的支持，建议参考相关的帮助文档。这个Demo建议在 Firefox 中测试，因为Chrome似乎禁用从本地文件访问位置。你可以根据需要增加获取位置是否成功后的行为，详情查看 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQVBJL1Bvc2l0aW9uT3B0aW9ucw==">Firefox的开发者文档<i class="fa fa-external-link-alt"></i></span>。 </p>
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part2_Geolocation.png"></p>
+<h3 id="2-持续更新位置"><a href="#2-持续更新位置" class="headerlink" title="2 持续更新位置"></a>2 持续更新位置</h3><p><code>watchPosition()</code> 用于持续“关注” 客户端位置的变化，在每次变化之后，都会将新的位置返回。在 app.js 中增加如下代码，用于在当前位置不断地显示“冰激凌”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">updatePosition</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> coordinates = &#123;</span><br><span class="line">    <span class="attr">lat</span>: event.<span class="property">coords</span>.<span class="property">latitude</span>,</span><br><span class="line">    <span class="attr">lng</span>: event.<span class="property">coords</span>.<span class="property">longitude</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">var</span> iconUrl = <span class="string">&#x27;./images/icecream.svg&#x27;</span>;</span><br><span class="line">  <span class="keyword">var</span> iconOptions = &#123;</span><br><span class="line">    <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">26</span>, <span class="number">34</span>),</span><br><span class="line">    <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">14</span>, <span class="number">34</span>)</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">var</span> markerOptions = &#123;</span><br><span class="line">    <span class="attr">icon</span>: <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Icon</span>(iconUrl, iconOptions)</span><br><span class="line">  &#125;;</span><br><span class="line">   <span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates, markerOptions);</span><br><span class="line">  map.<span class="title function_">addObject</span>(marker);</span><br><span class="line">  map.<span class="title function_">setCenter</span>(coordinates);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Action</span></span><br><span class="line">navigator.<span class="property">geolocation</span>.<span class="title function_">watchPosition</span>(updatePosition);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part2_Geolocation_view.png"></p>
+<p><em>original resource</em>    <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTItZ2VvbG9jYXRpb24=">Part2: Geolocation<i class="fa fa-external-link-alt"></i></span></p>
+<p><em>complete code</em>    <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDJfR2VvbG9jYXRpb24=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/05/Icecream_Part1_Basemap_Setup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/05/Icecream_Part1_Basemap_Setup/" class="post-title-link" itemprop="url">HERE MAP API - Part1 Basemap Setup</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-03-05 15:20:58" itemprop="dateCreated datePublished" datetime="2019-03-05T15:20:58+08:00">2019-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>612</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Quick Start for HERE Map Javascript API</p>
+<p>HERE 官网有一个很有趣的Tutorial， <strong>Who wants ice cream !?</strong> </p>
+<p>如果你注册了HERE Developer 账号，很可能会被推送到这个教程的小广告。</p>
+<p>假设你是冰激凌店的老板，那么用HERE Map 做个交互式的地图小网页，边测试边记录。</p>
+<p><em><strong>Let’s get our hands dirty……</strong></em></p>
+<h3 id="1-准备资源"><a href="#1-准备资源" class="headerlink" title="1. 准备资源"></a>1. 准备资源</h3><p>准备如下结构的目录和文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WhoWantsIceCream</span><br><span class="line">|--base_map_set_up.html</span><br><span class="line">|--scripts</span><br><span class="line">	|--app.js</span><br><span class="line">|--images</span><br><span class="line">	|--icecream.svg</span><br><span class="line">|--styles</span><br><span class="line">	|--main.css</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-设计页面"><a href="#2-设计页面" class="headerlink" title="2.  设计页面"></a>2.  设计页面</h3><p>HTML 的 <code>head</code> 中引用 HERE Map JS API 以及必要的 CSS；</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span> Who Want&#x27;s Icecream ? <span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- HERE Javascript SDK modules --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://js.api.here.com/v3/3.0/mapsjs-ui.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://js.api.here.com/v3/3.0/mapsjs-core.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://js.api.here.com/v3/3.0/mapsjs-service.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://js.api.here.com/v3/3.0/mapsjs-ui.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://js.api.here.com/v3/3.0/mapsjs-mapevents.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Styles --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;styles/main.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>HTML的 <code>body</code> 中需要至少包含一个<code>div</code> ，用于作为 地图显示的容器； 以及引用<code>js</code>来完成 map 的规定动作。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Container for the map --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;map-container&quot;</span> <span class="attr">class</span>=<span class="string">&quot;map&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Scripts --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;scripts/app.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-交互式地图底图"><a href="#3-交互式地图底图" class="headerlink" title="3. 交互式地图底图"></a>3. 交互式地图底图</h3><p><strong>增加如下内容到 app.js</strong> </p>
+<p>1 从HERE Developer 网站申请账号，获取 APPID 和 APPCODE ，在初始化服务时使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get Map Container Element</span></span><br><span class="line"><span class="keyword">var</span> mapContainer = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;map-container&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Specify the APPID &amp; APPCODE</span></span><br><span class="line"><span class="keyword">var</span> platform = <span class="keyword">new</span> H.<span class="property">service</span>.<span class="title class_">Platform</span>(&#123;</span><br><span class="line">  <span class="attr">app_id</span>: <span class="string">&#x27;oyNWTb---PMlrXxCH&#x27;</span>, <span class="comment">// // &lt;-- ENTER YOUR APP ID HERE</span></span><br><span class="line">  <span class="attr">app_code</span>: <span class="string">&#x27;_W_7qfgp-----tQQKkbLA&#x27;</span>, <span class="comment">// &lt;-- ENTER YOUR APP CODE HERE</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>2 创建 Map 对象，并指定初始化时的位置、显示级别、底图样式…… everything as you wish……</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------------------------------------------------------------------- </span></span><br><span class="line"><span class="comment">// Displaying a Basic Map， Initialize Map Object</span></span><br><span class="line"><span class="comment">// Create Defaulr Layer</span></span><br><span class="line"><span class="keyword">var</span> defaultLayers = platform.<span class="title function_">createDefaultLayers</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Adjust the Map Center and the Initial Zoom Level </span></span><br><span class="line"><span class="keyword">var</span> coordinates = &#123;</span><br><span class="line">  <span class="attr">lat</span>: <span class="number">52.530974</span>, <span class="comment">// HERE HQ in Berlin, Germany</span></span><br><span class="line">  <span class="attr">lng</span>: <span class="number">13.384944</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> mapOptions = &#123;</span><br><span class="line">  <span class="attr">center</span>: coordinates,</span><br><span class="line">  <span class="attr">zoom</span>: <span class="number">14</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> H.<span class="title class_">Map</span>(</span><br><span class="line">  mapContainer,</span><br><span class="line">  defaultLayers.<span class="property">normal</span>.<span class="property">map</span>,</span><br><span class="line">  mapOptions);</span><br></pre></td></tr></table></figure>
+
+<p>3  让地图动起来，至少可以平移缩放，很简单的一段即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------------------------------------------------------------------- </span></span><br><span class="line"><span class="comment">// Interacting with the map, at least move around and zoom in / out</span></span><br><span class="line"><span class="keyword">var</span> behavior = <span class="keyword">new</span> H.<span class="property">mapevents</span>.<span class="title class_">Behavior</span>(<span class="keyword">new</span> H.<span class="property">mapevents</span>.<span class="title class_">MapEvents</span>(map));</span><br></pre></td></tr></table></figure>
+
+<p>4 给地图中心加个图标， 换成一个自定义的也成。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -----------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// Adding Markers to the Map</span></span><br><span class="line"><span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Custom Icons for Markers</span></span><br><span class="line"><span class="keyword">var</span> iconUrl = <span class="string">&#x27;./images/icecream.svg&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> iconOptions = &#123;</span><br><span class="line">	<span class="comment">// The icon&#x27;s size in pixel:</span></span><br><span class="line">  <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">26</span>, <span class="number">34</span>),</span><br><span class="line">	<span class="comment">// The anchorage point in pixel, </span></span><br><span class="line">	<span class="comment">// defaults to bottom-center</span></span><br><span class="line">  <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">14</span>, <span class="number">34</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> markerOptions = &#123;</span><br><span class="line">   <span class="attr">icon</span>: <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Icon</span>(iconUrl, iconOptions)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates, markerOptions);</span><br><span class="line">map.<span class="title function_">addObject</span>(marker);</span><br></pre></td></tr></table></figure>
+
+<p>TIPS 加个监听，可以在你改变窗口尺寸的时候，自动更新地图的尺寸。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------------------------------------------------------------------- </span></span><br><span class="line"><span class="comment">// Set Event Listener to Make Map React Properly</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;resize&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  map.<span class="title function_">getViewPort</span>().<span class="title function_">resize</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这就完成 Interactive Basemap 了，Have fun！</p>
+<p> <img src="http://kikitamap.com/images/blogImg/Icecream_Part1_Basemap_Setup.png"></p>
+<p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTEtYmFzaWMtbWFwLXNldC11cA==">Part1: Basic Map Set-up<i class="fa fa-external-link-alt"></i></span></p>
+<p><em>complete code</em>    <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDFfQmFzaWNfTWFwX1NldF91cA==">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/11/11/qiniuIssue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/11/11/qiniuIssue/" class="post-title-link" itemprop="url">解决七牛云存储bucket无法访问问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-11-11 08:56:07" itemprop="dateCreated datePublished" datetime="2018-11-11T08:56:07+08:00">2018-11-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>773</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>因为工作的事情，最近忙于切换节奏适应新环境，有一个月没来 kikitaMap “巡检”了。果然昨天发现了小故障，七牛云存储的存储空间的临时域名失效了，之上的我的图床也就挂了。涉及到的对象：<a href="https://kikitamap.com/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a> 、<a href="http://kikitamap.com/categories/%E7%9B%B8%E6%9C%BA%E9%87%8C/">相机里</a> 中的全部图片和 <a href="https://kikitamap.com/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/">木工开物</a> 的小部分博客中图片。Just too bad …</p>
+<h2 id="解决方法建议"><a href="#解决方法建议" class="headerlink" title="解决方法建议"></a>解决方法建议</h2><p>这种情况下只能发工单联系技术支持了，七牛的技术支持回复比较及时，给出了解决方案，如下：</p>
+<blockquote>
+<p>有两种方式来获取文件：</p>
+<ol>
+<li>您需要先新建一个同区域存储空间，会分配一个新的测试域名到新空间。<br>通过qshell batchcopy 到有域名的同区域空间然后再进行qdownload下载操作<br>1）<code>qshell listbucket 原bucket名 list.txt</code><br>​       （list出全部文件，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2xpc3RidWNrZXQubWQ=">listbucket的文档<i class="fa fa-external-link-alt"></i></span>）</li>
+</ol>
+<p>2）<code>cat list.txt | awk &#39;&#123;print $1&#125;&#39; &gt;list_final.txt</code><br>​       （用awk获取list结果的第一列）<br>3）<code>qshell batchcopy 原bucket名 新bucket名 list_final.txt</code><br>​       （复制到新bucket的文件和原bucket文件名一致，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2JhdGNoY29weS5tZA==">batchcopy的文档<i class="fa fa-external-link-alt"></i></span>）<br>4）<code>qshell qdownload newfilelist.txt</code><br>​      （newfilelist.txt为下载的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL3Fkb3dubG9hZC5tZA==">配置文档<i class="fa fa-external-link-alt"></i></span>）<br> <br>qshell安装包及文档请参考<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGw=">https://developer.qiniu.com/kodo/tools/1302/qshell<i class="fa fa-external-link-alt"></i></span></p>
+<p>如果您不熟悉命令行工具的安装使用，也可以结合文档最后提供的视频教程<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGwjOQ==">https://developer.qiniu.com/kodo/tools/1302/qshell#9<i class="fa fa-external-link-alt"></i></span><br> <br>2.<br>使用工具qrsctl<br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMC9xcnNjdGw=">https://developer.qiniu.com/kodo/tools/1300/qrsctl<i class="fa fa-external-link-alt"></i></span><br><code>qrsctl get &lt;bucket&gt; &lt;file&gt; &lt;file&gt;</code></p>
+</blockquote>
+<h2 id="实践过程"><a href="#实践过程" class="headerlink" title="实践过程"></a>实践过程</h2><p>选择了第一种方式，问题解决，因为看起来像是批量的。</p>
+<p>按照提示下载的zip包类似 qshell-v2.2.0.zip 这样的名字，里面包含了Windows，Linux，Mac各操作系统使用的程序。</p>
+<p>我以Mac为例，使用Mac自带的 Commandline 访问解压之后的文件夹 qshell-v2.2.0。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kikitamoondeMBP:SoftwareSetup kikitamoon$ cd qshell-v2.2.0</span><br><span class="line">kikitamoondeMBP:qshell-v2.2.0 kikitamoon$ ls</span><br><span class="line">qshell-darwin-x64	qshell-linux-x64	qshell-windows-x64.exe</span><br><span class="line">qshell-linux-arm	qshell-linux-x86	qshell-windows-x86.exe</span><br></pre></td></tr></table></figure>
+<p>其中 qshell-darwin-x64 是Mac可用的 Qshell 版本。在使用Qshell之前需要配置账户信息，qshell account即可设置AK和SK。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64</span></span><br><span class="line">Use help or help [cmd1 [cmd2 [cmd3 ...]]] to see supported commands.</span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 account</span></span><br><span class="line">Open account file error, open /Users/kikitamoon/.qshell/account.json: no such file or directory, please use `account` to set AccessKey and SecretKey first</span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 account &lt;AK&gt; &lt;SK&gt;</span></span><br></pre></td></tr></table></figure>
+<p>接着使用七牛技术支持给出的建议，将旧库的文件list出来，然后batchcopy到新库中。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 listbucket kikitamapgallery list.txt</span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash"><span class="built_in">cat</span> list.txt | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> &gt;list_final.txt</span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 batchcopy kikitamapgallery kikitamapgallerycopy list_final.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>最后，通过 qdownload 命令下载所有源文件。在执行命令之前还需要做个配置文件，download.conf ; 并且可以设置开几个任务并行下载。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 qdownload 4 download.conf</span></span><br><span class="line"></span><br><span class="line">Writing download log to file /Users/kikitamoon/.qshell/qdownload/7d41b43ca364d28da34dbd030f1331be/7d41b43ca364d28da34dbd030f1331be.log</span><br><span class="line">Downloading MGKW_ArcGIS_Daemon.png [1/62, 1.6%] ...</span><br><span class="line">Downloading MGKW_ArcMapStartupLog.png [2/62, 3.2%] ...</span><br><span class="line">Downloading MGKW_BatchClip.png [3/62, 4.8%] ...</span><br><span class="line">Downloading MGKW_FeatureTable.png [4/62, 6.5%] ...</span><br><span class="line">Downloading MGKW_HelloArcGISPythonAPI.png [5/62, 8.1%] ...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">Downloading XJL_TripToGreece.png [61/62, 98.4%] ...</span><br><span class="line">Downloading XJL_TripToHongkong.png [62/62, 100.0%] ...</span><br><span class="line">See download log at path /Users/kikitamoon/.qshell/qdownload/7d41b43ca364d28da34dbd030f1331be/7d41b43ca364d28da34dbd030f1331be.log</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"></span></span><br></pre></td></tr></table></figure>
+
+<p>至此，源图片文件算是都找回来了。当然我还需要把我的网站中使用到旧地址的位置update一下喽。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="上一篇帖子说明了如何创建镶嵌数据集、添加栅格数据，以及相关的常用参数配置。 下面再接着说如何根据自己的各种需要来修改镶嵌数据集，这一贴的主题主要是如何创建、修改镶嵌数据集的轮廓线和边界。 修改镶嵌数据轮廓线、边界类工具  当镶嵌数据集创建好之后，我们将其加入到 &nbsp;ArcMap 中后发现，镶嵌数据集是以类似图层组的形式加入的，包含了至少三个图层，分别为：Boundary、Footprint">
+<meta property="og:type" content="article">
+<meta property="og:title" content="镶嵌数据集工具小结（二）镶嵌数据轮廓线与边界">
+<meta property="og:url" content="https://kikitamap.com/2014/10/17/MDFootprint/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="上一篇帖子说明了如何创建镶嵌数据集、添加栅格数据，以及相关的常用参数配置。 下面再接着说如何根据自己的各种需要来修改镶嵌数据集，这一贴的主题主要是如何创建、修改镶嵌数据集的轮廓线和边界。 修改镶嵌数据轮廓线、边界类工具  当镶嵌数据集创建好之后，我们将其加入到 &nbsp;ArcMap 中后发现，镶嵌数据集是以类似图层组的形式加入的，包含了至少三个图层，分别为：Boundary、Footprint">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Toolset.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_toc.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_FootPrint.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Boundary.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_boundaryType.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Demo.png">
+<meta property="article:published_time" content="2014-10-17T04:57:34.000Z">
+<meta property="article:modified_time" content="2018-07-02T06:33:06.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Geodata">
+<meta property="article:tag" content="Raster">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Toolset.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2014/10/17/MDFootprint/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2014/10/17/MDFootprint/","path":"2014/10/17/MDFootprint/","title":"镶嵌数据集工具小结（二）镶嵌数据轮廓线与边界"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>镶嵌数据集工具小结（二）镶嵌数据轮廓线与边界 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/10/17/MDFootprint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="镶嵌数据集工具小结（二）镶嵌数据轮廓线与边界 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          镶嵌数据集工具小结（二）镶嵌数据轮廓线与边界
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-10-17 12:57:34" itemprop="dateCreated datePublished" datetime="2014-10-17T12:57:34+08:00">2014-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>上一篇帖子说明了如何创建镶嵌数据集、添加栅格数据，以及相关的常用参数配置。</p>
+<p>下面再接着说如何根据自己的各种需要来修改镶嵌数据集，这一贴的主题主要是如何创建、修改镶嵌数据集的轮廓线和边界。</p>
+<p><strong>修改镶嵌数据轮廓线、边界类工具</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFootprint_Toolset.png"></p>
+<p>当镶嵌数据集创建好之后，我们将其加入到 &nbsp;ArcMap 中后发现，镶嵌数据集是以类似图层组的形式加入的，包含了至少三个图层，分别为：<strong>Boundary</strong>、<strong>Footprint</strong> 和 <strong>Image</strong>。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFootprint_toc.png"></p>
+<p>在使用开头列出的那些工具之前，我们需要对上图的几个图层有所了解，了解的过程中自然会发现这些工具的用武之地。</p>
+<p><strong>Image（影像）</strong></p>
+<p>影像图层用于控制镶嵌数据集的动态镶嵌影像的渲染。如果你在ArcMap中显示过单张影像，那会发现这个图层其实看起来和单张影像差别不大。也就是镶嵌数据集将散列在磁盘上的多张栅格数据，动态拼接成了一整张栅格。对影像图层属性做出的修改不会影响镶嵌数据集，仅影响镶嵌数据集在显示时的渲染方式。</p>
+<p><strong>Footprint（轮廓线）</strong></p>
+<p>轮廓线是按照镶嵌数据集的坐标系统创建的，有可能有原始栅格数据的坐标系不一致。还记得上一篇中提到过创建镶嵌数据集时指定的坐标系可以与原始栅格数据不同吗？轮廓线包含镶嵌数据集内每个栅格的轮廓，但是不一定是每个栅格数据集的范围，而应该是栅格数据集内有效栅格数据的范围。NoData 区域是轮廓线形状所排除内容的典型示例。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFootprint_FootPrint.png"></p>
+<p>当然，我们也可以根据自己的需求，进一步定义和裁剪栅格数据。方法通常是三种：</p>
+<ul>
+<li><strong>1）自动计算方法：</strong></li>
+</ul>
+<p>使用 <strong>Build Footprint</strong> 工具执行系统计算得到新的轮廓线。</p>
+<p>重新定义轮廓线的方法有：</p>
+<ul>
+<li>RADIOMETRY：根据像素值范围来重新定义轮廓线的形状，从而排除无效数据（*辐射法重新计算轮廓线这个小专题可以展开，以后有时间可以详细整理。）</li>
+<li>GEOMETRY：将轮廓线的形状重新定义为其原始几何形状</li>
+<li>COPY_FROM_SIBLING：在使用全色锐化的栅格类型时，轮廓线将被替换为多光谱项的轮廓线。</li>
+</ul>
+<p>在这之前，还可以使用 <strong>Define Mosaic Dataset NoData</strong> 工具将栅格中不希望显示的值置为Nodata，这个工具允许同时将多个值置为Nodata。然后再执行 Build Footprint 可以一次性排除全部Nodata值。</p>
+<p><strong>2）手工编辑方法：</strong></p>
+<p>通过编辑工具条，手工编辑修改 Footprint 面要素得到新的轮廓线。这种方法和我们平时编辑矢量面没有什么区别。</p>
+<p><strong>3）导入已有多边形的方法：</strong></p>
+<p>可以使用工具**Import Mosaic Dataset Geometry **，将面要素导入，按照指定的关联字段替换轮廓线。另外，此工具也可用于替换边界或接缝线多边形。</p>
+<p><strong>Boundary（边界）</strong></p>
+<p>Boundary层，我们可以理解成镶嵌数据集所引用的所有栅格数据的外边界，实际它是一个储存在地理数据库（GDB）内部的面要素类。我们可以使用 <strong>Build Boundary</strong> 工具来创建这个层，也可以在一开始添加栅格工具中勾选&nbsp;Build Boundary 参数。</p>
+<p>那这个Boundary 层是基于什么计算得到的呢？ 本质上，是将许许多多的 Footprint 层进行融合得到的。 也就是我们可以理解成，Footprint是每个栅格数据的边界，而Boundary是全部栅格的Footprint融合之后的总外边界。边界用于确定镶嵌数据集的空间范围。</p>
+<p>如下图，说明 Footprint 与 Boundary：</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFootprint_Boundary.png"></p>
+<p>创建边界可以指定简化方法，可以是实际数据边界，也就是不进行简化（None），可以是凸多边形（Convex Hull），还可以是外接矩形（Envelope）。</p>
+<p>如下图一目了然：</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFootprint_boundaryType.png"></p>
+<p>如果镶嵌数据集中所包含的栅格数据超出了边界，那超出的数据在镶嵌图像中就不可见了。因此，我们可以通过修改边界来限制镶嵌数据集的可见内容。</p>
+<p>类似操作 Footprint，我们可以通过手工编辑，或者使用工具&nbsp;Import Mosaic Dataset Geometry 制作自定义边界。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDFootprint_Demo.png"></p>
+<p>当然与&nbsp;Import Mosaic Dataset Geometry&nbsp;工具相应，我们还可以使用工具 <strong>Export Mosaic Dataset Geometry</strong>导出镶嵌数据集的轮廓线、边界等要素类。</p>
+<p>有关轮廓线、边界、镶嵌数据集图层就到这里了，对于初学者来说，上面这些足够用了。</p>
+<p>下一篇我会接着整理有关概视图创建等增强优化镶嵌数据集的工具。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Geodata/" rel="tag"><i class="fa fa-tag"></i> Geodata</a>
+              <a href="/tags/Raster/" rel="tag"><i class="fa fa-tag"></i> Raster</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2014/10/14/MDCreateMD/" rel="prev" title="镶嵌数据集工具小结（一）创建/删除镶嵌数据集">
+                  <i class="fa fa-angle-left"></i> 镶嵌数据集工具小结（一）创建/删除镶嵌数据集
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2014/10/28/MDOverviews/" rel="next" title="镶嵌数据集工具小结（三）概视图/Overviews">
+                  镶嵌数据集工具小结（三）概视图/Overviews <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

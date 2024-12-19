@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这篇文章中使用的环境信息： Red Hat Enterprise Linux Server release 6.4Red Hat Enterprise Linux Server release 5.8ArcGIS License Manager 10.2.2Xmanager 5    **★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 这里**。   1. 准备安装文件我的Li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Linux上安装ArcGIS许可管理器备忘录">
+<meta property="og:url" content="https://kikitamap.com/2015/06/10/DeployAGSLMonLinux/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="这篇文章中使用的环境信息： Red Hat Enterprise Linux Server release 6.4Red Hat Enterprise Linux Server release 5.8ArcGIS License Manager 10.2.2Xmanager 5    **★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 这里**。   1. 准备安装文件我的Li">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_vsftp.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_CreateArcGIS.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_RootError.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_mkdir.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_chmod.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GrantError.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GraphicWindows.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Silence.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization2.png">
+<meta property="article:published_time" content="2015-06-10T05:00:00.000Z">
+<meta property="article:modified_time" content="2018-07-03T05:12:49.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Deployment">
+<meta property="article:tag" content="License">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_vsftp.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2015/06/10/DeployAGSLMonLinux/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2015/06/10/DeployAGSLMonLinux/","path":"2015/06/10/DeployAGSLMonLinux/","title":"在Linux上安装ArcGIS许可管理器备忘录"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>在Linux上安装ArcGIS许可管理器备忘录 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%98%85-%E5%AE%89%E8%A3%85%E4%B9%8B%E5%89%8D%E4%B8%80%E5%AE%9A%E8%A6%81%E4%BA%86%E8%A7%A3%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82%EF%BC%8C%E8%BF%99%E4%B8%80%E6%AD%A5%E5%BE%88%E9%87%8D%E8%A6%81%EF%BC%8C%E8%BF%99%E9%87%8C%E4%B8%8D%E5%95%B0%E5%97%A6%EF%BC%8C%E8%AF%A6%E6%83%85%E7%82%B9-%E8%BF%99%E9%87%8C-%E3%80%82"><span class="nav-text">**★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 这里**。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6"><span class="nav-text">1. 准备安装文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E8%B4%A6%E6%88%B7"><span class="nav-text">2. 创建账户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA-Trusted-Storage%E7%9B%AE%E5%BD%95%E5%B9%B6%E8%B5%8B%E6%9D%83"><span class="nav-text">3. 创建 Trusted Storage目录并赋权</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85-ArcGIS-License-Manager"><span class="nav-text">4. 安装 ArcGIS License Manager</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Option-1-%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2%E5%AE%89%E8%A3%85"><span class="nav-text">Option 1 图形界面安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Option-2-%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85"><span class="nav-text">Option 2 静默安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E6%8E%88%E6%9D%83%E8%AE%B8%E5%8F%AF"><span class="nav-text">5. 授权许可</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86"><span class="nav-text">相关资源整理</span></a></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/10/DeployAGSLMonLinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="在Linux上安装ArcGIS许可管理器备忘录 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在Linux上安装ArcGIS许可管理器备忘录
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-06-10 13:00:00" itemprop="dateCreated datePublished" datetime="2015-06-10T13:00:00+08:00">2015-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>830</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>这篇文章中使用的环境信息：</p>
+<p>Red Hat Enterprise Linux Server release 6.4<br>Red Hat Enterprise Linux Server release 5.8<br>ArcGIS License Manager 10.2.2<br>Xmanager 5</p>
+</blockquote>
+<br>
+
+<h4 id="★-安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点-这里-。"><a href="#★-安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点-这里-。" class="headerlink" title="**★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 这里**。"></a>**★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 <span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4yLyMvQXJjR0lTXzEwXzJfZm9yX0Rlc2t0b3AvMDE1MTAwMDAwMDAyMDAwMDAwLw==">这里**<i class="fa fa-external-link-alt"></i></span>。</h4><br>
+
+
+<h1 id="1-准备安装文件"><a href="#1-准备安装文件" class="headerlink" title="1. 准备安装文件"></a>1. 准备安装文件</h1><p>我的Linux服务器是虚拟机，没有光驱，选择ftp上传安装文件。一般在各种linux的发行版中，默认带有的ftp软件是vsftp。</p>
+<p>检查vsftpd软件是否安装， <strong># rpm -qa|grep vsftp</strong><br>启动 vsftp 服务，**# service vsftpd start**</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_vsftp.png"></p>
+<p>使用ftp客户端上传 ArcGIS License Manager （LM）安装包。如果上传的 iso 镜像文件之后使用 mount 命令挂载，其实也可以仅将光盘中 LicenseManager 目录下的 linux 文件夹上传，此文件夹为 LM 的Linux安装包。</p>
+<p>包含如下几个文件（夹）：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
+<br>
+
+<br>
+
+
+<h1 id="2-创建账户"><a href="#2-创建账户" class="headerlink" title="2. 创建账户"></a>2. 创建账户</h1><p>ArcGIS License Manager 不允许 root 账户安装，因此要创建一个其它账户，例如：arcgis</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_CreateArcGIS.png"></p>
+<blockquote>
+<p>PS : 如果使用 root 账户直接安装，则会遇到错误提示：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_RootError.png"></p>
+</blockquote>
+<br>
+
+<br>
+
+<h1 id="3-创建-Trusted-Storage目录并赋权"><a href="#3-创建-Trusted-Storage目录并赋权" class="headerlink" title="3. 创建 Trusted Storage目录并赋权"></a>3. 创建 Trusted Storage目录并赋权</h1><p>在安装 ArcGIS License Manager 之前，需要手动创建用于存储许可 Trusted Storage File (TSF) 的目录，具体目录为：“&#x2F;usr&#x2F;local&#x2F;share&#x2F;macrovision&#x2F;storage” </p>
+<p>创建目录：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_mkdir.png"></p>
+<p>为目录赋权：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_chmod.png"></p>
+<blockquote>
+<p>如果不创建这个目录而直接安装 LM 程序，就会遇到 Fatal Error 提示：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GrantError.png"></p>
+</blockquote>
+<br>
+
+<br>
+
+
+<h1 id="4-安装-ArcGIS-License-Manager"><a href="#4-安装-ArcGIS-License-Manager" class="headerlink" title="4. 安装 ArcGIS License Manager"></a>4. 安装 ArcGIS License Manager</h1><br>
+
+<p>有图形界面模式和静默模式两种安装模式，建议选择前者：</p>
+<h2 id="Option-1-图形界面安装"><a href="#Option-1-图形界面安装" class="headerlink" title="Option 1 图形界面安装"></a><strong>Option 1 图形界面安装</strong></h2><p>安装 ArcGIS License Manager 需要 X Windows Display的支持来进行图形界面的交互。尽管我们可以选择使用静默安装和静默授权，但是在许可管理过程中，还是会用到图形界面。强烈建议安装个 Xmanager，来连接Linux主机。</p>
+<p>设置DISPLAY环境变量 :<br>例如： <strong>$ export DISPLAY&#x3D;<em>192.168.100.115</em>:0.0</strong></p>
+<p>运行 Setup 文件开始安装，建议使用精细模式（Verbose Mode），这样如果安装失败，我们可以通过运行过程中的消息判断问题的所在。例如，没有创建必要的目录，没有安装必要地包，没有足够的权限，等等问题。</p>
+<p><strong>$ .&#x2F;Setup -v</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
+<p>稍等片刻，即弹出界面：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GraphicWindows.png"></p>
+<p>后面按照向导，下一步即可，此处省略100字……</p>
+<br>
+
+<h2 id="Option-2-静默安装"><a href="#Option-2-静默安装" class="headerlink" title="Option 2 静默安装"></a><strong>Option 2 静默安装</strong></h2><p>如果选择静默安装也可以，例如：</p>
+<p><strong>$ .&#x2F;Setup -m silent -v -l Yes</strong></p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Silence.png"></p>
+<blockquote>
+<p><strong>如果需要了解安装ArcGIS 许可管理器的选项：</strong></p>
+</blockquote>
+<blockquote>
+<p>-m  silent&#x2F;gui  静默安装&#x2F;图形界面<br>-v   精细模式<br>-h   帮助<br>-e   示例<br>静默安装专用选项：<br>-l    Yes&#x2F;No 是否同意许可条款<br>-d   安装目录</p>
+</blockquote>
+<br>
+
+<br>
+
+<h1 id="5-授权许可"><a href="#5-授权许可" class="headerlink" title="5. 授权许可"></a>5. 授权许可</h1><p>LM安装完成之后，需要进行许可的授权，事先将自己的许可文件 *.prvs 上传到Linux主机中。</p>
+<br>
+
+
+
+<p>仍然建议GUI mode 授权，运行LM安装目录中的 SoftwareAuthorizationLS 程序：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization.png"></p>
+<p>稍后弹出界面：</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization2.png"></p>
+<p>后面按照向导，下一步即可，可以参考windows的授权手册，此处省略100字……</p>
+<br>
+
+<p>运行 LSAdmin 程序可以打开 License Manger ，查看和管理许可。</p>
+<br>
+
+<br>
+
+<br>
+
+<h1 id="相关资源整理"><a href="#相关资源整理" class="headerlink" title="相关资源整理"></a>相关资源整理</h1><p>FAQ:  What are the best practices when installing and troubleshooting Esri software on Linux?</p>
+<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW0va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzQyOTIx">http://support.esri.com/em/knowledgebase/techarticles/detail/42921<i class="fa fa-external-link-alt"></i></span></p>
+<p>HowTo:  Silently authorize ArcGIS License Manager 10.x on Linux</p>
+<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZXMva25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzM4NDEy">http://support.esri.com/es/knowledgebase/techarticles/detail/38412<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Deployment/" rel="tag"><i class="fa fa-tag"></i> Deployment</a>
+              <a href="/tags/License/" rel="tag"><i class="fa fa-tag"></i> License</a>
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/06/09/FeatureHeatMap/" rel="prev" title="羽化效果的HeatMap">
+                  <i class="fa fa-angle-left"></i> 羽化效果的HeatMap
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/06/26/MapDesignPerformance/" rel="next" title="ArcGIS地图设计性能优化">
+                  ArcGIS地图设计性能优化 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

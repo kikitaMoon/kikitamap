@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="整理有关 ArcGIS 10.1 3D分析工具箱中，3D Feature 工具箱中，各个工具的功能及注意事项。  1. Add Z information （添加 Z 信息） 各种几何类型的Z信息：  Points - Z 值  Multipoints - Z 最小值、Z 最大值、Z 平均值、点计数  Polylines - Z 最小值、Z 最大值、Z 平均值、3D 长度、最小坡度、最大坡度、平均">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3D分析之3D要素工具箱">
+<meta property="og:url" content="https://kikitamap.com/2012/11/18/3D3DFeatures/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="整理有关 ArcGIS 10.1 3D分析工具箱中，3D Feature 工具箱中，各个工具的功能及注意事项。  1. Add Z information （添加 Z 信息） 各种几何类型的Z信息：  Points - Z 值  Multipoints - Z 最小值、Z 最大值、Z 平均值、点计数  Polylines - Z 最小值、Z 最大值、Z 平均值、3D 长度、最小坡度、最大坡度、平均">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Toolset.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_AddZInfo.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_buffer3D.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Buffer3D2.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_diff3D.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Diff3DTool.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Enclose.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Featureto3DAttr.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Inside3D.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Complex.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3D.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3DTool.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3DLine.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3DLineMessage.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_IsClosed.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Near3D.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Union3D.png">
+<meta property="article:published_time" content="2012-11-18T13:50:43.000Z">
+<meta property="article:modified_time" content="2018-07-03T12:11:25.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Geoprocessing">
+<meta property="article:tag" content="3D">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/3D3DFeatures_Toolset.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2012/11/18/3D3DFeatures/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2012/11/18/3D3DFeatures/","path":"2012/11/18/3D3DFeatures/","title":"3D分析之3D要素工具箱"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>3D分析之3D要素工具箱 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Add-Z-information-%EF%BC%88%E6%B7%BB%E5%8A%A0-Z-%E4%BF%A1%E6%81%AF%EF%BC%89"><span class="nav-text">1. Add Z information （添加 Z 信息）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Buffer-3D%EF%BC%883D-%E7%BC%93%E5%86%B2%E5%8C%BA%EF%BC%89"><span class="nav-text">2. Buffer 3D（3D 缓冲区）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-nbsp-Difference-3D%EF%BC%883D-%E5%B7%AE%E5%BC%82%EF%BC%89"><span class="nav-text">3. Difference 3D（3D 差异）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Enclose-Multipatch-%EF%BC%88%E5%B0%81%E9%97%AD%E5%A4%9A%E9%9D%A2%E4%BD%93%EF%BC%89"><span class="nav-text">4. Enclose Multipatch （封闭多面体）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-nbsp-Feature-To-3D-By-Attribute%EF%BC%88%E9%80%9A%E8%BF%87%E5%B1%9E%E6%80%A7%E4%BB%8E%E8%A6%81%E7%B4%A0%E8%BD%AC%E6%8D%A2%E5%88%B0-3D%EF%BC%89"><span class="nav-text">5. Feature To 3D By Attribute（通过属性从要素转换到 3D）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Inside-3D%EF%BC%883D-%E5%86%85%E9%83%A8%EF%BC%89"><span class="nav-text">6. Inside 3D（3D 内部）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Intersect-3D%EF%BC%883D-%E7%9B%B8%E4%BA%A4%EF%BC%89"><span class="nav-text">7. Intersect 3D（3D 相交）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-nbsp-Intersect-3D-Line-With-Multipatch%EF%BC%883D-%E7%BA%BF%E4%B8%8E%E5%A4%9A%E9%9D%A2%E4%BD%93%E7%9B%B8%E4%BA%A4%EF%BC%89"><span class="nav-text">8. Intersect 3D Line With Multipatch（3D 线与多面体相交）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-nbsp-Is-Closed-3D%EF%BC%88%E6%98%AF%E5%90%A6%E4%B8%BA%E9%97%AD%E5%90%88-3D%EF%BC%89"><span class="nav-text">9. Is Closed 3D（是否为闭合 3D）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-Near-3D%EF%BC%883D-%E9%82%BB%E8%BF%91%EF%BC%89"><span class="nav-text">10. Near 3D（3D 邻近）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-Union-3D%EF%BC%883D-%E8%81%94%E5%90%88%EF%BC%89"><span class="nav-text">11. Union 3D（3D 联合）</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/11/18/3D3DFeatures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="3D分析之3D要素工具箱 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          3D分析之3D要素工具箱
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-11-18 21:50:43" itemprop="dateCreated datePublished" datetime="2012-11-18T21:50:43+08:00">2012-11-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>整理有关 ArcGIS 10.1 3D分析工具箱中，3D Feature 工具箱中，各个工具的功能及注意事项。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Toolset.png"></p>
+<h1 id="1-Add-Z-information-（添加-Z-信息）"><a href="#1-Add-Z-information-（添加-Z-信息）" class="headerlink" title="1. Add Z information （添加 Z 信息）"></a><strong>1. Add Z information （添加 Z 信息）</strong></h1><p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_AddZInfo.png"></p>
+<p><strong>各种几何类型的Z信息：</strong></p>
+<ul>
+<li><p><strong>Points</strong> - Z 值</p>
+</li>
+<li><p><strong>Multipoints</strong> - Z 最小值、Z 最大值、Z 平均值、点计数</p>
+</li>
+<li><p><strong>Polylines</strong> - Z 最小值、Z 最大值、Z 平均值、3D 长度、最小坡度、最大坡度、平均坡度、折点计数</p>
+</li>
+<li><p>**Polygons **- Z 最小值、Z 最大值、Z 平均值、3D 长度、最小坡度、最大坡度、平均坡度、折点计数</p>
+</li>
+<li><p><strong>Multipatches</strong>- Z 最小值、Z 最大值、表面面积、体积、最小坡度、最大坡度、平均坡度</p>
+</li>
+</ul>
+<p><strong>关于坡度值：</strong></p>
+<p>坡度以百分比值或度数的形式返回.</p>
+<p>最小坡度根据值最接近 0 或水平度的线段获得。</p>
+<p>最大坡度根据具有最大计算值的线段获得。</p>
+<p>平均坡度通过按 3D 长度对每条线段进行加权后对所有线段的坡度求平均值获得。这会导致较长线段对结果值的影响比较短线段更大。</p>
+<p>面要素的坡度值仅针对边要素计算，使用的方法与线段应用的方法一样。</p>
+<p><strong>关于体积：</strong></p>
+<p>只能对闭合多面体计算体积。非闭合多面体要素将返回值 0.0。</p>
+<p>在 Solaris 平台上，设计的局限性当前将使工具无法确定多面体是否闭合，因此假定所有多面体均为闭合多面体，将针对所有多面体计算体积测量。</p>
+<p><strong>关于噪点过滤器：</strong></p>
+<p>提供可用于在进行统计计算时排除一小部分要素的选项。此选项非常适用于获得准确的最大坡度估值，因为一小部分要素的坡度值通常较极端，可能使统计结果产生偏差。</p>
+<p>面积或长度选项中给出的值将被用于排除这部分要素。此参数不适用于点和多点要素。</p>
+<p>NO_FILTER —不使用任何噪点过滤器。这是默认设置。</p>
+<p>AREA &lt;…&gt; —对多面体要素类中的部分要素应用面积过滤器。面积 值为 0.001 表示系统将忽略多面体中面积小于 0.001 的部分。</p>
+<p>LENGTH &lt;…&gt; — 对线要素类或面要素类中的部分要素应用长度过滤器。长度值为 0.001 时表示系统将忽略长度小于 0.001 的那部分要素。</p>
+<h1 id="2-Buffer-3D（3D-缓冲区）"><a href="#2-Buffer-3D（3D-缓冲区）" class="headerlink" title="2. Buffer 3D（3D 缓冲区）"></a><strong>2. Buffer 3D（3D 缓冲区）</strong></h1><p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_buffer3D.png"></p>
+<p>在点或线要素周围创建 3D 缓冲区。点输入将会生成<strong>球体</strong>，线输入将会生成<strong>圆柱</strong>要素。结果为Multipatch要素。</p>
+<p>提高缓冲<strong>质量</strong>会生成更平滑的 3D 要素，但处理时间将会更长。</p>
+<p>考虑指定一个<strong>简化值</strong>以提高复杂线要素（例如带有大量折点的曲线）的性能。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Buffer3D2.png"></p>
+<h1 id="3-nbsp-Difference-3D（3D-差异）"><a href="#3-nbsp-Difference-3D（3D-差异）" class="headerlink" title="3.&nbsp;Difference 3D（3D 差异）"></a><strong>3.&nbsp;Difference 3D（3D 差异）</strong></h1><p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_diff3D.png"></p>
+<p>类似于2D中 Erase 工具。</p>
+<p>输入面必须是闭合的Multipatch，生成的结果不包含任何属性信息。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Diff3DTool.png"></p>
+<p>参数 Output Table，勾选后，生成这样三列：</p>
+<blockquote>
+<p>Output_ID - 输出要素类的唯一 ID。<br>Minuend_ID - 主多面体的唯一 ID。<br>Subtrahend - 已从主多面体中减去的多面体要素的唯一 ID。</p>
+</blockquote>
+<h1 id="4-Enclose-Multipatch-（封闭多面体）"><a href="#4-Enclose-Multipatch-（封闭多面体）" class="headerlink" title="4. Enclose Multipatch （封闭多面体）"></a><strong>4. Enclose Multipatch （封闭多面体）</strong></h1><p>创建闭合多面体要素。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Enclose.png"></p>
+<p>Grid Size：用于构造闭合多面体要素的精度。此值使用输入要素的空间参考的线性单位定义。</p>
+<h1 id="5-nbsp-Feature-To-3D-By-Attribute（通过属性从要素转换到-3D）"><a href="#5-nbsp-Feature-To-3D-By-Attribute（通过属性从要素转换到-3D）" class="headerlink" title="5.&nbsp;Feature To 3D By Attribute（通过属性从要素转换到 3D）"></a><strong>5.&nbsp;Feature To 3D By Attribute（通过属性从要素转换到 3D）</strong></h1><p>从输入要素的属性中获得的Z值创建 3D 要素。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Featureto3DAttr.png"></p>
+<p>此工具支持点、多点、线和面几何。</p>
+<p>各要素的高程都从在指定的字段中获得。</p>
+<p>对于线要素还可提供第二个高度字段。每条线的起点使用第一个高度，终点使用第二个高度。中间所有折点的高度都将根据两个端点连线的坡度进行内插。</p>
+<h1 id="6-Inside-3D（3D-内部）"><a href="#6-Inside-3D（3D-内部）" class="headerlink" title="6. Inside 3D（3D 内部）"></a><strong>6. Inside 3D（3D 内部）</strong></h1><p>用于识别3D 要素是否包含在闭合的多面体中。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Inside3D.png"></p>
+<p>Input Feature 可以是：point、polyline、polygon、multipatch feature class；</p>
+<p>输出的表中包含：</p>
+<blockquote>
+<p><strong>Target_ID</strong> - 输入要素的唯一 ID。<br><strong>Status</strong> - 要素完全还是部分落入多面体内。</p>
+</blockquote>
+<p>如果勾选了 Complex Output Table ，生成的表中会多出来：<strong>Container_ID</strong> - 多面体的唯一 ID。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Complex.png"></p>
+<h1 id="7-Intersect-3D（3D-相交）"><a href="#7-Intersect-3D（3D-相交）" class="headerlink" title="7. Intersect 3D（3D 相交）"></a><strong>7. Intersect 3D（3D 相交）</strong></h1><p>计算闭合多面体要素的交集。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3D.png"></p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3DTool.png"></p>
+<p><strong>注意：</strong></p>
+<p>如果只提供了一个输入要素类，将会计算该多面体数据集中各要素的相交情况；</p>
+<p>如果提供了两个要素，将会确定这两个数据集的要素的相交部分，同时忽略那些只存在于一个输入中相交情形。</p>
+<p><strong>输出类型：</strong></p>
+<ul>
+<li><p>SOLID — 创建交集闭合多面体。这是默认设置。</p>
+</li>
+<li><p>SURFACE — 创建表示输入要素之间共享面的多面体表面。</p>
+</li>
+<li><p>POLYLINE — 创建表示输入要素之间共享边的折线。</p>
+</li>
+</ul>
+<h1 id="8-nbsp-Intersect-3D-Line-With-Multipatch（3D-线与多面体相交）"><a href="#8-nbsp-Intersect-3D-Line-With-Multipatch（3D-线与多面体相交）" class="headerlink" title="8.&nbsp;Intersect 3D Line With Multipatch（3D 线与多面体相交）"></a><strong>8.&nbsp;Intersect 3D Line With Multipatch（3D 线与多面体相交）</strong></h1><p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3DLine.png"></p>
+<p>确定并返回线与多面体要素之间几何交集的数量。可选择性地将表示交集的点要素和表示在此类点分开的输入线的线要素写入输出要素类中。</p>
+<p>交点计数将在消息窗口中作为整数结果返回，并可在模型和脚本中用于建立后续操作的前提条件。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Intersect3DLineMessage.png"></p>
+<h1 id="9-nbsp-Is-Closed-3D（是否为闭合-3D）"><a href="#9-nbsp-Is-Closed-3D（是否为闭合-3D）" class="headerlink" title="9.&nbsp;Is Closed 3D（是否为闭合 3D）"></a><strong>9.&nbsp;Is Closed 3D（是否为闭合 3D）</strong></h1><p>评估多面体要素是否是完全封闭的。</p>
+<p>将 IsClose 字段添加到现有Multipatch要素的属性表中。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_IsClosed.png"></p>
+<h1 id="10-Near-3D（3D-邻近）"><a href="#10-Near-3D（3D-邻近）" class="headerlink" title="10. Near 3D（3D 邻近）"></a><strong>10. Near 3D（3D 邻近）</strong></h1><p>计算每个输入要素到一个或多个邻近要素类中的最近要素的三维距离。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Near3D.png"></p>
+<p>在原输入数据的属性表中增加N多最邻近点的信息。</p>
+<h1 id="11-Union-3D（3D-联合）"><a href="#11-Union-3D（3D-联合）" class="headerlink" title="11. Union 3D（3D 联合）"></a><strong>11. Union 3D（3D 联合）</strong></h1><p>基于输入要素类对闭合的重叠多面体要素进行合并。</p>
+<p><img src="http://kikitamap.com/images/blogImg/3D3DFeatures_Union3D.png"></p>
+<p>如果两个或多个多面体要素仅共享一条边或一个折点，则会发出一个警告，说明生成的要素不是简单要素，因此无法创建。</p>
+<p>如果组中包含的多面体没有共享的体积或空间，则会返回相同的消息。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Geoprocessing/" rel="tag"><i class="fa fa-tag"></i> Geoprocessing</a>
+              <a href="/tags/3D/" rel="tag"><i class="fa fa-tag"></i> 3D</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2012/11/17/3DSupportedSurface/" rel="prev" title="3D分析之ArcGIS 支持的表面类型">
+                  <i class="fa fa-angle-left"></i> 3D分析之ArcGIS 支持的表面类型
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2012/11/18/3DFunctionalSurface/" rel="next" title="3D分析之Functional Surface工具箱">
+                  3D分析之Functional Surface工具箱 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

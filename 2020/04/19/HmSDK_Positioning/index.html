@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="地图技术是对真实世界既有位置的表达，定位技术是对当前位置的求解。随着各种传感器、移动设备的广泛使用，GIS和LBS通常无缝结合在同一个解决方案中。GIS更侧重于稳坐后台解决空间数据的提取、处理、分析、挖掘，LBS更侧重于深入终端实现信号收集、位置获取、轨迹追踪。GIS从一个小众而专业的领域，随着互联网的潮流，逐渐拥抱普适，增值LBS。 从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HERE mSDK - Positioning">
+<meta property="og:url" content="https://kikitamap.com/2020/04/19/HmSDK_Positioning/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="地图技术是对真实世界既有位置的表达，定位技术是对当前位置的求解。随着各种传感器、移动设备的广泛使用，GIS和LBS通常无缝结合在同一个解决方案中。GIS更侧重于稳坐后台解决空间数据的提取、处理、分析、挖掘，LBS更侧重于深入终端实现信号收集、位置获取、轨迹追踪。GIS从一个小众而专业的领域，随着互联网的潮流，逐渐拥抱普适，增值LBS。 从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg">
+<meta property="article:published_time" content="2020-04-19T04:50:58.000Z">
+<meta property="article:modified_time" content="2020-04-19T08:07:29.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="HERE Map">
+<meta property="article:tag" content="HLS">
+<meta property="article:tag" content="Positioning">
+<meta property="article:tag" content="Mobile SDK">
+<meta property="article:tag" content="Android">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg">
+
+
+<link rel="canonical" href="https://kikitamap.com/2020/04/19/HmSDK_Positioning/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2020/04/19/HmSDK_Positioning/","path":"2020/04/19/HmSDK_Positioning/","title":"HERE mSDK - Positioning"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>HERE mSDK - Positioning | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/04/19/HmSDK_Positioning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="HERE mSDK - Positioning | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HERE mSDK - Positioning
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-04-19 12:50:58" itemprop="dateCreated datePublished" datetime="2020-04-19T12:50:58+08:00">2020-04-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>地图技术是对真实世界既有位置的表达，定位技术是对当前位置的求解。随着各种传感器、移动设备的广泛使用，GIS和LBS通常无缝结合在同一个解决方案中。GIS更侧重于稳坐后台解决空间数据的提取、处理、分析、挖掘，LBS更侧重于深入终端实现信号收集、位置获取、轨迹追踪。GIS从一个小众而专业的领域，随着互联网的潮流，逐渐拥抱普适，增值LBS。</p>
+<p>从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一个陌生地方到了饭点儿，估计大家十有八九会打开App，看下周边地图，知道我在哪，搜下周边饭馆，然后计算路线导航过去，吃饱喝足一气呵成即可。</p>
+<p>以上面这个觅食的例子展开，从产品功能角度，至少需要如下几个模块。App首先获取设备的位置（positioning），通过这个位置请求周边map tile（map service）, 然后搜索指定Category的POI（search&amp;F&#x2F;R geocoding），然后计算路线（routing&#x2F;direction）并导航（TBT Navigation）……</p>
+<p>这一篇我想整理一下，位置服务第一步， Positioning 相关的内容。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg"></p>
+<p>HERE Mobile SDK 中不仅提供了Android 系统中自带的基础定位接口，而且特别提供了HERE增强版的定位能力，更精准，高效，可靠。这些增强版的定位能力包括：</p>
+<ul>
+<li><strong>蜂窝网络定位 - 支持 GSM, CDMA, WCDMA, TD-SCDMA ，LTE</strong></li>
+<li><strong>WiFi 网络定位</strong></li>
+<li><strong>高精度室内定位 - 支持 WiFi 和 蓝牙</strong></li>
+<li><strong>离线定位 - 无任何网络连接时，使用预先按需自动下载的定位数据缓存、辅助定位数据，实现离线定位</strong></li>
+<li><strong>定位模式自动融合，择优切换， 包括 GNSS，WiFi，蓝牙，蜂窝信号间的切换</strong></li>
+<li><strong>室内定位 -支持于室内地图结合使用，支持楼层探测。 室内地图既可以是HERE已发布的公共资源，也可以是用户私属地图</strong></li>
+<li><strong>HERE定位能力无缝覆盖全球</strong></li>
+</ul>
+<br>
+
+<p>以上功能列表解释几个点：</p>
+<p><strong>GNSS</strong>（Global Navigation Satellite System）包括除了我们熟知的 GPS，还包括 GLONASS,  Beidou, </p>
+<p>QZSS,  Galileo 这些星座。 HERE Positioning 产品族系中，还有可支持到芯片级的 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaGVyZS5jb20vcHJvZHVjdHMvdHJhY2tpbmctcG9zaXRpb25pbmctc29sdXRpb25zL2hkLWduc3M=">HD GNSS &#x2F; A-GNSS 产品<i class="fa fa-external-link-alt"></i></span>，用于显著提高首次定位时间和GNSS离线辅助定位。这里不展开了，以后有空再约起。</p>
+<p><strong>WiFi离线定位</strong>，略复杂，是室内定位中成本较低的一种，不依赖于事先部署 Beacon。从使用者角度可以理解为两个使用场景：</p>
+<ul>
+<li><p>经常连接WiFi，有时断线使用，例如在办公室等熟悉场所。</p>
+</li>
+<li><p>周围无熟悉WiFi，例如进入一个陌生的大型购物中心。</p>
+<p>前者可通过online WiFi定位的定位缓存数据解决离线问题；后者则需要大量的众包数据作为前提实现。</p>
+<p>后者是一种更黑科技的技术，但是从原理上也不是难于理解。 可以想象，大型购物中心通常布满 WiFi热点，移动设备即使无法连接这些热点，也可以探测到这些WiFi热点的信息。根据信号场强的算法黑科技，最终是从已知点位解算未知点位的数学问题。</p>
+<p>这里的问题是：已知点位怎么来？这正是源自众包、托关于定位服务器的 HERE Radio Map。采集和管理 Radio Map 实际官方也有给出工具<span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scw=="> HERE Indoor Radio Mapper<i class="fa fa-external-link-alt"></i></span> 和 <span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scy9oZWxwLXRleHQtMyNpbmRvb3ItcmFkaW8tbWFwLWFkbWluLXRvb2w=">HERE Radio Map Admin Tool<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg"></p>
+</li>
+</ul>
+<p><strong>室内地图 &#x2F;Venue Map</strong>，在实际的使用场景中，室内定位一般与3D室内地图结合使用，但始终要理解，地图是地图，定位是定位，只是为了终端用户的视觉显示时，二者才绑到了一起。室内地图的显示和制作也有单独的工具，点<span class="exturl" data-url="aHR0cHM6Ly92ZW51ZXMuaGVyZS5jb20vcHJvZHVjdHMvb3ZlcnZpZXc=">这里<i class="fa fa-external-link-alt"></i></span>看官网。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg"></p>
+<p>定位部分的开发部署，强烈建议仔细阅读开发文档，有关设备访问权限的几点一定要确保配置正确。</p>
+<ul>
+<li><p>HERE Mobile SDK - <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vMy4xNS9kZXZfZ3VpZGUvdG9waWNzL2FkdmFuY2VkLXBvc2l0aW9uaW5nLmh0bWw=">Developer Doc<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>HERE Mobile SDK on Github - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlcmVtYXBzL2hlcmUtYW5kcm9pZC1zZGstZXhhbXBsZXMvdHJlZS9tYXN0ZXIvcG9zaXRpb25pbmc=">Sample Code<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+<p>可以带手机到室外和室内试一下这个Demo，支持选择定位模式。</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/HERE-Map/" rel="tag"><i class="fa fa-tag"></i> HERE Map</a>
+              <a href="/tags/HLS/" rel="tag"><i class="fa fa-tag"></i> HLS</a>
+              <a href="/tags/Positioning/" rel="tag"><i class="fa fa-tag"></i> Positioning</a>
+              <a href="/tags/Mobile-SDK/" rel="tag"><i class="fa fa-tag"></i> Mobile SDK</a>
+              <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/03/29/HmSDK_VectorTile-MFs/" rel="prev" title="HERE mSDK - Vector Tile / Map Feedback">
+                  <i class="fa fa-angle-left"></i> HERE mSDK - Vector Tile / Map Feedback
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/08/22/Thinkings2020/" rel="next" title="特别的2020：一些特别的感想">
+                  特别的2020：一些特别的感想 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Shapefile是上个世纪90年代的数据格式，但是由于它开放易用至今仍然倍受欢迎，最近与shapefile编码相关的问题此起彼伏连绵不绝，整理下几个高频问题共享之。   为什么我的shapefile在ArcGIS 10.3中打开乱码？  原因这个问题的根本原因就是读取文件使用的编码类型和文件实际存储的编码类型不一致。 Shapefile文件的头文件（dBase Header）中，一般会包含sha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Troubleshooting：Shapefile 乱码与字符截断问题">
+<meta property="og:url" content="https://kikitamap.com/2015/12/21/TroubleshootingShapefile/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="Shapefile是上个世纪90年代的数据格式，但是由于它开放易用至今仍然倍受欢迎，最近与shapefile编码相关的问题此起彼伏连绵不绝，整理下几个高频问题共享之。   为什么我的shapefile在ArcGIS 10.3中打开乱码？  原因这个问题的根本原因就是读取文件使用的编码类型和文件实际存储的编码类型不一致。 Shapefile文件的头文件（dBase Header）中，一般会包含sha">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgfile.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgContent.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Demo.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChineseCharlen.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChinesePython.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Regedit.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_codetable.png">
+<meta property="article:published_time" content="2015-12-21T05:00:00.000Z">
+<meta property="article:modified_time" content="2018-07-02T03:46:04.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Geodata">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgfile.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2015/12/21/TroubleshootingShapefile/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2015/12/21/TroubleshootingShapefile/","path":"2015/12/21/TroubleshootingShapefile/","title":"Troubleshooting：Shapefile 乱码与字符截断问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Troubleshooting：Shapefile 乱码与字符截断问题 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E7%9A%84shapefile%E5%9C%A8ArcGIS-10-3%E4%B8%AD%E6%89%93%E5%BC%80%E4%B9%B1%E7%A0%81%EF%BC%9F"><span class="nav-text">为什么我的shapefile在ArcGIS 10.3中打开乱码？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0"><span class="nav-text">原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88ArcGIS-10-3%E5%AF%BC%E5%87%BA-Shapefile%E7%9A%84%E5%AD%97%E6%AE%B5%E5%90%8D%E4%BC%9A%E8%A2%AB%E6%88%AA%E6%96%AD%E6%88%903%E4%B8%AA%E6%B1%89%E5%AD%97%EF%BC%9F%E4%BD%8E%E7%89%88%E6%9C%AC%E4%B8%AD%E4%B8%8D%E6%98%AF%E8%87%B3%E5%B0%91%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%82%A84%E4%B8%AA%E6%B1%89%E5%AD%97%E5%90%97%EF%BC%9F"><span class="nav-text">为什么ArcGIS 10.3导出 Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0-1"><span class="nav-text">原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95-1"><span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Perfect-Solution"><span class="nav-text">Perfect Solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Workaround"><span class="nav-text">Workaround</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E5%BD%93%E5%89%8Dshapefile%E4%BD%BF%E7%94%A8%E4%BA%86%E4%BB%80%E4%B9%88%E7%BC%96%E7%A0%81%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="nav-text">我如何检测当前shapefile使用了什么编码类型？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-text">python代码示例</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/12/21/TroubleshootingShapefile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Troubleshooting：Shapefile 乱码与字符截断问题 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Troubleshooting：Shapefile 乱码与字符截断问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-12-21 13:00:00" itemprop="dateCreated datePublished" datetime="2015-12-21T13:00:00+08:00">2015-12-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Shapefile是上个世纪90年代的数据格式，但是由于它开放易用至今仍然倍受欢迎，最近与shapefile编码相关的问题此起彼伏连绵不绝，整理下几个高频问题共享之。</p>
+<br>
+
+<h2 id="为什么我的shapefile在ArcGIS-10-3中打开乱码？"><a href="#为什么我的shapefile在ArcGIS-10-3中打开乱码？" class="headerlink" title="为什么我的shapefile在ArcGIS 10.3中打开乱码？"></a><strong>为什么我的shapefile在ArcGIS 10.3中打开乱码？</strong></h2><br>
+
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><em>原因</em></h3><p>这个问题的根本原因就是读取文件使用的编码类型和文件实际存储的编码类型不一致。</p>
+<p>Shapefile文件的头文件（dBase Header）中，一般会包含shapefile使用的编码类型的信息，这个信息成为 <strong>LDID</strong> （ Language Driver ID），这样在使用应用程序打开 shapefile 的时候，应用程序就知道用何种编码类型去正确读取它，而不会发生乱码。 在 ArcGIS Desktop 生产的 shapefile 数据中通常会包含这项信息。在Shapefile的子文件中，有时我们还会发现同名 ***.cpg** 文件，文件中也存储了编码信息，用记事本打开，看到例如 utf-8。</p>
+<p>二者被ArcGIS 识别的优先顺序是，<strong>LDID 优先于 CPG文件</strong>。也就是如果头文件中没有约定读shapefile的编码类型时，如果这时刚好有个CPG文件，那么ArcGIS就会使用这里的编码类型读取。</p>
+<p>我们知道 shapefile 是个开放格式，只要你了解了数据规范，完全可以脱离ArcGIS自己生产出来。在Windows中文语言设置下，假设你自己写代码或者使用第三方的程序生产了shapefile，例如MapGIS，默认使用 <strong>CP936（GBK）</strong>编码存储，但是无论粗心大意还是有意为之没有在数据头文件中约定“我用了936！”。如果是 ArcGIS 10.2 和之前的版本，那么没问题，ArcGIS 默认就是以这种方式识别，没有乱码。可是拿到 <strong>ArcGIS 10.2.1 ，ArcGIS 10.2.2，ArcGIS 10.3.x</strong> 这几个版本中发现乱！码！了！<strong>在缺失 LDID 和 CPG时，这几个版本默认使用 UTF-8 来读取 shapefile，这样必然乱码了。</strong></p>
+<br>
+
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><em>解决方法</em></h3><p>在shapefile子文件旁边创建个记事本，修改为同名的CPG文件，文本内容<strong>oem</strong>或者<strong>936</strong>。</p>
+<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgfile.png"></p>
+<p> <img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgContent.png"></p>
+<p>这样 ArcGIS 10.2.1 、10.2.10.3.x 在读取的时候，就知道你的数据是这种编码类型存储的，从而按照正确的方式读取。</p>
+<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Demo.png"></p>
+<br>
+
+<br>
+
+
+
+<h2 id="为什么ArcGIS-10-3导出-Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？"><a href="#为什么ArcGIS-10-3导出-Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？" class="headerlink" title="为什么ArcGIS 10.3导出 Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？"></a><strong>为什么ArcGIS 10.3导出 Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？</strong></h2><br>
+
+<h3 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a><em>原因</em></h3><p>这个问题仍然与编码类型有关。</p>
+<p><strong>ArcGIS 10.2 以及更早的版本</strong>，ArcGIS写shapefile的时候，遇到中文<strong>默认</strong>使用Windows当前语言 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><strong>字符集编码</strong></a>（也称 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%A0%81%E9%A1%B5"><strong>代码页&#x2F;CodePage&#x2F;OEM CodePage</strong></a>），例如中文一般使用的是 **<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU0JUJCJUEzJUU3JUEyJUJDJUU5JUEwJTgxOTM2">CodePage 936（GBK）<i class="fa fa-external-link-alt"></i></span>**。</p>
+<p><strong>ArcGIS 10.2.1 以及之后的版本</strong>，ArcGIS写shapefile的时候，<strong>默认</strong>使用的是 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/UTF-8"><strong>UTF-8</strong></a> 编码类型。</p>
+<p>这两种编码类型存储汉字所使用的字节数是不相同的，上面的关键字中我也给出了 wiki 的链接，有兴趣点进去看看详情。简言之，shapefile自身的限制是字段为9个字节，CP936编码下汉字通常为双字节存储，因此可以存储 9&#x2F;2&#x3D;4 个汉字；UTF-8 编码下汉字至少需要3个字节存储，因此最多只能存储 9&#x2F;3&#x3D;3 个汉字了。</p>
+<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChineseCharlen.png"></p>
+<p>举个例子，在Python命令行中，我们求一下 Unicode字符串的长度就可以真相大白。</p>
+<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChinesePython.png"></p>
+<br>
+
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a><em>解决方法</em></h3><h4 id="Perfect-Solution"><a href="#Perfect-Solution" class="headerlink" title="Perfect Solution"></a><em>Perfect Solution</em></h4><p>使用地理数据库，放弃shapefile，避免各种截断问题，这也是存储地理数据的康庄大道。</p>
+<p>但是，shapefile的拥趸说“我的需求是恢复以前存储4个汉字的shapefile，我不想用地理数据库，我希望得到老版本的shapefile的结果，我不在乎shapefile的编码类型是什么 ……bla bla……”好吧，方法还是有的。</p>
+<h4 id="Workaround"><a href="#Workaround" class="headerlink" title="Workaround"></a><em>Workaround</em></h4><blockquote>
+<p>这里还有个注意事项：<br>如果你用的刚好是 <strong>10.2.1</strong> 和<strong>10.2.2</strong> 这两个版本，那么要打补丁后以下设置才生效。以前写过另外一篇，详情点 **<a href="http://kikitamap.com/2014/02/13/shapefileCodePage/">这里</a>**。<br>如果你用的是 <strong>10.3.x</strong> ，那么直接向下进行。</p>
+</blockquote>
+<ol>
+<li>打开注册表，定位到 ‘<strong>My Computer\HKEY_CURRENT_USER\Software\ESRI\Desktop 10.x</strong>‘ </li>
+<li>创建项 ‘<strong>Common</strong>‘， 接着在其下创建  ‘<strong>CodePage</strong>‘ 项， 添加 ‘<strong>字符串</strong>’，名称： <strong>dbfDefault</strong>，健值：<strong>oem（或者 936）</strong>。</li>
+</ol>
+<p> <img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Regedit.png"></p>
+<p>这样ArcGIS Desktop <strong>读、写</strong> shapefile的默认方式就将是Windows当前语言 <strong>OEM CodePage 936</strong>。</p>
+<br>
+
+<blockquote>
+<p>PS：<br>当然这种方法，也可以解决第一个问题，并且不需要为缺失oem编码信息的数据增加cpg文件了。两种方法，任君选择。</p>
+</blockquote>
+<br>
+
+<br>
+
+<h2 id="我如何检测当前shapefile使用了什么编码类型？"><a href="#我如何检测当前shapefile使用了什么编码类型？" class="headerlink" title="我如何检测当前shapefile使用了什么编码类型？"></a><strong>我如何检测当前shapefile使用了什么编码类型？</strong></h2><br>
+
+<p>shapfile本身是个开放格式，当然我们有很多种途径查看shapefile的内部，读者中不乏代码大牛，只要了解数据规范应该方法多多。</p>
+<p>我这里就分享一种通过 python 查看编码类型的简单的方法，使用python中的 <strong>struct模块</strong> 可以处理二进制数据，从而探测下 shapefile 的子文件 dbf 的头文件中的 LDID 信息是什么。</p>
+<h3 id="python代码示例"><a href="#python代码示例" class="headerlink" title="python代码示例"></a>python代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*-coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">&#x27;kikita&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line">dbf = <span class="string">u&#x27;D:\ExportShapefiles\中文字段.dbf&#x27;</span></span><br><span class="line">dat = <span class="built_in">open</span>(dbf, <span class="string">&#x27;rb&#x27;</span>).read(<span class="number">30</span>)[<span class="number">29</span>:]</span><br><span class="line"><span class="built_in">id</span> = struct.unpack(<span class="string">&#x27;B&#x27;</span>, dat)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>, <span class="built_in">hex</span>(<span class="built_in">id</span>))</span><br></pre></td></tr></table></figure>
+
+
+<p>例如，得到这样的打印结果：   <strong><code>(77, &#39;0x4d&#39;)</code></strong>  通过这样的 ID 到 <span class="exturl" data-url="aHR0cDovL3NoYXBlbGliLm1hcHRvb2xzLm9yZy9jb2RlcGFnZS5odG1s">编码表<i class="fa fa-external-link-alt"></i></span> 中查到就是 CodelPage 936。</p>
+<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_codetable.png"></p>
+<p>当然如果有你更好的方法，博主求分享，可以直接在评论区里贴出来，共同讨论。</p>
+<br>
+
+<br>
+
+<p>上面是三个最常被问到的问题，这三个问题通了，那么好多shapefile读写乱码问题就迎刃而解了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Geodata/" rel="tag"><i class="fa fa-tag"></i> Geodata</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/12/06/IterationinArcGISforDesktop/" rel="prev" title="如何在ArcGIS for Desktop中实现批量任务">
+                  <i class="fa fa-angle-left"></i> 如何在ArcGIS for Desktop中实现批量任务
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2016/01/17/ArcGISWeb3D/" rel="next" title="实践 ArcGIS Web 3D">
+                  实践 ArcGIS Web 3D <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

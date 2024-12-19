@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="镶嵌数据集的色彩平衡 创建接缝线在对镶嵌数据集进行镶嵌的时候，有时还会用到接缝线（Seamline）。在前面总结过镶嵌数据集的镶嵌方法，其中最后一种是 Seamline 镶嵌方法。在创建接缝线之前，建议先进行色彩平衡，因此就拿到这里一起说。 当我们把镶嵌方法选为了 Seamline 镶嵌方法时，Seamline 就会替代 Footprint 来作为每幅栅格数据的边线。这样会让接缝更自然，镶嵌数据集">
+<meta property="og:type" content="article">
+<meta property="og:title" content="镶嵌数据集工具小结（八）色彩平衡与接缝线 Ⅱ">
+<meta property="og:url" content="https://kikitamap.com/2014/11/20/MDColorBalance2/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="镶嵌数据集的色彩平衡 创建接缝线在对镶嵌数据集进行镶嵌的时候，有时还会用到接缝线（Seamline）。在前面总结过镶嵌数据集的镶嵌方法，其中最后一种是 Seamline 镶嵌方法。在创建接缝线之前，建议先进行色彩平衡，因此就拿到这里一起说。 当我们把镶嵌方法选为了 Seamline 镶嵌方法时，Seamline 就会替代 Footprint 来作为每幅栅格数据的边线。这样会让接缝更自然，镶嵌数据集">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Toolset.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Default.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry2.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry2.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_CopyFootprint.png">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeDetection.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeCreation.jpg">
+<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Done.png">
+<meta property="article:published_time" content="2014-11-20T04:38:05.000Z">
+<meta property="article:modified_time" content="2018-07-03T02:26:36.000Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Geodata">
+<meta property="article:tag" content="Raster">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/MDColorBalance2_Toolset.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2014/11/20/MDColorBalance2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2014/11/20/MDColorBalance2/","path":"2014/11/20/MDColorBalance2/","title":"镶嵌数据集工具小结（八）色彩平衡与接缝线 Ⅱ"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>镶嵌数据集工具小结（八）色彩平衡与接缝线 Ⅱ | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%95%B6%E5%B5%8C%E6%95%B0%E6%8D%AE%E9%9B%86%E7%9A%84%E8%89%B2%E5%BD%A9%E5%B9%B3%E8%A1%A1"><span class="nav-text">镶嵌数据集的色彩平衡</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%8E%A5%E7%BC%9D%E7%BA%BF"><span class="nav-text">创建接缝线</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/11/20/MDColorBalance2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="镶嵌数据集工具小结（八）色彩平衡与接缝线 Ⅱ | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          镶嵌数据集工具小结（八）色彩平衡与接缝线 Ⅱ
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-11-20 12:38:05" itemprop="dateCreated datePublished" datetime="2014-11-20T12:38:05+08:00">2014-11-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="镶嵌数据集的色彩平衡"><a href="#镶嵌数据集的色彩平衡" class="headerlink" title="镶嵌数据集的色彩平衡"></a>镶嵌数据集的色彩平衡</h1><p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Toolset.png"></p>
+<h2 id="创建接缝线"><a href="#创建接缝线" class="headerlink" title="创建接缝线"></a>创建接缝线</h2><p>在对镶嵌数据集进行镶嵌的时候，有时还会用到接缝线（Seamline）。在前面总结过镶嵌数据集的镶嵌方法，其中最后一种是 Seamline 镶嵌方法。<strong>在创建接缝线之前，建议先进行色彩平衡</strong>，因此就拿到这里一起说。</p>
+<p>当我们把镶嵌方法选为了 Seamline 镶嵌方法时，Seamline 就会替代 Footprint 来作为每幅栅格数据的边线。这样会让接缝更自然，镶嵌数据集看起来会更像是无缝的一整张栅格数据。如果为镶嵌数据集创建了接缝线，还有个好处就是，我们可以根据需要去编辑接缝线，例如有的接缝线刚好穿过一个建筑物，我们就可以尽可能让边线绕过建筑物，让影像看起来拼接的自然美观一些。</p>
+<p>工具<strong>Build Seamlines</strong>用来为镶嵌数据集创建接缝线的。Seamline 与 Footprints 类似：每个面表示一个图像。面的形状表示查看镶嵌数据集时将用于生成镶嵌图像的那部分图像。构建了 Seamline 之后，ArcMap 中显示镶嵌数据集时，会又多了一个图层 Seamline。根据镶嵌方法，等级值将存储在属性表的 SOrder 字段中。</p>
+<p>下面就一起看看这个工具的使用方法：</p>
+<p><strong>Computation Method</strong></p>
+<p>构建接缝线，有五种计算方法可选：**GEOMETRY ,&nbsp;RADIOMETRY , COPY_FOOTPRINT ,&nbsp;COPY_TO_SIBLING ,&nbsp;EDGE_DETECTION&nbsp;**。</p>
+<p>为了更直观的认识上面构建接缝线的方法，我还是用个简单的数据来说明问题：</p>
+<p>数据是按照北西方法镶嵌，加上Footprint是这样的：</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Default.png"></p>
+<p><strong>Geometry &#x2F; 几何</strong>—— 根据当前的排序方法和Footprint来生成接缝线。通过这种方法生成的接缝线一眼就知道了栅格数据之间的压盖关系，并且接缝线（面）之间没有要素压盖。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry.png"><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry2.png"></p>
+<p><strong>Radiometry&#x2F; 辐射度</strong>—— 通过检查相交区域的值和样式来构建接缝线，接缝线是Footprint交点之间的折线。这种方法拼接的影像看起来更自然一些。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry.jpg"><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry2.jpg"></p>
+<p><strong>Copy_footprint&#x2F;复制轮廓</strong>—— 这种方法的接缝线只是相应轮廓线的副本。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_CopyFootprint.png"></p>
+<p><strong>Copy_to_sibling&#x2F;复制到同类</strong>—— 此方法将已有的接缝线复制到与其组名相同的同类要素中。这种方法常常用于全色波段与多光谱波段范围不同的卫星影像，从而确保它们共享相同的接缝线。&nbsp;这里没有合适的数据，不放图了。</p>
+<p><strong>Edge_detection&#x2F;边缘检测</strong>—— 对相交区域应用边缘检测过滤器，以确定该区域中要素的边。然后，沿检测到的边创建接缝线。这种方法创建的接缝线也很漂亮和自然。</p>
+<p>举个例子，看下面的影像边界是不是扎眼？</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeDetection.jpg"></p>
+<p>使用边界探测方法创建接缝线后，一条沿着马路的折线（面的边界）产生了。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeCreation.jpg"></p>
+<p>使用 接缝线方法拼接后就更加自然了。</p>
+<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Done.png"></p>
+<p><strong>Sort Method</strong></p>
+<p>默认情况下，Seamline 排序是使用 “North-West” 镶嵌方法生成的。还可以选择使用 “CLOSEST_TO_VIEWPOINT&nbsp;” 或 “BY_ATTRIBUTE&nbsp;” 镶嵌方法来创建接缝线。这与前面说的镶嵌方法的理念是一样的，不再啰嗦了。</p>
+<p><strong>Cell Size</strong></p>
+<p>像元大小用于确定要生成接缝线时的栅格大小。</p>
+<p>通常用在镶嵌数据集中存在多种数据分辨率并且只想为一个等级生成接缝线的情况。例如，如果将高分辨率数据源与低分辨率数据源进行混合，则可指定适合其中一个数据源范围的像元大小。如果存在多个 LOWPS（低像素大小）值，或者不确定要指定哪个像元大小，可将此参数留空。该工具将自动在适当的等级上创建接缝线。此参数的单位与镶嵌数据集的空间参照单位相同。</p>
+<p><strong>沿接缝线混合（羽化）</strong></p>
+<p>可以定义沿接缝线发生的混合的混合值（羽化）和类型，混合发生在接缝线上有重叠栅格的像素之间。</p>
+<p><strong>Blend Width Units</strong></p>
+<p>定义混合宽度的单位。默认是 PIXELS（像素）；还可选择 GROUND_UNITS，也就是也镶嵌数据集的单位相同。</p>
+<p><strong>Blend Width</strong></p>
+<p>混合宽度定义要混合的像素数目。</p>
+<p><strong>Blend Type</strong></p>
+<p>BOTH，INSIDE，OUTSIDE 三种混合类型。</p>
+<p>例如：如果“混合宽度”值为 10，且使用 BOTH 作为混合类型，则将在接缝线的内部和外部分别混合 5 个像素。如果该值为 10，且混合类型为 INSIDE，则将在接缝线的内部混合 10 个像素。</p>
+<p><strong>Request Size Type</strong></p>
+<p>PIXELS — 将根据像素大小修改请求大小。根据栅格像素大小对最近图像进行重采样。</p>
+<p>PIXELSIZE_FACTOR —将根据像素大小因子修改请求大小。通过将像元大小等级表（Level Table）中的 &nbsp;Cell Size 与 Pixel Size Factor 相乘对最近图像进行重采样。</p>
+<p><strong>Request Size</strong></p>
+<p>此参数决定对栅格进行重采样的大小，用于定义行列数。最大值为 5000。可以基于栅格数据的复杂程度增大或减小该值。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/kikitamoon">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <span class="social-link">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </span>
+
+          <img class="social-item-img" src="/images/wechat_channel.png">
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Geodata/" rel="tag"><i class="fa fa-tag"></i> Geodata</a>
+              <a href="/tags/Raster/" rel="tag"><i class="fa fa-tag"></i> Raster</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2014/11/17/MDColorBalance1/" rel="prev" title="镶嵌数据集工具小结（七）色彩平衡与接缝线 Ⅰ">
+                  <i class="fa fa-angle-left"></i> 镶嵌数据集工具小结（七）色彩平衡与接缝线 Ⅰ
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2014/11/28/MDCellRange/" rel="next" title="镶嵌数据集工具小结（九）计算像元大小范围">
+                  镶嵌数据集工具小结（九）计算像元大小范围 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

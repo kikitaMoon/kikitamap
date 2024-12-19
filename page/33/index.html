@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/33/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/33/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/33/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/03/04/shapefileDataField/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/03/04/shapefileDataField/" class="post-title-link" itemprop="url">有关shapefile存储时间字段的问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-03-04 09:20:05" itemprop="dateCreated datePublished" datetime="2013-03-04T09:20:05+08:00">2013-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>356</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>很多ArcGIS的用户会很疑惑，为什么excel或者其他数据库中的时间数据数据，例如15:40:30等这样的数据，转成shapefile数据后，这个日期字段中的值会变成12:00:00 ？</p>
+<p>我们知道shapefile是基于dbase来存储的，通过dbf文件来存储属性字段，dbf支持的日期时间字段，实际上不是真正意义上的DateTime型，而是只能存储8位的日期型字段，也就是：YYYYMMDD。</p>
+<p>所以，强烈建议用户，如果需要使用日期时间型字段时，请选用GDB数据类型。如果出于特定原因一定需要使用shapefile的。可以考虑新加字段，单独来存储时间，两种常用的方案：</p>
+<ul>
+<li>（1）将时间换算成秒，由某个数值型字段来存储。</li>
+<li>（2）分别使用三个字段来存储，时分秒数值。</li>
+</ul>
+ <br>
+
+<p>顺便提一嘴。GDB存储时间日期的格式为：yyyy-mm-dd hh:mm:ss AM or PM。至于ArcMap中日期的显示的样式，是由windows系统来控制的。例如：M&#x2F;d&#x2F;yy, MM&#x2F;dd&#x2F;yy, yy&#x2F;MM&#x2F;dd等样式。</p>
+<p>关于shape文件的详细描述，请查看如下两个连接中的任何一个：</p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5kaWdpdGFscHJlc2VydmF0aW9uLmdvdi9mb3JtYXRzL2ZkZC9mZGQwMDAyODAuc2h0bWw=">http://www.digitalpreservation.gov/formats/fdd/fdd000280.shtml<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cDovL3d3dy5nZGFsLm9yZy9vZ3IvZHJ2X3NoYXBlZmlsZS5odG1s">http://www.gdal.org/ogr/drv_shapefile.html<i class="fa fa-external-link-alt"></i></span></p>
+<p>从中都会获得有用的数据描述。</p>
+<p>在资源库中也上传了esri有关shapefile的描述文档。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/03/04/TipsCityEngine20121ArcGIS100/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/03/04/TipsCityEngine20121ArcGIS100/" class="post-title-link" itemprop="url">CityEngine 2012_1 与 ArcGIS 10_0 一同安装的注意事项</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-03-04 09:19:27" itemprop="dateCreated datePublished" datetime="2013-03-04T09:19:27+08:00">2013-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>156</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>CityEngine 2012.1 与 ArcGIS 10.1 是同期发布的产品，ArcGIS Lisence Manager 10.1 是可以统一管理这两个产品的许可。比起CityEngine 2011的版本，许可方面的确便利了许多。</p>
+<p>但是如果想使用 ArcGIS 10.0怎么办呢？</p>
+<p>Esri 为了解决这个问题，提供了一个Patch，Esri CityEngine 2012.1 Software Authorization Patch，下载地址：</p>
+<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE4Ni9tZXRhaWQvMTkyOQ==">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/186/metaid/1929<i class="fa fa-external-link-alt"></i></span></p>
+<p>如果您ArcGIS Desktop当前处于中文版界面，打开 ArcGIS Administrator 配置许可的时候，没准会遇到这个问题：“试图执行不支持的程序”。</p>
+<p>将ArcGIS Desktop语言切回英文即可解决。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/01/15/ExportStyletoArcpad/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/01/15/ExportStyletoArcpad/" class="post-title-link" itemprop="url">将ArcMap中的符号样式导出的供ArcPad使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-01-15 16:40:35" itemprop="dateCreated datePublished" datetime="2013-01-15T16:40:35+08:00">2013-01-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>226</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li>在安装有ArcGIS Desktop的机器上，安装ArcPad。这里采用了各个产品的最新版本，分别是ArcGIS Desktop 10.1 和 ArcPad 10.0.4。</li>
+</ol>
+<p><img src="http://kikitamap.com/images/blogImg/ExportStyletoArcpad_version.png"></p>
+<ol start="2">
+<li>激活ArcMap中的对应扩展：</li>
+</ol>
+<p><img src="http://kikitamap.com/images/blogImg/ExportStyletoArcpad_Extension.png"></p>
+<ol start="3">
+<li>打开ArcPad 工具条，将当前地图的样式导出。</li>
+</ol>
+<p><img src="http://kikitamap.com/images/blogImg/ExportStyletoArcpad_ExportTool.gif"></p>
+<p>默认是保存在安装目录下的Style文件夹。将将要生成的aps最好放置到这个位置， <strong>\Users\Public\Documents\ArcPad\Styles</strong> 。</p>
+<p>为什么么呢？后面会说到~</p>
+<p>无论保存在哪，最后会提示保存成功。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExportStyletoArcpad_Success.gif"></p>
+<ol start="4">
+<li>使用ArcPad样式文件。</li>
+</ol>
+<p>ArcPad读取并使用这些样式，对路径是有要求的，只要下述路径才能直接使用。因此其他路径是需要重新拷贝的。</p>
+<ul>
+<li><p><strong>PC Windows：\Users\Public\Documents\ArcPad\Styles</strong></p>
+</li>
+<li><p><strong>移动设备 WM： \Program Files\ArcPad\Styles</strong></p>
+</li>
+</ul>
+<p>最后，在ArcPad的图层属性中就可以看到ArcMap导出的自定义的Style文件。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ExportStyletoArcpad_Customized.png"></p>
+<p>哦啦，就到这里~</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/12/20/CityEngineResources/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/12/20/CityEngineResources/" class="post-title-link" itemprop="url">City Engine 的学习资源</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-12-20 13:31:59" itemprop="dateCreated datePublished" datetime="2012-12-20T13:31:59+08:00">2012-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>292</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>原文链接：<span class="exturl" data-url="aHR0cDovL2ZvcnVtcy5hcmNnaXMuY29tL3RocmVhZHMvNTIyNDItTGVhcm5pbmctQ2l0eUVuZ2luZS1UdXRvcmlhbHMtYW5kLW90aGVyLVRyYWluaW5n">http://forums.arcgis.com/threads/52242-Learning-CityEngine-Tutorials-and-other-Training<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<br>
+
+<p>Dear all,</p>
+<p>We’re getting a lot of inquiries concerning training materials, tutorials and other resources, to learn the CityEngine most efficiently.</p>
+<p>Here’s the list of resources I usually recommend :</p>
+<p>I highly recommend to browse through all the mentioned resources since they contain all the basic information to get started on a professional level CityEngine project.</p>
+<h1 id="1-Resource-Center-Videos"><a href="#1-Resource-Center-Videos" class="headerlink" title="1] Resource Center : Videos"></a>1] Resource Center : Videos</h1><p><span class="exturl" data-url="aHR0cDovL3ZpZGVvLmFyY2dpcy5jb20vc2VyaWVzLzYyL2NpdHllbmdpbmUvZGF0ZS9kZXNj">http://video.arcgis.com/series/62/cityengine/date/desc<i class="fa fa-external-link-alt"></i></span></p>
+<p>Recommended are all videos which were recorded on version 2012.1, as indicated in each description. [ Some of the videos are older, though we decided to keep them on the web. ]<br>These give a good overview over how the CityEngine works in it’s basics and what the common workflows are.</p>
+<p>I recommend to go through all of them and try to follow the concepts, even though the user interface may have changed slightly between the versions.</p>
+<p>Find the current list of Tutorial videos and 2012 Features here:<br><span class="exturl" data-url="aHR0cDovL2ZvcnVtcy5hcmNnaXMuY29tL3RocmVhZHMvNjQ4Li4uVVJDRVMtRkFRLUhFTFA=">http://forums.arcgis.com/threads/648...URCES-FAQ-HELP<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="2-Quick-Start-Guide"><a href="#2-Quick-Start-Guide" class="headerlink" title="2] Quick Start Guide"></a>2] Quick Start Guide</h1><p>Go to Help &gt; Help Contents &gt; Quick Start Guide</p>
+<h1 id="3-Manual"><a href="#3-Manual" class="headerlink" title="3] Manual"></a>3] Manual</h1><p>There’s a detailed manual inside the CityEngine. Go to Help &gt; Help Contents</p>
+<h1 id="4-Example-Cities"><a href="#4-Example-Cities" class="headerlink" title="4] Example Cities"></a>4] Example Cities</h1><p>Have a look at the downloadable Example Cities. Download them via Help &gt; Download Tutorials and Examples<br>Or via the Resource Center:<br><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2NvbW11Li4uLWNlLXZlcnNpb246MTA=">http://resources.arcgis.com/en/commu...-ce-version:10<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="5-Written-Tutorials"><a href="#5-Written-Tutorials" class="headerlink" title="5] Written Tutorials"></a>5] Written Tutorials</h1><p>The written Tutorials (PDFs) are located within the downloadable tutorial project’s ‘scenes’ folder. </p>
+<h1 id="6-CityEngine-Workflows"><a href="#6-CityEngine-Workflows" class="headerlink" title="6] CityEngine Workflows"></a>6] CityEngine Workflows</h1><p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2NvbW11Li4ueXBlOjAwMDAwMTAwMDA=">http://resources.arcgis.com/en/commu...ype:0000010000<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="7-Dedicated-Forums"><a href="#7-Dedicated-Forums" class="headerlink" title="7] Dedicated Forums"></a>7] Dedicated Forums</h1><p><span class="exturl" data-url="aHR0cDovL2ZvcnVtcy5hcmNnaXMuY29tL2ZvcnVtcy80NS1Tb2x1dGlvbnM=">http://forums.arcgis.com/forums/45-Solutions<i class="fa fa-external-link-alt"></i></span></p>
+<p>These 5 dedicated forums already have a great traction and are a valuable resource for basic and advanced questions. I’m here a lot and answer most questions personally.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/12/20/E7210005FingerPrint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/12/20/E7210005FingerPrint/" class="post-title-link" itemprop="url">E7210005 操作系统策略不允许该操作 解决</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-12-20 10:04:15" itemprop="dateCreated datePublished" datetime="2012-12-20T10:04:15+08:00">2012-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>336</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>本文用于解决windows7系统不能使用内部administrator用户注册指纹的问题，已测试通过，绝对原创！</p>
+ <br>
+ 
+<p>电脑型号：Thinkpad X220<br>系统：windows7 64位</p>
+ <br>
+ 
+<p>1、计算机上点右键，选择 管理–本地用户和组–用户，在Administrator用户上点右键，选择重命名，重命名为Administrator1</p>
+<p>2、新建一个Administrator账号，密码与Administrator1一样，注销后用Administrator登录，录入指纹，导出指纹配置</p>
+<p>3、注销后用Administrator1用户登录，删除Administrator用户，重命名Administrator1为Administrator</p>
+<p>4、注销后用Administrator用户登录，导入指纹文件</p>
+<p><strong>方法二：</strong></p>
+<p>上述方法虽然有一个问题，就是用指纹开机后，在进入系统进还要再刷一次指纹，经过测试，找到了一个可以彻底解决这个问题的方法：</p>
+<p>一、本人先装了XP 32位，安装后在 管理–本地用户和组–用户 中启用administrator用户，将装系统时创建的用户禁用，用administrator注册指纹，然后导出指纹数据</p>
+<p>二、安装win7 64位，安装后在 管理–本地用户和组–用户 中启用administrator用户，将装系统时创建的用户禁用，重启系统，用administrator登录，导入第一步的指纹数据，即可完美破解win7注册指纹的问题</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/32/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/34/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

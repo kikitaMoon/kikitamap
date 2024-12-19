@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/2/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/03/11/HmSDK_MapRendering/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/03/11/HmSDK_MapRendering/" class="post-title-link" itemprop="url">HERE mSDK - Map Rendering</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-03-11 01:17:23" itemprop="dateCreated datePublished" datetime="2020-03-11T01:17:23+08:00">2020-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>502</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>通过上一个<a href="http://kikitamap.com/2020/03/09/HmSDK_QuickStart/">入门篇</a>，相信你已经对 HERE mSDK 有了一定的印象。<br>作为一个地图SDK，最基础最重要的功能首先是地图渲染， 那么今天我们仍然以 HERE mSDK （Premium Edition）为例一起了解下。在 HERE Location Services 中有一个 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbiNtYXBzX3NlY3Rpb24=">Interactive Maps Service<i class="fa fa-external-link-alt"></i></span>，用于访问服务器端预渲染的瓦片服务&#x2F;tile map， 这就是今天要用到的原料。</p>
+<p>Let’s get our hands dirty ！<br>今天这篇我们先从最基础的 Map Rendering 和 Map Schemes 开始。 <code>AndroidXMapFragment</code> 类提供了交互式地图体验支持， 例如缩放、平移等等。<code>AndroidXMapFragment</code>初始化之后，可以通过<code>Map map = mapFragment.getMap();</code> 获取 <code>Map</code> 。<br><code>Map</code> 类中提供了很多 map attributes 帮助开发者确定地图的展示方式，例如：map center，zoom level,  tilt, orientation, map projection, map animation …… </p>
+<blockquote>
+<p>详见开发文档：<a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-premium/dev_guide/topics/maps.html"><strong>Map</strong></a></p>
+</blockquote>
+<p>HERE Interactive Maps 提供了很多样式的地图外观（Map Scheme）可供选择，以满足不同审美和专题的需求。简而言之，地图数据是一套，皮肤可有很多种。 </p>
+<blockquote>
+<p>在开发者文档中，有一页图文可供参考：<a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-premium/dev_guide/topics/map-schemes.html"><strong>Map Scheme</strong></a></p>
+</blockquote>
+<p>HERE 在 Github上有官方的示例代码库，这篇的相关示例可以在这个连接中找到：<a target="_blank" rel="noopener" href="https://github.com/heremaps/here-android-sdk-examples/tree/master/map-attribute"><strong>Map Attribute</strong></a></p>
+<p>我在这个工程中稍作修改，增加了 Satallite Mode 和 Night Mode，  因为后者是最近备受欢迎的一种渲染方式，这么好看的地图不做在样例里觉得有点可惜。 Night Mode 一方面可以作为夜晚时段的地图展示，另一方面可以作为设备暗色主题搭配的地图显示。<br>另外，这个示例工程中，还包含了公交&#x2F;Transit 主题地图的展示（None&#x2F;公交站&#x2F;公交线路），以及路况&#x2F;Realtime Traffic Service 的展示 （Traffic Flow &#x2F; Incident）。</p>
+<p>Happy testing ^^</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_MapRendering.jpg"></p>
+<p>如下是在 Nexus 10 模拟器中的录屏:</p>
+<div id="video"><video width="550" height="854" controls autoplay muted><source src="http://kikitamap.com/images/blogImg/HmSDK_MapRenderingDemo.mp4" type="video/mp4"></video></div>
+<style type="text/css">#video{width:550px; height:854px;background:#ffcccc;}</style>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/03/09/HmSDK_QuickStart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/03/09/HmSDK_QuickStart/" class="post-title-link" itemprop="url">Quick Start of HERE SDK for Android</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-03-09 21:18:07" itemprop="dateCreated datePublished" datetime="2020-03-09T21:18:07+08:00">2020-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>816</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天整理下 HERE SDK的入门攻略~</p>
+<p>HERE mobile SDK 是HERE location Servie（HLS）产品家族中重要的一部分，支持 Android 和 iOS 两大主流系统；从功能上分为 Lite（旧版本称 Starter）和 Premium 两个license level，顾名思义，前者支持较轻量级的功能，后者具有更专业更高级的功能。具体的功能清单和版本对比，可以在点击 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJvZHVjdHMvaGVyZS1zZGs=">官网链接<i class="fa fa-external-link-alt"></i></span> 查到。</p>
+<p>HERE Developer 网站提供免费测试账号，建议大家注册一个玩一玩。每个 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJpY2luZw==">Freemium Plan<i class="fa fa-external-link-alt"></i></span> 账号下的 Project 可以拥有 Rest API、JS API、mSDK、studio 等很多产品的测试权限。对于个人 developer 来说，我认为足矣。</p>
+<blockquote>
+<p><strong>Freemium Plan 福利内容</strong></p>
+<p>Location Services</p>
+<ul>
+<li>250K Transactions per month</li>
+<li>5K SDK Monthly Active Users</li>
+<li>250 Assets per month</li>
+<li>Pay per additional Transactions</li>
+</ul>
+<p>Studio</p>
+<ul>
+<li>2.5GB Data transfer per month</li>
+<li>5GB Database storage per month</li>
+<li>Pay per additional Data transfer or Database storage</li>
+</ul>
+</blockquote>
+<h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="获取Credentials及SDK安装包"><a href="#获取Credentials及SDK安装包" class="headerlink" title="获取Credentials及SDK安装包"></a>获取Credentials及SDK安装包</h2><p>登录 HERE Developer 账户之后，即可在自己创建的Project中生成每个产品对应的密钥&#x2F;credentials。</p>
+<p>在 SDK 密钥下方就有 SDK安装包可供下载。如下图即为 HERE mSDK （premium edition） 的示例：</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_keys.jpg"></p>
+<h2 id="检查-System-Requirments"><a href="#检查-System-Requirments" class="headerlink" title="检查 System Requirments"></a>检查 System Requirments</h2><p>这是安装一切软件产品之前，仔细阅读<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vZGV2X2d1aWRlL3RvcGljcy9zeXN0ZW0tcmVxdWlyZW1lbnRzLmh0bWw=">官方系统要求<i class="fa fa-external-link-alt"></i></span>，永远是不错的选择。</p>
+<h2 id="快速运行-Tutorial-Example"><a href="#快速运行-Tutorial-Example" class="headerlink" title="快速运行 Tutorial Example"></a>快速运行 Tutorial Example</h2><p>下载后的SDK 安装包中包含了 user guild，release notes，SDK libraries， tutorial example 这几大件。 如果要快速入门，tutorial example 运行起来是必须的啦。</p>
+<p>这里假设大家使用的开发环境都是 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5nb29nbGUuY24vc3R1ZGlv">Android Studio<i class="fa fa-external-link-alt"></i></span>， 解压缩 SDK 安装包后，开始吧！</p>
+<ol>
+<li><p>启动 Android Studio，选择 open an existing Android Studio project， 浏览至 tutorial example 所在目录， <code>.../HERE-sdk/tutorial/BasicMapSolution</code> 。 </p>
+</li>
+<li><p>接着会发现一条报错 <code>Error: Failed to resolve: :HERE-sdk:</code>， 这个不用担心，是因为 HERE SDK 的 libraries 默认没有包含在这个工程中。</p>
+</li>
+<li><p>在 <code>BasicMapSolution</code> 中的 <code>app</code> 文件夹下创建一个名为 <code>libs</code> 的文件夹，并将安装包中的 <code>HERE-sdk/libs</code> 下的 <code>HERE-sdk.aar</code> 复制到这里。上步遇到的问题就解决料。</p>
+</li>
+<li><p>检查 <code>app/build.gradle </code> 文件，确保如下内容已经包含：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">  flatDir &#123;</span><br><span class="line">    dirs <span class="string">&#x27;libs&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  implementation(name:<span class="string">&#x27;HERE-sdk&#x27;</span>, ext:<span class="string">&#x27;aar&#x27;</span>)</span><br><span class="line">  <span class="comment">// Depending on your specific project configuration you may have other entries here.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>准备许可。每个 application 都需要一套单独的credentials。需要注意：为app申请credentials时，填写的 package name 需要和注册的bundle identifier 完全一致。就这个 sample来说， 应该使用 package name：<code> com.here.android.tutorial</code> 。如果在文章的开始，你已经注册了credential，那也没有关系，在 developer 网站的 project 页面中，你还可以修改哦，同时密钥会重新刷一遍，请使用最新的。<br><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_PackageName.jpg"> </p>
+</li>
+<li><p>写入许可。 打开目录 <code>BasicMapSolution/app/src/main/</code> 下的<code>AndroidManifest.xml</code>文件。找到三行 <code>&lt;meta-data&gt;</code>开头的语句，填写 credentials 即可。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.appid&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_ID&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.apptoken&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_CODE&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.license.key&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_LICENSE_KEY&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连接设备，运行程序，Bingo ！</p>
+</li>
+</ol>
+<h2 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><p>测试过程中，不确定大家有没有遇到我曾遇到的问题？</p>
+<p><code>This project uses AndroidX dependencies, but the &#39;android.useAndroidX&#39; property is not enabled. Set this property to true in the gradle.properties file and retry.</code></p>
+<p>解决方法：</p>
+<p>在sample project 中的 <code>gradle.properties</code>文件中，增加一句：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.useAndroidX=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>最后上图，我手头没有 Android 设备，用了 Nexus 10 模拟器：</p>
+<p><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_Run.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/03/05/theShade/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/03/05/theShade/" class="post-title-link" itemprop="url">the Shade</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-03-05 00:15:57" itemprop="dateCreated datePublished" datetime="2020-03-05T00:15:57+08:00">2020-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>332</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>又是很久没来更新，以至于kikitamap.com这个域名因为没有续费而已经停用接近两周；要不是今晚忽然想写点什么，还不知道什么时候我才能发现。</p>
+<p>工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了你的休息时间，反而又要”熬夜“ ？事情不能明天做吗？ 我总是无言以对，我这种矫情的时间独占需求，估计她不会理解，只好安抚她说马上就睡。大概，也不是所有人都有与自己独处的强需求。</p>
+<p>我喜欢拍照，拍各种自认为有趣的东西，因此手机空间经常告急，只好翻一翻，删除一些不喜欢的或是没有什么内容的。忽然发现了这张很久前拍的。</p>
+<p><img src="http://kikitamap.com/images/blogImg/SSN_theShade_20160403_TJWQ.jpg"></p>
+<p>当时的场景是我在等人，刚好从站的位置，看到自己的影子叠在橱窗里的模特身上，感觉很有点意思，就顺手拍了下来。世间熙熙攘攘，我们大多数都是追寻成为模特壳子的样子；住在壳子里面的人的样子呢？ta们是同一个吗？</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/06/27/wlanNetworks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/06/27/wlanNetworks/" class="post-title-link" itemprop="url">WiFi Network Positioning</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-27 14:17:00" itemprop="dateCreated datePublished" datetime="2019-06-27T14:17:00+08:00">2019-06-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>639</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在设备开启WiFi之后，会对周边 WiFi Access Point (AP)进行扫描，并将这些可见WiFi名称推给用户供选择。这是几乎是我们的PC和手机的日常。 除了连接WiFi登录Internet 之外，实际上，我们还可以通过 WiFi AP进行定位。</p>
+<p>定位和地图一直是紧密联系的，无论是面向消费者的第一人称应用，还是关于管理者的追踪需求。各大LBS厂商，早就提供了各种定位功能，尤其HERE，Positioning 历史可以追溯到 Nokia年代，包括基于 GPS，WiFi network，Cell Signal，Bluetooth 等各种信号源的定位能力。</p>
+<br>
+
+<h1 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h1><ul>
+<li><p>除了Mobile Hotspot、WiFi Egg，大多数情况下 AP不会经常的移动， 这就为WiFi定位的基础参照位置信息；</p>
+</li>
+<li><p>理论上，每一个 AP 都有全球唯一标识符— mac地址；当然也不排除有重复mac的问题，至于如何去重和更新后端数据库就是 another story，这里不展开了；</p>
+</li>
+<li><p>设备WiFi扫描到AP即可同时获取AP的信息，信号的强度，mac地址（BSSID）等，无论是否连接上；</p>
+</li>
+<li><p>根据WiFi信号强度衰减和距离的函数，可以判断设备离AP的距离；如果多个AP存在，那么这多个圆相交的区域就可以判定设备的位置；</p>
+</li>
+</ul>
+<p>从上面的原理可以看出，AP的位置越准确，设备扫描到的AP越多，那么设备的位置越准确。</p>
+<br>
+
+<h1 id="Quick-Testing"><a href="#Quick-Testing" class="headerlink" title="Quick Testing"></a>Quick Testing</h1><p>做个小测试，帮助快速理解。</p>
+<p>假设已经拥有了 HERE Developer 账号和密钥，如果没有，这里 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vP2NyZWF0ZT1GcmVlbWl1bS1CYXNpYyZrZWVwU3RhdGU9dHJ1ZSZzdGVwPWFjY291bnQ=">免费注册<i class="fa fa-external-link-alt"></i></span>。 </p>
+<p>以我手头的 Windows 和 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9wb3NpdGlvbmluZy90b3BpY3MvcmVxdWVzdC1jb25zdHJ1Y3RpbmcuaHRtbA==">HERE Positioning API<i class="fa fa-external-link-alt"></i></span> 的 WLAN Positioning为例。</p>
+<br>
+
+<p><strong>1</strong>   获取周边WiFi信息，可以使用 <code>netsh</code> 命令查到当前扫描到的AP。 </p>
+<p>   <code>netsh wlan show networks mode=BSSID</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;netsh wlan show networks mode=BSSID</span><br><span class="line"></span><br><span class="line">Interface name : Wi-Fi</span><br><span class="line">There are 18 networks currently visible.</span><br><span class="line"></span><br><span class="line">SSID 1 : guest</span><br><span class="line">    Network type            : Infrastructure</span><br><span class="line">    Authentication          : WPA2-Personal</span><br><span class="line">    Encryption              : CCMP</span><br><span class="line">    BSSID 1                 : 0a:69:6c:0c:08:c2</span><br><span class="line">         Signal             : 30%</span><br><span class="line">         Radio type         : 802.11n</span><br><span class="line">         Channel            : 11</span><br><span class="line">         Basic rates (Mbps) : 1 2 5.5 11</span><br><span class="line">         Other rates (Mbps) : 6 9 12 18 24 36 48 54</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">SSID 18 : Regus-76</span><br><span class="line">    Network type            : Infrastructure</span><br><span class="line">    Authentication          : WPA2-Personal</span><br><span class="line">    Encryption              : CCMP</span><br><span class="line">    BSSID 1                 : 0c:d8:6c:9f:1e:80</span><br><span class="line">         Signal             : 68%</span><br><span class="line">         Radio type         : 802.11n</span><br><span class="line">         Channel            : 13</span><br><span class="line">         Basic rates (Mbps) : 1 2 5.5 11</span><br><span class="line">         Other rates (Mbps) : 6 9 12 18 24 36 48 54</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p><strong>2</strong>  使用收集到的 BSSID 发送类似 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9wb3NpdGlvbmluZy90b3BpY3MvZXhhbXBsZS13bGFuLmh0bWw=">这个示例<i class="fa fa-external-link-alt"></i></span> 中的请求即可，so easy!</p>
+<p>   当然, 这只是 online WiFi positioning， 还有更黑科技的 offline positioning，有空再更。</p>
+   <br>
+
+   <br>
+
+<p><strong>Demo Screenshot</strong></p>
+<p>   Chian HLS JS API + Global Positioning API </p>
+<p>   <img src="http://kikitamap.com/images/blogImg/wlanNetworks_CHLS.png"></p>
+<p>   Global HLS Imagery View</p>
+<p>   <img src="http://kikitamap.com/images/blogImg/wlanNetworks_imagary.png"></p>
+<p>Have Fun！</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/05/12/Icecream_Part4-Adcanced-Routing_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/05/12/Icecream_Part4-Adcanced-Routing_2/" class="post-title-link" itemprop="url">HERE MAP API - Part4 Advanced Routing - 2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-05-12 13:32:37" itemprop="dateCreated datePublished" datetime="2019-05-12T13:32:37+08:00">2019-05-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>967</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在上一篇中，尝试给出三条备选路线方案，只是看看是不够的，还需要做些交互式的操作支持。</p>
+<h3 id="1-Visual-Tweaks"><a href="#1-Visual-Tweaks" class="headerlink" title="1 Visual Tweaks"></a>1 Visual Tweaks</h3><p>首先，这里我们做点小小的视觉调整，让路线和位置更漂亮一点。例如：</p>
+<p>给路线的加上半透明效果，在<code>drawRoute()</code>中增加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> routeLine = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Polyline</span>(strip, &#123;</span><br><span class="line">  <span class="attr">style</span>: &#123; <span class="attr">strokeColor</span>: <span class="string">&#x27;rgba(0, 85, 170, 0.5)&#x27;</span>, <span class="attr">lineWidth</span>: <span class="number">3</span> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>再给配送的起点、终点，快递员的当前位置赋予不同的显示符号，在<code>map.js</code>中修改<code>addMarker()</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">HEREMap</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">addMarker</span> = <span class="keyword">function</span> (<span class="params">coordinates, icon</span>) &#123;</span><br><span class="line">  <span class="comment">// Add an markerOptions object</span></span><br><span class="line">  <span class="keyword">var</span> markerOptions = &#123;&#125;</span><br><span class="line">  <span class="comment">// three different icons for origin, destination and the user&#x27;s current position</span></span><br><span class="line">  <span class="keyword">var</span> icons = &#123;</span><br><span class="line">    <span class="attr">iceCream</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/marker-gelato.svg&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">26</span>, <span class="number">34</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">14</span>, <span class="number">34</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">origin</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/origin.png&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">32</span>, <span class="number">32</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">12</span>, <span class="number">36</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">destination</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/destination.png&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">32</span>, <span class="number">32</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">12</span>, <span class="number">36</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (icons[icon]) &#123;</span><br><span class="line">    markerOptions = &#123;</span><br><span class="line">      <span class="attr">icon</span>: <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Icon</span>(icons[icon].<span class="property">url</span>, icons[icon].<span class="property">options</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates, markerOptions)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">map</span>.<span class="title function_">addObject</span>(marker)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> marker</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-Route-Selection"><a href="#2-Route-Selection" class="headerlink" title="2  Route Selection"></a>2  Route Selection</h3><p>在显示的三条路线中，允许用户选择一条作为最佳选项，那么我们需要在onSuccess()中增加一个回调函数来实现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> routeLineGroup = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Group</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">route</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> routeLine = <span class="title function_">drawRoute</span>(route)</span><br><span class="line">      routeLineGroup.<span class="title function_">addObject</span>(routeLine)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">route</span>: route,</span><br><span class="line">        <span class="attr">routeLine</span>: routeLine</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    map.<span class="title function_">addObject</span>(routeLineGroup)</span><br><span class="line">    map.<span class="title function_">setViewBounds</span>(routeLineGroup.<span class="title function_">getBounds</span>())</span><br><span class="line"></span><br><span class="line">    <span class="title function_">onRouteSelection</span>(routes[<span class="number">0</span>])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了在地图上高亮出选中的路线，就需要给Polyline指定不同的制图符号，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> routeLineStyles = &#123;</span><br><span class="line">  <span class="attr">normal</span>: &#123; <span class="attr">strokeColor</span>: <span class="string">&#x27;rgba(0, 85, 170, 0.5)&#x27;</span>, <span class="attr">lineWidth</span>: <span class="number">3</span> &#125;,</span><br><span class="line">  <span class="attr">selected</span>: &#123; <span class="attr">strokeColor</span>: <span class="string">&#x27;rgba(255, 0, 0, 0.7)&#x27;</span>, <span class="attr">lineWidth</span>: <span class="number">7</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>路线选择的目的是为了允许用户用户点选prefer的道路，因此我们需要增加一个函数，允许渲染引擎更改道路的符号，<code>onRouteSelection()</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onRouteSelection = <span class="keyword">function</span> (<span class="params">route</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;A route has been selected.&#x27;</span>, route)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了测试以上逻辑的正确与否，做个简单测试，在onSuccess()中调用onRouteSelection()，并且将返回结果中的第一条路线作为参数传入。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pass the first route as argument for temperary testing</span></span><br><span class="line"><span class="title function_">onRouteSelection</span>(routes[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<p>到这里，你可能会发现被选中的道路可能位于其他道路之下，因此在道路的公共部分出现了叠加的多层效果。为了确保所选道路在所有道路之上显示，我们可以设置下渲染顺序，即 z-index。如下例子中，10 为更接近上层的渲染顺序。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (selectedRoute) &#123;</span><br><span class="line">      selectedRoute.<span class="property">routeLine</span>.<span class="title function_">setStyle</span>(routeLineStyles.<span class="property">normal</span>).<span class="title function_">setZIndex</span>(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    route.<span class="property">routeLine</span>.<span class="title function_">setStyle</span>(routeLineStyles.<span class="property">selected</span>).<span class="title function_">setZIndex</span>(<span class="number">10</span>)</span><br><span class="line">    selectedRoute = route</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样就清爽了很多。</p>
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_2.png"></p>
+<h3 id="3-Route-Selection-Panel"><a href="#3-Route-Selection-Panel" class="headerlink" title="3 Route Selection Panel"></a>3 Route Selection Panel</h3><p>这一步我们最后完善与道路的“交互”。 增加一个小的面板指示已经选择的道路。我们将这一部分的功能也放到另外一个独立的脚本文件中，在 scripts目录下新建一个<code>routes_panel.js</code>的文件。当然，不要忘记在 html 页面中增加加载此脚本文件的语句。 <code>&lt;script src=&quot;scripts/routes_panel.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>另外，在html文件中需要增加一个容器来渲染路线选择面板。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;route-panel&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>定义 <em>HERERoutesPanel</em> 类，用于渲染路线选择面板中的内容，详见我的GitHub 中 <a target="_blank" rel="noopener" href="https://github.com/kikitaMoon/HERE_JS_Who_Wants_Icecream/blob/master/Part4_Advanced_Routing_SS5_selectionPanel/scripts/routes_panel.js"> <strong>routes_panel.js</strong></a> 的内容。</p>
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_Panel.png"></p>
+<h3 id="4-Directions"><a href="#4-Directions" class="headerlink" title="4 Directions"></a>4 Directions</h3><p>HERE Routing API 也会返回自然语言形式的导航信息（direction information），继续再 <code>HERERoutesPanel</code>类中增加内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> renderRouteElement = <span class="keyword">function</span> (<span class="params">route, i</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> element = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> routeSummary = route.<span class="property">route</span>.<span class="property">summary</span></span><br><span class="line">    element.<span class="property">innerHTML</span> = <span class="title function_">renderRouteTitle</span>(routeSummary, i)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> maneuvers = route.<span class="property">route</span>.<span class="property">leg</span>[<span class="number">0</span>].<span class="property">maneuver</span></span><br><span class="line">    element.<span class="property">innerHTML</span> += <span class="title function_">renderManeuvers</span>(maneuvers)</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中， <code>leg</code> 是什么？ 一个<code>leg</code>代表的是两个 waypoint之间的路线部分，求算一条路线至少要有起点和终点两个 waypoint，其他的waypoint 可以是途经点。见 Developer doc：<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9yb3V0aW5nL3RvcGljcy93YXlwb2ludHMuaHRtbA==">Waypoints<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p>看起来HERE已经提供了 pre-formatted maneuver instruction string，那么就直接用好了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> renderManeuvers = <span class="keyword">function</span> (<span class="params">maneuvers</span>) &#123;</span><br><span class="line">   <span class="keyword">return</span> [</span><br><span class="line">     <span class="string">&#x27;&lt;ol class=&quot;directions&quot;&gt;&#x27;</span>,</span><br><span class="line">     maneuvers.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">maneuver</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">&#x27;&lt;li&gt;&#x27;</span> + maneuver.<span class="property">instruction</span> + <span class="string">&#x27;&lt;/li&gt;&#x27;</span></span><br><span class="line">     &#125;).<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>),</span><br><span class="line">     <span class="string">&#x27;&lt;/ol&gt;&#x27;</span></span><br><span class="line">   ].<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这篇Tutorial的原文巨长，看得我一度想放弃，因为最近工作忙碌的关系，断断续续总算看完了； 并且参照原文思路和示例代码review完结。</p>
+<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_Direction.png"></p>
+<br>
+
+<p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTQtYWR2YW5jZWQtcm91dGluZw==">Part4: Advanced Routing<i class="fa fa-external-link-alt"></i></span></p>
+<p><em>complete code</em>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzVfc2VsZWN0aW9uUGFuZWw=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

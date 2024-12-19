@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/page/32/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/page/32/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/32/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGFtb29u" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitamoon"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/03/22/DeployCityEngineLocalHelp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/03/22/DeployCityEngineLocalHelp/" class="post-title-link" itemprop="url">单独打开CityEngine本地帮助</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-03-22 11:21:19" itemprop="dateCreated datePublished" datetime="2013-03-22T11:21:19+08:00">2013-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>455</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>CityEngine软件的自带帮助中有大量的信息可供查找学习，但是自带的 Help Content，正常是在启动CE后，再去打开才可以，这与 eclips 的帮助是一个道理。</p>
+<p>有时仅仅为了看看帮助，而启动着庞大的CE，有点喧宾夺主喽。在老王的帮助指导下，找到了单独运行CE帮助的方法，磨刀不误砍柴工~ 在这里总结下。<br>​	</p>
+<br>
+
+<h1 id="一、设置系统环境变量"><a href="#一、设置系统环境变量" class="headerlink" title="一、设置系统环境变量"></a>一、设置系统环境变量</h1><ol>
+<li>在“<strong>系统变量</strong>“”中，设置3项属性，<strong>JAVA_HOME</strong>, <strong>PATH</strong>, <strong>CLASSPATH</strong> （大小写无所谓)）, 若已存在则编辑，不存在则新建；</li>
+</ol>
+<p>	</p>
+<ul>
+<li><strong>JAVA_HOME</strong>：例如：**<code>C:\Program Files\Esri\CityEngine</code>**（CE的安装目录即可，下面有 bin 和 jre 文件夹）</li>
+<li><strong>PATH</strong>：**<code>%JAVA_HOME%/bin;%JAVA_HOME%/jre/bin</code>**</li>
+<li><strong>CLASSPATH</strong>：  **<code>.;%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar</code>**（要加.表示当前路径）</li>
+</ul>
+<p>PS：<code>%JAVA_HOME%</code> 就是引用前面指定的<code> JAVA_HOME</code>；<br>​	<br>关于配置环境变量的详情，可参阅：<span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaHVhbmdobTg4L2FydGljbGUvZGV0YWlscy8zOTY1MjE4">http://blog.csdn.net/huanghm88/article/details/3965218<i class="fa fa-external-link-alt"></i></span><br>​	<br><img src="http://kikitamap.com/images/blogImg/DeployCityEngineLocalHelp_EnvPara.jpg"></p>
+<p>2.键入命令 java，出现画面，说明环境变量配置成功；</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployCityEngineLocalHelp_Java.jpg"></p>
+<br>
+
+<h1 id="二、单独运行帮助"><a href="#二、单独运行帮助" class="headerlink" title="二、单独运行帮助"></a>二、单独运行帮助</h1><p>制作个启动脚本–bat文件。</p>
+<p>内容如下：</p>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Esri\CityEngine</span><br><span class="line">cd %ehome%</span><br><span class="line">C:</span><br><span class="line">java -classpath plugins\org.eclipse.help.base_3.5.2.v201009090800.jar org.eclipse.help.standalone.Help -command displayHelp</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<hr>
+<p>PS：蓝色部分仍然是 CE 的安装目录，下面包含 jre，bin 等目录。</p>
+<p>关于单独使用eclipse帮助的详情：<span class="exturl" data-url="aHR0cDovL2hpLmJhaWR1LmNvbS9jYWljaGFvd2VpL2l0ZW0vNGFiNGNjYjhlODMwNGNkMzg1ZGQ3OTE3">http://hi.baidu.com/caichaowei/item/4ab4ccb8e8304cd385dd7917<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<h1 id="三、更改CE程序文件名"><a href="#三、更改CE程序文件名" class="headerlink" title="三、更改CE程序文件名"></a>三、更改CE程序文件名</h1><p>上面的脚本运行之后，也许会报错，找不到 eclipse.exe。</p>
+<p>可以将CityEngine.exe，做个副本，重命名之，变成一位伪eclipse.exe。</p>
+<p><img src="http://kikitamap.com/images/blogImg/DeployCityEngineLocalHelp_rename.jpg">	<br>然后运行上一步中的 bat 脚本，单独的CE帮助就跳出来了~</p>
+<br>
+
+<p>CE进入esri怀抱已久，相信风格会越来越接近 ArcGIS 核心产品，现有的WebHelp链接如下：</p>
+<p><span class="exturl" data-url="aHR0cDovL2NlaGVscC5lc3JpLmNvbS9oZWxwL2luZGV4LmpzcD90b3BpYz0vY29tLnByb2NlZHVyYWwuY2l0eWVuZ2luZS5oZWxwL2h0bWwvdG9jLmh0bWw=">http://cehelp.esri.com/help/index.jsp?topic=/com.procedural.cityengine.help/html/toc.html<i class="fa fa-external-link-alt"></i></span>	</p>
+<br>
+
+<p><strong>郑重鸣谢：~ ~ <span class="exturl" data-url="aHR0cDovL2Jsb2cubmV3bmF3LmNvbS8=">菩提老王<i class="fa fa-external-link-alt"></i></span> ~ ~</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/03/12/CurveinCityEngine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/03/12/CurveinCityEngine/" class="post-title-link" itemprop="url">在CityEngine中的圆柱体建模</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-03-12 17:54:48" itemprop="dateCreated datePublished" datetime="2013-03-12T17:54:48+08:00">2013-03-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>465</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>CityEngine中不支持弧段的存储，各种面都是折线面，也就是ArcGIS中的Polygon。</p>
+<p>当遇到圆柱体的建筑物或实体时，如何为其建模呢？</p>
+<p><img src="http://kikitamap.com/images/blogImg/CurveinCityEngine_Demo.jpg"></p>
+<p><img src="http://kikitamap.com/images/blogImg/CurveinCityEngine_Demo2.jpg"></p>
+<p>考虑到ArcGIS与CityEngine的数据是可以互操作的，那就在ArcGIS中来构建圆形或者弧段，然后将之处理成近似弧段的多边形，然后导入CityEngine来作为模型的底面基础。按照这个思路，来动手做一下。</p>
+<br>
+
+<h1 id="1-准备带弧的数据"><a href="#1-准备带弧的数据" class="headerlink" title="1. 准备带弧的数据"></a>1. 准备带弧的数据</h1><p>在ArcGIS Desktop 中准备数据，创建 File GDB，用于存储弧段。可以从空白开始，也可以在现有数据中编辑。</p>
+<p>创建圆、椭圆、贝塞尔曲线、圆弧构成的面等等：</p>
+<p><img src="http://kikitamap.com/images/blogImg/CurveinCityEngine_Curve.png"></p>
+<p>以上图形都处于节点编辑状态，从节点数目我们可以发现，都是以复杂对象存储的。然而这些是CE不能读取的，那么下一步就是转折线了。</p>
+<br>
+
+<h1 id="2-弧转折线"><a href="#2-弧转折线" class="headerlink" title="2. 弧转折线"></a>2. 弧转折线</h1><p>使用 ArcToolbox中的工具 Densify 工具来对弧段加密，从而将高级的函数要素对象转为简单的点线面几何。</p>
+<p><img src="http://kikitamap.com/images/blogImg/CurveinCityEngine_Density.png"><br>​	<br>根据需要设置间距或者偏移等参数，从而控制加密点的生成位置，这里的需要主要是指将来模型的详细程度。</p>
+<p>如果需要比较逼真，距离可以相对小一些，这样的节点会更密集些，但是在CE中建模时可能会更耗时，更加占用资源；</p>
+<p>如果相对可以粗略些，距离可以设置大些，这样的节点会稀疏些，建立模型会更加快速，但是边界相对不会很平滑。</p>
+<p><img src="http://kikitamap.com/images/blogImg/CurveinCityEngine_DensifyResult.png"></p>
+<h1 id="3-导入CE，进一步加工"><a href="#3-导入CE，进一步加工" class="headerlink" title="3.导入CE，进一步加工"></a>3.导入CE，进一步加工</h1><p>经过简单的拉拔，可以做出简单的类似弧段建筑物。</p>
+<p><img src="http://kikitamap.com/images/blogImg/CurveinCityEngine_Model.png"></p>
+<p>到这里，这些类弧段的楼房骨架就有了。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/03/04/checkOpenGLVersion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/03/04/checkOpenGLVersion/" class="post-title-link" itemprop="url">如何检测显卡类型和OpenGL版本?</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-03-04 12:17:58" itemprop="dateCreated datePublished" datetime="2013-03-04T12:17:58+08:00">2013-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>219</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h1><p>OpenGL是一个行业标准的3D图像API。运行 CityEngine 需要 OpenGL 2.x 或更高版本。OpenGL 驱动通常与显卡驱动和支持的软件（例如：DirectX）一同安装。</p>
+<br>
+
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a><strong>过程</strong></h1><h2 id="1-检测显卡类型（Windows）："><a href="#1-检测显卡类型（Windows）：" class="headerlink" title="1.检测显卡类型（Windows）："></a>1.检测显卡类型（Windows）：</h2><p>1） 打开 “<strong>运行</strong>” 窗口。</p>
+<p>2）输入&nbsp;<strong><code>dxdiag</code></strong>&nbsp;进入 DirectX诊断工具，即列出显卡信息。</p>
+<p><img src="http://kikitamap.com/images/blogImg/checkOpenGLVersion_dxdiag.jpg"></p>
+<h2 id="2-检测-OpenGL版本（Windows，Mac，移动设备）"><a href="#2-检测-OpenGL版本（Windows，Mac，移动设备）" class="headerlink" title="2.检测 OpenGL版本（Windows，Mac，移动设备）"></a>2.检测 OpenGL版本（Windows，Mac，移动设备）</h2><p>需要安装个第三方小软件。。名字叫：OpenGL Extension Viewer.</p>
+<p>下载并安装 OpenGL Extension Viewer </p>
+<p><strong>Mac、移动设备</strong>：在 OpenGL Extension Viewer 网页中，对应的选择从 Mac App Store、iTunes Store、Android Market下载即可。</p>
+<p><img src="http://kikitamap.com/images/blogImg/checkOpenGLVersion_download.png"></p>
+<br>
+
+<p>OpenGL Extension Viewer是个免费的应用程序，由 Realtech VR 开发。此工具可以显示当前安装的 OpenGL 版本，并且可以检测和升级显卡驱动。</p>
+<p><img src="http://kikitamap.com/images/blogImg/checkOpenGLVersion_Viewer.jpg"></p>
+<br>
+
+<p>本文内容来源于 ArcGIS Resource Center 技术文件，编号：<span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzM5NDc2">39476<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/03/04/ArcGIS3DView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/03/04/ArcGIS3DView/" class="post-title-link" itemprop="url">ArcGIS支持3D视图吗？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-03-04 09:26:11" itemprop="dateCreated datePublished" datetime="2013-03-04T09:26:11+08:00">2013-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>108</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ArcGIS Desktop 中的 ArcScene 组件支持 3D 视图。</p>
+<p>在ArcScene中的 View 菜单下，有 View Setting 菜单。</p>
+<br>
+
+<p>默认是“透视图（perspective）”，也就是我们打开ArcScene的缺省设置显示方法：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGIS3DView_Perspective.jpg"></p>
+<br>
+
+<p>我们可以切换到“立体视图（stereo）”，方法可以选择例如常用的红蓝眼镜类型，如下图所示：</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGIS3DView_Stereo.jpg"></p>
+<br>
+
+<p>另外还有一种视图，称为“正射视图（orthographic）”，也就2D显示效果。</p>
+<p><img src="http://kikitamap.com/images/blogImg/ArcGIS3DView_orthographic.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/03/04/OverviewCollada/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/03/04/OverviewCollada/" class="post-title-link" itemprop="url">3D数据互操作之认识Collada</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-03-04 09:22:20" itemprop="dateCreated datePublished" datetime="2013-03-04T09:22:20+08:00">2013-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>590</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Collada的名称来自于COLLAborative Design Activity（协同设计活动），是用于存储 3D 模型的开放式标准 XML 格式，最早是由 Sony Computer Entertainment（SCEA）发起。</p>
+<p>以下介绍来自网络：</p>
+<p><em>COLLADA™ 是面向交互式 3D 应用程序的基于 XML 的数字资产交换方案，使 3D 创作应用程序可以自由地交换数字资产而不损失信息 - 使多种DCC和3D处理软件包可以组合成强大的工具链管道。独特的交互模式提供了广泛全面的视觉编译。COLLADA FX支持使用 OpenGL ES 着色语言创作和封装着色器，以使一流的 3D 创作工具可以有效协作创建 OpenGL &#x2F; OpenGL ES 应用程序和资产。<br> COLLADA是一个开放的标准，最初用于3D软件数据交换，由SCEA发起，现在则被许多著名厂家支持如Autodesk、XSI等。COLLADA不仅仅可以用于建模工具之间交换数据之用，也可以作为场景描述语言用于小规模的实时渲染。因为COLLADA DOM拥有丰富的内容用于表现场景中的各种元素，从多边形几何体到摄像机无所不包。我们可以通过COLLADA DOM库来进行场景文件的读取与处理操作。COLLADA DOM的编程方式类似COM。</em></p>
+<p>总之，我们可以将Collada理解成一个开放的3D数据资源的交换方案。COLLADA 文件的扩展名是 .dae，此类文件中还可能引用一些附加的图像文件，这些文件被用作 3D 对象上覆盖的纹理。<br>了解更多资源，点击：<span class="exturl" data-url="aHR0cDovL2NvbGxhZGEub3JnL21lZGlhd2lraS9pbmRleC5waHAvQ09MTEFEQQ==">http://collada.org/mediawiki/index.php/COLLADA<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<p>ArGIS Desktop 中如何转化呢？</p>
+<p>从ArcGIS 10.0之后，ArcToolbox中就增加了 Multipath to Collada，可以将ArcGIS的多面体矢量格式转换为3D的解决方案。从而也便利了与 SkecthUp，3DS Max 等第三方软件的交互。</p>
+<p>将多面体要素导出到 COLLADA 会创建若干文件 - 一个包含 3D 对象的 XML 表示的 .dae 文件以及一个或多个包含纹理的图像文件（例如 .jpg 或 .png 文件）。</p>
+<p>每一个multipatch会对应的生成一个Collada文件，他们之间的关联是通过指定字段维护的，如果没有特殊指定，就使用ObjectID。</p>
+<p><img src="http://kikitamap.com/images/blogImg/OverviewCollada.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/31/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/33/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:19</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
