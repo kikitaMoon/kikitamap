@@ -1861,13 +1861,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Performance/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -1875,7 +1868,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/ArcPad/</loc>
+    <loc>https://kikitamap.com/tags/Performance/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1889,7 +1882,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Deployment/</loc>
+    <loc>https://kikitamap.com/tags/ArcPad/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1904,6 +1897,13 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Geoprocessing/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Deployment/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2064,20 +2064,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Network/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Positioning/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Mobile-SDK/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -2086,6 +2072,20 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Android/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Network/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Positioning/</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
