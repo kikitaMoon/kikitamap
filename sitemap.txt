@@ -1,4 +1,4 @@
-https://kikitamap.com/404/index.html
+https://kikitamap.com/404.html
 https://kikitamap.com/categories/index.html
 https://kikitamap.com/tags/index.html
 https://kikitamap.com/2020/08/22/Thinkings2020/
@@ -204,10 +204,10 @@ https://kikitamap.com/2013/07/02/ImportArcpy/
 https://kikitamap.com/2014/08/05/ArcGlobeCacheManagement/
 https://kikitamap.com/
 https://kikitamap.com/tags/Geodata/
-https://kikitamap.com/tags/Coordinate-System/
 https://kikitamap.com/tags/Mapping/
-https://kikitamap.com/tags/CAD/
+https://kikitamap.com/tags/Coordinate-System/
 https://kikitamap.com/tags/Performance/
+https://kikitamap.com/tags/CAD/
 https://kikitamap.com/tags/ArcPad/
 https://kikitamap.com/tags/Raster/
 https://kikitamap.com/tags/Geoprocessing/
