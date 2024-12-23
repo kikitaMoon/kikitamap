@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="1．坐标系（CoordinateSystem） 主要提供了这个几种：地理坐标系或大地坐标系（GCS）、投影坐标系（PCS）、垂直坐标系（UCS）。坐标系在这先不多说，以后有时间自己整理下。   2．分辨率（Resolution）：x，y值的最小距离 分辨率值的单位与相关坐标系的单位相同。 默认分辨率值是 0.0001 米 (1&#x2F;10 mm)，或者为其等效值（以地图单位表示）。 具有较小（">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Resolution.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Tolerance.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISSpatialReference_Resolution.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISSpatialReference_Tolerance.gif">
 <meta property="article:published_time" content="2012-02-07T06:31:00.000Z">
-<meta property="article:modified_time" content="2018-07-03T13:20:41.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.213Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Coordinate System">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Resolution.gif">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ArcGISSpatialReference_Resolution.gif">
 
 
 <link rel="canonical" href="https://kikitamap.com/2012/02/07/ArcGISSpatialReference/">
@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -302,12 +302,12 @@
 <p>默认分辨率值是 0.0001 米 (1&#x2F;10 mm)，或者为其等效值（以地图单位表示）。</p>
 <p>具有较小（较精细）的 x,y 分辨率的要素坐标可以具有更多的精度位数。但是，极小的 x,y分辨率可能会影响性能，因为使用了过多的磁盘空间以及更多的 I&#x2F;O。</p>
 <p>ESRI官方文档强烈建议，在大多数情况下使用默认的 x,y分辨率，因为默认分辨率性能非常好并且可以适用于大多数坐标精度。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Resolution.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISSpatialReference_Resolution.gif"></p>
 <br>
 
 <p><strong>3． 容差（Tolerance）：</strong> </p>
 <p>容差值为坐标之间的最小距离。如果一个坐标在另一个坐标的容差值范围内，则会将二者视为同一位置。 默认容差是分辨率值的 10倍，大多数情况下推荐使用此设置。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Tolerance.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISSpatialReference_Tolerance.gif"></p>
 
     </div>
 

@@ -29,19 +29,19 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="上一篇帖子说明了如何创建镶嵌数据集、添加栅格数据，以及相关的常用参数配置。 下面再接着说如何根据自己的各种需要来修改镶嵌数据集，这一贴的主题主要是如何创建、修改镶嵌数据集的轮廓线和边界。 修改镶嵌数据轮廓线、边界类工具  当镶嵌数据集创建好之后，我们将其加入到 &nbsp;ArcMap 中后发现，镶嵌数据集是以类似图层组的形式加入的，包含了至少三个图层，分别为：Boundary、Footprint">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_toc.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_FootPrint.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Boundary.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_boundaryType.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Demo.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDFootprint_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDFootprint_toc.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDFootprint_FootPrint.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDFootprint_Boundary.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDFootprint_boundaryType.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDFootprint_Demo.png">
 <meta property="article:published_time" content="2014-10-17T04:57:34.000Z">
-<meta property="article:modified_time" content="2018-07-02T06:33:06.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.296Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geodata">
 <meta property="article:tag" content="Raster">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/MDFootprint_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/MDFootprint_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/10/17/MDFootprint/">
@@ -164,7 +164,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -301,15 +301,15 @@
     <div class="post-body" itemprop="articleBody"><p>上一篇帖子说明了如何创建镶嵌数据集、添加栅格数据，以及相关的常用参数配置。</p>
 <p>下面再接着说如何根据自己的各种需要来修改镶嵌数据集，这一贴的主题主要是如何创建、修改镶嵌数据集的轮廓线和边界。</p>
 <p><strong>修改镶嵌数据轮廓线、边界类工具</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFootprint_Toolset.png"></p>
+<p><img data-src="/images/blogImg/MDFootprint_Toolset.png"></p>
 <p>当镶嵌数据集创建好之后，我们将其加入到 &nbsp;ArcMap 中后发现，镶嵌数据集是以类似图层组的形式加入的，包含了至少三个图层，分别为：<strong>Boundary</strong>、<strong>Footprint</strong> 和 <strong>Image</strong>。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFootprint_toc.png"></p>
+<p><img data-src="/images/blogImg/MDFootprint_toc.png"></p>
 <p>在使用开头列出的那些工具之前，我们需要对上图的几个图层有所了解，了解的过程中自然会发现这些工具的用武之地。</p>
 <p><strong>Image（影像）</strong></p>
 <p>影像图层用于控制镶嵌数据集的动态镶嵌影像的渲染。如果你在ArcMap中显示过单张影像，那会发现这个图层其实看起来和单张影像差别不大。也就是镶嵌数据集将散列在磁盘上的多张栅格数据，动态拼接成了一整张栅格。对影像图层属性做出的修改不会影响镶嵌数据集，仅影响镶嵌数据集在显示时的渲染方式。</p>
 <p><strong>Footprint（轮廓线）</strong></p>
 <p>轮廓线是按照镶嵌数据集的坐标系统创建的，有可能有原始栅格数据的坐标系不一致。还记得上一篇中提到过创建镶嵌数据集时指定的坐标系可以与原始栅格数据不同吗？轮廓线包含镶嵌数据集内每个栅格的轮廓，但是不一定是每个栅格数据集的范围，而应该是栅格数据集内有效栅格数据的范围。NoData 区域是轮廓线形状所排除内容的典型示例。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFootprint_FootPrint.png"></p>
+<p><img data-src="/images/blogImg/MDFootprint_FootPrint.png"></p>
 <p>当然，我们也可以根据自己的需求，进一步定义和裁剪栅格数据。方法通常是三种：</p>
 <ul>
 <li><strong>1）自动计算方法：</strong></li>
@@ -330,13 +330,13 @@
 <p>Boundary层，我们可以理解成镶嵌数据集所引用的所有栅格数据的外边界，实际它是一个储存在地理数据库（GDB）内部的面要素类。我们可以使用 <strong>Build Boundary</strong> 工具来创建这个层，也可以在一开始添加栅格工具中勾选&nbsp;Build Boundary 参数。</p>
 <p>那这个Boundary 层是基于什么计算得到的呢？ 本质上，是将许许多多的 Footprint 层进行融合得到的。 也就是我们可以理解成，Footprint是每个栅格数据的边界，而Boundary是全部栅格的Footprint融合之后的总外边界。边界用于确定镶嵌数据集的空间范围。</p>
 <p>如下图，说明 Footprint 与 Boundary：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFootprint_Boundary.png"></p>
+<p><img data-src="/images/blogImg/MDFootprint_Boundary.png"></p>
 <p>创建边界可以指定简化方法，可以是实际数据边界，也就是不进行简化（None），可以是凸多边形（Convex Hull），还可以是外接矩形（Envelope）。</p>
 <p>如下图一目了然：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFootprint_boundaryType.png"></p>
+<p><img data-src="/images/blogImg/MDFootprint_boundaryType.png"></p>
 <p>如果镶嵌数据集中所包含的栅格数据超出了边界，那超出的数据在镶嵌图像中就不可见了。因此，我们可以通过修改边界来限制镶嵌数据集的可见内容。</p>
 <p>类似操作 Footprint，我们可以通过手工编辑，或者使用工具&nbsp;Import Mosaic Dataset Geometry 制作自定义边界。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFootprint_Demo.png"></p>
+<p><img data-src="/images/blogImg/MDFootprint_Demo.png"></p>
 <p>当然与&nbsp;Import Mosaic Dataset Geometry&nbsp;工具相应，我们还可以使用工具 <strong>Export Mosaic Dataset Geometry</strong>导出镶嵌数据集的轮廓线、边界等要素类。</p>
 <p>有关轮廓线、边界、镶嵌数据集图层就到这里了，对于初学者来说，上面这些足够用了。</p>
 <p>下一篇我会接着整理有关概视图创建等增强优化镶嵌数据集的工具。</p>

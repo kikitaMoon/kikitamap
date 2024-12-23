@@ -29,15 +29,15 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="我们可以在ArcGIS之外调用arcpy站点包运行python独立脚本，从而批量化任务提高工作效率。 如果可以把做好的脚本打包成exe是不是就更方便了呢？想想一键式处理也挺开心的。 Python打包的问题最早是在 ArcGIS知乎 中看到的，有人提问为何打包失败，我还有幸被邀请回答，虽然在这一块我也是小白一枚。 后来，得空时也搜了下相关的资源，虽然大部分人持悲观态度说arcpy不支持打包，但刚好有">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/PackageArcpyEXE_1.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/PackageArcpyEXE_2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/PackageArcpyEXE_1.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/PackageArcpyEXE_2.png">
 <meta property="article:published_time" content="2016-09-29T01:03:35.000Z">
-<meta property="article:modified_time" content="2018-11-12T02:34:19.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.366Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="ArcGIS Pro">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/PackageArcpyEXE_1.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/PackageArcpyEXE_1.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2016/09/29/PackageArcpyEXE/">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -318,7 +318,7 @@
 
 <p>如果提示python不是有效的应用程序，那么python可以使用python.exe的绝对路径（如：C:\Python27\ArcGISx6410.4\python.exe），或者在 windows的环境变量path中添加python.exe所在的路径。</p>
 <p>OK, 执行bat文件打包吧。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/PackageArcpyEXE_1.png"></p>
+<p><img data-src="/images/blogImg/PackageArcpyEXE_1.png"></p>
 <br>
 
 <h1 id="Step4-添加PTH文件"><a href="#Step4-添加PTH文件" class="headerlink" title="Step4 添加PTH文件"></a>Step4 添加PTH文件</h1><p>为了使得exe程序可以使用arcpy的资源，需要在发布后的dist目录中增加 site-packages 文件夹，并增加 *.pth 文件，<code>...\dist\site-packages\Desktop10.4_64bit.pth</code>。</p>
@@ -331,7 +331,7 @@
 <br>
 
 <p>最后，执行exe即可，这个示例中仅对两个数据进行投影变换，后面可以做些更复杂的工作。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/PackageArcpyEXE_2.png"></p>
+<p><img data-src="/images/blogImg/PackageArcpyEXE_2.png"></p>
 <br>
 
 <h1 id="后续思考"><a href="#后续思考" class="headerlink" title="后续思考"></a>后续思考</h1><p>arcpy并不是一个免费的站点包，arcpy作为ArcGIS产品的一部分，完全脱离ArcGIS产品是不行的！ Import arcpy内部其实会默默地检测产品许可的。 如果你没有产品许可，可能会遇到 “RuntimeError：NotInitialized” 这样的初始化失败的错误。</p>

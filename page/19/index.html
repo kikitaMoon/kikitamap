@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,152 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/05/08/LinuxArcGISServerDeployment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/05/08/LinuxArcGISServerDeployment/" class="post-title-link" itemprop="url">Linux 下安装 ArcGIS Server 前的准备工作备忘录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-05-08 16:55:01" itemprop="dateCreated datePublished" datetime="2015-05-08T16:55:01+08:00">2015-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/05/08/LinuxArcGISServerDeployment/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/08/LinuxArcGISServerDeployment/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>495</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p><strong>安装环境： ArcGIS for Server Linux 10.2.2 ， Redhat 6</strong></p>
+</blockquote>
+<p>因为是在网络虚拟机中安装部署，首先需要一个远程Linux的客户端，这里使用 putty，可以在官方的 <span class="exturl" data-url="aHR0cDovL3d3dy5wdXR0eS5vcmcv">www.putty.org<i class="fa fa-external-link-alt"></i></span> 下载，但是貌似网站被墙了，我也放了一份在<span class="exturl" data-url="aHR0cDovL2Rvd25sb2FkLmNzZG4ubmV0L2RldGFpbC9raWtpdGFtb29uLzg2NzU1MzE=">我的资源<i class="fa fa-external-link-alt"></i></span>中。</p>
+<p><strong>1） 运行 putty.exe ,登陆linux服务器</strong>：</p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Putty.png"></p>
+<p><strong>2） 输入用户名密码，登入服务器：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Login.png"></p>
+<p><strong>3） 查询主机的 IP 地址：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_IP.png"></p>
+<p><strong>4） 查询 hostname：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_hostname.png"></p>
+<p><strong>5） 编辑hosts文件，映射IP地址和主机名：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Mapping.png"></p>
+<p><strong>6） 创建 ArcGIS Server 账户：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_CreatAcount.png"></p>
+<blockquote>
+<p>备注：<br>&#x2F;etc&#x2F;group 中存储了用户组信息，格式如下：<br>用户组名:组密码:GID:组内帐号（多个帐号用逗号分隔）<br>&#x2F;etc&#x2F;passwd 中存储了用户账户信息，格式如下：<br>用户名:密码:UID:GID:用户信息:HOME目录路径:用户shell<br>其中UID为0则是用户root，1～499为系统用户，500以上为普通用户</p>
+</blockquote>
+<p><strong>7） 为ArcGIS Server 账户设置密码：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Password.png"></p>
+<p><strong>8）在home目录下创建ArcGISServer目录，授权 ArcGIS Server账户对文件夹的权限：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_chmod.png"></p>
+<p><strong>9）文件句柄和进程的硬限制要求</strong></p>
+<p>要增加软限制和硬限制，需要使用超级用户访问权限编辑 &#x2F;etc&#x2F;security&#x2F;limits.conf 文件。例如，添加以下四行：</p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Limits.png"></p>
+<p><strong>10） 将安装程序上传到Linux主机</strong></p>
+<p>Linux主机是个网络虚拟机，也没有光驱，就用上传安装包（iso镜像）的方式安装了。一般在各种linux的发行版中，默认带有的ftp软件是vsftp。</p>
+<p>检查vsftpd软件是否安装， # <strong>rpm -qa|grep vsftp</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_vsftp.png"></p>
+<p>启动 vsftp 服务，# <strong>service vsftpd start</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_ServiceStart.png"></p>
+<p>其它命令：<br>      停止ftp：service vsftpd stop<br>      重启ftp：service vsftpd restart</p>
+<p>软后用ftp客户端连接服务器即可，这里我用了以前一直用的 FileZilla.</p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_FileZilla.png"></p>
+<p><strong>11） 挂载 ISO映像</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_mount.png"><br>PS：第一次mount没写完整的路径信息，文件没找到，请忽略，看最后一行。</p>
+<p><strong>12）执行安装前的环境检测</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_check.png"></p>
+<p>各项检测通过，可以安装 ArcGIS Server 了。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -305,7 +451,7 @@
 
 
 <p>一般在 ASCII 栅格的文件头中我们会看到这几行：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingASCIIRaster_TXT.png"></p>
+<p><img data-src="/images/blogImg/MappingASCIIRaster_TXT.png"></p>
 <p><strong>ncols</strong>  和 <strong>nrows</strong>   表示这份数据的行列数，这份数据是10×10。</p>
 <p><strong>xllcorner</strong> 和 <strong>yllcorner</strong> 表示的就是栅格的左下角（low left）角点的坐标。</p>
 <p><strong>cellsize</strong> 也就是像元大小，表示每个正方形单元的尺寸。</p>
@@ -313,11 +459,11 @@
 <br>
 
 <p>看图说话：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingASCIIRaster_Demo.png"></p>
+<p><img data-src="/images/blogImg/MappingASCIIRaster_Demo.png"></p>
 <br>
 
 <p>文本文件下面的值就对应到每个格子里的像元值：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingASCIIRaster_Value.png"></p>
+<p><img data-src="/images/blogImg/MappingASCIIRaster_Value.png"></p>
 <br>
 <br>
 我想你不会再有any疑问了……
@@ -437,21 +583,21 @@
 
 <p>下载之后，有32位和64位两个安装包，如果你安装了Desktop的64位后台GP补丁，就把64位的插件程序也安装上。</p>
 <p>ArcToolbox中多了好多工具……</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISEditorforOSM103xDesktop_Toolset.png"></p>
+<p><img data-src="/images/blogImg/ArcGISEditorforOSM103xDesktop_Toolset.png"></p>
 <br>
 <br>
 
 <p>这里我就推荐两个最常用的工具。<br><br><br><br></p>
 <p><strong>Download OSM Data</strong></p>
 <p>下载的范围，可以通过手工填写坐标指定，也可以根据ArcMap现有的图层范围进行指定，这个方便又好用。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISEditorforOSM103xDesktop_Extent.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISEditorforOSM103xDesktop_Download.png"></p>
+<p><img data-src="/images/blogImg/ArcGISEditorforOSM103xDesktop_Extent.png"></p>
+<p><img data-src="/images/blogImg/ArcGISEditorforOSM103xDesktop_Download.png"></p>
 <br>
 <br>
 
 <p><strong>Load OSM Data</strong></p>
 <p>如果你已经从 OpenStreetMap 下载了 *.osm 数据文件，那就用这个工具导入 GDB 即可。简单到没什么可说的，请看图。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISEditorforOSM103xDesktop_Load.png"></p>
+<p><img data-src="/images/blogImg/ArcGISEditorforOSM103xDesktop_Load.png"></p>
 <br>
 <br>
 
@@ -581,7 +727,7 @@
 <br>
 
 
-<h2 id="Check-1-解释变量与因变量具有预期的关系否？"><a href="#Check-1-解释变量与因变量具有预期的关系否？" class="headerlink" title="Check #1  解释变量与因变量具有预期的关系否？"></a>Check #1  解释变量与因变量具有预期的关系否？</h2><p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check1.png"></p>
+<h2 id="Check-1-解释变量与因变量具有预期的关系否？"><a href="#Check-1-解释变量与因变量具有预期的关系否？" class="headerlink" title="Check #1  解释变量与因变量具有预期的关系否？"></a>Check #1  解释变量与因变量具有预期的关系否？</h2><p><img data-src="/images/blogImg/RegressionAnalysisResult_Check1.png"></p>
 <p>每个解释变量都会有一个系数，系数具有+&#x2F;-号，来表示解释变量与因变量的关系。从工具的得到的报告中，我们看到的系数的正负，每个解释变量应该是我们期望的关系。如果有非常不符合逻辑的系数，我们就应该考虑剔除它了。</p>
 <p>当然，有时也可能得到与常识不同的结论。举个例子，假如我们在研究森林火灾，我们通常认为降雨充沛的区域火灾的发生率会相对较低，也就是所谓的负相关，但是，这片森林火灾频发的原因可能是闪电雷击，这样降雨量这个解释变量可能就不是常识中的负相关的关系了。</p>
 <p>因此，我们除了验证解释变量的系数与先验知识是否相符外，还有继续结合其他项检查继续诊断，从而得出更可靠的结论。</p>
@@ -592,7 +738,7 @@
 
 
 <h2 id="Check-2-解释变量对模型有帮助否？"><a href="#Check-2-解释变量对模型有帮助否？" class="headerlink" title="Check #2  解释变量对模型有帮助否？"></a>Check #2  解释变量对模型有帮助否？</h2><p>解释变量对模型有无帮助说的就是解释变量是否有显著性，同样我们可以从 OLS 工具的汇总报表中得出些结论。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check2.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check2.png"></p>
 <p>那如何了解这些解释变量是否有<strong>显著性</strong>呢？</p>
 <p>OLS 工具除了对模型中的每个解释变量计算一个系数外，还执行统计检验以确定这些解释变量是否对模型有所帮助。</p>
 <p>如果解释变量的系数为零（或非常接近零），我们认为这个解释变量对模型没有帮助，统计检验就用来计算系数为零的概率。如果统计检验返回一个小概率值（p 值），则表示系数为零的概率很小。如果概率小于 0.05，OLS 汇总报告上 <strong>概率（Probability）</strong> 旁边的一个 <strong>星号（*）</strong> 表示相关解释变量对模型非常重要。换句话说，其系数在 95% 置信度上具有统计显著性。</p>
@@ -604,7 +750,7 @@
 <br>
 
 <h2 id="Check-3-残差是否有空间聚类？"><a href="#Check-3-残差是否有空间聚类？" class="headerlink" title="Check #3  残差是否有空间聚类？"></a>Check #3  残差是否有空间聚类？</h2><p>残差在空间上应该是随机分布的，而不应该出现聚类。这项检查我们可以使用 <strong>空间自相关工具（Spatial Autocorrelation Tool）</strong>工具进行检查。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check3.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check3.png"></p>
 <br>
 
 
@@ -613,24 +759,24 @@
 <h2 id="Check-4-模型是否出现了倾向性？"><a href="#Check-4-模型是否出现了倾向性？" class="headerlink" title="Check #4  模型是否出现了倾向性？"></a>Check #4  模型是否出现了倾向性？</h2><p>我们以前听过政治老师说过，不要戴着“有色眼镜”看人！也可能是历史老师？这不重要。。同样，回归分析模型中，也不要带有“成见”，不能具有倾向性，否则，这不是个客观合理的模型。</p>
 <p>我们都知道正态分布是个极好的分布模式，如果我们正确的构建了回归分析模型，那么模型的残差会符合完美的正态分布，其图形为钟形曲线。</p>
 <p>当模型出现偏差时，可能我们看到的图形也是诡异的，这样我们就无法完全信任所预测的结果。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check4.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check4.png"></p>
 <br>
 
 
 <p><strong>如何检验呢？</strong></p>
 <p>在 OLS 汇总报告中，有一个具有统计显著性的 Jarque-Bera 诊断表示模型是否出现偏差。如下图中是没有偏差的模型，如果有偏差，在篮框中会出现星号。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check4JBS.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check4JBS.png"></p>
 <p>因此，判断自己的模型没有偏差的最直观的方法就是：<strong>Jarque-Bera 诊断中没有星号</strong>。</p>
 <br>
 
 
 <p><strong>解决偏差！</strong></p>
 <p>为了解决模型偏差，最好为所有模型变量创建一个<strong>散点图矩阵</strong>。因变量和一个解释变量之间存在非线性关系，这是出现模型偏差的常见原因。这些在散点图矩阵中看起来像一条曲线。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check4Scatter.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check4Scatter.png"></p>
 <p>OLS 是一种线性回归方法，假设您正在建模的关系是线性关系。如果不是，可尝试变换您的变量，以查看这样做是否可创建出线性更明显的关系。常见变换包括对数变换和指数变换。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check4Transform.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check4Transform.png"></p>
 <p>另外，散点矩阵图还可以显示出数据异常值。要了解一个异常值是否正在影响您的模型，请尝试在含有和不含有异常值的情况下分别运行 OLS，从而了解异常值对模型性能的更改程度，以及移除异常值是否会校正模型偏差。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check4Outlier.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check4Outlier.png"></p>
 <br>
 
 
@@ -640,7 +786,7 @@
 <h2 id="Check-5-解释变量中存在冗余吗？"><a href="#Check-5-解释变量中存在冗余吗？" class="headerlink" title="Check #5  解释变量中存在冗余吗？"></a>Check #5  解释变量中存在冗余吗？</h2><p>在我们建模的过程中，应尽量去选择表示各个不同方面的解释变量，也就是尽量避免传达相同或相似信息的解释变量。要清楚，引入了冗余变量的模型是不足以信任的。</p>
 <p>那么问题来了，<strong>如何判断是否存在冗余解释变量？</strong></p>
 <p>OLS工具会为每个变量计算膨胀因子（Variance Inflation Factor，VIF），VIF 值是对变量冗余度的一种度量，可辅助决定在不削弱模型解释能力的情况下可从中移除哪些变量。根据经验，<strong>VIF 值超过 <em>7.5</em> 就有问题</strong>。如果有两个或更多解释变量的 VIF 值超过了 7.5，应该一次移除其中一个变量并重新运行 OLS，直到冗余消失。记住，不要全部移除掉哦！</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check5.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check5.png"></p>
 <br>
 
 
@@ -649,7 +795,7 @@
 
 
 <h2 id="Check-6-评估模型的性能"><a href="#Check-6-评估模型的性能" class="headerlink" title="Check #6  评估模型的性能"></a>Check #6  评估模型的性能</h2><p>最后需要做的是，评估模型的性能。 <strong>矫正R<sup>2</sup>值</strong> 是评估解释变量对因变量建模的重要度量。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysisResult_Check6.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysisResult_Check6.png"></p>
 <p>这项检查应该放到<strong>最后</strong>。一旦我们通过了前面的所有检验，接下来就可以进行评估矫正R<sup>2</sup>值。</p>
 <p>R<sup>2</sup>值的范围介于 0 和 1 之间，以百分比形式表示。假设正在为犯罪率建模，并找到一个通过之前所有五项检查的模型，其校正 R<sup>2</sup> 值为 0.65。这样就可以了解到模型中的解释变量说明犯罪率是 65%（更技术一些来说就是，模型解释了犯罪率因变量中 65% 的变化量）。在有些科学领域，能够解释复杂现象的 23% 就会让人兴奋不已。在其他领域，一个R<sup>2</sup>值可能需要更靠近 80% 或 90% 才能引起别人的注意。不管采用哪一种方式，校正 R2 值都会帮我们判断自己模型的性能。</p>
 <p>另一项辅助评估模型性能的重要诊断是修正的 Akaike 信息准则 &#x2F;Akaike’s information criterion (AICc)。AICc 值是用于比较多个模型的一项有用度量。例如，可能希望尝试用几组不同的解释变量为学生的分数建模。在一个模型中仅使用人口统计变量，而在另一个模型选择有关学校和教室的变量，如每位学生的支出和师生比。只要所有进行比较的模型的因变量（在本示例中为学生测试分数）相同，我们就可以使用来自每个模型的 AICc 值确定哪一个的表现更好。<strong>模型的 AICc 值越小，越适合观测的数据。</strong></p>
@@ -787,7 +933,7 @@
 <p>总之，通过回归分析，我们可以对空间关系进行建模、检查和探究；回归分析还可帮助我们解释所观测到的空间模式背后的诸多因素。</p>
 <p>在所有的回归方法中，OLS 最为著名。而且，它也是所有空间回归分析的正确起点。它可以尝试了解或预测（早逝&#x2F;降雨）的变量或过程提供一个全局模型；而且，它可创建一个回归方程来表示该过程。地理加权回归 (GWR) 是若干空间回归方法中的一种，被越来越多地用于地理及其他学科。通过对数据集中的各要素拟合回归方程，GWR 为您要尝试了解&#x2F;预测的变量或过程提供了一个局部模型。若使用得当，这些方法可提供强大且可靠的统计数据，以对线性关系进行检查和估计。</p>
 <p>例如如下是两个变量之间存在正、负关系以及无关系的情况：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Relations.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Relations.png"></p>
 <br>
 <br>
 <br>
@@ -801,26 +947,26 @@
 <br>
 
 <p><strong>什么是因变量？</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Dependent.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Dependent.png"></p>
 <p>等式的左边是 <strong>因变量（Dependent Variable）</strong> ，记为 <strong>Y</strong>，表示我们要研究或者预测的对象。通常我们会先给定一些已知的 Y 值，用于构建回归方程，这些已知的 Y 值称为 <strong>观测值</strong>。</p>
 <br>
 <br>
 
 <p><strong>什么是解释变量？</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Explanatory.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Explanatory.png"></p>
 <p>等式的右边的 X ，称为 <strong>自变量</strong> 或 <strong>解释变量（Explanatory Variables）</strong>。因变量是解释变量的函数。到这里，可能有的同学就晕了。<br>同样，举个栗子。我们想研究人们肥胖的诸多原因，想找到肥胖与收入、健康食品摄入、教育水平等等因素是否有关联。在这个例子中，肥胖就是因变量（Y），收入、健康食品摄入、教育水平等这些因素即为解释变量（X）。</p>
 <br>
 <br>
 
 <p><strong>还有重要的回归系数呢！</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Coefficient.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Coefficient.png"></p>
 <p>在方程中，我们还发现有些 β 值，称为 <strong>回归系数（Coefficient）</strong> 。表示解释变量与因变量之间的关系强度和类型，每个解释变量都有一个对应的回归系数。当关系为正时，关联系数的符号也为正。当关系为负时，关联系数的符号也为负。如果关系很强，则系数也相对较大。如果关系较弱，则关联系数接近于零。</p>
-<p>其中，<img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Intercept.png"> 为回归<strong>截距</strong>(Intercept)。 它表示所有自变量（解释变量）均为零时因变量的预期值。</p>
+<p>其中，<img data-src="/images/blogImg/RegressionAnalysis_Intercept.png"> 为回归<strong>截距</strong>(Intercept)。 它表示所有自变量（解释变量）均为零时因变量的预期值。</p>
 <br>
 <br>
 
 <p><strong>绝对不能忘记的残差！</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Residual.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Residual.png"></p>
 <p> ε称为 <strong>残差（Residual）</strong>或 <strong>随机误差项</strong>，是因变量不能解释的部分。回归工具可以构造出能够对那些已知的 y 值作出最佳预测的方程。不过，预测值很少会和观测值完全匹配。y 的观测值与预测值之差称为残差。回归方程中的残差可用于确定模型的拟合程度。残差较大表明模型拟合效果较差。</p>
 <br>
 <br>
@@ -830,211 +976,6 @@
 
 
 <p>回归模型的构建是一个迭代过程，在该过程中，需要找出有效的自变量来了解因变量，且需要运行回归工具来确定哪些变量为有效的预测因子，然后需要反复执行变量移除和&#x2F;或添加操作，直到找出最佳的回归模型。<br>虽然构建模型的过程通常是探索性的，但它绝不是“盲目的搜查”。我们应通过了解相关理论、请教该领域内的专家并凭借一些常识性信息来确定可能的解释变量。在分析之前，我们应该清楚每个可能的解释变量和因变量之间的关系并能够对其正确与否作出判断，而且，对于这些关系不匹配的模型，我们应该表示质疑。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/17/MappingCluster/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/03/17/MappingCluster/" class="post-title-link" itemprop="url">空间统计（三）聚类分布制图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-03-17 15:59:35" itemprop="dateCreated datePublished" datetime="2015-03-17T15:59:35+08:00">2015-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/03/17/MappingCluster/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/03/17/MappingCluster/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>3.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>13 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Toolset.png"></p>
-<p>这组工具中包含众所周知的热点分析工具，通过这个工具我们能捕获到大量数据中的热点和冷点，对我们分析问题有很大的帮助。例如，在犯罪分析中，我们可以研究哪些位置犯罪频繁并且聚集，对增设警力有重要的辅助作用。工具集中的其他工具也有类似的作用，都是通过执行聚类分析来识别具有统计显著性的热点、冷点和空间异常值的位置。</p>
-<p>依照惯例，我们还是 one by one 来看。</p>
-<h1 id="Similarity-Search"><a href="#Similarity-Search" class="headerlink" title="Similarity Search"></a><strong>Similarity Search</strong></h1><p>相似搜索工具，顾名思义，工具根据要素属性确定哪些候选要素与输入要素最相似或者最不相似。</p>
-<p>举个栗子：</p>
-<p>我希望找到与圣地亚哥5岁以下儿童、未成年人、65岁以上老年人人数分布相似的城市：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_SanDiego.png"></p>
-<p>工具中我做如下配置：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Env.png"></p>
-<p>结果在这里，其中 Similarly Rank 为 1 的即为三个年龄属性最相似的城市 Orange：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_SimilarCity.png"></p>
-<p>匹配方法参数中提供了3种算法，分别为：属性值、等级属性值或属性剖面（余弦相似性）。</p>
-<blockquote>
-<p><strong>可能的应用</strong>：</p>
-<ul>
-<li>人力资源经理可能希望能够证明公司的工资范围。找出在大小、生活成本、市容建筑方面相似的城市后，她便可以查看这些城市的工资范围，从而查看他们是否在此行列。</li>
-<li>犯罪分析师希望搜索数据库以查看某罪行是否属于较重犯罪形式或有重罪趋势。</li>
-<li>课外健身计划在 A 城极其成功。计划提倡者期望找到与其计划推广的候选城市具有相似特征的其他城市。</li>
-<li>执法机构用此方法揭露毒品种植地或生产地。标识具有相似特征的地方可能有助于制定未来的搜索目标。</li>
-<li>大型零售商不仅拥有数个成功店铺，也有少数业绩不佳的店铺。找到一些具有相似人口特征和环境特征（交通便利性、知名度以及商业互补性等等）的地方有助于标识新店的最佳位置。</li>
-</ul>
-</blockquote>
-<br>
-
-<h1 id="Grouping-Analysis"><a href="#Grouping-Analysis" class="headerlink" title="Grouping Analysis"></a><strong>Grouping Analysis</strong></h1><p>我们在学习研究事物时，有事需要对事物进行归类从而帮助理解与分析。在ArcGIS 中，分析分组分析工具就是来进行这个逻辑分类过程，它会执行一个分类过程来查找数据中存在的自然聚类。要素相似性是基于您为分析字段参数指定的一组特性，同时还可以包括空间属性或空间-时间属性。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_GroupAnalysis.png"></p>
-<p>在这个工具中有个重要的参数—— Spatial Constrains，用于设置分组过程是否受某种空间关系约束，具体可选的方法如下：</p>
-<ul>
-<li>CONTIGUITY_EDGES_ONLY — 共享一条边的相连的面才属于同一个组。</li>
-<li>CONTIGUITY_EDGES_CORNERS — 共享一条边或一个折点的相连面才属于同一个组。</li>
-<li>DELAUNAY_TRIANGULATION — 同一个组中的要素至少具有一个与该组中的另一要素共用的自然邻域。自然邻域关系基于 Delaunay 三角测量。从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。每个要素是一个三角形结点，具有公共边的结点被视为邻域。</li>
-<li>K_NEAREST_NEIGHBORS — 同一个组中的要素将相互邻近；每个要素至少是该组中某一其他要素的邻域。邻域关系基于最近的 K 要素，您可以在此为“相邻要素的数目”参数指定整型值 K。</li>
-<li>GET_SPATIAL_WEIGHTS_FROM_FILE — 空间关系和可选的时态关系通过空间权重文件 (.swm) 进行定义。使用“生成空间权重矩阵”工具创建空间权重矩阵文件。</li>
-<li>NO_SPATIAL_CONSTRAINT — 只能使用数据空间邻域法对要素进行分组。要素不是必须在空间或时间上互相接近，才能属于同一个组。</li>
-</ul>
-<blockquote>
-<p><strong>可能的应用</strong>：</p>
-<ul>
-<li>假设您拥有来自所在州周围农场的沙门氏菌样本，以及包括类型&#x2F;类别、位置和日期&#x2F;时间在内的属性。为了更好地了解细菌如何传播和扩散，您可以使用分组分析工具将样本划分为各个“爆发”。您可能决定使用空间-时间约束，因为同一次爆发的样本会在空间和时间上会非常接近，而且也会与相同类型&#x2F;类别的细菌关联。确定分组之后，可以使用其他空间模式分析工具，比如标准差椭圆、平均中心或近邻来分析每一次爆发。</li>
-<li>如果您收集了有关动物观察方面的数据，以便更好地了解它们的领地，分组分析工具可能很有帮助。例如，了解鲑鱼在不同生命阶段的聚集地点和时间，可以帮助您规划保护区，以帮助确保成功繁育。</li>
-<li>作为一名农学家，您可能想将研究领域内的不同土壤进行分类。对通过一系列样本发现的土壤特征使用分组分析可以帮助识别出明显的、空间上相邻的土壤类型的聚类。<br>按购买方式、人口统计特征和&#x2F;或旅行方式对客户进行分组，可以帮助您为公司产品制订有效的营销策略。</li>
-<li>城市规则师常常需要将各个城市划分成不同的邻域，以便有效地定位公共设施、促进地方能动性和提高社区参与度。对城市街区的物理和人口统计特征使用分组分析，可以帮助规划师确定具有相似物理和人口统计特征并且在空间上相邻的城市区域。</li>
-<li>每当对聚合的数据进行分析时，生态谬误都是一个众所周知的统计推断问题。通常，用于分析的聚合方案对我们想要分析的内容没有任何关系。例如，人口普查数据是根据人口分布而聚合，而人口分布情况可能不是用来进行火灾分析的最佳选择。针对与目前分析问题准确相关的一组属性，将可能的最小聚合单位划分成同质区域，是降低聚合偏差和避免生态谬误的一种有效方法。</li>
-</ul>
-</blockquote>
-<br>
-
-<h1 id="Hot-Spot-Analysis-Getis-Ord-Gi"><a href="#Hot-Spot-Analysis-Getis-Ord-Gi" class="headerlink" title="Hot Spot Analysis (Getis-Ord Gi)*"></a><em><em>Hot Spot Analysis (Getis-Ord Gi</em>)</em>*</h1><p>热点分析工具是个 Most Popular 工具，经常会被用到，通过此工具，我们可以来识别有统计显著性的热点和冷点。例如，警察局会调查哪个区域是刑事案件的高发区？这就是一个典型的热点分析例子。如下图，黑点表示报警位置，其中属性表中包含一个报案次数的字段，得到了犯罪热点。从而警察局可以考虑在热点位置增设警力。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_HotPots.png"></p>
-<p>此工具的工作方式为：查看邻近要素环境中的每一个要素。因此，仅仅一个孤立的高值不会构成热点，说白了就是，单个要素以及它的邻居都是高值才算是热点。在热点分析工具中，z 得分和 p 值都是统计显著性的度量，用于逐要素地判断是否拒绝零假设。置信区间（Gi_Bin字段） +3 到 -3 中的要素反映置信度为 99% 的统计显著性，置信区间 +2 到 -2 中的要素反映置信度为 95% 的统计显著性，置信区间 +1 到 -1 中的要素反映置信度为 90% 的统计显著性；而置信区间 0 中要素的聚类则没有统计学意义。</p>
-<p>如果要素的 z 得分高且 p 值小，则表示有一个高值的空间聚类。如果 z 得分低并为负数且 p 值小，则表示有一个低值的空间聚类。z 得分越高（或越低），聚类程度就越大。如果 z 得分接近于零，则表示不存在明显的空间聚类。</p>
-<p><strong>关于此工具的建议：</strong></p>
-<ul>
-<li>输入要素类是否至少包含 30 个要素？如果少于 30 个要素，则结果不可靠。</li>
-<li>您选择的空间关系的概念化是否合适？对于此工具，建议使用固定距离范围方法</li>
-</ul>
-<blockquote>
-<p> <strong>可能的应用</strong>：</p>
-<ul>
-<li>应用领域包括：犯罪分析、流行病学、投票模式分析、经济地理学、零售分析、交通事故分析以及人口统计学。其中的一些应用示例包括：</li>
-<li>疾病集中爆发在什么位置？</li>
-<li>何处的厨房火灾在所有住宅火灾中所占的比例超出了正常范围？</li>
-<li>紧急疏散区应位于何处？</li>
-<li>峰值密集区出现于何处&#x2F;何时？</li>
-<li>我们应在哪些位置和什么时间段分配更多的资源？</li>
-</ul>
-</blockquote>
-<br>
-
-<h1 id="Optimized-Hot-Spot-Analysis"><a href="#Optimized-Hot-Spot-Analysis" class="headerlink" title="Optimized Hot Spot Analysis"></a><strong>Optimized Hot Spot Analysis</strong></h1><p>在最近几个版本的 ArcGIS 中多了一个 “优化的热点分析工具”，我们如何理解这个工具呢？打个比方，好比“数码相机自动根据光线、拍摄主体与背景对比度的读数，来确定合适的光圈、快门速度和焦点”，优化的热点分析是根据输入数据的特征派生参数，从而获得产生最佳热点结果的设置，然后执行热点分析工具。</p>
-<p>简而言之，如果拿到单反，使用“优化的热点分析工具”好比把拍照模式调成了“全自动”，而使用“热点分析工具”好比把拍照模式调成“手动”，热点分析工具允许我们完全控制所有参数选项。运行优化的热点分析工具并记录其使用的参数设置，有助于优化设置热点分析 (Getis-Ord Gi*) 工具的参数。</p>
-<p>打开这个工具，我们会发现，这个工具太可爱了，除了输入和输出参数，其他所有参数都是可选的，都可以不填！ 果然是全自动模式，傻瓜相机版热点分析。但是，这几个参数决定了优化热点分析的方式，为了“照片”更美，还是需要了解些东西的，一起来看看：</p>
-<p><strong>分析字段</strong>：当要分析的数据中存在一个字段存储了采样值，我们想了解这个采样值的高值与低值的聚集区域，那分析字段就需要选择这个字段。</p>
-<p>当我们的数据不具有这样的采样值，并且我们希望研究的是点的计数，也就是研究：哪里存在很多点？哪里存在很少点？这时，选择一种<strong>聚合方案</strong>就变得重要了。</p>
-<p>工具中提供了三种聚合方案：</p>
-<p>1） COUNT_INCIDENTS_WITHIN_FISHNET_POLYGONS：采用渔网聚合，渔网的网格大小由工具根据点的距离关系决定。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Fishnet.png"></p>
-<p>2） COUNT_INCIDENTS_WITHIN_AGGREGATION_POLYGONS：提供聚合面以覆盖事件聚合面参数中的事件点数据。计算每个面内的事件数。例如：计算加州每个城市的消防站的聚集情况。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_PolygonAggr.png"></p>
-<p>3）SNAP_NEARBY_INCIDENTS_TO_CREATE_WEIGHTED_POINTS：邻近事件将聚合在一起，从而创建单个加权点。各点的权重值是该位置的聚合事件数。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Points.png"></p>
-<p>无论是哪种方法，在工具的日志中会提供一个研究这些数据聚类的最优的距离，类似：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Log.png"></p>
-<br>
-
-<h1 id="Cluster-and-Outlier-Analysis-Anselin-Local-Moran’s-I"><a href="#Cluster-and-Outlier-Analysis-Anselin-Local-Moran’s-I" class="headerlink" title="Cluster and Outlier Analysis (Anselin Local Moran’s I)"></a>Cluster and Outlier Analysis (Anselin Local Moran’s I)</h1><p>给定一组加权要素，使用 Anselin Local Moran’s I 统计量来识别具有统计显著性的热点、冷点和空间异常值。</p>
-<p>热点分析(Getis-Ord Gi*) 工具也是查找热点和冷点位置的有效工具。但是，<strong>只有</strong>聚类和异常值分析(Anselin Local Moran’s I) 工具可以识别具有统计学上的显著性的空间异常值（高值由低值围绕或低值由高围绕的值）。</p>
-<p>输出要素类中包含：**Local Moran’s I 指数、z 得分、p 值、聚类&#x2F;异常值类型 (COType)**。</p>
-<p>如果要素的 z 得分是一个较高的正值，则表示周围的要素拥有相似值（高值或低值）。输出要素类中的 COType 字段会将具有统计显著性的高值聚类表示为 HH，将具有统计显著性的低值聚类表示为 LL。<br>如果要素的 z 得分是一个较低的负值（如，小于 -3.96），则表示有一个具有统计显著性的空间数据异常值。输出要素类中的 COType 字段将指明要素是否是高值要素而四周围绕的是低值要素 (HL)，或者要素是否是低值要素而四周围绕的是高值要素 (LH)。如下图可以帮助理解：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_HHLL.png"></p>
-<p>COType 字段将始终指明置信度为 95% 的统计显著性聚类和异常值。只有统计显著性要素在 COType 字段中具有值。</p>
-<blockquote>
-<p><strong>可能的应用</strong><br>聚类和异常值分析(Anselin Local Moran’s I) 工具可识别高值密度、低值密度和空间异常值。还可帮助您解决如下问题：</p>
-</blockquote>
-<ul>
-<li>研究区域中的富裕区和贫困区之间的最清晰边界在哪里？</li>
-<li>研究区域中存在可以找到异常消费模式的位置吗？</li>
-<li>研究区域中意想不到的糖尿病高发地在哪里？<br>  可在经济学、资源管理、生物地理学、政治地理学和人口统计等许多领域中应用此工具。</li>
-</ul>
 
       
     </div>

@@ -29,16 +29,16 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="在 Part 3 中我们了解到如何调用 HERE Routing API 实现两点间路径规划，以及如何从当前位置出发规划路径。 这个部分继续来看看，如何展示多条路线及其信息，并允许用户交互选择。 Pre-session: 重构代码这一部分不是改进功能，而是整理思绪。磨刀不误砍柴工，放之四海而皆准。 冰淇凌小网页的功能不断增多，代码也随之膨胀，我们要时不时地整理收纳一下，避免自己在找乐子的路上备受打">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Icecream_Part4_Advanced_Routing.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Icecream_Part4_Advanced_Routing.png">
 <meta property="article:published_time" content="2019-03-06T05:18:30.000Z">
-<meta property="article:modified_time" content="2019-04-29T05:36:32.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.401Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="HERE Map">
 <meta property="article:tag" content="HLS">
 <meta property="article:tag" content="Javascript">
 <meta property="article:tag" content="Routing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/Icecream_Part4_Advanced_Routing.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/Icecream_Part4_Advanced_Routing.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2019/03/06/Icecream_Part4_Advanced_Routing_1/">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -321,7 +321,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">       <span class="comment">// Simplify on success function</span></span><br><span class="line">       <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">           <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>;</span><br><span class="line">           <span class="title class_">Setting</span> view bounds</span><br><span class="line">           routes.<span class="title function_">forEach</span>(drawRoute);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
 
 <p>Bingo！</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Icecream_Part4_Advanced_Routing.png"></p>
+<p><img data-src="/images/blogImg/Icecream_Part4_Advanced_Routing.png"></p>
 <h3 id="View-Bounds"><a href="#View-Bounds" class="headerlink" title="View Bounds"></a>View Bounds</h3><p>基本功能已实现，为了更好的体验，我们继续加工加工。</p>
 <p>在 Part 3 中的我们通过 <code>setViewBounds</code>  将地图显示为路线的范围，在Part 4 中显然就不适用了，因为这样只会返回跳转到最后一条路线的范围。将所有的路线加入到一个组中，然后跳转组的范围，来解决这个问题。</p>
 <p>对 <code>onSuccess</code> 进行修改：</p>

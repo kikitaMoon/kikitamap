@@ -29,16 +29,16 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="继上一篇部署 ArcGIS Python API 之后，再来试试 Python API 的渲染和分析的功能。 通过这两个功能来摸索下 ArcGIS Python API 的使用方法。 渲染1  导入gis模块，创建GIS对象 在 ArcGIS Python API 中 gis 是个核心模块，提供了对组织内成员、群组、内容的创建、读取、更新和删除等功能，你的组织既可以是托管在ArcGIS Onlin">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/PythonAPIFunction1_MapWidget.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/PythonAPIFunction1_GetItem.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/PythonAPIFunction1_MapWidget.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/PythonAPIFunction1_GetItem.png">
 <meta property="article:published_time" content="2017-01-22T10:55:38.000Z">
-<meta property="article:modified_time" content="2018-11-11T15:16:16.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.372Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="ArcGIS Enterprise">
 <meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/PythonAPIFunction1_MapWidget.gif">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/PythonAPIFunction1_MapWidget.gif">
 
 
 <link rel="canonical" href="https://kikitamap.com/2017/01/22/PythonAPIFunction1/">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -319,12 +319,12 @@
 <p>例如使用热度图&#x2F;Heatmap 渲染器</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Add layer using heatmap renderer</span></span><br><span class="line">featureitem = search_result[<span class="number">0</span>]</span><br><span class="line">mymap.add_layer(featureitem.layers[<span class="number">0</span>], &#123;<span class="string">&quot;renderer&quot;</span>:<span class="string">&quot;HeatmapRenderer&quot;</span>, <span class="string">&quot;opacity&quot;</span>:<span class="number">0.7</span>&#125;)</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://kikitamap.com/images/blogImg/PythonAPIFunction1_MapWidget.gif"></p>
+<p><img data-src="/images/blogImg/PythonAPIFunction1_MapWidget.gif"></p>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>假设需求是实现采样点插值，数据来源是桌面产品自带的ArcGIS Tutorial中的数据（Geostatistical Analyst\ca_ozone.gdb\O3_Sep06_3pm）。</p>
 <p>除了通过搜索的方法，如果知道 itemid ，也能直接获得到内容，可以使用方法 gis.content.get()</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> arcgis <span class="keyword">import</span> gis</span><br><span class="line">gis = gis.GIS(<span class="string">&quot;https://kikita.mycloud.com/arcgis&quot;</span>,<span class="string">&quot;portaladmin&quot;</span>,<span class="string">&quot;Super123&quot;</span>, verify_cert=<span class="literal">False</span>)</span><br><span class="line">search_result = gis.content.get(<span class="string">&#x27;15b012af7f15484293517c844d2d65ab&#x27;</span>)</span><br><span class="line">search_result</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://kikitamap.com/images/blogImg/PythonAPIFunction1_GetItem.png"></p>
+<p><img data-src="/images/blogImg/PythonAPIFunction1_GetItem.png"></p>
 <p>还是使用地图微件，用来显示下数据和分析结果。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mymap = gis.<span class="built_in">map</span>(<span class="string">&#x27;California&#x27;</span>)</span><br><span class="line">mymap.height = <span class="string">&#x27;500px&#x27;</span></span><br><span class="line">mymap</span><br></pre></td></tr></table></figure>
 

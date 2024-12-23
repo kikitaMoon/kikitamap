@@ -29,13 +29,13 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="ArcGIS 中，ArcScene 与 ArcGLobe 是两种3D数据可视化以及分析的组件或者说环境，它们二者有什么样的区别，如何根据自己的应用去选择呢？以下是对这二者的对比信息总结： 1. 许可都需要 3D Analyst License 才能启动。 2. 坐标系统ArcScene - 使用第一个加入ArcScene的数据的坐标系统，当不同坐标系的数据加入时，进行动态投影，这点同ArcMap。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcSceneArcGlobe.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcSceneArcGlobe.gif">
 <meta property="article:published_time" content="2012-11-17T04:13:13.000Z">
-<meta property="article:modified_time" content="2018-07-03T13:39:02.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.240Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="3D">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ArcSceneArcGlobe.gif">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ArcSceneArcGlobe.gif">
 
 
 <link rel="canonical" href="https://kikitamap.com/2012/11/17/ArcSceneArcGlobe/">
@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -299,7 +299,7 @@
 <ul>
 <li>那神马是立方体投影（cube projection）？<br>也就是将地球投影到各面都是正方形的六面体上。如下图：</li>
 </ul>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcSceneArcGlobe.gif"></p>
+<p><img data-src="/images/blogImg/ArcSceneArcGlobe.gif"></p>
 <p>需要说明，这种投影，经线和纬线都是直线；在纬度 +45° 和 -45° 之间，东南西北方向是准确的，比例尺是正确的；在极面上，由中心确定的方向是真实的。<br>但是这种投影不适合制图，仅适用于ArcGlobe。</p>
 <h1 id="3-内存管理与缓存机制"><a href="#3-内存管理与缓存机制" class="headerlink" title="3. 内存管理与缓存机制"></a>3. 内存管理与缓存机制</h1><p>ArcScene - 将所有数据加载到内存中，必要的时候使用虚拟内存。也因此，ArcScene通常用来展示小场景、小数据量。<br>ArcGlobe - 通常专用于超大型数据集，缓存过程中会建立索引并将所有数据组织为各个切片和细节层次。</p>
 <h1 id="4-数据类型的支持"><a href="#4-数据类型的支持" class="headerlink" title="4. 数据类型的支持"></a>4. 数据类型的支持</h1><p>ArcGlobe支持terrain数据，但是ArcScene不支持。<br>ArcScene中不支持Annotation。</p>

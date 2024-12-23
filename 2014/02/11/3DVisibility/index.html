@@ -29,18 +29,18 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="ArcGIS 通过分析功能面的视域来确定不同区域中的可见性。 视域的计算：如果仅有一个观测点，则为可从观测点看到的单元赋值 1，为无法从观测点看到的所有单元赋值 0。   Construct Sight Lines（构造视线）创建表示视线（从一个或多个视点到目标要素类的要素）的线要素。  注意，关于高度字段的认定： 观察点和目标要素的高度源默认为以下列表中遇到的第一个字段名称：  Shape.Z">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DVisibility_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DVisibility_SightLine.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DVisibility_LineofSight.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DVisibility_ObserverPoint.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/3DVisibility_Skyline.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/3DVisibility_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/3DVisibility_SightLine.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/3DVisibility_LineofSight.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/3DVisibility_ObserverPoint.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/3DVisibility_Skyline.png">
 <meta property="article:published_time" content="2014-02-11T03:41:38.000Z">
-<meta property="article:modified_time" content="2018-07-03T10:35:37.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.277Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="3D">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/3DVisibility_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/3DVisibility_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/02/11/3DVisibility/">
@@ -164,7 +164,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -298,13 +298,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img data-src="http://kikitamap.com/images/blogImg/3DVisibility_Toolset.png"></p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="/images/blogImg/3DVisibility_Toolset.png"></p>
 <p>ArcGIS 通过分析功能面的视域来确定不同区域中的可见性。</p>
 <p>视域的计算：如果仅有一个观测点，则为可从观测点看到的单元赋值 1，为无法从观测点看到的所有单元赋值 0。</p>
 <br>
 
 <h2 id="Construct-Sight-Lines（构造视线）"><a href="#Construct-Sight-Lines（构造视线）" class="headerlink" title="Construct Sight Lines（构造视线）"></a><strong>Construct Sight Lines（构造视线）</strong></h2><p>创建表示视线（从一个或多个视点到目标要素类的要素）的线要素。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DVisibility_SightLine.png"></p>
+<p><img data-src="/images/blogImg/3DVisibility_SightLine.png"></p>
 <p>注意，关于高度字段的认定：</p>
 <p>观察点和目标要素的高度源默认为以下列表中遇到的第一个字段名称：</p>
 <ul>
@@ -323,7 +323,7 @@
 <h2 id="Line-of-Sight（通视分析）"><a href="#Line-of-Sight（通视分析）" class="headerlink" title="Line of Sight（通视分析）"></a><strong>Line of Sight（通视分析）</strong></h2><p>确定由多面体、栅格、TIN、terrain 或 LAS 数据集定义的表面上视线的可见性。</p>
 <p>理想的视线应是简单的直线，包括两个折点，分别代表用于确定可见性的观测点和目标位置。</p>
 <p>视线可以用前面的构造视线工具生成。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DVisibility_LineofSight.png"></p>
+<p><img data-src="/images/blogImg/3DVisibility_LineofSight.png"></p>
 <p>可以可选生成，阻挡每个线的目标可见性的第一个障碍物的位置。</p>
 <p>输出线要素的属性表包含以下字段：</p>
 <ul>
@@ -336,11 +336,11 @@
 
 <h2 id="Observer-Points（视点分析）"><a href="#Observer-Points（视点分析）" class="headerlink" title="Observer Points（视点分析）"></a><strong>Observer Points（视点分析）</strong></h2><p>识别从各栅格表面位置进行观察时可见的观察点。</p>
 <p>确定观察点是信息密集型处理。处理时间取决于分辨率。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DVisibility_ObserverPoint.png"></p>
+<p><img data-src="/images/blogImg/3DVisibility_ObserverPoint.png"></p>
 <br>
 
 <h2 id="Skyline（天际线）"><a href="#Skyline（天际线）" class="headerlink" title="Skyline（天际线）"></a><strong>Skyline（天际线）</strong></h2><p>生成一个包含天际线轮廓分析结果的线要素类或多面体要素类。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DVisibility_Skyline.png"></p>
+<p><img data-src="/images/blogImg/3DVisibility_Skyline.png"></p>
 
     </div>
 

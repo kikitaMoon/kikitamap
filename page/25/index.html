@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,124 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/09/15/DiveinPathDistanceAnalyst1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/09/15/DiveinPathDistanceAnalyst1/" class="post-title-link" itemprop="url">深入路径距离分析（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-09-15 09:10:07" itemprop="dateCreated datePublished" datetime="2014-09-15T09:10:07+08:00">2014-09-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/09/15/DiveinPathDistanceAnalyst1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/09/15/DiveinPathDistanceAnalyst1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>583</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>写这篇之前，整理过空间分析中的距离分析工具箱，今天继续深入的说说路径距离分析。</p>
+<p>开始路径距离分析之前，先回忆下最基本的欧式距离分析和成本距离分析。欧氏距离分析遵循的就是我们小学都知道的“两点之间直线最短”的原则，两点之间的最短路径就是两点之间的线段的距离。但是实际情况并不是很完美，有时我们无法完全沿直线前往某个位置，例如遇到河流、陡坡、悬崖等障碍。这时，我们就应该考虑使用成本距离工具获得更现实的结果。</p>
+<p>如下图，举个简单的例子说明成本距离分析和欧式距离分析。按照欧式距离在问号位置求得的应该是绿色的路径，表示最近源，但是考虑到成本，黄色的曲线确是成本最低的最优路径。并且“曲线救国”比盲目直行，成本更低。</p>
+<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Path.png"></p>
+<p>回顾就到这里，继续看更加复杂的路径距离分析：</p>
+<p>路径距离工具与成本距离相似，两者都用于确定从源到栅格上各像元位置的最小累积行进成本。但是，路径距离不仅可计算成本表面的累积成本，而且可以考虑到从一个位置到另一个位置的总移动成本的水平和垂直因子补偿。这些工具生成的累积成本表面可用于扩散建模、流向运动和最低成本路径分析。路径距离工具既考虑水平和垂直成本要素，又考虑真实表面距离。</p>
+<p>举个简单的例子，了解路径距离分析，假设我们开车从位置A到位置B，路况复杂，还有点起风，这时风向和风速就成了水平影响因子，道路的起伏程度就行了垂直因子。如下图，说明这个问题：</p>
+<p>水平影响因子：</p>
+<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Horizontal.png"></p>
+<p>垂直影响因子：</p>
+<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Vertical.png"></p>
+<p>理解了路径距离分析工具的用途，在下一篇文章中，我们一起来看看水平系数和垂直系数对路径距离的影响。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -291,14 +409,14 @@
           <p>Zone 与 Region 在字面上都是区域的意思，但是在做分析与统计的时候二者却是有区别的。</p>
 <p><strong>什么是Zone？</strong></p>
 <p>简而言之，具有相同值的像元就属于一个Zone。也就是，Zone由栅格中所有具有相同值的像元组成，分区可以由相邻像元和&#x2F;或不相连像元组成。如下图一目了然：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Zone.gif"></p>
+<p><img data-src="/images/blogImg/RasterZoneRegion_Zone.gif"></p>
 <p><strong>什么是Region？</strong></p>
 <p>一个Zone内的每组相连像元都可视为一个Region</span>。ArcGIS 中提供了从 Zone 获得 Region 的工具 Group Region。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Region.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_GroupRegion.png"></p>
+<p><img data-src="/images/blogImg/RasterZoneRegion_Region.png"></p>
+<p><img data-src="/images/blogImg/RasterZoneRegion_GroupRegion.png"></p>
 <p><strong>工具的工作顺序：</strong> 扫描的第一个区域接收值 1，第二个区域接收值 2，依此类推，直到所有区域都已赋值。扫描将按从左至右、从上至下的顺序进行。赋给输出区域的值，取决于系统在扫描过程中是在什么时候遇到它们的。</p>
 <p><strong>与原始Zone的关系：</strong> 默认，生成的数据的属性表中会有 LINK 字段，记录Region从Zone的来源：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_table.tiff"></p>
+<p><img data-src="/images/blogImg/RasterZoneRegion_table.tiff"></p>
 
       
     </div>
@@ -578,9 +696,9 @@
     <div class="post-body" itemprop="articleBody">
           <p>最近凑巧有几个比较多的栅格裁剪问题，整理如下：</p>
 <p>我们只有由于栅格与矢量数据的存储模型不相同，这就导致栅格数据的像元无法与矢量数据的点等同，从而导致裁切后的对齐问题，放大数据我们就能发现，如下图可以说明：（其中黑白色为栅格数据，每个正方形代表一个像元，红色区域为矢量面数据。）</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_1.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_1.jpg"></p>
 <p>我们按照默认设置运行 Raster工具箱中的 Clip 工具，看看结果，蓝色的栅格部分：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_2.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_2.jpg"></p>
 <p>发现，栅格数据裁剪完，并不是需要的矢量数据范围，而是矢量数据压盖的最小栅格数据范围。</p>
 <p>如果我们需要得到的栅格，是矢量数据的范围，该如何做呢？</p>
 <p><strong>【旧版本】如果正在使用的是10.1以及更早期的版本：</strong></p>
@@ -588,20 +706,20 @@
 <li>首先将作为裁剪范围的矢量面（Feature）转为图形（Graphic），在ArcMap中，在面图层上右键，使用 Convert &nbsp;Features to Graphics… 菜单，如下图：</li>
 </ol>
 <p>（Graphic 被选中状态下，周围是有几个小方块的，与 Feature 被选中的亮蓝色不同哦…）</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Graphic.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Graphic.jpg"></p>
 <p>2.在 ArcMap 中，使用图层的右键菜单中的Export功能，导出选中Graphic 范围内的数据：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Selected.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Selected.jpg"></p>
 <p>看看结果，为了清楚，我将Graphic的填充色去掉，栅格数据左边与上边界是与矢量数据一致的，这样就尽最大范围保持了结果栅格与矢量数据范围的最大一致性：</p>
 <p><strong>PS：有人会问，为什么下边和右边边界没有完全贴合？ 需要知晓，栅格数据的行列数是矢量数据长度整除像元大小（导出的像元大小默认与源数据相同，也可以根据需要修改）得出的，而通常有余数的存在，因此没有那么严丝合缝，归根结底还是两种数据的存储模型不同导致的。</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Format.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Format.jpg"></p>
 <p><strong>【新版本】如果正在使用的是10.2以及更新期的版本：</strong></p>
 <p>新版本中 Clip 工具提供了额外的参数，可以简单的勾选就完成了上面的需求：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Maintain.jpg"></p>
 <p><strong>PS：一定要注意右边的帮助哇，为了尽可能满足矢量数据边界范围，行列数是通过计算调整，也就是像元大小相比原始数据会变化，像元值会进行重采样获取。</strong></p>
 <p>看看结果吧，影线区域是矢量，玫红色区域是生成的栅格：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain2.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Maintain2.jpg"></p>
 <p>最后来张全家福，对比下，哪种结果是你想要的，决定对应的选择哪种方法 ，（左侧图层顺序，即为右侧图层显示顺序）。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_All.jpg"></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_All.jpg"></p>
 
       
     </div>
@@ -711,13 +829,13 @@
           <p>今天和大家说一下后台地理处理（GP），说到后台，自然会想到前台。</p>
 <p>其实在 ArcGIS Desktop 9.X 以及更早的年代，ArcToolbox 中的工具运行的模式只有前台模式，也就是大家熟悉的情景：运行某个工具，然后工具运行窗口挡在 ArcMap的前面，窗口中的Log不停的滚动，直至工具运行完毕，ArcMap 才能使用。 并且，由于 ArcMap 和 ArcCatalog 是 32 的程序，单进程使用的系统资源是有限的。</p>
 <p>为了解决这些问题，后台地理处理就产生了，从 ArcGIS 10.0 之后的版本，后台地理处理一直存在着。如果我们现在使用的操作系统是64bit的，那还可以安装后台地理处理64位程序包，在安装光盘中可以找到 ArcGIS for Desktop Background Geoprocessing （64bit）。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BackgroundGeoprocessing_Setup.jpg"></p>
+<p><img data-src="/images/blogImg/BackgroundGeoprocessing_Setup.jpg"></p>
 <br>
 
 <p><strong>为什么安装&nbsp;ArcGIS for Desktop Background Geoprocessing（64 位）？</strong></p>
 <p>因为，后台执行一个工具时，在后台会启动一个新的进程，我们可以理解成开了一个新的 ArcMap，只是没有界面的ArcMap。安装 ArcGIS for Desktop—Background Geoprocessing（64 位）之后，就替代了原先的常规 32 位后台处理。在 RAM 容量较大的系统中，使用 64 位后台处理，有助于处理在 32 位环境中无法处理的大数据。由于所有执行工作都在原生 64 位空间中完成，因此可使用更多系统资源。</p>
 <p>由于新开进程，所以，在打开 ArcMap 之后的第一次执行后台GP，会发现很慢有延迟，之后的几次会很快出现进度条和消息。实际上，后台处理会启动两个进程，两个 RuntimeLocalServer.exe 进程。在工具执行期间不要随便结束这两个进程，否则可能会导致结果异常。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BackgroundGeoprocessing_exe.jpg"></p>
+<p><img data-src="/images/blogImg/BackgroundGeoprocessing_exe.jpg"></p>
 <br>
 
 
@@ -745,132 +863,6 @@
 <li>绘图工具（Graphing tools）（仅针对 64 位地理处理；这些工具在传统的 32 位后台处理中运行）</li>
 <li>作者禁用后台处理的自定义脚本、模型或功能工具</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/05/29/SetupPythonWin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/05/29/SetupPythonWin/" class="post-title-link" itemprop="url">安装 PythonWin</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-05-29 16:20:12" itemprop="dateCreated datePublished" datetime="2014-05-29T16:20:12+08:00">2014-05-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/05/29/SetupPythonWin/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/05/29/SetupPythonWin/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>120</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>确定已安装Python的版本</strong></p>
-<p>在 ArcGIS Desktop 中打开命令行，输入如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">print(sys.version)</span><br></pre></td></tr></table></figure>
-
-
-<p><img data-src="http://kikitamap.com/images/blogImg/SetupPythonWin_Script.jpg"></p>
-<br>
-
-<p><strong>PythonWin下载</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SetupPythonWin_PythonWin.png"></p>
-<p>Python IDE 有很多，采用最常用的 PythonWin。</p>
-<p>PythonWin 下载地址：<span class="exturl" data-url="aHR0cDovL3NvdXJjZWZvcmdlLm5ldC9wcm9qZWN0cy9weXdpbjMyL2ZpbGVzL3B5d2luMzIv">http://sourceforge.net/projects/pywin32/files/pywin32/<i class="fa fa-external-link-alt"></i></span></p>
-<p>在链接中选择最新的 PythonWin 可用版本。</p>
-<br>
-
-
-<p><strong>ArcGIS for Desktop 和 ArcGIS Engine 产品使用 32 位 Python 可执行文件；</strong> </p>
-<p><strong>ArcGIS for Server 和 ArcGIS for Desktop—Background Geoprocessing 产品使用 64 位 Python 可执行文件。</strong></p>
-<p><strong>Arcmap Python Window 与 PythonWin 的选择与对比：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SetupPythonWin_Compare.png"></p>
 
       
     </div>

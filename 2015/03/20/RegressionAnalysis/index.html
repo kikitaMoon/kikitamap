@@ -29,20 +29,20 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="在上一篇文章中，我提到的这些工具都是用于研究数据有什么样的空间模式，哪里聚类？哪里是热点？哪里有冷点？哪里有异常值？等等，总之研究的是“生米煮成熟饭”的结果状态。 而“空间关系建模”工具箱中的工具，更倾向于研究 Why？ 例如，为什么会出现这种情况？ 或者说什么导致了这种情况。这时我们就可以使用工具进行回归分析，如：普通最小二成法（OLS） 和 地理加权回归（GWR）。     你可能会问，为什么">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/RegressionAnalysis_Relations.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/RegressionAnalysis_Relations.png">
 <meta property="og:image" content="http://img.blog.csdn.net/20150320143734273">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/RegressionAnalysis_Dependent.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/RegressionAnalysis_Explanatory.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/RegressionAnalysis_Coefficient.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/RegressionAnalysis_Intercept.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/RegressionAnalysis_Residual.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/RegressionAnalysis_Dependent.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/RegressionAnalysis_Explanatory.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/RegressionAnalysis_Coefficient.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/RegressionAnalysis_Intercept.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/RegressionAnalysis_Residual.png">
 <meta property="article:published_time" content="2015-03-20T04:01:54.000Z">
-<meta property="article:modified_time" content="2018-07-03T07:32:12.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.318Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Spatial Statistics">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/RegressionAnalysis_Relations.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/RegressionAnalysis_Relations.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/03/20/RegressionAnalysis/">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -323,7 +323,7 @@
 <p>总之，通过回归分析，我们可以对空间关系进行建模、检查和探究；回归分析还可帮助我们解释所观测到的空间模式背后的诸多因素。</p>
 <p>在所有的回归方法中，OLS 最为著名。而且，它也是所有空间回归分析的正确起点。它可以尝试了解或预测（早逝&#x2F;降雨）的变量或过程提供一个全局模型；而且，它可创建一个回归方程来表示该过程。地理加权回归 (GWR) 是若干空间回归方法中的一种，被越来越多地用于地理及其他学科。通过对数据集中的各要素拟合回归方程，GWR 为您要尝试了解&#x2F;预测的变量或过程提供了一个局部模型。若使用得当，这些方法可提供强大且可靠的统计数据，以对线性关系进行检查和估计。</p>
 <p>例如如下是两个变量之间存在正、负关系以及无关系的情况：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Relations.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Relations.png"></p>
 <br>
 <br>
 <br>
@@ -337,26 +337,26 @@
 <br>
 
 <p><strong>什么是因变量？</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Dependent.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Dependent.png"></p>
 <p>等式的左边是 <strong>因变量（Dependent Variable）</strong> ，记为 <strong>Y</strong>，表示我们要研究或者预测的对象。通常我们会先给定一些已知的 Y 值，用于构建回归方程，这些已知的 Y 值称为 <strong>观测值</strong>。</p>
 <br>
 <br>
 
 <p><strong>什么是解释变量？</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Explanatory.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Explanatory.png"></p>
 <p>等式的右边的 X ，称为 <strong>自变量</strong> 或 <strong>解释变量（Explanatory Variables）</strong>。因变量是解释变量的函数。到这里，可能有的同学就晕了。<br>同样，举个栗子。我们想研究人们肥胖的诸多原因，想找到肥胖与收入、健康食品摄入、教育水平等等因素是否有关联。在这个例子中，肥胖就是因变量（Y），收入、健康食品摄入、教育水平等这些因素即为解释变量（X）。</p>
 <br>
 <br>
 
 <p><strong>还有重要的回归系数呢！</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Coefficient.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Coefficient.png"></p>
 <p>在方程中，我们还发现有些 β 值，称为 <strong>回归系数（Coefficient）</strong> 。表示解释变量与因变量之间的关系强度和类型，每个解释变量都有一个对应的回归系数。当关系为正时，关联系数的符号也为正。当关系为负时，关联系数的符号也为负。如果关系很强，则系数也相对较大。如果关系较弱，则关联系数接近于零。</p>
-<p>其中，<img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Intercept.png"> 为回归<strong>截距</strong>(Intercept)。 它表示所有自变量（解释变量）均为零时因变量的预期值。</p>
+<p>其中，<img data-src="/images/blogImg/RegressionAnalysis_Intercept.png"> 为回归<strong>截距</strong>(Intercept)。 它表示所有自变量（解释变量）均为零时因变量的预期值。</p>
 <br>
 <br>
 
 <p><strong>绝对不能忘记的残差！</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RegressionAnalysis_Residual.png"></p>
+<p><img data-src="/images/blogImg/RegressionAnalysis_Residual.png"></p>
 <p> ε称为 <strong>残差（Residual）</strong>或 <strong>随机误差项</strong>，是因变量不能解释的部分。回归工具可以构造出能够对那些已知的 y 值作出最佳预测的方程。不过，预测值很少会和观测值完全匹配。y 的观测值与预测值之差称为残差。回归方程中的残差可用于确定模型的拟合程度。残差较大表明模型拟合效果较差。</p>
 <br>
 <br>

@@ -29,28 +29,28 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="上一篇中我们了解到有两种方式在 ArcGIS 中创建 Python工具，这一篇就来看看如何在标准工具箱中创建脚本工具。   ArcGIS Help 中脚本工具的帮助过于枯燥，在这里，我以一个具体的实例来总结构建脚本工具的过程，我要实现的需求是做个快速实现羽化边界效果的小工具，预期得到如下的效果：  上面效果在ArcMap中完全可以手工运行几个工具实现，但是过程稍微繁琐，那么需求来了，如何做个自定的">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Result.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Detail.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Tool.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_UsingTool.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Paras.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_UsingTool2.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_RunningTool.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_FinishingTool.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Template.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_GpSetting.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_final.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Folder.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Relative.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_helpDoc.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_ToolInterface.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Result.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Detail.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Tool.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_UsingTool.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Paras.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_UsingTool2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_RunningTool.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_FinishingTool.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Template.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_GpSetting.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_final.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Folder.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Relative.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_helpDoc.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_ToolInterface.png">
 <meta property="article:published_time" content="2015-09-02T14:19:20.000Z">
-<meta property="article:modified_time" content="2018-06-28T10:20:35.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.340Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool2_Result.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool2_Result.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/09/02/CreatePythonTool2/">
@@ -174,7 +174,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -312,7 +312,7 @@
 <br>
 
 <p>ArcGIS Help 中脚本工具的帮助过于枯燥，在这里，我以一个具体的实例来总结构建脚本工具的过程，我要实现的需求是做个快速实现羽化边界效果的小工具，预期得到如下的效果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_Result.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Result.png"></p>
 <p>上面效果在ArcMap中完全可以手工运行几个工具实现，但是过程稍微繁琐，那么需求来了，如何做个自定的一键生成羽化边界的小工具？</p>
 <br>
 
@@ -325,7 +325,7 @@
 <blockquote>
 <p>脚本中我希望根据指定环间距自动生成一个9环的缓冲面，然后添加一个字段，用于存储给各个缓冲面的透明度百分比。</p>
 <p>看下图就知道我想做什么了：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_Detail.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Detail.png"></p>
 </blockquote>
 <br>
 
@@ -338,16 +338,16 @@
 
 <h2 id="2-脚本工具参数配置"><a href="#2-脚本工具参数配置" class="headerlink" title="2 脚本工具参数配置"></a>2 脚本工具参数配置</h2><p>有了py文件之后，如何把它塞进工具箱里呢？</p>
 <p>在ArcMap的Catalog窗口中，找一个自己喜欢的任意文件夹，新建一个Toolbox，然后右键  Add –&gt; Script，进入向导，这些操作如果不了解，可以点 <a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/analyze/creating-tools/adding-a-script-tool.htm"><strong>这里</strong></a> 查查帮助，照着做即可，不赘述。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_Tool.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Tool.png"></p>
 <p>这里我主要说说参数传递。</p>
 <p>我希望做好的工具中，我只去指定三个参数，分别是：输入的兴趣区域面（input Feature ），多环缓冲的环间距（Single Ring width ），输出结果（output Feature ）。预览下工具界面：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_UsingTool.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_UsingTool.png"></p>
 <br>
 
 <p>那么问题又来了，这三个参数如何从工具界面传给真正执行工具的 python 脚本？我们需要对前面的脚本参数定义部分做个修改，使用 arcpy 提供的 **<code>GetParameterAsText()</code>**函数即可在工具界面和脚本之间传递参数。用下面的代码替换前面对这三个参数的替换：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">SingleRingWidth = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 <p>对应的脚本工具参数配置：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_Paras.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Paras.png"></p>
 <blockquote>
 <p>为工具配置参数的时候，有2个原则需要遵守：</p>
 </blockquote>
@@ -358,11 +358,11 @@
 <br>
 
 <p>修改Python脚本文件后，现在就运行工具，发现可以得到预期的结果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_UsingTool2.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_UsingTool2.png"></p>
 <br>
 
 <p>但是有点不完美，就是在工具的运行过程中，工具给我返回的信息并不充足，我只知道 “Running Script EasyFeathering …”，而不了解工具在做什么，执行到了哪个步骤。这不是好的体验。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_RunningTool.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_RunningTool.png"></p>
 <br>
 
 <br>
@@ -374,7 +374,7 @@
 <br>
 
 <p>这样在工具的执行过程中，我就收到了消息：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_FinishingTool.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_FinishingTool.png"></p>
 <p>到这里，工具的功能部分就完成了。</p>
 <br>
 
@@ -386,24 +386,24 @@
 <ol>
 <li>为输出参数配置模板图层。</li>
 </ol>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_Template.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Template.png"></p>
 <ol start="2">
 <li>在处理设置中，激活设置</li>
 </ol>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_GpSetting.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_GpSetting.png"></p>
 <p>这样在运行工具之后，结果即自动添加显示。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_final.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_final.png"></p>
 <br>
 
 <br>
 
 <h2 id="5-配置路径"><a href="#5-配置路径" class="headerlink" title="5 配置路径"></a>5 配置路径</h2><p>如果是在本机使用脚本工具，一般我们会使用绝对路径，但是如果希望分享自己的工具给别人，就要考虑路径问题，也就是新用户运行脚本工具时，相关的脚本文件和其他用到的资源能否访问到。我的工具按照如下的结构组织：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_Folder.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Folder.png"></p>
 <br>
 
 <p>在脚本工具的属性中，可以配置存储相对路径引用 py 文件：</p>
 <p>PS：但是不要想太多，这个设置仅仅会将脚本文件所在位置按照相对路径存储，而不会将脚本内部的路径进行转换。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_Relative.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Relative.png"></p>
 <br>
 
 <p>这个示例中我还需要用到一个图层文件作为模板，如果希望使用相对路径使用，就建议将符号化信息写在脚本内部，而不是在参数窗口中配置。所以，要继续修改下Python脚本文件。</p>
@@ -417,9 +417,9 @@
 
 <h2 id="6-帮助文档"><a href="#6-帮助文档" class="headerlink" title="6 帮助文档"></a>6 帮助文档</h2><p>还可以进一步为工具添加帮助文档，让更多的人了解如何使用这个工具。</p>
 <p>在ArcCatalog 或者ArcMap的Catalog 中，在脚本工具上右键，点击 Item Description 菜单，点击 Edit 就可以对工具的帮助文档进行编辑。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_helpDoc.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_helpDoc.png"></p>
 <p>这样当别人打开你的工具时，就看到帮助喽。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool2_ToolInterface.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_ToolInterface.png"></p>
 <br>
 
 <p>好啦，关于ArcGIS 中使用脚本工具的过程就说到这里。</p>

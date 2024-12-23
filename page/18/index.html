@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,136 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/09/FeatureHeatMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/06/09/FeatureHeatMap/" class="post-title-link" itemprop="url">羽化效果的HeatMap</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-06-09 11:07:58" itemprop="dateCreated datePublished" datetime="2015-06-09T11:07:58+08:00">2015-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/06/09/FeatureHeatMap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/09/FeatureHeatMap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>261</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>用采样点制作热力图是个非常常见的需求。热力图可以给地图的阅读者直观的信息，下面就看看如何在 ArcGIS Pro 中做一个漂亮的HeatMap。</p>
+<p><em>PS: 这是通过点密度插值生成的栅格的静态表达方式，区别于 ArcGIS Pro 自带的动态HeatMap的渲染器哦。</em></p>
+<br>
+
+<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>准备好采样点数据，当然是量大更优。我这里用了全球地震点数据，大约有 21W+ 的数据量。像这一类的数据可以从一些提供公开数据的网站获取，例如 <span class="exturl" data-url="aHR0cDovL2VhcnRocXVha2UudXNncy5nb3YvZWFydGhxdWFrZXMvZmVlZC92MS4wL2Nzdi5waHA=">USGS<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_Points.png"></p>
+<br>
+
+<br>
+
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>使用 ArcGIS 中的密度分析工具可以从点数据直接生成密度栅格，工具位于 ArcToolbox —— Spatial Analyst —— Density 工具集下。这里我采用了 Kernel Density 。</p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_Density.png"></p>
+<br>
+
+<br>
+
+<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>制作一个自己喜欢的热力色带，最边缘的颜色使用透明色，这样就有“羽化”的效果。</p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_ColorRamp.png"></p>
+<p>应用色带之后：</p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_ColorRampresult.png"></p>
+<br>
+
+<p>如有需要，可以进一步为图层设置透明：</p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_Transparent.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -298,7 +428,7 @@
 
 
 <p>ArcGIS Pro 的符号化中增加了符号的透明效果，这一点完胜 ArcMap 的渲染效果。你想问ArcMap什么效果？如下，好像有点惨不忍睹：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RunnerRoutes_ArcMap.png"></p>
+<p><img data-src="/images/blogImg/RunnerRoutes_ArcMap.png"></p>
 <br>
 
 
@@ -310,29 +440,29 @@
 <br>
 
 <p>##<strong>1.</strong><br>加入数据，GPS路线数据和深灰色主题的底图服务。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RunnerRoutes_Basemap.png"></p>
+<p><img data-src="/images/blogImg/RunnerRoutes_Basemap.png"></p>
 <br>
 
 <p>##<strong>2.</strong> </p>
 <p>选个喜欢的颜色，并进入 more。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RunnerRoutes_Symbol.png"></p>
+<p><img data-src="/images/blogImg/RunnerRoutes_Symbol.png"></p>
 <br>
 
 
 
 <p>##<strong>3.</strong> </p>
 <p>设置个透明百分比。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RunnerRoutes_Transparent.png"></p>
+<p><img data-src="/images/blogImg/RunnerRoutes_Transparent.png"></p>
 <br>
 
 
 <p>##<strong>4.</strong> </p>
 <p>Done !</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RunnerRoutes_Done.png"></p>
+<p><img data-src="/images/blogImg/RunnerRoutes_Done.png"></p>
 <br>
 无需任何高级的分析，所见即所得。相比周围，明显这条路是这位 Runner 最经常挥洒汗水的一条……
 
-<p><img data-src="http://kikitamap.com/images/blogImg/RunnerRoutes_Favorite.png"></p>
+<p><img data-src="/images/blogImg/RunnerRoutes_Favorite.png"></p>
 <br>
 
 
@@ -465,17 +595,17 @@
 <p>Angular Unit: Degree (0.0174532925199433)<br>Prime Meridian: Greenwich (0.0)<br>Datum: D_WGS_1984<br>  Spheroid: WGS_1984<br>    Semimajor Axis: 6378137.0<br>    Semiminor Axis: 6356752.314245179<br>    Inverse Flattening: 298.257223563</p>
 </blockquote>
 <p>通过参数描述，我们知道 WGS 1984 是一个长半轴(a)为6378137，短半轴（b）为6356752.314245179 的椭球体，扁率(f)为298.257223563，f&#x3D;(a-b)&#x2F;a 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_Speriod.png"></p>
 <br>
 
 
 
 <h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p><strong>Web Mercator 坐标系使用的投影方法不是严格意义的墨卡托投影，而是一个被 EPSG（European Petroleum Survey Group）称为</strong>伪墨卡托<strong>的投影方法，这个伪墨卡托投影方法的大名是 Popular Visualization Pseudo Mercator，PVPM。</strong> 看起来就觉得这个投影方法不是很严谨的样子，大众化的？受欢迎的？可视化伪墨卡托投影……</p>
 <p>因为这个坐标系统是 Google Map 最先使用的，或者更确切地说，是Google 最先发明的。在投影过程中，将表示地球的参考椭球体近似的作为正球体处理（正球体半径 R &#x3D; 椭球体半长轴 a）。这也是为什么在 ArcGIS 中我们经常看到这个坐标系叫 **WGS 1984 Web Mercator (Auxiliary Sphere)**。Auxiliary Sphere 就是在告知你，这个坐标在投影过程中，将椭球体近似为正球体做投影变换，虽然基准面是WGS 1984 椭球面。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Geodesic.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_Geodesic.png"></p>
 <p>后来，Web Mercator 在 Web 地图领域被广泛使用，这个坐标系就名声大噪。尽管这个坐标系由于精度问题一度不被GIS专业人士接受，但最终 EPSG 还是给了 WKID:3857。</p>
 <p>下面放一张在 EPSG 官网上找到的3857坐标的具体参数介绍，供参考：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Name.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_Name.png"></p>
 <br>
 
 <br>
@@ -488,7 +618,7 @@
 <p>拒绝给这个坐标系分配 坐标系ID 的原话是这样的：</p>
 <p><strong>“</strong> The projected coordinate reference system originally lacked an official spatial reference identifier (SRID), and the Geodesy subcommittee of the OGP’s Geomatics committee (also known as EPSG) refused to provide it with one, declaring “We have reviewed the coordinate reference system used by Microsoft, Google, etc. and believe that it is technically flawed. We will not devalue the EPSG dataset by including such inappropriate geodesy and cartography.”  <strong>”</strong></p>
 <p>这不是EPSG 冷酷无情无理取闹，从技术角度看是有原因的。简而言之，主要原因在于基准面被篡改后，本来是等角投影的Mercator坐标变换算法，不再等角了，而是近似等角，也就是出现角度变形。这种变形势必影响了坐标的精度，如下是某位GIS专家给出的概要说明（闪亮的最后一条）：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_darkside.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_darkside.png"></p>
 <p>如果你想进一步关心细节，想知道这位专家对 Web Mercator 的 dark side 的深入见解，点<span class="exturl" data-url="aHR0cDovL2h5ZHJvbWV0cm9uaWNzLmNvbS9kb3dubG9hZHMvV2ViJTIwTWVyY2F0b3IlMjAtJTIwTm9uLUNvbmZvcm1hbCwlMjBOb24tTWVyY2F0b3IlMjAlMjhub3RlcyUyOS5wZGY=">这里<i class="fa fa-external-link-alt"></i></span>看看。</p>
 <br>
 
@@ -507,7 +637,7 @@
 <p><strong>ESRI:102113</strong>   Esri内部使用ID，与 EPSG:3785 相应。已被弃用。</p>
 <p><strong>ESRI:102100</strong>   Esri内部使用ID，与 EPSG:3857 相应。</p>
 <p>因此，细心地话，会发现在 ArcGIS Server 的REST 服务页面中，Web Mercator 的空间参考会记做： <strong>102100(3857)</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_3857.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_3857.png"></p>
 <br>
 
 <br>
@@ -638,30 +768,30 @@
 <br>
 
 <h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p>将Oracle绿色版客户端安装文件上传到 Linux 服务器（oracle-instantclient11.2-basic-11.2.0.1.0-1.x86_64.zip） ，并解压到自己指定的目录，如 Client。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxOracleClient_unzip.png"></p>
+<p><img data-src="/images/blogImg/LinuxOracleClient_unzip.png"></p>
 <br>
 
 
 <h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p>由于安装Oracle客户端的目的是为了 ArcGIS Server 能够访问数据库服务器，所以对Client目录赋予 ArcGIS Server 账户（<strong>arcgis</strong>）的755权限。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxOracleClient_Grant.png"></p>
+<p><img data-src="/images/blogImg/LinuxOracleClient_Grant.png"></p>
 <br>
 
 <h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><p>修改环境变量，使得ArcGIS Server 能够使用这个客户端。</p>
 <p>环境变量文件位于ArcGIS Server 安装目录中 usr文件夹下的 init_user_param.sh 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxOracleClient_Env.png"></p>
+<p><img data-src="/images/blogImg/LinuxOracleClient_Env.png"></p>
 <br>
 
 <p>编辑init_user_param.sh，将Oracle客户端所在的目录配置到对应的环境变量中，保存退出。PS，不要忘记删除前面的<strong>＃</strong>……　默认所有的变量信息是被注释掉的。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxOracleClient_Edit.png"></p>
+<p><img data-src="/images/blogImg/LinuxOracleClient_Edit.png"></p>
 <br>
 
 <h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><p>重启 ArcGIS Server 服务。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxOracleClient_Restart.png"></p>
+<p><img data-src="/images/blogImg/LinuxOracleClient_Restart.png"></p>
 <br>
 
 
 <h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><p>然后到 ArcGIS Server Manger中或者 ArcGIS Desktop 的 Server Connection中去注册数据库试试。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxOracleClient_Datastore.png"></p>
+<p><img data-src="/images/blogImg/LinuxOracleClient_Datastore.png"></p>
 
       
     </div>
@@ -770,7 +900,7 @@
     <div class="post-body" itemprop="articleBody">
           <p>上一篇文中写了在 Linux上安装 ArcGIS Server前的准备工作，最后一步是环境检测，只有所有项都通过才可以安装 ArcGIS Server。</p>
 <p>不幸的是，第一次其实没有通过环境监测，提示系统中缺少了Xvfb包，具体的检测结果如下：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Xvfb.png"></p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Xvfb.png"></p>
 <p>检测报告中提示了解决方法，参考技术文章 <span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzQwODYw">40860<i class="fa fa-external-link-alt"></i></span>：</p>
 <p>但是这篇文章只告诉我们缺包了，需要安装一个Xvfb包，没有说明包的获取与安装过程等，下面我就bala一下喽。</p>
 <br>
@@ -780,165 +910,19 @@
 <blockquote>
 <p><strong>wget <span class="exturl" data-url="aHR0cDovL3ZhdWx0LmNlbnRvcy5vcmcvNi4yL29zL3g4Nl82NC9QYWNrYWdlcy94b3JnLXgxMS1zZXJ2ZXItWHZmYi0xLjEwLjQtNi5lbDYueDg2XzY0LnJwbQ==">http://vault.centos.org/6.2/os/x86_64/Packages/xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm<i class="fa fa-external-link-alt"></i></span></strong></p>
 </blockquote>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Download.png"></p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Download.png"></p>
 <br>
 <br>
 
 <h1 id="2-运行安装Xvfb包"><a href="#2-运行安装Xvfb包" class="headerlink" title="2 .  运行安装Xvfb包"></a>2 .  运行安装Xvfb包</h1><blockquote>
 <p><strong>yum localinstall xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm</strong></p>
 </blockquote>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Install.png"></p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Install.png"></p>
 <br>
 <br>
 
 <h1 id="3-执行环境检测"><a href="#3-执行环境检测" class="headerlink" title="3 . 执行环境检测"></a>3 . 执行环境检测</h1><p>所有检测通过即可安装 ArcGIS Server 程序：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Done.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/05/08/LinuxArcGISServerDeployment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/05/08/LinuxArcGISServerDeployment/" class="post-title-link" itemprop="url">Linux 下安装 ArcGIS Server 前的准备工作备忘录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-05-08 16:55:01" itemprop="dateCreated datePublished" datetime="2015-05-08T16:55:01+08:00">2015-05-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/05/08/LinuxArcGISServerDeployment/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/08/LinuxArcGISServerDeployment/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>495</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p><strong>安装环境： ArcGIS for Server Linux 10.2.2 ， Redhat 6</strong></p>
-</blockquote>
-<p>因为是在网络虚拟机中安装部署，首先需要一个远程Linux的客户端，这里使用 putty，可以在官方的 <span class="exturl" data-url="aHR0cDovL3d3dy5wdXR0eS5vcmcv">www.putty.org<i class="fa fa-external-link-alt"></i></span> 下载，但是貌似网站被墙了，我也放了一份在<span class="exturl" data-url="aHR0cDovL2Rvd25sb2FkLmNzZG4ubmV0L2RldGFpbC9raWtpdGFtb29uLzg2NzU1MzE=">我的资源<i class="fa fa-external-link-alt"></i></span>中。</p>
-<p><strong>1） 运行 putty.exe ,登陆linux服务器</strong>：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Putty.png"></p>
-<p><strong>2） 输入用户名密码，登入服务器：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Login.png"></p>
-<p><strong>3） 查询主机的 IP 地址：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_IP.png"></p>
-<p><strong>4） 查询 hostname：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_hostname.png"></p>
-<p><strong>5） 编辑hosts文件，映射IP地址和主机名：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Mapping.png"></p>
-<p><strong>6） 创建 ArcGIS Server 账户：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_CreatAcount.png"></p>
-<blockquote>
-<p>备注：<br>&#x2F;etc&#x2F;group 中存储了用户组信息，格式如下：<br>用户组名:组密码:GID:组内帐号（多个帐号用逗号分隔）<br>&#x2F;etc&#x2F;passwd 中存储了用户账户信息，格式如下：<br>用户名:密码:UID:GID:用户信息:HOME目录路径:用户shell<br>其中UID为0则是用户root，1～499为系统用户，500以上为普通用户</p>
-</blockquote>
-<p><strong>7） 为ArcGIS Server 账户设置密码：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Password.png"></p>
-<p><strong>8）在home目录下创建ArcGISServer目录，授权 ArcGIS Server账户对文件夹的权限：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_chmod.png"></p>
-<p><strong>9）文件句柄和进程的硬限制要求</strong></p>
-<p>要增加软限制和硬限制，需要使用超级用户访问权限编辑 &#x2F;etc&#x2F;security&#x2F;limits.conf 文件。例如，添加以下四行：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Limits.png"></p>
-<p><strong>10） 将安装程序上传到Linux主机</strong></p>
-<p>Linux主机是个网络虚拟机，也没有光驱，就用上传安装包（iso镜像）的方式安装了。一般在各种linux的发行版中，默认带有的ftp软件是vsftp。</p>
-<p>检查vsftpd软件是否安装， # <strong>rpm -qa|grep vsftp</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_vsftp.png"></p>
-<p>启动 vsftp 服务，# <strong>service vsftpd start</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_ServiceStart.png"></p>
-<p>其它命令：<br>      停止ftp：service vsftpd stop<br>      重启ftp：service vsftpd restart</p>
-<p>软后用ftp客户端连接服务器即可，这里我用了以前一直用的 FileZilla.</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_FileZilla.png"></p>
-<p><strong>11） 挂载 ISO映像</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_mount.png"><br>PS：第一次mount没写完整的路径信息，文件没找到，请忽略，看最后一行。</p>
-<p><strong>12）执行安装前的环境检测</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_check.png"></p>
-<p>各项检测通过，可以安装 ArcGIS Server 了。</p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Done.png"></p>
 
       
     </div>

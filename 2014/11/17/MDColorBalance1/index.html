@@ -29,19 +29,19 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="镶嵌数据集的色彩平衡与接缝线  Ⅰ    色彩平衡 镶嵌数据集一般由多张影像组成的，各幅影像可能由于各种原因存在色彩差异，例如航摄时的天气、光线等原因。为了让整个镶嵌数据集看起来是无缝的一整张，而不是一片一片的，我们需要做的就是色彩校正，或者叫做色彩平衡（均衡）。也就是实现下面的效果：   做色彩校正之前，需要检查原始数据的所有波段是不是满足下面几个条件：  所有波段已经创建统计值（包括直方图）；">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png">
 <meta property="article:published_time" content="2014-11-17T04:38:05.000Z">
-<meta property="article:modified_time" content="2018-07-03T02:17:10.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.304Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geodata">
 <meta property="article:tag" content="Raster">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/11/17/MDColorBalance1/">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -300,12 +300,12 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>镶嵌数据集的色彩平衡与接缝线  Ⅰ</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Toolset.png"></p>
 <br>
 
 <p><strong>色彩平衡</strong></p>
 <p>镶嵌数据集一般由多张影像组成的，各幅影像可能由于各种原因存在色彩差异，例如航摄时的天气、光线等原因。为了让整个镶嵌数据集看起来是无缝的一整张，而不是一片一片的，我们需要做的就是色彩校正，或者叫做色彩平衡（均衡）。也就是实现下面的效果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Demo.png"></p>
 <blockquote>
 <p>做色彩校正之前，需要检查原始数据的所有波段是不是满足下面几个条件：</p>
 <ul>
@@ -355,14 +355,14 @@
 
 
 <p><strong>预处理选项</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
 <p>在执行栅格数据集色彩平衡之前，工具会先执行预处理选项。</p>
 <h1 id="Exclude-Area-Raster"><a href="#Exclude-Area-Raster" class="headerlink" title="**Exclude Area Raster **"></a>**Exclude Area Raster **</h1><p>用于排除不能或者难于进行色彩校正的区域，例如：水、云和异常区域等。本质上就是创建一个掩膜，从而从镶嵌数据集色彩校正算法中排除一些像素。</p>
 <p>PS： 对镶嵌数据集进行色彩校正时，排除区域并不会经常用到。只有当存在较难校正的区域，且不希望因为这些问题区域产生偏差时，可创建排除区域。另外，像素分布中的极值（极低像素值和极高像素值）区域也可能成为色彩校正的问题区域。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Exclude.png"></p>
 <p>那如何生成这个排除区域栅格呢？</p>
 <p>工具箱中提供 <strong>Generate Exclude Area</strong> 工具，下面就来看看这个工具。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
 <p>通过输入数据选择 <strong>位深</strong> 和 <strong>生成</strong> 方法：</p>
 <p><strong>Pixel type：</strong></p>
 <p>此参数用于选择输入栅格数据集的像素深度。像素深度非常重要，因为需要对所有 8 位以上的像素深度调整色彩掩膜和直方图值。</p>
@@ -389,7 +389,7 @@
 <p><strong>Gamma</strong></p>
 <p>当选择了标准差拉伸或最小值-最大值拉伸时，可以额外的设置Gamma值。可通过应用 Gamma 拉伸来控制图像的整体亮度。<br>如果 Gamma 系数设置得太低，中间色调将太暗；而如果 Gamma 系数设置得太高，中间色调又会太亮。Gamma 系数不仅会改变图像的亮度，还会改变红绿蓝之间的比率。</p>
 <p>如果对色彩校正的不满意，我们也可以移除效果，镶嵌数据集的右键菜单中，Remove – Color Balancing。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Remove.png"></p>
 
     </div>
 

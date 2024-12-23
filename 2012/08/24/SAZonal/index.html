@@ -29,22 +29,22 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="空间分析扩展中，有关区域分析，提供了如下工具：  可以将其分为这样几类： 一、确定区域中类的面积的工具面积制表（Tabulate Area）面积制表工具以表的形式进行输出。在此表中： 1）区域数据集的每个唯一值均有一条记录。 2）类数据集的每个唯一值均有一个字段。 3）每个记录将存储每个区域内每个类的面积。  TIPS： 使用此工具的常见错误： 1.“一个或多个输入没有关联属性表” 错误 此错误通">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_TabulateArea.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometry.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometryasTable.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_Orientation.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_Histograms.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_ZonalHistogram.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_TabulateArea.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_ZonalGeometry.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_ZonalGeometryasTable.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_Orientation.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_Histograms.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_ZonalHistogram.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics2.png">
 <meta property="article:published_time" content="2012-08-24T09:12:00.000Z">
-<meta property="article:modified_time" content="2018-07-04T03:46:26.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.233Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Spatial Analyst">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/SAZonal_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/SAZonal_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2012/08/24/SAZonal/">
@@ -168,7 +168,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -303,13 +303,13 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>空间分析扩展中，有关区域分析，提供了如下工具：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_Toolset.png"></p>
+<p><img data-src="/images/blogImg/SAZonal_Toolset.png"></p>
 <p>可以将其分为这样几类：</p>
 <h1 id="一、确定区域中类的面积的工具"><a href="#一、确定区域中类的面积的工具" class="headerlink" title="一、确定区域中类的面积的工具"></a><strong>一、确定区域中类的面积的工具</strong></h1><h2 id="面积制表（Tabulate-Area）"><a href="#面积制表（Tabulate-Area）" class="headerlink" title="面积制表（Tabulate Area）"></a><strong>面积制表（Tabulate Area）</strong></h2><p>面积制表工具以表的形式进行输出。在此表中：</p>
 <p>1）区域数据集的每个唯一值均有一条记录。</p>
 <p>2）类数据集的每个唯一值均有一个字段。</p>
 <p>3）每个记录将存储每个区域内每个类的面积。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_TabulateArea.gif"></p>
+<p><img data-src="/images/blogImg/SAZonal_TabulateArea.gif"></p>
 <p><strong>TIPS：</strong></p>
 <p>使用此工具的常见错误：</p>
 <p>1.<strong>“一个或多个输入没有关联属性表</strong>” 错误</p>
@@ -334,22 +334,22 @@
 <p>这个工具的亮点在于可以统计区的<strong>总面积（AREA）、总周长（PERIMETER）、厚度（THICKNESS）、质心（CENTROID）</strong>。其他三个比较好理解，我们看下厚度的概念。</p>
 <p>分区厚度分析可计算输入栅格上各个区域中最深或最厚点距其周围像元的距离。</p>
 <p>实际上，厚度就是可在各个区域中（不包括区域外部的任何像元）绘制的最大圆的半径（以像元为单位）。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometry.png">  </p>
+<p><img data-src="/images/blogImg/SAZonal_ZonalGeometry.png">  </p>
 <h2 id="以表格显示分区几何统计（Zonal-Geometry-as-Table）"><a href="#以表格显示分区几何统计（Zonal-Geometry-as-Table）" class="headerlink" title="以表格显示分区几何统计（Zonal Geometry as Table）"></a><strong>以表格显示分区几何统计（Zonal Geometry as Table）</strong></h2><p>将上述统计结果输出到Table表中。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometryasTable.png"></p>
+<p><img data-src="/images/blogImg/SAZonal_ZonalGeometryasTable.png"></p>
 <p>其中，最后三个参数，用于描述各个区域的椭圆近似的形状。定义椭圆形状和大小的参数为长轴、短轴和方向。各椭圆的面积与为其分配的区域的面积相等。</p>
 <p>MAJORAXIS：长轴的长度；MINORAXIS：短轴的长度。以地图单位表示。</p>
 <p>ORIENTATION 值的单位为度，取值范围为 0 至 180。方向定义为 x 轴与椭圆长轴之间的角度。方向的角度值以逆时针方向增加，起始于东方向（右侧水平位置）的 0 值，在长轴垂直时通过 90 位置。如果某个特定区域仅由一个像元组成，或者该区域为单个像元方块，那么会将椭圆（在此情况下为圆）的方向设置为 90 度。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_Orientation.png"></p>
+<p><img data-src="/images/blogImg/SAZonal_Orientation.png"></p>
 <h1 id="四、确定某输入栅格值在另一区域中的频数分布的工具"><a href="#四、确定某输入栅格值在另一区域中的频数分布的工具" class="headerlink" title="四、确定某输入栅格值在另一区域中的频数分布的工具"></a><strong>四、确定某输入栅格值在另一区域中的频数分布的工具</strong></h1><h2 id="区域直方图（Zonal-Histogram）"><a href="#区域直方图（Zonal-Histogram）" class="headerlink" title="区域直方图（Zonal Histogram）"></a><strong>区域直方图（Zonal Histogram）</strong></h2><p>创建显示各唯一区域值输入中的像元值频数分布的表和直方图（Graph类型）。</p>
 <p>区域字段必须为整型或字符串类型。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_Histograms.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalHistogram.png"></p>
+<p><img data-src="/images/blogImg/SAZonal_Histograms.png"></p>
+<p><img data-src="/images/blogImg/SAZonal_ZonalHistogram.png"></p>
 <h1 id="五、作用于区域属性的工具"><a href="#五、作用于区域属性的工具" class="headerlink" title="五、作用于区域属性的工具"></a><strong>五、作用于区域属性的工具</strong></h1><h2 id="分区统计（Zonal-Statistics）"><a href="#分区统计（Zonal-Statistics）" class="headerlink" title="分区统计（Zonal Statistics）"></a><strong>分区统计（Zonal Statistics）</strong></h2><p><strong>以表格显示分区统计（<strong><strong>Zonal Statistics as Table</strong></strong>）</strong></p>
 <p>这两个工具是，计算在另一个数据集的区域内栅格数据值的统计信息。这里的区域定义为输入中具有相同值的所有区。各区无需相连。栅格和要素数据集都可用于区域输入。</p>
 <p>前者生成栅格数据，后者生成统计表。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics2.png"></p>
+<p><img data-src="/images/blogImg/SAZonal_ZonalStatistics.png"></p>
+<p><img data-src="/images/blogImg/SAZonal_ZonalStatistics2.png"></p>
 <br>
 
 <p>OK……</p>
@@ -414,8 +414,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2012/08/27/SAInterpolation/" rel="next" title="空间分析之插值分析">
-                  空间分析之插值分析 <i class="fa fa-angle-right"></i>
+                <a href="/2012/08/27/SAMultiDimensions/" rel="next" title="空间分析之多元分析">
+                  空间分析之多元分析 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

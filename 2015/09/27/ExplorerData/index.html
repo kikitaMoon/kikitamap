@@ -29,25 +29,25 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="在执行地统计分析之前，浏览、熟悉、检查自己的数据是至关重要的。绘制和检查数据是地统计分析过程中的必要阶段，我们可以从这些工作中获得一些先验知识，指导后续的工作。   Stage 1     绘制数据通过ArcMap的图层渲染方案绘制数据，我们可以获得对数据的第一印象。 例如，使用单一符号渲染了解采样点的疏密分布，通过分类渲染了解采样点高值低值的分布，等等。     Stage 2  检查数据绘制数">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_DrawingData.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_ESDA.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_Histogram.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_NormalQQ.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox2.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi2.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_Semivariogram.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_Trend.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_Direction.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ExplorerData_Crosscovariance.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_DrawingData.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_ESDA.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_Histogram.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_NormalQQ.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_BoxCox.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_BoxCox2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_Voronoi.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_Voronoi2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_Semivariogram.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_Trend.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_Direction.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ExplorerData_Crosscovariance.png">
 <meta property="article:published_time" content="2015-09-27T04:00:00.000Z">
-<meta property="article:modified_time" content="2018-06-29T01:22:58.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.342Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Spatial Statistics">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ExplorerData_DrawingData.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ExplorerData_DrawingData.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/09/27/ExplorerData/">
@@ -171,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -310,17 +310,17 @@
 
 <h1 id="Stage-1-绘制数据"><a href="#Stage-1-绘制数据" class="headerlink" title="Stage 1     绘制数据"></a>Stage 1     绘制数据</h1><p>通过ArcMap的图层渲染方案绘制数据，我们可以获得对数据的第一印象。</p>
 <p>例如，使用单一符号渲染了解采样点的疏密分布，通过分类渲染了解采样点高值低值的分布，等等。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_DrawingData.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_DrawingData.png"></p>
 <br>
 
 
 <h1 id="Stage-2-检查数据"><a href="#Stage-2-检查数据" class="headerlink" title="Stage 2  检查数据"></a>Stage 2  检查数据</h1><p>绘制数据后，使用 <strong>探索性空间数据分析 (Exploratory Spatial Data Analysis，ESDA)</strong> 工具来执行数据探索的第二阶段。这些工具提供了一种比绘制数据更加量化的方式来检查数据，有助于我们更深入地了解正在研究的现象，有助于我们对插值模型的构建方式做出更加正确的决策。</p>
 <p>ESDA 工具包括：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_ESDA.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_ESDA.png"></p>
 <br>
 
 
-<h2 id="Ⅰ-是否服从正态分布？"><a href="#Ⅰ-是否服从正态分布？" class="headerlink" title="Ⅰ 是否服从正态分布？"></a>Ⅰ 是否服从正态分布？</h2><h3 id="Histogram-直方图"><a href="#Histogram-直方图" class="headerlink" title="Histogram&#x2F;直方图"></a>Histogram&#x2F;直方图</h3><p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Histogram.png"></p>
+<h2 id="Ⅰ-是否服从正态分布？"><a href="#Ⅰ-是否服从正态分布？" class="headerlink" title="Ⅰ 是否服从正态分布？"></a>Ⅰ 是否服从正态分布？</h2><h3 id="Histogram-直方图"><a href="#Histogram-直方图" class="headerlink" title="Histogram&#x2F;直方图"></a>Histogram&#x2F;直方图</h3><p><img data-src="/images/blogImg/ExplorerData_Histogram.png"></p>
 <p>直方图用于显示感兴趣数据集的频率分布并计算汇总统计数据，如何解读图形和统计信息呢？</p>
 <ul>
 <li>如果数据服从正态分布，则平均值（mean）与中值（median）类似，偏度（skewness）应接近零，并且峰度（kurtosis）应接近 3。</li>
@@ -331,7 +331,7 @@
 </ul>
 <br>
 
-<h3 id="Normal-QQPlots-正态QQ图"><a href="#Normal-QQPlots-正态QQ图" class="headerlink" title="Normal QQPlots&#x2F;正态QQ图"></a>Normal QQPlots&#x2F;正态QQ图</h3><p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_NormalQQ.png"></p>
+<h3 id="Normal-QQPlots-正态QQ图"><a href="#Normal-QQPlots-正态QQ图" class="headerlink" title="Normal QQPlots&#x2F;正态QQ图"></a>Normal QQPlots&#x2F;正态QQ图</h3><p><img data-src="/images/blogImg/ExplorerData_NormalQQ.png"></p>
 <p>正态 QQ 图上的点可指示数据集的单变量分布的正态性。如果数据是正态分布的，点将落在 45 度参考线上。如果数据不是正态分布的，点将会偏离参考线。</p>
 <br>
 
@@ -345,8 +345,8 @@
 <p>Geostatistical Analyst 中的一些插值方法要求数据呈正态分布。如果数据偏斜（分布不均衡），则可能需要将数据变换为正态分布。</p>
 <p><strong>Box-Cox 变换（又称幂变换）</strong><br>如果在某一部分研究区域中计数值很小，这一区域的变异性就小于计数值更大的另一区域的变异性。在这种情况下，平方根变换将<strong>有助于使整个研究区域内的方差更加恒定</strong>，通常还会使数据呈正态分布。平方根变换是 Box-Cox 变换中 λ &#x3D; ½ 时的特例。</p>
 <p><strong>对数变换</strong><br>对数变换实际上是 Box-Cox 变换中 λ &#x3D; 0 时的特例。对数变换<strong>通常用于呈正偏分布的数据</strong>。其中有些值非常大，如果这些大值位于研究区域中，对数变换有助于使方差更加恒定和归一化数据。</p>
-<p>例如数据如下分布：<br><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox.png"></p>
-<p>变换前后对比：<br><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox2.png"></p>
+<p>例如数据如下分布：<br><img data-src="/images/blogImg/ExplorerData_BoxCox.png"></p>
+<p>变换前后对比：<br><img data-src="/images/blogImg/ExplorerData_BoxCox2.png"></p>
 <p><strong>反正弦变换</strong><br>反正弦变换<strong>可用于表示比例或百分比的数据</strong>。通常在数据为比例形式时，方差在接近 0 和 1 时最小，接近 0.5 时最大。反正弦变换有助于使整个研究区域内的方差更加恒定，通常还会使数据呈正态分布。</p>
 </blockquote>
 <br>
@@ -357,20 +357,20 @@
 <br>
 
 <h3 id="Voronoi-图"><a href="#Voronoi-图" class="headerlink" title="Voronoi 图"></a>Voronoi 图</h3><p>Voronoi 图是由采样点形成的泰森多边形地图。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Voronoi.png"></p>
 <p>在查看 Voronoi 图时，检查附近是否有面符号色彩差别很大的值。</p>
 <p>例如，下图中红色面明显异于周围值。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi2.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Voronoi2.png"></p>
 <br>
 
 <h3 id="Semivariogram-Covariance-Cloud-半变异函数-协方差云"><a href="#Semivariogram-Covariance-Cloud-半变异函数-协方差云" class="headerlink" title="Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云"></a>Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云</h3><p>半变异函数&#x2F;协方差云工具可以用来检查数据集中空间自相关的局部特征以及查找局部异常值。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Semivariogram.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Semivariogram.png"></p>
 <p>云中的每个点表示数据集中的一对点，x 轴表示各位置间的距离，y 轴表示这些位置上的值的差值平方。半变异函数中的每个点都表示一个位置对，而不是地图上的单个位置。因此云中点的数量会随着数据集中点的数量的增加而快速增加。如果数据集中存在 n 个点，则半变异函数&#x2F;协方差云中将显示 n*(n-1)&#x2F;2 个点。因此，不建议使用点数超过几千个的数据集。如果数据集包含几千个点，那么应使用子集要素工具来随机选择点，然后在半变异函数&#x2F;协方差云中使用子集。</p>
 <p>“半变异函数&#x2F;协方差云”工具对检测局部异常值特别有用。它们显示为互相接近的点（x 轴上的低值），但在 y 轴上却是高值，表明组成点对的两个点的值有很大差异。这与所期望的结果正相反，即互相接近的点有相似的值。</p>
 <br>
 
 <h2 id="Ⅲ-是否存在趋势？"><a href="#Ⅲ-是否存在趋势？" class="headerlink" title="Ⅲ 是否存在趋势？"></a>Ⅲ 是否存在趋势？</h2><h3 id="Trend-Analyst-趋势分析"><a href="#Trend-Analyst-趋势分析" class="headerlink" title="Trend Analyst &#x2F; 趋势分析"></a>Trend Analyst &#x2F; 趋势分析</h3><p>“趋势分析”工具提供数据的三维透视图。采样点的位置绘制在 x,y 平面上，z值表示感兴趣的属性值。趋势分析工具将散点图投影到 x,z 平面和 y,z 平面上，通过多项式曲线对每个投影进行了拟合。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Trend.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Trend.png"></p>
 <p>浏览图形垂直墙面上的粗线。这些线表示趋势。一条趋势线沿 x 轴（通常表示纵向趋势），另一条显示沿 y 轴的趋势（通常表示纬度趋势）。如果经过投影点的曲线是平的，则不存在趋势；如果多项式曲线具有确切的模式（如下图的蓝线和绿线），这表明数据中存在某种趋势。</p>
 <p>另外，检查趋势时更改多项式的阶非常有用；检查不同于标准 N–S 和 E–W 方向的趋势非常有帮助，可以通过旋转趋势轴检查数据。</p>
 <br>
@@ -381,11 +381,11 @@
 <h3 id="Semivariogram-Covariance-Cloud-半变异函数-协方差云-1"><a href="#Semivariogram-Covariance-Cloud-半变异函数-协方差云-1" class="headerlink" title="Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云"></a>Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云</h3><p>如果存在空间相关性，则距离较近的点对（在 x 轴的最左侧）应具有较小的差值（在 y 轴上的值较小）。随着各个点之间的距离越来越大（点在 x 轴上向右移动），通常，差值的平方也应随之增大（在 y 轴上向上移动）。通常，平方差超过某个距离后就会保持不变。超过这个距离的位置对被视为不相关。</p>
 <p>如果半变异函数中的点对构成一条水平的直线，那么数据中可能不存在空间自相关，因而对数据进行插值也就失去了意义。</p>
 <p>地统计方法的基本假设是，对于任意两个彼此间的距离和方向都相近的位置，其差值的平方也应相近。这种关系称为<strong>平稳性</strong>。空间自相关可能仅依赖于两个位置之间的距离，这被称为<strong>各向同性</strong>。如果事物在某些方向上比在其他方向上更相似，也就是半变异函数和协方差中都存在这种方向性影响，它被称为<strong>各向异性</strong>。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Direction.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Direction.png"></p>
 <br>
 
 <h3 id="交叉协方差云"><a href="#交叉协方差云" class="headerlink" title="交叉协方差云"></a>交叉协方差云</h3><p>“交叉协方差云”工具可用于研究两个数据集之间的交叉相关。交叉协方差云显示了两个数据集间的所有位置对的经验交叉协方差，并且将其作为两位置间距离的函数对其进行绘制，与上面的工具类似，该工具也提供具有搜索方向功能的协方差表面。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Crosscovariance.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Crosscovariance.png"></p>
 <br>
 
 <p>对数据有了第一印象，并且用 ESDA 工具对数据做了检查，我们已经对待研究的数据有了一些先验知识，那么下面就可以选择插值方法来创建表面了，下一篇继续。</p>

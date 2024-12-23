@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="Python功能强大而易于学习。对于ArcGIS for Desktop用户来讲，Python是提高工作效率的不二选择。  Arcpy是esri提供的用于高效数据处理分析、制图等的Python站点包。 利用ArcPy，我们可以在ArcMap的Python窗口交互执行脚本，还可以创建自定义脚本工具或脚本工具箱，还可以在ArcGIS之外运行独立脚本，享受更纯正的python体验。 这一篇说说如何利用P">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ParallelPython.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ParallelPython.png">
 <meta property="article:published_time" content="2016-04-28T04:31:40.000Z">
-<meta property="article:modified_time" content="2018-11-12T15:18:46.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.358Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ParallelPython.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ParallelPython.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2016/04/28/ParallelPython/">
@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -298,7 +298,7 @@
 <p><span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9hcmNtYXAvbGF0ZXN0L2FuYWx5emUvYXJjcHkvd2hhdC1pcy1hcmNweS0uaHRt">Arcpy<i class="fa fa-external-link-alt"></i></span>是esri提供的用于高效数据处理分析、制图等的Python站点包。 利用ArcPy，我们可以在ArcMap的Python窗口交互执行脚本，还可以创建自定义脚本工具或脚本工具箱，还可以在ArcGIS之外运行独立脚本，享受更纯正的python体验。</p>
 <p>这一篇说说如何利用Python批量执行数据处理任务，这个问题也是前段时间遇到的用户的实际问题，比较有价值。</p>
 <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>还是从实例开始……</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ParallelPython.png"></p>
+<p><img data-src="/images/blogImg/ParallelPython.png"></p>
 <p>有一个简单但耗体力的裁剪任务，希望通过大量面分割（逐一裁剪）大量的数据，类似Split工具要完成的任务，并且要按照一定的规则命名将分割结果输出到指定的位置，例如要求有指定前缀。</p>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>例如，一种思路是逐一遍历面要素，然后去裁剪目标数据再输出，这时你可能会遇到下面的小问题：</p>
 <p><strong>我如何通过ArcPy获取要素的几何？</strong></p>

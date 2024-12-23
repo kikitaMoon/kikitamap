@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,202 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/11/18/3D3DFeatures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/11/18/3D3DFeatures/" class="post-title-link" itemprop="url">3D分析之3D要素工具箱</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-11-18 21:50:43" itemprop="dateCreated datePublished" datetime="2012-11-18T21:50:43+08:00">2012-11-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/11/18/3D3DFeatures/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/11/18/3D3DFeatures/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>整理有关 ArcGIS 10.1 3D分析工具箱中，3D Feature 工具箱中，各个工具的功能及注意事项。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Toolset.png"></p>
+<h1 id="1-Add-Z-information-（添加-Z-信息）"><a href="#1-Add-Z-information-（添加-Z-信息）" class="headerlink" title="1. Add Z information （添加 Z 信息）"></a><strong>1. Add Z information （添加 Z 信息）</strong></h1><p><img data-src="/images/blogImg/3D3DFeatures_AddZInfo.png"></p>
+<p><strong>各种几何类型的Z信息：</strong></p>
+<ul>
+<li><p><strong>Points</strong> - Z 值</p>
+</li>
+<li><p><strong>Multipoints</strong> - Z 最小值、Z 最大值、Z 平均值、点计数</p>
+</li>
+<li><p><strong>Polylines</strong> - Z 最小值、Z 最大值、Z 平均值、3D 长度、最小坡度、最大坡度、平均坡度、折点计数</p>
+</li>
+<li><p>**Polygons **- Z 最小值、Z 最大值、Z 平均值、3D 长度、最小坡度、最大坡度、平均坡度、折点计数</p>
+</li>
+<li><p><strong>Multipatches</strong>- Z 最小值、Z 最大值、表面面积、体积、最小坡度、最大坡度、平均坡度</p>
+</li>
+</ul>
+<p><strong>关于坡度值：</strong></p>
+<p>坡度以百分比值或度数的形式返回.</p>
+<p>最小坡度根据值最接近 0 或水平度的线段获得。</p>
+<p>最大坡度根据具有最大计算值的线段获得。</p>
+<p>平均坡度通过按 3D 长度对每条线段进行加权后对所有线段的坡度求平均值获得。这会导致较长线段对结果值的影响比较短线段更大。</p>
+<p>面要素的坡度值仅针对边要素计算，使用的方法与线段应用的方法一样。</p>
+<p><strong>关于体积：</strong></p>
+<p>只能对闭合多面体计算体积。非闭合多面体要素将返回值 0.0。</p>
+<p>在 Solaris 平台上，设计的局限性当前将使工具无法确定多面体是否闭合，因此假定所有多面体均为闭合多面体，将针对所有多面体计算体积测量。</p>
+<p><strong>关于噪点过滤器：</strong></p>
+<p>提供可用于在进行统计计算时排除一小部分要素的选项。此选项非常适用于获得准确的最大坡度估值，因为一小部分要素的坡度值通常较极端，可能使统计结果产生偏差。</p>
+<p>面积或长度选项中给出的值将被用于排除这部分要素。此参数不适用于点和多点要素。</p>
+<p>NO_FILTER —不使用任何噪点过滤器。这是默认设置。</p>
+<p>AREA &lt;…&gt; —对多面体要素类中的部分要素应用面积过滤器。面积 值为 0.001 表示系统将忽略多面体中面积小于 0.001 的部分。</p>
+<p>LENGTH &lt;…&gt; — 对线要素类或面要素类中的部分要素应用长度过滤器。长度值为 0.001 时表示系统将忽略长度小于 0.001 的那部分要素。</p>
+<h1 id="2-Buffer-3D（3D-缓冲区）"><a href="#2-Buffer-3D（3D-缓冲区）" class="headerlink" title="2. Buffer 3D（3D 缓冲区）"></a><strong>2. Buffer 3D（3D 缓冲区）</strong></h1><p><img data-src="/images/blogImg/3D3DFeatures_buffer3D.png"></p>
+<p>在点或线要素周围创建 3D 缓冲区。点输入将会生成<strong>球体</strong>，线输入将会生成<strong>圆柱</strong>要素。结果为Multipatch要素。</p>
+<p>提高缓冲<strong>质量</strong>会生成更平滑的 3D 要素，但处理时间将会更长。</p>
+<p>考虑指定一个<strong>简化值</strong>以提高复杂线要素（例如带有大量折点的曲线）的性能。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Buffer3D2.png"></p>
+<h1 id="3-nbsp-Difference-3D（3D-差异）"><a href="#3-nbsp-Difference-3D（3D-差异）" class="headerlink" title="3.&nbsp;Difference 3D（3D 差异）"></a><strong>3.&nbsp;Difference 3D（3D 差异）</strong></h1><p><img data-src="/images/blogImg/3D3DFeatures_diff3D.png"></p>
+<p>类似于2D中 Erase 工具。</p>
+<p>输入面必须是闭合的Multipatch，生成的结果不包含任何属性信息。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Diff3DTool.png"></p>
+<p>参数 Output Table，勾选后，生成这样三列：</p>
+<blockquote>
+<p>Output_ID - 输出要素类的唯一 ID。<br>Minuend_ID - 主多面体的唯一 ID。<br>Subtrahend - 已从主多面体中减去的多面体要素的唯一 ID。</p>
+</blockquote>
+<h1 id="4-Enclose-Multipatch-（封闭多面体）"><a href="#4-Enclose-Multipatch-（封闭多面体）" class="headerlink" title="4. Enclose Multipatch （封闭多面体）"></a><strong>4. Enclose Multipatch （封闭多面体）</strong></h1><p>创建闭合多面体要素。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Enclose.png"></p>
+<p>Grid Size：用于构造闭合多面体要素的精度。此值使用输入要素的空间参考的线性单位定义。</p>
+<h1 id="5-nbsp-Feature-To-3D-By-Attribute（通过属性从要素转换到-3D）"><a href="#5-nbsp-Feature-To-3D-By-Attribute（通过属性从要素转换到-3D）" class="headerlink" title="5.&nbsp;Feature To 3D By Attribute（通过属性从要素转换到 3D）"></a><strong>5.&nbsp;Feature To 3D By Attribute（通过属性从要素转换到 3D）</strong></h1><p>从输入要素的属性中获得的Z值创建 3D 要素。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Featureto3DAttr.png"></p>
+<p>此工具支持点、多点、线和面几何。</p>
+<p>各要素的高程都从在指定的字段中获得。</p>
+<p>对于线要素还可提供第二个高度字段。每条线的起点使用第一个高度，终点使用第二个高度。中间所有折点的高度都将根据两个端点连线的坡度进行内插。</p>
+<h1 id="6-Inside-3D（3D-内部）"><a href="#6-Inside-3D（3D-内部）" class="headerlink" title="6. Inside 3D（3D 内部）"></a><strong>6. Inside 3D（3D 内部）</strong></h1><p>用于识别3D 要素是否包含在闭合的多面体中。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Inside3D.png"></p>
+<p>Input Feature 可以是：point、polyline、polygon、multipatch feature class；</p>
+<p>输出的表中包含：</p>
+<blockquote>
+<p><strong>Target_ID</strong> - 输入要素的唯一 ID。<br><strong>Status</strong> - 要素完全还是部分落入多面体内。</p>
+</blockquote>
+<p>如果勾选了 Complex Output Table ，生成的表中会多出来：<strong>Container_ID</strong> - 多面体的唯一 ID。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Complex.png"></p>
+<h1 id="7-Intersect-3D（3D-相交）"><a href="#7-Intersect-3D（3D-相交）" class="headerlink" title="7. Intersect 3D（3D 相交）"></a><strong>7. Intersect 3D（3D 相交）</strong></h1><p>计算闭合多面体要素的交集。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Intersect3D.png"></p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Intersect3DTool.png"></p>
+<p><strong>注意：</strong></p>
+<p>如果只提供了一个输入要素类，将会计算该多面体数据集中各要素的相交情况；</p>
+<p>如果提供了两个要素，将会确定这两个数据集的要素的相交部分，同时忽略那些只存在于一个输入中相交情形。</p>
+<p><strong>输出类型：</strong></p>
+<ul>
+<li><p>SOLID — 创建交集闭合多面体。这是默认设置。</p>
+</li>
+<li><p>SURFACE — 创建表示输入要素之间共享面的多面体表面。</p>
+</li>
+<li><p>POLYLINE — 创建表示输入要素之间共享边的折线。</p>
+</li>
+</ul>
+<h1 id="8-nbsp-Intersect-3D-Line-With-Multipatch（3D-线与多面体相交）"><a href="#8-nbsp-Intersect-3D-Line-With-Multipatch（3D-线与多面体相交）" class="headerlink" title="8.&nbsp;Intersect 3D Line With Multipatch（3D 线与多面体相交）"></a><strong>8.&nbsp;Intersect 3D Line With Multipatch（3D 线与多面体相交）</strong></h1><p><img data-src="/images/blogImg/3D3DFeatures_Intersect3DLine.png"></p>
+<p>确定并返回线与多面体要素之间几何交集的数量。可选择性地将表示交集的点要素和表示在此类点分开的输入线的线要素写入输出要素类中。</p>
+<p>交点计数将在消息窗口中作为整数结果返回，并可在模型和脚本中用于建立后续操作的前提条件。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Intersect3DLineMessage.png"></p>
+<h1 id="9-nbsp-Is-Closed-3D（是否为闭合-3D）"><a href="#9-nbsp-Is-Closed-3D（是否为闭合-3D）" class="headerlink" title="9.&nbsp;Is Closed 3D（是否为闭合 3D）"></a><strong>9.&nbsp;Is Closed 3D（是否为闭合 3D）</strong></h1><p>评估多面体要素是否是完全封闭的。</p>
+<p>将 IsClose 字段添加到现有Multipatch要素的属性表中。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_IsClosed.png"></p>
+<h1 id="10-Near-3D（3D-邻近）"><a href="#10-Near-3D（3D-邻近）" class="headerlink" title="10. Near 3D（3D 邻近）"></a><strong>10. Near 3D（3D 邻近）</strong></h1><p>计算每个输入要素到一个或多个邻近要素类中的最近要素的三维距离。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Near3D.png"></p>
+<p>在原输入数据的属性表中增加N多最邻近点的信息。</p>
+<h1 id="11-Union-3D（3D-联合）"><a href="#11-Union-3D（3D-联合）" class="headerlink" title="11. Union 3D（3D 联合）"></a><strong>11. Union 3D（3D 联合）</strong></h1><p>基于输入要素类对闭合的重叠多面体要素进行合并。</p>
+<p><img data-src="/images/blogImg/3D3DFeatures_Union3D.png"></p>
+<p>如果两个或多个多面体要素仅共享一条边或一个折点，则会发出一个警告，说明生成的要素不是简单要素，因此无法创建。</p>
+<p>如果组中包含的多面体没有共享的体积或空间，则会返回相同的消息。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -291,16 +487,16 @@
           <p>为了表示连续的表面，ArcGIS 提供了多种表示、存储函数表面的数据格式，主要是以下四类，其中包括10.1带来的新类型：LAS Dataset。</p>
 <p>我们可以借助于ArcGIS的3D分析扩展，对这些函数表面数据进行三维的显示、分析等。但是需要注意的是，这些数据并不是真正意义上的真三维，这是我们常说的2.5D。因为这些数据在某个XY坐标对对应的位置上，只能存储一个Z值，而真正的三维实体是在某个位置上有一系列的Z值。这种三维实体，ArcGIS中是以Multipatch存储和表示的。</p>
 <p><strong>1.Raster</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DSupportedSurface_Raster.png"></p>
+<p><img data-src="/images/blogImg/3DSupportedSurface_Raster.png"></p>
 <p>这是最常见的一种栅格表面数据格式，通常是浮点型的连续栅格。</p>
 <p><strong>2.TIN</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DSupportedSurface_TIN.gif"></p>
+<p><img data-src="/images/blogImg/3DSupportedSurface_TIN.gif"></p>
 <p><strong>3.LAS Dataset</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DSupportedSurface_LAS.png"></p>
+<p><img data-src="/images/blogImg/3DSupportedSurface_LAS.png"></p>
 <p><strong>4.Terrain Dataset</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DSupportedSurface_Terrain.gif"></p>
+<p><img data-src="/images/blogImg/3DSupportedSurface_Terrain.gif"></p>
 <p><strong>四种格式，在各种GDB中的支持情况：</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/3DSupportedSurface_GDB.png"></p>
+<p><img data-src="/images/blogImg/3DSupportedSurface_GDB.png"></p>
 
       
     </div>
@@ -413,7 +609,7 @@
 <ul>
 <li>那神马是立方体投影（cube projection）？<br>也就是将地球投影到各面都是正方形的六面体上。如下图：</li>
 </ul>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcSceneArcGlobe.gif"></p>
+<p><img data-src="/images/blogImg/ArcSceneArcGlobe.gif"></p>
 <p>需要说明，这种投影，经线和纬线都是直线；在纬度 +45° 和 -45° 之间，东南西北方向是准确的，比例尺是正确的；在极面上，由中心确定的方向是真实的。<br>但是这种投影不适合制图，仅适用于ArcGlobe。</p>
 <h1 id="3-内存管理与缓存机制"><a href="#3-内存管理与缓存机制" class="headerlink" title="3. 内存管理与缓存机制"></a>3. 内存管理与缓存机制</h1><p>ArcScene - 将所有数据加载到内存中，必要的时候使用虚拟内存。也因此，ArcScene通常用来展示小场景、小数据量。<br>ArcGlobe - 通常专用于超大型数据集，缓存过程中会建立索引并将所有数据组织为各个切片和细节层次。</p>
 <h1 id="4-数据类型的支持"><a href="#4-数据类型的支持" class="headerlink" title="4. 数据类型的支持"></a>4. 数据类型的支持</h1><p>ArcGlobe支持terrain数据，但是ArcScene不支持。<br>ArcScene中不支持Annotation。</p>
@@ -524,7 +720,7 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>接收雨水的区域以及雨水到达出水口前所流经的网络被称为水系。流经水系的水流只是通常所说的水文循环的一个子集，水文循环还包括降雨、蒸发和地下水流。水文分析工具重点处理的是水在地表上的运动情况。“水文分析”工具用于为地表水流建立模型。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Toolset.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Toolset.png"></p>
 <p><strong>盆域分析（Basin）</strong>：创建描绘所有流域盆地的栅格。</p>
 <p><strong>填洼（Fill）</strong>：通过填充表面栅格中的汇来移除数据中的小缺陷。</p>
 <p><strong>流量（Flow Accumulation）</strong>：创建每个像元累积流量的栅格。可选择性应用权重系数。</p>
@@ -539,23 +735,23 @@
 <br>
 
 <p>了解水系的术语，如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Term.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Term.png"></p>
 <p>以下流程图显示的是从数字高程模型 (DEM) 中提取水文信息（如分水岭边界和河流网络）的过程：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Workflow.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Workflow.png"></p>
 <p>现在就以手中的这个DEM为例来依次使用工具集中的工具，来学习这部分功能：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_DEM.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_DEM.png"></p>
 <br>
 
 <h1 id="一、流向（Flow-Direction）"><a href="#一、流向（Flow-Direction）" class="headerlink" title="一、流向（Flow Direction）"></a>一、流向（Flow Direction）</h1><p>流向工具的输出是值范围介于 1 到 255 之间的整型栅格。从中心出发的各个方向值为：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_FlowDirection.gif"></p>
+<p><img data-src="/images/blogImg/SAHydrology_FlowDirection.gif"></p>
 <p>例如，如果最陡下降方向位于当前处理像元的左侧，则将该处理像元的流向编码将为 16。</p>
 <p>如果像元的 z 值在多个方向上均发生相同变化，并且该像元是凹陷点的一部分，则该像元的流向将被视为未定义。此时，该像元在输出流向栅格中的值将为这些方向的总和。例如，如果 z 值向右（流向 &#x3D; 1）和向下（流向 &#x3D; 4）的变化相同，则该像元的流向为 1 + 4 &#x3D; 5。可以使用汇工具将具有未定义流向的像元标记为凹陷点。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_FLowDirection2.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_FLowDirection2.png"></p>
 <br>
 
 <h1 id="二、汇（Sink）"><a href="#二、汇（Sink）" class="headerlink" title="二、汇（Sink）"></a>二、汇（Sink）</h1><p>汇是指流向栅格中流向无法被赋予八个有效值之一的一个或一组空间连接像元。汇被视为具有未定义的流向，并被赋予等于其可能方向总和的值。</p>
 <p>汇工具的输出是一个整型栅格，其中每个汇都被赋予一个唯一值。汇的编号介于 1 到汇的数量之间。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Sink.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Sink.png"></p>
 <br>
 
 <h1 id="三、填洼（Fill）"><a href="#三、填洼（Fill）" class="headerlink" title="三、填洼（Fill）"></a>三、填洼（Fill）</h1><p>通过填充表面栅格中的汇来移除数据中的小缺陷。</p>
@@ -568,9 +764,9 @@
 <h1 id="四、流量（Flow-Accumulation）"><a href="#四、流量（Flow-Accumulation）" class="headerlink" title="四、流量（Flow Accumulation）"></a>四、流量（Flow Accumulation）</h1><p>创建每个像元累积流量的栅格。流量累积将基于流入输出栅格中每个像元的像元数。</p>
 <p>高流量的输出像元是集中流动区域，可用于标识河道。流量为零的输出像元是局部地形高点，可用于识别山脊。</p>
 <p>流量工具不遵循压缩环境设置。输出栅格将始终处于未压缩状态。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_FLowAccu.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_FLowAccu.png"></p>
 <p>通过上面的填洼，求流向，得到如下流量图，看到了河道：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_FlowAccu2.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_FlowAccu2.png"></p>
 <br>
 
 <h1 id="五、河网分级（Stream-Order）"><a href="#五、河网分级（Stream-Order）" class="headerlink" title="五、河网分级（Stream Order）"></a>五、河网分级（Stream Order）</h1><p>河网分级是一种将级别数分配给河流网络中的连接线的方法。此级别是一种根据支流数对河流类型进行识别和分类的方法。仅需知道河流的级别，即可推断出河流的某些特征。</p>
@@ -578,28 +774,28 @@
 <p><strong>Strahler 河流分级方法：</strong></p>
 <p>在 Strahler 法中，所有没有支流的连接线都被分为 1 级，它们称为第一级别。当级别相同的河流交汇时，河网分级将升高。</p>
 <p>因此，两条一级连接线相交会创建一条二级连接线，两条二级连接线相交会创建一条三级连接线，依此类推。但是，级别不同的两条连接线相交不会使级别升高。例如，一条一级连接线和一条二级连接线相交不会创建一条三级连接线，但会保留最高级连接线的级别。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Strahler.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Strahler.png"></p>
 <p><strong>Shreve 河流分级方法：</strong></p>
 <p>Shreve 法考虑网络中的所有连接线。与 Strahler 法相同，所有外连接线都被分为 1 级。但对于 Shreve 法中的内连接线，级别是增加的。例如，两条一级连接线相交会创建一条二级连接线，一条一级连接线和一条二级连接线相交会创建一条三级连接线，而一条二级连接线和一条三级连接线相交则会创建一条五级连接线。</p>
 <p>因为级别可增加，所以 Shreve 法中的数字有时指的是量级，而不是级别。在 Shreve 法中，连接线的量级是指上游连接线的数量。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Shreve.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Shreve.png"></p>
 <br>
 
 <h1 id="六、栅格河网矢量化（Stream-to-Feature）"><a href="#六、栅格河网矢量化（Stream-to-Feature）" class="headerlink" title="六、栅格河网矢量化（Stream to Feature）"></a>六、栅格河网矢量化（Stream to Feature）</h1><p>栅格河网矢量化工具使用的算法主要用于矢量化河流网络或任何表示方向已知的栅格线性网络的栅格。</p>
 <p>该工具使用方向栅格来帮助矢量化相交像元和相邻像元。可将两个值相同的相邻栅格河网矢量化为两条平行线。</p>
 <p>这与栅格转折线 (Raster to Polyline) 工具相反，后者通常更倾向于将线折叠在一起。下图是两者的对比：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Stream2Feature.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Stream2Feature.png"></p>
 <br>
 
 <h1 id="七、河流连接（Stream-link）"><a href="#七、河流连接（Stream-link）" class="headerlink" title="七、河流连接（Stream link）"></a>七、河流连接（Stream link）</h1><p>向各交汇点之间的栅格线状网络的各部分分配唯一值。</p>
 <p>“连接”是指连接两个相邻交汇点、连接一个交汇点和出水口或连接一个交汇点和分水岭的河道的河段。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Streamlink1.gif"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Streamlink2.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Streamlink1.gif"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Streamlink2.png"></p>
 <br>
 
 <h1 id="八、水流长度（Flow-Length）"><a href="#八、水流长度（Flow-Length）" class="headerlink" title="八、水流长度（Flow Length）"></a>八、水流长度（Flow Length）</h1><p>水流长度工具的主要用途是计算给定盆地内最长水流的长度。该度量值常用于计算盆地的聚集时间。这可使用 UPSTREAM 选项来完成。</p>
 <p>该工具也可通过将权重栅格用作下坡运动的阻抗，来创建假设降雨和径流事件的距离-面积图。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Flowlength1.png">   <img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Flowlength2.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Flowlength1.png">   <img data-src="/images/blogImg/SAHydrology_Flowlength2.png"></p>
 <br>
 
 <h1 id="九、捕捉倾泻点（Snap-pour-point）"><a href="#九、捕捉倾泻点（Snap-pour-point）" class="headerlink" title="九、捕捉倾泻点（Snap pour point）"></a>九、捕捉倾泻点（Snap pour point）</h1><p>捕捉倾泻点工具用于确保在使用分水岭工具描绘流域盆地时选择累积流量大的点。</p>
@@ -607,175 +803,16 @@
 <br>
 
 <h1 id="十、分水岭（Watershed）"><a href="#十、分水岭（Watershed）" class="headerlink" title="十、分水岭（Watershed）"></a>十、分水岭（Watershed）</h1><p>确定栅格中一组像元之上的汇流区域。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_Watershed.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_Watershed.png"></p>
 <br>
 
 <h1 id="十一、盆域"><a href="#十一、盆域" class="headerlink" title="十一、盆域"></a>十一、盆域</h1><p>创建描绘所有流域盆地的栅格。</p>
 <p>通过识别盆地间的山脊线，在分析窗口中描绘流域盆地。通过分析输入流向栅格数据找出属于同一流域盆地的所有已连接像元组。通过定位窗口边缘的倾泻点（水将从栅格倾泻出的地方）及凹陷点，然后再识别每个倾泻点上的汇流区域，来创建流域盆地。这样就得到流域盆地的栅格。</p>
 <p>以下是盆域分析示例：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAHydrology_bash.png"></p>
+<p><img data-src="/images/blogImg/SAHydrology_bash.png"></p>
 <br>
 
 <p>That’s all.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/27/SAMultiDimensions/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/08/27/SAMultiDimensions/" class="post-title-link" itemprop="url">空间分析之多元分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-08-27 09:10:00" itemprop="dateCreated datePublished" datetime="2012-08-27T09:10:00+08:00">2012-08-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/08/27/SAMultiDimensions/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/27/SAMultiDimensions/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>通过多元统计分析可以探查许多不同类型的属性之间的关系。</p>
-<p>有两种可用的多元分析：分类（监督分类与非监督分类&#x2F;Supervised&amp;Unsupervised)）和主成分分析&#x2F;Principal Component Analysis  (PCA)。</p>
-<p>ArcGIS 提供了如下工具：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Toolset.png"></p>
-<br>
-
-<h1 id="一、波段集统计工具（Band-Collection-Statistics）"><a href="#一、波段集统计工具（Band-Collection-Statistics）" class="headerlink" title="一、波段集统计工具（Band Collection Statistics）"></a><strong>一、波段集统计工具（Band Collection Statistics）</strong></h1><p>栅格波段必须具有一个公共交集。如果不存在公共交集，则会出现错误，且不会创建任何输出。</p>
-<p>如果栅格波段的范围不同，统计数据将以所有输入栅格波段的共同的空间范围来计算。默认情况下，像元大小为输入栅格的最大像元的大小；否则，将取决于栅格分析环境设置。</p>
-<p>此工具计算每个图层的基本统计测量值（最小值、最大值、平均值和标准差），如果勾选协方差和相关矩阵，还可以得到这两个值。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_BandColSts.png"></p>
-<h1 id="二、创建特征（Create-Signature）"><a href="#二、创建特征（Create-Signature）" class="headerlink" title="二、创建特征（Create Signature）"></a><strong>二、创建特征（Create Signature）</strong></h1><p>创建由输入样本数据和一组栅格波段定义的类的 ASCII 特征文件。该工具可创建将用作其他多元分析工具的输入参数的文件。</p>
-<p>该文件由两部分组成：</p>
-<p>1） 所有类的常规信息，例如图层数、输入栅格名称和类别数。<br>2） 每个类别的特征文件，由样本数、平均值和协方差矩阵组成。</p>
-<h1 id="三、编辑特征（Edit-Signature）"><a href="#三、编辑特征（Edit-Signature）" class="headerlink" title="三、编辑特征（Edit Signature）"></a><strong>三、编辑特征（Edit Signature）</strong></h1><p>通过合并、重新编号和删除类特征来编辑和更新特征文件。</p>
-<p>输入特征重映射文件是 ASCII 文件，其每一行有两列值与之对应，以冒号分隔。第一列是原始类 ID 值。第二列包含用于在特征文件中更新的新类 ID。文件中的所有条目必须基于第一列以升序进行排序。</p>
-<p>编辑特征文件的写法是固定的，如下：</p>
-<p>只有需要编辑的类才必须被放入特征重映射文件；任何在重映射文件中不存在的类将保持不变。</p>
-<p>要合并一组类，原类 ID：新类 ID。</p>
-<p>要删除类特征，使用 -9999 作为该类第二列的值。</p>
-<p>要重新编号，将类 ID 重新编号为某个不存在于输入特征文件中的值。</p>
-<p>示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 : 3</span><br><span class="line">4 : 11</span><br><span class="line">5 : -9999</span><br><span class="line">9 : 3</span><br></pre></td></tr></table></figure>
-
-<p>上例将使用 3 合并类 2 和 类 9，使用 11 合并类 4，并将删除类 5。</p>
-<h1 id="四、树状图（Dendrogram）"><a href="#四、树状图（Dendrogram）" class="headerlink" title="四、树状图（Dendrogram）"></a><strong>四、树状图（Dendrogram）</strong></h1><p>构造可显示特征文件中连续合并类之间的属性距离的树状图。</p>
-<p>有关其工作原理，详见：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS96aC1jbi9hcmNnaXNkZXNrdG9wLzEwLjAvaGVscC9pbmRleC5odG1sIy9uYS8wMDl6MDAwMDAwcTYwMDAwMDAv">http://help.arcgis.com/zh-cn/arcgisdesktop/10.0/help/index.html#/na/009z000000q6000000/<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="五、最大似然法分类（Maximum-Likelihood-Classification）"><a href="#五、最大似然法分类（Maximum-Likelihood-Classification）" class="headerlink" title="五、最大似然法分类（Maximum Likelihood Classification）"></a><strong>五、最大似然法分类（Maximum Likelihood Classification）</strong></h1><p>最大似然法分类工具所用的算法基于两条原则：</p>
-<p>1） 每个类样本中的像元在多维空间中呈正态分布<br>2） 贝叶斯决策理论</p>
-<p><strong>TIPS：</strong>工具中有几个参数需要注意：</p>
-<p>reject_fraction：将因最低正确分配概率而得不到分类的像元部分。</p>
-<p>默认值为 0.0；将对每个像元进行分类。共有 14 个有效输入：0.0、0.005、0.01、0.025、0.05、0.1、0.25、0.5、0.75、0.9、0.95、0.975、0.99 和 0.995。</p>
-<p>a_priori_probabilities：指定将如何确定先验概率。</p>
-<ul>
-<li>EQUAL — 所有类将具有相同的先验概率。</li>
-<li>SAMPLE — 先验概率将与特征文件内所有类中采样像元总数的相关的各类的像元数成比例。</li>
-<li>FILE — 先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</li>
-</ul>
-<p>以下是通过三类样本的特征文件，分类的栅格数据的示例：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Classification.png"></p>
-<h1 id="六、Iso-聚类（Iso-Cluster）"><a href="#六、Iso-聚类（Iso-Cluster）" class="headerlink" title="六、Iso 聚类（Iso Cluster）"></a><strong>六、Iso 聚类（Iso Cluster）</strong></h1><blockquote>
-<p>Iso表示：iterative self-organizing –迭代自组织方法。</p>
-</blockquote>
-<p>Iso聚类工具对输入波段列表中组合的多元数据执行聚类。所生成的特征文件（*.gsg）可用作生成非监督分类栅格的分类工具（例如最大似然法分类）的输入。</p>
-<p>类数的最小有效值为二。不存在最大聚类数。通常情况下，聚类越多，所需的迭代就越多。</p>
-<h1 id="七、Iso-聚类非监督分类（Iso-Cluster-Unsupervised-Classification）"><a href="#七、Iso-聚类非监督分类（Iso-Cluster-Unsupervised-Classification）" class="headerlink" title="七、Iso 聚类非监督分类（Iso Cluster Unsupervised Classification）"></a><strong>七、Iso 聚类非监督分类（Iso Cluster Unsupervised Classification）</strong></h1><p>此工具为脚本工具，此工具结合了 Iso 聚类工具与最大似然法分类工具的功能。输出经过分类的栅格。</p>
-<h1 id="八、类别概率（Class-Probability）"><a href="#八、类别概率（Class-Probability）" class="headerlink" title="八、类别概率（Class Probability）"></a><strong>八、类别概率（Class Probability）</strong></h1><p>如果发现分类中的某些区域被分配给某一类的概率不是很高，则说明可能存在混合类。</p>
-<p>例如，根据分类概率波段，一个已被分类为森林的区域属于森林类的概率只有 55%。您又发现同一区域属于草地类的概率却有 40%。显然，该区域既不属于森林类也不属于草地类。它更可能是一个森林草地混合类。对于使用分类概率工具生成的分类概率，最好检查分类结果。</p>
-<p>生成的多波段栅格数据的波段数等于类别数，每个波段表示某种分类的可能概率，像元值从0至100。</p>
-<h1 id="九、主成分分析（Principal-Components）"><a href="#九、主成分分析（Principal-Components）" class="headerlink" title="九、主成分分析（Principal Components）"></a><strong>九、主成分分析（Principal Components）</strong></h1><p>对一组栅格波段执行主成分分析 (PCA) 并生成单波段栅格作为输出。此工具生成的是波段数与指定的成分数相同的多波段栅格。</p>
-<p>主成分分析工具用于将输入多元属性空间中的输入波段内的数据变换到相对于原始空间对轴进行旋转的新的多元属性空间。新空间中的轴（属性）互不相关。之所以在主成分分析中对数据进行变换，主要是希望通过消除冗余的方式来压缩数据。</p>
-<p>以上提到的几个工具，在ArcGIS 10.x版本中，除了在ArcToolbox中可以找到，在 Image Classification 工具条中也可以找到对应的功能，如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Toolbar.png"></p>
-<p>这个工具集涉及很多遥感的理论知识，仅仅使用工具是不够的，后面需要多多学习…… </p>
 
       
     </div>
@@ -884,7 +921,7 @@
     <div class="post-body" itemprop="articleBody">
           <p>在实际工作中，由于成本的限制、测量工作实施困难大等因素，我们不能对研究区域的每一位置都进行测量（如高程、降雨、化学物质浓度和噪声等级）。这时，我们可以考虑合理选取采样点，然后通过采样点的测量值，使用适当的数学模型，对区域所有位置进行预测，形成测量值表面。插值之所以可称为一种可行的方案，是因为我们假设，空间分布对象都是空间相关的，也就是说，彼此接近的对象往往具有相似的特征。</p>
 <p>ArcGIS的空间分析中，提供了插值（Interpolation）工具集，如下：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAInterpolation_Toolset.png"></p>
+<p><img data-src="/images/blogImg/SAInterpolation_Toolset.png"></p>
 <br>
 
 <h1 id="1-反距离权重法（IDW–Inverse-Distance-Weighted）"><a href="#1-反距离权重法（IDW–Inverse-Distance-Weighted）" class="headerlink" title="1. 反距离权重法（IDW–Inverse Distance Weighted）"></a><strong>1. 反距离权重法（IDW–Inverse Distance Weighted）</strong></h1><p>此方法假定所映射的变量因受到与其采样位置间的距离的影响而减小。</p>
@@ -896,7 +933,7 @@
 <p>（1）因为反距离权重法是加权平均距离，所以该平均值不可能大于最大输入或小于最小输入。因此，如果尚未对这些极值采样，便无法创建山脊或山谷。</p>
 <p>（2）此工具最多可处理约 4,500 万个输入点。如果输入要素类包含 4,500 万个以上的点，工具可能无法创建结果。</p>
 <p>工具执行截图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAInterpolation_Demo.png"></p>
+<p><img data-src="/images/blogImg/SAInterpolation_Demo.png"></p>
 <h1 id="2-克里金法（Kriging）"><a href="#2-克里金法（Kriging）" class="headerlink" title="2. 克里金法（Kriging）"></a><strong>2. 克里金法（Kriging）</strong></h1><p>克里金法假定采样点之间的距离或方向可以反映可用于说明表面变化的空间相关性。克里金法是一个多步过程；它包括数据的探索性统计分析、变异函数建模和创建表面，还包括研究方差表面。该方法通常用在土壤科学和地质中。</p>
 <h1 id="3-自然邻域法（Natural-Neighbor）"><a href="#3-自然邻域法（Natural-Neighbor）" class="headerlink" title="3. 自然邻域法（Natural Neighbor）"></a><strong>3. 自然邻域法（Natural Neighbor）</strong></h1><p>可找到距查询点最近的输入样本子集，并基于区域大小按比例对这些样本应用权重来进行插值。该插值也称为 Sibson 或“区域占用 (area-stealing)”插值。</p>
 <h1 id="4-样条函数（Spline）"><a href="#4-样条函数（Spline）" class="headerlink" title="4. 样条函数（Spline）"></a><strong>4. 样条函数（Spline）</strong></h1><p>使用二维最小曲率样条法将点插值成栅格表面。生成的平滑表面恰好经过输入点。</p>

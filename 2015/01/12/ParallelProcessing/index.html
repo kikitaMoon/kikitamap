@@ -29,16 +29,16 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="开始下面正文之前，先说一个旧闻，ArcGIS Desktop 10.1 SP1 之后的版本中， 出现了一个不明觉厉的 新特性 —— 并行处理（Parallel Processing）。  现在机器硬件越来越优，多核CPU的机器比比皆是，ArcGIS Desktop 32位单进程的模式不能充分的利用这些硬件资源，不能满足大数据量的处理要求。因此，Esri 改进了 ArcToolbox 中的部分工具，">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ParallelProcessing_Toolhelp.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ParallelProcessing_Factor.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ParallelProcessing_taskManager.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ParallelProcessing_OS.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ParallelProcessing_Toolhelp.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ParallelProcessing_Factor.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ParallelProcessing_taskManager.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ParallelProcessing_OS.png">
 <meta property="article:published_time" content="2015-01-12T03:37:49.000Z">
-<meta property="article:modified_time" content="2018-07-03T07:27:59.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.310Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ParallelProcessing_Toolhelp.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ParallelProcessing_Toolhelp.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/01/12/ParallelProcessing/">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -298,11 +298,11 @@
     <div class="post-body" itemprop="articleBody"><p>开始下面正文之前，先说一个旧闻，ArcGIS Desktop 10.1 SP1 之后的版本中， 出现了一个不明觉厉的 <a target="_blank" rel="noopener" href="http://resources.arcgis.com/en/help/main/10.1/index.html#/What_s_new_in_ArcGIS_10_1_service_packs/016w0000005q000000/"><strong>新特性</strong></a> —— <strong>并行处理（Parallel Processing）</strong>。 </p>
 <p>现在机器硬件越来越优，多核CPU的机器比比皆是，ArcGIS Desktop 32位单进程的模式不能充分的利用这些硬件资源，不能满足大数据量的处理要求。因此，Esri 改进了 ArcToolbox 中的部分工具，赋予了这部分工具并行处理的能力，确切地说是一小部分工具。 </p>
 <p>看到这里，问题可能来了，哪些工具支持并行处理呢？遗憾的是官方没有给出这个清单，这一点体验上确实不是很佳。但是我们还是有办法把它们找出来的，当我们在使用某个工具的时候，可以打开工具的帮助，在环境变量题目下找找有没有叫做 <strong>并行处理因子（Parallel Processing Factor）</strong>的项目。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_Toolhelp.png">   </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_Factor.png"> </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_Toolhelp.png">   </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_Factor.png"> </p>
 <p><strong>也就是说，对于所有工具，只有其文档中环境变量下标明的环境变量参数才有效，而不是全部环境变量参数都有效！</strong> </p>
 <p>下面我们来看看这个参数是如何设置和影响工具运行的。做一个简单的小测试，先找到一个支持并行处理的工具，例如 ** Build Pyramids And Statistics** 工具，用其为数据量较大的镶嵌数据集的项目创建金字塔和统计值。在默认设置下，只要工具支持并行处理，工具会自动创建多个进程（<strong>ArcSOCP.exe</strong>）来执行任务。如下图所示： </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_taskManager.png"> </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_taskManager.png"> </p>
 <p>在工具支持并行处理的情况下，设置并行处理因子（Parallel Processing Factor）这个参数又能做什么呢？ </p>
 <p>这个因子的数值，会决定工具运行使用的进程数量。一般，各工具在各个支持的环境中都有进程数量的内置默认值。我们可根据自己的数据情况、执行任务的类型和机器的可用资源对其进行更改。 </p>
 <p>一般是这四种设置方法： </p>
@@ -344,7 +344,7 @@
 <p>我做个了小测试，来对比对相同的数据做相同操作的时间消费。 </p>
 <p><strong>测试环境：</strong> </p>
 <p>Windows 8.1 Enterprise 64bit ；ArcGIS for Desktop 10.3  </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_OS.png"> </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_OS.png"> </p>
 <p><strong>任务</strong>： </p>
 <p>为相同的一个镶嵌数据集的栅格项目创建金字塔和统计值，使用工具 Build Pyramids And Statistics ，金字塔重采样方法和压缩方法等参数均相同。 </p>
 <p><strong>结果</strong>： </p>

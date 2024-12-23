@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,147 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/17/GeographicTransformation1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/01/17/GeographicTransformation1/" class="post-title-link" itemprop="url">ArcGIS中的地理坐标系转换方法参数（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-01-17 18:00:00" itemprop="dateCreated datePublished" datetime="2014-01-17T18:00:00+08:00">2014-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/01/17/GeographicTransformation1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/17/GeographicTransformation1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>852</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>地理坐标系变换是数据处理过程中常遇到的问题，今天就说下这方面的问题。</p>
+<p>如果遇到这种情景：两份数据有不同的坐标系，想叠加在一起显示，作图或显示精度要求不高。</p>
+<p>这种情况使用 ArcMap 的动态投影即可，ArcMap 的内部动投影机制会解决地理坐标系变换的问题。数据在显示的过程中，会实时的被转换，但不改变数据本身。</p>
+<p>如果我们需要进行地理坐标系转换，我们知道 ArcGIS Desktop 中提供了 Project 工具。</p>
+<p>此工具界面上有个至关重要的参数：<strong>Geographic Transformation</strong>。我们发现它的后面赫然写着。依照使用其他工具的经验，这种打了 Optional 标志的参数，不就是可填可不填的意思吗？</p>
+<p>但是，它真的让你随便的可填可不填吗？ Naive！ 图样图森破！ 这个参数的填写与否，完全是受前面两个参数决定的，主要三种情景吧。</p>
+<br>
+
+<h2 id="情景1："><a href="#情景1：" class="headerlink" title="情景1："></a>情景1：</h2><p>不涉及到地理坐标系变换的坐标变换，这个参数完全不需要，而不是 optional 哦。</p>
+<p>例如：从 GCS_Xian_1980 进行投影变换，转换为 Xian_1980_3_Degree_GK_CM_120E 投影坐标系。</p>
+<p>整过转换中，仅使用了高斯克吕格投影变换，没有涉及到地理坐标变换。</p>
+<p><img data-src="/images/blogImg/GeographicTransformation1_Project.jpg"></p>
+<br />
+
+
+
+<h2 id="情景2："><a href="#情景2：" class="headerlink" title="情景2："></a>情景2：</h2><p>涉及到地理坐标系变换的坐标变换，并且ArcGIS 已知二者之间的变换方法，这个参数是必须的，在已知列表中做选择或者自定义。（自定义见：情景3）</p>
+<p>例如：从&nbsp;GCS_Beijing_1954，转换为&nbsp;GCS_WGS_1984坐标系。</p>
+<p>转换过程中涉及到地理坐标系变换，也就是进行了椭球体变换。</p>
+<p>ArcGIS 中提供了6种已知转换方法，可以根据适用范围选择之。其中如何选择，此文不做介绍，请查看我的另一篇<a href="http://kikitamap.com/2013/10/21/Beijing1954ToWGS1984/">博客</a>：</p>
+<p><img data-src="/images/blogImg/GeographicTransformation1_Project2.jpg"></p>
+<br />
+
+
+
+<h2 id="情景3："><a href="#情景3：" class="headerlink" title="情景3："></a>情景3：</h2><p>涉及到地理坐标系变换的坐标变换，并且ArcGIS 未知二者之间的变换方法，也就是ArcGIS没有提供转换方法，但是这个参数是必须的，需要自定义，这个参数前会亮绿灯，告诉用户，必须要填写。另外，上面情景2中，ArcGIS给出的方法，如果都不是自己需要的，也需要自定义。</p>
+<p>例如：从&nbsp;GCS_Beijing_1954，转换为&nbsp;GCS_Xian_1980坐标系。</p>
+<p><img data-src="/images/blogImg/GeographicTransformation1_Project3.jpg"></p>
+<p>需要使用工具 Create Custom Geographic transformation，创建一种转换方法，辅助 Project 工具。</p>
+<p>这个工具的帮助如下，就不赘述了。</p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjLy8wMDE3MDAwMDAwNzYwMDAwMDA=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//001700000076000000<i class="fa fa-external-link-alt"></i></span><br /></p>
+<p>补充：</p>
+<p>讲到这里全部的情形都涵盖了。有的同学会问，为什么会这样呢？ArcGIS为啥就不能都知道转换方法呢？为啥偏要我们自定义呢？好麻烦的耶%￥#@……</p>
+<p>有些坐标系转换的参数是不公开的，属于涉密的内容，所以ArcGIS是没有权利知道变换方法的。例如与 Xian 80 有关的变换。原文：<em>Some geographic coordinate systems do not have any publicly known transformations because that information is considered to have strategic importance to a government or company.</em></p>
+<p>好了，至此，大致就知道这个参数什么时候不需要，什么时候需要，如果没有如何得到，这几个问题。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -292,7 +433,7 @@
 <p>&nbsp; &nbsp; CityEngine目前的帮助文档略显单薄，作为工具书查看是很好的，但是作为知识类资料就不如ArcGIS Desktop的帮助文档完整饱满。因此像“栅格数据支持列表”这种归纳性的文档当然现在还是没有……</p>
 <p>&nbsp; &nbsp; 只能从软件界面自身去寻找了，就把这页贴出来，方便大家参考。从以下这个长长的下列表中可以了解CityEngine支持的类型：</p>
 <p>（png，jpg，tif，jpeg，img，data，ico，xpm，dds，tga，psp，tiff，vbs，sid，mpeg，jsl，xbm，sit，bmp，mpg，dat，com，hqx，cur，dll，bin，emf，exe，gif，xyz，sgi）</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/RasterSupportinCityEngine.jpg"></p>
+<p><img data-src="/images/blogImg/RasterSupportinCityEngine.jpg"></p>
 <p>&nbsp; &nbsp;CityEngine在显示栅格数据时，对数据有一定的要求，不满足要求时可能会出现不显示等情况。</p>
 <p>&nbsp; &nbsp;CityEngine使用了OpenGL技术用于3D模型&#x2F;场景的显示，当显示模型的时候，会将所有的texture数据输入到显存（不是内存哦！）显存的大小在机器中通常是不大的（256M~1.5G，或者更大一点吧），因此CE对输入的栅格数据是要求的。</p>
 <p>&nbsp; &nbsp; 为了获取最佳的效果，如下几点要注意哦~</p>
@@ -549,7 +690,7 @@
     <div class="post-body" itemprop="articleBody">
           <p>在西方国家罗马字母阵营中，字体分为两大种类：Sans Serif和Serif，打字机体虽然也属于Sans Serif，但由于是等宽字体，所以另外独立出 Monospace 这一种类，例如在Web中，表示代码时常常要使用等宽字体。</p>
 <p>Serif的意思是，在字的笔画开始及結束的地方有额外的装饰，而且笔画的粗细会因直橫的不同而有不同。相反的，Sans Serif则沒有这些额外的装饰，笔画粗细大致差不多。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SansSerifVSSerif.gif"></p>
+<p><img data-src="/images/blogImg/SansSerifVSSerif.gif"></p>
 <p>可以看出，我们平时所用的Georgia、Times New Roman等就属于Serif字体，而Arial、Tahoma、Verdana等则属于Sans Serif字体。对中文而言，同样存在这两大种类，很明显，宋体、细明体（繁体中常用）等就属于Serif，而黑体、幼圆等则属于Sans Serif。</p>
 <br>
 
@@ -681,137 +822,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><em>Table 1: Geographic (datum) transformations: well-known IDs, accuracies and areas of use</em><br><img data-src="http://kikitamap.com/images/blogImg/Beijing1954ToWGS1984_1.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Beijing1954ToWGS1984_2.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Beijing1954ToWGS1984_3.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/09/11/CityEngineWebViewerIIS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/09/11/CityEngineWebViewerIIS/" class="post-title-link" itemprop="url">CityEngine Web Viewer IIS 部署</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-09-11 12:43:49" itemprop="dateCreated datePublished" datetime="2013-09-11T12:43:49+08:00">2013-09-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/09/11/CityEngineWebViewerIIS/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/09/11/CityEngineWebViewerIIS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>123</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>中文原文链接：</p>
-<p><span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYXJjZ2lzX2FsbC9hcnRpY2xlL2RldGFpbHMvODM2MzcyOA==">http://blog.csdn.net/arcgis_all/article/details/8363728<i class="fa fa-external-link-alt"></i></span></p>
-<p>esri原文链接：</p>
-<p><span class="exturl" data-url="aHR0cDovL3d3dy5hcmNnaXMuY29tL2hvbWUvaXRlbS5odG1sP2lkPTM4ZmVkZTM5MzVhNDQwZTQ5Y2YzMTZkY2FlNmFhZTQ3">http://www.arcgis.com/home/item.html?id=38fede3935a440e49cf316dcae6aae47<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<p>重点提出来，方便配置：</p>
-<p>（1）先找到 webviewer 文件夹，在CE工作空间下ce.lib 文件夹下；</p>
-<p>（2）将 webviewer 文件夹丢到 wwwroot 文件夹下；</p>
-<p>（3）计算机管理中，webviewer目录中，双击打开右边的窗口中选中MIME类型，添加类型，如下图：</p>
-<br>
-
-<ul>
-<li><p>参数项：</p>
-</li>
-<li><p>文件扩展名： .3ws </p>
-</li>
-<li><p>MIME类型：application&#x2F;octet-stream</p>
-</li>
-</ul>
-<p><img data-src="http://kikitamap.com/images/blogImg/CityEngineWebViewerIIS.png">    </p>
-<p>访问地址：<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdC93ZWJ2aWV3ZXIvY2V2aWV3ZXJfb2ZmbGluZS5odG1s">http://localhost/webviewer/ceviewer_offline.html<i class="fa fa-external-link-alt"></i></span></p>
+          <p><em>Table 1: Geographic (datum) transformations: well-known IDs, accuracies and areas of use</em><br><img data-src="/images/blogImg/Beijing1954ToWGS1984_1.png"></p>
+<p><img data-src="/images/blogImg/Beijing1954ToWGS1984_2.png"></p>
+<p><img data-src="/images/blogImg/Beijing1954ToWGS1984_3.png"></p>
 
       
     </div>

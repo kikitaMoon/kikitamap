@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="从 ArcGIS 10.1 版本开始，我们可以创建 python工具箱 来自定义脚本工具，这种工具箱相比较上一篇提到的标准工具箱。有着独特的优势，具体二者的区别总结过，看这一篇。   认识 Python工具箱Python 工具箱 (.pyt) 是一个简单的文本文件，可以在任何文本编辑器中或者任何 Python IDE 中创建、查看和编辑。要确保 ArcGIS 正确识别 Python 工具箱，工具箱">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool3_Tool.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool3_Execute.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool3_Result.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool3_Perfection.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool3_Tool.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool3_Execute.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool3_Result.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool3_Perfection.png">
 <meta property="article:published_time" content="2015-09-10T06:42:04.000Z">
-<meta property="article:modified_time" content="2018-06-28T10:20:42.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.341Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/CreatePythonTool3_Tool.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/CreatePythonTool3_Tool.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/09/10/CreatePythonTool3/">
@@ -163,7 +163,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -322,7 +322,7 @@
 <br>
 
 <p>在 ArcGIS Desktop 中已经可以看到这个工具箱的雏形：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Tool.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool3_Tool.png"></p>
 <br>
 
 <h2 id="2-定义工具"><a href="#2-定义工具" class="headerlink" title="2 定义工具"></a>2 定义工具</h2><p>下面就是完善工具内部的代码。我就以 ClipVectorWorkspace 为例。</p>
@@ -349,16 +349,16 @@
 <br>
 
 <p>到这里，工具的核心部分已经完成，执行下试试。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Execute.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool3_Execute.png"></p>
 <br>
 
 <p>OK，应该是预期的结果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Result.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool3_Result.png"></p>
 <br>
 
 <h3 id="3-完善"><a href="#3-完善" class="headerlink" title="3 完善"></a>3 完善</h3><p>我们发现不像标准工具箱中的脚本工具和脚本文件本身是散列存储的，python工具箱以及其中的所有工具的代码都在这一个pyt文件中，维护起来便利了不少。如果想在工具箱中继续添加工具，只要继续增加一个工具类即可。</p>
 <p>经过前两步的过程，工具已经可以拿去使用。如果为了工具更友好，还可以继续调整下代码，以便遇到异常的时候，让用户了解更详细的原因，这里就再往下进行了。工具分享给别人，最后只差要丰富下工具文档了，同样在 Python 工具的 Item Description 中编辑。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Perfection.png"></p>
+<p><img data-src="/images/blogImg/CreatePythonTool3_Perfection.png"></p>
 
     </div>
 

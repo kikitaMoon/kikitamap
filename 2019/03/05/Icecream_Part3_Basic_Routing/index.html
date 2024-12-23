@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="Part 1 中我们准备了底图，Part 2 中我们获取了位置，现在终于开张了，“您有新的  ‘ 饿了乎 ’  订单到了！”  我们给外卖小哥规划下路线吧！ 1 Routing Service首先，HERE Map API 中提供了一个叫做 Platform 的类，实例化Platform后，我就可以借以访问 HERE Routing Service。 有关 Routing API 的帮助文档，点这">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing_current.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing_current.png">
 <meta property="article:published_time" content="2019-03-05T08:13:16.000Z">
-<meta property="article:modified_time" content="2019-04-02T07:48:56.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.400Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="HERE Map">
 <meta property="article:tag" content="HLS">
 <meta property="article:tag" content="Javascript">
 <meta property="article:tag" content="Routing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2019/03/05/Icecream_Part3_Basic_Routing/">
@@ -163,7 +163,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -322,7 +322,7 @@
 <li>如上代码是我修改后的版本。</li>
 </ul>
 </blockquote>
-<p><img data-src="http://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing.png"></p>
+<p><img data-src="/images/blogImg/Icecream_Part3_Basic_Routing.png"></p>
 <h3 id="4-More"><a href="#4-More" class="headerlink" title="4 More"></a>4 More</h3><p>到 Steps 3 路径规划的功能基本实现了，Step 4 再增加一个获取当前位置作为起点，并将指定位置作为终点的功能吧。</p>
 <p>例如，外卖小哥要给颐和园逛公园的小朋友送去冰凉可口的冰激凌……</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a small helper which converts a location into a waypoint</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">locationToWaypointString</span>(<span class="params">coordinates</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;geo!&#x27;</span> + coordinates.<span class="property">lat</span> + <span class="string">&#x27;,&#x27;</span> + coordinates.<span class="property">lng</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// set a flag called RouteRendered</span></span><br><span class="line"><span class="comment">// to ensure that the route is only rendered the first time</span></span><br><span class="line"><span class="keyword">var</span> routeRendered = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">updatePosition</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> coordinates = &#123;</span><br><span class="line">    <span class="attr">lat</span>: event.<span class="property">coords</span>.<span class="property">latitude</span>,</span><br><span class="line">    <span class="attr">lng</span>: event.<span class="property">coords</span>.<span class="property">longitude</span></span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates);</span><br><span class="line">  map.<span class="title function_">addObject</span>(marker);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// If the route has not been rendered yet, </span></span><br><span class="line">  <span class="comment">// calculate and render it</span></span><br><span class="line">  <span class="keyword">if</span> (!routeRendered) &#123;</span><br><span class="line">    <span class="keyword">var</span> route = <span class="keyword">new</span> <span class="title class_">HERERoute</span>(map, platform, &#123;</span><br><span class="line">      <span class="attr">mode</span>: <span class="string">&#x27;fastest;car&#x27;</span>,</span><br><span class="line">      <span class="attr">representation</span>: <span class="string">&#x27;display&#x27;</span>,</span><br><span class="line">      <span class="attr">waypoint0</span>: <span class="title function_">locationToWaypointString</span>(coordinates),</span><br><span class="line">      <span class="attr">waypoint1</span>: <span class="title function_">locationToWaypointString</span>(<span class="title class_">EndCoordinates</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">    routeRendered = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// request the user&#x27;s current location</span></span><br><span class="line">navigator.<span class="property">geolocation</span>.<span class="title function_">watchPosition</span>(updatePosition);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -330,7 +330,7 @@
 
 
 <p>结果大概是这样：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Icecream_Part3_Basic_Routing_current.png"></p>
+<p><img data-src="/images/blogImg/Icecream_Part3_Basic_Routing_current.png"></p>
 <blockquote>
 <p>由于相关法律的限制，HERE Developer 网站中提供免费试用的中国境内的 HERE 在线地图是非常粗略的等级（Entry Level），如下代码仅为了展示功能，并不为了较真位置的精确程度。</p>
 <p> 当然，精密级别的 China HERE Map 也已经上线了 ，并且有 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbj92YXJpYW50PWNu">China Spec HLS API<i class="fa fa-external-link-alt"></i></span> 可供使用，只是没有默认包含在<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbj9jcmVhdGU9RnJlZW1pdW0tQmFzaWMma2VlcFN0YXRlPXRydWUmc3RlcD10ZXJtcw==">Global Freemium licenses<i class="fa fa-external-link-alt"></i></span> 之中。如果需要试用评估或购买，需要通过 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vY29udGFjdC11cyNjb250YWN0LXNhbGVz">商务途径<i class="fa fa-external-link-alt"></i></span>；也可以留言我，我也愿意帮助联系。</p>

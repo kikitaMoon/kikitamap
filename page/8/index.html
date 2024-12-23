@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,152 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/01/11/ReadingPyScriptingforAGS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/01/11/ReadingPyScriptingforAGS/" class="post-title-link" itemprop="url">《面向ArcGIS的Python脚本编程》读后</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-01-11 12:57:19" itemprop="dateCreated datePublished" datetime="2018-01-11T12:57:19+08:00">2018-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/01/11/ReadingPyScriptingforAGS/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/11/ReadingPyScriptingforAGS/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>​        这篇是读书笔记。同事手里有本《面向ArcGIS的Python脚本编程》，系统的介绍了如何结合ArcGIS使用python。最近拿来阅读，觉得受益颇多。最早期我是通过python自身的学习资源、书籍、ArcGIS帮助文档入门的，知识体系虽然建立起来了，但是很多细节没有考虑到，对照书中的内容温故知新、查漏补缺。</p>
+<h2 id="arcpy与AO"><a href="#arcpy与AO" class="headerlink" title="arcpy与AO"></a>arcpy与AO</h2><p>​        书的开篇就介绍了脚本语言和程序语言的区别。我将其引申到日常工作中用户会经常问到的，“为什么AO可以实现的东西，arcpy却不能？”“为什么arcpy的功能这么‘粗粒度’？” </p>
+<p>​         AO中包含了ArcGIS用到的所有编程对象，包含了数以千计的不同对象，因此程序员可以精细控制软件的外观和运行机制。Python作为一种非常平易近人的语言，既是脚本语言又是程序语言，在ArcGIS平台中，python更多充当的是脚本语言的角色，例如：访问ArcGIS现有的功能，组合各种现有功能来扩展ArcGIS的功能，更可以作为一种“粘合剂”将更多的功能整合进来。用书中的话讲，脚本语言就是在“控制其他应用程序以实现任务自动化”。arcpy是ArcGIS提供的python站点包，用于访问ArcGIS 的地理处理功能，定位正在于此。</p>
+<h2 id="arcpy与model-builder"><a href="#arcpy与model-builder" class="headerlink" title="arcpy与model builder"></a><strong>arcpy</strong>与<strong>model builder</strong></h2><p>​          model builder（简称MB吧）是ArcGIS Desktop中我认为最可爱的功能没有之一，它采用了编程的思想却免去了书写代码，是给非程序员实践创造的启航之地。日常工作中，很多逻辑简单、功能清晰的任务都可以使用MB实现。以前写过一篇，<a href="http://kikitamap.com/2015/12/06/IterationinArcGISforDesktop/">《如何在ArcGIS for Desktop中实现批量任务》</a>，具体不再展开。你可能由这些疑问，“MB也能完成批量任务，我何时应该考虑使用python？”  当然这里回答的是“不得不”的问题，如果你本来就是编程高手，从一开始就会觉得MB限制了你的想象力，如下回答可能不需要考虑。 </p>
+<p>​          MB的局限性有什么？或者说相比之下，python能更多实现什么？</p>
+<ul>
+<li>python可以实现更高级的编程逻辑。例如嵌套循环是MB的软肋，一遇到多重遍历之类的任务就只能呵呵了。</li>
+<li>python可以实现更底层的处理任务。例如我们可以使用Cursor，遍历表并对其增删改等等。</li>
+<li>python可以集成第三方的资源。例如R语言等第三方类库来处理数据执行任务。</li>
+<li>python可以不在ArcGIS软件内部执行任务，只需要安装并授权ArcGIS软件，然后通过独立脚本的形式运行。既然可以独立运行，就可以定义系统任务定时执行。</li>
+</ul>
+<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><p>​        这本书中也提到了命名规范的内容，这是我在初期没有考虑到的问题。随着时间的推移和协同工作的需要，渐渐发现这是个非常重要的内容，大型的科技公司会更重视这个方面。编程和写文章一样，仅仅懂得一种语言的语法、词汇是不足够的，更重要的是如何将文章写的清晰优雅，对应到代码中就是简洁高效。python的官方命名规范：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kZXYvcGVwcy9wZXAtMDAwOC8=">Style Guide for Python Code<i class="fa fa-external-link-alt"></i></span>，它是PEPs（Python Enhancement Proposals）中的一部分。</p>
+<p>​        变量名及脚本文件名：</p>
+<ul>
+<li>变量名以字母开头，不能使用特殊字符开头</li>
+<li>全部使用小写字母</li>
+<li>必要的时候使用下划线，增加代码可读性</li>
+<li>使用描述性变量，避免使用俚语或缩写</li>
+<li>变量名尽量简短</li>
+</ul>
+<p>​        缩进：</p>
+<ul>
+<li>建议使用四个空格表示缩进</li>
+<li>不要同时使用tab和空格进行缩进</li>
+</ul>
+<p>​        注释：</p>
+<ul>
+<li>建议每个功能块都有相关注释</li>
+<li>每个脚本工具或函数文件前需要有个头文件，应该包含脚本文件名、功能介绍、运行要求、作者、开发时间等信息。</li>
+</ul>
+<h3 id="从脚本外部输入参数"><a href="#从脚本外部输入参数" class="headerlink" title="从脚本外部输入参数"></a>从脚本外部输入参数</h3><p>​        使用系统参数 sys.agv 。系统参数sys.argv[0]存储的是脚本自身的地址，因此额外的系统参数是从1开始。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is content of testInputPara.py.</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">x = <span class="built_in">int</span>(sys.argv[<span class="number">1</span>])</span><br><span class="line">y = <span class="built_in">int</span>(sys.argv[<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(x*y)</span><br></pre></td></tr></table></figure>
+
+<p>​        在命令行中执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\ForTempTest&gt;python testInputPara.py 2 8</span><br><span class="line">16</span><br></pre></td></tr></table></figure>
+
+<p>​        在交互式python编译器中使用 input()，可以接收用户输入。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="built_in">input</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">bingo</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(x)</span><br><span class="line">bingo</span><br></pre></td></tr></table></figure>
+
+<p>​        ArcGIS 中通过创建脚本工具，与GP框架结合的调用方法，是更适合ArcGIS用户的方法。以前写过 《在ArcGIS中创建Python工具<a href="http://kikitamap.com/2015/08/31/CreatePythonTool1/"><strong>（一）</strong></a>、<a href="http://kikitamap.com/2015/09/02/CreatePythonTool2/"><strong>（二）</strong></a>、<a href="http://kikitamap.com/2015/09/10/CreatePythonTool3/"><strong>（三）</strong></a>》几篇，点击链接可以近一步了解脚本工具。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -533,7 +679,7 @@
     <div class="post-body" itemprop="articleBody">
           <p>学习python是个有趣的过程，不知不觉累积了一些有意思的小案例和小工具，一直都在本地磁盘流浪，这好像不是一个好主人的作风呢。 把它们放到该去的地方，在这里：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbg==">https://github.com/kikitaMoon/ArcGIS-Python<i class="fa fa-external-link-alt"></i></span></p>
 <p>开始从来不知道自己会在编程的道路上越走越远，积极用脑、专注做事可能是推迟进入油腻中年的最好途径。 这一年生命中多了一个人，生活有了很多变化，纵然精力旺盛的我也开始觉得分身乏力，感谢宝宝的乖巧才让我有了很多的时间做“贤妻良母”之外的事情。希望我的宝宝长大后，可以看到妈妈的文字，互相感恩乐观前行。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SSN_tydyup_pythonTbx.jpg"></p>
+<p><img data-src="/images/blogImg/SSN_tydyup_pythonTbx.jpg"></p>
 
       
     </div>
@@ -707,199 +853,6 @@
 <li>ArcGIS Enterprise 10.5</li>
 </ul>
 <h2 id="Exam-Details"><a href="#Exam-Details" class="headerlink" title="Exam Details"></a>Exam Details</h2><p>Number of questions: 80<br>Certification code: EEAA105<br>Exam duration:  2 Hours<br>Exam type: Multiple choice, multiple select<br>Published date: June 2017<br>Exam state: Available to public</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/10/26/AGSDeskProCA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/10/26/AGSDeskProCA/" class="post-title-link" itemprop="url">ArcGIS Desktop Professional 10.5 Certification</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-10-26 09:41:48" itemprop="dateCreated datePublished" datetime="2017-10-26T09:41:48+08:00">2017-10-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/10/26/AGSDeskProCA/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/26/AGSDeskProCA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>735</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>The ArcGIS Desktop Professional exam tests the candidate’s experience applying ArcGIS concepts and processes to workflows. Qualified candidates should demonstrate proficiency when applying advanced GIS concepts and knowledge to establish workflows, processes, troubleshooting non-routine issues, and skilled at defining and successfully completing complex GIS projects. Qualified candidates should have five years of applied experience, and should be proficient in best practices and uses of Esri’s ArcGIS technologies.</p>
-<h2 id="Qualifications"><a href="#Qualifications" class="headerlink" title="Qualifications"></a>Qualifications</h2><p><strong>A qualified candidate should be able to perform the following tasks:</strong></p>
-<ul>
-<li>Apply and interpret fundamental spatial statistics and visualization techniques</li>
-<li>Build a reference data set and an address locator</li>
-<li>Build a transportation network and apply solvers</li>
-<li>Implement and apply Python scripting</li>
-<li>Perform advanced vector and raster analysis</li>
-<li>Perform fundamentals of geodatabase design and operate within a multi-user geodatabase</li>
-<li>Perform surface modeling and analysis</li>
-<li>Utilize advanced modeling techniques</li>
-<li>Identify and resolve common workflows</li>
-<li>Author a mosaic dataset</li>
-<li>Demonstrate proficiency in ArcGIS Desktop user interface and environment configuration</li>
-<li>Determine and define an appropriate coordinate system</li>
-<li>Manipulate data with Spatial Analyst, 3D Analyst, and Network Analyst extensions</li>
-<li>Author and publish to a web GIS portal</li>
-<li>Implement and apply web content or services to perform analyses</li>
-<li>Configure web app templates and Web AppBuilder widgets</li>
-</ul>
-<p><strong>A qualified candidate should be familiar with the following tools:</strong></p>
-<ul>
-<li>ArcGIS Desktop (ArcCatalog, ArcMap and ArcGIS Pro)</li>
-<li>ArcGIS Online</li>
-<li>ArcGIS Enterprise</li>
-<li>ArcGIS Network Analyst</li>
-<li>ArcGIS Spatial Analyst</li>
-<li>ArcGIS 3D Analyst</li>
-<li>Python</li>
-</ul>
-<p><strong>A qualified candidate should NOT be expected to perform the following tasks:</strong></p>
-<ul>
-<li>Deliver production quality cartographic output with specific industry solutions</li>
-<li>Administer a multi-user geodatabase</li>
-<li>Develop or administer websites</li>
-<li>Develop tools or apps using any SDK or API</li>
-<li>Network or systems administration</li>
-<li>Administer an ArcGIS Online organization</li>
-</ul>
-<h2 id="Skill-Measured"><a href="#Skill-Measured" class="headerlink" title="Skill Measured"></a>Skill Measured</h2><p>The following list will familiarize candidates with the exam sections to help guide exam preparation. The relative weight of each section is provided to illustrate the approximate size of each section. Candidates should review this list and assess their knowledge of each skill. Specific preparation resources are available to assist with refreshing in areas where any knowledge gaps are found.</p>
-<p><strong>Data Storage — 21%</strong></p>
-<ul>
-<li>Given requirements for a specific project, determine how to design a geodatabase</li>
-<li>Select appropriate data formats for an intended use</li>
-<li>Given a task, determine the data, settings, and parameters for creating a complex data set</li>
-<li>Given a task, determine the data, settings, and parameters for creating an address locator</li>
-<li>Given a scenario, determine how to synchronize replicated data</li>
-</ul>
-<p><strong>Managing Data — 26%</strong></p>
-<ul>
-<li>Given a scenario, convert and aggregate data to an appropriate format</li>
-<li>Given a task, determine the necessary schema changes so that the data can support a particular operation</li>
-<li>Given datasets that do not align, determine the best workflow to resolve the issue</li>
-<li>Given a project, determine how to manage coordinate systems</li>
-<li>Given a scenario, determine the method to create a surface dataset</li>
-<li>Given a scenario, determine how to automate data management</li>
-</ul>
-<p><strong>Visualizing and Sharing Data — 21%</strong></p>
-<ul>
-<li>Given a scenario, use advanced cartographic techniques to visualize content across the ArcGIS platform</li>
-<li>Given a scenario, determine how to optimize rendering of maps across the platform</li>
-<li>Given a scenario, determine how to create and render scenes</li>
-<li>Identify procedures to create and publish layers, maps, and apps for a given task</li>
-<li>Given a scenario, determine the most effective process for sharing content</li>
-<li>Given a scenario, determine how to automate visualization and sharing using ArcPy in ArcGIS Desktop</li>
-</ul>
-<p><strong>Analysis and Geoprocessing — 31%</strong></p>
-<ul>
-<li>Determine how to create and edit a Python script to automate a simple repetitive process in an ArcGIS workflow</li>
-<li>Determine how to create and edit a model in ModelBuilder to automate a complex workflow in ArcGIS for a given task</li>
-<li>Given a failed workflow, determine the cause of the failure</li>
-<li>Given user requirements, determine an appropriate method for sharing a geoprocessing model, script, package, toolbox, etc.</li>
-<li>Determine how to customize the user interface to perform a task</li>
-<li>Determine how to author tasks in ArcGIS Pro</li>
-<li>Given a scenario that requires an analysis, determine the workflow, data, tools, settings, and parameters to perform the analysis</li>
-</ul>
-<h2 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h2><p>A qualified candidate should be familiar with following software:</p>
-<ul>
-<li>ArcGIS Desktop (ArcCatalog 10.5, ArcMap 10.5 and ArcGIS Pro 1.4)</li>
-<li>ArcGIS Spatial Analyst extension</li>
-<li>ArcGIS Network Analyst extension</li>
-<li>ArcGIS 3D Analyst extension</li>
-<li>ArcGIS Online</li>
-<li>ArcGIS Enterprise 10.5</li>
-<li>Python 2.7 and 3.5</li>
-</ul>
-<h2 id="Exam-Details"><a href="#Exam-Details" class="headerlink" title="Exam Details"></a>Exam Details</h2><p>Number of questions: 80<br>Certification code: EADP105<br>Exam duration: 2 Hours<br>Exam type: Multiple choice, multiple select<br>Published date: June 2017<br>Exam state: Available to public</p>
 
       
     </div>

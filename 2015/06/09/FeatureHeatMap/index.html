@@ -29,18 +29,18 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="用采样点制作热力图是个非常常见的需求。热力图可以给地图的阅读者直观的信息，下面就看看如何在 ArcGIS Pro 中做一个漂亮的HeatMap。 PS: 这是通过点密度插值生成的栅格的静态表达方式，区别于 ArcGIS Pro 自带的动态HeatMap的渲染器哦。   1.准备好采样点数据，当然是量大更优。我这里用了全球地震点数据，大约有 21W+ 的数据量。像这一类的数据可以从一些提供公开数据的">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/FeatureHeatMap_Points.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/FeatureHeatMap_Density.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRamp.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRampresult.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/FeatureHeatMap_Transparent.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/FeatureHeatMap_Points.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/FeatureHeatMap_Density.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRamp.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRampresult.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/FeatureHeatMap_Transparent.png">
 <meta property="article:published_time" content="2015-06-09T03:07:58.000Z">
-<meta property="article:modified_time" content="2018-07-03T05:19:07.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.327Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Mapping">
 <meta property="article:tag" content="ArcGIS Pro">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/FeatureHeatMap_Points.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/FeatureHeatMap_Points.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/06/09/FeatureHeatMap/">
@@ -164,7 +164,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -303,25 +303,25 @@
 <br>
 
 <h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>准备好采样点数据，当然是量大更优。我这里用了全球地震点数据，大约有 21W+ 的数据量。像这一类的数据可以从一些提供公开数据的网站获取，例如 <span class="exturl" data-url="aHR0cDovL2VhcnRocXVha2UudXNncy5nb3YvZWFydGhxdWFrZXMvZmVlZC92MS4wL2Nzdi5waHA=">USGS<i class="fa fa-external-link-alt"></i></span> 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_Points.png"></p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_Points.png"></p>
 <br>
 
 <br>
 
 <h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>使用 ArcGIS 中的密度分析工具可以从点数据直接生成密度栅格，工具位于 ArcToolbox —— Spatial Analyst —— Density 工具集下。这里我采用了 Kernel Density 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_Density.png"></p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_Density.png"></p>
 <br>
 
 <br>
 
 <h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>制作一个自己喜欢的热力色带，最边缘的颜色使用透明色，这样就有“羽化”的效果。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRamp.png"></p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_ColorRamp.png"></p>
 <p>应用色带之后：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRampresult.png"></p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_ColorRampresult.png"></p>
 <br>
 
 <p>如有需要，可以进一步为图层设置透明：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_Transparent.png"></p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_Transparent.png"></p>
 
     </div>
 

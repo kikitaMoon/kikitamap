@@ -29,16 +29,16 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="1.查看端口占用情况使用命令 netstat -ano ，检查所有在使用的端口。  如果查询指定端口，使用：**netstat -aon|findstr &quot;Port No.&quot;**，如下： 例如，查看49506端口号对应的进程，进程号976：  2. 查看PID 对应的程序查看具体哪个程序在占用某个端口，使用命令： netstat -aon|findstr &quot;Port">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ViewPortNo_Netstat.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ViewPortNo_Find.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ViewPortNo_Process.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ViewPortNo_Path.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ViewPortNo_Netstat.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ViewPortNo_Find.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ViewPortNo_Process.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ViewPortNo_Path.jpg">
 <meta property="article:published_time" content="2013-06-03T09:35:07.000Z">
-<meta property="article:modified_time" content="2018-07-03T11:58:05.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.260Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="License">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ViewPortNo_Netstat.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ViewPortNo_Netstat.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2013/06/03/ViewPortNo/">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -297,14 +297,14 @@
     
     
     <div class="post-body" itemprop="articleBody"><h1 id="1-查看端口占用情况"><a href="#1-查看端口占用情况" class="headerlink" title="1.查看端口占用情况"></a><strong>1.查看端口占用情况</strong></h1><p>使用命令 <strong>netstat -ano</strong> ，检查所有在使用的端口。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ViewPortNo_Netstat.png"></p>
+<p><img data-src="/images/blogImg/ViewPortNo_Netstat.png"></p>
 <p>如果查询指定端口，使用：**netstat -aon|findstr &quot;Port No.&quot;**，如下：</p>
 <p>例如，查看49506端口号对应的进程，进程号976：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ViewPortNo_Find.jpg"></p>
+<p><img data-src="/images/blogImg/ViewPortNo_Find.jpg"></p>
 <h1 id="2-查看PID-对应的程序"><a href="#2-查看PID-对应的程序" class="headerlink" title="2. 查看PID 对应的程序"></a><strong>2. 查看PID 对应的程序</strong></h1><p>查看具体哪个程序在占用某个端口，使用命令：</p>
 <p><code>netstat -aon|findstr &quot;Port No.&quot;</code></p>
 <p>接着上面的例子，976对应的程序。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ViewPortNo_Process.jpg"></p>
+<p><img data-src="/images/blogImg/ViewPortNo_Process.jpg"></p>
 <p>好了，找到他了，可以换端口号，可以杀掉当前进程，随你……</p>
 <br>
 
@@ -313,7 +313,7 @@
 <p>在输命令时，可能会遇到报错：“nestat -ano不是内部或外部命令……blabla……”</p>
 <p>需要查看下&nbsp;C:\Windows\System32 下是否有 <strong>netstat.exe</strong>。</p>
 <p>如果有，再检查下环境变量中<strong>Path</strong>项中有没有这项：**<code>C:\Windows\System32</code>** ,没有的话就添加上。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ViewPortNo_Path.jpg"></p>
+<p><img data-src="/images/blogImg/ViewPortNo_Path.jpg"></p>
 
     </div>
 

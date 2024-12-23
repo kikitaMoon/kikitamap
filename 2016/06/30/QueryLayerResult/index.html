@@ -29,16 +29,16 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="前两天碰到一个关于在 Model Builder 中使用 Make Query Layer 工具的问题，“如何把Make Query Layer结果输入到下一个工具中？”    TIPS: 什么是 Query Layer？ 在ArcMap中，我们可以通过定义SQL语句创建Query Layer，来查询存储在DBMS中的空间数据或者非空间数据。 每次在ArcMap中显示或使用Query Layer时">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/QueryLayerResult_FeatureTable.png">
-<meta property="og:image" content="hhttp://kikitamap.com/images/blogImg/QueryLayerResult_Model.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/QueryLayerResult_Reault.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/QueryLayerResult_FeatureTable.png">
+<meta property="og:image" content="https://kikitamap.com/h/images/blogImg/QueryLayerResult_Model.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/QueryLayerResult_Reault.png">
 <meta property="article:published_time" content="2016-06-30T10:11:33.000Z">
-<meta property="article:modified_time" content="2018-11-12T10:11:16.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.361Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geodata">
 <meta property="article:tag" content="ArcGIS Enterprise">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/QueryLayerResult_FeatureTable.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/QueryLayerResult_FeatureTable.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2016/06/30/QueryLayerResult/">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -304,14 +304,14 @@
 <p>为了阐述方便，我找了一份数据稍作修改来模拟这个问题，数据位于基于Oracle的ArcSDE数据库，一个空间数据为点要素类，一个非空间表。</p>
 <p>点数据表示事件，每发生一次事件（例如报警电话）就记录一个点，假设理想情况下同一个地址的事件都是重合点，如下图高亮的记录； 非空间表中记录了各个地址的某项分值（例如警力配备得分）。</p>
 <p>打开脑洞，假设你是警察局长，需求是，获取每个有完整信息的地址（例如，点位于路的左侧或右侧的信息）的报警电话数，并对比警力配备分值，用于后续的工作，例如指挥调配或者空间统计工作等等。这时，使用Query Layer是个好选择。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/QueryLayerResult_FeatureTable.png"></p>
+<p><img data-src="/images/blogImg/QueryLayerResult_FeatureTable.png"></p>
 <br>
 
 <p>Query Layer 返回的记录集可以是包含空间信息的 Feature Query Layer ，也可以是非空间信息的 StandAlone Table。 那么，其实在回到文章开头的问题，<strong>“如何把Make Query Layer结果输入到下一个工具中？” 这取决于“下一个工具” 接受的输入数据的类型是什么。</strong></p>
 <br>
 
 <p>假如后续工作中需要用到空间数据，例如进行热点分析，评估下犯罪高发区，那么就需要查询SHAPE空间字段。 如果忽略了空间字段，普通的非空间表是没办法将记录集传递给后续空间处理的工具的。</p>
-<p><img data-src="hhttp://kikitamap.com/images/blogImg/QueryLayerResult_Model.png"></p>
+<p><img data-src="/h/images/blogImg/QueryLayerResult_Model.png"></p>
 <p>Make Feature Layer 中的 SQL语句：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  c.SHAPE,</span><br><span class="line">        c.ADDRESS,</span><br><span class="line">        <span class="built_in">count</span>(c.ADDRESS) <span class="keyword">as</span> CallNum, </span><br><span class="line">        <span class="built_in">min</span>(s.SCORE) <span class="keyword">as</span> MinScore, </span><br><span class="line">        c.POINT_X, </span><br><span class="line">        c.POINT_Y</span><br><span class="line"><span class="keyword">from</span> SDE.kikita_Calls c </span><br><span class="line"></span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> SDE.kikita_ScoreTable s </span><br><span class="line"><span class="keyword">on</span> c.ADDRESS<span class="operator">=</span>s.ADDRESS</span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> c.AV_SIDE <span class="keyword">in</span> (<span class="string">&#x27;R&#x27;</span>,<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> c.SHAPE,c.ADDRESS,c.POINT_X, c.POINT_Y</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> CallNum <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
 
@@ -319,7 +319,7 @@
 
 
 <p>附一张结果图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/QueryLayerResult_Reault.png"></p>
+<p><img data-src="/images/blogImg/QueryLayerResult_Reault.png"></p>
 
     </div>
 

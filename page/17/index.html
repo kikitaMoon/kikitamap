@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,157 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/07/09/SetupPythonModule/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/07/09/SetupPythonModule/" class="post-title-link" itemprop="url">发布和安装python自定义模块</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-07-09 13:00:00" itemprop="dateCreated datePublished" datetime="2015-07-09T13:00:00+08:00">2015-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/07/09/SetupPythonModule/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/07/09/SetupPythonModule/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>435</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这一篇说下如何发布和安装python自定义模块，版本：Python 2.7 。</p>
+<br>
+
+<h1 id="1-创建setup-py"><a href="#1-创建setup-py" class="headerlink" title="1.创建setup.py"></a>1.创建setup.py</h1><p>现在如果已经写好一个python文件，为了尽量简明，创建一个新的文件夹，把自己py文件放进去。接着在这个文件夹中创建一个名为 setup.py 的文件，用来表示模块的元数据，文件的内容类似下面这个样子。除了手工创建，有很多python编辑器也可以更简便的来创建这个文件，例如 pycharm。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">&#x27;nesterprint&#x27;</span>,</span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span>,</span><br><span class="line">    packages=[<span class="string">&#x27;&#x27;</span>],</span><br><span class="line">    url=<span class="string">&#x27;http://blog.csdn.net/kikitaMoon&#x27;</span>,</span><br><span class="line">    license=<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    author=<span class="string">&#x27;kikita&#x27;</span>,</span><br><span class="line">    author_email=<span class="string">&#x27;kikitamoopn@gmail.com&#x27;</span>,</span><br><span class="line">    description=<span class="string">&#x27;My Test&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h1 id="2-打包发布"><a href="#2-打包发布" class="headerlink" title="2. 打包发布"></a>2. 打包发布</h1><p>使用Window自带的命令窗口，转到上一步创建的文件夹目录，输入命令，<strong>python setup.py sdist</strong>：</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_setup.png"></p>
+<p>通过上面的状态信息知道，产生了下面的结果：</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_Folder.png"></p>
+<br>
+
+
+<h1 id="3-安装"><a href="#3-安装" class="headerlink" title="3. 安装"></a>3. 安装</h1><p>在命令窗口输入命令： <strong>python setup.py install</strong></p>
+<p><img data-src="/images/blogImg/SetupPythonModule_Install.png"></p>
+<p>安装命令也会产生额外的目录，build&#x2F;lib 。</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_Folder2.png"></p>
+<br>
+
+<h1 id="4-导入模块"><a href="#4-导入模块" class="headerlink" title="4. 导入模块"></a>4. 导入模块</h1><p>import nesterprint ，导入这个自定模块，开始使用其中的myprint函数吧。</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_Import.png"></p>
+<blockquote>
+<p>PS:这一篇重在发布安装模块的流程，模块内部脚本没提及，在前一篇的最后Demo中有写，可以参考，但是这真的不是重点。</p>
+</blockquote>
+<br>
+
+
+<h1 id="5-升级模块"><a href="#5-升级模块" class="headerlink" title="5. 升级模块"></a>5. 升级模块</h1><p>如果我们想升级模块，可以不？ 可以！</p>
+<p>更新了nesterprint.py 中的一些代码，改进了功能后，来升级下模块。到 setup.py 文件中修改下版本信息，我就叫他2.0.0 。</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_Update.png"></p>
+<p>用 2， 3 两步一样的方法发布安装就好了。</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_Install2.png"></p>
+<br>
+
+<br>
+
+<p>试验一下：</p>
+<p>nesterprint 的功能已经升级到 2.0 版本了。</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_Update2.png"></p>
+<blockquote>
+<p>what’s new？ 增加了根据列表的深度自动缩进的功能。 </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -298,27 +449,27 @@
 <br>
 
 <h2 id="2-注册登录"><a href="#2-注册登录" class="headerlink" title="2 注册登录"></a>2 注册登录</h2><p>使用命令行窗口，跳转到要发布的py所在的文件夹目录，首先进行注册登录，让命令行上传工具知道我的PyPI账户和密码。输入命令：**<code>python setup.py register</code>**，选择 1，输入账户和密码，并且保存登录信息，下次上传可以跳过这个步骤。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Login.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Login.png"></p>
 <br>
 
 <h2 id="3-上传发布"><a href="#3-上传发布" class="headerlink" title="3 上传发布"></a>3 上传发布</h2><p>接着在命令行窗口中，输入命令： **<code>python setup.py sdist upload</code>**：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_upload.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_upload.png"></p>
 <p>看到 OK 即上传成功。到 PyPI 自己的账户下看看吧。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_MyProfile.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_MyProfile.png"></p>
 <p>Bingo ~</p>
 <br>
 
 <h2 id="4-更新模块"><a href="#4-更新模块" class="headerlink" title="4 更新模块"></a>4 更新模块</h2><p>当我们修改了模块中的代码，并想更新 PyPI 上的模块，那就在上传之前更改下 setup.py 的 version 参数，告诉 PyPI 这是个新的版本。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Update.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Update.png"></p>
 <p>并使用相同的命令来上传新的发布版本。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_UploadUpdate.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_UploadUpdate.png"></p>
 <p>好了，看看 PyPI，两个版本的模块都在，其中旧的版本默认被隐藏。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Verisons.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Verisons.png"></p>
 <br>
 
 
 <p>我们可以下载最新版本直接解压安装使用。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Download.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Download.png"></p>
 
       
     </div>
@@ -429,7 +580,7 @@
 <br>
 
 <p>在Python中创建一个列表时，解释器会在内存中创建一个类似数组（但不是数组）的数据结构来存储数据。列表中的编号从 0 开始，然后是1，依此类推。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/PythonList_List.png"></p>
+<p><img data-src="/images/blogImg/PythonList_List.png"></p>
 <br>
 
 <br>
@@ -807,20 +958,20 @@
 
 <h1 id="1-准备安装文件"><a href="#1-准备安装文件" class="headerlink" title="1. 准备安装文件"></a>1. 准备安装文件</h1><p>我的Linux服务器是虚拟机，没有光驱，选择ftp上传安装文件。一般在各种linux的发行版中，默认带有的ftp软件是vsftp。</p>
 <p>检查vsftpd软件是否安装， <strong># rpm -qa|grep vsftp</strong><br>启动 vsftp 服务，**# service vsftpd start**</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_vsftp.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_vsftp.png"></p>
 <p>使用ftp客户端上传 ArcGIS License Manager （LM）安装包。如果上传的 iso 镜像文件之后使用 mount 命令挂载，其实也可以仅将光盘中 LicenseManager 目录下的 linux 文件夹上传，此文件夹为 LM 的Linux安装包。</p>
 <p>包含如下几个文件（夹）：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
 <br>
 
 <br>
 
 
 <h1 id="2-创建账户"><a href="#2-创建账户" class="headerlink" title="2. 创建账户"></a>2. 创建账户</h1><p>ArcGIS License Manager 不允许 root 账户安装，因此要创建一个其它账户，例如：arcgis</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_CreateArcGIS.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_CreateArcGIS.png"></p>
 <blockquote>
 <p>PS : 如果使用 root 账户直接安装，则会遇到错误提示：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_RootError.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_RootError.png"></p>
 </blockquote>
 <br>
 
@@ -828,12 +979,12 @@
 
 <h1 id="3-创建-Trusted-Storage目录并赋权"><a href="#3-创建-Trusted-Storage目录并赋权" class="headerlink" title="3. 创建 Trusted Storage目录并赋权"></a>3. 创建 Trusted Storage目录并赋权</h1><p>在安装 ArcGIS License Manager 之前，需要手动创建用于存储许可 Trusted Storage File (TSF) 的目录，具体目录为：“&#x2F;usr&#x2F;local&#x2F;share&#x2F;macrovision&#x2F;storage” </p>
 <p>创建目录：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_mkdir.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_mkdir.png"></p>
 <p>为目录赋权：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_chmod.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_chmod.png"></p>
 <blockquote>
 <p>如果不创建这个目录而直接安装 LM 程序，就会遇到 Fatal Error 提示：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GrantError.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_GrantError.png"></p>
 </blockquote>
 <br>
 
@@ -847,15 +998,15 @@
 <p>设置DISPLAY环境变量 :<br>例如： <strong>$ export DISPLAY&#x3D;<em>192.168.100.115</em>:0.0</strong></p>
 <p>运行 Setup 文件开始安装，建议使用精细模式（Verbose Mode），这样如果安装失败，我们可以通过运行过程中的消息判断问题的所在。例如，没有创建必要的目录，没有安装必要地包，没有足够的权限，等等问题。</p>
 <p><strong>$ .&#x2F;Setup -v</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
 <p>稍等片刻，即弹出界面：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GraphicWindows.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_GraphicWindows.png"></p>
 <p>后面按照向导，下一步即可，此处省略100字……</p>
 <br>
 
 <h2 id="Option-2-静默安装"><a href="#Option-2-静默安装" class="headerlink" title="Option 2 静默安装"></a><strong>Option 2 静默安装</strong></h2><p>如果选择静默安装也可以，例如：</p>
 <p><strong>$ .&#x2F;Setup -m silent -v -l Yes</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Silence.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Silence.png"></p>
 <blockquote>
 <p><strong>如果需要了解安装ArcGIS 许可管理器的选项：</strong></p>
 </blockquote>
@@ -872,9 +1023,9 @@
 
 
 <p>仍然建议GUI mode 授权，运行LM安装目录中的 SoftwareAuthorizationLS 程序：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Authorization.png"></p>
 <p>稍后弹出界面：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization2.png"></p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Authorization2.png"></p>
 <p>后面按照向导，下一步即可，可以参考windows的授权手册，此处省略100字……</p>
 <br>
 
@@ -889,136 +1040,6 @@
 <p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW0va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzQyOTIx">http://support.esri.com/em/knowledgebase/techarticles/detail/42921<i class="fa fa-external-link-alt"></i></span></p>
 <p>HowTo:  Silently authorize ArcGIS License Manager 10.x on Linux</p>
 <p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZXMva25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzM4NDEy">http://support.esri.com/es/knowledgebase/techarticles/detail/38412<i class="fa fa-external-link-alt"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/09/FeatureHeatMap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/06/09/FeatureHeatMap/" class="post-title-link" itemprop="url">羽化效果的HeatMap</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-06-09 11:07:58" itemprop="dateCreated datePublished" datetime="2015-06-09T11:07:58+08:00">2015-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/06/09/FeatureHeatMap/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/09/FeatureHeatMap/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>261</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>用采样点制作热力图是个非常常见的需求。热力图可以给地图的阅读者直观的信息，下面就看看如何在 ArcGIS Pro 中做一个漂亮的HeatMap。</p>
-<p><em>PS: 这是通过点密度插值生成的栅格的静态表达方式，区别于 ArcGIS Pro 自带的动态HeatMap的渲染器哦。</em></p>
-<br>
-
-<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>准备好采样点数据，当然是量大更优。我这里用了全球地震点数据，大约有 21W+ 的数据量。像这一类的数据可以从一些提供公开数据的网站获取，例如 <span class="exturl" data-url="aHR0cDovL2VhcnRocXVha2UudXNncy5nb3YvZWFydGhxdWFrZXMvZmVlZC92MS4wL2Nzdi5waHA=">USGS<i class="fa fa-external-link-alt"></i></span> 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_Points.png"></p>
-<br>
-
-<br>
-
-<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>使用 ArcGIS 中的密度分析工具可以从点数据直接生成密度栅格，工具位于 ArcToolbox —— Spatial Analyst —— Density 工具集下。这里我采用了 Kernel Density 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_Density.png"></p>
-<br>
-
-<br>
-
-<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>制作一个自己喜欢的热力色带，最边缘的颜色使用透明色，这样就有“羽化”的效果。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRamp.png"></p>
-<p>应用色带之后：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_ColorRampresult.png"></p>
-<br>
-
-<p>如有需要，可以进一步为图层设置透明：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/FeatureHeatMap_Transparent.png"></p>
 
       
     </div>

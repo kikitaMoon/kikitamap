@@ -29,19 +29,19 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="影像分类的目的就为了将图像中的像元划分成不同的类别，过程就是根据像元在不同波段的波普亮度、空间结构特征或者其他信息，按照某种规则或算法实现分类。遥感图像分类处理就是是为了提取遥感图像中的目标信息，遥感图像分类主要用于地物类别的区分。 影像分类分为监督分类和非监督分类，很多遥感书籍中都有这两种分类方法的比较。这里我结合ArcGIS软件简单整理一下：    监督分类监督分类是使用被确认类别的样本像元去">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Training.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Samples.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Histogram.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Scatterplots.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Statistics.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_interactive.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Result.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_Training.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_Samples.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_Histogram.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_Scatterplots.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_Statistics.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_interactive.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_Result.png">
 <meta property="article:published_time" content="2014-09-18T02:52:05.000Z">
-<meta property="article:modified_time" content="2018-07-03T09:35:53.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.292Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Raster">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Training.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ArcGISImageClassification_Training.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/09/18/ArcGISImageClassification/">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -306,23 +306,23 @@
 
 <h1 id="监督分类"><a href="#监督分类" class="headerlink" title="监督分类"></a><strong>监督分类</strong></h1><p>监督分类是使用被确认类别的样本像元去识别其他未知类别像元的过程。其中这些已被确认类别的像元就是训练样本。也就是说，在监督分类中，必须事先提取出代表总体特征的训练数据以及事先知道影像中有几种类别。这样就可以学习这些样本类别的先验知识，然后对整体数据进行分类。</p>
 <p>在 ArcGIS 中，首先使用 Image Classification 工具条中的训练样本管理器，创建训练样本。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Training.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Samples.png"></p>
+<p><img data-src="/images/blogImg/ArcGISImageClassification_Training.png"></p>
+<p><img data-src="/images/blogImg/ArcGISImageClassification_Samples.png"></p>
 <p>在创建样本之后，我们可以评估训练样本，使用直方图、散点图、统计数据。</p>
 <p><strong>（1）直方图</strong></p>
 <p>打开直方图，每个波段对应一个直方图。不同类的直方图不应重叠。如果发生重叠，则需要删除或合并其中一些类。</p>
 <p>直方图按钮仅用于整型影像，不适用于浮点型。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Histogram.png"></p>
+<p><img data-src="/images/blogImg/ArcGISImageClassification_Histogram.png"></p>
 <p><strong>（2）散点图</strong></p>
 <p>散点图是参加分类的影像数据的波段的两两组合，如果有N个波段，就有1 + 2 + … + (N – 1) 个散点图。</p>
 <p>对于所有波段组合，散点图和统计数据不应彼此重叠。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Scatterplots.png"></p>
+<p><img data-src="/images/blogImg/ArcGISImageClassification_Scatterplots.png"></p>
 <p><strong>（3）统计数据</strong></p>
 <p>统计数据包括最小值、最大值、平均值、标准差和协方差矩阵。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Statistics.png"></p>
+<p><img data-src="/images/blogImg/ArcGISImageClassification_Statistics.png"></p>
 <p>创建训练样本后，可以使用交互式监督分类工具，探索性的直接查看分类结果。这个工具不需要事先创建特征文件，工具后台使用的是最大似然法分类方法。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_interactive.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Result.png"></p>
+<p><img data-src="/images/blogImg/ArcGISImageClassification_interactive.png"></p>
+<p><img data-src="/images/blogImg/ArcGISImageClassification_Result.png"></p>
 <p>在ArcGIS 中，监督分类的主要GP工具是&nbsp;<strong>最大似然法分类工具（Maximum Likelihood Classification）</strong>。</p>
 <p>（1）需要使用&nbsp;<strong>特征文件（Signature File）</strong>，既可以是通过训练样本制作的，也可以是ISO聚类工具求取，*.gsg文件。</p>
 <p>（2）可以根据需要设置&nbsp;<strong>剔除分数（Reject Fraction&nbsp;）</strong>，例如0.01。这样表示，正确分类的几率不到 1% 的像元就会成为 NoData。</p>

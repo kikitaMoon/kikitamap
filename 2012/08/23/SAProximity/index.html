@@ -29,21 +29,21 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="ArcGIS 的空间分析扩展中，提供了这样一组邻域分析工具：    1. 块统计（Block Statistics）分块统计，按照指定邻域类型计算区域统计值，输出区域为指定邻域类型的外接矩形。 以下为邻域的形式：  NbrAnnulus({innerRadius}, {outerRadius}, {CELL | MAP}) NbrCircle({radius}, {CELL | MAP} NbrR">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_Radias.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_Low.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_High.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow1.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow2.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_FocalStatistics.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SAProximity_LineStatistics.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_Radias.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_Low.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_High.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_FocalFlow1.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_FocalFlow2.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_FocalStatistics.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SAProximity_LineStatistics.png">
 <meta property="article:published_time" content="2012-08-23T08:49:00.000Z">
-<meta property="article:modified_time" content="2018-07-04T02:57:18.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.232Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Spatial Analyst">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/SAProximity_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/SAProximity_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2012/08/23/SAProximity/">
@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -302,7 +302,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>ArcGIS 的空间分析扩展中，提供了这样一组邻域分析工具：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_Toolset.png"></p>
+<p><img data-src="/images/blogImg/SAProximity_Toolset.png"></p>
 <br>
 
 <h1 id="1-块统计（Block-Statistics）"><a href="#1-块统计（Block-Statistics）" class="headerlink" title="1. 块统计（Block Statistics）"></a><strong>1. 块统计（Block Statistics）</strong></h1><p>分块统计，按照指定邻域类型计算区域统计值，输出区域为指定邻域类型的外接矩形。</p>
@@ -330,24 +330,24 @@
 <li><strong>VARIETY</strong>&#x2F;变异度（唯一值的数量）。</li>
 </ul>
 <p>例如，输入为圆形邻域，输出为外接矩形的像元范围：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_Radias.png"></p>
+<p><img data-src="/images/blogImg/SAProximity_Radias.png"></p>
 <h1 id="2-滤波器（Filter）"><a href="#2-滤波器（Filter）" class="headerlink" title="2. 滤波器（Filter）"></a><strong>2. 滤波器（Filter）</strong></h1><p>对栅格执行平滑（低通）滤波器或边缘增强（高通）滤波器。</p>
 <p>滤波器工具既可用于消除不必要的数据，也可用于增强数据中不明显的要素的显示。</p>
 <p>低通滤波（平滑边界）：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_Low.png">   </p>
+<p><img data-src="/images/blogImg/SAProximity_Low.png">   </p>
 <p>高通滤波（边缘增强）：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_High.png">   </p>
+<p><img data-src="/images/blogImg/SAProximity_High.png">   </p>
 <h1 id="3-焦点流（Focal-Flow）"><a href="#3-焦点流（Focal-Flow）" class="headerlink" title="3. 焦点流（Focal Flow）"></a><strong>3. 焦点流（Focal Flow）</strong></h1><p>焦点流工具使用直接的 3 x 3 邻域来确定一个像元的八个相邻点中哪一个流向此像元。</p>
 <p>焦点流也可以是液体由高到低流动的方向，也可以是定义的任何移动（比如污染物向污染浓度较低的地方流入）。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow1.gif"></p>
+<p><img data-src="/images/blogImg/SAProximity_FocalFlow1.gif"></p>
 <p>举个例子，各个方向流向像元中心像元的值总和是最终值。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow2.gif"></p>
+<p><img data-src="/images/blogImg/SAProximity_FocalFlow2.gif"></p>
 <h1 id="4-焦点统计（Focal-Statistics）"><a href="#4-焦点统计（Focal-Statistics）" class="headerlink" title="4. 焦点统计（Focal Statistics）"></a><strong>4. 焦点统计（Focal Statistics）</strong></h1><p>为每个输入像元位置计算其周围指定邻域内的值的统计数据。</p>
 <p>统计类型与邻域形状与块统计是相同的，区别在于，块统计的输出是整个邻域的外接矩形范围，而焦点统计的输出，是邻域内的焦点栅格。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_FocalStatistics.png"></p>
+<p><img data-src="/images/blogImg/SAProximity_FocalStatistics.png"></p>
 <h1 id="5-线统计"><a href="#5-线统计" class="headerlink" title="5. 线统计"></a><strong>5. 线统计</strong></h1><p>工具用于为每个输出栅格像元周围的圆形邻域内所有线的指定字段值计算统计量。</p>
 <p>可用的统计量类型有：均值、众数、最大值、中位数、最小值、少数、范围、标准差以及变异度。只有众数、少数和中位数统计量是根据线长度进行加权的。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_LineStatistics.png"></p>
+<p><img data-src="/images/blogImg/SAProximity_LineStatistics.png"></p>
 <p>还没有想到此工具的应用场景，以后有了再来追加。</p>
 <h1 id="6-点统计"><a href="#6-点统计" class="headerlink" title="6. 点统计"></a><strong>6. 点统计</strong></h1><p>该工具类似于焦点统计工具，不同之处在于它直接对点要素而非栅格进行操作。直接对要素进行操作的其中一个优点在于，即使点距离过近，在转换成栅格时点也不会丢失。</p>
 

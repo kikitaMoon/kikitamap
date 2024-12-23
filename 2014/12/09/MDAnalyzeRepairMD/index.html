@@ -29,18 +29,18 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="这是这个专题的最后一篇，将剩下的几个工具放在一起说一说。下面的这些工具在镶嵌数据集正常运行时常常会被忽略，但是一旦出现异常或者故障，这些工具就有了用武之地。      分析镶嵌数据集当我们发现镶嵌数据集不能按照预期运行，或者性能比较差的的时候，可以使用工具 Analyze Mosaic Dataset 来分析检查存在的问题。这个工具可以发现常见问题、发出警告消息，并且给出些解决方法或者建议等。另外">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Analyze.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Prepare.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_SourceMD.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_ReferenceMD.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Analyze.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Prepare.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_SourceMD.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_ReferenceMD.png">
 <meta property="article:published_time" content="2014-12-09T07:40:37.000Z">
-<meta property="article:modified_time" content="2018-07-03T02:37:55.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.308Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geodata">
 <meta property="article:tag" content="Raster">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/12/09/MDAnalyzeRepairMD/">
@@ -164,7 +164,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -299,15 +299,15 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>这是这个专题的最后一篇，将剩下的几个工具放在一起说一说。下面的这些工具在镶嵌数据集正常运行时常常会被忽略，但是一旦出现异常或者故障，这些工具就有了用武之地。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Toolset.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_Toolset.png"> </p>
 <br>
 
 <h1 id="分析镶嵌数据集"><a href="#分析镶嵌数据集" class="headerlink" title="分析镶嵌数据集"></a>分析镶嵌数据集</h1><p>当我们发现镶嵌数据集不能按照预期运行，或者性能比较差的的时候，可以使用工具 <strong>Analyze Mosaic Dataset</strong> 来分析检查存在的问题。这个工具可以发现常见问题、发出警告消息，并且给出些解决方法或者建议等。另外，当在 ArcMap 中镶嵌数据集图层的右键菜单也可以调用这个工具。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Analyze.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_Analyze.png"> </p>
 <br>
 
 <p>分析之后，在 Prepare 窗口中列出检查到的 Error，Warning，Message等，在列表的每一行上右键，都会打开相应的解决方法或者建议。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Prepare.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_Prepare.png"> </p>
 <p>使用分析镶嵌数据集工具，我们可以分析的对象有： </p>
 <blockquote>
 <p><strong>FOOTPRINT</strong> — 镶嵌数据集的轮廓线<br><strong>FUNCTION</strong>—镶嵌数据集的栅格函数<br><strong>RASTER</strong> — 栅格数据<br><strong>PATHS</strong>— 分析是否存在损坏的路径<br><strong>SOURCE_VALIDITY</strong>— 对源数据的潜在问题进行分析。此方法可以有效检测同步工作期间可能发生的问题。<br><strong>STALE</strong> — 分析镶嵌数据集项目是否过时<br><strong>PYRAMIDS</strong> — 栅格数据金字塔，测试金字塔是否有断开连接的辅助文件。<br><strong>STATISTICS</strong> —  栅格统计数据和直方图<br><strong>PERFORMANCE</strong> — 对性能相关的问题进行分析。例如，传输期间未压缩，或建议对涉及大量栅格函数的项目进行项目缓存。<br><strong>INFORMATION</strong> —  对镶嵌数据集及其项目进行分析，并会为分析结果生成信息日志。 </p>
@@ -326,10 +326,10 @@
 
 <h1 id="同步镶嵌数据集"><a href="#同步镶嵌数据集" class="headerlink" title="同步镶嵌数据集"></a>同步镶嵌数据集</h1><p>工具 **Synchronize Mosaic Dataset **可以将镶嵌数据集保持为最新状态。要理解同步镶嵌数据集，理解镶嵌数据集内数据的组织方式非常重要。 </p>
 <p>1）最常见的是直接引用栅格数据的镶嵌数据集。这种镶嵌数据集与源数据有直接关系，可以称之为“源镶嵌数据集”。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_SourceMD.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_SourceMD.png"> </p>
 <p>2）镶嵌数据集的数据源还可以是另外一个镶嵌数据集，也就是在创建镶嵌数据集后，添加数据的数据源是另外一个镶嵌数据集。这种可以称之为“派生镶嵌数据集”，帮助理解。当源镶嵌数据集发生变化时，为了保持派生镶嵌数据集最新，同步镶嵌数据集就非常重要了。 </p>
 <p>PS：在第一篇中提到过 “引用镶嵌数据集 &#x2F; Referenced Mosaic Dataset” ，这是一种特别的镶嵌数据集，与上文要表达的 “派生镶嵌数据集” 不是一种哦。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_ReferenceMD.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_ReferenceMD.png"> </p>
 <p>同步镶嵌数据集是个单向操作，其中源数据中的更改可以同步到镶嵌数据集的属性表，但属性表中的更改将不会影响源数据，同步时所做的更改无法撤消。。应该在同步派生镶嵌数据集之前同步源镶嵌数据集，因为派生镶嵌数据集只能使用源镶嵌数据集中的信息进行更新。 </p>
 <p>同步镶嵌数据集工具中有一系列的参数可供配置，来细化控制参与同步的想，所见即所得，不再赘述。 </p>
 <br>

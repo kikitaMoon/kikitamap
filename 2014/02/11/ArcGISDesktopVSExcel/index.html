@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。 ArcGIS Desktop 中访问 Excel 数据Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Error.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Error.jpg">
 <meta property="article:published_time" content="2014-02-11T03:35:40.000Z">
-<meta property="article:modified_time" content="2018-07-03T10:40:15.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.278Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geodata">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/02/11/ArcGISDesktopVSExcel/">
@@ -160,7 +160,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -297,7 +297,7 @@
     <div class="post-body" itemprop="articleBody"><p>微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。</p>
 <h2 id="ArcGIS-Desktop-中访问-Excel-数据"><a href="#ArcGIS-Desktop-中访问-Excel-数据" class="headerlink" title="ArcGIS Desktop 中访问 Excel 数据"></a>ArcGIS Desktop 中访问 Excel 数据</h2><p>Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览这种表，并可将这种表作为地理处理工具的输入数据。</p>
 <p>通过 ArcGIS 进行访问Excel表时，每个工作表在 ArcGIS 中都是一个单独的表，名称末尾带有美元符号 $ 标识，但是这个$并不是表名的一部分。如果工作表的表名中包含空格，那表名称周围会括有单引号。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
+<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
 <h2 id="对于ArcGIS-Desktop-对-office-版本的支持情况"><a href="#对于ArcGIS-Desktop-对-office-版本的支持情况" class="headerlink" title="对于ArcGIS Desktop 对 office 版本的支持情况"></a>对于ArcGIS Desktop 对 office 版本的支持情况</h2><p>ArcGIS 支持 ：</p>
 <ul>
 <li>Excel 2003 以及更早版本的 .xls 文件；</li>
@@ -307,7 +307,7 @@
 <p>*.xls 文件可以直接在ArcGIS中以只读的形式打开，例如直接在ArcMap中添加数据、在ArcMap中添加XY数据显示为点、在ArcCatalog中进行查看等等。</p>
 <p>而 *.xlsx 文件打开时，需要有一个数据驱动。如果我们遇到这个错误：“ <strong>Failed to connect to ddatabase. An underlying database error occured. 没有注册类</strong>”，那就是缺少驱动的结果。</p>
 <p>一般如果我们安装了 MS Office 2010 或者 2013，或者根本就没有安装 Office，这个错误必然会遇到了。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Error.jpg"></p>
+<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Error.jpg"></p>
 <br>
 
 <p>需要安装 &nbsp;2007 Office System 驱动程序（AccessDatabaseEngine.exe），下载英文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2VuLXVzL2Rvd25sb2FkL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，中文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3poLWNuL2Rvd25sb2FkL2RldGFpbHMuYXNweD9pZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，这个包的官方说明如下：</p>

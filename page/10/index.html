@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,131 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/01/23/CreateSplittedBuffer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/01/23/CreateSplittedBuffer/" class="post-title-link" itemprop="url">生成线要素分段缓冲区</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-01-23 15:43:20" itemprop="dateCreated datePublished" datetime="2017-01-23T15:43:20+08:00">2017-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/01/23/CreateSplittedBuffer/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/23/CreateSplittedBuffer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>260</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>前段时间做了个小工具，可以生成线要素的分段缓冲区，补充 ArcGIS 现有缓冲区工具的不足，用来辅助实现更多的功能。</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_Tool.png"></p>
+<p>工具基于 arcpy、maths、os 几个模块实习，arcpy 中并没有提供现成的计算切线方向的函数或接口，我就尝试通过点处微小偏移量的三角定理计算方法构造切线，然后进行角度换算实现垂线的构造，最后再用垂线去切割缓冲区条带。</p>
+<br>
+
+<p>链接中可以下载 ArcGIS Desktop 或者 ArcGIS Pro 的工具箱版本（ 开发版本：Desktop 10.5，Pro 1.3，其他版本需要自己测试下 ）：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi90cmVlL21hc3Rlci9MYXp5V29ya2VyL0JhbWJvb0J1ZmZlcg==">https://github.com/kikitaMoon/ArcGIS-Python/tree/master/LazyWorker/BambooBuffer<i class="fa fa-external-link-alt"></i></span><br>(更新20171204：改SplittedBuffer为BambooBuffer，好像更形象一点)</p>
+<p>以在 ArcGIS Pro 中添加和使用为例：</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_UI.png"></p>
+<br>
+
+<p>工具源码参考：<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0JhbWJvb0J1ZmZlci9QZXJwZW5kaWN1bGFyTGluZV8yLjBfVG9vbC5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/BambooBuffer/PerpendicularLine_2.0_Tool.py<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<p>基于工具的应用实例：</p>
+<p>1  统计公路各分段的拥堵情况</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_Road.png"></p>
+<p>2  河道分段水位模拟</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_River.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -311,12 +436,12 @@
 <p>例如使用热度图&#x2F;Heatmap 渲染器</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Add layer using heatmap renderer</span></span><br><span class="line">featureitem = search_result[<span class="number">0</span>]</span><br><span class="line">mymap.add_layer(featureitem.layers[<span class="number">0</span>], &#123;<span class="string">&quot;renderer&quot;</span>:<span class="string">&quot;HeatmapRenderer&quot;</span>, <span class="string">&quot;opacity&quot;</span>:<span class="number">0.7</span>&#125;)</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://kikitamap.com/images/blogImg/PythonAPIFunction1_MapWidget.gif"></p>
+<p><img data-src="/images/blogImg/PythonAPIFunction1_MapWidget.gif"></p>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>假设需求是实现采样点插值，数据来源是桌面产品自带的ArcGIS Tutorial中的数据（Geostatistical Analyst\ca_ozone.gdb\O3_Sep06_3pm）。</p>
 <p>除了通过搜索的方法，如果知道 itemid ，也能直接获得到内容，可以使用方法 gis.content.get()</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> arcgis <span class="keyword">import</span> gis</span><br><span class="line">gis = gis.GIS(<span class="string">&quot;https://kikita.mycloud.com/arcgis&quot;</span>,<span class="string">&quot;portaladmin&quot;</span>,<span class="string">&quot;Super123&quot;</span>, verify_cert=<span class="literal">False</span>)</span><br><span class="line">search_result = gis.content.get(<span class="string">&#x27;15b012af7f15484293517c844d2d65ab&#x27;</span>)</span><br><span class="line">search_result</span><br></pre></td></tr></table></figure>
 
-<p><img data-src="http://kikitamap.com/images/blogImg/PythonAPIFunction1_GetItem.png"></p>
+<p><img data-src="/images/blogImg/PythonAPIFunction1_GetItem.png"></p>
 <p>还是使用地图微件，用来显示下数据和分析结果。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mymap = gis.<span class="built_in">map</span>(<span class="string">&#x27;California&#x27;</span>)</span><br><span class="line">mymap.height = <span class="string">&#x27;500px&#x27;</span></span><br><span class="line">mymap</span><br></pre></td></tr></table></figure>
 
@@ -435,7 +560,7 @@
           <blockquote>
 <p>摄于 2016-6-20，Disneyland, 香港</p>
 </blockquote>
-<p><img data-src="http://kikitamap.com/images/blogImg/XJL_IMG_5792.jpg"></p>
+<p><img data-src="/images/blogImg/XJL_IMG_5792.jpg"></p>
 <p>越长大越复杂，不提醒自己，常常就忘记了快乐<br>有时，我们需要像孩童般，简单直接开放地面对生活<br>2017，继续努力吧 </p>
 
       
@@ -546,7 +671,7 @@
           <blockquote>
 <p>摄于 2016-6-19，海港城，香港</p>
 </blockquote>
-<p><img data-src="http://kikitamap.com/images/blogImg/XJL_IMG_5651.jpg"></p>
+<p><img data-src="/images/blogImg/XJL_IMG_5651.jpg"></p>
 <p>父亲节，刚好在海港城<br>偶然看到小朋友的作品，觉得好有爱<br>对宝宝多年无感的我们<br>那时忽然觉得有个孩子好像也不错<br>不是为了传宗接代，不是为了完成所谓的使命<br>只是静静地看着ta成长<br>我们尽可能多地给予陪伴</p>
 
       
@@ -681,122 +806,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> arcgis.gis <span class="keyword">import</span> *</span><br><span class="line">gis = GIS()</span><br><span class="line">gis.<span class="built_in">map</span>()</span><br></pre></td></tr></table></figure>
 
 <p>Bingo!</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UsingArcGISPythonAPI.png"></p>
+<p><img data-src="/images/blogImg/UsingArcGISPythonAPI.png"></p>
 <br>
 
 <p>ArcGIS Python API 的官方简短介绍视频 （<em>Youtube源，请翻墙，你懂的</em>）</p>
 <iframe width="960" height="540" src="http://www.esri.com//videos/iframe?videoid=SyFebn8ZgbU&channelid=UCgGDPs8cte-VLJbgpaK4GPw&title=arcgis-python-api-in-5-minutes&autoplay=false" frameborder="0" allowfullscreen></iframe>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/09/30/LineDirectioninCE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/09/30/LineDirectioninCE/" class="post-title-link" itemprop="url">在CityEngine中如何判断线的方向与左右？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2016-09-30 14:44:20" itemprop="dateCreated datePublished" datetime="2016-09-30T14:44:20+08:00">2016-09-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2016/09/30/LineDirectioninCE/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/30/LineDirectioninCE/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>163</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在我们建模的过程中，通常会遇到一些实际问题，例如，如何在道路右边放置交通指示灯？ 如何在道路的左边放置行树？如何在管线的末尾放置阀门？等等。</p>
-<p>这些有关线状要素的方向和左右的判断，可以通过UV坐标系来确定的。 线的UV坐标系与线的方向相关，</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LineDirectioninCE.png"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    LineDirection.cga</span></span><br><span class="line"><span class="comment"> * Created: 22 Sep 2016 06:06:18 GMT</span></span><br><span class="line"><span class="comment"> * Author:  kikit</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2016.0&quot;</span></span><br><span class="line"></span><br><span class="line">init --&gt; </span><br><span class="line">Line2</span><br><span class="line"></span><br><span class="line"><span class="title function_">split</span><span class="params">(u,unitSpace,<span class="number">0</span>)</span>&#123;<span class="string">&#x27;0.1:StartSegment|&#x27;</span><span class="number">0.8</span>:NIL|<span class="string">&#x27;0.1:EndSegment&#125;</span></span><br><span class="line"><span class="string">StartSegment --&gt; color(0,1,0) #Green</span></span><br><span class="line"><span class="string">EndSegment --&gt; color(1,0,0)   #Red</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Line2 --&gt;</span></span><br><span class="line"><span class="string">translate(rel,world,0,0,-20)</span></span><br><span class="line"><span class="string">split(v,unitSpace,0)&#123;&#x27;</span><span class="number">0.2</span>:LeftSide|<span class="string">&#x27;0.6:NIL|&#x27;</span><span class="number">0.2</span>:RightSide&#125;</span><br><span class="line">LeftSide --&gt; color(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>)   #Yellow</span><br><span class="line">RightSide --&gt; color(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>)  #Blue</span><br></pre></td></tr></table></figure>
 
 
       

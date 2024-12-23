@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="上一篇文中写了在 Linux上安装 ArcGIS Server前的准备工作，最后一步是环境检测，只有所有项都通过才可以安装 ArcGIS Server。 不幸的是，第一次其实没有通过环境监测，提示系统中缺少了Xvfb包，具体的检测结果如下：  检测报告中提示了解决方法，参考技术文章 40860： 但是这篇文章只告诉我们缺包了，需要安装一个Xvfb包，没有说明包的获取与安装过程等，下面我就bala一">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/LackofPackonLinux_Xvfb.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/LackofPackonLinux_Download.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/LackofPackonLinux_Install.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/LackofPackonLinux_Done.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/LackofPackonLinux_Xvfb.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/LackofPackonLinux_Download.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/LackofPackonLinux_Install.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/LackofPackonLinux_Done.png">
 <meta property="article:published_time" content="2015-05-08T13:19:05.000Z">
-<meta property="article:modified_time" content="2018-07-03T05:23:32.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.322Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Deployment">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/LackofPackonLinux_Xvfb.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/LackofPackonLinux_Xvfb.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/05/08/LackofPackonLinux/">
@@ -163,7 +163,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -299,7 +299,7 @@
     
     <div class="post-body" itemprop="articleBody"><p>上一篇文中写了在 Linux上安装 ArcGIS Server前的准备工作，最后一步是环境检测，只有所有项都通过才可以安装 ArcGIS Server。</p>
 <p>不幸的是，第一次其实没有通过环境监测，提示系统中缺少了Xvfb包，具体的检测结果如下：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Xvfb.png"></p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Xvfb.png"></p>
 <p>检测报告中提示了解决方法，参考技术文章 <span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzQwODYw">40860<i class="fa fa-external-link-alt"></i></span>：</p>
 <p>但是这篇文章只告诉我们缺包了，需要安装一个Xvfb包，没有说明包的获取与安装过程等，下面我就bala一下喽。</p>
 <br>
@@ -309,19 +309,19 @@
 <blockquote>
 <p><strong>wget <span class="exturl" data-url="aHR0cDovL3ZhdWx0LmNlbnRvcy5vcmcvNi4yL29zL3g4Nl82NC9QYWNrYWdlcy94b3JnLXgxMS1zZXJ2ZXItWHZmYi0xLjEwLjQtNi5lbDYueDg2XzY0LnJwbQ==">http://vault.centos.org/6.2/os/x86_64/Packages/xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm<i class="fa fa-external-link-alt"></i></span></strong></p>
 </blockquote>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Download.png"></p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Download.png"></p>
 <br>
 <br>
 
 <h1 id="2-运行安装Xvfb包"><a href="#2-运行安装Xvfb包" class="headerlink" title="2 .  运行安装Xvfb包"></a>2 .  运行安装Xvfb包</h1><blockquote>
 <p><strong>yum localinstall xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm</strong></p>
 </blockquote>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Install.png"></p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Install.png"></p>
 <br>
 <br>
 
 <h1 id="3-执行环境检测"><a href="#3-执行环境检测" class="headerlink" title="3 . 执行环境检测"></a>3 . 执行环境检测</h1><p>所有检测通过即可安装 ArcGIS Server 程序：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/LackofPackonLinux_Done.png"></p>
+<p><img data-src="/images/blogImg/LackofPackonLinux_Done.png"></p>
 
     </div>
 

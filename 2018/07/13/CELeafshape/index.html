@@ -29,20 +29,20 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="CityEngine 的CGA建模过程是个不断迭代繁衍的过程，我们将这个过程想象成一棵树。 通过 Shapefile，File Geodatabase，AutoCAD DXF 这些矢量数据格式导入CityEngine中的2D基面（Footprint），通常称为 CityEngine Initial Shape，这是这棵树的根节点。通过CGA中的命令符 --&gt; ，将一个shape经过各种形状（">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CELeafShape_2013DS.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CELeafShape_2013DS2.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CELeafShape_FGDB.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CELeafShape_SLPK.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CELeafShape_Pro.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_2013DS.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_2013DS2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_FGDB.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_SLPK.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_Pro.png">
 <meta property="article:published_time" content="2018-07-13T02:50:36.000Z">
-<meta property="article:modified_time" content="2018-07-13T06:29:44.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.390Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="3D">
 <meta property="article:tag" content="CityEngine">
 <meta property="article:tag" content="ArcGIS Pro">
 <meta property="article:tag" content="CGA">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/CELeafShape_2013DS.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/CELeafShape_2013DS.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2018/07/13/CELeafshape/">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -303,8 +303,8 @@
 <p>通过 Shapefile，File Geodatabase，AutoCAD DXF 这些矢量数据格式导入CityEngine中的2D基面（Footprint），通常称为 CityEngine <strong>Initial Shape</strong>，这是这棵树的根节点。通过CGA中的命令符 <code>--&gt;</code> ，将一个shape经过各种形状（Geometry）和位置（Pivot，Scope） 的函数操作，生成另一个shape。直到最后，模型建立，最终的shape节点，通常称为 CityEngine <strong>Leaf Shape</strong>。</p>
 <blockquote>
 <p>这个细节的概念，在2013年的开发者大会中提过一次，结合模型层次结构的幻灯片理解下：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CELeafShape_2013DS.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CELeafShape_2013DS2.png"></p>
+<p><img data-src="/images/blogImg/CELeafShape_2013DS.png"></p>
+<p><img data-src="/images/blogImg/CELeafShape_2013DS2.png"></p>
 <p>完整的幻灯片可以点 <a target="_blank" rel="noopener" href="https://github.com/kikitaMoon/kikitamap.github.io/blob/gh-pages/attaches/EsriChinaDevSum-2013-EsriCityEngine%E8%A7%84%E5%88%99%E5%BC%80%E5%8F%91-%E6%85%95%E6%99%93%E7%87%95.pdf"><strong>这里</strong></a> 下载。</p>
 </blockquote>
 <p>为什么说是“迭代繁衍”？ 因为除了 Leaf Shape 之外的所有shape 在建模过程中都被紧跟它其后的shape替代而消亡了。</p>
@@ -318,10 +318,10 @@
 
 <p>了解了这些，那么我们可以进一步回答这个问题：“如何将CityEngine规则建模的模型导出成各组件独立存储的模型？”   </p>
 <p>可以的，再导出FileGDB或 Scene Layer Package的时候选中 “<strong>One Feature per Leaf Shape</strong>” 即可。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CELeafShape_FGDB.png" alt="Export to FileGDB"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CELeafShape_SLPK.png" alt="Export to Scene Layer Package"></p>
+<p><img data-src="/images/blogImg/CELeafShape_FGDB.png" alt="Export to FileGDB"></p>
+<p><img data-src="/images/blogImg/CELeafShape_SLPK.png" alt="Export to Scene Layer Package"></p>
 <p>这些导出的模型数据拿到其他软件中使用，例如ArcGIS Pro，各组件即为不同的静态模型对象。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CELeafShape_Pro.png"></p>
+<p><img data-src="/images/blogImg/CELeafShape_Pro.png"></p>
 <p><em>这个示例的CGA脚本在 <a target="_blank" rel="noopener" href="https://github.com/kikitaMoon/BuildingCGA/tree/master/Demoforkikitamap.com/4-FloorsAsLeafshape">我的<strong>Github</strong></a> 可以查看和下载。</em></p>
 
     </div>

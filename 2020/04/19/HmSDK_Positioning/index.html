@@ -29,20 +29,20 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="地图技术是对真实世界既有位置的表达，定位技术是对当前位置的求解。随着各种传感器、移动设备的广泛使用，GIS和LBS通常无缝结合在同一个解决方案中。GIS更侧重于稳坐后台解决空间数据的提取、处理、分析、挖掘，LBS更侧重于深入终端实现信号收集、位置获取、轨迹追踪。GIS从一个小众而专业的领域，随着互联网的潮流，逐渐拥抱普适，增值LBS。 从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg">
 <meta property="article:published_time" content="2020-04-19T04:50:58.000Z">
-<meta property="article:modified_time" content="2020-04-19T08:07:29.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.408Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="HERE Map">
 <meta property="article:tag" content="HLS">
+<meta property="article:tag" content="Positioning">
 <meta property="article:tag" content="Mobile SDK">
 <meta property="article:tag" content="Android">
-<meta property="article:tag" content="Positioning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg">
 
 
 <link rel="canonical" href="https://kikitamap.com/2020/04/19/HmSDK_Positioning/">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -303,7 +303,7 @@
 <p>从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一个陌生地方到了饭点儿，估计大家十有八九会打开App，看下周边地图，知道我在哪，搜下周边饭馆，然后计算路线导航过去，吃饱喝足一气呵成即可。</p>
 <p>以上面这个觅食的例子展开，从产品功能角度，至少需要如下几个模块。App首先获取设备的位置（positioning），通过这个位置请求周边map tile（map service）, 然后搜索指定Category的POI（search&amp;F&#x2F;R geocoding），然后计算路线（routing&#x2F;direction）并导航（TBT Navigation）……</p>
 <p>这一篇我想整理一下，位置服务第一步， Positioning 相关的内容。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg"></p>
+<p><img data-src="/images/blogImg/HmSDK_Positioning_opening.jpg"></p>
 <p>HERE Mobile SDK 中不仅提供了Android 系统中自带的基础定位接口，而且特别提供了HERE增强版的定位能力，更精准，高效，可靠。这些增强版的定位能力包括：</p>
 <ul>
 <li><strong>蜂窝网络定位 - 支持 GSM, CDMA, WCDMA, TD-SCDMA ，LTE</strong></li>
@@ -327,11 +327,11 @@
 <p>前者可通过online WiFi定位的定位缓存数据解决离线问题；后者则需要大量的众包数据作为前提实现。</p>
 <p>后者是一种更黑科技的技术，但是从原理上也不是难于理解。 可以想象，大型购物中心通常布满 WiFi热点，移动设备即使无法连接这些热点，也可以探测到这些WiFi热点的信息。根据信号场强的算法黑科技，最终是从已知点位解算未知点位的数学问题。</p>
 <p>这里的问题是：已知点位怎么来？这正是源自众包、托关于定位服务器的 HERE Radio Map。采集和管理 Radio Map 实际官方也有给出工具<span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scw=="> HERE Indoor Radio Mapper<i class="fa fa-external-link-alt"></i></span> 和 <span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scy9oZWxwLXRleHQtMyNpbmRvb3ItcmFkaW8tbWFwLWFkbWluLXRvb2w=">HERE Radio Map Admin Tool<i class="fa fa-external-link-alt"></i></span> 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg"></p>
+<p><img data-src="/images/blogImg/HmSDK_Positioning_RadioMap.jpg"></p>
 </li>
 </ul>
 <p><strong>室内地图 &#x2F;Venue Map</strong>，在实际的使用场景中，室内定位一般与3D室内地图结合使用，但始终要理解，地图是地图，定位是定位，只是为了终端用户的视觉显示时，二者才绑到了一起。室内地图的显示和制作也有单独的工具，点<span class="exturl" data-url="aHR0cHM6Ly92ZW51ZXMuaGVyZS5jb20vcHJvZHVjdHMvb3ZlcnZpZXc=">这里<i class="fa fa-external-link-alt"></i></span>看官网。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg"></p>
+<p><img data-src="/images/blogImg/HmSDK_Positioning_indoor.jpg"></p>
 <p>定位部分的开发部署，强烈建议仔细阅读开发文档，有关设备访问权限的几点一定要确保配置正确。</p>
 <ul>
 <li><p>HERE Mobile SDK - <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vMy4xNS9kZXZfZ3VpZGUvdG9waWNzL2FkdmFuY2VkLXBvc2l0aW9uaW5nLmh0bWw=">Developer Doc<i class="fa fa-external-link-alt"></i></span></p>
@@ -340,7 +340,7 @@
 </li>
 </ul>
 <p>可以带手机到室外和室内试一下这个Demo，支持选择定位模式。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg"></p>
+<p><img data-src="/images/blogImg/HmSDK_Positioning_Demo.jpg"></p>
 
     </div>
 
@@ -391,9 +391,9 @@
           <div class="post-tags">
               <a href="/tags/HERE-Map/" rel="tag"><i class="fa fa-tag"></i> HERE Map</a>
               <a href="/tags/HLS/" rel="tag"><i class="fa fa-tag"></i> HLS</a>
+              <a href="/tags/Positioning/" rel="tag"><i class="fa fa-tag"></i> Positioning</a>
               <a href="/tags/Mobile-SDK/" rel="tag"><i class="fa fa-tag"></i> Mobile SDK</a>
               <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
-              <a href="/tags/Positioning/" rel="tag"><i class="fa fa-tag"></i> Positioning</a>
           </div>
 
         

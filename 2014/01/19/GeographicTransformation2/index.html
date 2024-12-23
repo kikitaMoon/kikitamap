@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="上篇博客说的是 Project 工具中 Geographic Transformation 参数什么情况下是必填的。  另外，Project 是矢量数据的坐标系变换工具，如果数据源是栅格数据，需要使用 Project Rater 工具。 &nbsp;这篇博客主要写一下，有关自定义地理变换方法。 ArcGIS 中提供地理变换方法主要有这几种：Geocentric_Translation、Molod">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation2_Method.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation2_Graphic.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation2_Function.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation2_Frame.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation2_FrameFunction.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation2_Method.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation2_Graphic.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation2_Function.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation2_Frame.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation2_FrameFunction.gif">
 <meta property="article:published_time" content="2014-01-19T02:37:38.000Z">
-<meta property="article:modified_time" content="2018-07-03T11:01:47.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.275Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Coordinate System">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation2_Method.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation2_Method.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/01/19/GeographicTransformation2/">
@@ -162,7 +162,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -301,18 +301,18 @@
 <p>&nbsp;这篇博客主要写一下，有关自定义地理变换方法。</p>
 <p>ArcGIS 中提供地理变换方法主要有这几种：Geocentric_Translation、Molodensky、Molodensky_Abridged、Position_Vector、Coordinate_Frame、Molodensky_Badekas、NADCON、HARN、NTV2、Longitude_Rotation、Unit_Change 和 Geographic_2D_Offset。可使用“创建自定义地理变换（Create Custom Geographic Transformation）”工具来创建转换方法。地理坐标系包含了基于椭圆体的基准面，因此地理变换会更改基础椭圆体。在基准面间进行变换的方法很多，这些方法具有不同的精度和范围。</p>
 <p>地理变换是针对地理坐标系的，也就是经纬度坐标进行转换，如果输入数据的坐标系中还包含了平面坐标系（投影），在使用 Project 工具的过程中会自动做相应的投影变换，转到地理坐标系，地理变换后，如果需要再转为相应的投影坐标系。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Method.png"></p>
+<p><img data-src="/images/blogImg/GeographicTransformation2_Method.png"></p>
 <p><strong>PS：</strong></p>
 <p>所有的自定义地理变换文件都将存储为扩展名为 .gtf 的文件，并存储在用户 Application Data 文件夹下的 <code>ESRI\&amp;lt;ArcGIS product&amp;gt;\ArcToolbox\CustomTransformations</code> 文件夹中。自定义变换文件不能进行编辑。它们为二进制文件，用来储存版本和字符串长度信息，如果在ArcGIS之外进行自行编辑，可能会被损坏。</p>
 <p>下面我们来看看常用的转换方法吧，帮助中有介绍，我下面来个精简整理版的：</p>
 <p><strong>1）Geocentric_Translation</strong></p>
 <p>地心变换，也就是我们常说的<strong>三参数变换</strong>，是最简单的基准面变换方法。地心变换在 XYZ 或 3D 直角坐标系中对两个基准面间的差异情况进行建模。定义一个基准面使其中心为 0,0,0。相距一定距离定义另一个基准面（dx,dy,dz 或 ΔX,ΔY,ΔZ，单位为米）。</p>
-<p>图示:  <img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Graphic.gif"></p>
-<p>方程：<img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Function.gif"></p>
+<p>图示:  <img data-src="/images/blogImg/GeographicTransformation2_Graphic.gif"></p>
+<p>方程：<img data-src="/images/blogImg/GeographicTransformation2_Function.gif"></p>
 <p><strong>2）Coordinate Frame，Position Vector</strong></p>
 <p>这两种方法是我们常说的七参数变换，或者布尔沙模型。通过对三参数变换再增加四个参数可实现更复杂和精确的基准面变换。七个参数是指三个线性平移量 (dx,dy,dz)、绕各轴的三个角度旋转值 (rx,ry,rz) 和一个比例尺因子。旋转值以十进制秒为单位给定，而比例尺因子采用百万分率 (ppm)。</p>
-<p>图示：<img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation2_Frame.gif">&nbsp; &nbsp;</p>
-<p>方程：<img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation2_FrameFunction.gif"></p>
+<p>图示：<img data-src="/images/blogImg/GeographicTransformation2_Frame.gif">&nbsp; &nbsp;</p>
+<p>方程：<img data-src="/images/blogImg/GeographicTransformation2_FrameFunction.gif"></p>
 <p>为什么七参数有上面两种方法？其实可以认为是一种模型，只是不同的国家对旋转量的正负号定义标准不同而已。</p>
 <ul>
 <li>坐标框架旋转变换（coordinate frame），美国和澳大利亚的定义，逆时针旋转为正；</li>

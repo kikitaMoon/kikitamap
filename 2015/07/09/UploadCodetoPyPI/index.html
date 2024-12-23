@@ -29,19 +29,19 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="我们可以把自己的代码，尤其是期待分享的得意代码，上传分享到第三方Python模块的“集中营” —— **PyPI**，如果没有账号，可以注册个先。   1  准备发布像在本地发布安装一样，先新建一个文件夹，然后将自己的py文件放进去，然后再这个文件夹中创建一个  setup.py 的文件，内容如下面的样子： 123456789101112from distutils.core import set">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Login.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_upload.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_MyProfile.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Update.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_UploadUpdate.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Verisons.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Download.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_Login.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_upload.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_MyProfile.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_Update.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_UploadUpdate.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_Verisons.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_Download.png">
 <meta property="article:published_time" content="2015-07-09T04:26:05.000Z">
-<meta property="article:modified_time" content="2018-07-02T03:56:23.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.333Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Login.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/UploadCodetoPyPI_Login.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/07/09/UploadCodetoPyPI/">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -309,27 +309,27 @@
 <br>
 
 <h2 id="2-注册登录"><a href="#2-注册登录" class="headerlink" title="2 注册登录"></a>2 注册登录</h2><p>使用命令行窗口，跳转到要发布的py所在的文件夹目录，首先进行注册登录，让命令行上传工具知道我的PyPI账户和密码。输入命令：**<code>python setup.py register</code>**，选择 1，输入账户和密码，并且保存登录信息，下次上传可以跳过这个步骤。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Login.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Login.png"></p>
 <br>
 
 <h2 id="3-上传发布"><a href="#3-上传发布" class="headerlink" title="3 上传发布"></a>3 上传发布</h2><p>接着在命令行窗口中，输入命令： **<code>python setup.py sdist upload</code>**：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_upload.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_upload.png"></p>
 <p>看到 OK 即上传成功。到 PyPI 自己的账户下看看吧。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_MyProfile.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_MyProfile.png"></p>
 <p>Bingo ~</p>
 <br>
 
 <h2 id="4-更新模块"><a href="#4-更新模块" class="headerlink" title="4 更新模块"></a>4 更新模块</h2><p>当我们修改了模块中的代码，并想更新 PyPI 上的模块，那就在上传之前更改下 setup.py 的 version 参数，告诉 PyPI 这是个新的版本。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Update.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Update.png"></p>
 <p>并使用相同的命令来上传新的发布版本。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_UploadUpdate.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_UploadUpdate.png"></p>
 <p>好了，看看 PyPI，两个版本的模块都在，其中旧的版本默认被隐藏。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Verisons.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Verisons.png"></p>
 <br>
 
 
 <p>我们可以下载最新版本直接解压安装使用。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/UploadCodetoPyPI_Download.png"></p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Download.png"></p>
 
     </div>
 

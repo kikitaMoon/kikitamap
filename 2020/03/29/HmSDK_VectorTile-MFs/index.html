@@ -29,11 +29,11 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="上一篇，我们一起结合  Interactive Maps 了解了HERE Map Service 的地图渲染样式， 在此之外，HERE Mobile SDK 向开发者提供的在线地图产品中，还有 Vector Tile 和 Map Feedback service 值得拥有。 PS：除了SDK产品之外，HERE 在线地图产品中的 RESTful API 产品包括：Vector Tile，Image">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_map_editor.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Lite_Demo.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Map_Creator.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_map_editor.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Lite_Demo.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Map_Creator.jpg">
 <meta property="article:published_time" content="2020-03-29T02:13:08.000Z">
-<meta property="article:modified_time" content="2020-04-10T04:51:53.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.407Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Vector Tiles">
 <meta property="article:tag" content="HERE Map">
@@ -41,7 +41,7 @@
 <meta property="article:tag" content="Mobile SDK">
 <meta property="article:tag" content="Android">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_map_editor.jpg">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_map_editor.jpg">
 
 
 <link rel="canonical" href="https://kikitamap.com/2020/03/29/HmSDK_VectorTile-MFs/">
@@ -165,7 +165,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -309,14 +309,14 @@
 <p>自 <a target="_blank" rel="noopener" href="https://github.com/mapbox/vector-tile-spec/"><strong>Mapbox</strong></a> 提出更智慧的 vector tile ，这种切片格式早已备受各大GIS、LBS厂商的青睐。vector tile 采用了与 raster tile 类似的 caching scheme，只是每片tile的内容从raster 变成了vector。 我们想象一下，如果表示几条路的一片512px×512px 的tile，用raster格式，那就需要几个512×512 的矩阵表示，而用vector格式，只需要包含数对坐标和位移的串表示。 因此，vector tile 在尺寸上有明显优势，从而传输性能就高了。这是因为这个特性，vector tile 允许用户在客户端自定义 vector style ，例如路或点状地物的颜色和符号， 不像 raster tile 是预渲染的镜像，已经是静态结果，渲染样式不能被客户端修改。</p>
 <p>如果提到vector 和 raster 哪个好？ 我想答案可能不是绝对唯一的。如果从传输性能和客户端简单符号的自定义的角度，一定是vector tile更优； 但如果从地图渲染丰富度、复杂度的支持角度，raster tile 还是占有一席之地。</p>
 <p>现在回到 HERE Vector Tile Service ，为了方便客户快速生成 vector style configuration file ，HERE 提供了在线工具 <a target="_blank" rel="noopener" href="https://enterprise.here.com/map-style-editor/"><strong>Map Style Editor</strong></a>。可以在登录 Developer Portal之后，点击前面的连接进入即可，如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_map_editor.jpg"></p>
+<p><img data-src="/images/blogImg/HmSDK_VectorTile-MFs_map_editor.jpg"></p>
 <ul>
 <li><p>Github 获取到 mSDK Android Lite Edition 在线地图的官方 <a target="_blank" rel="noopener" href="https://github.com/heremaps/here-sdk-examples/tree/master/examples/4.2.0.0/lite/android"><strong>代码样例</strong></a>。</p>
 </li>
 <li><p>Developer Portal 定制地图渲染样式的 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-sdk/dev_guide/topics/custom-map-styles-lite.html"><strong>说明</strong></a>。</p>
 </li>
 </ul>
-<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Lite_Demo.jpg"></p>
+<p><img data-src="/images/blogImg/HmSDK_VectorTile-MFs_Lite_Demo.jpg"></p>
 <h2 id="Map-Feedback"><a href="#Map-Feedback" class="headerlink" title="Map Feedback"></a>Map Feedback</h2><p>创建地图应用时，最常见问题之一就是“巧妇难为无米之炊” ，地图数据是“米”，之上的各种在线地图及位置能力的实现是“炊”。HERE 攒了30多年的数据采集经验，米仓充盈。在丰富的数据采集手段中，其中最平易近人的一支就是来自用户的数据问题回报。</p>
 <p>无论是商业客户，还是免费社区，全球用户都可以使用 Map Feedback API 提出数据缺漏或错误。当然可想而知，整个群体数量非常庞大，数据生产单元会根据一系列的规则评定用户的信用优先级，来管理这些回报过来的数据问题的处理策略。</p>
 <p>在 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/map-feedback/dev_guide/topics/quick-start-submit-feedback.html"><strong>Rest API</strong></a> ， <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/embedded-editor/dev_guide/topics/add-as-app-component.html"><strong>mobile SDK</strong></a> ， <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/embedded-editor/dev_guide/topics/add-to-website.html"><strong>Web SDK</strong></a> 各版本都有对数据回报的支持，其中最完整的开发文档，还是建议看 Rest API 的部分，它包含了全部可枚举的错误类型和信息上报的说明。用户也可以追踪数据问题的处理结果，例如，被采纳或拒绝，以及采纳后预计更新时间。</p>
@@ -324,7 +324,7 @@
 <li>Rest API - Request URL 的请见 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/examples/rest/map_feedback"><strong>样例</strong></a>。</li>
 </ul>
 <p>另外，在HERE 官方地图应用中，<a target="_blank" rel="noopener" href="http://mapcreator.here.com/"><strong>Map Creater</strong></a> 和 <a target="_blank" rel="noopener" href="https://wego.here.com/"><strong>HERE Wego</strong></a> 都包含了这个功能，只是这两个网站目前还在墙外，希望早日能与我们正式见面。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_VectorTile-MFs_Map_Creator.jpg"></p>
+<p><img data-src="/images/blogImg/HmSDK_VectorTile-MFs_Map_Creator.jpg"></p>
 <p>关于这两个服务就说这么多了，有空再继续进行下一集。</p>
 <p>Stay tuned ！</p>
 

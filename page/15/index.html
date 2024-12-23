@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,180 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/12/21/TroubleshootingShapefile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/12/21/TroubleshootingShapefile/" class="post-title-link" itemprop="url">Troubleshooting：Shapefile 乱码与字符截断问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-12-21 13:00:00" itemprop="dateCreated datePublished" datetime="2015-12-21T13:00:00+08:00">2015-12-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/12/21/TroubleshootingShapefile/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/21/TroubleshootingShapefile/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Shapefile是上个世纪90年代的数据格式，但是由于它开放易用至今仍然倍受欢迎，最近与shapefile编码相关的问题此起彼伏连绵不绝，整理下几个高频问题共享之。</p>
+<br>
+
+<h2 id="为什么我的shapefile在ArcGIS-10-3中打开乱码？"><a href="#为什么我的shapefile在ArcGIS-10-3中打开乱码？" class="headerlink" title="为什么我的shapefile在ArcGIS 10.3中打开乱码？"></a><strong>为什么我的shapefile在ArcGIS 10.3中打开乱码？</strong></h2><br>
+
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><em>原因</em></h3><p>这个问题的根本原因就是读取文件使用的编码类型和文件实际存储的编码类型不一致。</p>
+<p>Shapefile文件的头文件（dBase Header）中，一般会包含shapefile使用的编码类型的信息，这个信息成为 <strong>LDID</strong> （ Language Driver ID），这样在使用应用程序打开 shapefile 的时候，应用程序就知道用何种编码类型去正确读取它，而不会发生乱码。 在 ArcGIS Desktop 生产的 shapefile 数据中通常会包含这项信息。在Shapefile的子文件中，有时我们还会发现同名 ***.cpg** 文件，文件中也存储了编码信息，用记事本打开，看到例如 utf-8。</p>
+<p>二者被ArcGIS 识别的优先顺序是，<strong>LDID 优先于 CPG文件</strong>。也就是如果头文件中没有约定读shapefile的编码类型时，如果这时刚好有个CPG文件，那么ArcGIS就会使用这里的编码类型读取。</p>
+<p>我们知道 shapefile 是个开放格式，只要你了解了数据规范，完全可以脱离ArcGIS自己生产出来。在Windows中文语言设置下，假设你自己写代码或者使用第三方的程序生产了shapefile，例如MapGIS，默认使用 <strong>CP936（GBK）</strong>编码存储，但是无论粗心大意还是有意为之没有在数据头文件中约定“我用了936！”。如果是 ArcGIS 10.2 和之前的版本，那么没问题，ArcGIS 默认就是以这种方式识别，没有乱码。可是拿到 <strong>ArcGIS 10.2.1 ，ArcGIS 10.2.2，ArcGIS 10.3.x</strong> 这几个版本中发现乱！码！了！<strong>在缺失 LDID 和 CPG时，这几个版本默认使用 UTF-8 来读取 shapefile，这样必然乱码了。</strong></p>
+<br>
+
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><em>解决方法</em></h3><p>在shapefile子文件旁边创建个记事本，修改为同名的CPG文件，文本内容<strong>oem</strong>或者<strong>936</strong>。</p>
+<p><img data-src="/images/blogImg/TroubleshootingShapefile_cpgfile.png"></p>
+<p> <img data-src="/images/blogImg/TroubleshootingShapefile_cpgContent.png"></p>
+<p>这样 ArcGIS 10.2.1 、10.2.10.3.x 在读取的时候，就知道你的数据是这种编码类型存储的，从而按照正确的方式读取。</p>
+<p><img data-src="/images/blogImg/TroubleshootingShapefile_Demo.png"></p>
+<br>
+
+<br>
+
+
+
+<h2 id="为什么ArcGIS-10-3导出-Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？"><a href="#为什么ArcGIS-10-3导出-Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？" class="headerlink" title="为什么ArcGIS 10.3导出 Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？"></a><strong>为什么ArcGIS 10.3导出 Shapefile的字段名会被截断成3个汉字？低版本中不是至少可以存储4个汉字吗？</strong></h2><br>
+
+<h3 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a><em>原因</em></h3><p>这个问题仍然与编码类型有关。</p>
+<p><strong>ArcGIS 10.2 以及更早的版本</strong>，ArcGIS写shapefile的时候，遇到中文<strong>默认</strong>使用Windows当前语言 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><strong>字符集编码</strong></a>（也称 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%A0%81%E9%A1%B5"><strong>代码页&#x2F;CodePage&#x2F;OEM CodePage</strong></a>），例如中文一般使用的是 **<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU0JUJCJUEzJUU3JUEyJUJDJUU5JUEwJTgxOTM2">CodePage 936（GBK）<i class="fa fa-external-link-alt"></i></span>**。</p>
+<p><strong>ArcGIS 10.2.1 以及之后的版本</strong>，ArcGIS写shapefile的时候，<strong>默认</strong>使用的是 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/UTF-8"><strong>UTF-8</strong></a> 编码类型。</p>
+<p>这两种编码类型存储汉字所使用的字节数是不相同的，上面的关键字中我也给出了 wiki 的链接，有兴趣点进去看看详情。简言之，shapefile自身的限制是字段为9个字节，CP936编码下汉字通常为双字节存储，因此可以存储 9&#x2F;2&#x3D;4 个汉字；UTF-8 编码下汉字至少需要3个字节存储，因此最多只能存储 9&#x2F;3&#x3D;3 个汉字了。</p>
+<p><img data-src="/images/blogImg/TroubleshootingShapefile_ChineseCharlen.png"></p>
+<p>举个例子，在Python命令行中，我们求一下 Unicode字符串的长度就可以真相大白。</p>
+<p><img data-src="/images/blogImg/TroubleshootingShapefile_ChinesePython.png"></p>
+<br>
+
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a><em>解决方法</em></h3><h4 id="Perfect-Solution"><a href="#Perfect-Solution" class="headerlink" title="Perfect Solution"></a><em>Perfect Solution</em></h4><p>使用地理数据库，放弃shapefile，避免各种截断问题，这也是存储地理数据的康庄大道。</p>
+<p>但是，shapefile的拥趸说“我的需求是恢复以前存储4个汉字的shapefile，我不想用地理数据库，我希望得到老版本的shapefile的结果，我不在乎shapefile的编码类型是什么 ……bla bla……”好吧，方法还是有的。</p>
+<h4 id="Workaround"><a href="#Workaround" class="headerlink" title="Workaround"></a><em>Workaround</em></h4><blockquote>
+<p>这里还有个注意事项：<br>如果你用的刚好是 <strong>10.2.1</strong> 和<strong>10.2.2</strong> 这两个版本，那么要打补丁后以下设置才生效。以前写过另外一篇，详情点 **<a href="http://kikitamap.com/2014/02/13/shapefileCodePage/">这里</a>**。<br>如果你用的是 <strong>10.3.x</strong> ，那么直接向下进行。</p>
+</blockquote>
+<ol>
+<li>打开注册表，定位到 ‘<strong>My Computer\HKEY_CURRENT_USER\Software\ESRI\Desktop 10.x</strong>‘ </li>
+<li>创建项 ‘<strong>Common</strong>‘， 接着在其下创建  ‘<strong>CodePage</strong>‘ 项， 添加 ‘<strong>字符串</strong>’，名称： <strong>dbfDefault</strong>，健值：<strong>oem（或者 936）</strong>。</li>
+</ol>
+<p> <img data-src="/images/blogImg/TroubleshootingShapefile_Regedit.png"></p>
+<p>这样ArcGIS Desktop <strong>读、写</strong> shapefile的默认方式就将是Windows当前语言 <strong>OEM CodePage 936</strong>。</p>
+<br>
+
+<blockquote>
+<p>PS：<br>当然这种方法，也可以解决第一个问题，并且不需要为缺失oem编码信息的数据增加cpg文件了。两种方法，任君选择。</p>
+</blockquote>
+<br>
+
+<br>
+
+<h2 id="我如何检测当前shapefile使用了什么编码类型？"><a href="#我如何检测当前shapefile使用了什么编码类型？" class="headerlink" title="我如何检测当前shapefile使用了什么编码类型？"></a><strong>我如何检测当前shapefile使用了什么编码类型？</strong></h2><br>
+
+<p>shapfile本身是个开放格式，当然我们有很多种途径查看shapefile的内部，读者中不乏代码大牛，只要了解数据规范应该方法多多。</p>
+<p>我这里就分享一种通过 python 查看编码类型的简单的方法，使用python中的 <strong>struct模块</strong> 可以处理二进制数据，从而探测下 shapefile 的子文件 dbf 的头文件中的 LDID 信息是什么。</p>
+<h3 id="python代码示例"><a href="#python代码示例" class="headerlink" title="python代码示例"></a>python代码示例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*-coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">&#x27;kikita&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line">dbf = <span class="string">u&#x27;D:\ExportShapefiles\中文字段.dbf&#x27;</span></span><br><span class="line">dat = <span class="built_in">open</span>(dbf, <span class="string">&#x27;rb&#x27;</span>).read(<span class="number">30</span>)[<span class="number">29</span>:]</span><br><span class="line"><span class="built_in">id</span> = struct.unpack(<span class="string">&#x27;B&#x27;</span>, dat)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>, <span class="built_in">hex</span>(<span class="built_in">id</span>))</span><br></pre></td></tr></table></figure>
+
+
+<p>例如，得到这样的打印结果：   <strong><code>(77, &#39;0x4d&#39;)</code></strong>  通过这样的 ID 到 <span class="exturl" data-url="aHR0cDovL3NoYXBlbGliLm1hcHRvb2xzLm9yZy9jb2RlcGFnZS5odG1s">编码表<i class="fa fa-external-link-alt"></i></span> 中查到就是 CodelPage 936。</p>
+<p><img data-src="/images/blogImg/TroubleshootingShapefile_codetable.png"></p>
+<p>当然如果有你更好的方法，博主求分享，可以直接在评论区里贴出来，共同讨论。</p>
+<br>
+
+<br>
+
+<p>上面是三个最常被问到的问题，这三个问题通了，那么好多shapefile读写乱码问题就迎刃而解了。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -299,29 +473,29 @@
 <br>
 
 <h2 id="2-构建工作流"><a href="#2-构建工作流" class="headerlink" title="2 构建工作流"></a>2 构建工作流</h2><p>从【地理处理】菜单，打开  ModelBuilder 窗口，依次拖拽和连接 Project 和 Clip 两个工具。Project 工具的输出作为 Clip 工具的输入。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Grey.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Grey.png"></p>
 <p>双击工具可以打开工具继续填补工具需要的参数，直至Model因参数完全而变成彩色。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Color.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Color.png"></p>
 <br>
 
 <h2 id="3-使用迭代器"><a href="#3-使用迭代器" class="headerlink" title="3 使用迭代器"></a>3 使用迭代器</h2><p>前一步的工具已经满足一次任务的需要了，接着就是解决批量处理的问题。ModelBuilder提供了一些额外的自带工具来满足我们的一些高级需求，其中一类就是 <strong>迭代器</strong>，它用来实现循环。</p>
 <p>在这个例子中，需要遍历的对象是表示各种研究对象的要素类，因此选择 迭代要素类 &#x2F; Iterate Feature Classes。当然也可以根据自己的实际需求选择其他迭代器。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Iterator.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Iterator.png"></p>
 <p>接下来就是把迭代器与工具串联起来。首先，双击迭代器的六边形为迭代器设置工作空间，即地理数据库&#x2F;GDB，或者文件夹目录（例如shapefile所在的目录）。这样，迭代器会在指定的工作空间遍历要素类。删除现有Project工具的输入数据，将迭代器的输出数据连接到Project工具。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Iterator2.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_inlineVar.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Iterator2.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_inlineVar.png"></p>
 <p>工具基本准备完毕，但是还差了重要的一步。目前，最后的输出数据是常量，也就是说，即使前面的工具执行了N次，那结果都将被同名覆盖。那么，<strong>行内变量</strong> 就显出用武之地了。</p>
 <p>迭代器每次遍历到一个要素类，会返回一个 Name，内容是当前要素类的名称，这个Name就是行内变量。引用的方法就是使用百分号括起来，即 <strong><code>%Name%</code></strong> 。</p>
 <p>输出数据设置示例：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_inlineVar2.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_inlineVar2.png"></p>
 <p>至此我们就完成了一次批量任务。</p>
 <br>
 
 <h2 id="4-复用工具"><a href="#4-复用工具" class="headerlink" title="4 复用工具"></a>4 复用工具</h2><p>如果我们以后想按照这个相同的需求处理数据，完全可以将其做成模型工具。将输入数据和输出数据设置为模型变量，我们就可以在“运行”状态下使用。</p>
 <p>设置方法，在需要作为参数方便后续修改的项目上右键，勾选 “模型参数”即可，然后项目的头上顶了个“<strong>P</strong>”，(￣▽￣)”。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_Para.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Para.png"></p>
 <p>将模型保存至工具箱后，双击运行工具。现在就可以把它当成“面包机”，放入食材，等面包即可。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/IterationinArcGISforDesktop_FinalTool.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_FinalTool.png"></p>
 <br>
 
 <h2 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5  注意事项"></a>5  注意事项</h2><p>下面是些有用的提示，FYI：</p>
@@ -446,7 +620,7 @@
 <br>
 
 <h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ArcGIS License Manager <strong>已经授权完毕且成功</strong>，可用性（Availability）栏目中总计（Total）和可用（Available）的数目正常，服务器状态也运行正常。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
+<p><img data-src="/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
 <blockquote>
 <p>图中的过期栏目中的日期可忽略，内部工作使用的正式许可是限定有效日期的。如果你使用的是购买得到的正式版许可，这里会显示 永久（Permanent），也就是许可是永久有效的。</p>
 </blockquote>
@@ -484,15 +658,15 @@
 <p>在”<a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/get-started/license-manager-guide/configure-the-arcgis-license-manager-to-work-through-a-firewall.htm"><strong>许可服务管理器指南</strong></a>“中提到，”<strong>默认情况下，将 lmgrd 后台程序设为端口 27000</strong>“。那么，连不上许可服务器是因为端口被锁定了吗？ 有可能，动手查查才放心。</p>
 <p>听说，netstat是控制台命令,是一个监控TCP&#x2F;IP网络的非常有用的工具。那么动手吧。</p>
 <p>以管理员的身份运行命令窗口，并输入命令：**<code>netstat -abn</code>** </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_cmd.png"></p>
+<p><img data-src="/images/blogImg/CanNotConnectAGSLM_cmd.png"></p>
 <p>如果找到 27000 和 lmgrd.exe 这个进程 ，并且状态 Established，可以认为端口正常。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_lmgrd.png"></p>
+<p><img data-src="/images/blogImg/CanNotConnectAGSLM_lmgrd.png"></p>
 <br>
 
 <p>27000-27009是ArcGIS License Manger 的默认端口段，是相对不拥挤的段。但是，如果发现这个端口被其他程序占用了，那么就要修改ArcGIS许可服务器或者其它程序的端口了。在这里我就只能说说 ArcGIS 许可服务器的端口的修改方法了。</p>
 <blockquote>
-<p><strong>如何修改 ArcGIS 许可服务的端口？</strong><br>在 ArcGIS license manager 的安装目录下，bin目录下，找到 service.txt，打开如下样子：<br><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_service.png"></p>
-<p>修改这个配置文件，例如：在 SERVER 行的结尾处，您可选择直接在 ANY 后面指定端口号。在 VENDOR 行上，添加 PORT&#x3D;####，其中 #### 是指定的特定端口号，用来将供应商后台程序锁定到特定端口，例如 1234。<br><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_newPort.png"></p>
+<p><strong>如何修改 ArcGIS 许可服务的端口？</strong><br>在 ArcGIS license manager 的安装目录下，bin目录下，找到 service.txt，打开如下样子：<br><img data-src="/images/blogImg/CanNotConnectAGSLM_service.png"></p>
+<p>修改这个配置文件，例如：在 SERVER 行的结尾处，您可选择直接在 ANY 后面指定端口号。在 VENDOR 行上，添加 PORT&#x3D;####，其中 #### 是指定的特定端口号，用来将供应商后台程序锁定到特定端口，例如 1234。<br><img data-src="/images/blogImg/CanNotConnectAGSLM_newPort.png"></p>
 <p>这样我们可以在客户端使用例如 <strong>27004@许可服务器IP或机器名</strong> 的方式访问许可。</p>
 </blockquote>
 <br>
@@ -611,7 +785,7 @@
           <p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tL3poLWNuLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事” ……</p>
 <p>国庆假期将至，放点有趣的东西。如果喜欢分享，又想记录自己的过往，动手试试不错哦。</p>
 <br>
-![](http://kikitamap.com/images/blogImg/TriptoGreece_Overview.png)
+![](/images/blogImg/TriptoGreece_Overview.png)
 
 <br>
 
@@ -619,7 +793,7 @@
 
 <p><strong>如何制作故事地图 ?</strong>    我把链接搬运过来，<a target="_blank" rel="noopener" href="http://storymaps.arcgis.com/zh-cn/how-to/"><strong>点吧</strong></a></p>
 <p>地图故事中有好多应用程序模板可选，即使不懂技术也能hold住，只需要选个要讲的“<strong>故事类型</strong>”。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/TriptoGreece_StoryMap.png"></p>
+<p><img data-src="/images/blogImg/TriptoGreece_StoryMap.png"></p>
 <br>
 
 
@@ -644,11 +818,11 @@
 <br>
 
 <p>打开ArcGIS Online 上<strong>我的组织</strong>，查看<strong>我的内容</strong>，我们看到这个地图故事的应用一共有这样几个内容：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/TriptoGreece_MyContent.png"></p>
+<p><img data-src="/images/blogImg/TriptoGreece_MyContent.png"></p>
 <br>
 
 <p>照片对应的点信息是通过 Feature Layer 维护的，所以在一开的时候选择上传照片时，要给 Feature Service 起个名字。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/TriptoGreece_FeatureService.png"></p>
+<p><img data-src="/images/blogImg/TriptoGreece_FeatureService.png"></p>
 
       
     </div>
@@ -760,17 +934,17 @@
 
 <h1 id="Stage-1-绘制数据"><a href="#Stage-1-绘制数据" class="headerlink" title="Stage 1     绘制数据"></a>Stage 1     绘制数据</h1><p>通过ArcMap的图层渲染方案绘制数据，我们可以获得对数据的第一印象。</p>
 <p>例如，使用单一符号渲染了解采样点的疏密分布，通过分类渲染了解采样点高值低值的分布，等等。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_DrawingData.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_DrawingData.png"></p>
 <br>
 
 
 <h1 id="Stage-2-检查数据"><a href="#Stage-2-检查数据" class="headerlink" title="Stage 2  检查数据"></a>Stage 2  检查数据</h1><p>绘制数据后，使用 <strong>探索性空间数据分析 (Exploratory Spatial Data Analysis，ESDA)</strong> 工具来执行数据探索的第二阶段。这些工具提供了一种比绘制数据更加量化的方式来检查数据，有助于我们更深入地了解正在研究的现象，有助于我们对插值模型的构建方式做出更加正确的决策。</p>
 <p>ESDA 工具包括：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_ESDA.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_ESDA.png"></p>
 <br>
 
 
-<h2 id="Ⅰ-是否服从正态分布？"><a href="#Ⅰ-是否服从正态分布？" class="headerlink" title="Ⅰ 是否服从正态分布？"></a>Ⅰ 是否服从正态分布？</h2><h3 id="Histogram-直方图"><a href="#Histogram-直方图" class="headerlink" title="Histogram&#x2F;直方图"></a>Histogram&#x2F;直方图</h3><p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Histogram.png"></p>
+<h2 id="Ⅰ-是否服从正态分布？"><a href="#Ⅰ-是否服从正态分布？" class="headerlink" title="Ⅰ 是否服从正态分布？"></a>Ⅰ 是否服从正态分布？</h2><h3 id="Histogram-直方图"><a href="#Histogram-直方图" class="headerlink" title="Histogram&#x2F;直方图"></a>Histogram&#x2F;直方图</h3><p><img data-src="/images/blogImg/ExplorerData_Histogram.png"></p>
 <p>直方图用于显示感兴趣数据集的频率分布并计算汇总统计数据，如何解读图形和统计信息呢？</p>
 <ul>
 <li>如果数据服从正态分布，则平均值（mean）与中值（median）类似，偏度（skewness）应接近零，并且峰度（kurtosis）应接近 3。</li>
@@ -781,7 +955,7 @@
 </ul>
 <br>
 
-<h3 id="Normal-QQPlots-正态QQ图"><a href="#Normal-QQPlots-正态QQ图" class="headerlink" title="Normal QQPlots&#x2F;正态QQ图"></a>Normal QQPlots&#x2F;正态QQ图</h3><p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_NormalQQ.png"></p>
+<h3 id="Normal-QQPlots-正态QQ图"><a href="#Normal-QQPlots-正态QQ图" class="headerlink" title="Normal QQPlots&#x2F;正态QQ图"></a>Normal QQPlots&#x2F;正态QQ图</h3><p><img data-src="/images/blogImg/ExplorerData_NormalQQ.png"></p>
 <p>正态 QQ 图上的点可指示数据集的单变量分布的正态性。如果数据是正态分布的，点将落在 45 度参考线上。如果数据不是正态分布的，点将会偏离参考线。</p>
 <br>
 
@@ -795,8 +969,8 @@
 <p>Geostatistical Analyst 中的一些插值方法要求数据呈正态分布。如果数据偏斜（分布不均衡），则可能需要将数据变换为正态分布。</p>
 <p><strong>Box-Cox 变换（又称幂变换）</strong><br>如果在某一部分研究区域中计数值很小，这一区域的变异性就小于计数值更大的另一区域的变异性。在这种情况下，平方根变换将<strong>有助于使整个研究区域内的方差更加恒定</strong>，通常还会使数据呈正态分布。平方根变换是 Box-Cox 变换中 λ &#x3D; ½ 时的特例。</p>
 <p><strong>对数变换</strong><br>对数变换实际上是 Box-Cox 变换中 λ &#x3D; 0 时的特例。对数变换<strong>通常用于呈正偏分布的数据</strong>。其中有些值非常大，如果这些大值位于研究区域中，对数变换有助于使方差更加恒定和归一化数据。</p>
-<p>例如数据如下分布：<br><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox.png"></p>
-<p>变换前后对比：<br><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_BoxCox2.png"></p>
+<p>例如数据如下分布：<br><img data-src="/images/blogImg/ExplorerData_BoxCox.png"></p>
+<p>变换前后对比：<br><img data-src="/images/blogImg/ExplorerData_BoxCox2.png"></p>
 <p><strong>反正弦变换</strong><br>反正弦变换<strong>可用于表示比例或百分比的数据</strong>。通常在数据为比例形式时，方差在接近 0 和 1 时最小，接近 0.5 时最大。反正弦变换有助于使整个研究区域内的方差更加恒定，通常还会使数据呈正态分布。</p>
 </blockquote>
 <br>
@@ -807,20 +981,20 @@
 <br>
 
 <h3 id="Voronoi-图"><a href="#Voronoi-图" class="headerlink" title="Voronoi 图"></a>Voronoi 图</h3><p>Voronoi 图是由采样点形成的泰森多边形地图。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Voronoi.png"></p>
 <p>在查看 Voronoi 图时，检查附近是否有面符号色彩差别很大的值。</p>
 <p>例如，下图中红色面明显异于周围值。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Voronoi2.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Voronoi2.png"></p>
 <br>
 
 <h3 id="Semivariogram-Covariance-Cloud-半变异函数-协方差云"><a href="#Semivariogram-Covariance-Cloud-半变异函数-协方差云" class="headerlink" title="Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云"></a>Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云</h3><p>半变异函数&#x2F;协方差云工具可以用来检查数据集中空间自相关的局部特征以及查找局部异常值。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Semivariogram.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Semivariogram.png"></p>
 <p>云中的每个点表示数据集中的一对点，x 轴表示各位置间的距离，y 轴表示这些位置上的值的差值平方。半变异函数中的每个点都表示一个位置对，而不是地图上的单个位置。因此云中点的数量会随着数据集中点的数量的增加而快速增加。如果数据集中存在 n 个点，则半变异函数&#x2F;协方差云中将显示 n*(n-1)&#x2F;2 个点。因此，不建议使用点数超过几千个的数据集。如果数据集包含几千个点，那么应使用子集要素工具来随机选择点，然后在半变异函数&#x2F;协方差云中使用子集。</p>
 <p>“半变异函数&#x2F;协方差云”工具对检测局部异常值特别有用。它们显示为互相接近的点（x 轴上的低值），但在 y 轴上却是高值，表明组成点对的两个点的值有很大差异。这与所期望的结果正相反，即互相接近的点有相似的值。</p>
 <br>
 
 <h2 id="Ⅲ-是否存在趋势？"><a href="#Ⅲ-是否存在趋势？" class="headerlink" title="Ⅲ 是否存在趋势？"></a>Ⅲ 是否存在趋势？</h2><h3 id="Trend-Analyst-趋势分析"><a href="#Trend-Analyst-趋势分析" class="headerlink" title="Trend Analyst &#x2F; 趋势分析"></a>Trend Analyst &#x2F; 趋势分析</h3><p>“趋势分析”工具提供数据的三维透视图。采样点的位置绘制在 x,y 平面上，z值表示感兴趣的属性值。趋势分析工具将散点图投影到 x,z 平面和 y,z 平面上，通过多项式曲线对每个投影进行了拟合。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Trend.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Trend.png"></p>
 <p>浏览图形垂直墙面上的粗线。这些线表示趋势。一条趋势线沿 x 轴（通常表示纵向趋势），另一条显示沿 y 轴的趋势（通常表示纬度趋势）。如果经过投影点的曲线是平的，则不存在趋势；如果多项式曲线具有确切的模式（如下图的蓝线和绿线），这表明数据中存在某种趋势。</p>
 <p>另外，检查趋势时更改多项式的阶非常有用；检查不同于标准 N–S 和 E–W 方向的趋势非常有帮助，可以通过旋转趋势轴检查数据。</p>
 <br>
@@ -831,182 +1005,14 @@
 <h3 id="Semivariogram-Covariance-Cloud-半变异函数-协方差云-1"><a href="#Semivariogram-Covariance-Cloud-半变异函数-协方差云-1" class="headerlink" title="Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云"></a>Semivariogram&#x2F;Covariance Cloud &#x2F; 半变异函数&#x2F;协方差云</h3><p>如果存在空间相关性，则距离较近的点对（在 x 轴的最左侧）应具有较小的差值（在 y 轴上的值较小）。随着各个点之间的距离越来越大（点在 x 轴上向右移动），通常，差值的平方也应随之增大（在 y 轴上向上移动）。通常，平方差超过某个距离后就会保持不变。超过这个距离的位置对被视为不相关。</p>
 <p>如果半变异函数中的点对构成一条水平的直线，那么数据中可能不存在空间自相关，因而对数据进行插值也就失去了意义。</p>
 <p>地统计方法的基本假设是，对于任意两个彼此间的距离和方向都相近的位置，其差值的平方也应相近。这种关系称为<strong>平稳性</strong>。空间自相关可能仅依赖于两个位置之间的距离，这被称为<strong>各向同性</strong>。如果事物在某些方向上比在其他方向上更相似，也就是半变异函数和协方差中都存在这种方向性影响，它被称为<strong>各向异性</strong>。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Direction.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Direction.png"></p>
 <br>
 
 <h3 id="交叉协方差云"><a href="#交叉协方差云" class="headerlink" title="交叉协方差云"></a>交叉协方差云</h3><p>“交叉协方差云”工具可用于研究两个数据集之间的交叉相关。交叉协方差云显示了两个数据集间的所有位置对的经验交叉协方差，并且将其作为两位置间距离的函数对其进行绘制，与上面的工具类似，该工具也提供具有搜索方向功能的协方差表面。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ExplorerData_Crosscovariance.png"></p>
+<p><img data-src="/images/blogImg/ExplorerData_Crosscovariance.png"></p>
 <br>
 
 <p>对数据有了第一印象，并且用 ESDA 工具对数据做了检查，我们已经对待研究的数据有了一些先验知识，那么下面就可以选择插值方法来创建表面了，下一篇继续。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/10/CreatePythonTool3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/09/10/CreatePythonTool3/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（三）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-09-10 14:42:04" itemprop="dateCreated datePublished" datetime="2015-09-10T14:42:04+08:00">2015-09-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/09/10/CreatePythonTool3/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/10/CreatePythonTool3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>从 ArcGIS 10.1 版本开始，我们可以创建 <strong>python工具箱</strong> 来自定义脚本工具，这种工具箱相比较上一篇提到的标准工具箱。有着独特的优势，具体二者的区别总结过，看<a href="http://kikitamap.com/2015/08/31/CreatePythonTool1/">这一篇</a>。</p>
-<br>
-
-<h2 id="认识-Python工具箱"><a href="#认识-Python工具箱" class="headerlink" title="认识 Python工具箱"></a><strong>认识 Python工具箱</strong></h2><p>Python 工具箱 (.pyt) 是一个简单的文本文件，可以在任何文本编辑器中或者任何 Python IDE 中创建、查看和编辑。要确保 ArcGIS 正确识别 Python 工具箱，工具箱类的名称必须是 **<code>Toolbox</code>**。在 <strong><code>Toolbox</code></strong> 类的 <strong><code>__init__</code></strong> 方法中定义工具箱的属性，这些属性包括 alias、label 和 description，我们可以按照 <strong><span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS9lbi9kZXNrdG9wL2xhdGVzdC9hbmFseXplL2NyZWF0aW5nLXRvb2xzL2EtdGVtcGxhdGUtZm9yLXB5dGhvbi10b29sYm94ZXMuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span></strong> 中的模板构建 Python 工具箱模板。</p>
-<p>如下代码中创建了包含一个工具（名为 Tool）的 Python 工具箱：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Toolbox</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the toolbox (the name of the toolbox is the name of the</span></span><br><span class="line"><span class="string">        .pyt file).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Toolbox&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.alias = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># List of tool classes associated with this toolbox</span></span><br><span class="line">        <span class="variable language_">self</span>.tools = [Tool]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Tool</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the tool (tool name is the name of the class).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Tool&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.description = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.canRunInBackground = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getParameterInfo</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define parameter definitions&quot;&quot;&quot;</span></span><br><span class="line">        params = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> params</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isLicensed</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Set whether tool is licensed to execute.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateParameters</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the values and properties of parameters before internal</span></span><br><span class="line"><span class="string">        validation is performed.  This method is called whenever a parameter</span></span><br><span class="line"><span class="string">        has been changed.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateMessages</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the messages created by internal validation for each tool</span></span><br><span class="line"><span class="string">        parameter.  This method is called after internal validation.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, parameters, messages</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;The source code of the tool.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<br>
-
-<h2 id="动手做做"><a href="#动手做做" class="headerlink" title="动手做做"></a><strong>动手做做</strong></h2><p>下面我就依据这个模板，写一个简单的脚本工具箱。需求是批量裁剪，我希望我只提供一个文件夹或者数据库等这样的<strong>工作空间</strong>和一个<strong>裁剪区域面</strong>，就可以批量完成工作空间内全部数据的裁剪工作，并且无视栅格还是矢量，一并裁剪。</p>
-<p>Let the scripting begin ……</p>
-<br>
-
-<h3 id="1-创建工具箱"><a href="#1-创建工具箱" class="headerlink" title="1 创建工具箱"></a>1 创建工具箱</h3><p>工具箱的name就是 .pyt 文件的名字，通常我们把工具添加到 ArcToolbox窗口中时会显示工具箱的 label。在 <strong><code>Toolbox</code></strong> 类的 <strong><code>__init__</code></strong> 方法中定义属性，例如： <strong><code>alias</code><strong>、</strong><code>label</code></strong> 和 **<code>description</code>**。</p>
-<p>工具作为<strong>类</strong>被添加至 .pyt 中，工具箱的 tools 属性必须设置为包含定义的所有工具<strong>类</strong>的<strong>列表</strong>。比如，需要做ATool，ATool，CTool三个工具，不是写三个脚本，而是创建三个<strong>类</strong>，然后将类名放入列表， <strong><code>self.tools = [ATool,ATool,CTool]</code></strong> 。</p>
-<br>
-
-<p>这里，我仅定义一个工具类 ClipWorkspace，来说明构建过程即可  ：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">Source Name:   ClipWorkspace.pyt</span><br><span class="line">Author:        Kikita</span><br><span class="line">Description:   Python tool to clip spatial data in the same workspace by batch.</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">import arcpy</span><br><span class="line"></span><br><span class="line"># The class name must be &quot;Toolbox&quot; ...</span><br><span class="line">class Toolbox(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">    </span><br><span class="line">        self.label = &quot;Clip Workspace Toolbox&quot;</span><br><span class="line">        self.alias = &quot;&quot;</span><br><span class="line"></span><br><span class="line">        # List of tool classes associated with this toolbox</span><br><span class="line">        self.tools = [ClipWorkspace]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ClipWorkspace(object):</span><br><span class="line">	……</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>在 ArcGIS Desktop 中已经可以看到这个工具箱的雏形：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Tool.png"></p>
-<br>
-
-<h2 id="2-定义工具"><a href="#2-定义工具" class="headerlink" title="2 定义工具"></a>2 定义工具</h2><p>下面就是完善工具内部的代码。我就以 ClipVectorWorkspace 为例。</p>
-<br>
-
-<p>每个工具类应至少包括 <strong><code>__init__</code></strong> 和 <strong><code>execute</code></strong> 方法。此外，还可以选择使用 <strong><code>getParameterInfo</code><strong>、</strong><code>isLicensed</code><strong>、</strong><code>updateParameters</code></strong> 和 <strong><code>updateMessages</code></strong> 方法向工具的行为中添加其他控制。</p>
-<p>工具类中的 <strong><code>__init__</code></strong> 方法是标准 Python 类初始化方法。对于 Python 工具箱中的工具，**<code>__init__</code>** 方法用于设置该工具的属性，例如工具的标注、描述、是否允许在后台运行等。</p>
-<p>下面的例子就创建了ClipVectorWorkspace这个工具：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ClipWorkspace</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Clip Workspace&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.description = <span class="string">&quot;clip spatial data in the same workspace by batch.&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.canRunInBackground = <span class="literal">True</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p>有了工具的构造函数，我们继续看如何给工具定义参数。在 Python 工具箱 (.pyt) 中，可在工具类的 <strong><code>getParameterInfo</code></strong> 方法中创建 <strong><code>Parameter</code></strong> 对象，并设置对象的属性来定义工具参数。**<code>Parameter</code><strong>的属性中</strong><code>datatype</code>**<br>包含的类型可以在帮助文档中查询，点**<span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9kZXNrdG9wL2xhdGVzdC9hbmFseXplL2NyZWF0aW5nLXRvb2xzL2RlZmluaW5nLXBhcmFtZXRlci1kYXRhLXR5cGVzLWluLWEtcHl0aG9uLXRvb2xib3guaHRt">这里<i class="fa fa-external-link-alt"></i></span>**。</p>
-<br>
-
-<p>此示例中的参数就是输入工作空间（inWorkspace）、裁剪区域面（ClipArea）、输出工作空间（outWorkspace）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">getParameterInfo</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Parameter Definitions</span></span><br><span class="line">    <span class="comment"># First parameter - Input Workspace</span></span><br><span class="line">    param0 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Input Workspace&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;inWorkspace&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEWorkspace&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Second parameter - Clip Area</span></span><br><span class="line">    param1 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Clip Area&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;CLipArea&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEFeatureClass&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Third parameter - Output Workspace</span></span><br><span class="line">    param2 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Output Workspace&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;outWorkspace&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEWorkspace&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    params = [param0,param1,param2]</span><br><span class="line">    <span class="keyword">return</span> params	</span><br></pre></td></tr></table></figure>
-
-<p><strong>PS</strong> : 在代码中，如果仔细看，或许你会疑惑，为何输出工作空间的方向是 input ，而不是 output？ 因为工具最终输出的为 Feature Class 或 Raster，输出工作空间也是作为输入参数传入工具使用的。如果不关心，也可以不在意这些细节…… 继续向下了解工具的构建过程。</p>
-<br>
-
-<p>下面就是工具的具体执行部分了，当然里面还加了些辅助了解工具执行状态的消息：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, parameters, messages</span>):</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;The source code of the tool.&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get tool parameters</span></span><br><span class="line">    inWorkspace = parameters[<span class="number">0</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Input Workspace is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(inWorkspace))</span><br><span class="line"></span><br><span class="line">    ClipArea = parameters[<span class="number">1</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Clip Area is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(ClipArea))</span><br><span class="line"></span><br><span class="line">    outWorkspace =  parameters[<span class="number">2</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Out Workspace is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(outWorkspace))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Feature by Batch</span></span><br><span class="line">    arcpy.env.workspace = inWorkspace</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Vector</span></span><br><span class="line">    FeatureClasses = arcpy.ListFeatureClasses()</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;Input Workspace contains &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(FeatureClasses))</span><br><span class="line">    <span class="keyword">for</span> fc <span class="keyword">in</span> FeatureClasses:</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&gt;&gt; Clipping  &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(fc))</span><br><span class="line">        arcpy.Clip_analysis(fc,ClipArea, os.path.join(outWorkspace,fc))</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&#123;0&#125; has been clipped.&quot;</span>.<span class="built_in">format</span>(os.path.join(outWorkspace,fc)))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Raster</span></span><br><span class="line">    Rasters = arcpy.ListRasters()</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;Input Workspace contains &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(Rasters))</span><br><span class="line">    <span class="keyword">for</span> Raster <span class="keyword">in</span> Rasters:</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&gt;&gt; Clipping  &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(Raster))</span><br><span class="line">        arcpy.Clip_management(in_raster = Raster,</span><br><span class="line">                              rectangle = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                              out_raster = os.path.join(outWorkspace,Raster),</span><br><span class="line">                              in_template_dataset = ClipArea,</span><br><span class="line">                              nodata_value = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                              clipping_geometry = <span class="string">&quot;ClippingGeometry&quot;</span>,</span><br><span class="line">                              maintain_clipping_extent = <span class="string">&quot;NO_MAINTAIN_EXTENT&quot;</span>)</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&#123;0&#125; has been clipped.&quot;</span>.<span class="built_in">format</span>(os.path.join(outWorkspace,Raster)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>到这里，工具的核心部分已经完成，执行下试试。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Execute.png"></p>
-<br>
-
-<p>OK，应该是预期的结果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Result.png"></p>
-<br>
-
-<h3 id="3-完善"><a href="#3-完善" class="headerlink" title="3 完善"></a>3 完善</h3><p>我们发现不像标准工具箱中的脚本工具和脚本文件本身是散列存储的，python工具箱以及其中的所有工具的代码都在这一个pyt文件中，维护起来便利了不少。如果想在工具箱中继续添加工具，只要继续增加一个工具类即可。</p>
-<p>经过前两步的过程，工具已经可以拿去使用。如果为了工具更友好，还可以继续调整下代码，以便遇到异常的时候，让用户了解更详细的原因，这里就再往下进行了。工具分享给别人，最后只差要丰富下工具文档了，同样在 Python 工具的 Item Description 中编辑。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CreatePythonTool3_Perfection.png"></p>
 
       
     </div>

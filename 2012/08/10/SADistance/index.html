@@ -29,27 +29,27 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="继续总结下距离分析。如下是ArcGIS 10.x中，距离分析相关的工具：  ArcGIS中，主要可以通过如下的几种方式进行距离分析：  1） 欧氏距离分析 2） 成本加权距离分析 3） 用于垂直移动限制和水平移动限制的成本加权距离分析 4） 获取最短路径  使用ArcGIS空间分析扩展实现距离分析，最主要的是欧氏距离分析和成本加权距离分析两类工具。 一、欧氏距离工具欧氏距离工具测量每个像元距离最近">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_Distance.gif">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_EucDistance.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_EucDirection.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_EucAllocation.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_CostDistance.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_CostBacklink1.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_CostBacklink2.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_CostAllocation.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_ShortestPath.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_CostAB.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_CostCDE.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_Corridor.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SADistance_Corridor2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_Distance.gif">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_EucDistance.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_EucDirection.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_EucAllocation.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_CostDistance.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_CostBacklink1.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_CostBacklink2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_CostAllocation.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_ShortestPath.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_CostAB.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_CostCDE.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_Corridor.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SADistance_Corridor2.png">
 <meta property="article:published_time" content="2012-08-10T05:08:00.000Z">
-<meta property="article:modified_time" content="2018-07-03T13:50:20.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.229Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Spatial Analyst">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/SADistance_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/SADistance_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2012/08/10/SADistance/">
@@ -173,7 +173,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -308,7 +308,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>继续总结下距离分析。如下是ArcGIS 10.x中，距离分析相关的工具：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Toolset.png"></p>
+<p><img data-src="/images/blogImg/SADistance_Toolset.png"></p>
 <p>ArcGIS中，主要可以通过如下的几种方式进行距离分析：</p>
 <ul>
 <li>1） 欧氏距离分析</li>
@@ -326,7 +326,7 @@
 <p>可以是感兴趣的地物的位置，数据方面，既可以是栅格数据，也可以是矢量数据。但注意：如果数据选用了栅格数据，数据中必须仅包含表示源的像元，其他像元需要是Nodata。如果选用矢量，在执行工具之时，内部会将其先转成栅格。</p>
 <p><strong>2.欧氏距离的算法</strong></p>
 <p>简单理解为：工具会求得每个像元至每个源的距离，然后取得每个像元至每个源的最短距离以输出。其中，欧氏距离是像元中心与源像元的中心的直线距离。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Distance.gif"></p>
+<p><img data-src="/images/blogImg/SADistance_Distance.gif"></p>
 <p>如果像元与两个或更多源之间的距离相等，则计算都基于像元扫描过程中遇到的第一个源。无法控制该扫描过程。</p>
 <p>帮助中有这样的描述：</p>
 <blockquote>
@@ -334,21 +334,21 @@
 </blockquote>
 <p><strong>3.欧氏距离输出栅格结果</strong></p>
 <p>投影平面上，像元与最近源之间的最短直线距离。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_EucDistance.png"></p>
+<p><img data-src="/images/blogImg/SADistance_EucDistance.png"></p>
 <p><strong>4.欧氏方向输出栅格结果</strong></p>
 <p>像元与最近源之间的方位角方向（以度为单位）。使用 360 度圆，刻度 360 指北，90指东，从刻度 1 顺时针增加。值 0 供源像元使用。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_EucDirection.png"></p>
+<p><img data-src="/images/blogImg/SADistance_EucDirection.png"></p>
 <p>5.欧氏分配输出栅格结果</p>
 <p>输出的每个像元都是距其最近源的值。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_EucAllocation.png"></p>
+<p><img data-src="/images/blogImg/SADistance_EucAllocation.png"></p>
 <h1 id="二、成本加权距离工具"><a href="#二、成本加权距离工具" class="headerlink" title="二、成本加权距离工具"></a><strong>二、成本加权距离工具</strong></h1><p>成本加权距离工具可以看成是对欧氏直线距离的进一步修改，将经过某个像元的距离赋以成本因素。举个简单的例子，翻过一座山到达目的地是最短的直线距离，绕行这座山距离较长，但是更节省时间和体力，那就后者的成本加权距离最短了。</p>
 <p>1）<strong>成本距离（Cost Distance）</strong>：求得每个像元至最近源的成本距离。<br>2）<strong>成本回溯链接（Cost back link）</strong>：求的一个方向栅格，可以从任意像元沿最小成本路径返回最近源。<br>3）<strong>成本分配（Cost Allocation）</strong>：求得每个像元的最近的源。<br>4）<strong>成本路径（Cost Patch）</strong>：求的任意像元到最近源的最小成本路径。</p>
 <p><strong>TIPS：</strong></p>
 <ul>
 <li>成本栅格可以是整形或者浮点型，但是其值中不能含有负值或者0。成本栅格中的Nodata视为障碍。</li>
-<li>成本距离输出栅格数据<br>这里的简单示例中，下面一层黑白渲染的是成本栅格，颜色深的像元代表成本比较高，反之较低。结果如下：<br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostDistance.png"></li>
-<li>成本距离回溯链接<br>要注意的是，它并不会求的要返回哪一个源像元以及如何返回。而是记录从任意像元回溯到最近源的路径上，每个像元向下一个像元指向的方向，这个方向以0-8的代码形式记录。如下图：<br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostBacklink1.png"><br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostBacklink2.png"></li>
-<li>成本距离分配<br>这个类似于前面的欧氏距离分配，得到的是每个像元至最近源的成本距离。<br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostAllocation.png"></li>
+<li>成本距离输出栅格数据<br>这里的简单示例中，下面一层黑白渲染的是成本栅格，颜色深的像元代表成本比较高，反之较低。结果如下：<br><img data-src="/images/blogImg/SADistance_CostDistance.png"></li>
+<li>成本距离回溯链接<br>要注意的是，它并不会求的要返回哪一个源像元以及如何返回。而是记录从任意像元回溯到最近源的路径上，每个像元向下一个像元指向的方向，这个方向以0-8的代码形式记录。如下图：<br><img data-src="/images/blogImg/SADistance_CostBacklink1.png"><br><img data-src="/images/blogImg/SADistance_CostBacklink2.png"></li>
+<li>成本距离分配<br>这个类似于前面的欧氏距离分配，得到的是每个像元至最近源的成本距离。<br><img data-src="/images/blogImg/SADistance_CostAllocation.png"></li>
 </ul>
 <h1 id="三、路径距离工具"><a href="#三、路径距离工具" class="headerlink" title="三、路径距离工具"></a><strong>三、路径距离工具</strong></h1><p>路径距离工具与成本距离相似，也可以确定从某个源到栅格上各像元位置的最小累积行程成本。但是，路径距离不仅可计算成本表面的累积成本，而且会考虑到行驶的实际曲面距离，和影响到移动总成本的水平和垂直因子。主要包含这几个工具</p>
 <p>1）<strong>路径距离（Path Distance）</strong><br>2）<strong>路径回溯链接（Path back link）</strong><br>3）<strong>路径分配（Path Allocation）</strong></p>
@@ -357,20 +357,20 @@
 <p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvbWFpbi8xMC4xLyMvSG93X3RoZV9ob3Jpem9udGFsX2FuZF92ZXJ0aWNhbF9mYWN0b3JzX2FmZmVjdF9wYXRoX2Rpc3RhbmNlLzAwOXowMDAwMDB6OTAwMDAwMC8=">http://resources.arcgis.com/en/help/main/10.1/#/How_the_horizontal_and_vertical_factors_affect_path_distance&#x2F;009z000000z9000000&#x2F;<i class="fa fa-external-link-alt"></i></span></p>
 <h1 id="四、-获得最短路径"><a href="#四、-获得最短路径" class="headerlink" title="四、 获得最短路径"></a><strong>四、 获得最短路径</strong></h1><p>1.成本距离路径</p>
 <p>任意像元到最近源的最小成本路径，需要引用到上面工具中生成的成本距离和成本回溯链接栅格数据。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_ShortestPath.png"></p>
+<p><img data-src="/images/blogImg/SADistance_ShortestPath.png"></p>
 <p>2.廊道</p>
 <p>另外要说的是廊道分析工具（Corridor）。此工具用于计算两个成本栅格的累积成本栅格结果，为了求得从一个源到另一个源且经过该像元位置的最小成本路径。</p>
 <p>输出栅格不是单个最小成本路径，但会得到源之间累积成本的范围。</p>
 <p>最后我们可以配合其他工具将小于某一阈值的结果提取出来，例如工具Extract by Attribute提取，或者通过Con进行条件赋值等等方法，获取结果。</p>
 <p>如下如所示：</p>
 <p>学校A、B成本距离分析结果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostAB.png"></p>
+<p><img data-src="/images/blogImg/SADistance_CostAB.png"></p>
 <p>学校C、D、E的成本距离分析结果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostCDE.png"></p>
+<p><img data-src="/images/blogImg/SADistance_CostCDE.png"></p>
 <p>有此两个距离成本结果，来分析得到A、B到C、D、E之间的廊道，也就是两组源之间的最小累积成本距离。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Corridor.png"></p>
+<p><img data-src="/images/blogImg/SADistance_Corridor.png"></p>
 <p>然后结果中我们可以按照一定的阈值来提取结果。例如累积成本在75以下的我才能接受：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Corridor2.png"></p>
+<p><img data-src="/images/blogImg/SADistance_Corridor2.png"></p>
 <p>至此，空间分析中的距离分析工具总结结束。</p>
 
     </div>

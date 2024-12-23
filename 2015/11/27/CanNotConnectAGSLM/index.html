@@ -29,18 +29,18 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="在 ArcGIS Desktop 的问题库中，有一类不算做核心技术问题，但却可能会位列“最常见的问题”之一。简言之一句话，”许可服务器连不上怎么办？！“ 下面就来演绎下问题的诊断过程。  本文仅适用于客户端 ArcGIS Administrator 访问 ArcGIS License Manager 正式版许可的问题的诊断，目前适用于 ArcGIS for Desktop 10.x、ArcGIS">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_cmd.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_lmgrd.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_service.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_newPort.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CanNotConnectAGSLM_cmd.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CanNotConnectAGSLM_lmgrd.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CanNotConnectAGSLM_service.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CanNotConnectAGSLM_newPort.png">
 <meta property="article:published_time" content="2015-11-27T04:00:00.000Z">
-<meta property="article:modified_time" content="2018-06-27T06:54:50.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.344Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Deployment">
 <meta property="article:tag" content="License">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/11/27/CanNotConnectAGSLM/">
@@ -164,7 +164,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -305,7 +305,7 @@
 <br>
 
 <h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ArcGIS License Manager <strong>已经授权完毕且成功</strong>，可用性（Availability）栏目中总计（Total）和可用（Available）的数目正常，服务器状态也运行正常。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
+<p><img data-src="/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
 <blockquote>
 <p>图中的过期栏目中的日期可忽略，内部工作使用的正式许可是限定有效日期的。如果你使用的是购买得到的正式版许可，这里会显示 永久（Permanent），也就是许可是永久有效的。</p>
 </blockquote>
@@ -343,15 +343,15 @@
 <p>在”<a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/get-started/license-manager-guide/configure-the-arcgis-license-manager-to-work-through-a-firewall.htm"><strong>许可服务管理器指南</strong></a>“中提到，”<strong>默认情况下，将 lmgrd 后台程序设为端口 27000</strong>“。那么，连不上许可服务器是因为端口被锁定了吗？ 有可能，动手查查才放心。</p>
 <p>听说，netstat是控制台命令,是一个监控TCP&#x2F;IP网络的非常有用的工具。那么动手吧。</p>
 <p>以管理员的身份运行命令窗口，并输入命令：**<code>netstat -abn</code>** </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_cmd.png"></p>
+<p><img data-src="/images/blogImg/CanNotConnectAGSLM_cmd.png"></p>
 <p>如果找到 27000 和 lmgrd.exe 这个进程 ，并且状态 Established，可以认为端口正常。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_lmgrd.png"></p>
+<p><img data-src="/images/blogImg/CanNotConnectAGSLM_lmgrd.png"></p>
 <br>
 
 <p>27000-27009是ArcGIS License Manger 的默认端口段，是相对不拥挤的段。但是，如果发现这个端口被其他程序占用了，那么就要修改ArcGIS许可服务器或者其它程序的端口了。在这里我就只能说说 ArcGIS 许可服务器的端口的修改方法了。</p>
 <blockquote>
-<p><strong>如何修改 ArcGIS 许可服务的端口？</strong><br>在 ArcGIS license manager 的安装目录下，bin目录下，找到 service.txt，打开如下样子：<br><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_service.png"></p>
-<p>修改这个配置文件，例如：在 SERVER 行的结尾处，您可选择直接在 ANY 后面指定端口号。在 VENDOR 行上，添加 PORT&#x3D;####，其中 #### 是指定的特定端口号，用来将供应商后台程序锁定到特定端口，例如 1234。<br><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_newPort.png"></p>
+<p><strong>如何修改 ArcGIS 许可服务的端口？</strong><br>在 ArcGIS license manager 的安装目录下，bin目录下，找到 service.txt，打开如下样子：<br><img data-src="/images/blogImg/CanNotConnectAGSLM_service.png"></p>
+<p>修改这个配置文件，例如：在 SERVER 行的结尾处，您可选择直接在 ANY 后面指定端口号。在 VENDOR 行上，添加 PORT&#x3D;####，其中 #### 是指定的特定端口号，用来将供应商后台程序锁定到特定端口，例如 1234。<br><img data-src="/images/blogImg/CanNotConnectAGSLM_newPort.png"></p>
 <p>这样我们可以在客户端使用例如 <strong>27004@许可服务器IP或机器名</strong> 的方式访问许可。</p>
 </blockquote>
 <br>

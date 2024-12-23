@@ -29,20 +29,20 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="比起死板硬朗的矩形渔网，六边形的蜂巢网格越来越受欢迎。推荐个小工具，实现下面的效果：      1.准备自己的兴趣区域和需要统计的要素。例如，下面的美国国境面（浅灰色），机场点数据。      2.ArcGIS Online上有 GISers 分享的生产六边形格网的工具： ModelBuilder版本的  Create Hexagon Tessellation Python版本的 Create H">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Hexagon_Done.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Hexagon_Airports.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Hexagon_Tool.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Hexagon_Model.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Hexagon_Grid.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Hexagon_Join.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/Hexagon_Result.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Hexagon_Done.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Hexagon_Airports.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Hexagon_Tool.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Hexagon_Model.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Hexagon_Grid.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Hexagon_Join.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Hexagon_Result.png">
 <meta property="article:published_time" content="2015-08-07T10:01:07.000Z">
-<meta property="article:modified_time" content="2018-07-02T03:10:17.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.338Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Mapping">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/Hexagon_Done.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/Hexagon_Done.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/08/07/Hexagon/">
@@ -166,7 +166,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -301,13 +301,13 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>比起死板硬朗的矩形渔网，六边形的蜂巢网格越来越受欢迎。推荐个小工具，实现下面的效果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Hexagon_Done.png"></p>
+<p><img data-src="/images/blogImg/Hexagon_Done.png"></p>
 <br>
 
 <br>
 
 <h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>准备自己的兴趣区域和需要统计的要素。例如，下面的美国国境面（浅灰色），机场点数据。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Hexagon_Airports.png"></p>
+<p><img data-src="/images/blogImg/Hexagon_Airports.png"></p>
 <br>
 
 <br>
@@ -319,25 +319,25 @@
 
 
 <p>我就以第一个工具为例，运行状态打开：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Hexagon_Tool.png"></p>
+<p><img data-src="/images/blogImg/Hexagon_Tool.png"></p>
 <p>如果有关心工具内部的同学，编辑状态下看看工具：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Hexagon_Model.png"></p>
+<p><img data-src="/images/blogImg/Hexagon_Model.png"></p>
 <p>运行之后，得到布满兴趣区域的蜂巢格网：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Hexagon_Grid.png"></p>
+<p><img data-src="/images/blogImg/Hexagon_Grid.png"></p>
 <br>
 
 <br>
 
 
 <h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>统计每个六边形内有多少座机场（多少个点），统计是ArcMap的强项。这里我就使用 Spatial Join 工具实现，其中我只保留有连接要素的目标要素，也就是仅保留有机场点的六边形。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Hexagon_Join.png"></p>
+<p><img data-src="/images/blogImg/Hexagon_Join.png"></p>
 <br>
 
 <br>
 
 
 <h1 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h1><p>上一步自动统计得到六边形包含的机场的数目 Join_Count 字段，那我们就根据它渲染起来。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/Hexagon_Result.png"></p>
+<p><img data-src="/images/blogImg/Hexagon_Result.png"></p>
 <br>
 
 <br>

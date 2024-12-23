@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,127 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/11/28/MDCellRange/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/11/28/MDCellRange/" class="post-title-link" itemprop="url">镶嵌数据集工具小结（九）计算像元大小范围</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-11-28 15:41:03" itemprop="dateCreated datePublished" datetime="2014-11-28T15:41:03+08:00">2014-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/11/28/MDCellRange/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/11/28/MDCellRange/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>828</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>计算像元大小范围</strong></p>
+<p><img data-src="/images/blogImg/MDCellRange_Toolset.png"></p>
+<p>像元大小范围指的是，镶嵌数据集中的影像参加动态镶嵌的像元大小范围，也就是，动态镶嵌的过程中从栅格数据集中读取的像元大小的范围。</p>
+<p>在镶嵌数据集的属性表中，字段 <strong>LowPS</strong> 列和 <strong>HighPS</strong> 列定义镶嵌数据集从源栅格数据集中读取的像元大小的 <strong>实际范围</strong>。当我们向镶嵌数据集中添加栅格时，工具会根据源栅格数据分辨率、金字塔等级、金字塔选项中的设置 来计算属性表中 LowPS 与 HighPS 字段值。<br>例如，下图中的 LowPS &#x3D; 0.1 表示基础像素值，High &#x3D; 0.4 表示正在使用的顶级金字塔像素值。对于不包含金字塔的栅格数据集，低像素大小和高像素大小可能为相同的值，例如第一行。</p>
+<p><img data-src="/images/blogImg/MDCellRange_Table.png"></p>
+<p>例如，在使用所有金字塔等级的情况下，如果栅格数据集包含 1 米的像元，且包含像元大小为 2、4、8 和 16 米的金字塔，则 LowPS 是 1，HighPS 是 16。如果在栅格金字塔选项中将最大像元大小设置为 8，则 HighPS 将为 8 而不是 16。</p>
+<p><img data-src="/images/blogImg/MDCellRange_Pyramid.png"></p>
+<p>属性表中还有两列：<strong>MinPS</strong> 列和 <strong>MaxPS</strong> 列，用来定义在什么像元大小范围内请求什么栅格数据。当我们向镶嵌数据集中添加栅格数据时，选中添加栅格至镶嵌数据集对话框上的 <strong>Update Cell Size Ranges (optional)</strong> 选项，或使用工具 <strong>Calculate Cell Size Ranges</strong> 时，就会填充两列字段值；也可以手动编辑表中的值。<br>MinPS 和 MaxPS 是根据栅格数据和叠加在上面的概视图来计算的。</p>
+<p>用下面一幅图，可以看出默认情况下，MinPS，MaxPS 与 LowPS，HighPS 的关系：</p>
+<p><img data-src="/images/blogImg/MDCellRange_CellSize.png"></p>
+<p>当加入镶嵌数据集的栅格数据源有多种分辨率时，就可以利用像元大小范围来控制不同比例尺下显示不同的栅格数据。</p>
+<p>例如，在国家级别查看影像，可以使用 <span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzQyMjE1NjcuaHRtP2Zyb210aXRsZT1MYW5kc2F0JmZyb21pZD03MTk1NzY1JnR5cGU9c3lu">Landsat<i class="fa fa-external-link-alt"></i></span> 影像，约 30 米的像元大小；当放大到更高的比例，镶嵌数据集可以提供 SPOT 图像，像元大小约 5 米；进一步放大时，最终将看到航空正射影像，像元大小更小，分辨率更高。</p>
+<p>比例尺和像元大小有很大的关系，如果我们希望求取计算的话，可以参考如下公式：<br>    <strong>Scale &#x3D; CellSize * 96 &#x2F; 0.0254</strong><br>    其中，ArcGIS 中 DPI 的默认值为 96，1 英寸（Inch） &#x3D; 0.0254米，CellSize是以“米”为单位的。<br>    公式反之，可以通过比例推算像元大小：<br>    <strong>CellSize &#x3D; Scale * 0.0254 &#x2F; 96</strong></p>
+<p>如果我们访问镶嵌数据集时，不断的放大地图，最终请求的影像的 Cell Size 小于了全部的 MinPS，那么就会请求失败，不再会返回影像；反之，如果我们不断的缩小地图，最终请求的Cell Size 大于了全部的的 MaxPS，那么也会请求失败，返回黑色和白色的棋盘状图案。也就是说，镶嵌数据集的像元大小范围会直接影响我们在缩放地图时影像数据的可见性。</p>
+<p>That’s all …</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -288,7 +409,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="镶嵌数据集的色彩平衡"><a href="#镶嵌数据集的色彩平衡" class="headerlink" title="镶嵌数据集的色彩平衡"></a>镶嵌数据集的色彩平衡</h1><p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Toolset.png"></p>
+          <h1 id="镶嵌数据集的色彩平衡"><a href="#镶嵌数据集的色彩平衡" class="headerlink" title="镶嵌数据集的色彩平衡"></a>镶嵌数据集的色彩平衡</h1><p><img data-src="/images/blogImg/MDColorBalance2_Toolset.png"></p>
 <h2 id="创建接缝线"><a href="#创建接缝线" class="headerlink" title="创建接缝线"></a>创建接缝线</h2><p>在对镶嵌数据集进行镶嵌的时候，有时还会用到接缝线（Seamline）。在前面总结过镶嵌数据集的镶嵌方法，其中最后一种是 Seamline 镶嵌方法。<strong>在创建接缝线之前，建议先进行色彩平衡</strong>，因此就拿到这里一起说。</p>
 <p>当我们把镶嵌方法选为了 Seamline 镶嵌方法时，Seamline 就会替代 Footprint 来作为每幅栅格数据的边线。这样会让接缝更自然，镶嵌数据集看起来会更像是无缝的一整张栅格数据。如果为镶嵌数据集创建了接缝线，还有个好处就是，我们可以根据需要去编辑接缝线，例如有的接缝线刚好穿过一个建筑物，我们就可以尽可能让边线绕过建筑物，让影像看起来拼接的自然美观一些。</p>
 <p>工具<strong>Build Seamlines</strong>用来为镶嵌数据集创建接缝线的。Seamline 与 Footprints 类似：每个面表示一个图像。面的形状表示查看镶嵌数据集时将用于生成镶嵌图像的那部分图像。构建了 Seamline 之后，ArcMap 中显示镶嵌数据集时，会又多了一个图层 Seamline。根据镶嵌方法，等级值将存储在属性表的 SOrder 字段中。</p>
@@ -297,21 +418,21 @@
 <p>构建接缝线，有五种计算方法可选：**GEOMETRY ,&nbsp;RADIOMETRY , COPY_FOOTPRINT ,&nbsp;COPY_TO_SIBLING ,&nbsp;EDGE_DETECTION&nbsp;**。</p>
 <p>为了更直观的认识上面构建接缝线的方法，我还是用个简单的数据来说明问题：</p>
 <p>数据是按照北西方法镶嵌，加上Footprint是这样的：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Default.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance2_Default.png"></p>
 <p><strong>Geometry &#x2F; 几何</strong>—— 根据当前的排序方法和Footprint来生成接缝线。通过这种方法生成的接缝线一眼就知道了栅格数据之间的压盖关系，并且接缝线（面）之间没有要素压盖。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry.png"><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry2.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance2_Geometry.png"><img data-src="/images/blogImg/MDColorBalance2_Geometry2.png"></p>
 <p><strong>Radiometry&#x2F; 辐射度</strong>—— 通过检查相交区域的值和样式来构建接缝线，接缝线是Footprint交点之间的折线。这种方法拼接的影像看起来更自然一些。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry.jpg"><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry2.jpg"></p>
+<p><img data-src="/images/blogImg/MDColorBalance2_Radiometry.jpg"><img data-src="/images/blogImg/MDColorBalance2_Radiometry2.jpg"></p>
 <p><strong>Copy_footprint&#x2F;复制轮廓</strong>—— 这种方法的接缝线只是相应轮廓线的副本。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_CopyFootprint.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance2_CopyFootprint.png"></p>
 <p><strong>Copy_to_sibling&#x2F;复制到同类</strong>—— 此方法将已有的接缝线复制到与其组名相同的同类要素中。这种方法常常用于全色波段与多光谱波段范围不同的卫星影像，从而确保它们共享相同的接缝线。&nbsp;这里没有合适的数据，不放图了。</p>
 <p><strong>Edge_detection&#x2F;边缘检测</strong>—— 对相交区域应用边缘检测过滤器，以确定该区域中要素的边。然后，沿检测到的边创建接缝线。这种方法创建的接缝线也很漂亮和自然。</p>
 <p>举个例子，看下面的影像边界是不是扎眼？</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeDetection.jpg"></p>
+<p><img data-src="/images/blogImg/MDColorBalance2_EdgeDetection.jpg"></p>
 <p>使用边界探测方法创建接缝线后，一条沿着马路的折线（面的边界）产生了。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeCreation.jpg"></p>
+<p><img data-src="/images/blogImg/MDColorBalance2_EdgeCreation.jpg"></p>
 <p>使用 接缝线方法拼接后就更加自然了。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Done.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance2_Done.png"></p>
 <p><strong>Sort Method</strong></p>
 <p>默认情况下，Seamline 排序是使用 “North-West” 镶嵌方法生成的。还可以选择使用 “CLOSEST_TO_VIEWPOINT&nbsp;” 或 “BY_ATTRIBUTE&nbsp;” 镶嵌方法来创建接缝线。这与前面说的镶嵌方法的理念是一样的，不再啰嗦了。</p>
 <p><strong>Cell Size</strong></p>
@@ -438,12 +559,12 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>镶嵌数据集的色彩平衡与接缝线  Ⅰ</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Toolset.png"></p>
 <br>
 
 <p><strong>色彩平衡</strong></p>
 <p>镶嵌数据集一般由多张影像组成的，各幅影像可能由于各种原因存在色彩差异，例如航摄时的天气、光线等原因。为了让整个镶嵌数据集看起来是无缝的一整张，而不是一片一片的，我们需要做的就是色彩校正，或者叫做色彩平衡（均衡）。也就是实现下面的效果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Demo.png"></p>
 <blockquote>
 <p>做色彩校正之前，需要检查原始数据的所有波段是不是满足下面几个条件：</p>
 <ul>
@@ -493,14 +614,14 @@
 
 
 <p><strong>预处理选项</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
 <p>在执行栅格数据集色彩平衡之前，工具会先执行预处理选项。</p>
 <h1 id="Exclude-Area-Raster"><a href="#Exclude-Area-Raster" class="headerlink" title="**Exclude Area Raster **"></a>**Exclude Area Raster **</h1><p>用于排除不能或者难于进行色彩校正的区域，例如：水、云和异常区域等。本质上就是创建一个掩膜，从而从镶嵌数据集色彩校正算法中排除一些像素。</p>
 <p>PS： 对镶嵌数据集进行色彩校正时，排除区域并不会经常用到。只有当存在较难校正的区域，且不希望因为这些问题区域产生偏差时，可创建排除区域。另外，像素分布中的极值（极低像素值和极高像素值）区域也可能成为色彩校正的问题区域。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Exclude.png"></p>
 <p>那如何生成这个排除区域栅格呢？</p>
 <p>工具箱中提供 <strong>Generate Exclude Area</strong> 工具，下面就来看看这个工具。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
 <p>通过输入数据选择 <strong>位深</strong> 和 <strong>生成</strong> 方法：</p>
 <p><strong>Pixel type：</strong></p>
 <p>此参数用于选择输入栅格数据集的像素深度。像素深度非常重要，因为需要对所有 8 位以上的像素深度调整色彩掩膜和直方图值。</p>
@@ -527,7 +648,7 @@
 <p><strong>Gamma</strong></p>
 <p>当选择了标准差拉伸或最小值-最大值拉伸时，可以额外的设置Gamma值。可通过应用 Gamma 拉伸来控制图像的整体亮度。<br>如果 Gamma 系数设置得太低，中间色调将太暗；而如果 Gamma 系数设置得太高，中间色调又会太亮。Gamma 系数不仅会改变图像的亮度，还会改变红绿蓝之间的比率。</p>
 <p>如果对色彩校正的不满意，我们也可以移除效果，镶嵌数据集的右键菜单中，Remove – Color Balancing。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png"></p>
+<p><img data-src="/images/blogImg/MDColorBalance1_Remove.png"></p>
 
       
     </div>
@@ -635,9 +756,9 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><strong>设置镶嵌数据集属性工具 Ⅲ</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_Toolset.png"></p>
+<p><img data-src="/images/blogImg/MDProperties3_Toolset.png"></p>
 <p>这一篇接着，再接着，说这个参数无比巨多的工具 Set Mosaic Dataset Properties， 看看其中的 Catalog Item Properties 对应的各个参数的作用 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_Catalog.png"></p>
+<p><img data-src="/images/blogImg/MDProperties3_Catalog.png"></p>
 <br>
 
 <p><strong>元数据级别</strong></p>
@@ -652,7 +773,7 @@
 <p>Allowed Transmission Field 参数列表，定义将镶嵌数据集作为服务提供时属性表中对客户端可见的字段。</p>
 <p>默认情况下，此列表包括字段：Name, MinPS, MaxPS, LowPS, HighPS, Tag, GroupName, ProductName, CenterX, CenterY, ZOrder, Shape_Length, Shape_Area。如果镶嵌数据集中包含自定义字段，这个列表中除了上面的字段，还会出现自定字段。</p>
 <p><strong>许是否启用时间</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_Time.png"></p>
+<p><img data-src="/images/blogImg/MDProperties3_Time.png"></p>
 <p>如果镶嵌数据集包含定义时间的属性字段，可创建自动具有时间感知性的镶嵌数据集。</p>
 <p>如果激活了时间，则需要指定与时间有关的其他参数——起始和结束字段，以及时间格式。建议将时间值存储在日期字段中，但也支持字符串和数值字段。</p>
 <p><strong>地理变换方法</strong></p>
@@ -667,7 +788,7 @@
 <p>我们可以设置合理的值，这样镶嵌数据集会跳过所有像素量不够大的栅格项目。跳过这些镶嵌数据集项目将有助于提高镶嵌数据集的计算或显示性能。这在大量叠置栅格只具有少量像素时尤其有用。</p>
 <p>但是，同时需要知道，较大的值可能减少重叠项目成为感兴趣区组成部分的可能性；这会导致您的镶嵌数据集的某些区域空白。</p>
 <p>特别需要注意的是，镶嵌数据集的属性中有其他两项属性与这个选项可能存在矛盾关系，因此，此属性仅在 <strong><em>始终将栅格裁剪至其轮廓</em></strong> 设置为“<strong>是</strong>”，并且 <strong><em>轮廓线可能含有 NoData</em></strong> 设置为 <strong>否</strong> 时有效。否则可能会无视这个选项。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_MinPixel.png"></p>
+<p><img data-src="/images/blogImg/MDProperties3_MinPixel.png"></p>
 
       
     </div>
@@ -775,14 +896,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><strong>设置镶嵌数据集属性工具 Ⅱ</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Toolset.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Toolset.png"></p>
 <p>这一篇接着说这个参数无比巨多的工具 Set Mosaic Dataset Properties ，镶嵌属性这一组参数会控制多幅影像的拼接方式和顺序等。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_MDProperties.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_MDProperties.png"></p>
 <p>如果我们的多幅影像的数据源之间没有重叠，那么拼接顺序就没有什么值得设置的。但是我们一般拿到的航片、卫片等都是有重叠的，不同的镶嵌规则会让数据在拼接出现差异，我们设置这一组参数来控制影像的拼接方式和顺序等。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Overlap.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Overlap.png"></p>
 <br>
 
-<h1 id="Mosaic-Methods（镶嵌方法）"><a href="#Mosaic-Methods（镶嵌方法）" class="headerlink" title="Mosaic Methods（镶嵌方法）"></a><strong>Mosaic Methods（镶嵌方法）</strong></h1><p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Method.png"></p>
+<h1 id="Mosaic-Methods（镶嵌方法）"><a href="#Mosaic-Methods（镶嵌方法）" class="headerlink" title="Mosaic Methods（镶嵌方法）"></a><strong>Mosaic Methods（镶嵌方法）</strong></h1><p><img data-src="/images/blogImg/MDProperties2_Method.png"></p>
 <p>在“允许的镶嵌方法”中我们可以选择影像的镶嵌方法，从而控制用户访问镶嵌数据集时可以使用哪些方法。同时，可以设置一种方法作为默认方法。</p>
 <ul>
 <li>None 根据镶嵌数据集属性表中的顺序 (ObjectID) 对栅格进行排序。</li>
@@ -796,38 +917,38 @@
 </ul>
 <p>假设我现在有这样9幅影像数据源的镶嵌数据集，可以把他们理解成9张卡片。看图比看例子更容易理解，下面通过一个例子来了解各种镶嵌方法，前提是我们都是用升序排序和使用默认的 First 镶嵌运算符。</p>
 <p>★ 选在<strong>None</strong>方法，默认使用了数据的存储顺序作为镶嵌顺序，也就是 ObjectID 的顺序。图中的数字即使各幅影像的 ObjectID，数字越靠前，镶嵌的也就越靠前。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_None.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_None.png"></p>
 <p>★ 选择 <strong>Center</strong> 方法，中心的影像最优先：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Center.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Center.png"></p>
 <p>★ 选择 <strong>NorthWest</strong> 方法，我们看到位于西北角的 7 获得了最优先的镶嵌顺序，反之，东南角的9排在最后：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_NorthWest.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_NorthWest.png"></p>
 <p>★ 选择 **Lock Raster **方法，允许客户端可以指定某些栅格数据，这样仅对被锁定的栅格进行显示：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_LockRaster.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_LockRaster2.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_LockRaster.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_LockRaster2.png"></p>
 <p>★ 选择 <strong>ByAttribute</strong> 方法，需要指定 <strong><em>Order Field</em></strong> ，例如按照自定义字段 MyOrder 排序：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr2.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_ByAttr.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_ByAttr2.png"></p>
 <p>如果您的字段是数值或日期字段，则可以设置排序基础参数（**<em>Order_Base</em>**）。可以根据此值与 Order_Field 中的其他值之间的差异对影像进行排序。</p>
 <p>还可以指定排序是升序还是降序。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr3.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_ByAttr3.png"></p>
 <p>★ 选择 <strong>Nadir</strong> 方法，类似于 Center 方法，只是像底点距离整个视图中心的距离成为镶嵌的标准：</p>
 <p>如下图，点A即为像底点（nadir），在垂直摄影测量中，影像中心点和像底点可能是重合的：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Nadir.pngr"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Nadir.pngr"></p>
 <p>此方法与“Center”方法类似，但使用的是栅格的像底点，像底点可以不是中心点，尤其是在倾斜的影像中。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Nidir2.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Nidir2.png"></p>
 <p>★ 选择 **Viewport **方法，可以使用“ViewPoint”工具根据自定义的位置与栅格的像底点位置对栅格进行排序。</p>
 <p>ViewPoint 是个隐藏工具，我们可以在自定义菜单中找到并添加出来：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Viewport.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Viewport.png"></p>
 <p>打开 Viewpoint 窗口之后，我们就可以自定义视点，视点的位置将会影响栅格数据的镶嵌顺序，如下图。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ViewPort2.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_ViewPort2.png"></p>
 <p>在设置镶嵌数据集属性的时候，参数 View Point Spacing X 与 View Point Spacing Y 会影响 ViewPoint 对话框中的箭头按钮的偏移量，偏移量的长度单位是当前空间参考决定的。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Viewport3.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Viewport3.png"></p>
 <p>★ 选择 <strong>Seamline</strong> 方法，使用预定义的接缝线形状分割栅格，并且可以选择是否沿接边使用羽化功能。在生成接缝线的过程中对排序进行预定义。使用此镶嵌方法时，镶嵌运算符 LAST 无效。</p>
 <p>镶嵌数据集的接缝线可以通过 <strong>Build Seamlines</strong> 工具来创建，这个工具后面会单独的总结一下。这里就不罗嗦了。</p>
 <br>
 
 <h1 id="Mosaic-Operator（镶嵌运算符）"><a href="#Mosaic-Operator（镶嵌运算符）" class="headerlink" title="Mosaic Operator（镶嵌运算符）"></a><strong>Mosaic Operator（镶嵌运算符）</strong></h1><p>镶嵌运算符用于确定如何解析重叠像元。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Operator.jpg"></p>
+<p><img data-src="/images/blogImg/MDProperties2_Operator.jpg"></p>
 <ul>
 <li>First 重叠区域中所列出的第一个栅格数据集中的像元。</li>
 <li>Last 重叠区域中所列出的最后一个栅格数据集中的像元。</li>
@@ -842,7 +963,7 @@
 <p>跨越边界时此值将分成两半；因此，如果该值为 40，则将在轮廓线内部混合 20 像素，在轮廓线外部混合 20 像素。</p>
 <p>如果存在接缝线，可以在接缝线表中定义每个接缝线的混合宽度和类型，从而覆盖此值。</p>
 <p>除了镶嵌方法以及有关的这些参数，镶嵌属性的设置参数中还包含了其他一些与镶嵌有关的参数，放在下面以便参考：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_MosaicPara.png"></p>
+<p><img data-src="/images/blogImg/MDProperties2_MosaicPara.png"></p>
 <p><strong>Max Number Per Mosaic（每个镶嵌图的最大栅格数）</strong></p>
 <p>这个参数是为了镶嵌数据集镶嵌过多栅格数据，默认值为 20。</p>
 <p>例如，在没有创建概视图时，不希望让机器耗费资源过多的去镶嵌栅格数据。但是这种情况下，很可能20幅图像不足够观看，如果你的机器硬件过硬，这个数字也可以适量调大。这个参数相当于性能与体验的博弈，在没有概视图的时候可以自己尝试设置。</p>
@@ -851,154 +972,6 @@
 <p>系数 0.1 表示所有比最低像素大小高百分之十的 LowPS 值都被视为相同的值。此值必须大于或等于 0.0。可在等级表中查看结果。</p>
 <p><strong>Output Cell Size（输出像元大小）</strong></p>
 <p>镶嵌数据集的像元大小一般是自动计算的，我们也可以进行自定义。这个参数用于自定义指定镶嵌数据集的像元大小，可选择图层作为像元大小模板，也可指定实际像元大小。如果指定像元大小，可以将单个值用于方形像元大小，或者将 X 值和 Y 值用于矩形像元大小。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/11/02/ArcGISDesktopTrial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/11/02/ArcGISDesktopTrial/" class="post-title-link" itemprop="url">在Esri官网申请60天试用版 ArcGIS Desktop（已失效）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-11-02 13:04:35" itemprop="dateCreated datePublished" datetime="2014-11-02T13:04:35+08:00">2014-11-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/11/02/ArcGISDesktopTrial/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/11/02/ArcGISDesktopTrial/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>751</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>此方法已失效，esri官网更新了呢，点 <a href="http://kikitamap.com/2015/03/06/ArcGISPro60DayFreetrial/">这里</a> 查看更新后的方法吧。</strong></p>
-<br>
-
-<p>在Esri的美国官网上，提供了当前最新版本 ArcGIS Desktop 的试用版，我们可以下载、安装、注册、试用，以及用于非商业目的学习和使用。</p>
-<p>最近关心这个问题的朋友很多，为了使大家获得帮助，所以就插播了这篇。</p>
-<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>打开官网试用地址：<span class="exturl" data-url="aHR0cDovL3d3dy5lc3JpLmNvbS9zb2Z0d2FyZS9hcmNnaXMvYXJjZ2lzLWZvci1kZXNrdG9wL2ZyZWUtdHJpYWw=">http://www.esri.com/software/arcgis/arcgis-for-desktop/free-trial<i class="fa fa-external-link-alt"></i></span></p>
-<p>页面上提示申请人必须有个账号，两种情况：</p>
-<ul>
-<li>（1）已经账号直接登录申请；</li>
-<li>（2）没有账号，先注册账号然后登录申请</li>
-</ul>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Login.png"></p>
-<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>如果已经有账号登陆即可，跳过这一步。如果没有账号，填写下面的信息，邮箱地址一定要真实的，可以收到邮件的。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignUp.png"></p>
-<p>创建新的账户之后，网站会向填写的邮箱发送一封邮件，去自己的邮箱中看看吧。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSent.png"></p>
-<p>邮件的主题为：<strong>Important information about activating your Esri Account</strong>。收到的邮件这个样子，点击最下面的激活按钮，跳转到 esri 网站。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSample.png"></p>
-<p>在网页中填写对应的信息即可，这就不啰嗦了。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn.png"></p>
-<h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>无论是新创建的账号还是已有账号，登录账号。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn2.png"></p>
-<p>##Step 4</p>
-<p>登陆之后，就看到了ArcGIS Desktop 的试用页面。如果不确定自己的机器是否能安装 ArcGIS Desktop软件，可以点击页面上的 <strong>System Requirements（系统要求）</strong>，看看自己的机器的操作系统、硬件配置等是否满足要求。</p>
-<p>我们需要的是 ArcGIS for Desktop。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Download.png"></p>
-<h2 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h2><p>点击 ArcGIS for Desktop 后面的 Download 按钮，在弹出的小窗口中，有一个免费提供试用的许可号码，<strong>EVA123456789</strong>。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EVA.jpg"></p>
-<p>如果这个窗口不小心被关闭了，也没有关系，这个号码也发送了邮箱中，还是可以找到它的……</p>
-<p>如果没有ArcGIS安装包，那就点 Continue to Download 下载；已经有安装包了，就不需要下载了，保存好许可号码即可。</p>
-<h2 id="Step-6"><a href="#Step-6" class="headerlink" title="Step 6"></a>Step 6</h2><p>安装 ArcGIS Desktop 软件，安装完成之后，在【开始】菜单 的ArcGIS 目录中启动程序 ArcGIS Administrator。按照如下顺序找到授权按钮：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SingleUse.png"></p>
-<p>在弹出的新窗口中选择：我已经安装了软件，现在要进行授权，下一步。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Authorize.png"></p>
-<p>如果安装 ArcGIS Desktop的机器是能够上网的，那就用最快捷的“通过Internet授权”，下一步。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Internet.png"></p>
-<p>后面的两个页面是填写个人信息，工作行业与职业等信息，根据自己的实际情况填写即可，带星号的是必须填写的，然后下一步。</p>
-<p>将开始申请的许可号码填进去，下一步。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_FillEVA.png"></p>
-<p>然后，一路下一步，等到出现进度条开始联网授权，这时确保不要断网，耐心等待一两分钟。出现“Congratulations……”，授权就结束了。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Congrs.png"></p>
-<p>好了，现在就可以开始使用 ArcGIS Desktop 软件了……</p>
 
       
     </div>

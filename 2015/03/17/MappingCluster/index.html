@@ -29,24 +29,24 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="这组工具中包含众所周知的热点分析工具，通过这个工具我们能捕获到大量数据中的热点和冷点，对我们分析问题有很大的帮助。例如，在犯罪分析中，我们可以研究哪些位置犯罪频繁并且聚集，对增设警力有重要的辅助作用。工具集中的其他工具也有类似的作用，都是通过执行聚类分析来识别具有统计显著性的热点、冷点和空间异常值的位置。 依照惯例，我们还是 one by one 来看。 Similarity Search相似搜">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_Toolset.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_SanDiego.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_Env.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_SimilarCity.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_GroupAnalysis.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_HotPots.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_Fishnet.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_PolygonAggr.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_Points.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_Log.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/MappingCluster_HHLL.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_SanDiego.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_Env.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_SimilarCity.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_GroupAnalysis.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_HotPots.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_Fishnet.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_PolygonAggr.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_Points.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_Log.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/MappingCluster_HHLL.png">
 <meta property="article:published_time" content="2015-03-17T07:59:35.000Z">
-<meta property="article:modified_time" content="2018-07-03T06:22:41.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.315Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta property="article:tag" content="Spatial Statistics">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/MappingCluster_Toolset.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/MappingCluster_Toolset.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/03/17/MappingCluster/">
@@ -170,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -304,17 +304,17 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Toolset.png"></p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="/images/blogImg/MappingCluster_Toolset.png"></p>
 <p>这组工具中包含众所周知的热点分析工具，通过这个工具我们能捕获到大量数据中的热点和冷点，对我们分析问题有很大的帮助。例如，在犯罪分析中，我们可以研究哪些位置犯罪频繁并且聚集，对增设警力有重要的辅助作用。工具集中的其他工具也有类似的作用，都是通过执行聚类分析来识别具有统计显著性的热点、冷点和空间异常值的位置。</p>
 <p>依照惯例，我们还是 one by one 来看。</p>
 <h1 id="Similarity-Search"><a href="#Similarity-Search" class="headerlink" title="Similarity Search"></a><strong>Similarity Search</strong></h1><p>相似搜索工具，顾名思义，工具根据要素属性确定哪些候选要素与输入要素最相似或者最不相似。</p>
 <p>举个栗子：</p>
 <p>我希望找到与圣地亚哥5岁以下儿童、未成年人、65岁以上老年人人数分布相似的城市：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_SanDiego.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_SanDiego.png"></p>
 <p>工具中我做如下配置：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Env.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_Env.png"></p>
 <p>结果在这里，其中 Similarly Rank 为 1 的即为三个年龄属性最相似的城市 Orange：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_SimilarCity.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_SimilarCity.png"></p>
 <p>匹配方法参数中提供了3种算法，分别为：属性值、等级属性值或属性剖面（余弦相似性）。</p>
 <blockquote>
 <p><strong>可能的应用</strong>：</p>
@@ -329,7 +329,7 @@
 <br>
 
 <h1 id="Grouping-Analysis"><a href="#Grouping-Analysis" class="headerlink" title="Grouping Analysis"></a><strong>Grouping Analysis</strong></h1><p>我们在学习研究事物时，有事需要对事物进行归类从而帮助理解与分析。在ArcGIS 中，分析分组分析工具就是来进行这个逻辑分类过程，它会执行一个分类过程来查找数据中存在的自然聚类。要素相似性是基于您为分析字段参数指定的一组特性，同时还可以包括空间属性或空间-时间属性。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_GroupAnalysis.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_GroupAnalysis.png"></p>
 <p>在这个工具中有个重要的参数—— Spatial Constrains，用于设置分组过程是否受某种空间关系约束，具体可选的方法如下：</p>
 <ul>
 <li>CONTIGUITY_EDGES_ONLY — 共享一条边的相连的面才属于同一个组。</li>
@@ -352,7 +352,7 @@
 <br>
 
 <h1 id="Hot-Spot-Analysis-Getis-Ord-Gi"><a href="#Hot-Spot-Analysis-Getis-Ord-Gi" class="headerlink" title="Hot Spot Analysis (Getis-Ord Gi)*"></a><em><em>Hot Spot Analysis (Getis-Ord Gi</em>)</em>*</h1><p>热点分析工具是个 Most Popular 工具，经常会被用到，通过此工具，我们可以来识别有统计显著性的热点和冷点。例如，警察局会调查哪个区域是刑事案件的高发区？这就是一个典型的热点分析例子。如下图，黑点表示报警位置，其中属性表中包含一个报案次数的字段，得到了犯罪热点。从而警察局可以考虑在热点位置增设警力。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_HotPots.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_HotPots.png"></p>
 <p>此工具的工作方式为：查看邻近要素环境中的每一个要素。因此，仅仅一个孤立的高值不会构成热点，说白了就是，单个要素以及它的邻居都是高值才算是热点。在热点分析工具中，z 得分和 p 值都是统计显著性的度量，用于逐要素地判断是否拒绝零假设。置信区间（Gi_Bin字段） +3 到 -3 中的要素反映置信度为 99% 的统计显著性，置信区间 +2 到 -2 中的要素反映置信度为 95% 的统计显著性，置信区间 +1 到 -1 中的要素反映置信度为 90% 的统计显著性；而置信区间 0 中要素的聚类则没有统计学意义。</p>
 <p>如果要素的 z 得分高且 p 值小，则表示有一个高值的空间聚类。如果 z 得分低并为负数且 p 值小，则表示有一个低值的空间聚类。z 得分越高（或越低），聚类程度就越大。如果 z 得分接近于零，则表示不存在明显的空间聚类。</p>
 <p><strong>关于此工具的建议：</strong></p>
@@ -380,20 +380,20 @@
 <p>当我们的数据不具有这样的采样值，并且我们希望研究的是点的计数，也就是研究：哪里存在很多点？哪里存在很少点？这时，选择一种<strong>聚合方案</strong>就变得重要了。</p>
 <p>工具中提供了三种聚合方案：</p>
 <p>1） COUNT_INCIDENTS_WITHIN_FISHNET_POLYGONS：采用渔网聚合，渔网的网格大小由工具根据点的距离关系决定。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Fishnet.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_Fishnet.png"></p>
 <p>2） COUNT_INCIDENTS_WITHIN_AGGREGATION_POLYGONS：提供聚合面以覆盖事件聚合面参数中的事件点数据。计算每个面内的事件数。例如：计算加州每个城市的消防站的聚集情况。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_PolygonAggr.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_PolygonAggr.png"></p>
 <p>3）SNAP_NEARBY_INCIDENTS_TO_CREATE_WEIGHTED_POINTS：邻近事件将聚合在一起，从而创建单个加权点。各点的权重值是该位置的聚合事件数。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Points.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_Points.png"></p>
 <p>无论是哪种方法，在工具的日志中会提供一个研究这些数据聚类的最优的距离，类似：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_Log.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_Log.png"></p>
 <br>
 
 <h1 id="Cluster-and-Outlier-Analysis-Anselin-Local-Moran’s-I"><a href="#Cluster-and-Outlier-Analysis-Anselin-Local-Moran’s-I" class="headerlink" title="Cluster and Outlier Analysis (Anselin Local Moran’s I)"></a>Cluster and Outlier Analysis (Anselin Local Moran’s I)</h1><p>给定一组加权要素，使用 Anselin Local Moran’s I 统计量来识别具有统计显著性的热点、冷点和空间异常值。</p>
 <p>热点分析(Getis-Ord Gi*) 工具也是查找热点和冷点位置的有效工具。但是，<strong>只有</strong>聚类和异常值分析(Anselin Local Moran’s I) 工具可以识别具有统计学上的显著性的空间异常值（高值由低值围绕或低值由高围绕的值）。</p>
 <p>输出要素类中包含：**Local Moran’s I 指数、z 得分、p 值、聚类&#x2F;异常值类型 (COType)**。</p>
 <p>如果要素的 z 得分是一个较高的正值，则表示周围的要素拥有相似值（高值或低值）。输出要素类中的 COType 字段会将具有统计显著性的高值聚类表示为 HH，将具有统计显著性的低值聚类表示为 LL。<br>如果要素的 z 得分是一个较低的负值（如，小于 -3.96），则表示有一个具有统计显著性的空间数据异常值。输出要素类中的 COType 字段将指明要素是否是高值要素而四周围绕的是低值要素 (HL)，或者要素是否是低值要素而四周围绕的是高值要素 (LH)。如下图可以帮助理解：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MappingCluster_HHLL.png"></p>
+<p><img data-src="/images/blogImg/MappingCluster_HHLL.png"></p>
 <p>COType 字段将始终指明置信度为 95% 的统计显著性聚类和异常值。只有统计显著性要素在 COType 字段中具有值。</p>
 <blockquote>
 <p><strong>可能的应用</strong><br>聚类和异常值分析(Anselin Local Moran’s I) 工具可识别高值密度、低值密度和空间异常值。还可帮助您解决如下问题：</p>

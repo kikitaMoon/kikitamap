@@ -29,15 +29,15 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="地理坐标系变换是数据处理过程中常遇到的问题，今天就说下这方面的问题。 如果遇到这种情景：两份数据有不同的坐标系，想叠加在一起显示，作图或显示精度要求不高。 这种情况使用 ArcMap 的动态投影即可，ArcMap 的内部动投影机制会解决地理坐标系变换的问题。数据在显示的过程中，会实时的被转换，但不改变数据本身。 如果我们需要进行地理坐标系转换，我们知道 ArcGIS Desktop 中提供了 Pr">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project2.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project3.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation1_Project.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation1_Project2.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation1_Project3.jpg">
 <meta property="article:published_time" content="2014-01-17T10:00:00.000Z">
-<meta property="article:modified_time" content="2018-07-03T10:49:54.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.274Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Coordinate System">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project.jpg">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/GeographicTransformation1_Project.jpg">
 
 
 <link rel="canonical" href="https://kikitamap.com/2014/01/17/GeographicTransformation1/">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -306,7 +306,7 @@
 <h2 id="情景1："><a href="#情景1：" class="headerlink" title="情景1："></a>情景1：</h2><p>不涉及到地理坐标系变换的坐标变换，这个参数完全不需要，而不是 optional 哦。</p>
 <p>例如：从 GCS_Xian_1980 进行投影变换，转换为 Xian_1980_3_Degree_GK_CM_120E 投影坐标系。</p>
 <p>整过转换中，仅使用了高斯克吕格投影变换，没有涉及到地理坐标变换。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project.jpg"></p>
+<p><img data-src="/images/blogImg/GeographicTransformation1_Project.jpg"></p>
 <br />
 
 
@@ -315,14 +315,14 @@
 <p>例如：从&nbsp;GCS_Beijing_1954，转换为&nbsp;GCS_WGS_1984坐标系。</p>
 <p>转换过程中涉及到地理坐标系变换，也就是进行了椭球体变换。</p>
 <p>ArcGIS 中提供了6种已知转换方法，可以根据适用范围选择之。其中如何选择，此文不做介绍，请查看我的另一篇<a href="http://kikitamap.com/2013/10/21/Beijing1954ToWGS1984/">博客</a>：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project2.jpg"></p>
+<p><img data-src="/images/blogImg/GeographicTransformation1_Project2.jpg"></p>
 <br />
 
 
 
 <h2 id="情景3："><a href="#情景3：" class="headerlink" title="情景3："></a>情景3：</h2><p>涉及到地理坐标系变换的坐标变换，并且ArcGIS 未知二者之间的变换方法，也就是ArcGIS没有提供转换方法，但是这个参数是必须的，需要自定义，这个参数前会亮绿灯，告诉用户，必须要填写。另外，上面情景2中，ArcGIS给出的方法，如果都不是自己需要的，也需要自定义。</p>
 <p>例如：从&nbsp;GCS_Beijing_1954，转换为&nbsp;GCS_Xian_1980坐标系。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/GeographicTransformation1_Project3.jpg"></p>
+<p><img data-src="/images/blogImg/GeographicTransformation1_Project3.jpg"></p>
 <p>需要使用工具 Create Custom Geographic transformation，创建一种转换方法，辅助 Project 工具。</p>
 <p>这个工具的帮助如下，就不赘述了。</p>
 <p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjLy8wMDE3MDAwMDAwNzYwMDAwMDA=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//001700000076000000<i class="fa fa-external-link-alt"></i></span><br /></p>

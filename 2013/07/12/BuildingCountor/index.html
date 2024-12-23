@@ -29,24 +29,24 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="&nbsp; &nbsp; 日常我们会碰到有很多根据已知采样点生成等值面、等值线的需求，。由散点采样值估算相应区域，我们一般会想到插值，这样就获得了这个区域的连续表面。 &nbsp; &nbsp; 在ArcGIS中，插值的方法较多，主要有两个扩展模块的功能可以选用。一般情况下可以选择 Spatial Analyst 工具箱中，IDW，Kriging等方法进行插值。如果有更加复杂的参数设置和更加专业">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_Toolset.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_Toolset2.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_Points.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_IDW.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_Contour.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_result.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_polygon.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_Relassify.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_ReclassifyResult.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_toFeature.jpg">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_Model.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_smooth.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_Toolset.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_Toolset2.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_Points.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_IDW.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_Contour.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_result.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_polygon.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_Relassify.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_ReclassifyResult.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_toFeature.jpg">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_Model.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_smooth.png">
 <meta property="article:published_time" content="2013-07-12T04:28:36.000Z">
-<meta property="article:modified_time" content="2018-07-03T11:46:45.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.263Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Geoprocessing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/BuildingCountor_Toolset.jpg">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/BuildingCountor_Toolset.jpg">
 
 
 <link rel="canonical" href="https://kikitamap.com/2013/07/12/BuildingCountor/">
@@ -170,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -306,25 +306,25 @@
     
     <div class="post-body" itemprop="articleBody"><p>&nbsp; &nbsp; 日常我们会碰到有很多根据已知采样点生成等值面、等值线的需求，。由散点采样值估算相应区域，我们一般会想到插值，这样就获得了这个区域的连续表面。</p>
 <p>&nbsp; &nbsp; 在ArcGIS中，插值的方法较多，主要有两个扩展模块的功能可以选用。一般情况下可以选择 Spatial Analyst 工具箱中，IDW，Kriging等方法进行插值。如果有更加复杂的参数设置和更加专业深入的插值分析，可以使用 Geostatistical Analyst，这里暂不赘述。</p>
-<p>&nbsp; &nbsp;&nbsp;<img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_Toolset.jpg">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_Toolset2.jpg"></p>
+<p>&nbsp; &nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_Toolset.jpg">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_Toolset2.jpg"></p>
 <p>&nbsp; &nbsp; 这里以IDW插值为例，简述等值面、等值线的生成。</p>
 <br>
 
 <h1 id="一、采样点插值"><a href="#一、采样点插值" class="headerlink" title="一、采样点插值"></a>一、采样点插值</h1><p>例如获取了如下一组点的臭氧浓度的采样值：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_Points.jpg"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_Points.jpg"></p>
 <p>使用 IDW 工具，设置输入数据，插值使用的字段，搜索半径等参数，获得栅格表面。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_IDW.jpg"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_IDW.jpg"></p>
 <br>
 
 <h1 id="二、等值线的获取"><a href="#二、等值线的获取" class="headerlink" title="二、等值线的获取"></a>二、等值线的获取</h1><p>Spatial Analyst 中提供了从栅格表面提取等值线的工具，Contour，设置等值线间隔，以及选择设置起算线。</p>
-<p>&nbsp;&nbsp;<img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_Contour.jpg"></p>
+<p>&nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_Contour.jpg"></p>
 <p>得到结果：</p>
-<p>&nbsp; &nbsp; &nbsp;&nbsp;<img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_result.jpg"></p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_result.jpg"></p>
 <br>
 
 <h1 id="三、等值面提取"><a href="#三、等值面提取" class="headerlink" title="三、等值面提取"></a>三、等值面提取</h1><p>在做等值面之前，我们需要思考下，等值面是指什么？等值面是否是两条等值线之间的闭合区域？等值面的划分依据是什么？</p>
 <p>先说一种比较常用的场景，得到等值线后，为了美化制图，等值线之间的间隔也需要用渐变色予以填充，通常想到的方案是使用工具 Feature to Polygon。这样就得到了与等值线无缝贴合的等值面。如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_polygon.png"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_polygon.png"></p>
 <p>从而获得等值面，这个类似于等间距分类或者等值面的方法。</p>
 <br>
 
@@ -340,19 +340,19 @@
 <p><strong>（1）使用工具 Reclassify 进行栅格数据重分类：</strong></p>
 <p>如下是一个由高程采样点获得的DEM，然后进行重分类，分类方法是等间距法：</p>
 <p>PS：分类是有很多方法可以选择的，具体在分类面板中可以设置：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_Relassify.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_ReclassifyResult.png"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_Relassify.png"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_ReclassifyResult.png"></p>
 <p><strong>（2）然后将栅格数据转为矢量面:</strong></p>
 <p>使用转换工具， Raster to Polygon，得到矢量等值面：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_toFeature.jpg"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_toFeature.jpg"></p>
 <p><strong>（3）等值面，等值线的后期平滑处理</strong></p>
 <p>由栅格数据得到的矢量数据，通常边界会出现很多方格子或者锯齿，后面要做的工作就是对面进行平滑和美化，当然这步是选做工作了。</p>
 <p>前两步是数据的真实提取，这一步就是对地图画个妆，把最佳的效果展示出来。</p>
 <p>为了防止直接平滑面出现边界不重合的问题，建议对面转线（Feature to line），平滑线后再转回面。做了个模型，把这个思路完整的展现出来，如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_Model.png"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_Model.png"></p>
 <p>这样就会得到相对漂亮平滑的等值线和等值面。</p>
 <p>细节对比图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/BuildingCountor_smooth.png"></p>
+<p><img data-src="/images/blogImg/BuildingCountor_smooth.png"></p>
 <br>
 
 

@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,133 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/08/HowPointtoRasterWorks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/08/HowPointtoRasterWorks/" class="post-title-link" itemprop="url">Point to Raster 工作原理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-08 08:58:00" itemprop="dateCreated datePublished" datetime="2012-02-08T08:58:00+08:00">2012-02-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/02/08/HowPointtoRasterWorks/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/08/HowPointtoRasterWorks/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>612</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>点在栅格中，表示为一个像元。通常，如果有两个或更多个点落入某像元范围内，ArcGIS 在为像元赋值时会随机选择这些点中的一个点。但在使用“Point to Raster”工具时，可选择像元值分配类型（频率最高、求和、平均值、标准差、最大值、最小值、范围、数目）。具有值的像元数有可能少于要转换的点数。</p>
+<p><img data-src="/images/blogImg/HowPointtoRasterWorks_Tool.gif"></p>
+<p><strong>工具说明：</strong></p>
+<p>A．可以将包含点或多点要素的任意要素类（地理数据库、shapefile 或 coverage）转换为栅格数据集。</p>
+<p>B．输入字段类型决定输出栅格的类型。如果字段是整型，则输出栅格也是整型；如果字段是浮点型，则输出栅格也是浮点型。</p>
+<p>C．如果输入字段包含字符串值，则输出栅格将包含一个整数值字段和一个字符串字段。</p>
+<p>D．Priority Field仅与像元分配类型的 MOST_FREQUENT 选项一起使用。如果一个像元中存在多个点，优先级高的值被采用，如果优先级相同的，属性值出现频率最高的被采用，如果优先级和出现频率全都相同，采取FID最小的。如下图情况所示：</p>
+<p><img data-src="/images/blogImg/HowPointtoRasterWorks_RasterValue.gif"></p>
+<p>若要素位于单元边界，则遵循<strong>边界规则</strong>。</p>
+<ul>
+<li>下图举例说明了要素恰巧落在单元边界上时适用的规则。</li>
+<li>如果要素落在单元边界上，则使用它上面的单元；如果它上面没有单元，则使用下面的单元。 </li>
+<li>如果左侧有一个单元，则使用此单元；如果没有，则使用右侧的单元。</li>
+</ul>
+<p><img data-src="/images/blogImg/HowPointtoRasterWorks_Boundary.gif"></p>
+<p>与之相应的，还有一个Raster to Point 工具。</p>
+<p><img data-src="/images/blogImg/HowPointtoRasterWorks_Raster2Point.gif"></p>
+<p><strong>工具说明：</strong></p>
+<p>A. 允许输入整形或者浮点型的栅格数据；输入栅格的栅格单元大小可以任意，并且可以属于任何有效的栅格数据集。</p>
+<p>B. 针对输入栅格数据集的每个栅格单元，都会在输出要素类中创建一个点。这些点将定位于它们所代表的栅格单元的中心。NoData 栅格单元不会转换为点。</p>
+<p>C. Field参数可选，来设置栅格数据的某个字段转换为生成点要素的属性字段。此字段可以是整型、浮点型、字符型。如果不选，默认使用Value字段。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -309,21 +436,21 @@
 <h2 id="三、-安装与加载"><a href="#三、-安装与加载" class="headerlink" title="三、 安装与加载"></a><strong>三、 安装与加载</strong></h2><p>下面以AutoCAD 2010（x64），ArcGIS for AutoCAD 250（x64）为例，介绍一下此插件的安装使用过程。</p>
 <h3 id="1-获取并安装插件"><a href="#1-获取并安装插件" class="headerlink" title="1. 获取并安装插件"></a><strong>1. 获取并安装插件</strong></h3><p>插件的下载地址：<span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaWNoaW5hLWJqLmNuLzIwMTEvMDIyNC85NjMuaHRtbA==">http://support.esrichina-bj.cn/2011/0224/963.html<i class="fa fa-external-link-alt"></i></span><br> 注意此插件区分32bit与64bit，选择合适版本下载，我这里使用ArcGISforAutoCADDownloadx64.exe。<br> 在已经安装AutoCAD的前提下，双击运行此exe即可。</p>
 <h3 id="2-插件的加载"><a href="#2-插件的加载" class="headerlink" title="2. 插件的加载"></a><strong>2. 插件的加载</strong></h3><p>以管理员身份运行AutoCAD，在AutoCAD的命令提示行中输入：NETLOAD。出现资源管理器窗口，浏览至插件的安装目录，选择 ArcGISForAutoCAD.dll打开。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_AutoCAD.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_AutoCAD.gif"></p>
 <p>之后出现插件加载画面。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_Launch.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_Launch.gif"></p>
 <p>加载ArcGIS for AutoCAD插件成功。</p>
-<p>加载后，会多出ArcGIS for AutoCAD插件栏，如下图：<br><img data-src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_Menu.gif"></p>
+<p>加载后，会多出ArcGIS for AutoCAD插件栏，如下图：<br><img data-src="/images/blogImg/ArcGISforAutoCAD_Menu.gif"></p>
 <h3 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h3><p>添加ArcGIS Online服务时，可能会遇到错误：“<strong>找不到资源：</strong>‘<strong>basemapui\basemapcenter.xaml’</strong>”。</p>
 <p>解决方法：这是个已知问题，下载补丁既可以解决此问题，地址：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT1saXN0UGF0Y2hlcyZQSUQ9MTI5">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=listPatches&PID=129<i class="fa fa-external-link-alt"></i></span></p>
 <p>至此，ArcGIS for AutoCAD 插件即可以开始使用啦。</p>
 <h2 id="四、-功能与使用"><a href="#四、-功能与使用" class="headerlink" title="四、 功能与使用"></a><strong>四、 功能与使用</strong></h2><h3 id="1-Map-Service"><a href="#1-Map-Service" class="headerlink" title="1. Map Service"></a><strong>1. Map Service</strong></h3><p>有了这个插件，首先可以使AutoCAD直接加载Map Service：</p>
 <p>(1) ArcGIS Online</p>
 <p>使用Esri Map Gallery中的地图作为地图，添加到现有的CAD工程中。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_Basemap.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_Basemap.gif"></p>
 <p>(2) ArcGIS Server</p>
 <p>向现有的CAD工程中添加ArcGIS Server服务。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISforAutoCAD_AGSServer.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_AGSServer.gif"></p>
 <h3 id="2-CAD-Feature-Class"><a href="#2-CAD-Feature-Class" class="headerlink" title="2. CAD Feature Class"></a><strong>2. CAD Feature Class</strong></h3><p>此插件可以将 AutoCAD 作为 GIS 方案编辑器，用来将 CAD 数据组织为可供 GIS 使用的要素类。</p>
 <p>类型对象过滤器是预定义的，用来约束ArcGIS Desktop支持的feature class与DWG 对象的对应关系。</p>
 <p>DWG 对象与ArcGIS 要素的强制对应关系如下：</p>
@@ -472,12 +599,12 @@
 <p>默认分辨率值是 0.0001 米 (1&#x2F;10 mm)，或者为其等效值（以地图单位表示）。</p>
 <p>具有较小（较精细）的 x,y 分辨率的要素坐标可以具有更多的精度位数。但是，极小的 x,y分辨率可能会影响性能，因为使用了过多的磁盘空间以及更多的 I&#x2F;O。</p>
 <p>ESRI官方文档强烈建议，在大多数情况下使用默认的 x,y分辨率，因为默认分辨率性能非常好并且可以适用于大多数坐标精度。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Resolution.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISSpatialReference_Resolution.gif"></p>
 <br>
 
 <p><strong>3． 容差（Tolerance）：</strong> </p>
 <p>容差值为坐标之间的最小距离。如果一个坐标在另一个坐标的容差值范围内，则会将二者视为同一位置。 默认容差是分辨率值的 10倍，大多数情况下推荐使用此设置。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISSpatialReference_Tolerance.gif"></p>
+<p><img data-src="/images/blogImg/ArcGISSpatialReference_Tolerance.gif"></p>
 
       
     </div>
@@ -587,9 +714,9 @@
           <p><strong>一、介绍</strong></p>
 <p>使用地理数据库中存储的数据时，创建要素缓存可以加快ArcMap的执行速度。要素缓存可以将 ArcMap当前显示的要素临时存储到计算机的内存中。</p>
 <p>Arcmap 中有提供了 Feature Cache 的工具，如下：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMapFeatureCache_Toolbar.gif"></p>
+<p><img data-src="/images/blogImg/ArcMapFeatureCache_Toolbar.gif"></p>
 <p>各个工具的作用如下：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMapFeatureCache_Function.gif"></p>
+<p><img data-src="/images/blogImg/ArcMapFeatureCache_Function.gif"></p>
 <p>值得注意的是这两个工具：</p>
 <ul>
 <li>第一个，构建要素缓存工具是在当前地图范围内构建缓存。</li>
@@ -600,7 +727,7 @@
 <p>自动缓存通常适用于，不确定缓存边界时，或者需要缓存一系列的地图时。开启自动缓存时，会自动的去缓存超出当前已缓存范围的地图。由于自动缓存可能影响性能（占大量内存），因此应当设置自动缓存最小比例。只有当地图比例大于最小比例时，才自动创建要素缓存。</p>
 <p>使用上述工具条的，切换自动缓存按钮开启。</p>
 <p>或者在数据框属性中开启，如下图：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcMapFeatureCache_Enable.gif"></p>
+<p><img data-src="/images/blogImg/ArcMapFeatureCache_Enable.gif"></p>
 <p><strong>三、性能提升</strong></p>
 <p>对于地理数据库数据，当数据源是 ArcSDE 地理数据库时，要素缓存的优势最为显著。</p>
 <p>使用文件或个人地理数据库的要素缓存能够获得微小的性能提升。</p>
@@ -728,144 +855,6 @@
 <p>与FeatureClass相关的：FeatureDataset，subtype，AttributeDomain，RelationshipClasses，Topology，Network Dataset，Geometric network，TerrainDataset，Linear referencing，Cartographicrepresentation，versioning。</p>
 <p><strong>3、Raster</strong></p>
 <p>栅格的地理属性通常包括：坐标系，参考坐标或 X,Y 位置（通常在栅格左上角或左下角），单元大小，行计数和列计数。<br>地理数据库可以针对多种用途管理栅格：作为单个数据集、数据集的逻辑集合和表中的图片属性.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/Aboutshapefile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/02/07/Aboutshapefile/" class="post-title-link" itemprop="url">有关shape文件的说明</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-02-07 14:04:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:04:00+08:00">2012-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/02/07/Aboutshapefile/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/Aboutshapefile/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>548</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>shapefile 是存储地理信息的简单文件格式，但是工作中，常会接到用户的很多问题，这里把常见的汇总下。</p>
-<p><strong>一、shape 文件到底可以多大？</strong></p>
-<p>shapefile 的每个文件都不能超过 2 GB。也就是说，存储数据的 .dbf 与.shp 分别不能超过 2GB。但是，所有文件的总大小可以超过 2 GB。</p>
-<p><strong>二、 shape 文件是怎么构成的？</strong></p>
-<p>shape 文件用 ArcGIS 查看仅显示一个文件，但是用 windows 资源管理器查看就可能看到以下文件。</p>
-<ul>
-<li>.shp - 存储要素几何的主文件；必需文件。</li>
-<li>.shx - 存储要素几何索引的索引文件；必需文件。</li>
-<li>.dbf - 存储要素属性信息的 dBASE 表；必需文件。</li>
-<li>.prj - 存储坐标系信息的文件；由 ArcGIS 使用。</li>
-<li>.xml - ArcGIS 的元数据 - 用于存储 shapefile 的相关信息。</li>
-<li>.sbn 和 .sbx - 存储要素空间索引的文件。</li>
-<li>.fbn 和 .fbx - 存储只读 shapefile 的要素空间索引的文件。</li>
-<li>.ain 和 .aih - 存储某个表中或专题属性表中活动字段属性索引的文件。</li>
-<li>.atx - .atx 文件针对各个 shapefile 或在 ArcCatalog 中创建的 dBASE属性索引而创建。</li>
-<li>.ixs - 读&#x2F;写 shapefile 的地理编码索引。</li>
-<li>.mxs - 读&#x2F;写 shapefile（ODB 格式）的地理编码索引。</li>
-<li>.cpg - 可选文件，指定用于标识要使用的字符集的代码页。</li>
-<li>强烈建议，对shape操作时，在 ArcGIS 中进行。</li>
-</ul>
-<p><strong>三、 shape 中创建字段注意什么？</strong></p>
-<p>不能对现有字段修改，可以新建字段包括自定义数据类型；字段名长度不要超过10，超过会被截断。</p>
-<p>新建字段时，有三个参数可供设置：</p>
-<ul>
-<li>precision（精度）—— 数字字段中可存储的位数；</li>
-<li>scale（标度）—— 浮点或双精度类型字段中数值的小数点右侧的位数；</li>
-<li>length（长度）—— 字符型字段的文本字段的长度。</li>
-</ul>
-<p>注意，long integer 当精度超过 10 时，会自动转为 Double 型。</p>
-<p>相关资料：</p>
-<p>由于shape文件是公开数据格式，可以很好来作为交换格式，这里是Esri官方技术描述：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vbGlicmFyeS93aGl0ZXBhcGVycy9wZGZzL3NoYXBlZmlsZS5wZGY=">shape文件技术描述<i class="fa fa-external-link-alt"></i></span></p>
 
       
     </div>

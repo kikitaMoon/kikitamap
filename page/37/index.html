@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,177 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/10/SADistance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/08/10/SADistance/" class="post-title-link" itemprop="url">空间分析之距离分析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-08-10 13:08:00" itemprop="dateCreated datePublished" datetime="2012-08-10T13:08:00+08:00">2012-08-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/08/10/SADistance/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/10/SADistance/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>继续总结下距离分析。如下是ArcGIS 10.x中，距离分析相关的工具：</p>
+<p><img data-src="/images/blogImg/SADistance_Toolset.png"></p>
+<p>ArcGIS中，主要可以通过如下的几种方式进行距离分析：</p>
+<ul>
+<li>1） 欧氏距离分析</li>
+<li>2） 成本加权距离分析</li>
+<li>3） 用于垂直移动限制和水平移动限制的成本加权距离分析</li>
+<li>4） 获取最短路径</li>
+</ul>
+<p>使用ArcGIS空间分析扩展实现距离分析，最主要的是欧氏距离分析和成本加权距离分析两类工具。</p>
+<h1 id="一、欧氏距离工具"><a href="#一、欧氏距离工具" class="headerlink" title="一、欧氏距离工具"></a><strong>一、欧氏距离工具</strong></h1><p>欧氏距离工具测量每个像元距离最近源的<strong>直线</strong>距离（像元中心至像元中心的距离）。</p>
+<p><strong>欧氏距离（Euclidean Diatance）</strong>——  求得每个像元至最近源的距离。</p>
+<p><strong>欧氏方向（Euclidean Direction）</strong>——  求得每个像元至最近源的方向。</p>
+<p><strong>欧氏分配（Euclidean Allocation）</strong>——  求得每个像元的最近的源。</p>
+<p><strong>TIPS：</strong></p>
+<p><strong>1.源（Source）</strong></p>
+<p>可以是感兴趣的地物的位置，数据方面，既可以是栅格数据，也可以是矢量数据。但注意：如果数据选用了栅格数据，数据中必须仅包含表示源的像元，其他像元需要是Nodata。如果选用矢量，在执行工具之时，内部会将其先转成栅格。</p>
+<p><strong>2.欧氏距离的算法</strong></p>
+<p>简单理解为：工具会求得每个像元至每个源的距离，然后取得每个像元至每个源的最短距离以输出。其中，欧氏距离是像元中心与源像元的中心的直线距离。</p>
+<p><img data-src="/images/blogImg/SADistance_Distance.gif"></p>
+<p>如果像元与两个或更多源之间的距离相等，则计算都基于像元扫描过程中遇到的第一个源。无法控制该扫描过程。</p>
+<p>帮助中有这样的描述：</p>
+<blockquote>
+<p>工具在实际执行的过程中，进行两次顺序扫描。这样，工具的执行速度与源像元的数目、分布以及最大距离无关。影响工具执行速度的唯一因素是栅格的大小。计算时间与“分析”窗口中的像元数成线性比例。暂且不知道进行了什么样的两次顺序扫描。</p>
+</blockquote>
+<p><strong>3.欧氏距离输出栅格结果</strong></p>
+<p>投影平面上，像元与最近源之间的最短直线距离。如下图：</p>
+<p><img data-src="/images/blogImg/SADistance_EucDistance.png"></p>
+<p><strong>4.欧氏方向输出栅格结果</strong></p>
+<p>像元与最近源之间的方位角方向（以度为单位）。使用 360 度圆，刻度 360 指北，90指东，从刻度 1 顺时针增加。值 0 供源像元使用。如下图：</p>
+<p><img data-src="/images/blogImg/SADistance_EucDirection.png"></p>
+<p>5.欧氏分配输出栅格结果</p>
+<p>输出的每个像元都是距其最近源的值。如下图：</p>
+<p><img data-src="/images/blogImg/SADistance_EucAllocation.png"></p>
+<h1 id="二、成本加权距离工具"><a href="#二、成本加权距离工具" class="headerlink" title="二、成本加权距离工具"></a><strong>二、成本加权距离工具</strong></h1><p>成本加权距离工具可以看成是对欧氏直线距离的进一步修改，将经过某个像元的距离赋以成本因素。举个简单的例子，翻过一座山到达目的地是最短的直线距离，绕行这座山距离较长，但是更节省时间和体力，那就后者的成本加权距离最短了。</p>
+<p>1）<strong>成本距离（Cost Distance）</strong>：求得每个像元至最近源的成本距离。<br>2）<strong>成本回溯链接（Cost back link）</strong>：求的一个方向栅格，可以从任意像元沿最小成本路径返回最近源。<br>3）<strong>成本分配（Cost Allocation）</strong>：求得每个像元的最近的源。<br>4）<strong>成本路径（Cost Patch）</strong>：求的任意像元到最近源的最小成本路径。</p>
+<p><strong>TIPS：</strong></p>
+<ul>
+<li>成本栅格可以是整形或者浮点型，但是其值中不能含有负值或者0。成本栅格中的Nodata视为障碍。</li>
+<li>成本距离输出栅格数据<br>这里的简单示例中，下面一层黑白渲染的是成本栅格，颜色深的像元代表成本比较高，反之较低。结果如下：<br><img data-src="/images/blogImg/SADistance_CostDistance.png"></li>
+<li>成本距离回溯链接<br>要注意的是，它并不会求的要返回哪一个源像元以及如何返回。而是记录从任意像元回溯到最近源的路径上，每个像元向下一个像元指向的方向，这个方向以0-8的代码形式记录。如下图：<br><img data-src="/images/blogImg/SADistance_CostBacklink1.png"><br><img data-src="/images/blogImg/SADistance_CostBacklink2.png"></li>
+<li>成本距离分配<br>这个类似于前面的欧氏距离分配，得到的是每个像元至最近源的成本距离。<br><img data-src="/images/blogImg/SADistance_CostAllocation.png"></li>
+</ul>
+<h1 id="三、路径距离工具"><a href="#三、路径距离工具" class="headerlink" title="三、路径距离工具"></a><strong>三、路径距离工具</strong></h1><p>路径距离工具与成本距离相似，也可以确定从某个源到栅格上各像元位置的最小累积行程成本。但是，路径距离不仅可计算成本表面的累积成本，而且会考虑到行驶的实际曲面距离，和影响到移动总成本的水平和垂直因子。主要包含这几个工具</p>
+<p>1）<strong>路径距离（Path Distance）</strong><br>2）<strong>路径回溯链接（Path back link）</strong><br>3）<strong>路径分配（Path Allocation）</strong></p>
+<p>这些工具生成的累积成本表面可用于扩散模型、流动和最低成本路径分析。</p>
+<p>有关水平方向以及竖直方向的因子是如何影响的，工作原理是什么，ArcGIS帮助中有详细的解释：</p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvbWFpbi8xMC4xLyMvSG93X3RoZV9ob3Jpem9udGFsX2FuZF92ZXJ0aWNhbF9mYWN0b3JzX2FmZmVjdF9wYXRoX2Rpc3RhbmNlLzAwOXowMDAwMDB6OTAwMDAwMC8=">http://resources.arcgis.com/en/help/main/10.1/#/How_the_horizontal_and_vertical_factors_affect_path_distance&#x2F;009z000000z9000000&#x2F;<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="四、-获得最短路径"><a href="#四、-获得最短路径" class="headerlink" title="四、 获得最短路径"></a><strong>四、 获得最短路径</strong></h1><p>1.成本距离路径</p>
+<p>任意像元到最近源的最小成本路径，需要引用到上面工具中生成的成本距离和成本回溯链接栅格数据。如下图：</p>
+<p><img data-src="/images/blogImg/SADistance_ShortestPath.png"></p>
+<p>2.廊道</p>
+<p>另外要说的是廊道分析工具（Corridor）。此工具用于计算两个成本栅格的累积成本栅格结果，为了求得从一个源到另一个源且经过该像元位置的最小成本路径。</p>
+<p>输出栅格不是单个最小成本路径，但会得到源之间累积成本的范围。</p>
+<p>最后我们可以配合其他工具将小于某一阈值的结果提取出来，例如工具Extract by Attribute提取，或者通过Con进行条件赋值等等方法，获取结果。</p>
+<p>如下如所示：</p>
+<p>学校A、B成本距离分析结果：</p>
+<p><img data-src="/images/blogImg/SADistance_CostAB.png"></p>
+<p>学校C、D、E的成本距离分析结果：</p>
+<p><img data-src="/images/blogImg/SADistance_CostCDE.png"></p>
+<p>有此两个距离成本结果，来分析得到A、B到C、D、E之间的廊道，也就是两组源之间的最小累积成本距离。</p>
+<p><img data-src="/images/blogImg/SADistance_Corridor.png"></p>
+<p>然后结果中我们可以按照一定的阈值来提取结果。例如累积成本在75以下的我才能接受：</p>
+<p><img data-src="/images/blogImg/SADistance_Corridor2.png"></p>
+<p>至此，空间分析中的距离分析工具总结结束。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -290,10 +461,10 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="一、WHY-DENSITY-？"><a href="#一、WHY-DENSITY-？" class="headerlink" title="一、WHY DENSITY ？"></a>一、WHY DENSITY ？</h1><p>通过密度分析，我们可以讲测量的来的点或者线生成连续表面，从而可以找出那些地方点或者线比较集中。也就是，密度分析是根据输入要素数据计算整个区域的数据聚集状况。</p>
 <p>密度分析是通过离散点数据或者线数据进行内插的过程，根据插值原理不同，主要是分为核密度分析和普通的点\线密度分析。核密度分心中，落入搜索区的点具有不同的权重，靠近搜索中心的点或线会被赋予较大的权重，反之，权重较小，它的计算结果分布较平滑。在普通的点\线密度分析中，落在搜索区域内的点或线有相同的权重，先对其求和，再除以搜索区域的大小，从而得到每个点的密度值。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADensity_Demo.png"></p>
+<p><img data-src="/images/blogImg/SADensity_Demo.png"></p>
 <h1 id="二、HOWTO-DENSITY-？"><a href="#二、HOWTO-DENSITY-？" class="headerlink" title="二、HOWTO DENSITY ？"></a><strong>二、HOWTO DENSITY ？</strong></h1><p>ArcGIS 的空间分析工具箱中提供了密度分析工具集中的三个工具：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADensity_Tool.png"></p>
-<h2 id="1-Kernel-Density（核密度分析）"><a href="#1-Kernel-Density（核密度分析）" class="headerlink" title="1. Kernel Density（核密度分析）"></a><strong>1. Kernel Density（核密度分析）</strong></h2><p><img data-src="http://kikitamap.com/images/blogImg/SADensity_Tool2.png"></p>
+<p><img data-src="/images/blogImg/SADensity_Tool.png"></p>
+<h2 id="1-Kernel-Density（核密度分析）"><a href="#1-Kernel-Density（核密度分析）" class="headerlink" title="1. Kernel Density（核密度分析）"></a><strong>1. Kernel Density（核密度分析）</strong></h2><p><img data-src="/images/blogImg/SADensity_Tool2.png"></p>
 <p>输入值可以是点或者线。</p>
 <p>工作原理引自帮助：</p>
 <blockquote>
@@ -301,14 +472,14 @@
 </blockquote>
 <p>对于点，如果 population 字段设置使用的是除 NONE 之外的值，则每项的值用于确定点被计数的次数。例如，值 3 会导致点被算作三个点。值可以为整型也可以为浮点型。</p>
 <p>对于线，如果 population 字段使用的是除 NONE 之外的值，则线的长度将由线的实际长度乘以此线的 population 字段的值而得出。</p>
-<h2 id="2-Point-Density-Line-Density（点、线密度分析）："><a href="#2-Point-Density-Line-Density（点、线密度分析）：" class="headerlink" title="2. Point Density &#x2F; Line Density（点、线密度分析）："></a><strong>2. Point Density &#x2F; Line Density（点、线密度分析）：</strong></h2><p><img data-src="http://kikitamap.com/images/blogImg/SADensity_PointLine.png"></p>
+<h2 id="2-Point-Density-Line-Density（点、线密度分析）："><a href="#2-Point-Density-Line-Density（点、线密度分析）：" class="headerlink" title="2. Point Density &#x2F; Line Density（点、线密度分析）："></a><strong>2. Point Density &#x2F; Line Density（点、线密度分析）：</strong></h2><p><img data-src="/images/blogImg/SADensity_PointLine.png"></p>
 <p>这两个工具的输出与核密度工具的输出的区别在于：</p>
 <p>对于点密度和线密度，需要指定一个邻域，以便计算出各输出像元周围像元的密度。而核密度则可将各点的已知总体数量从点位置开始向四周分散。在核密度中，在各点周围生成表面所依据的二次公式可为表面中心（点位置）赋予最高值，并在搜索半径距离范围内减少到零。对于各输出像元，将计算各分散表面的累计交汇点总数。</p>
 <p><strong>1）点密度分析</strong></p>
 <p>每个栅格像元中心的周围都定义了一个邻域（邻域可以使用圆形、矩形、环形、楔形的形状来定义），将邻域内点的数量相加，然后除以邻域面积，即得到点要素的密度。如果 Population 字段设置使用的是 NONE 之外的值，则每项的值用于确定点被计数的次数。例如，值为 3 的项会导致点被算作三个点。值可以为整型也可以为浮点型。</p>
 <p><strong>2）线密度分析</strong></p>
 <p>使用搜索半径以各个栅格像元中心为圆心绘制一个圆。每条线上落入该圆内的部分的长度与 Population 字段值相乘。对这些数值进行求和，然后将所得的总和除以圆面积。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SADensity_LineDetail.gif"></p>
+<p><img data-src="/images/blogImg/SADensity_LineDetail.gif"></p>
 <p>上图中显示的是栅格像元与其圆形邻域。线 L1 和 L2 表示各条线上落入圆内部分的长度。相应的 population 字段值分别为 V1 和 V2。因此：</p>
 <p><strong>Density &#x3D; ((L1 * V1) + (L2 * V2)) &#x2F; (area_of_circle)</strong></p>
 <p>如果 population 字段使用的是除 NONE 之外的值，则线的长度将等于线的实际长度乘以其 population 字段的值。</p>
@@ -422,7 +593,7 @@
           <p>高斯克吕格平面直角坐标系是投影坐标系的一种，根据我国的地理情况，为建立地形图的测量控制和城市、矿山等区域性的测量控制，早在1952年决定，采用高斯克吕格平面直角坐标系。</p>
 <h1 id="投影面的形成："><a href="#投影面的形成：" class="headerlink" title="投影面的形成："></a><strong>投影面的形成：</strong></h1><p>椭球面是不可展曲面，无论如何选择投影函数，椭球面上的元素，投影到平面上，都会产生变形（角度、长度、面积）。高斯投影是一种等角投影（正形投影），又称为横轴椭圆柱等角投影。想象用一个椭球柱面横套在椭球外面，并与某一条子午线相切，椭球的柱的中心轴通过椭球中心，然后用一定的投影方法将中央子午线两侧各一定经差范围内的地区投影到椭圆柱面上，再将此柱展开即成为投影面。</p>
 <h1 id="坐标系的定义："><a href="#坐标系的定义：" class="headerlink" title="坐标系的定义："></a><strong>坐标系的定义：</strong></h1><p>在投影面上，中央经线和赤道的投影都是直线，并且以中央经线和赤道的交点作为坐标原点，以中央经线的投影为纵坐标，以赤道的投影为横坐标，这就形成了高斯平面直角坐标系。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutGaussKruger_Defination.jpg"></p>
+<p><img data-src="/images/blogImg/AboutGaussKruger_Defination.jpg"></p>
 <h1 id="分带投影："><a href="#分带投影：" class="headerlink" title="分带投影："></a><strong>分带投影：</strong></h1><p>高斯投影对投影函数的选择条件：</p>
 <p>  1）椭球面上的任意角度投影到平面后保持不变；</p>
 <p>  2）作为平面坐标轴的中央经线，投影后是一条直线，并且是投影点的对称轴；</p>
@@ -431,7 +602,7 @@
 <p>通常按经线每隔6°进行分带投影。由0°经线起每隔经差6°自西向东分带，依次编号1、2、3……。6°带的带号N和中央经线L的关系为：L&#x3D;6N-3。</p>
 <p>为了进一步限制变形，可以采用3°投影分带。3°带和6°带的中央经线重合，6°带的中央经线和分带经线均是3°带的中央经线。3°带的带号n和中央经线L的关系为：L&#x3D;3n。</p>
 <p><strong>我国3°带的范围 24<del>45，6°带的范围 13</del>23。</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/AboutGaussKruger_Zones.jpg"></p>
+<p><img data-src="/images/blogImg/AboutGaussKruger_Zones.jpg"></p>
 <p>x值无论在哪一带都是由赤道起算的自然值。</p>
 <p>而由于中央经线以东取正号，以西取负号。实际工作中，为了避免横坐标y出现负值，规定在y值上500km（false easting）。同时，为了区别各带坐标不同，又规定在y值前冠以带号。</p>
 <p>例如：6°带第20带中，y&#x3D;-200.25m，成果表中应写为20499799.75m。</p>
@@ -736,138 +907,7 @@
 </tr>
 </tbody></table>
 <p>补充，方便直观理解，看看中国境内的重要经纬线：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ChineseUTMZone_1.gif"><img data-src="http://kikitamap.com/images/blogImg/ChineseUTMZone_2.gif"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/04/10/ArcPad10Synchronization2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/04/10/ArcPad10Synchronization2/" class="post-title-link" itemprop="url">ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（二）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-04-10 09:16:00" itemprop="dateCreated datePublished" datetime="2012-04-10T09:16:00+08:00">2012-04-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/04/10/ArcPad10Synchronization2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/04/10/ArcPad10Synchronization2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>464</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>继续上个话题，数据准备好了，我们就开始发布服务吧~</p>
-<h1 id="三、发布-ArcGIS-Server-服务"><a href="#三、发布-ArcGIS-Server-服务" class="headerlink" title="三、发布 ArcGIS Server 服务"></a><strong>三、发布 ArcGIS Server 服务</strong></h1><p>在进行到这一步的时候，我遇到过很多问题，有配置的问题，有数据的问题，有自己不够仔细的问题。这里总结下注意事项，帮助大家少走弯路。</p>
-<blockquote>
-<p><strong>TIPS：</strong><br><strong>首先，ArcGIS Server服务器要安装ArcPad扩展，这个扩展在ArcPad安装光盘中有。</strong><br><strong>ArcGIS Desktop 与 ArcPad 版本一定要对应：ArcPad 10.0对应ArcGIS Desktop、ArcGIS Server 10.0（.NET）; ArcPad 8.0对应ArcGIS Desktop、ArcGIS Server 9.3.1（.NET）。</strong><br><strong>必须使用 ArcGIS Server for .NET Framework ，不支持 Java，许可级别必须是 Advanced版。</strong><br><strong>将前面制作的MXD以及通过上一步方法得到的同名apo放置到C盘根目录文件夹下，例如C:&#x2F;MXD。</strong><br><strong>数据尽量使用ArcGIS Tutorial Data，以防止是数据本身问题导致服务发不成，以后调通了，再用自己的数据。</strong><br><strong>发布服务，在你的GIS服务器连接上，右键 Add new Services。而不要直接在你的mxd上右键发布服务。</strong></p>
-</blockquote>
-<p>好，记住了这些，就开始发布服务吧，步骤和以前发布服务的方法几乎没有差异，GO ON……</p>
-<p>添加服务：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_AddService.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_ServiceWizard1.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_ServiceWizard2.png"></p>
-<p>注意这一步要勾选 <strong>ArcPad</strong>，使得发布的 Map Service 可以被ArcPad所支持：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_ServiceWizard3.png"></p>
-<p>后面几步可以保持默认……</p>
-<p>最后发布成功。</p>
-<br>
-
-<h1 id="四、Arcpad-加载-ArcGIS-Server-服务并使用数据"><a href="#四、Arcpad-加载-ArcGIS-Server-服务并使用数据" class="headerlink" title="四、Arcpad 加载 ArcGIS Server 服务并使用数据"></a><strong>四、Arcpad 加载 ArcGIS Server 服务并使用数据</strong></h1><p>保证移动设备网络与Server连通，可以使用Wifi、USB等等……</p>
-<p>在移动设备上打开ArcPad：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_MobileLaunch.jpg"></p>
-<p>在添加数据下拉列表中，选择”Add Data from Server“</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_AddDataFromServer.png"></p>
-<p>类型选择 ArcGIS Server ArcPad Service，地址填写服务器地址，点击刷新按钮可以显示服务列表，注意服务器地址填写完整：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_ArcPadService.jpg"></p>
-<p>等待片刻，服务加载成功：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/ArcPad10Synchronization2_ServiceAdded.jpg"></p>
+<p><img data-src="/images/blogImg/ChineseUTMZone_1.gif"><img data-src="/images/blogImg/ChineseUTMZone_2.gif"></p>
 
       
     </div>

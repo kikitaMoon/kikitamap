@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,171 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/01/12/ParallelProcessing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/01/12/ParallelProcessing/" class="post-title-link" itemprop="url">ArcGIS Desktop 工具的并行处理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-01-12 11:37:49" itemprop="dateCreated datePublished" datetime="2015-01-12T11:37:49+08:00">2015-01-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/01/12/ParallelProcessing/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/01/12/ParallelProcessing/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>开始下面正文之前，先说一个旧闻，ArcGIS Desktop 10.1 SP1 之后的版本中， 出现了一个不明觉厉的 <a target="_blank" rel="noopener" href="http://resources.arcgis.com/en/help/main/10.1/index.html#/What_s_new_in_ArcGIS_10_1_service_packs/016w0000005q000000/"><strong>新特性</strong></a> —— <strong>并行处理（Parallel Processing）</strong>。 </p>
+<p>现在机器硬件越来越优，多核CPU的机器比比皆是，ArcGIS Desktop 32位单进程的模式不能充分的利用这些硬件资源，不能满足大数据量的处理要求。因此，Esri 改进了 ArcToolbox 中的部分工具，赋予了这部分工具并行处理的能力，确切地说是一小部分工具。 </p>
+<p>看到这里，问题可能来了，哪些工具支持并行处理呢？遗憾的是官方没有给出这个清单，这一点体验上确实不是很佳。但是我们还是有办法把它们找出来的，当我们在使用某个工具的时候，可以打开工具的帮助，在环境变量题目下找找有没有叫做 <strong>并行处理因子（Parallel Processing Factor）</strong>的项目。 </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_Toolhelp.png">   </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_Factor.png"> </p>
+<p><strong>也就是说，对于所有工具，只有其文档中环境变量下标明的环境变量参数才有效，而不是全部环境变量参数都有效！</strong> </p>
+<p>下面我们来看看这个参数是如何设置和影响工具运行的。做一个简单的小测试，先找到一个支持并行处理的工具，例如 ** Build Pyramids And Statistics** 工具，用其为数据量较大的镶嵌数据集的项目创建金字塔和统计值。在默认设置下，只要工具支持并行处理，工具会自动创建多个进程（<strong>ArcSOCP.exe</strong>）来执行任务。如下图所示： </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_taskManager.png"> </p>
+<p>在工具支持并行处理的情况下，设置并行处理因子（Parallel Processing Factor）这个参数又能做什么呢？ </p>
+<p>这个因子的数值，会决定工具运行使用的进程数量。一般，各工具在各个支持的环境中都有进程数量的内置默认值。我们可根据自己的数据情况、执行任务的类型和机器的可用资源对其进行更改。 </p>
+<p>一般是这四种设置方法： </p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>留空</strong></td>
+<td><strong>让工具自动决定使用进程的数量</strong>，这是 <strong>默认</strong>设置。*<strong>如上图中，我是8核的机器，工具自动开启了4个进程。</strong></td>
+</tr>
+<tr>
+<td><strong>0</strong></td>
+<td><strong>不跨多个进程进行操作。</strong></td>
+</tr>
+<tr>
+<td><strong>n</strong></td>
+<td><strong>使用指定的进程数量。</strong></td>
+</tr>
+<tr>
+<td><strong>n%</strong></td>
+<td>使用百分比计算进程数量：<strong>进程数量 &#x3D; 系统核数量 * （n &#x2F; 100）</strong>。</td>
+</tr>
+</tbody></table>
+<p><strong>在填写的时候，是不是一定进程数越多越好呢？</strong> </p>
+<p>引用帮助文档的原文供读者参考： </p>
+<blockquote>
+<p><strong>“指定的进程数量大于计算机所具有的核数量，可能导致性能损失。这是因为多进程将在一个核上争夺资源。为避免这样的竞争，可以指定低于 100% 的百分数值或少于计算机核数量的进程数量。”</strong> </p>
+</blockquote>
+<p>当然也有例外情况： </p>
+<blockquote>
+<p><strong>“当所有进程均是对磁盘或企业级数据库连接的 I&#x2F;O bound 时，您可通过指定多于核数量的进程以提高性能。例如将镶嵌数据集储存到企业级数据库时，添加栅格至镶嵌数据集 工具是 I&#x2F;O bound。同样，构建概视图工具对磁盘的主要的 I&#x2F;O bound。您可通过指定大于 100% 的百分比或大于计算机所含核数量的进程数量，来使用更多进程。例如，如果您有一台四核计算机，则指定 8 或 200%，这会跨八个进程展开操作。”</strong> </p>
+</blockquote>
+<br>
+
+<p>我做个了小测试，来对比对相同的数据做相同操作的时间消费。 </p>
+<p><strong>测试环境：</strong> </p>
+<p>Windows 8.1 Enterprise 64bit ；ArcGIS for Desktop 10.3  </p>
+<p><img data-src="/images/blogImg/ParallelProcessing_OS.png"> </p>
+<p><strong>任务</strong>： </p>
+<p>为相同的一个镶嵌数据集的栅格项目创建金字塔和统计值，使用工具 Build Pyramids And Statistics ，金字塔重采样方法和压缩方法等参数均相同。 </p>
+<p><strong>结果</strong>： </p>
+<blockquote>
+<p>√ 并行处理因子设置为 0，即不跨多进程，用时 39 minutes 3 seconds； </p>
+<p> √ 并行处理因子设置为 8，即工具跨8个进程并行处理，用时 1 minutes 28 seconds 。 </p>
+</blockquote>
+<p>*时间是工具运行的消息提供的时间。 </p>
+<p>时间相差悬殊，虽然只是一个小测试，我们却能感受到并行处理相比单进程处理体验好了很多。 </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -408,33 +573,33 @@
 
 <h2 id="1-欧式距离（Euclidean-Distance）"><a href="#1-欧式距离（Euclidean-Distance）" class="headerlink" title="1. 欧式距离（Euclidean Distance）"></a><strong>1. 欧式距离（Euclidean Distance）</strong></h2><p>欧式距离是我们在直角坐标系中最常用的距离量算方法，例如小时候学的“两点之间的最短距离是连接两点的直线距离。”这就是典型的欧式距离量算方法。 </p>
 <p>通常这这个距离的获取是基于我们熟悉的“勾股定理”，解算三角形斜边得到的。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MeasureDistances_EucDis.png"> </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MeasureDistances_EucDis2.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MeasureDistances_Formula.png"> </p>
+<p><img data-src="/images/blogImg/MeasureDistances_EucDis.png"> </p>
+<p><img data-src="/images/blogImg/MeasureDistances_EucDis2.png"></p>
+<p><img data-src="/images/blogImg/MeasureDistances_Formula.png"> </p>
 <p>看看维基百科：<span class="exturl" data-url="aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9FdWNsaWRlYW5fZGlzdGFuY2U=">http://en.wikipedia.org/wiki/Euclidean_distance<i class="fa fa-external-link-alt"></i></span></p>
 <br>
 
 <h2 id="2-曼哈顿距离（Manhattan-Distance）"><a href="#2-曼哈顿距离（Manhattan-Distance）" class="headerlink" title="2. 曼哈顿距离（Manhattan Distance）"></a><strong>2. 曼哈顿距离（Manhattan Distance）</strong></h2><p>曼哈顿距离是与欧式距离不同的一种丈量方法，两点之间的距离不再是直线距离，而是投影到坐标轴的长度之和。 </p>
-<pre><code>    ![](http://kikitamap.com/images/blogImg/MeasureDistances_Manhattan.png) 
+<pre><code>    ![](/images/blogImg/MeasureDistances_Manhattan.png) 
 </code></pre>
 <p>还是看图吧，图比文字更显见。 </p>
-<pre><code>    ![](http://kikitamap.com/images/blogImg/MeasureDistances_Manhattan2.png) 
+<pre><code>    ![](/images/blogImg/MeasureDistances_Manhattan2.png) 
 </code></pre>
 <p>图中绿色的线为欧式距离的丈量长度，红色的线即为曼哈顿距离长度，蓝色和黄色的线是这两点间曼哈顿距离的等价长度。 </p>
 <p>想想我们下象棋的时候，车炮兵之类的，是不是要走曼哈顿距离？ </p>
 <p>如果不会下象棋，没关系，看下面的例子： </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MeasureDistances_ManhattanMap.png"></p>
+<p><img data-src="/images/blogImg/MeasureDistances_ManhattanMap.png"></p>
 <p>   在美国道路会像这样是很多的规则的网格状，从A到B通常无法去沿直线行走，而是会避开建筑物，走几个街区到达。    </p>
 <p>图中蓝色的线即为曼哈顿距离的典型应用场景。 </p>
 <p><em>看看维基百科：<span class="exturl" data-url="aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9UYXhpY2FiX2dlb21ldHJ5">http://en.wikipedia.org/wiki/Taxicab_geometry<i class="fa fa-external-link-alt"></i></span></em> </p>
 <br>
 
 <h2 id="3-切比雪夫距离（Chebyshev-distance）"><a href="#3-切比雪夫距离（Chebyshev-distance）" class="headerlink" title="3. 切比雪夫距离（Chebyshev distance）"></a><strong>3. 切比雪夫距离（Chebyshev distance）</strong></h2><p>数学上，切比雪夫距离是将2个点之间的距离定义为其各坐标数值差的最大值。 </p>
-<pre><code>   ![](http://kikitamap.com/images/blogImg/MeasureDistances_Chebyshev.png) 
+<pre><code>   ![](/images/blogImg/MeasureDistances_Chebyshev.png) 
 </code></pre>
 <p>网上搜索，好多有关这个距离的解释，大多都是采用国际象棋中的王的走步来作为例子，王可以前后左右走，还可以斜前斜后走，一共8个方向可以认为距离均等。 </p>
 <p>也就是在下面3&amp;times;3邻域内，中心网格的中心点到8个邻域网格中心点的距离相等。 </p>
-<pre><code>  ![](http://kikitamap.com/images/blogImg/MeasureDistances_Chebyshev2.png) 
+<pre><code>  ![](/images/blogImg/MeasureDistances_Chebyshev2.png) 
 </code></pre>
 <p><em>看看维基百科：<span class="exturl" data-url="aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9DaGVieXNoZXZfZGlzdGFuY2U=">http://en.wikipedia.org/wiki/Chebyshev_distance<i class="fa fa-external-link-alt"></i></span></em>    </p>
 
@@ -544,15 +709,15 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>这是这个专题的最后一篇，将剩下的几个工具放在一起说一说。下面的这些工具在镶嵌数据集正常运行时常常会被忽略，但是一旦出现异常或者故障，这些工具就有了用武之地。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Toolset.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_Toolset.png"> </p>
 <br>
 
 <h1 id="分析镶嵌数据集"><a href="#分析镶嵌数据集" class="headerlink" title="分析镶嵌数据集"></a>分析镶嵌数据集</h1><p>当我们发现镶嵌数据集不能按照预期运行，或者性能比较差的的时候，可以使用工具 <strong>Analyze Mosaic Dataset</strong> 来分析检查存在的问题。这个工具可以发现常见问题、发出警告消息，并且给出些解决方法或者建议等。另外，当在 ArcMap 中镶嵌数据集图层的右键菜单也可以调用这个工具。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Analyze.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_Analyze.png"> </p>
 <br>
 
 <p>分析之后，在 Prepare 窗口中列出检查到的 Error，Warning，Message等，在列表的每一行上右键，都会打开相应的解决方法或者建议。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_Prepare.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_Prepare.png"> </p>
 <p>使用分析镶嵌数据集工具，我们可以分析的对象有： </p>
 <blockquote>
 <p><strong>FOOTPRINT</strong> — 镶嵌数据集的轮廓线<br><strong>FUNCTION</strong>—镶嵌数据集的栅格函数<br><strong>RASTER</strong> — 栅格数据<br><strong>PATHS</strong>— 分析是否存在损坏的路径<br><strong>SOURCE_VALIDITY</strong>— 对源数据的潜在问题进行分析。此方法可以有效检测同步工作期间可能发生的问题。<br><strong>STALE</strong> — 分析镶嵌数据集项目是否过时<br><strong>PYRAMIDS</strong> — 栅格数据金字塔，测试金字塔是否有断开连接的辅助文件。<br><strong>STATISTICS</strong> —  栅格统计数据和直方图<br><strong>PERFORMANCE</strong> — 对性能相关的问题进行分析。例如，传输期间未压缩，或建议对涉及大量栅格函数的项目进行项目缓存。<br><strong>INFORMATION</strong> —  对镶嵌数据集及其项目进行分析，并会为分析结果生成信息日志。 </p>
@@ -571,10 +736,10 @@
 
 <h1 id="同步镶嵌数据集"><a href="#同步镶嵌数据集" class="headerlink" title="同步镶嵌数据集"></a>同步镶嵌数据集</h1><p>工具 **Synchronize Mosaic Dataset **可以将镶嵌数据集保持为最新状态。要理解同步镶嵌数据集，理解镶嵌数据集内数据的组织方式非常重要。 </p>
 <p>1）最常见的是直接引用栅格数据的镶嵌数据集。这种镶嵌数据集与源数据有直接关系，可以称之为“源镶嵌数据集”。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_SourceMD.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_SourceMD.png"> </p>
 <p>2）镶嵌数据集的数据源还可以是另外一个镶嵌数据集，也就是在创建镶嵌数据集后，添加数据的数据源是另外一个镶嵌数据集。这种可以称之为“派生镶嵌数据集”，帮助理解。当源镶嵌数据集发生变化时，为了保持派生镶嵌数据集最新，同步镶嵌数据集就非常重要了。 </p>
 <p>PS：在第一篇中提到过 “引用镶嵌数据集 &#x2F; Referenced Mosaic Dataset” ，这是一种特别的镶嵌数据集，与上文要表达的 “派生镶嵌数据集” 不是一种哦。 </p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDAnalyzeRepairMD_ReferenceMD.png"> </p>
+<p><img data-src="/images/blogImg/MDAnalyzeRepairMD_ReferenceMD.png"> </p>
 <p>同步镶嵌数据集是个单向操作，其中源数据中的更改可以同步到镶嵌数据集的属性表，但属性表中的更改将不会影响源数据，同步时所做的更改无法撤消。。应该在同步派生镶嵌数据集之前同步源镶嵌数据集，因为派生镶嵌数据集只能使用源镶嵌数据集中的信息进行更新。 </p>
 <p>同步镶嵌数据集工具中有一系列的参数可供配置，来细化控制参与同步的想，所见即所得，不再赘述。 </p>
 <br>
@@ -692,21 +857,21 @@
     <div class="post-body" itemprop="articleBody">
           <p><strong>镶嵌数据集中的函数</strong></p>
 <p>在下文中会提到的工具有这几个，先摆在这里，有个初步的记忆：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFunctionChain_Toolset.png"></p>
+<p><img data-src="/images/blogImg/MDFunctionChain_Toolset.png"></p>
 <br>
 
 <p>这个主题中，一起来看一下镶嵌数据集的函数。</p>
 <p><strong>★</strong> 不过首先需要额外了解，在 ArcGIS 中，其实除了镶嵌数据集，普通的栅格数据集也可以使用函数，这并不仅仅是镶嵌数据集的特性。在 Image Analyst 窗口中，我们可以点击 fx 按钮给现有数据配置函数。</p>
 <p>例如，下面给DEM增加个临时的山影效果，而不需要在硬盘上去存储这个结果：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFunctionChain_Hillshade.png"></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFunctionChain_ImageAnalysis.jpg"></p>
+<p><img data-src="/images/blogImg/MDFunctionChain_Hillshade.png"></p>
+<p><img data-src="/images/blogImg/MDFunctionChain_ImageAnalysis.jpg"></p>
 <p>在栅格数据上使用函数后，我们就可以直接查看函数作用后的结果栅格图层。在镶嵌数据集中创建的函数可以存储在数据库中，并且可以根据自己的需求，给栅格数据指定多个依次进行的函数，下一步的函数会使用上一步的函数的结果作为输入，称之为 <strong>函数链</strong>（Function Chain），一环扣一环，很形象。</p>
 <p>给镶嵌数据集整体进行函数运算好处就是整体连续，如果我们每幅进行各自函数运算然后镶嵌，就会发现数据是不连续的片状。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFunctionChain_Mosaic.png"></p>
+<p><img data-src="/images/blogImg/MDFunctionChain_Mosaic.png"></p>
 <p>我们在镶嵌数据集的属性窗口中可以看到 Function 选项卡，这就是配置函数链的主要的位置。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFunctionChain_Function.png"></p>
+<p><img data-src="/images/blogImg/MDFunctionChain_Function.png"></p>
 <p>如果我们在建库的时候选择某种 产品定义（Product Defination），在镶嵌数据集内部镶嵌数据集项目的也会存在函数链。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFunctionChain_Production.png"></p>
+<p><img data-src="/images/blogImg/MDFunctionChain_Production.png"></p>
 <p>ArcGIS 提供了很多可以用于栅格处理的函数，在 Web Help 文档中有每个函数的详细描述，这里我就不一一整理了。Web Help当工具书用，还是十分便利的，大家自可按需查询，点<a target="_blank" rel="noopener" href="http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//009t00000044000000"><strong>这里</strong></a>。</p>
 <br>
 
@@ -717,131 +882,10 @@
 <p>前面说过了，我们可以直接在镶嵌数据集上右键，Function 选项卡中增加、删除、修改函数链，我们也可以使用工具 <strong>Edit Raster Function</strong> 。</p>
 <p>如果没有特别的要使用 Model Builder或者脚本等调用这个工具，个人建议可以直接到属性中去修改，操作起来更方便直观。这个工具提供了 <strong>Insert、Replace、Remove</strong>三种修改选项，可以将 <strong>栅格函数模板文件(.rft.xml)</strong> 通过操作应用给镶嵌数据集，这种文件可以在** Function Template Editor **中保存获得。</p>
 <p>举个最简单的例子，前面用了山影函数，现在我需要换成地貌晕染函数，执行下这个工具，导入现有的函数模板替换掉即可。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDFunctionChain_ShadedRelief.png"></p>
+<p><img data-src="/images/blogImg/MDFunctionChain_ShadedRelief.png"></p>
 <p>接着第二个相关的工具&nbsp;<strong>Build Mosaic Dataset Item Cache</strong>，这个工具是把 “Cached Raster Function” 函数插入到每个栅格数据函数链的顶部，这样该函数就成为链中最后实现的函数。一般是涉及到运算量较大的处理过程时，这样做可以提高性能。</p>
 <p>在这个工具中，我们可以定义、生成缓存、指定缓存的存储位置。默认情况下，会在镶嵌数据集所处位置旁的文件夹中生成和存储缓存。此文件夹的名称与地理数据库的名称相同，但扩展名为 .cache。但是，如果镶嵌数据集创建于 ArcSDE 地理数据库，则将在该地理数据库中创建缓存。</p>
 <p>如果我们想得到函数链处理之后镶嵌数据集中的各个栅格数据，就可以使用工具 <strong>Export Mosaic Dataset Items</strong>。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/11/28/MDCellRange/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/11/28/MDCellRange/" class="post-title-link" itemprop="url">镶嵌数据集工具小结（九）计算像元大小范围</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-11-28 15:41:03" itemprop="dateCreated datePublished" datetime="2014-11-28T15:41:03+08:00">2014-11-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/11/28/MDCellRange/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/11/28/MDCellRange/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>828</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>计算像元大小范围</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDCellRange_Toolset.png"></p>
-<p>像元大小范围指的是，镶嵌数据集中的影像参加动态镶嵌的像元大小范围，也就是，动态镶嵌的过程中从栅格数据集中读取的像元大小的范围。</p>
-<p>在镶嵌数据集的属性表中，字段 <strong>LowPS</strong> 列和 <strong>HighPS</strong> 列定义镶嵌数据集从源栅格数据集中读取的像元大小的 <strong>实际范围</strong>。当我们向镶嵌数据集中添加栅格时，工具会根据源栅格数据分辨率、金字塔等级、金字塔选项中的设置 来计算属性表中 LowPS 与 HighPS 字段值。<br>例如，下图中的 LowPS &#x3D; 0.1 表示基础像素值，High &#x3D; 0.4 表示正在使用的顶级金字塔像素值。对于不包含金字塔的栅格数据集，低像素大小和高像素大小可能为相同的值，例如第一行。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDCellRange_Table.png"></p>
-<p>例如，在使用所有金字塔等级的情况下，如果栅格数据集包含 1 米的像元，且包含像元大小为 2、4、8 和 16 米的金字塔，则 LowPS 是 1，HighPS 是 16。如果在栅格金字塔选项中将最大像元大小设置为 8，则 HighPS 将为 8 而不是 16。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDCellRange_Pyramid.png"></p>
-<p>属性表中还有两列：<strong>MinPS</strong> 列和 <strong>MaxPS</strong> 列，用来定义在什么像元大小范围内请求什么栅格数据。当我们向镶嵌数据集中添加栅格数据时，选中添加栅格至镶嵌数据集对话框上的 <strong>Update Cell Size Ranges (optional)</strong> 选项，或使用工具 <strong>Calculate Cell Size Ranges</strong> 时，就会填充两列字段值；也可以手动编辑表中的值。<br>MinPS 和 MaxPS 是根据栅格数据和叠加在上面的概视图来计算的。</p>
-<p>用下面一幅图，可以看出默认情况下，MinPS，MaxPS 与 LowPS，HighPS 的关系：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/MDCellRange_CellSize.png"></p>
-<p>当加入镶嵌数据集的栅格数据源有多种分辨率时，就可以利用像元大小范围来控制不同比例尺下显示不同的栅格数据。</p>
-<p>例如，在国家级别查看影像，可以使用 <span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzQyMjE1NjcuaHRtP2Zyb210aXRsZT1MYW5kc2F0JmZyb21pZD03MTk1NzY1JnR5cGU9c3lu">Landsat<i class="fa fa-external-link-alt"></i></span> 影像，约 30 米的像元大小；当放大到更高的比例，镶嵌数据集可以提供 SPOT 图像，像元大小约 5 米；进一步放大时，最终将看到航空正射影像，像元大小更小，分辨率更高。</p>
-<p>比例尺和像元大小有很大的关系，如果我们希望求取计算的话，可以参考如下公式：<br>    <strong>Scale &#x3D; CellSize * 96 &#x2F; 0.0254</strong><br>    其中，ArcGIS 中 DPI 的默认值为 96，1 英寸（Inch） &#x3D; 0.0254米，CellSize是以“米”为单位的。<br>    公式反之，可以通过比例推算像元大小：<br>    <strong>CellSize &#x3D; Scale * 0.0254 &#x2F; 96</strong></p>
-<p>如果我们访问镶嵌数据集时，不断的放大地图，最终请求的影像的 Cell Size 小于了全部的 MinPS，那么就会请求失败，不再会返回影像；反之，如果我们不断的缩小地图，最终请求的Cell Size 大于了全部的的 MaxPS，那么也会请求失败，返回黑色和白色的棋盘状图案。也就是说，镶嵌数据集的像元大小范围会直接影响我们在缩放地图时影像数据的可见性。</p>
-<p>That’s all …</p>
 
       
     </div>

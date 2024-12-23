@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="kikita &amp; Maps">
 <meta property="og:description" content="网上已经有好多作者都不吝笔墨，写了好多有关 Web Mercator这个坐标系的前世今生。多搜罗多摄入，我们会得到很多有用的信息。今天讨论到 3758，3857，102100，900913…… 这些ID又一石激起千层浪，看来整理总结下还是有点必要。   Web Mercator 如何定义？   我们知道，地理数据的坐标系一般有两大类，一是地理坐标系(GCS)，是经纬度单位的椭球坐标系；二是投影坐标">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SecretofWebMercator_Geodesic.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SecretofWebMercator_Name.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SecretofWebMercator_darkside.png">
-<meta property="og:image" content="http://kikitamap.com/images/blogImg/SecretofWebMercator_3857.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SecretofWebMercator_Geodesic.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SecretofWebMercator_Name.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SecretofWebMercator_darkside.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/SecretofWebMercator_3857.png">
 <meta property="article:published_time" content="2015-05-29T01:44:56.000Z">
-<meta property="article:modified_time" content="2018-07-03T07:41:56.000Z">
+<meta property="article:modified_time" content="2024-12-23T10:24:49.325Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Coordinate System">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png">
 
 
 <link rel="canonical" href="https://kikitamap.com/2015/05/29/SecretofWebMercator/">
@@ -163,7 +163,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">199</span>
+          <span class="site-state-item-count">200</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -319,17 +319,17 @@
 <p>Angular Unit: Degree (0.0174532925199433)<br>Prime Meridian: Greenwich (0.0)<br>Datum: D_WGS_1984<br>  Spheroid: WGS_1984<br>    Semimajor Axis: 6378137.0<br>    Semiminor Axis: 6356752.314245179<br>    Inverse Flattening: 298.257223563</p>
 </blockquote>
 <p>通过参数描述，我们知道 WGS 1984 是一个长半轴(a)为6378137，短半轴（b）为6356752.314245179 的椭球体，扁率(f)为298.257223563，f&#x3D;(a-b)&#x2F;a 。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_Speriod.png"></p>
 <br>
 
 
 
 <h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p><strong>Web Mercator 坐标系使用的投影方法不是严格意义的墨卡托投影，而是一个被 EPSG（European Petroleum Survey Group）称为</strong>伪墨卡托<strong>的投影方法，这个伪墨卡托投影方法的大名是 Popular Visualization Pseudo Mercator，PVPM。</strong> 看起来就觉得这个投影方法不是很严谨的样子，大众化的？受欢迎的？可视化伪墨卡托投影……</p>
 <p>因为这个坐标系统是 Google Map 最先使用的，或者更确切地说，是Google 最先发明的。在投影过程中，将表示地球的参考椭球体近似的作为正球体处理（正球体半径 R &#x3D; 椭球体半长轴 a）。这也是为什么在 ArcGIS 中我们经常看到这个坐标系叫 **WGS 1984 Web Mercator (Auxiliary Sphere)**。Auxiliary Sphere 就是在告知你，这个坐标在投影过程中，将椭球体近似为正球体做投影变换，虽然基准面是WGS 1984 椭球面。</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Geodesic.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_Geodesic.png"></p>
 <p>后来，Web Mercator 在 Web 地图领域被广泛使用，这个坐标系就名声大噪。尽管这个坐标系由于精度问题一度不被GIS专业人士接受，但最终 EPSG 还是给了 WKID:3857。</p>
 <p>下面放一张在 EPSG 官网上找到的3857坐标的具体参数介绍，供参考：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Name.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_Name.png"></p>
 <br>
 
 <br>
@@ -342,7 +342,7 @@
 <p>拒绝给这个坐标系分配 坐标系ID 的原话是这样的：</p>
 <p><strong>“</strong> The projected coordinate reference system originally lacked an official spatial reference identifier (SRID), and the Geodesy subcommittee of the OGP’s Geomatics committee (also known as EPSG) refused to provide it with one, declaring “We have reviewed the coordinate reference system used by Microsoft, Google, etc. and believe that it is technically flawed. We will not devalue the EPSG dataset by including such inappropriate geodesy and cartography.”  <strong>”</strong></p>
 <p>这不是EPSG 冷酷无情无理取闹，从技术角度看是有原因的。简而言之，主要原因在于基准面被篡改后，本来是等角投影的Mercator坐标变换算法，不再等角了，而是近似等角，也就是出现角度变形。这种变形势必影响了坐标的精度，如下是某位GIS专家给出的概要说明（闪亮的最后一条）：</p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_darkside.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_darkside.png"></p>
 <p>如果你想进一步关心细节，想知道这位专家对 Web Mercator 的 dark side 的深入见解，点<span class="exturl" data-url="aHR0cDovL2h5ZHJvbWV0cm9uaWNzLmNvbS9kb3dubG9hZHMvV2ViJTIwTWVyY2F0b3IlMjAtJTIwTm9uLUNvbmZvcm1hbCwlMjBOb24tTWVyY2F0b3IlMjAlMjhub3RlcyUyOS5wZGY=">这里<i class="fa fa-external-link-alt"></i></span>看看。</p>
 <br>
 
@@ -361,7 +361,7 @@
 <p><strong>ESRI:102113</strong>   Esri内部使用ID，与 EPSG:3785 相应。已被弃用。</p>
 <p><strong>ESRI:102100</strong>   Esri内部使用ID，与 EPSG:3857 相应。</p>
 <p>因此，细心地话，会发现在 ArcGIS Server 的REST 服务页面中，Web Mercator 的空间参考会记做： <strong>102100(3857)</strong></p>
-<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_3857.png"></p>
+<p><img data-src="/images/blogImg/SecretofWebMercator_3857.png"></p>
 <br>
 
 <br>
