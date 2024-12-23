@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="ArcGIS 产品家族的 Web 3D 功能众多用户期待已久，从 ArcGIS 10.3.1 版本开始，Esri 放了个大招，千呼万唤始出来的 Web 3D 功能，终于不再犹抱琵琶半遮面了。 那到底如何将创建和发布3D场景呢？ 下面就把今天的测试过程记录下。   测试环境硬件  处理器：Intel Core i7 4710MQ @ 2.50GHz 内存：16G 显卡：NVIDIA GeForce">
 <meta property="og:type" content="article">
@@ -105,7 +106,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -344,7 +345,7 @@
 <br>
 
 <p><strong>4</strong> 将 ArcGIS Server 与门户联合；并且将 ArcGIS Server 指定为门户的托管服务器。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Portal.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Portal.png"></p>
 <p><strong>具体如何配置？</strong> 参考帮助文档，这里不赘述，虽然略有繁琐但有章可依：</p>
 <p><strong>联合 ArcGIS Server 站点与门户</strong><br><span class="exturl" data-url="aHR0cDovL3NlcnZlci5hcmNnaXMuY29tL3poLWNuL3NlcnZlci9sYXRlc3QvYWRtaW5pc3Rlci93aW5kb3dzL2ZlZGVyYXRlLWFuLWFyY2dpcy1zZXJ2ZXItc2l0ZS13aXRoLXlvdXItcG9ydGFsLmh0bQ==">http://server.arcgis.com/zh-cn/server/latest/administer/windows/federate-an-arcgis-server-site-with-your-portal.htm<i class="fa fa-external-link-alt"></i></span></p>
 <p><strong>配置托管服务器</strong><br><span class="exturl" data-url="aHR0cDovL3NlcnZlci5hcmNnaXMuY29tL3poLWNuL3NlcnZlci9sYXRlc3QvYWRtaW5pc3Rlci93aW5kb3dzL2NvbmZpZ3VyZS1ob3N0aW5nLXNlcnZlci1mb3ItcG9ydGFsLmh0bQ==">http://server.arcgis.com/zh-cn/server/latest/administer/windows/configure-hosting-server-for-portal.htm<i class="fa fa-external-link-alt"></i></span></p>
@@ -355,28 +356,28 @@
 <h2 id="创建和发布Scene-Service-的过程"><a href="#创建和发布Scene-Service-的过程" class="headerlink" title="创建和发布Scene Service 的过程"></a>创建和发布Scene Service 的过程</h2><br>
 
 <p><strong>1. 打开 ArcGIS Pro ，创建场景，加入场景数据。其中建筑物模型为 File Geodatabase 中的 Multipatch Feature Class。</strong></p>
-<p>   <img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Pro.png"></p>
+<p>   <img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Pro.png"></p>
 <br>
 
 <p><strong>2. 确保连接并激活 Portal，且自己的账户有创建内容、发布托管要素和发布托管场景的权限。</strong></p>
 <p>这里需要说明下，目前，只用 Portal for ArcGIS 才支持发布 Multipatch 数据源的 Scene Service。 ArcGIS Online 暂不支持。如果大家的 ArcGIS Pro 是60天试用版本的许可，默认激活的门户是ArcGIS Online，需要添加并切换到一个可用的Portal。</p>
-<p>   <img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_ActivePortal.png"></p>
+<p>   <img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_ActivePortal.png"></p>
 <br>
 
 <p><strong>3. 确保ArcGIS Pro 中场景的打开方式是 Global View。如果是 Local View ，也可以切换。</strong></p>
-<p>   <img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Global.png"></p>
+<p>   <img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Global.png"></p>
 <br>
 
 
 <p><strong>4. 分享场景，分析服务，确保没有 Error，如果有，需要事先修复。</strong></p>
-<p>  <img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Analysis.png"></p>
+<p>  <img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Analysis.png"></p>
 <br>
 
 <p><strong>5. 等待完成，确保Job目录中所有任务全部成功完成。</strong></p>
-<p>  <img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Job.png"></p>
+<p>  <img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Job.png"></p>
 <p>  根据数据量的不同，带宽的不同，硬件配置的不同，整个发布服务的过程时间长短不一。</p>
 <p>  我的这个测试中共89个精细程度不一的建筑物模型，发布全过程大约耗时1分钟，供参考。</p>
-<p>  <img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Finish.png"></p>
+<p>  <img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Finish.png"></p>
 <br>
 
 <br>
@@ -387,13 +388,13 @@
 <br>
 
 <p>好像还不错哦</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_web.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_web.png"></p>
 <p>表示树木的 Feature Layer 可以在 Web 端修改渲染</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_webTree.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_webTree.png"></p>
 <p>再凑近看看细节</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Detail.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Detail.png"></p>
 <p>再换换底图，做几个Slide</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Basemap.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISWeb3D_Basemap.png"></p>
 <br>
 
 <br>
@@ -536,6 +537,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -544,6 +547,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

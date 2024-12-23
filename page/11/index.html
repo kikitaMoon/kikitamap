@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
 <meta property="og:type" content="website">
@@ -88,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -310,7 +311,7 @@
 
 <p>如果提示python不是有效的应用程序，那么python可以使用python.exe的绝对路径（如：C:\Python27\ArcGISx6410.4\python.exe），或者在 windows的环境变量path中添加python.exe所在的路径。</p>
 <p>OK, 执行bat文件打包吧。</p>
-<p><img src="http://kikitamap.com/images/blogImg/PackageArcpyEXE_1.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/PackageArcpyEXE_1.png"></p>
 <br>
 
 <h1 id="Step4-添加PTH文件"><a href="#Step4-添加PTH文件" class="headerlink" title="Step4 添加PTH文件"></a>Step4 添加PTH文件</h1><p>为了使得exe程序可以使用arcpy的资源，需要在发布后的dist目录中增加 site-packages 文件夹，并增加 *.pth 文件，<code>...\dist\site-packages\Desktop10.4_64bit.pth</code>。</p>
@@ -323,7 +324,7 @@
 <br>
 
 <p>最后，执行exe即可，这个示例中仅对两个数据进行投影变换，后面可以做些更复杂的工作。</p>
-<p><img src="http://kikitamap.com/images/blogImg/PackageArcpyEXE_2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/PackageArcpyEXE_2.png"></p>
 <br>
 
 <h1 id="后续思考"><a href="#后续思考" class="headerlink" title="后续思考"></a>后续思考</h1><p>arcpy并不是一个免费的站点包，arcpy作为ArcGIS产品的一部分，完全脱离ArcGIS产品是不行的！ Import arcpy内部其实会默默地检测产品许可的。 如果你没有产品许可，可能会遇到 “RuntimeError：NotInitialized” 这样的初始化失败的错误。</p>
@@ -443,7 +444,7 @@
 
 
 <p>详情访问：<span class="exturl" data-url="aHR0cDovL2tpa2l0YW1vb24ubWFwcy5hcmNnaXMuY29tL2FwcHMvTWFwVG91ci9pbmRleC5odG1sP2FwcGlkPTZlMTRiNzNmMjE0MTRjZjY4MjNjNjA3YmUwNWNkOTE2">kikitamoon.maps.arcgis.com<i class="fa fa-external-link-alt"></i></span></p>
-<p><img src="http://kikitamap.com/images/blogImg/XJL_TripToHongkong.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/XJL_TripToHongkong.jpg"></p>
 
       
     </div>
@@ -565,11 +566,11 @@
 <br>
 
 <h2 id="1-交互式执行python命令"><a href="#1-交互式执行python命令" class="headerlink" title="1. 交互式执行python命令"></a>1. <strong>交互式执行python命令</strong></h2><p>打开ArcGIS Pro安装目录下propy.bat文件，默认位于:<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy.bat&quot;</code></p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_Command.png"></p>
-<h2 id="2-执行py文件"><a href="#2-执行py文件" class="headerlink" title="2 执行py文件"></a>2 <strong>执行py文件</strong></h2><p>CMD打开命令行窗口，通过propy文件执行脚本，例如默认位置：<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py</code><br><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_PY.png"><br>备注：MyScript内容就两行： <code>import arcpy</code>, <code>print(&quot;arcpy imported&quot;)</code></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISProPython_Command.png"></p>
+<h2 id="2-执行py文件"><a href="#2-执行py文件" class="headerlink" title="2 执行py文件"></a>2 <strong>执行py文件</strong></h2><p>CMD打开命令行窗口，通过propy文件执行脚本，例如默认位置：<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py</code><br><img data-src="http://kikitamap.com/images/blogImg/ArcGISProPython_PY.png"><br>备注：MyScript内容就两行： <code>import arcpy</code>, <code>print(&quot;arcpy imported&quot;)</code></p>
 <h2 id="3-批处理py文件"><a href="#3-批处理py文件" class="headerlink" title="3 批处理py文件"></a>3 <strong>批处理py文件</strong></h2><p>通过 call 函数来调用 propy </p>
 <p><code>@echo Run my Python script call &quot;%PROGRAMFILES%\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py @echo Finished</code></p>
-<p>例子：<br><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_Bat.png"><br>备注： 三个脚本分别打印 AAA, BBB, CCC。</p>
+<p>例子：<br><img data-src="http://kikitamap.com/images/blogImg/ArcGISProPython_Bat.png"><br>备注： 三个脚本分别打印 AAA, BBB, CCC。</p>
 <br>
 
 <br>
@@ -577,7 +578,7 @@
 <h1 id="使用Python-IDE"><a href="#使用Python-IDE" class="headerlink" title="使用Python IDE"></a>使用Python IDE</h1><p>有一个好用IDE是件美好的事情，大家应该都有各自的真爱，我就不做任何推荐啦。 在Pro之外独立执行脚本导入arcpy站点包的时候，只要注意将Python解释器的路径指向正确即可。</p>
 <p>如果你的机器上既安装了ArcGIS Desktop，又安装了ArcGIS Server或者ArcGIS Desktop的后台64位补丁包，并且又安装了ArcGIS Pro， 那么可能在机器上有多个Python环境。</p>
 <p>我自己在用 Pycharm ，在需要导入 ArcGIS Pro 的python站点包时，注意指向： <code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe&quot;</code></p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISProPython_Pycharm.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISProPython_Pycharm.png"></p>
 <br>
 
 <p>注意，在python IDE 中<strong>不要</strong>将解释器指向这个 python.exe , <code>[&quot;C:\Program Files\ArcGIS\Pro\bin\Python\python.exe&quot;]</code></p>
@@ -700,14 +701,14 @@
 <p>为了阐述方便，我找了一份数据稍作修改来模拟这个问题，数据位于基于Oracle的ArcSDE数据库，一个空间数据为点要素类，一个非空间表。</p>
 <p>点数据表示事件，每发生一次事件（例如报警电话）就记录一个点，假设理想情况下同一个地址的事件都是重合点，如下图高亮的记录； 非空间表中记录了各个地址的某项分值（例如警力配备得分）。</p>
 <p>打开脑洞，假设你是警察局长，需求是，获取每个有完整信息的地址（例如，点位于路的左侧或右侧的信息）的报警电话数，并对比警力配备分值，用于后续的工作，例如指挥调配或者空间统计工作等等。这时，使用Query Layer是个好选择。</p>
-<p><img src="http://kikitamap.com/images/blogImg/QueryLayerResult_FeatureTable.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/QueryLayerResult_FeatureTable.png"></p>
 <br>
 
 <p>Query Layer 返回的记录集可以是包含空间信息的 Feature Query Layer ，也可以是非空间信息的 StandAlone Table。 那么，其实在回到文章开头的问题，<strong>“如何把Make Query Layer结果输入到下一个工具中？” 这取决于“下一个工具” 接受的输入数据的类型是什么。</strong></p>
 <br>
 
 <p>假如后续工作中需要用到空间数据，例如进行热点分析，评估下犯罪高发区，那么就需要查询SHAPE空间字段。 如果忽略了空间字段，普通的非空间表是没办法将记录集传递给后续空间处理的工具的。</p>
-<p><img src="hhttp://kikitamap.com/images/blogImg/QueryLayerResult_Model.png"></p>
+<p><img data-src="hhttp://kikitamap.com/images/blogImg/QueryLayerResult_Model.png"></p>
 <p>Make Feature Layer 中的 SQL语句：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  c.SHAPE,</span><br><span class="line">        c.ADDRESS,</span><br><span class="line">        <span class="built_in">count</span>(c.ADDRESS) <span class="keyword">as</span> CallNum, </span><br><span class="line">        <span class="built_in">min</span>(s.SCORE) <span class="keyword">as</span> MinScore, </span><br><span class="line">        c.POINT_X, </span><br><span class="line">        c.POINT_Y</span><br><span class="line"><span class="keyword">from</span> SDE.kikita_Calls c </span><br><span class="line"></span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> SDE.kikita_ScoreTable s </span><br><span class="line"><span class="keyword">on</span> c.ADDRESS<span class="operator">=</span>s.ADDRESS</span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> c.AV_SIDE <span class="keyword">in</span> (<span class="string">&#x27;R&#x27;</span>,<span class="string">&#x27;L&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> c.SHAPE,c.ADDRESS,c.POINT_X, c.POINT_Y</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> CallNum <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
 
@@ -715,7 +716,7 @@
 
 
 <p>附一张结果图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/QueryLayerResult_Reault.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/QueryLayerResult_Reault.png"></p>
 
       
     </div>
@@ -828,7 +829,7 @@
 
 
 <h1 id="1-找到-Service-txt-文件"><a href="#1-找到-Service-txt-文件" class="headerlink" title="1  找到 Service.txt 文件"></a>1  找到 Service.txt 文件</h1><p>在许可服务器所在的机器上，默认位于：C:\Program Files (x86)\ArcGIS\License10.x\bin 目录下。 打开之后，类似下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/LMthroughFireWall_ServiceTXT1.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LMthroughFireWall_ServiceTXT1.png"></p>
 <p>通过修改此配置文件可以控制ArcGIS许可服务器后台进程使用哪个端口。</p>
 <br>
 
@@ -841,16 +842,16 @@
 <p>第二行是用于 <strong>ArcGIS.exe</strong> 进程的端口配置，<strong>默然情况下，这个端口是动态的，系统可以使用任何监听到的空闲端口</strong>。 </p>
 </blockquote>
 <p>我们用个小工具来检测一下，<strong>Process Explorer</strong>，官网下载点**<span class="exturl" data-url="aHR0cHM6Ly90ZWNobmV0Lm1pY3Jvc29mdC5jb20vZW4tdXMvc3lzaW50ZXJuYWxzL3Byb2Nlc3NleHBsb3Jlci5hc3B4" title="Process Explorer">这里<i class="fa fa-external-link-alt"></i></span>**，即可一目了然。在安装有 ArcGIS License Manger 的测试机上的执行小工具，抓取有用的信息：</p>
-<p><img src="http://kikitamap.com/images/blogImg/LMthroughFireWall_lmgrd.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LMthroughFireWall_lmgrd.png"></p>
 <p>从结果中可以得到，ArcGIS.exe 采用了 49479 这个端口与其他客户端通信。 在下次 ArcGIS License Service 启动时，这个端口会动态选择另一个。 这也就是问题的 key point，为什么用户即使在防火墙中开放了27000，甚至 27000-27009段的端口，然而许可服务器还是连不上。</p>
 <br>
 
 
 <h1 id="2-锁定后台进程端口号"><a href="#2-锁定后台进程端口号" class="headerlink" title="2  锁定后台进程端口号"></a>2  锁定后台进程端口号</h1><p>前文提到 ArcGIS.exe 端口是动态的，为了方便防火墙的设置，锁定端口是最简单有效的方法。</p>
 <p>在 Service.txt 文件中，第二行结尾增加 PORT&#x3D;&lt;端口号&gt; 的参数。 例如我选择 50000 ，如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/LMthroughFireWall_ServiceTXT2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LMthroughFireWall_ServiceTXT2.png"></p>
 <p>修改完成，保存txt，重启 ArcGIS License Service ，然后过一会再去抓信息，发现 ArcGIS.exe 的端口号已经被锁定为 50000 ，变成静态。</p>
-<p><img src="http://kikitamap.com/images/blogImg/LMthroughFireWall_AGSDaemon.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LMthroughFireWall_AGSDaemon.png"></p>
 <br>
 
 
@@ -935,6 +936,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -943,6 +946,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

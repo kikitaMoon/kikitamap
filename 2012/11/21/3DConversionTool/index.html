@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="三维分析工具箱中，Conversion工具集为我们提供了很多用于格式转换的工具，其中有几个能为我们解决很多常见问题，这里整理下： 1. 各种数据格式的3D模型导入到ArcGIS中展示使用 Import 3D file 工具，ArcGIS 主要支持以下 3D模型的导入：  3D Studio Max (*.3ds) SketchUp (*.skp) VRML and GeoVRML (*.wrl)">
 <meta property="og:type" content="article">
@@ -99,7 +100,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -299,7 +300,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p><img src="http://kikitamap.com/images/blogImg/3DConversionTool_Toolset.png"></p>
+    <div class="post-body" itemprop="articleBody"><p><img data-src="http://kikitamap.com/images/blogImg/3DConversionTool_Toolset.png"></p>
 <p>三维分析工具箱中，Conversion工具集为我们提供了很多用于格式转换的工具，其中有几个能为我们解决很多常见问题，这里整理下：</p>
 <h1 id="1-各种数据格式的3D模型导入到ArcGIS中展示"><a href="#1-各种数据格式的3D模型导入到ArcGIS中展示" class="headerlink" title="1. 各种数据格式的3D模型导入到ArcGIS中展示"></a><strong>1. 各种数据格式的3D模型导入到ArcGIS中展示</strong></h1><p>使用 Import 3D file 工具，ArcGIS 主要支持以下 3D模型的导入：</p>
 <ul>
@@ -314,23 +315,23 @@
 <br>
 
 <h1 id="2-需要得到-Multipatch-的-2D-轮廓线"><a href="#2-需要得到-Multipatch-的-2D-轮廓线" class="headerlink" title="2. 需要得到 Multipatch 的 2D 轮廓线"></a><strong>2. 需要得到 Multipatch 的 2D 轮廓线</strong></h1><p>使用 Multipatch Footprint 工具</p>
-<p><img src="http://kikitamap.com/images/blogImg/3DConversionTool_Footprint.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/3DConversionTool_Footprint.gif"></p>
 <br>
 
 <h1 id="3-获得栅格数据三维边界线-面"><a href="#3-获得栅格数据三维边界线-面" class="headerlink" title="3. 获得栅格数据三维边界线&#x2F;面"></a><strong>3. 获得栅格数据三维边界线&#x2F;面</strong></h1><p>使用 Raster Domain 工具</p>
-<p><img src="http://kikitamap.com/images/blogImg/3DConversionTool_RasterDomain.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/3DConversionTool_RasterDomain.gif"></p>
 <br>
 
 <h1 id="4-使用点数据和现有模型制作场景"><a href="#4-使用点数据和现有模型制作场景" class="headerlink" title="4. 使用点数据和现有模型制作场景"></a><strong>4. 使用点数据和现有模型制作场景</strong></h1><p>常常有这样的应用场景：手头有采集的兴趣点数据，并且有现成的3DS、Skp等等诸多模型，需要将这些模型放置在正确地理位置，并将它们统一存入GDB中进行维护。我们可以这样来做：</p>
 <p>（1） 在ArcScene或者ArcGlobe中添加点图层.</p>
 <p>（2）双击图层符号，弹出【符号选择器】窗口，点击【编辑符号】。</p>
-<p><img src="http://kikitamap.com/images/blogImg/3DConversionTool_EditSymbol.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/3DConversionTool_EditSymbol.png"></p>
 <p>（3）在弹出的【符号属性编辑器】中，类型下拉列表中选择【3D Marker Symbol】，并在之后的窗口中选择模型的路径。</p>
-<p><img src="http://kikitamap.com/images/blogImg/3DConversionTool_3DMakerSymbol.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/3DConversionTool_3DMakerSymbol.png"></p>
 <p>（4）上步中，根据需要分门别类的给每类点配以不同的模型，最后得到丰富的3D模型组成的场景。</p>
-<p><img src="http://kikitamap.com/images/blogImg/3DConversionTool_Scene.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/3DConversionTool_Scene.png"></p>
 <p>（5） 使用工具：**&nbsp;Layer 3D to Feature Class，**将模型统一转入GDB，集中存储和维护。原来的模型细节及纹理得到很好的保留。</p>
-<p><img src="http://kikitamap.com/images/blogImg/3DConversionTool_Multipatch.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/3DConversionTool_Multipatch.png"></p>
 
     </div>
 
@@ -466,6 +467,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -474,6 +477,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

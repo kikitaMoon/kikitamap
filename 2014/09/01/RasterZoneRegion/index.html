@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="Zone 与 Region 在字面上都是区域的意思，但是在做分析与统计的时候二者却是有区别的。 什么是Zone？ 简而言之，具有相同值的像元就属于一个Zone。也就是，Zone由栅格中所有具有相同值的像元组成，分区可以由相邻像元和&#x2F;或不相连像元组成。如下图一目了然：  什么是Region？ 一个Zone内的每组相连像元都可视为一个Region。ArcGIS 中提供了从 Zone 获得 R">
 <meta property="og:type" content="article">
@@ -95,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -297,14 +298,14 @@
     <div class="post-body" itemprop="articleBody"><p>Zone 与 Region 在字面上都是区域的意思，但是在做分析与统计的时候二者却是有区别的。</p>
 <p><strong>什么是Zone？</strong></p>
 <p>简而言之，具有相同值的像元就属于一个Zone。也就是，Zone由栅格中所有具有相同值的像元组成，分区可以由相邻像元和&#x2F;或不相连像元组成。如下图一目了然：</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Zone.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Zone.gif"></p>
 <p><strong>什么是Region？</strong></p>
 <p>一个Zone内的每组相连像元都可视为一个Region</span>。ArcGIS 中提供了从 Zone 获得 Region 的工具 Group Region。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Region.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_GroupRegion.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_Region.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_GroupRegion.png"></p>
 <p><strong>工具的工作顺序：</strong> 扫描的第一个区域接收值 1，第二个区域接收值 2，依此类推，直到所有区域都已赋值。扫描将按从左至右、从上至下的顺序进行。赋给输出区域的值，取决于系统在扫描过程中是在什么时候遇到它们的。</p>
 <p><strong>与原始Zone的关系：</strong> 默认，生成的数据的属性表中会有 LINK 字段，记录Region从Zone的来源：</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterZoneRegion_table.tiff"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterZoneRegion_table.tiff"></p>
 
     </div>
 
@@ -439,6 +440,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -447,6 +450,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

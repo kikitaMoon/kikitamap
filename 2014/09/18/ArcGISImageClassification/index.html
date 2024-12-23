@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="影像分类的目的就为了将图像中的像元划分成不同的类别，过程就是根据像元在不同波段的波普亮度、空间结构特征或者其他信息，按照某种规则或算法实现分类。遥感图像分类处理就是是为了提取遥感图像中的目标信息，遥感图像分类主要用于地物类别的区分。 影像分类分为监督分类和非监督分类，很多遥感书籍中都有这两种分类方法的比较。这里我结合ArcGIS软件简单整理一下：    监督分类监督分类是使用被确认类别的样本像元去">
 <meta property="og:type" content="article">
@@ -98,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -305,23 +306,23 @@
 
 <h1 id="监督分类"><a href="#监督分类" class="headerlink" title="监督分类"></a><strong>监督分类</strong></h1><p>监督分类是使用被确认类别的样本像元去识别其他未知类别像元的过程。其中这些已被确认类别的像元就是训练样本。也就是说，在监督分类中，必须事先提取出代表总体特征的训练数据以及事先知道影像中有几种类别。这样就可以学习这些样本类别的先验知识，然后对整体数据进行分类。</p>
 <p>在 ArcGIS 中，首先使用 Image Classification 工具条中的训练样本管理器，创建训练样本。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Training.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Samples.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Training.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Samples.png"></p>
 <p>在创建样本之后，我们可以评估训练样本，使用直方图、散点图、统计数据。</p>
 <p><strong>（1）直方图</strong></p>
 <p>打开直方图，每个波段对应一个直方图。不同类的直方图不应重叠。如果发生重叠，则需要删除或合并其中一些类。</p>
 <p>直方图按钮仅用于整型影像，不适用于浮点型。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Histogram.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Histogram.png"></p>
 <p><strong>（2）散点图</strong></p>
 <p>散点图是参加分类的影像数据的波段的两两组合，如果有N个波段，就有1 + 2 + … + (N – 1) 个散点图。</p>
 <p>对于所有波段组合，散点图和统计数据不应彼此重叠。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Scatterplots.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Scatterplots.png"></p>
 <p><strong>（3）统计数据</strong></p>
 <p>统计数据包括最小值、最大值、平均值、标准差和协方差矩阵。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Statistics.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Statistics.png"></p>
 <p>创建训练样本后，可以使用交互式监督分类工具，探索性的直接查看分类结果。这个工具不需要事先创建特征文件，工具后台使用的是最大似然法分类方法。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_interactive.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Result.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_interactive.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISImageClassification_Result.png"></p>
 <p>在ArcGIS 中，监督分类的主要GP工具是&nbsp;<strong>最大似然法分类工具（Maximum Likelihood Classification）</strong>。</p>
 <p>（1）需要使用&nbsp;<strong>特征文件（Signature File）</strong>，既可以是通过训练样本制作的，也可以是ISO聚类工具求取，*.gsg文件。</p>
 <p>（2）可以根据需要设置&nbsp;<strong>剔除分数（Reject Fraction&nbsp;）</strong>，例如0.01。这样表示，正确分类的几率不到 1% 的像元就会成为 NoData。</p>
@@ -470,6 +471,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -478,6 +481,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="Updated: 2017-10-11修改了文中表意含糊的语句，增加了更多解释性描述。   这一篇具体看分析模式工具集中的具体工具，整理这一篇的目的，不是要读者了解每个工具的背后使用了多么高级的算法，运用了多么庞大的公式，而是一起了解这些工具究竟可以为我们研究什么样的空间数据分布模式，当需要探索数据的空间性质时，知道应该如何去应用这些分析工具。    Average Nearest Neighbo">
 <meta property="og:type" content="article">
@@ -103,7 +104,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -307,7 +308,7 @@
 <br>
 
 <p>这一篇具体看分析模式工具集中的具体工具，整理这一篇的目的，不是要读者了解每个工具的背后使用了多么高级的算法，运用了多么庞大的公式，而是一起了解这些工具究竟可以为我们研究什么样的空间数据分布模式，当需要探索数据的空间性质时，知道应该如何去应用这些分析工具。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_Toolset.png"></p>
 <br>
 
 <h2 id="Average-Nearest-Neighbor"><a href="#Average-Nearest-Neighbor" class="headerlink" title="Average Nearest Neighbor"></a>Average Nearest Neighbor</h2><p>平均最近邻工具，计算每个要素中心与其最邻近要素中心的距离，然后求取所有最近邻距离的平均值，然后用这个观测平均值与随机分布的期望平均值进行比较，从而可以反应数据的空间分布是聚合的还是分散的。 </p>
@@ -320,9 +321,9 @@
 <li>p值 &#x2F; p-value</li>
 </ul>
 <p>其中，最近邻指数是观测平均值与期望平均值的比率，最近邻如果最近邻比率小于1，则表现的模式为聚类。如果指数大于1，则表现的模式趋向于扩散。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_AverageNearest.png" alt="最近邻比率"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_AverageNearest.png" alt="最近邻比率"></p>
 <p>在HTML报告文件中可以更显见的了解数据的趋势：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_AverageNearestSummary.png" alt="报告"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_AverageNearestSummary.png" alt="报告"></p>
 <blockquote>
 <p>可能的应用：</p>
 </blockquote>
@@ -342,7 +343,7 @@
 <li>z得分 &#x2F; z-score</li>
 <li>p值 &#x2F; p-value</li>
 </ul>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_SpatialAutocorrelationReport.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_SpatialAutocorrelationReport.png"></p>
 <p><strong>Moran’s I 指数</strong>：</p>
 <p>Global Moran‘s I 工具计算所评估属性的<strong>均值&#x2F;Mean</strong>和<strong>方差&#x2F;Variance</strong>。然后，将每个要素值减去均值，从而得到与均值的<strong>偏差&#x2F;Deviation</strong>。 将所有相邻要素（例如位于指定距离范围内的要素）的偏差值相乘，从而得到<strong>叉积&#x2F;Cross Production</strong>。Global Moran’s I 统计量的分子是这些叉积的和。</p>
 <p>如果数据在空间上趋于聚类，则Moran’s I指数为正值；如果空间上高值排斥其他高值而分散存在，则Moran’s I 指数为负值；如果叉积的正负值趋于平衡，则指数趋于0。</p>
@@ -362,20 +363,20 @@
 <br>
 
 <h2 id="Incremental-Spatial-Autocorrelation"><a href="#Incremental-Spatial-Autocorrelation" class="headerlink" title="Incremental Spatial Autocorrelation"></a>Incremental Spatial Autocorrelation</h2><p>增量自相关工具会去测量一系列的空间自相关，并且可以创建Z得分折线图。Z得分反映空间聚类的程度，峰值Z得分表示聚类最明显的距离。<br>这些峰值能做什么呢？我们可以将这些峰值作为其他工具（例如热点分析，将来会说到）的必要参数，例如距离范围，距离半径等等。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_Incremental.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_Incremental.png"></p>
 <p>以下面的数据为例：</p>
 <p>我欲研究下面几个城市的人口分布情况：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_SamplePoints.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_SamplePoint2.png"></p>
-<p><img src="http://img.blog.csdn.net/20150305091915238"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_SamplePoints.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_SamplePoint2.png"></p>
+<p><img data-src="http://img.blog.csdn.net/20150305091915238"></p>
 <p>第一个峰值位于大约 250000 处。当显示多个具有统计显著性的峰值时（例如，本示例数据中有两个峰值），聚类在这些距离处均很明显。选择与感兴趣的分析比例对应的峰值距离，我们通常选择第一个具有统计显著性的峰值。</p>
 <br>
 
 <h2 id="High-Low-Clustering-Getis-Ord-General-G"><a href="#High-Low-Clustering-Getis-Ord-General-G" class="headerlink" title="High&#x2F;Low Clustering (Getis-Ord General G)"></a>High&#x2F;Low Clustering (Getis-Ord General G)</h2><p>高&#x2F;低聚类 (General G) 统计的零假设规定被研究的要素值不存在空间聚类。当返回的 p 值较小且在统计学上显著，则可以拒绝零假设。如果零假设被拒绝，则 z 得分的符号将变得十分重要。如果 z 得分值为正数，则观测的 General G 指数会比期望的 General G 指数要大一些，表明属性的高值将在研究区域中聚类。如果 z 得分值为负数，则观测的 General G 指数会比期望的 General G 指数要小一些，表明属性的低值将在研究区域中聚类。</p>
 <p>当存在完全均匀分布的值并且要查找高值的异常空间峰值时，首选高&#x2F;低聚类(Getis-Ord General G)工具。遗憾的是，高值和低值同时聚类时，它们倾向于彼此相互抵消。如果在高值和低值同时聚类时测量空间聚类，则使用空间自相关工具。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_HighLow.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_HighLow.png"></p>
 <p>“高&#x2F;低聚类”工具可返回五个值：General G 观测值、General G 期望值、方差、z 得分以及 p 值。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_HighLowReport.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_HighLowReport.png"></p>
 <blockquote>
 <p>可能的应用：</p>
 </blockquote>
@@ -388,7 +389,7 @@
 
 <h2 id="Multi-Distance-Spatial-Cluster-Analysis-Ripley’s-K-Function"><a href="#Multi-Distance-Spatial-Cluster-Analysis-Ripley’s-K-Function" class="headerlink" title="Multi-Distance Spatial Cluster Analysis (Ripley’s K Function)"></a>Multi-Distance Spatial Cluster Analysis (Ripley’s K Function)</h2><p>基于 Ripley’s K 函数的多距离空间聚类分析工具是另外一种分析事件点数据的空间模式的方法。Ripley’s K 函数可表明要素质心的空间聚集或空间扩散在邻域大小发生变化时是如何变化的。</p>
 <p>如果有兴趣研究要素的聚类&#x2F;扩散如何相对于不同距离（不同的分析规模）进行变化，可以使用此工具。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_MultiDistance.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AnalysisPatternsB_MultiDistance.png"></p>
 
     </div>
 
@@ -524,6 +525,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -532,6 +535,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="地图技术是对真实世界既有位置的表达，定位技术是对当前位置的求解。随着各种传感器、移动设备的广泛使用，GIS和LBS通常无缝结合在同一个解决方案中。GIS更侧重于稳坐后台解决空间数据的提取、处理、分析、挖掘，LBS更侧重于深入终端实现信号收集、位置获取、轨迹追踪。GIS从一个小众而专业的领域，随着互联网的潮流，逐渐拥抱普适，增值LBS。 从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一">
 <meta property="og:type" content="article">
@@ -37,9 +38,9 @@
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="HERE Map">
 <meta property="article:tag" content="HLS">
-<meta property="article:tag" content="Positioning">
 <meta property="article:tag" content="Mobile SDK">
 <meta property="article:tag" content="Android">
+<meta property="article:tag" content="Positioning">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg">
 
@@ -99,7 +100,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -302,7 +303,7 @@
 <p>从终端用户的角度看，这些区别是不敏感的，也不必要的。例如，在一个陌生地方到了饭点儿，估计大家十有八九会打开App，看下周边地图，知道我在哪，搜下周边饭馆，然后计算路线导航过去，吃饱喝足一气呵成即可。</p>
 <p>以上面这个觅食的例子展开，从产品功能角度，至少需要如下几个模块。App首先获取设备的位置（positioning），通过这个位置请求周边map tile（map service）, 然后搜索指定Category的POI（search&amp;F&#x2F;R geocoding），然后计算路线（routing&#x2F;direction）并导航（TBT Navigation）……</p>
 <p>这一篇我想整理一下，位置服务第一步， Positioning 相关的内容。</p>
-<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_opening.jpg"></p>
 <p>HERE Mobile SDK 中不仅提供了Android 系统中自带的基础定位接口，而且特别提供了HERE增强版的定位能力，更精准，高效，可靠。这些增强版的定位能力包括：</p>
 <ul>
 <li><strong>蜂窝网络定位 - 支持 GSM, CDMA, WCDMA, TD-SCDMA ，LTE</strong></li>
@@ -326,11 +327,11 @@
 <p>前者可通过online WiFi定位的定位缓存数据解决离线问题；后者则需要大量的众包数据作为前提实现。</p>
 <p>后者是一种更黑科技的技术，但是从原理上也不是难于理解。 可以想象，大型购物中心通常布满 WiFi热点，移动设备即使无法连接这些热点，也可以探测到这些WiFi热点的信息。根据信号场强的算法黑科技，最终是从已知点位解算未知点位的数学问题。</p>
 <p>这里的问题是：已知点位怎么来？这正是源自众包、托关于定位服务器的 HERE Radio Map。采集和管理 Radio Map 实际官方也有给出工具<span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scw=="> HERE Indoor Radio Mapper<i class="fa fa-external-link-alt"></i></span> 和 <span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scy9oZWxwLXRleHQtMyNpbmRvb3ItcmFkaW8tbWFwLWFkbWluLXRvb2w=">HERE Radio Map Admin Tool<i class="fa fa-external-link-alt"></i></span> 。</p>
-<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_RadioMap.jpg"></p>
 </li>
 </ul>
 <p><strong>室内地图 &#x2F;Venue Map</strong>，在实际的使用场景中，室内定位一般与3D室内地图结合使用，但始终要理解，地图是地图，定位是定位，只是为了终端用户的视觉显示时，二者才绑到了一起。室内地图的显示和制作也有单独的工具，点<span class="exturl" data-url="aHR0cHM6Ly92ZW51ZXMuaGVyZS5jb20vcHJvZHVjdHMvb3ZlcnZpZXc=">这里<i class="fa fa-external-link-alt"></i></span>看官网。</p>
-<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_indoor.jpg"></p>
 <p>定位部分的开发部署，强烈建议仔细阅读开发文档，有关设备访问权限的几点一定要确保配置正确。</p>
 <ul>
 <li><p>HERE Mobile SDK - <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vMy4xNS9kZXZfZ3VpZGUvdG9waWNzL2FkdmFuY2VkLXBvc2l0aW9uaW5nLmh0bWw=">Developer Doc<i class="fa fa-external-link-alt"></i></span></p>
@@ -339,7 +340,7 @@
 </li>
 </ul>
 <p>可以带手机到室外和室内试一下这个Demo，支持选择定位模式。</p>
-<p><img src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_Positioning_Demo.jpg"></p>
 
     </div>
 
@@ -390,9 +391,9 @@
           <div class="post-tags">
               <a href="/tags/HERE-Map/" rel="tag"><i class="fa fa-tag"></i> HERE Map</a>
               <a href="/tags/HLS/" rel="tag"><i class="fa fa-tag"></i> HLS</a>
-              <a href="/tags/Positioning/" rel="tag"><i class="fa fa-tag"></i> Positioning</a>
               <a href="/tags/Mobile-SDK/" rel="tag"><i class="fa fa-tag"></i> Mobile SDK</a>
               <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+              <a href="/tags/Positioning/" rel="tag"><i class="fa fa-tag"></i> Positioning</a>
           </div>
 
         
@@ -478,6 +479,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -486,6 +489,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

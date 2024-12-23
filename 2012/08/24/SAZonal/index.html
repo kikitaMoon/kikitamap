@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="空间分析扩展中，有关区域分析，提供了如下工具：  可以将其分为这样几类： 一、确定区域中类的面积的工具面积制表（Tabulate Area）面积制表工具以表的形式进行输出。在此表中： 1）区域数据集的每个唯一值均有一条记录。 2）类数据集的每个唯一值均有一个字段。 3）每个记录将存储每个区域内每个类的面积。  TIPS： 使用此工具的常见错误： 1.“一个或多个输入没有关联属性表” 错误 此错误通">
 <meta property="og:type" content="article">
@@ -101,7 +102,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -302,13 +303,13 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>空间分析扩展中，有关区域分析，提供了如下工具：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_Toolset.png"></p>
 <p>可以将其分为这样几类：</p>
 <h1 id="一、确定区域中类的面积的工具"><a href="#一、确定区域中类的面积的工具" class="headerlink" title="一、确定区域中类的面积的工具"></a><strong>一、确定区域中类的面积的工具</strong></h1><h2 id="面积制表（Tabulate-Area）"><a href="#面积制表（Tabulate-Area）" class="headerlink" title="面积制表（Tabulate Area）"></a><strong>面积制表（Tabulate Area）</strong></h2><p>面积制表工具以表的形式进行输出。在此表中：</p>
 <p>1）区域数据集的每个唯一值均有一条记录。</p>
 <p>2）类数据集的每个唯一值均有一个字段。</p>
 <p>3）每个记录将存储每个区域内每个类的面积。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_TabulateArea.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_TabulateArea.gif"></p>
 <p><strong>TIPS：</strong></p>
 <p>使用此工具的常见错误：</p>
 <p>1.<strong>“一个或多个输入没有关联属性表</strong>” 错误</p>
@@ -333,22 +334,22 @@
 <p>这个工具的亮点在于可以统计区的<strong>总面积（AREA）、总周长（PERIMETER）、厚度（THICKNESS）、质心（CENTROID）</strong>。其他三个比较好理解，我们看下厚度的概念。</p>
 <p>分区厚度分析可计算输入栅格上各个区域中最深或最厚点距其周围像元的距离。</p>
 <p>实际上，厚度就是可在各个区域中（不包括区域外部的任何像元）绘制的最大圆的半径（以像元为单位）。如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometry.png">  </p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometry.png">  </p>
 <h2 id="以表格显示分区几何统计（Zonal-Geometry-as-Table）"><a href="#以表格显示分区几何统计（Zonal-Geometry-as-Table）" class="headerlink" title="以表格显示分区几何统计（Zonal Geometry as Table）"></a><strong>以表格显示分区几何统计（Zonal Geometry as Table）</strong></h2><p>将上述统计结果输出到Table表中。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometryasTable.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalGeometryasTable.png"></p>
 <p>其中，最后三个参数，用于描述各个区域的椭圆近似的形状。定义椭圆形状和大小的参数为长轴、短轴和方向。各椭圆的面积与为其分配的区域的面积相等。</p>
 <p>MAJORAXIS：长轴的长度；MINORAXIS：短轴的长度。以地图单位表示。</p>
 <p>ORIENTATION 值的单位为度，取值范围为 0 至 180。方向定义为 x 轴与椭圆长轴之间的角度。方向的角度值以逆时针方向增加，起始于东方向（右侧水平位置）的 0 值，在长轴垂直时通过 90 位置。如果某个特定区域仅由一个像元组成，或者该区域为单个像元方块，那么会将椭圆（在此情况下为圆）的方向设置为 90 度。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_Orientation.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_Orientation.png"></p>
 <h1 id="四、确定某输入栅格值在另一区域中的频数分布的工具"><a href="#四、确定某输入栅格值在另一区域中的频数分布的工具" class="headerlink" title="四、确定某输入栅格值在另一区域中的频数分布的工具"></a><strong>四、确定某输入栅格值在另一区域中的频数分布的工具</strong></h1><h2 id="区域直方图（Zonal-Histogram）"><a href="#区域直方图（Zonal-Histogram）" class="headerlink" title="区域直方图（Zonal Histogram）"></a><strong>区域直方图（Zonal Histogram）</strong></h2><p>创建显示各唯一区域值输入中的像元值频数分布的表和直方图（Graph类型）。</p>
 <p>区域字段必须为整型或字符串类型。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_Histograms.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_ZonalHistogram.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_Histograms.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalHistogram.png"></p>
 <h1 id="五、作用于区域属性的工具"><a href="#五、作用于区域属性的工具" class="headerlink" title="五、作用于区域属性的工具"></a><strong>五、作用于区域属性的工具</strong></h1><h2 id="分区统计（Zonal-Statistics）"><a href="#分区统计（Zonal-Statistics）" class="headerlink" title="分区统计（Zonal Statistics）"></a><strong>分区统计（Zonal Statistics）</strong></h2><p><strong>以表格显示分区统计（<strong><strong>Zonal Statistics as Table</strong></strong>）</strong></p>
 <p>这两个工具是，计算在另一个数据集的区域内栅格数据值的统计信息。这里的区域定义为输入中具有相同值的所有区。各区无需相连。栅格和要素数据集都可用于区域输入。</p>
 <p>前者生成栅格数据，后者生成统计表。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAZonal_ZonalStatistics2.png"></p>
 <br>
 
 <p>OK……</p>
@@ -413,8 +414,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2012/08/27/SAMultiDimensions/" rel="next" title="空间分析之多元分析">
-                  空间分析之多元分析 <i class="fa fa-angle-right"></i>
+                <a href="/2012/08/27/SAInterpolation/" rel="next" title="空间分析之插值分析">
+                  空间分析之插值分析 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -487,6 +488,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -495,6 +498,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

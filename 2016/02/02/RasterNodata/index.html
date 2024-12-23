@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="在使用栅格数据时，黑边和白边问题比较困扰我们，╮(╯-╰)╭ ，丑丑地如下所示：  那如何处理这些问题呢？方法不是唯一的，我把 ArcMap 中最常用的几种方式列举一下，帮你给数据“化妆”，或者更确切的说是“整容”：     Option 1  栅格计算器在去黑边之前最先需要了解的是黑边的像元值是什么？ 可以使用 Identify 工具查查看。  例如这份数据是 0。   这时，你也许会想到设置图">
 <meta property="og:type" content="article">
@@ -108,7 +109,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -309,22 +310,22 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>在使用栅格数据时，黑边和白边问题比较困扰我们，╮(╯-╰)╭ ，丑丑地如下所示：</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Raw.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Raw.png"></p>
 <p>那如何处理这些问题呢？方法不是唯一的，我把 ArcMap 中最常用的几种方式列举一下，帮你给数据“化妆”，或者更确切的说是“整容”：</p>
 <br>
 
 <br>
 
 <h2 id="Option-1-栅格计算器"><a href="#Option-1-栅格计算器" class="headerlink" title="Option 1  栅格计算器"></a>Option 1  栅格计算器</h2><p>在去黑边之前最先需要了解的是黑边的像元值是什么？ 可以使用 Identify 工具查查看。  例如这份数据是 0。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Identify.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Identify.png"></p>
 <blockquote>
 <p>这时，你也许会想到设置图层背景值的色彩可以吧？</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Symbol.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Symbol.png"></p>
 <p>如果仅为了显示使用，是可以解决问题的，但传统意义上的去黑边，我们一般理解成栅格数据的处理，也就是从存储上修改特定值（本例中是 0）值为 Nodata。</p>
 </blockquote>
 <p>单波段数据处理起来常常相对容易些，最常用的工具就是 <strong>栅格计算器&#x2F;Raster Calculator</strong> 了。Raster Calculator 可以通过输入的Python语法的表达式，对当前数据框内的栅格图层进运算。它是个非常实用的栅格数据处理工具，如果你想 Dive In ，点 <a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/tools/spatial-analyst-toolbox/how-raster-calculator-works.htm"><strong>这里</strong></a>了解 Raster Calculator 的工作原理。</p>
 <p>例如这个需求中仅需要一个简单表达式，使用到SetNull函数，如下所示：</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Calculator.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Calculator.png"></p>
 <blockquote>
 <p> 其中，表达式是 <strong><code>SetNull(&quot;RasterLayer&quot;  ==  0 , &quot;RasterLayer&quot; )</code></strong></p>
 </blockquote>
@@ -335,25 +336,25 @@
 
 <h2 id="Option-2-影像分析窗口"><a href="#Option-2-影像分析窗口" class="headerlink" title="Option 2  影像分析窗口"></a>Option 2  影像分析窗口</h2><p>多波段数据同样会受到黑边的困扰，而且现实情况往往没有单波段数据那么理想，仅通过一个表达式就可以搞定。例如，我们常用的影像底图数据，通常有三个波段，通过包含RGB三个波段的一组值来表示像元值，例如 (0,255,129)。我一般会根据需要处理的数据量的多少给出不同的处理方法建议：</p>
 <p>同样第一步需要确认黑边值是什么？本例中是 (0,0,0)</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_IdentifyMultiBands.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_IdentifyMultiBands.png"></p>
 <br>
 
 <p>ArcMap的 Windows 菜单中有 Image Analysis 。在 Image Analysis 窗口中的 Processing 部分可以对当前数据框中的图层赋予函数或函数链，从而对栅格数据实时处理。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Function1.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Function1.png"></p>
 <p>在弹出的窗口中，在 fx行右键插入函数，例如这个需求中会使用到 Mask Function。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Function2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Function2.png"></p>
 <p>设置 Mask Function，(0,0,0) 组合是无效值。为什么选择 All 而不是 Any？ 这个答案很显见，同时都为0的像元值才是无效值，否则不是，例如（1，255，0）是有效的。或者说各个波段的0值是and关系，而不是or。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Function3.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Function3.png"></p>
 <p>这样带有函数的新栅格图层会自动加入 ArcMap 的 TOC，看起来万事大吉，然而这里需要说明下，这个图层需要Export到硬盘上的某个位置，它目前还是个临时数据，当layer被移除掉，这个结果就不复存在。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_tempData.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_tempData.png"></p>
 <p>所以，最后重要的一步，导出数据。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_ExportData.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_ExportData.png"></p>
 <br>
 
 <p>(￣ˇ￣) <strong>这种方法，还适用于具有多种无效值的情况</strong>。例如，除了(0,0,0) 还包含 (255,255,255) ：</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_MultiInvalidData.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_MultiInvalidData.png"></p>
 <p>我们需要做的仅是继续增加栅格函数。在 Function Template Editor 中函数们顺序相接，像个环环相接的链条，所以称为 ”函数链&#x2F; Function Chain“，咦，好像跑题了。请继续看如何设置无效值：</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_MultiInvalidData2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_MultiInvalidData2.png"></p>
 <p>这样就实现了去掉两组无效值。</p>
 <br>
 
@@ -365,13 +366,13 @@
 <blockquote>
 <p>在”之后“之前的预备动作，此文中不赘述，但是你可以看<a href="http://kikitamap.com/2014/10/14/MDCreateMD"><strong>这篇</strong></a>了解这些内容。</p>
 </blockquote>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic1.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic1.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic2.png"></p>
 <p>在镶嵌数据集中可以使用工具 Define Mosaic Dataset Nodata 工具，对数据的无效值进行定义。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic3.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic3.png"></p>
 <p>从而批量去除了无效值。</p>
 <p>镶嵌数据集本身也支持栅格函数，类似影像数据窗口中函数模板的设置，同样可以设置函数链来实现一些复杂的要求。</p>
-<p><img src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic4.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/RasterNodata_Mosaic4.png"></p>
 <p>有关镶嵌数据集函数，也可以参考<a href="http://kikitamap.com/2014/12/04/FunctionChain/">这篇</a>。</p>
 <br>
 
@@ -512,6 +513,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -520,6 +523,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

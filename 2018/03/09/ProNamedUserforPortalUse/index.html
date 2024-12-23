@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="在开始如下部署之前，一定要注意下版本对应的情况，否则会部署失败：    版本         Portal 10.6 Portal 10.5.1 Portal 10.5 Portal10.4.1   Pro 2.1 LM 10.6 不支持 不支持 不支持   Pro 2.0 LM 10.6 LM 10.5.1、10.6 LM 10.5.1、10.6 不支持   Pro 1.4 LM 10.6 LM">
 <meta property="og:type" content="article">
@@ -102,7 +103,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -348,12 +349,12 @@
 <p>如果您购买并已经部署了 Portal for ArcGIS，搭建了您的组织门户， 并且您希望在内网环境中通过 Named User 方式使用 ArcGIS Pro，那么您可以选择通过Portal for ArcGIS为组织成员配置Named User许可的方式。</p>
 <h2 id="1-为组织配置-ArcGIS-Pro-许可"><a href="#1-为组织配置-ArcGIS-Pro-许可" class="headerlink" title="1 为组织配置 ArcGIS Pro 许可"></a>1 为组织配置 ArcGIS Pro 许可</h2><p><strong>1)</strong> 首先您需要确定哪个组织门户将用于管理ArcGIS Pro的许可（这个指定的组织门户称为“许可门户”）， 尤其当您的组织有多个门户的时候，请确保您指定的门户是您想要用来管理许可的那个门户。此种许可模式，需要安装ArcGIS License Server Administrator 程序。</p>
 <p><strong>2)</strong> 完成安装后，打开 ArcGIS License Server Administrator，并单击“计算机 ID…” 按钮。</p>
-<p><img src="http://images.esrichina.com.cn/article/20170310/dbb2b70dea49a6649e5fed410bf1dc28.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/dbb2b70dea49a6649e5fed410bf1dc28.png"></p>
 <p><strong>3)</strong> 复制并保存计算机标识符对话框中的 MAC 地址 </p>
 <ul>
 <li>例如，005056a700c7（您需要向 My Esri 提供此信息）。 如果该对话框中存在两个 MAC 地址，则只复制其中之一。</li>
 </ul>
-<p><img src="http://images.esrichina.com.cn/article/20170310/0f5f97c5f0d6bebb6ced505533453c09.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/0f5f97c5f0d6bebb6ced505533453c09.png"></p>
 <ol start="4">
 <li><p>请记录上一步中您的Mac地址，并且提供您以下信息之一（用户ID、合同编号、用户单位全称），致电易智瑞(中国)信息技术有限公司合同部，为您生成可用于配置许可门户的文件（*.lic）。<br>联系电话： 010-5673228，拨0，转合同部。</p>
 </li>
@@ -362,7 +363,7 @@
 <li><p>打开 ArcGIS License Server Administrator 并启动许可服务（如果未运行）。 单击“授权”选项卡，选择“版本”下拉对话框中的“命名用户&#x2F;Named User”并单击“立即授权”按钮。</p>
 </li>
 </ol>
-<p><img src="http://images.esrichina.com.cn/article/20170310/67fcfb6b847f3e84ce58d847e50735f9.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/67fcfb6b847f3e84ce58d847e50735f9.png"></p>
 <ol start="7">
 <li><p>选择“我已收到来自 Esri 的授权文件，现在准备完成授权过程。”，然后浏览至许可 (.lic) 文件, 单击“打开”。</p>
 </li>
@@ -373,7 +374,7 @@
 <li><p>生成门户配置文件。单击“授权”选项卡，然后单击“生成…”，并将门户配置文件 (.json) 保存到对 Portal for ArcGIS 可见的位置。</p>
 </li>
 </ol>
-<p><img src="http://images.esrichina.com.cn/article/20170310/8b3564c329df10a6b1f3b1fbb5ffb00d.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/8b3564c329df10a6b1f3b1fbb5ffb00d.png"></p>
 <p>随即会显示一个对话框，表明已在您指定的位置生成了文件。单击“确定”并关闭 ArcGIS License Server Administrator。</p>
 <ol start="11">
 <li><p>打开Web浏览器, 并以组织中默认管理员角色成员的身份登录到 ArcGIS Portal Directory。URL 地址格式为: <span class="exturl" data-url="aHR0cHM6Ly9wb3J0YWwuZG9tYWluLmNvbTo3NDQzL2FyY2dpcy9wb3J0YWxhZG1pbg==">https://portal.domain.com:7443/arcgis/portaladmin<i class="fa fa-external-link-alt"></i></span>  您登录的门户将成为组织的许可门户。</p>
@@ -381,11 +382,11 @@
 <li><p>单击“系统” &gt; “许可” &gt; “导入授权”。</p>
 </li>
 </ol>
-<p><img src="http://images.esrichina.com.cn/article/20170310/99df556ff3f049041cfda22f60eb70e2.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/99df556ff3f049041cfda22f60eb70e2.png"></p>
 <ol start="13">
 <li>单击“浏览”并选择先前生成的门户配置文件 (.json)。确保应用程序下拉菜单被设为 ArcGIS Pro。</li>
 </ol>
-<p><img src="http://images.esrichina.com.cn/article/20170310/280e7ef674045acae19126fbc2f7bc3f.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/280e7ef674045acae19126fbc2f7bc3f.png"></p>
 <p>14）单击“导入”，您的组织现在已配置了 ArcGIS Pro 许可。</p>
 <h2 id="2-组织管理员配置ArcGIS-Pro许可"><a href="#2-组织管理员配置ArcGIS-Pro许可" class="headerlink" title="2 组织管理员配置ArcGIS Pro许可"></a>2 组织管理员配置ArcGIS Pro许可</h2><p>本节的配置方法与 ArcGIS Online 组织管理员配置 ArcGIS Pro 许可的方法相似。<br>注意：<br>从 ArcGIS 10.5 版本之后，您只能为达到成员资格级别 2 级的门户成员配置 ArcGIS Pro 许可。</p>
 <h2 id="3-登录并使用ArcGIS-Pro"><a href="#3-登录并使用ArcGIS-Pro" class="headerlink" title="3 登录并使用ArcGIS Pro"></a>3 登录并使用ArcGIS Pro</h2><ol>
@@ -394,15 +395,15 @@
 <li><p>在 ArcGIS Pro的启动界面中，点击“About ArcGIS Pro”。</p>
 </li>
 </ol>
-<p><img src="http://images.esrichina.com.cn/article/20170310/bbea712ccfa54d51dc456edb0218fa87.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/bbea712ccfa54d51dc456edb0218fa87.png"></p>
 <ol start="3">
 <li>在“Licensing”页面中，点击 “Configure your licensing options”。</li>
 </ol>
-<p><img src="http://images.esrichina.com.cn/article/20170310/30bf8e51c3905c389cb36c6e2c93e7e0.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/30bf8e51c3905c389cb36c6e2c93e7e0.png"></p>
 <ol start="4">
 <li>输入许可门户的 URL，如<span class="exturl" data-url="aHR0cHM6Ly93ZWJhZGFwdG9yLmRvbWFpbi5jb20vYXJjZ2lzJUUzJTgwJTgy">https://webadaptor.domain.com/arcgis。<i class="fa fa-external-link-alt"></i></span></li>
 </ol>
-<p><img src="http://images.esrichina.com.cn/article/20170310/1b4d6d77d4d9a10691794c2d24c5ddb7.png"></p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/1b4d6d77d4d9a10691794c2d24c5ddb7.png"></p>
 <ol start="5">
 <li>单击“OK”。稍后，在登录页面中输入账号密码登录并使用ArcGIS Pro。</li>
 </ol>
@@ -542,6 +543,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -550,6 +553,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

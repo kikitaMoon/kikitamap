@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="数字高程模型（DEM）地球表面高低起伏，呈现一种连续变化的曲面，这种曲面无法用平面地图来确切表示。于是我们就利用一种全新的数字地球表面的方法——&nbsp;数字高程模型&nbsp;的方法，这种方法已被普遍广泛采用。数字高程模型即DEM（Digital Elevation Model），是以数字形式按一定结构组织在一起，表示实际地形特征空间分布的模型，也是地形形状大小和起伏的数字描述。 DEM有三种">
 <meta property="og:type" content="article">
@@ -101,7 +102,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -323,7 +324,7 @@
 <h2 id="1-从矢量数据创建"><a href="#1-从矢量数据创建" class="headerlink" title="1. 从矢量数据创建"></a>1. 从矢量数据创建</h2><p>这是最常用的一种方法。可以通过点、线、面来构建TIN，不同的几何类型可以提供不同的表面要素类型（SF_Type），我们一起来了解下不同的 SF_Type。</p>
 <p><strong>（1） 离散多点（Mass Point）</strong></p>
 <p>离散多点是 TIN 中的主要输入要素，由它们来决定表面的总体形状。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_Points.png"><img src="http://kikitamap.com/images/blogImg/AboutTIN_Points2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_Points.png"><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_Points2.png"></p>
 <p><strong>(2) 隔断线（Breakline）</strong></p>
 <p>隔断线通常用于呈现自然要素（如山脊线或河流）或建筑要素（如道路）。隔断线有以下两种：硬隔断线与软隔断线。</p>
 <p>隔断线可以有高程信息，也可以没有高程信息。</p>
@@ -342,7 +343,7 @@
 <p><strong>Z Tolerance</strong> ：输入栅格与输出 TIN 之间所允许的最大高度差（z 单位）。默认情况下，z 容差是输入栅格 z 范围的 1&#x2F;10。</p>
 <p><strong>Max point</strong>：用于控制将在处理过程终止前添加到 TIN 的最大点数。默认情况下，该过程将一直持续到所有点被添加完。</p>
 <p>对比如下设置了默认 Z 容差和 500 的Z容差的TIN 效果：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_Tolerance.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_Tolerance.png"></p>
 <h2 id="3-从其他数据创建"><a href="#3-从其他数据创建" class="headerlink" title="3. 从其他数据创建"></a>3. 从其他数据创建</h2><p>（1）将 ArcGIS terrain dataset 数据转成 TIN。使用工具 terrain to TIN。</p>
 <p>可使用 terrain 金字塔等级的 z 容差或窗口大小分辨率来决定TIN的精细程度。默认值为 0（z 容差），或全分辨率（窗口大小）。</p>
 <p>（2）将 LAS Dataset 转成 TIN，使用工具 LAS Dataset to TIN。可通过一定得细化类型和细化方法生成TIN。</p>
@@ -352,18 +353,18 @@
 
 <h1 id="Ⅴ-编辑已有TIN"><a href="#Ⅴ-编辑已有TIN" class="headerlink" title="Ⅴ 编辑已有TIN"></a>Ⅴ 编辑已有TIN</h1><p>如果使用矢量数据批量编辑TIN，可以使用工具 Edit TIN，位于ArcToolbox中的3D分析工具箱。</p>
 <p>如果需要进行交互式的TIN编辑，可以使用ArcMap中提供的 TIN Editing 工具条。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_TINEditor.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_TINEditor.png"></p>
 <p>如果调出TIN Editing工具条后，工具都是灰色的，那是因为没有设置编辑对象。</p>
 <p>要编辑的 TIN 必须是 3D Analyst 工具条的下拉菜单中的选定图层。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_3DAnalyst.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_3DAnalyst.png"></p>
 <p>可见，TIN编辑的功能是依赖于3D分析扩展许可的。</p>
 <p>交互式的TIN编辑中有个GP工具没有的功能：</p>
 <p><strong>从中心线分级（Grade from centralline ……）</strong>，可用于向 TIN 表面添加道路、堤坝和类似护堤的要素。需要事先选中某一矢量线要素。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_Grade.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_Grade.png"></p>
 <br>
 
 <h1 id="Ⅵ-从TIN中输出几何信息"><a href="#Ⅵ-从TIN中输出几何信息" class="headerlink" title="Ⅵ 从TIN中输出几何信息"></a><strong>Ⅵ 从TIN中输出几何信息</strong></h1><p>使用ArcToolbox中的工具可以将TIN中的信息提取为矢量要素。位于3D分析工具箱中的转换工具集下：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_FromTIN.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_FromTIN.png"></p>
 <ol>
 <li><p><strong>TIN Domain</strong>：获得TIN的范围，可以选择生成线或者面。</p>
 </li>
@@ -378,7 +379,7 @@
 <li><p><strong>TIN Triangle</strong>： 生成构成TIN的三角形面。并为每个三角形提供山体阴影的坡度、坡向和可选属性以及标签值。</p>
 </li>
 </ol>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_Triangle.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_Triangle.png"></p>
 <ol start="7">
 <li><strong>TIN to Raster</strong>： 将TIN生成栅格数据。可选插值方法、数据类型、数据格式等。</li>
 </ol>
@@ -386,7 +387,7 @@
 
 <h1 id="Ⅶ-其他仅适用于TIN的工具"><a href="#Ⅶ-其他仅适用于TIN的工具" class="headerlink" title="Ⅶ 其他仅适用于TIN的工具"></a>Ⅶ 其他仅适用于TIN的工具</h1><p>（1）如果使用的10.0之后的版本，TIN的存储版本有区别，可以使用<strong>Copy TIN</strong> 工具将 TIN 数据转成低版本（10.0之前）的 TIN 数据。</p>
 <p>（2）如果需要裁剪TIN的边界，可以使用工具<strong>Delineate TIN Data Area</strong> 工具，设置最长边参数，删除 TIN 中的长边。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutTIN_Delineate.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutTIN_Delineate.gif"></p>
 <p>（3） 如果需要比较两个TIN的差异，使用工具<strong>Compare TIN</strong>。</p>
 <br>
 <br>
@@ -527,6 +528,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -535,6 +538,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

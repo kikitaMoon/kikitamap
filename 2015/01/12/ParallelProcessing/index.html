@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="开始下面正文之前，先说一个旧闻，ArcGIS Desktop 10.1 SP1 之后的版本中， 出现了一个不明觉厉的 新特性 —— 并行处理（Parallel Processing）。  现在机器硬件越来越优，多核CPU的机器比比皆是，ArcGIS Desktop 32位单进程的模式不能充分的利用这些硬件资源，不能满足大数据量的处理要求。因此，Esri 改进了 ArcToolbox 中的部分工具，">
 <meta property="og:type" content="article">
@@ -95,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -297,11 +298,11 @@
     <div class="post-body" itemprop="articleBody"><p>开始下面正文之前，先说一个旧闻，ArcGIS Desktop 10.1 SP1 之后的版本中， 出现了一个不明觉厉的 <a target="_blank" rel="noopener" href="http://resources.arcgis.com/en/help/main/10.1/index.html#/What_s_new_in_ArcGIS_10_1_service_packs/016w0000005q000000/"><strong>新特性</strong></a> —— <strong>并行处理（Parallel Processing）</strong>。 </p>
 <p>现在机器硬件越来越优，多核CPU的机器比比皆是，ArcGIS Desktop 32位单进程的模式不能充分的利用这些硬件资源，不能满足大数据量的处理要求。因此，Esri 改进了 ArcToolbox 中的部分工具，赋予了这部分工具并行处理的能力，确切地说是一小部分工具。 </p>
 <p>看到这里，问题可能来了，哪些工具支持并行处理呢？遗憾的是官方没有给出这个清单，这一点体验上确实不是很佳。但是我们还是有办法把它们找出来的，当我们在使用某个工具的时候，可以打开工具的帮助，在环境变量题目下找找有没有叫做 <strong>并行处理因子（Parallel Processing Factor）</strong>的项目。 </p>
-<p><img src="http://kikitamap.com/images/blogImg/ParallelProcessing_Toolhelp.png">   </p>
-<p><img src="http://kikitamap.com/images/blogImg/ParallelProcessing_Factor.png"> </p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_Toolhelp.png">   </p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_Factor.png"> </p>
 <p><strong>也就是说，对于所有工具，只有其文档中环境变量下标明的环境变量参数才有效，而不是全部环境变量参数都有效！</strong> </p>
 <p>下面我们来看看这个参数是如何设置和影响工具运行的。做一个简单的小测试，先找到一个支持并行处理的工具，例如 ** Build Pyramids And Statistics** 工具，用其为数据量较大的镶嵌数据集的项目创建金字塔和统计值。在默认设置下，只要工具支持并行处理，工具会自动创建多个进程（<strong>ArcSOCP.exe</strong>）来执行任务。如下图所示： </p>
-<p><img src="http://kikitamap.com/images/blogImg/ParallelProcessing_taskManager.png"> </p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_taskManager.png"> </p>
 <p>在工具支持并行处理的情况下，设置并行处理因子（Parallel Processing Factor）这个参数又能做什么呢？ </p>
 <p>这个因子的数值，会决定工具运行使用的进程数量。一般，各工具在各个支持的环境中都有进程数量的内置默认值。我们可根据自己的数据情况、执行任务的类型和机器的可用资源对其进行更改。 </p>
 <p>一般是这四种设置方法： </p>
@@ -343,7 +344,7 @@
 <p>我做个了小测试，来对比对相同的数据做相同操作的时间消费。 </p>
 <p><strong>测试环境：</strong> </p>
 <p>Windows 8.1 Enterprise 64bit ；ArcGIS for Desktop 10.3  </p>
-<p><img src="http://kikitamap.com/images/blogImg/ParallelProcessing_OS.png"> </p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ParallelProcessing_OS.png"> </p>
 <p><strong>任务</strong>： </p>
 <p>为相同的一个镶嵌数据集的栅格项目创建金字塔和统计值，使用工具 Build Pyramids And Statistics ，金字塔重采样方法和压缩方法等参数均相同。 </p>
 <p><strong>结果</strong>： </p>
@@ -487,6 +488,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -495,6 +498,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="ArcGIS 的空间分析扩展中，提供了这样一组邻域分析工具：    1. 块统计（Block Statistics）分块统计，按照指定邻域类型计算区域统计值，输出区域为指定邻域类型的外接矩形。 以下为邻域的形式：  NbrAnnulus({innerRadius}, {outerRadius}, {CELL | MAP}) NbrCircle({radius}, {CELL | MAP} NbrR">
 <meta property="og:type" content="article">
@@ -100,7 +101,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -301,7 +302,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>ArcGIS 的空间分析扩展中，提供了这样一组邻域分析工具：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_Toolset.png"></p>
 <br>
 
 <h1 id="1-块统计（Block-Statistics）"><a href="#1-块统计（Block-Statistics）" class="headerlink" title="1. 块统计（Block Statistics）"></a><strong>1. 块统计（Block Statistics）</strong></h1><p>分块统计，按照指定邻域类型计算区域统计值，输出区域为指定邻域类型的外接矩形。</p>
@@ -329,24 +330,24 @@
 <li><strong>VARIETY</strong>&#x2F;变异度（唯一值的数量）。</li>
 </ul>
 <p>例如，输入为圆形邻域，输出为外接矩形的像元范围：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_Radias.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_Radias.png"></p>
 <h1 id="2-滤波器（Filter）"><a href="#2-滤波器（Filter）" class="headerlink" title="2. 滤波器（Filter）"></a><strong>2. 滤波器（Filter）</strong></h1><p>对栅格执行平滑（低通）滤波器或边缘增强（高通）滤波器。</p>
 <p>滤波器工具既可用于消除不必要的数据，也可用于增强数据中不明显的要素的显示。</p>
 <p>低通滤波（平滑边界）：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_Low.png">   </p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_Low.png">   </p>
 <p>高通滤波（边缘增强）：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_High.png">   </p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_High.png">   </p>
 <h1 id="3-焦点流（Focal-Flow）"><a href="#3-焦点流（Focal-Flow）" class="headerlink" title="3. 焦点流（Focal Flow）"></a><strong>3. 焦点流（Focal Flow）</strong></h1><p>焦点流工具使用直接的 3 x 3 邻域来确定一个像元的八个相邻点中哪一个流向此像元。</p>
 <p>焦点流也可以是液体由高到低流动的方向，也可以是定义的任何移动（比如污染物向污染浓度较低的地方流入）。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow1.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow1.gif"></p>
 <p>举个例子，各个方向流向像元中心像元的值总和是最终值。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow2.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_FocalFlow2.gif"></p>
 <h1 id="4-焦点统计（Focal-Statistics）"><a href="#4-焦点统计（Focal-Statistics）" class="headerlink" title="4. 焦点统计（Focal Statistics）"></a><strong>4. 焦点统计（Focal Statistics）</strong></h1><p>为每个输入像元位置计算其周围指定邻域内的值的统计数据。</p>
 <p>统计类型与邻域形状与块统计是相同的，区别在于，块统计的输出是整个邻域的外接矩形范围，而焦点统计的输出，是邻域内的焦点栅格。如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_FocalStatistics.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_FocalStatistics.png"></p>
 <h1 id="5-线统计"><a href="#5-线统计" class="headerlink" title="5. 线统计"></a><strong>5. 线统计</strong></h1><p>工具用于为每个输出栅格像元周围的圆形邻域内所有线的指定字段值计算统计量。</p>
 <p>可用的统计量类型有：均值、众数、最大值、中位数、最小值、少数、范围、标准差以及变异度。只有众数、少数和中位数统计量是根据线长度进行加权的。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAProximity_LineStatistics.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAProximity_LineStatistics.png"></p>
 <p>还没有想到此工具的应用场景，以后有了再来追加。</p>
 <h1 id="6-点统计"><a href="#6-点统计" class="headerlink" title="6. 点统计"></a><strong>6. 点统计</strong></h1><p>该工具类似于焦点统计工具，不同之处在于它直接对点要素而非栅格进行操作。直接对要素进行操作的其中一个优点在于，即使点距离过近，在转换成栅格时点也不会丢失。</p>
 
@@ -484,6 +485,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -492,6 +495,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

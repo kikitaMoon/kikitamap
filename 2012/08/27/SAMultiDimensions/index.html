@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="通过多元统计分析可以探查许多不同类型的属性之间的关系。 有两种可用的多元分析：分类（监督分类与非监督分类&#x2F;Supervised&amp;Unsupervised)）和主成分分析&#x2F;Principal Component Analysis  (PCA)。 ArcGIS 提供了如下工具：    一、波段集统计工具（Band Collection Statistics）栅格波段必须具有">
 <meta property="og:type" content="article">
@@ -96,7 +97,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -299,13 +300,13 @@
     <div class="post-body" itemprop="articleBody"><p>通过多元统计分析可以探查许多不同类型的属性之间的关系。</p>
 <p>有两种可用的多元分析：分类（监督分类与非监督分类&#x2F;Supervised&amp;Unsupervised)）和主成分分析&#x2F;Principal Component Analysis  (PCA)。</p>
 <p>ArcGIS 提供了如下工具：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Toolset.png"></p>
 <br>
 
 <h1 id="一、波段集统计工具（Band-Collection-Statistics）"><a href="#一、波段集统计工具（Band-Collection-Statistics）" class="headerlink" title="一、波段集统计工具（Band Collection Statistics）"></a><strong>一、波段集统计工具（Band Collection Statistics）</strong></h1><p>栅格波段必须具有一个公共交集。如果不存在公共交集，则会出现错误，且不会创建任何输出。</p>
 <p>如果栅格波段的范围不同，统计数据将以所有输入栅格波段的共同的空间范围来计算。默认情况下，像元大小为输入栅格的最大像元的大小；否则，将取决于栅格分析环境设置。</p>
 <p>此工具计算每个图层的基本统计测量值（最小值、最大值、平均值和标准差），如果勾选协方差和相关矩阵，还可以得到这两个值。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAMultiDimensions_BandColSts.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_BandColSts.png"></p>
 <h1 id="二、创建特征（Create-Signature）"><a href="#二、创建特征（Create-Signature）" class="headerlink" title="二、创建特征（Create Signature）"></a><strong>二、创建特征（Create Signature）</strong></h1><p>创建由输入样本数据和一组栅格波段定义的类的 ASCII 特征文件。该工具可创建将用作其他多元分析工具的输入参数的文件。</p>
 <p>该文件由两部分组成：</p>
 <p>1） 所有类的常规信息，例如图层数、输入栅格名称和类别数。<br>2） 每个类别的特征文件，由样本数、平均值和协方差矩阵组成。</p>
@@ -334,7 +335,7 @@
 <li>FILE — 先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</li>
 </ul>
 <p>以下是通过三类样本的特征文件，分类的栅格数据的示例：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Classification.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Classification.png"></p>
 <h1 id="六、Iso-聚类（Iso-Cluster）"><a href="#六、Iso-聚类（Iso-Cluster）" class="headerlink" title="六、Iso 聚类（Iso Cluster）"></a><strong>六、Iso 聚类（Iso Cluster）</strong></h1><blockquote>
 <p>Iso表示：iterative self-organizing –迭代自组织方法。</p>
 </blockquote>
@@ -347,7 +348,7 @@
 <h1 id="九、主成分分析（Principal-Components）"><a href="#九、主成分分析（Principal-Components）" class="headerlink" title="九、主成分分析（Principal Components）"></a><strong>九、主成分分析（Principal Components）</strong></h1><p>对一组栅格波段执行主成分分析 (PCA) 并生成单波段栅格作为输出。此工具生成的是波段数与指定的成分数相同的多波段栅格。</p>
 <p>主成分分析工具用于将输入多元属性空间中的输入波段内的数据变换到相对于原始空间对轴进行旋转的新的多元属性空间。新空间中的轴（属性）互不相关。之所以在主成分分析中对数据进行变换，主要是希望通过消除冗余的方式来压缩数据。</p>
 <p>以上提到的几个工具，在ArcGIS 10.x版本中，除了在ArcToolbox中可以找到，在 Image Classification 工具条中也可以找到对应的功能，如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Toolbar.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SAMultiDimensions_Toolbar.png"></p>
 <p>这个工具集涉及很多遥感的理论知识，仅仅使用工具是不够的，后面需要多多学习…… </p>
 
     </div>
@@ -405,13 +406,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2012/08/24/SAZonal/" rel="prev" title="空间分析之区域分析">
-                  <i class="fa fa-angle-left"></i> 空间分析之区域分析
+                <a href="/2012/08/27/SAInterpolation/" rel="prev" title="空间分析之插值分析">
+                  <i class="fa fa-angle-left"></i> 空间分析之插值分析
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2012/08/27/SAInterpolation/" rel="next" title="空间分析之插值分析">
-                  空间分析之插值分析 <i class="fa fa-angle-right"></i>
+                <a href="/2012/08/27/SAHydrology/" rel="next" title="空间分析之水文分析">
+                  空间分析之水文分析 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -484,6 +485,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -492,6 +495,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

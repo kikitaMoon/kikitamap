@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="网上已经有好多作者都不吝笔墨，写了好多有关 Web Mercator这个坐标系的前世今生。多搜罗多摄入，我们会得到很多有用的信息。今天讨论到 3758，3857，102100，900913…… 这些ID又一石激起千层浪，看来整理总结下还是有点必要。   Web Mercator 如何定义？   我们知道，地理数据的坐标系一般有两大类，一是地理坐标系(GCS)，是经纬度单位的椭球坐标系；二是投影坐标">
 <meta property="og:type" content="article">
@@ -96,7 +97,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -318,17 +319,17 @@
 <p>Angular Unit: Degree (0.0174532925199433)<br>Prime Meridian: Greenwich (0.0)<br>Datum: D_WGS_1984<br>  Spheroid: WGS_1984<br>    Semimajor Axis: 6378137.0<br>    Semiminor Axis: 6356752.314245179<br>    Inverse Flattening: 298.257223563</p>
 </blockquote>
 <p>通过参数描述，我们知道 WGS 1984 是一个长半轴(a)为6378137，短半轴（b）为6356752.314245179 的椭球体，扁率(f)为298.257223563，f&#x3D;(a-b)&#x2F;a 。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Speriod.png"></p>
 <br>
 
 
 
 <h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p><strong>Web Mercator 坐标系使用的投影方法不是严格意义的墨卡托投影，而是一个被 EPSG（European Petroleum Survey Group）称为</strong>伪墨卡托<strong>的投影方法，这个伪墨卡托投影方法的大名是 Popular Visualization Pseudo Mercator，PVPM。</strong> 看起来就觉得这个投影方法不是很严谨的样子，大众化的？受欢迎的？可视化伪墨卡托投影……</p>
 <p>因为这个坐标系统是 Google Map 最先使用的，或者更确切地说，是Google 最先发明的。在投影过程中，将表示地球的参考椭球体近似的作为正球体处理（正球体半径 R &#x3D; 椭球体半长轴 a）。这也是为什么在 ArcGIS 中我们经常看到这个坐标系叫 **WGS 1984 Web Mercator (Auxiliary Sphere)**。Auxiliary Sphere 就是在告知你，这个坐标在投影过程中，将椭球体近似为正球体做投影变换，虽然基准面是WGS 1984 椭球面。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Geodesic.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Geodesic.png"></p>
 <p>后来，Web Mercator 在 Web 地图领域被广泛使用，这个坐标系就名声大噪。尽管这个坐标系由于精度问题一度不被GIS专业人士接受，但最终 EPSG 还是给了 WKID:3857。</p>
 <p>下面放一张在 EPSG 官网上找到的3857坐标的具体参数介绍，供参考：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Name.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_Name.png"></p>
 <br>
 
 <br>
@@ -341,7 +342,7 @@
 <p>拒绝给这个坐标系分配 坐标系ID 的原话是这样的：</p>
 <p><strong>“</strong> The projected coordinate reference system originally lacked an official spatial reference identifier (SRID), and the Geodesy subcommittee of the OGP’s Geomatics committee (also known as EPSG) refused to provide it with one, declaring “We have reviewed the coordinate reference system used by Microsoft, Google, etc. and believe that it is technically flawed. We will not devalue the EPSG dataset by including such inappropriate geodesy and cartography.”  <strong>”</strong></p>
 <p>这不是EPSG 冷酷无情无理取闹，从技术角度看是有原因的。简而言之，主要原因在于基准面被篡改后，本来是等角投影的Mercator坐标变换算法，不再等角了，而是近似等角，也就是出现角度变形。这种变形势必影响了坐标的精度，如下是某位GIS专家给出的概要说明（闪亮的最后一条）：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SecretofWebMercator_darkside.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_darkside.png"></p>
 <p>如果你想进一步关心细节，想知道这位专家对 Web Mercator 的 dark side 的深入见解，点<span class="exturl" data-url="aHR0cDovL2h5ZHJvbWV0cm9uaWNzLmNvbS9kb3dubG9hZHMvV2ViJTIwTWVyY2F0b3IlMjAtJTIwTm9uLUNvbmZvcm1hbCwlMjBOb24tTWVyY2F0b3IlMjAlMjhub3RlcyUyOS5wZGY=">这里<i class="fa fa-external-link-alt"></i></span>看看。</p>
 <br>
 
@@ -360,7 +361,7 @@
 <p><strong>ESRI:102113</strong>   Esri内部使用ID，与 EPSG:3785 相应。已被弃用。</p>
 <p><strong>ESRI:102100</strong>   Esri内部使用ID，与 EPSG:3857 相应。</p>
 <p>因此，细心地话，会发现在 ArcGIS Server 的REST 服务页面中，Web Mercator 的空间参考会记做： <strong>102100(3857)</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/SecretofWebMercator_3857.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SecretofWebMercator_3857.png"></p>
 <br>
 
 <br>
@@ -511,6 +512,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -519,6 +522,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

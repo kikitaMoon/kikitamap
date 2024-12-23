@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="路径分析不仅可以考虑到水平方向的影响因子，而且可以考虑到垂直方向的影响因子，例如前面开车的例子中，水平方向的影响因子是风向，垂直方向的影响因子就是路面的起伏状况。 垂直系数 垂直系数越大，移动的难度也就越大。确定从一个像元行进到另一个像元时遇到的垂直系数（VF）与确定水平系数（HF）相似。这里需要引入一个概念，垂直相对移动角度（VRMA），垂直相对移动角度（VRMA）是“起始”像元与“目标”像元形">
 <meta property="og:type" content="article">
@@ -110,7 +111,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -313,63 +314,63 @@
 <p><strong>垂直系数</strong></p>
 <p>垂直系数越大，移动的难度也就越大。确定从一个像元行进到另一个像元时遇到的垂直系数（VF）与确定水平系数（HF）相似。这里需要引入一个概念，垂直相对移动角度（VRMA），垂直相对移动角度（VRMA）是“起始”像元与“目标”像元形成的斜率的角度，斜率&#x3D;垂直增量&#x2F;水平增量。VRMA 以度为单位进行指定。VRMA 的值范围为 -90 到 +90 度。</p>
 <p>路径距离分析工具中，提供了几种算法，<strong>BINARY、LINEAR、SYM_LINEAR、INVERSE_LINEAR、SYM_INVERSE_LINEAR、COS、SEC、COS_SEC、SEC_COS、TABLE</strong>：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_VerticalFactor.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_VerticalFactor.png"></p>
 <br>
 
 <p><strong>（1）Binary——二元垂直系数</strong></p>
 <p>当 VRMA 大于切削角下限且小于切削角上限时，在两个像元之间移动的 VF 设置为与零系数相关联的值。如果 VRMA 大于切削角上限或者小于<span style="font-family: 'Microsoft YaHei';font-size:14px;">切削角下限</span>，则 VF 设置为无穷大。工具默认的切削角为正负30度。</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Binary.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_BInary2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Binary.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_BInary2.jpg"></p>
 <br>
 
 <p><strong>（2）Linear——线性垂直系数</strong></p>
 <p>VF 由 VRMA-VF 坐标系中的一条直线确定。这条线在 y 轴上与零系数相关联的值处进行截取。线的斜率可以使用 SLOPE 属性进行指定。如果未确定斜率，则默认值为 1&#x2F;90（指定为 0.01111）。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Linear.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Linear2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Linear.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Linear2.jpg"></p>
 <br>
 
 <p><strong>（3）Inverse Linear——逆线性垂直系数</strong></p>
 <p>这个与线性垂直系数类似，VF 由 VRMA-VF 坐标系中的一条直线的逆向值确定。这条线在 y 轴（表示 VF 系数）上与零系数相关联的值处进行截取。线的斜率可以确定（如果使用 SLOPE 修饰属性指定）。如果未确定斜率，则默认值为 -1&#x2F;45（指定为 0.02222）。默认的切削角下限为 -45 度，而默认的切削角上限为 45 度。</p>
 <p><strong>注意：这个算法的图表，在ArcGIS的帮助中绘制错误了，画成了二次曲线的样子，如下是改正后正确图表。</strong>_</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_InverseLinear.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_InverseLinear2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_InverseLinear.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_InverseLinear2.jpg"></p>
 <br>
 
 <p><strong>（4）Symmetric Linear——对称线性垂直系数</strong></p>
 <p>SYM_LINEAR 由两个与 VRMA 相关的线性函数组成，这两个函数关于 VF (y) 轴对称。两条线都在与零系数相关联的 VF 值处截取 y 轴。使用 SLOPE 垂直系数修饰属性相对于正 VRMA 定义线的斜率，然后将针对负 VRMA 生成一个镜像。默认斜率为 1&#x2F;90（指定为 0.01111）。默认的切削角下限为 -90，而默认的切削角上限为 90。</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymmetricLinear.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymmetricLinear.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymmetricLinear.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymmetricLinear.jpg"></p>
 <br>
 
 <p><strong>（5）Symmetric Inverse Linear——对称线性垂直系数</strong></p>
 <p>顾名思义，SYM_INVERSE_LINEAR 与 SYM_LINEAR 垂直系数关键字正相反。它由两个与 VRMA 相关的线性函数组成，这两个函数关于 VF (y) 轴相对称。两条线都在 VF 值为 1 处截取 y 轴。使用 SLOPE 垂直系数修饰属性相对于与正 VRMA 定义线的斜率，然后将针对负 VRMA 生成一个镜像。默认斜率为 -1&#x2F;45（指定为 .02222）。默认的切削角下限为 -45，而默认的切削角上限为 45。</p>
 <p><strong>注意：这个算法的图表，在ArcGIS的帮助中也绘制错误了，也画成了二次曲线的样子，如下是改正后正确图表。</strong></span></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymInverseLinear.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymInverseLinear.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymInverseLinear.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SymInverseLinear.jpg"></p>
 <br>
 
 <p><strong>（6）Cos——余弦垂直系数</strong></p>
 <p>VF 由 VRMA 的余弦函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 COSPOWER 为 1.0。</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Cos.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Cos.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Cos.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Cos.jpg"></p>
 <br>
 
 <p><strong>（7）Sec——正割垂直系数</strong></p>
 <p>VF 由 VRMA 的正割函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 SECPOWER 为 1.0。</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Sec.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Sec2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Sec.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_Sec2.jpg"></p>
 <br>
 
 <p><strong>（8）Cos-Sec——余弦正割垂直系数</strong></p>
 <p>当 VRMA 度数为负值时，VF 由 VRMA 的余弦函数确定。如 VRMA 度数为正值，VF 则由 VRMA 的正割函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 COSPOWER 和 SECPOWER 均为 1.0。</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_CosSec.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_CosSec2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_CosSec.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_CosSec2.jpg"></p>
 <br>
 
 <p><strong>（9）Sec-Cos——正割余弦垂直系数</strong></p>
 <p>当 VRMA 度数为负值时，VF 由 VRMA 的正割函数确定。如 VRMA 度数为正值，VF 则由 VRMA 的余弦函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 COSPOWER 和 SECPOWER 均为 1.0。</p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SecCos.gif"></p>
-<p><img src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SecCos.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SecCos.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DiveinPathDistanceAnalyst3_SecCos.jpg"></p>
 <br>
 
 <p><strong>（10）Table——自定义表格垂直系数</strong></p>
@@ -509,6 +510,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -517,6 +520,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

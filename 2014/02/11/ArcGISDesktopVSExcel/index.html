@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。 ArcGIS Desktop 中访问 Excel 数据Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览">
 <meta property="og:type" content="article">
@@ -93,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -296,7 +297,7 @@
     <div class="post-body" itemprop="articleBody"><p>微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。</p>
 <h2 id="ArcGIS-Desktop-中访问-Excel-数据"><a href="#ArcGIS-Desktop-中访问-Excel-数据" class="headerlink" title="ArcGIS Desktop 中访问 Excel 数据"></a>ArcGIS Desktop 中访问 Excel 数据</h2><p>Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览这种表，并可将这种表作为地理处理工具的输入数据。</p>
 <p>通过 ArcGIS 进行访问Excel表时，每个工作表在 ArcGIS 中都是一个单独的表，名称末尾带有美元符号 $ 标识，但是这个$并不是表名的一部分。如果工作表的表名中包含空格，那表名称周围会括有单引号。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
 <h2 id="对于ArcGIS-Desktop-对-office-版本的支持情况"><a href="#对于ArcGIS-Desktop-对-office-版本的支持情况" class="headerlink" title="对于ArcGIS Desktop 对 office 版本的支持情况"></a>对于ArcGIS Desktop 对 office 版本的支持情况</h2><p>ArcGIS 支持 ：</p>
 <ul>
 <li>Excel 2003 以及更早版本的 .xls 文件；</li>
@@ -306,7 +307,7 @@
 <p>*.xls 文件可以直接在ArcGIS中以只读的形式打开，例如直接在ArcMap中添加数据、在ArcMap中添加XY数据显示为点、在ArcCatalog中进行查看等等。</p>
 <p>而 *.xlsx 文件打开时，需要有一个数据驱动。如果我们遇到这个错误：“ <strong>Failed to connect to ddatabase. An underlying database error occured. 没有注册类</strong>”，那就是缺少驱动的结果。</p>
 <p>一般如果我们安装了 MS Office 2010 或者 2013，或者根本就没有安装 Office，这个错误必然会遇到了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Error.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcGISDesktopVSExcel_Error.jpg"></p>
 <br>
 
 <p>需要安装 &nbsp;2007 Office System 驱动程序（AccessDatabaseEngine.exe），下载英文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2VuLXVzL2Rvd25sb2FkL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，中文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3poLWNuL2Rvd25sb2FkL2RldGFpbHMuYXNweD9pZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，这个包的官方说明如下：</p>
@@ -457,6 +458,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -465,6 +468,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

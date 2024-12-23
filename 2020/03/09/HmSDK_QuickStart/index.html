@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="今天整理下 HERE SDK的入门攻略~ HERE mobile SDK 是HERE location Servie（HLS）产品家族中重要的一部分，支持 Android 和 iOS 两大主流系统；从功能上分为 Lite（旧版本称 Starter）和 Premium 两个license level，顾名思义，前者支持较轻量级的功能，后者具有更专业更高级的功能。具体的功能清单和版本对比，可以在点击">
 <meta property="og:type" content="article">
@@ -97,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -318,7 +319,7 @@
 </blockquote>
 <h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="获取Credentials及SDK安装包"><a href="#获取Credentials及SDK安装包" class="headerlink" title="获取Credentials及SDK安装包"></a>获取Credentials及SDK安装包</h2><p>登录 HERE Developer 账户之后，即可在自己创建的Project中生成每个产品对应的密钥&#x2F;credentials。</p>
 <p>在 SDK 密钥下方就有 SDK安装包可供下载。如下图即为 HERE mSDK （premium edition） 的示例：</p>
-<p><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_keys.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_keys.jpg"></p>
 <h2 id="检查-System-Requirments"><a href="#检查-System-Requirments" class="headerlink" title="检查 System Requirments"></a>检查 System Requirments</h2><p>这是安装一切软件产品之前，仔细阅读<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vZGV2X2d1aWRlL3RvcGljcy9zeXN0ZW0tcmVxdWlyZW1lbnRzLmh0bWw=">官方系统要求<i class="fa fa-external-link-alt"></i></span>，永远是不错的选择。</p>
 <h2 id="快速运行-Tutorial-Example"><a href="#快速运行-Tutorial-Example" class="headerlink" title="快速运行 Tutorial Example"></a>快速运行 Tutorial Example</h2><p>下载后的SDK 安装包中包含了 user guild，release notes，SDK libraries， tutorial example 这几大件。 如果要快速入门，tutorial example 运行起来是必须的啦。</p>
 <p>这里假设大家使用的开发环境都是 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5nb29nbGUuY24vc3R1ZGlv">Android Studio<i class="fa fa-external-link-alt"></i></span>， 解压缩 SDK 安装包后，开始吧！</p>
@@ -332,7 +333,7 @@
 <li><p>检查 <code>app/build.gradle </code> 文件，确保如下内容已经包含：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">  flatDir &#123;</span><br><span class="line">    dirs <span class="string">&#x27;libs&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  implementation(name:<span class="string">&#x27;HERE-sdk&#x27;</span>, ext:<span class="string">&#x27;aar&#x27;</span>)</span><br><span class="line">  <span class="comment">// Depending on your specific project configuration you may have other entries here.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>准备许可。每个 application 都需要一套单独的credentials。需要注意：为app申请credentials时，填写的 package name 需要和注册的bundle identifier 完全一致。就这个 sample来说， 应该使用 package name：<code> com.here.android.tutorial</code> 。如果在文章的开始，你已经注册了credential，那也没有关系，在 developer 网站的 project 页面中，你还可以修改哦，同时密钥会重新刷一遍，请使用最新的。<br><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_PackageName.jpg"> </p>
+<li><p>准备许可。每个 application 都需要一套单独的credentials。需要注意：为app申请credentials时，填写的 package name 需要和注册的bundle identifier 完全一致。就这个 sample来说， 应该使用 package name：<code> com.here.android.tutorial</code> 。如果在文章的开始，你已经注册了credential，那也没有关系，在 developer 网站的 project 页面中，你还可以修改哦，同时密钥会重新刷一遍，请使用最新的。<br><img data-src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_PackageName.jpg"> </p>
 </li>
 <li><p>写入许可。 打开目录 <code>BasicMapSolution/app/src/main/</code> 下的<code>AndroidManifest.xml</code>文件。找到三行 <code>&lt;meta-data&gt;</code>开头的语句，填写 credentials 即可。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.appid&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_ID&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.apptoken&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_CODE&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.license.key&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_LICENSE_KEY&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
@@ -348,7 +349,7 @@
 
 
 <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>最后上图，我手头没有 Android 设备，用了 Nexus 10 模拟器：</p>
-<p><img src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_Run.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/HmSDK_QuickStart_Run.jpg"></p>
 
     </div>
 
@@ -486,6 +487,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -494,6 +497,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

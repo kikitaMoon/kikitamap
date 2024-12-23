@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="一、WHY DENSITY ？通过密度分析，我们可以讲测量的来的点或者线生成连续表面，从而可以找出那些地方点或者线比较集中。也就是，密度分析是根据输入要素数据计算整个区域的数据聚集状况。 密度分析是通过离散点数据或者线数据进行内插的过程，根据插值原理不同，主要是分为核密度分析和普通的点\线密度分析。核密度分心中，落入搜索区的点具有不同的权重，靠近搜索中心的点或线会被赋予较大的权重，反之，权重较小，">
 <meta property="og:type" content="article">
@@ -97,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -299,10 +300,10 @@
     
     <div class="post-body" itemprop="articleBody"><h1 id="一、WHY-DENSITY-？"><a href="#一、WHY-DENSITY-？" class="headerlink" title="一、WHY DENSITY ？"></a>一、WHY DENSITY ？</h1><p>通过密度分析，我们可以讲测量的来的点或者线生成连续表面，从而可以找出那些地方点或者线比较集中。也就是，密度分析是根据输入要素数据计算整个区域的数据聚集状况。</p>
 <p>密度分析是通过离散点数据或者线数据进行内插的过程，根据插值原理不同，主要是分为核密度分析和普通的点\线密度分析。核密度分心中，落入搜索区的点具有不同的权重，靠近搜索中心的点或线会被赋予较大的权重，反之，权重较小，它的计算结果分布较平滑。在普通的点\线密度分析中，落在搜索区域内的点或线有相同的权重，先对其求和，再除以搜索区域的大小，从而得到每个点的密度值。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADensity_Demo.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADensity_Demo.png"></p>
 <h1 id="二、HOWTO-DENSITY-？"><a href="#二、HOWTO-DENSITY-？" class="headerlink" title="二、HOWTO DENSITY ？"></a><strong>二、HOWTO DENSITY ？</strong></h1><p>ArcGIS 的空间分析工具箱中提供了密度分析工具集中的三个工具：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADensity_Tool.png"></p>
-<h2 id="1-Kernel-Density（核密度分析）"><a href="#1-Kernel-Density（核密度分析）" class="headerlink" title="1. Kernel Density（核密度分析）"></a><strong>1. Kernel Density（核密度分析）</strong></h2><p><img src="http://kikitamap.com/images/blogImg/SADensity_Tool2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADensity_Tool.png"></p>
+<h2 id="1-Kernel-Density（核密度分析）"><a href="#1-Kernel-Density（核密度分析）" class="headerlink" title="1. Kernel Density（核密度分析）"></a><strong>1. Kernel Density（核密度分析）</strong></h2><p><img data-src="http://kikitamap.com/images/blogImg/SADensity_Tool2.png"></p>
 <p>输入值可以是点或者线。</p>
 <p>工作原理引自帮助：</p>
 <blockquote>
@@ -310,14 +311,14 @@
 </blockquote>
 <p>对于点，如果 population 字段设置使用的是除 NONE 之外的值，则每项的值用于确定点被计数的次数。例如，值 3 会导致点被算作三个点。值可以为整型也可以为浮点型。</p>
 <p>对于线，如果 population 字段使用的是除 NONE 之外的值，则线的长度将由线的实际长度乘以此线的 population 字段的值而得出。</p>
-<h2 id="2-Point-Density-Line-Density（点、线密度分析）："><a href="#2-Point-Density-Line-Density（点、线密度分析）：" class="headerlink" title="2. Point Density &#x2F; Line Density（点、线密度分析）："></a><strong>2. Point Density &#x2F; Line Density（点、线密度分析）：</strong></h2><p><img src="http://kikitamap.com/images/blogImg/SADensity_PointLine.png"></p>
+<h2 id="2-Point-Density-Line-Density（点、线密度分析）："><a href="#2-Point-Density-Line-Density（点、线密度分析）：" class="headerlink" title="2. Point Density &#x2F; Line Density（点、线密度分析）："></a><strong>2. Point Density &#x2F; Line Density（点、线密度分析）：</strong></h2><p><img data-src="http://kikitamap.com/images/blogImg/SADensity_PointLine.png"></p>
 <p>这两个工具的输出与核密度工具的输出的区别在于：</p>
 <p>对于点密度和线密度，需要指定一个邻域，以便计算出各输出像元周围像元的密度。而核密度则可将各点的已知总体数量从点位置开始向四周分散。在核密度中，在各点周围生成表面所依据的二次公式可为表面中心（点位置）赋予最高值，并在搜索半径距离范围内减少到零。对于各输出像元，将计算各分散表面的累计交汇点总数。</p>
 <p><strong>1）点密度分析</strong></p>
 <p>每个栅格像元中心的周围都定义了一个邻域（邻域可以使用圆形、矩形、环形、楔形的形状来定义），将邻域内点的数量相加，然后除以邻域面积，即得到点要素的密度。如果 Population 字段设置使用的是 NONE 之外的值，则每项的值用于确定点被计数的次数。例如，值为 3 的项会导致点被算作三个点。值可以为整型也可以为浮点型。</p>
 <p><strong>2）线密度分析</strong></p>
 <p>使用搜索半径以各个栅格像元中心为圆心绘制一个圆。每条线上落入该圆内的部分的长度与 Population 字段值相乘。对这些数值进行求和，然后将所得的总和除以圆面积。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADensity_LineDetail.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADensity_LineDetail.gif"></p>
 <p>上图中显示的是栅格像元与其圆形邻域。线 L1 和 L2 表示各条线上落入圆内部分的长度。相应的 population 字段值分别为 V1 和 V2。因此：</p>
 <p><strong>Density &#x3D; ((L1 * V1) + (L2 * V2)) &#x2F; (area_of_circle)</strong></p>
 <p>如果 population 字段使用的是除 NONE 之外的值，则线的长度将等于线的实际长度乘以其 population 字段的值。</p>
@@ -457,6 +458,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -465,6 +468,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

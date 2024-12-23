@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="在上一篇中，尝试给出三条备选路线方案，只是看看是不够的，还需要做些交互式的操作支持。 1 Visual Tweaks首先，这里我们做点小小的视觉调整，让路线和位置更漂亮一点。例如： 给路线的加上半透明效果，在drawRoute()中增加： 123var routeLine &#x3D; new H.map.Polyline(strip, &#123;  style: &#123; strokeColor:">
 <meta property="og:type" content="article">
@@ -97,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -323,13 +324,13 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (selectedRoute) &#123;</span><br><span class="line">      selectedRoute.<span class="property">routeLine</span>.<span class="title function_">setStyle</span>(routeLineStyles.<span class="property">normal</span>).<span class="title function_">setZIndex</span>(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    route.<span class="property">routeLine</span>.<span class="title function_">setStyle</span>(routeLineStyles.<span class="property">selected</span>).<span class="title function_">setZIndex</span>(<span class="number">10</span>)</span><br><span class="line">    selectedRoute = route</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样就清爽了很多。</p>
-<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_2.png"></p>
 <h3 id="3-Route-Selection-Panel"><a href="#3-Route-Selection-Panel" class="headerlink" title="3 Route Selection Panel"></a>3 Route Selection Panel</h3><p>这一步我们最后完善与道路的“交互”。 增加一个小的面板指示已经选择的道路。我们将这一部分的功能也放到另外一个独立的脚本文件中，在 scripts目录下新建一个<code>routes_panel.js</code>的文件。当然，不要忘记在 html 页面中增加加载此脚本文件的语句。 <code>&lt;script src=&quot;scripts/routes_panel.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>另外，在html文件中需要增加一个容器来渲染路线选择面板。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;route-panel&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>定义 <em>HERERoutesPanel</em> 类，用于渲染路线选择面板中的内容，详见我的GitHub 中 <a target="_blank" rel="noopener" href="https://github.com/kikitaMoon/HERE_JS_Who_Wants_Icecream/blob/master/Part4_Advanced_Routing_SS5_selectionPanel/scripts/routes_panel.js"> <strong>routes_panel.js</strong></a> 的内容。</p>
-<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_Panel.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_Panel.png"></p>
 <h3 id="4-Directions"><a href="#4-Directions" class="headerlink" title="4 Directions"></a>4 Directions</h3><p>HERE Routing API 也会返回自然语言形式的导航信息（direction information），继续再 <code>HERERoutesPanel</code>类中增加内容：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> renderRouteElement = <span class="keyword">function</span> (<span class="params">route, i</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> element = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> routeSummary = route.<span class="property">route</span>.<span class="property">summary</span></span><br><span class="line">    element.<span class="property">innerHTML</span> = <span class="title function_">renderRouteTitle</span>(routeSummary, i)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> maneuvers = route.<span class="property">route</span>.<span class="property">leg</span>[<span class="number">0</span>].<span class="property">maneuver</span></span><br><span class="line">    element.<span class="property">innerHTML</span> += <span class="title function_">renderManeuvers</span>(maneuvers)</span><br></pre></td></tr></table></figure>
 
@@ -340,7 +341,7 @@
 
 
 <p>这篇Tutorial的原文巨长，看得我一度想放弃，因为最近工作忙碌的关系，断断续续总算看完了； 并且参照原文思路和示例代码review完结。</p>
-<p><img src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_Direction.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/Icecream_Part4_Adcanced_Routing_Direction.png"></p>
 <br>
 
 <p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTQtYWR2YW5jZWQtcm91dGluZw==">Part4: Advanced Routing<i class="fa fa-external-link-alt"></i></span></p>
@@ -482,6 +483,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -490,6 +493,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

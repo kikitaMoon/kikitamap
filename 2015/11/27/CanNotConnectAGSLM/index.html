@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="在 ArcGIS Desktop 的问题库中，有一类不算做核心技术问题，但却可能会位列“最常见的问题”之一。简言之一句话，”许可服务器连不上怎么办？！“ 下面就来演绎下问题的诊断过程。  本文仅适用于客户端 ArcGIS Administrator 访问 ArcGIS License Manager 正式版许可的问题的诊断，目前适用于 ArcGIS for Desktop 10.x、ArcGIS">
 <meta property="og:type" content="article">
@@ -97,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -304,7 +305,7 @@
 <br>
 
 <h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ArcGIS License Manager <strong>已经授权完毕且成功</strong>，可用性（Availability）栏目中总计（Total）和可用（Available）的数目正常，服务器状态也运行正常。</p>
-<p><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
 <blockquote>
 <p>图中的过期栏目中的日期可忽略，内部工作使用的正式许可是限定有效日期的。如果你使用的是购买得到的正式版许可，这里会显示 永久（Permanent），也就是许可是永久有效的。</p>
 </blockquote>
@@ -342,15 +343,15 @@
 <p>在”<a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/get-started/license-manager-guide/configure-the-arcgis-license-manager-to-work-through-a-firewall.htm"><strong>许可服务管理器指南</strong></a>“中提到，”<strong>默认情况下，将 lmgrd 后台程序设为端口 27000</strong>“。那么，连不上许可服务器是因为端口被锁定了吗？ 有可能，动手查查才放心。</p>
 <p>听说，netstat是控制台命令,是一个监控TCP&#x2F;IP网络的非常有用的工具。那么动手吧。</p>
 <p>以管理员的身份运行命令窗口，并输入命令：**<code>netstat -abn</code>** </p>
-<p><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_cmd.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_cmd.png"></p>
 <p>如果找到 27000 和 lmgrd.exe 这个进程 ，并且状态 Established，可以认为端口正常。</p>
-<p><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_lmgrd.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_lmgrd.png"></p>
 <br>
 
 <p>27000-27009是ArcGIS License Manger 的默认端口段，是相对不拥挤的段。但是，如果发现这个端口被其他程序占用了，那么就要修改ArcGIS许可服务器或者其它程序的端口了。在这里我就只能说说 ArcGIS 许可服务器的端口的修改方法了。</p>
 <blockquote>
-<p><strong>如何修改 ArcGIS 许可服务的端口？</strong><br>在 ArcGIS license manager 的安装目录下，bin目录下，找到 service.txt，打开如下样子：<br><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_service.png"></p>
-<p>修改这个配置文件，例如：在 SERVER 行的结尾处，您可选择直接在 ANY 后面指定端口号。在 VENDOR 行上，添加 PORT&#x3D;####，其中 #### 是指定的特定端口号，用来将供应商后台程序锁定到特定端口，例如 1234。<br><img src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_newPort.png"></p>
+<p><strong>如何修改 ArcGIS 许可服务的端口？</strong><br>在 ArcGIS license manager 的安装目录下，bin目录下，找到 service.txt，打开如下样子：<br><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_service.png"></p>
+<p>修改这个配置文件，例如：在 SERVER 行的结尾处，您可选择直接在 ANY 后面指定端口号。在 VENDOR 行上，添加 PORT&#x3D;####，其中 #### 是指定的特定端口号，用来将供应商后台程序锁定到特定端口，例如 1234。<br><img data-src="http://kikitamap.com/images/blogImg/CanNotConnectAGSLM_newPort.png"></p>
 <p>这样我们可以在客户端使用例如 <strong>27004@许可服务器IP或机器名</strong> 的方式访问许可。</p>
 </blockquote>
 <br>
@@ -495,6 +496,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -503,6 +506,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

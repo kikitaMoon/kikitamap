@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="安装环境： ArcGIS for Server Linux 10.2.2 ， Redhat 6  因为是在网络虚拟机中安装部署，首先需要一个远程Linux的客户端，这里使用 putty，可以在官方的 www.putty.org 下载，但是貌似网站被墙了，我也放了一份在我的资源中。 1） 运行 putty.exe ,登陆linux服务器：  2） 输入用户名密码，登入服务器：  3） 查询主机的">
 <meta property="og:type" content="article">
@@ -107,7 +108,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -311,40 +312,40 @@
 </blockquote>
 <p>因为是在网络虚拟机中安装部署，首先需要一个远程Linux的客户端，这里使用 putty，可以在官方的 <span class="exturl" data-url="aHR0cDovL3d3dy5wdXR0eS5vcmcv">www.putty.org<i class="fa fa-external-link-alt"></i></span> 下载，但是貌似网站被墙了，我也放了一份在<span class="exturl" data-url="aHR0cDovL2Rvd25sb2FkLmNzZG4ubmV0L2RldGFpbC9raWtpdGFtb29uLzg2NzU1MzE=">我的资源<i class="fa fa-external-link-alt"></i></span>中。</p>
 <p><strong>1） 运行 putty.exe ,登陆linux服务器</strong>：</p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Putty.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Putty.png"></p>
 <p><strong>2） 输入用户名密码，登入服务器：</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Login.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Login.png"></p>
 <p><strong>3） 查询主机的 IP 地址：</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_IP.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_IP.png"></p>
 <p><strong>4） 查询 hostname：</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_hostname.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_hostname.png"></p>
 <p><strong>5） 编辑hosts文件，映射IP地址和主机名：</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Mapping.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Mapping.png"></p>
 <p><strong>6） 创建 ArcGIS Server 账户：</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_CreatAcount.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_CreatAcount.png"></p>
 <blockquote>
 <p>备注：<br>&#x2F;etc&#x2F;group 中存储了用户组信息，格式如下：<br>用户组名:组密码:GID:组内帐号（多个帐号用逗号分隔）<br>&#x2F;etc&#x2F;passwd 中存储了用户账户信息，格式如下：<br>用户名:密码:UID:GID:用户信息:HOME目录路径:用户shell<br>其中UID为0则是用户root，1～499为系统用户，500以上为普通用户</p>
 </blockquote>
 <p><strong>7） 为ArcGIS Server 账户设置密码：</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Password.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Password.png"></p>
 <p><strong>8）在home目录下创建ArcGISServer目录，授权 ArcGIS Server账户对文件夹的权限：</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_chmod.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_chmod.png"></p>
 <p><strong>9）文件句柄和进程的硬限制要求</strong></p>
 <p>要增加软限制和硬限制，需要使用超级用户访问权限编辑 &#x2F;etc&#x2F;security&#x2F;limits.conf 文件。例如，添加以下四行：</p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Limits.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_Limits.png"></p>
 <p><strong>10） 将安装程序上传到Linux主机</strong></p>
 <p>Linux主机是个网络虚拟机，也没有光驱，就用上传安装包（iso镜像）的方式安装了。一般在各种linux的发行版中，默认带有的ftp软件是vsftp。</p>
 <p>检查vsftpd软件是否安装， # <strong>rpm -qa|grep vsftp</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_vsftp.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_vsftp.png"></p>
 <p>启动 vsftp 服务，# <strong>service vsftpd start</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_ServiceStart.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_ServiceStart.png"></p>
 <p>其它命令：<br>      停止ftp：service vsftpd stop<br>      重启ftp：service vsftpd restart</p>
 <p>软后用ftp客户端连接服务器即可，这里我用了以前一直用的 FileZilla.</p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_FileZilla.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_FileZilla.png"></p>
 <p><strong>11） 挂载 ISO映像</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_mount.png"><br>PS：第一次mount没写完整的路径信息，文件没找到，请忽略，看最后一行。</p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_mount.png"><br>PS：第一次mount没写完整的路径信息，文件没找到，请忽略，看最后一行。</p>
 <p><strong>12）执行安装前的环境检测</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_check.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/LinuxArcGISServerDeployment_check.png"></p>
 <p>各项检测通过，可以安装 ArcGIS Server 了。</p>
 
     </div>
@@ -482,6 +483,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -490,6 +493,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

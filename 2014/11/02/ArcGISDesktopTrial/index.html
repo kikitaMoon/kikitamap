@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="此方法已失效，esri官网更新了呢，点 这里 查看更新后的方法吧。   在Esri的美国官网上，提供了当前最新版本 ArcGIS Desktop 的试用版，我们可以下载、安装、注册、试用，以及用于非商业目的学习和使用。 最近关心这个问题的朋友很多，为了使大家获得帮助，所以就插播了这篇。 Step 1打开官网试用地址：http:&#x2F;&#x2F;www.esri.com&#x2F;software&#x2F;arcgis&#x2F;arcgi">
 <meta property="og:type" content="article">
@@ -105,7 +106,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -316,36 +317,36 @@
 <li>（1）已经账号直接登录申请；</li>
 <li>（2）没有账号，先注册账号然后登录申请</li>
 </ul>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Login.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Login.png"></p>
 <h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>如果已经有账号登陆即可，跳过这一步。如果没有账号，填写下面的信息，邮箱地址一定要真实的，可以收到邮件的。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignUp.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignUp.png"></p>
 <p>创建新的账户之后，网站会向填写的邮箱发送一封邮件，去自己的邮箱中看看吧。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSent.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSent.png"></p>
 <p>邮件的主题为：<strong>Important information about activating your Esri Account</strong>。收到的邮件这个样子，点击最下面的激活按钮，跳转到 esri 网站。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSample.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSample.png"></p>
 <p>在网页中填写对应的信息即可，这就不啰嗦了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn.png"></p>
 <h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>无论是新创建的账号还是已有账号，登录账号。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn2.png"></p>
 <p>##Step 4</p>
 <p>登陆之后，就看到了ArcGIS Desktop 的试用页面。如果不确定自己的机器是否能安装 ArcGIS Desktop软件，可以点击页面上的 <strong>System Requirements（系统要求）</strong>，看看自己的机器的操作系统、硬件配置等是否满足要求。</p>
 <p>我们需要的是 ArcGIS for Desktop。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Download.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Download.png"></p>
 <h2 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h2><p>点击 ArcGIS for Desktop 后面的 Download 按钮，在弹出的小窗口中，有一个免费提供试用的许可号码，<strong>EVA123456789</strong>。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EVA.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EVA.jpg"></p>
 <p>如果这个窗口不小心被关闭了，也没有关系，这个号码也发送了邮箱中，还是可以找到它的……</p>
 <p>如果没有ArcGIS安装包，那就点 Continue to Download 下载；已经有安装包了，就不需要下载了，保存好许可号码即可。</p>
 <h2 id="Step-6"><a href="#Step-6" class="headerlink" title="Step 6"></a>Step 6</h2><p>安装 ArcGIS Desktop 软件，安装完成之后，在【开始】菜单 的ArcGIS 目录中启动程序 ArcGIS Administrator。按照如下顺序找到授权按钮：</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SingleUse.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SingleUse.png"></p>
 <p>在弹出的新窗口中选择：我已经安装了软件，现在要进行授权，下一步。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Authorize.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Authorize.png"></p>
 <p>如果安装 ArcGIS Desktop的机器是能够上网的，那就用最快捷的“通过Internet授权”，下一步。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Internet.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Internet.png"></p>
 <p>后面的两个页面是填写个人信息，工作行业与职业等信息，根据自己的实际情况填写即可，带星号的是必须填写的，然后下一步。</p>
 <p>将开始申请的许可号码填进去，下一步。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_FillEVA.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_FillEVA.png"></p>
 <p>然后，一路下一步，等到出现进度条开始联网授权，这时确保不要断网，耐心等待一两分钟。出现“Congratulations……”，授权就结束了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Congrs.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Congrs.png"></p>
 <p>好了，现在就可以开始使用 ArcGIS Desktop 软件了……</p>
 
     </div>
@@ -482,6 +483,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -490,6 +493,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

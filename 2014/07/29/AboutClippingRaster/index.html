@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="最近凑巧有几个比较多的栅格裁剪问题，整理如下： 我们只有由于栅格与矢量数据的存储模型不相同，这就导致栅格数据的像元无法与矢量数据的点等同，从而导致裁切后的对齐问题，放大数据我们就能发现，如下图可以说明：（其中黑白色为栅格数据，每个正方形代表一个像元，红色区域为矢量面数据。）  我们按照默认设置运行 Raster工具箱中的 Clip 工具，看看结果，蓝色的栅格部分：  发现，栅格数据裁剪完，并不是需">
 <meta property="og:type" content="article">
@@ -99,7 +100,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -300,9 +301,9 @@
     
     <div class="post-body" itemprop="articleBody"><p>最近凑巧有几个比较多的栅格裁剪问题，整理如下：</p>
 <p>我们只有由于栅格与矢量数据的存储模型不相同，这就导致栅格数据的像元无法与矢量数据的点等同，从而导致裁切后的对齐问题，放大数据我们就能发现，如下图可以说明：（其中黑白色为栅格数据，每个正方形代表一个像元，红色区域为矢量面数据。）</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_1.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_1.jpg"></p>
 <p>我们按照默认设置运行 Raster工具箱中的 Clip 工具，看看结果，蓝色的栅格部分：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_2.jpg"></p>
 <p>发现，栅格数据裁剪完，并不是需要的矢量数据范围，而是矢量数据压盖的最小栅格数据范围。</p>
 <p>如果我们需要得到的栅格，是矢量数据的范围，该如何做呢？</p>
 <p><strong>【旧版本】如果正在使用的是10.1以及更早期的版本：</strong></p>
@@ -310,20 +311,20 @@
 <li>首先将作为裁剪范围的矢量面（Feature）转为图形（Graphic），在ArcMap中，在面图层上右键，使用 Convert &nbsp;Features to Graphics… 菜单，如下图：</li>
 </ol>
 <p>（Graphic 被选中状态下，周围是有几个小方块的，与 Feature 被选中的亮蓝色不同哦…）</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Graphic.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Graphic.jpg"></p>
 <p>2.在 ArcMap 中，使用图层的右键菜单中的Export功能，导出选中Graphic 范围内的数据：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Selected.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Selected.jpg"></p>
 <p>看看结果，为了清楚，我将Graphic的填充色去掉，栅格数据左边与上边界是与矢量数据一致的，这样就尽最大范围保持了结果栅格与矢量数据范围的最大一致性：</p>
 <p><strong>PS：有人会问，为什么下边和右边边界没有完全贴合？ 需要知晓，栅格数据的行列数是矢量数据长度整除像元大小（导出的像元大小默认与源数据相同，也可以根据需要修改）得出的，而通常有余数的存在，因此没有那么严丝合缝，归根结底还是两种数据的存储模型不同导致的。</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Format.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Format.jpg"></p>
 <p><strong>【新版本】如果正在使用的是10.2以及更新期的版本：</strong></p>
 <p>新版本中 Clip 工具提供了额外的参数，可以简单的勾选就完成了上面的需求：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain.jpg"></p>
 <p><strong>PS：一定要注意右边的帮助哇，为了尽可能满足矢量数据边界范围，行列数是通过计算调整，也就是像元大小相比原始数据会变化，像元值会进行重采样获取。</strong></p>
 <p>看看结果吧，影线区域是矢量，玫红色区域是生成的栅格：</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_Maintain2.jpg"></p>
 <p>最后来张全家福，对比下，哪种结果是你想要的，决定对应的选择哪种方法 ，（左侧图层顺序，即为右侧图层显示顺序）。</p>
-<p><img src="http://kikitamap.com/images/blogImg/AboutClippingRaster_All.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/AboutClippingRaster_All.jpg"></p>
 
     </div>
 
@@ -458,6 +459,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -466,6 +469,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

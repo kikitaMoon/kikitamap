@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="这篇文章中使用的环境信息： Red Hat Enterprise Linux Server release 6.4Red Hat Enterprise Linux Server release 5.8ArcGIS License Manager 10.2.2Xmanager 5    **★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 这里**。   1. 准备安装文件我的Li">
 <meta property="og:type" content="article">
@@ -105,7 +106,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -316,20 +317,20 @@
 
 <h1 id="1-准备安装文件"><a href="#1-准备安装文件" class="headerlink" title="1. 准备安装文件"></a>1. 准备安装文件</h1><p>我的Linux服务器是虚拟机，没有光驱，选择ftp上传安装文件。一般在各种linux的发行版中，默认带有的ftp软件是vsftp。</p>
 <p>检查vsftpd软件是否安装， <strong># rpm -qa|grep vsftp</strong><br>启动 vsftp 服务，**# service vsftpd start**</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_vsftp.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_vsftp.png"></p>
 <p>使用ftp客户端上传 ArcGIS License Manager （LM）安装包。如果上传的 iso 镜像文件之后使用 mount 命令挂载，其实也可以仅将光盘中 LicenseManager 目录下的 linux 文件夹上传，此文件夹为 LM 的Linux安装包。</p>
 <p>包含如下几个文件（夹）：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
 <br>
 
 <br>
 
 
 <h1 id="2-创建账户"><a href="#2-创建账户" class="headerlink" title="2. 创建账户"></a>2. 创建账户</h1><p>ArcGIS License Manager 不允许 root 账户安装，因此要创建一个其它账户，例如：arcgis</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_CreateArcGIS.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_CreateArcGIS.png"></p>
 <blockquote>
 <p>PS : 如果使用 root 账户直接安装，则会遇到错误提示：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_RootError.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_RootError.png"></p>
 </blockquote>
 <br>
 
@@ -337,12 +338,12 @@
 
 <h1 id="3-创建-Trusted-Storage目录并赋权"><a href="#3-创建-Trusted-Storage目录并赋权" class="headerlink" title="3. 创建 Trusted Storage目录并赋权"></a>3. 创建 Trusted Storage目录并赋权</h1><p>在安装 ArcGIS License Manager 之前，需要手动创建用于存储许可 Trusted Storage File (TSF) 的目录，具体目录为：“&#x2F;usr&#x2F;local&#x2F;share&#x2F;macrovision&#x2F;storage” </p>
 <p>创建目录：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_mkdir.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_mkdir.png"></p>
 <p>为目录赋权：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_chmod.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_chmod.png"></p>
 <blockquote>
 <p>如果不创建这个目录而直接安装 LM 程序，就会遇到 Fatal Error 提示：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GrantError.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GrantError.png"></p>
 </blockquote>
 <br>
 
@@ -356,15 +357,15 @@
 <p>设置DISPLAY环境变量 :<br>例如： <strong>$ export DISPLAY&#x3D;<em>192.168.100.115</em>:0.0</strong></p>
 <p>运行 Setup 文件开始安装，建议使用精细模式（Verbose Mode），这样如果安装失败，我们可以通过运行过程中的消息判断问题的所在。例如，没有创建必要的目录，没有安装必要地包，没有足够的权限，等等问题。</p>
 <p><strong>$ .&#x2F;Setup -v</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
 <p>稍等片刻，即弹出界面：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GraphicWindows.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_GraphicWindows.png"></p>
 <p>后面按照向导，下一步即可，此处省略100字……</p>
 <br>
 
 <h2 id="Option-2-静默安装"><a href="#Option-2-静默安装" class="headerlink" title="Option 2 静默安装"></a><strong>Option 2 静默安装</strong></h2><p>如果选择静默安装也可以，例如：</p>
 <p><strong>$ .&#x2F;Setup -m silent -v -l Yes</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Silence.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Silence.png"></p>
 <blockquote>
 <p><strong>如果需要了解安装ArcGIS 许可管理器的选项：</strong></p>
 </blockquote>
@@ -381,9 +382,9 @@
 
 
 <p>仍然建议GUI mode 授权，运行LM安装目录中的 SoftwareAuthorizationLS 程序：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization.png"></p>
 <p>稍后弹出界面：</p>
-<p><img src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/DeployAGSLMonLinux_Authorization2.png"></p>
 <p>后面按照向导，下一步即可，可以参考windows的授权手册，此处省略100字……</p>
 <br>
 
@@ -534,6 +535,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -542,6 +545,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

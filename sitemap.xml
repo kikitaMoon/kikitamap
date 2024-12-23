@@ -1840,281 +1840,281 @@
 
   <url>
     <loc>https://kikitamap.com/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://kikitamap.com/tags/Geodata/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Mapping/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/CAD/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/ArcPad/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Performance/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/ArcPad/</loc>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Geodata/</loc>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/CAD/</loc>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Deployment/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Raster/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Geoprocessing/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Spatial-Analyst/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/3D/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/CityEngine/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Python/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/License/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Spatial-Statistics/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/ArcGIS-Pro/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Linux/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/ArcGIS-Enterprise/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Web/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Map-Story/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/CGA/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Visual-Studio/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Certification/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Webmaster/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Github/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Vector-Tiles/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Cloud-Storage/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HERE-Map/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HLS/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Javascript/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Routing/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Network/</loc>
-    <lastmod>2024-12-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Positioning/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Mobile-SDK/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Android/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Positioning/</loc>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Network/</loc>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HERE-Platform/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Visualization/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HERE-Data-Hub/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Data-Management/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -2123,21 +2123,21 @@
   
   <url>
     <loc>https://kikitamap.com/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/categories/%E7%9B%B8%E6%9C%BA%E9%87%8C/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2024-12-20</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

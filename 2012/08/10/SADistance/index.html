@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="继续总结下距离分析。如下是ArcGIS 10.x中，距离分析相关的工具：  ArcGIS中，主要可以通过如下的几种方式进行距离分析：  1） 欧氏距离分析 2） 成本加权距离分析 3） 用于垂直移动限制和水平移动限制的成本加权距离分析 4） 获取最短路径  使用ArcGIS空间分析扩展实现距离分析，最主要的是欧氏距离分析和成本加权距离分析两类工具。 一、欧氏距离工具欧氏距离工具测量每个像元距离最近">
 <meta property="og:type" content="article">
@@ -106,7 +107,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -307,7 +308,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>继续总结下距离分析。如下是ArcGIS 10.x中，距离分析相关的工具：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Toolset.png"></p>
 <p>ArcGIS中，主要可以通过如下的几种方式进行距离分析：</p>
 <ul>
 <li>1） 欧氏距离分析</li>
@@ -325,7 +326,7 @@
 <p>可以是感兴趣的地物的位置，数据方面，既可以是栅格数据，也可以是矢量数据。但注意：如果数据选用了栅格数据，数据中必须仅包含表示源的像元，其他像元需要是Nodata。如果选用矢量，在执行工具之时，内部会将其先转成栅格。</p>
 <p><strong>2.欧氏距离的算法</strong></p>
 <p>简单理解为：工具会求得每个像元至每个源的距离，然后取得每个像元至每个源的最短距离以输出。其中，欧氏距离是像元中心与源像元的中心的直线距离。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_Distance.gif"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Distance.gif"></p>
 <p>如果像元与两个或更多源之间的距离相等，则计算都基于像元扫描过程中遇到的第一个源。无法控制该扫描过程。</p>
 <p>帮助中有这样的描述：</p>
 <blockquote>
@@ -333,21 +334,21 @@
 </blockquote>
 <p><strong>3.欧氏距离输出栅格结果</strong></p>
 <p>投影平面上，像元与最近源之间的最短直线距离。如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_EucDistance.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_EucDistance.png"></p>
 <p><strong>4.欧氏方向输出栅格结果</strong></p>
 <p>像元与最近源之间的方位角方向（以度为单位）。使用 360 度圆，刻度 360 指北，90指东，从刻度 1 顺时针增加。值 0 供源像元使用。如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_EucDirection.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_EucDirection.png"></p>
 <p>5.欧氏分配输出栅格结果</p>
 <p>输出的每个像元都是距其最近源的值。如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_EucAllocation.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_EucAllocation.png"></p>
 <h1 id="二、成本加权距离工具"><a href="#二、成本加权距离工具" class="headerlink" title="二、成本加权距离工具"></a><strong>二、成本加权距离工具</strong></h1><p>成本加权距离工具可以看成是对欧氏直线距离的进一步修改，将经过某个像元的距离赋以成本因素。举个简单的例子，翻过一座山到达目的地是最短的直线距离，绕行这座山距离较长，但是更节省时间和体力，那就后者的成本加权距离最短了。</p>
 <p>1）<strong>成本距离（Cost Distance）</strong>：求得每个像元至最近源的成本距离。<br>2）<strong>成本回溯链接（Cost back link）</strong>：求的一个方向栅格，可以从任意像元沿最小成本路径返回最近源。<br>3）<strong>成本分配（Cost Allocation）</strong>：求得每个像元的最近的源。<br>4）<strong>成本路径（Cost Patch）</strong>：求的任意像元到最近源的最小成本路径。</p>
 <p><strong>TIPS：</strong></p>
 <ul>
 <li>成本栅格可以是整形或者浮点型，但是其值中不能含有负值或者0。成本栅格中的Nodata视为障碍。</li>
-<li>成本距离输出栅格数据<br>这里的简单示例中，下面一层黑白渲染的是成本栅格，颜色深的像元代表成本比较高，反之较低。结果如下：<br><img src="http://kikitamap.com/images/blogImg/SADistance_CostDistance.png"></li>
-<li>成本距离回溯链接<br>要注意的是，它并不会求的要返回哪一个源像元以及如何返回。而是记录从任意像元回溯到最近源的路径上，每个像元向下一个像元指向的方向，这个方向以0-8的代码形式记录。如下图：<br><img src="http://kikitamap.com/images/blogImg/SADistance_CostBacklink1.png"><br><img src="http://kikitamap.com/images/blogImg/SADistance_CostBacklink2.png"></li>
-<li>成本距离分配<br>这个类似于前面的欧氏距离分配，得到的是每个像元至最近源的成本距离。<br><img src="http://kikitamap.com/images/blogImg/SADistance_CostAllocation.png"></li>
+<li>成本距离输出栅格数据<br>这里的简单示例中，下面一层黑白渲染的是成本栅格，颜色深的像元代表成本比较高，反之较低。结果如下：<br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostDistance.png"></li>
+<li>成本距离回溯链接<br>要注意的是，它并不会求的要返回哪一个源像元以及如何返回。而是记录从任意像元回溯到最近源的路径上，每个像元向下一个像元指向的方向，这个方向以0-8的代码形式记录。如下图：<br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostBacklink1.png"><br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostBacklink2.png"></li>
+<li>成本距离分配<br>这个类似于前面的欧氏距离分配，得到的是每个像元至最近源的成本距离。<br><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostAllocation.png"></li>
 </ul>
 <h1 id="三、路径距离工具"><a href="#三、路径距离工具" class="headerlink" title="三、路径距离工具"></a><strong>三、路径距离工具</strong></h1><p>路径距离工具与成本距离相似，也可以确定从某个源到栅格上各像元位置的最小累积行程成本。但是，路径距离不仅可计算成本表面的累积成本，而且会考虑到行驶的实际曲面距离，和影响到移动总成本的水平和垂直因子。主要包含这几个工具</p>
 <p>1）<strong>路径距离（Path Distance）</strong><br>2）<strong>路径回溯链接（Path back link）</strong><br>3）<strong>路径分配（Path Allocation）</strong></p>
@@ -356,20 +357,20 @@
 <p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvbWFpbi8xMC4xLyMvSG93X3RoZV9ob3Jpem9udGFsX2FuZF92ZXJ0aWNhbF9mYWN0b3JzX2FmZmVjdF9wYXRoX2Rpc3RhbmNlLzAwOXowMDAwMDB6OTAwMDAwMC8=">http://resources.arcgis.com/en/help/main/10.1/#/How_the_horizontal_and_vertical_factors_affect_path_distance&#x2F;009z000000z9000000&#x2F;<i class="fa fa-external-link-alt"></i></span></p>
 <h1 id="四、-获得最短路径"><a href="#四、-获得最短路径" class="headerlink" title="四、 获得最短路径"></a><strong>四、 获得最短路径</strong></h1><p>1.成本距离路径</p>
 <p>任意像元到最近源的最小成本路径，需要引用到上面工具中生成的成本距离和成本回溯链接栅格数据。如下图：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_ShortestPath.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_ShortestPath.png"></p>
 <p>2.廊道</p>
 <p>另外要说的是廊道分析工具（Corridor）。此工具用于计算两个成本栅格的累积成本栅格结果，为了求得从一个源到另一个源且经过该像元位置的最小成本路径。</p>
 <p>输出栅格不是单个最小成本路径，但会得到源之间累积成本的范围。</p>
 <p>最后我们可以配合其他工具将小于某一阈值的结果提取出来，例如工具Extract by Attribute提取，或者通过Con进行条件赋值等等方法，获取结果。</p>
 <p>如下如所示：</p>
 <p>学校A、B成本距离分析结果：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_CostAB.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostAB.png"></p>
 <p>学校C、D、E的成本距离分析结果：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_CostCDE.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_CostCDE.png"></p>
 <p>有此两个距离成本结果，来分析得到A、B到C、D、E之间的廊道，也就是两组源之间的最小累积成本距离。</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_Corridor.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Corridor.png"></p>
 <p>然后结果中我们可以按照一定的阈值来提取结果。例如累积成本在75以下的我才能接受：</p>
-<p><img src="http://kikitamap.com/images/blogImg/SADistance_Corridor2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/SADistance_Corridor2.png"></p>
 <p>至此，空间分析中的距离分析工具总结结束。</p>
 
     </div>
@@ -506,6 +507,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -514,6 +517,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

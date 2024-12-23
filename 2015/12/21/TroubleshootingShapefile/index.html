@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="Shapefile是上个世纪90年代的数据格式，但是由于它开放易用至今仍然倍受欢迎，最近与shapefile编码相关的问题此起彼伏连绵不绝，整理下几个高频问题共享之。   为什么我的shapefile在ArcGIS 10.3中打开乱码？  原因这个问题的根本原因就是读取文件使用的编码类型和文件实际存储的编码类型不一致。 Shapefile文件的头文件（dBase Header）中，一般会包含sha">
 <meta property="og:type" content="article">
@@ -98,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -310,10 +311,10 @@
 <br>
 
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a><em>解决方法</em></h3><p>在shapefile子文件旁边创建个记事本，修改为同名的CPG文件，文本内容<strong>oem</strong>或者<strong>936</strong>。</p>
-<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgfile.png"></p>
-<p> <img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgContent.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgfile.png"></p>
+<p> <img data-src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_cpgContent.png"></p>
 <p>这样 ArcGIS 10.2.1 、10.2.10.3.x 在读取的时候，就知道你的数据是这种编码类型存储的，从而按照正确的方式读取。</p>
-<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Demo.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Demo.png"></p>
 <br>
 
 <br>
@@ -326,9 +327,9 @@
 <p><strong>ArcGIS 10.2 以及更早的版本</strong>，ArcGIS写shapefile的时候，遇到中文<strong>默认</strong>使用Windows当前语言 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><strong>字符集编码</strong></a>（也称 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%A0%81%E9%A1%B5"><strong>代码页&#x2F;CodePage&#x2F;OEM CodePage</strong></a>），例如中文一般使用的是 **<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU0JUJCJUEzJUU3JUEyJUJDJUU5JUEwJTgxOTM2">CodePage 936（GBK）<i class="fa fa-external-link-alt"></i></span>**。</p>
 <p><strong>ArcGIS 10.2.1 以及之后的版本</strong>，ArcGIS写shapefile的时候，<strong>默认</strong>使用的是 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/UTF-8"><strong>UTF-8</strong></a> 编码类型。</p>
 <p>这两种编码类型存储汉字所使用的字节数是不相同的，上面的关键字中我也给出了 wiki 的链接，有兴趣点进去看看详情。简言之，shapefile自身的限制是字段为9个字节，CP936编码下汉字通常为双字节存储，因此可以存储 9&#x2F;2&#x3D;4 个汉字；UTF-8 编码下汉字至少需要3个字节存储，因此最多只能存储 9&#x2F;3&#x3D;3 个汉字了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChineseCharlen.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChineseCharlen.png"></p>
 <p>举个例子，在Python命令行中，我们求一下 Unicode字符串的长度就可以真相大白。</p>
-<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChinesePython.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_ChinesePython.png"></p>
 <br>
 
 <h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a><em>解决方法</em></h3><h4 id="Perfect-Solution"><a href="#Perfect-Solution" class="headerlink" title="Perfect Solution"></a><em>Perfect Solution</em></h4><p>使用地理数据库，放弃shapefile，避免各种截断问题，这也是存储地理数据的康庄大道。</p>
@@ -340,7 +341,7 @@
 <li>打开注册表，定位到 ‘<strong>My Computer\HKEY_CURRENT_USER\Software\ESRI\Desktop 10.x</strong>‘ </li>
 <li>创建项 ‘<strong>Common</strong>‘， 接着在其下创建  ‘<strong>CodePage</strong>‘ 项， 添加 ‘<strong>字符串</strong>’，名称： <strong>dbfDefault</strong>，健值：<strong>oem（或者 936）</strong>。</li>
 </ol>
-<p> <img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Regedit.png"></p>
+<p> <img data-src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_Regedit.png"></p>
 <p>这样ArcGIS Desktop <strong>读、写</strong> shapefile的默认方式就将是Windows当前语言 <strong>OEM CodePage 936</strong>。</p>
 <br>
 
@@ -359,7 +360,7 @@
 
 
 <p>例如，得到这样的打印结果：   <strong><code>(77, &#39;0x4d&#39;)</code></strong>  通过这样的 ID 到 <span class="exturl" data-url="aHR0cDovL3NoYXBlbGliLm1hcHRvb2xzLm9yZy9jb2RlcGFnZS5odG1s">编码表<i class="fa fa-external-link-alt"></i></span> 中查到就是 CodelPage 936。</p>
-<p><img src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_codetable.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/TroubleshootingShapefile_codetable.png"></p>
 <p>当然如果有你更好的方法，博主求分享，可以直接在评论区里贴出来，共同讨论。</p>
 <br>
 
@@ -500,6 +501,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -508,6 +511,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

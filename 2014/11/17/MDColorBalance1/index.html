@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="镶嵌数据集的色彩平衡与接缝线  Ⅰ    色彩平衡 镶嵌数据集一般由多张影像组成的，各幅影像可能由于各种原因存在色彩差异，例如航摄时的天气、光线等原因。为了让整个镶嵌数据集看起来是无缝的一整张，而不是一片一片的，我们需要做的就是色彩校正，或者叫做色彩平衡（均衡）。也就是实现下面的效果：   做色彩校正之前，需要检查原始数据的所有波段是不是满足下面几个条件：  所有波段已经创建统计值（包括直方图）；">
 <meta property="og:type" content="article">
@@ -98,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -299,12 +300,12 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>镶嵌数据集的色彩平衡与接缝线  Ⅰ</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png"></p>
 <br>
 
 <p><strong>色彩平衡</strong></p>
 <p>镶嵌数据集一般由多张影像组成的，各幅影像可能由于各种原因存在色彩差异，例如航摄时的天气、光线等原因。为了让整个镶嵌数据集看起来是无缝的一整张，而不是一片一片的，我们需要做的就是色彩校正，或者叫做色彩平衡（均衡）。也就是实现下面的效果：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png"></p>
 <blockquote>
 <p>做色彩校正之前，需要检查原始数据的所有波段是不是满足下面几个条件：</p>
 <ul>
@@ -354,14 +355,14 @@
 
 
 <p><strong>预处理选项</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
 <p>在执行栅格数据集色彩平衡之前，工具会先执行预处理选项。</p>
 <h1 id="Exclude-Area-Raster"><a href="#Exclude-Area-Raster" class="headerlink" title="**Exclude Area Raster **"></a>**Exclude Area Raster **</h1><p>用于排除不能或者难于进行色彩校正的区域，例如：水、云和异常区域等。本质上就是创建一个掩膜，从而从镶嵌数据集色彩校正算法中排除一些像素。</p>
 <p>PS： 对镶嵌数据集进行色彩校正时，排除区域并不会经常用到。只有当存在较难校正的区域，且不希望因为这些问题区域产生偏差时，可创建排除区域。另外，像素分布中的极值（极低像素值和极高像素值）区域也可能成为色彩校正的问题区域。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png"></p>
 <p>那如何生成这个排除区域栅格呢？</p>
 <p>工具箱中提供 <strong>Generate Exclude Area</strong> 工具，下面就来看看这个工具。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
 <p>通过输入数据选择 <strong>位深</strong> 和 <strong>生成</strong> 方法：</p>
 <p><strong>Pixel type：</strong></p>
 <p>此参数用于选择输入栅格数据集的像素深度。像素深度非常重要，因为需要对所有 8 位以上的像素深度调整色彩掩膜和直方图值。</p>
@@ -388,7 +389,7 @@
 <p><strong>Gamma</strong></p>
 <p>当选择了标准差拉伸或最小值-最大值拉伸时，可以额外的设置Gamma值。可通过应用 Gamma 拉伸来控制图像的整体亮度。<br>如果 Gamma 系数设置得太低，中间色调将太暗；而如果 Gamma 系数设置得太高，中间色调又会太亮。Gamma 系数不仅会改变图像的亮度，还会改变红绿蓝之间的比率。</p>
 <p>如果对色彩校正的不满意，我们也可以移除效果，镶嵌数据集的右键菜单中，Remove – Color Balancing。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png"></p>
 
     </div>
 
@@ -524,6 +525,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -532,6 +535,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 

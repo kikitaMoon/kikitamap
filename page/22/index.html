@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
 <meta property="og:type" content="website">
@@ -88,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -287,7 +288,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="镶嵌数据集的色彩平衡"><a href="#镶嵌数据集的色彩平衡" class="headerlink" title="镶嵌数据集的色彩平衡"></a>镶嵌数据集的色彩平衡</h1><p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Toolset.png"></p>
+          <h1 id="镶嵌数据集的色彩平衡"><a href="#镶嵌数据集的色彩平衡" class="headerlink" title="镶嵌数据集的色彩平衡"></a>镶嵌数据集的色彩平衡</h1><p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Toolset.png"></p>
 <h2 id="创建接缝线"><a href="#创建接缝线" class="headerlink" title="创建接缝线"></a>创建接缝线</h2><p>在对镶嵌数据集进行镶嵌的时候，有时还会用到接缝线（Seamline）。在前面总结过镶嵌数据集的镶嵌方法，其中最后一种是 Seamline 镶嵌方法。<strong>在创建接缝线之前，建议先进行色彩平衡</strong>，因此就拿到这里一起说。</p>
 <p>当我们把镶嵌方法选为了 Seamline 镶嵌方法时，Seamline 就会替代 Footprint 来作为每幅栅格数据的边线。这样会让接缝更自然，镶嵌数据集看起来会更像是无缝的一整张栅格数据。如果为镶嵌数据集创建了接缝线，还有个好处就是，我们可以根据需要去编辑接缝线，例如有的接缝线刚好穿过一个建筑物，我们就可以尽可能让边线绕过建筑物，让影像看起来拼接的自然美观一些。</p>
 <p>工具<strong>Build Seamlines</strong>用来为镶嵌数据集创建接缝线的。Seamline 与 Footprints 类似：每个面表示一个图像。面的形状表示查看镶嵌数据集时将用于生成镶嵌图像的那部分图像。构建了 Seamline 之后，ArcMap 中显示镶嵌数据集时，会又多了一个图层 Seamline。根据镶嵌方法，等级值将存储在属性表的 SOrder 字段中。</p>
@@ -296,21 +297,21 @@
 <p>构建接缝线，有五种计算方法可选：**GEOMETRY ,&nbsp;RADIOMETRY , COPY_FOOTPRINT ,&nbsp;COPY_TO_SIBLING ,&nbsp;EDGE_DETECTION&nbsp;**。</p>
 <p>为了更直观的认识上面构建接缝线的方法，我还是用个简单的数据来说明问题：</p>
 <p>数据是按照北西方法镶嵌，加上Footprint是这样的：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Default.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Default.png"></p>
 <p><strong>Geometry &#x2F; 几何</strong>—— 根据当前的排序方法和Footprint来生成接缝线。通过这种方法生成的接缝线一眼就知道了栅格数据之间的压盖关系，并且接缝线（面）之间没有要素压盖。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry.png"><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry.png"><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Geometry2.png"></p>
 <p><strong>Radiometry&#x2F; 辐射度</strong>—— 通过检查相交区域的值和样式来构建接缝线，接缝线是Footprint交点之间的折线。这种方法拼接的影像看起来更自然一些。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry.jpg"><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry2.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry.jpg"><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Radiometry2.jpg"></p>
 <p><strong>Copy_footprint&#x2F;复制轮廓</strong>—— 这种方法的接缝线只是相应轮廓线的副本。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_CopyFootprint.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_CopyFootprint.png"></p>
 <p><strong>Copy_to_sibling&#x2F;复制到同类</strong>—— 此方法将已有的接缝线复制到与其组名相同的同类要素中。这种方法常常用于全色波段与多光谱波段范围不同的卫星影像，从而确保它们共享相同的接缝线。&nbsp;这里没有合适的数据，不放图了。</p>
 <p><strong>Edge_detection&#x2F;边缘检测</strong>—— 对相交区域应用边缘检测过滤器，以确定该区域中要素的边。然后，沿检测到的边创建接缝线。这种方法创建的接缝线也很漂亮和自然。</p>
 <p>举个例子，看下面的影像边界是不是扎眼？</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeDetection.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeDetection.jpg"></p>
 <p>使用边界探测方法创建接缝线后，一条沿着马路的折线（面的边界）产生了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeCreation.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_EdgeCreation.jpg"></p>
 <p>使用 接缝线方法拼接后就更加自然了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance2_Done.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance2_Done.png"></p>
 <p><strong>Sort Method</strong></p>
 <p>默认情况下，Seamline 排序是使用 “North-West” 镶嵌方法生成的。还可以选择使用 “CLOSEST_TO_VIEWPOINT&nbsp;” 或 “BY_ATTRIBUTE&nbsp;” 镶嵌方法来创建接缝线。这与前面说的镶嵌方法的理念是一样的，不再啰嗦了。</p>
 <p><strong>Cell Size</strong></p>
@@ -437,12 +438,12 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>镶嵌数据集的色彩平衡与接缝线  Ⅰ</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Toolset.png"></p>
 <br>
 
 <p><strong>色彩平衡</strong></p>
 <p>镶嵌数据集一般由多张影像组成的，各幅影像可能由于各种原因存在色彩差异，例如航摄时的天气、光线等原因。为了让整个镶嵌数据集看起来是无缝的一整张，而不是一片一片的，我们需要做的就是色彩校正，或者叫做色彩平衡（均衡）。也就是实现下面的效果：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Demo.png"></p>
 <blockquote>
 <p>做色彩校正之前，需要检查原始数据的所有波段是不是满足下面几个条件：</p>
 <ul>
@@ -492,14 +493,14 @@
 
 
 <p><strong>预处理选项</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
 <p>在执行栅格数据集色彩平衡之前，工具会先执行预处理选项。</p>
 <h1 id="Exclude-Area-Raster"><a href="#Exclude-Area-Raster" class="headerlink" title="**Exclude Area Raster **"></a>**Exclude Area Raster **</h1><p>用于排除不能或者难于进行色彩校正的区域，例如：水、云和异常区域等。本质上就是创建一个掩膜，从而从镶嵌数据集色彩校正算法中排除一些像素。</p>
 <p>PS： 对镶嵌数据集进行色彩校正时，排除区域并不会经常用到。只有当存在较难校正的区域，且不希望因为这些问题区域产生偏差时，可创建排除区域。另外，像素分布中的极值（极低像素值和极高像素值）区域也可能成为色彩校正的问题区域。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Exclude.png"></p>
 <p>那如何生成这个排除区域栅格呢？</p>
 <p>工具箱中提供 <strong>Generate Exclude Area</strong> 工具，下面就来看看这个工具。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
 <p>通过输入数据选择 <strong>位深</strong> 和 <strong>生成</strong> 方法：</p>
 <p><strong>Pixel type：</strong></p>
 <p>此参数用于选择输入栅格数据集的像素深度。像素深度非常重要，因为需要对所有 8 位以上的像素深度调整色彩掩膜和直方图值。</p>
@@ -526,7 +527,7 @@
 <p><strong>Gamma</strong></p>
 <p>当选择了标准差拉伸或最小值-最大值拉伸时，可以额外的设置Gamma值。可通过应用 Gamma 拉伸来控制图像的整体亮度。<br>如果 Gamma 系数设置得太低，中间色调将太暗；而如果 Gamma 系数设置得太高，中间色调又会太亮。Gamma 系数不仅会改变图像的亮度，还会改变红绿蓝之间的比率。</p>
 <p>如果对色彩校正的不满意，我们也可以移除效果，镶嵌数据集的右键菜单中，Remove – Color Balancing。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDColorBalance1_Remove.png"></p>
 
       
     </div>
@@ -634,9 +635,9 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><strong>设置镶嵌数据集属性工具 Ⅲ</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties3_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_Toolset.png"></p>
 <p>这一篇接着，再接着，说这个参数无比巨多的工具 Set Mosaic Dataset Properties， 看看其中的 Catalog Item Properties 对应的各个参数的作用 。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties3_Catalog.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_Catalog.png"></p>
 <br>
 
 <p><strong>元数据级别</strong></p>
@@ -651,7 +652,7 @@
 <p>Allowed Transmission Field 参数列表，定义将镶嵌数据集作为服务提供时属性表中对客户端可见的字段。</p>
 <p>默认情况下，此列表包括字段：Name, MinPS, MaxPS, LowPS, HighPS, Tag, GroupName, ProductName, CenterX, CenterY, ZOrder, Shape_Length, Shape_Area。如果镶嵌数据集中包含自定义字段，这个列表中除了上面的字段，还会出现自定字段。</p>
 <p><strong>许是否启用时间</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties3_Time.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_Time.png"></p>
 <p>如果镶嵌数据集包含定义时间的属性字段，可创建自动具有时间感知性的镶嵌数据集。</p>
 <p>如果激活了时间，则需要指定与时间有关的其他参数——起始和结束字段，以及时间格式。建议将时间值存储在日期字段中，但也支持字符串和数值字段。</p>
 <p><strong>地理变换方法</strong></p>
@@ -666,7 +667,7 @@
 <p>我们可以设置合理的值，这样镶嵌数据集会跳过所有像素量不够大的栅格项目。跳过这些镶嵌数据集项目将有助于提高镶嵌数据集的计算或显示性能。这在大量叠置栅格只具有少量像素时尤其有用。</p>
 <p>但是，同时需要知道，较大的值可能减少重叠项目成为感兴趣区组成部分的可能性；这会导致您的镶嵌数据集的某些区域空白。</p>
 <p>特别需要注意的是，镶嵌数据集的属性中有其他两项属性与这个选项可能存在矛盾关系，因此，此属性仅在 <strong><em>始终将栅格裁剪至其轮廓</em></strong> 设置为“<strong>是</strong>”，并且 <strong><em>轮廓线可能含有 NoData</em></strong> 设置为 <strong>否</strong> 时有效。否则可能会无视这个选项。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties3_MinPixel.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties3_MinPixel.png"></p>
 
       
     </div>
@@ -774,14 +775,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><strong>设置镶嵌数据集属性工具 Ⅱ</strong></p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Toolset.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Toolset.png"></p>
 <p>这一篇接着说这个参数无比巨多的工具 Set Mosaic Dataset Properties ，镶嵌属性这一组参数会控制多幅影像的拼接方式和顺序等。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_MDProperties.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_MDProperties.png"></p>
 <p>如果我们的多幅影像的数据源之间没有重叠，那么拼接顺序就没有什么值得设置的。但是我们一般拿到的航片、卫片等都是有重叠的，不同的镶嵌规则会让数据在拼接出现差异，我们设置这一组参数来控制影像的拼接方式和顺序等。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Overlap.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Overlap.png"></p>
 <br>
 
-<h1 id="Mosaic-Methods（镶嵌方法）"><a href="#Mosaic-Methods（镶嵌方法）" class="headerlink" title="Mosaic Methods（镶嵌方法）"></a><strong>Mosaic Methods（镶嵌方法）</strong></h1><p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Method.png"></p>
+<h1 id="Mosaic-Methods（镶嵌方法）"><a href="#Mosaic-Methods（镶嵌方法）" class="headerlink" title="Mosaic Methods（镶嵌方法）"></a><strong>Mosaic Methods（镶嵌方法）</strong></h1><p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Method.png"></p>
 <p>在“允许的镶嵌方法”中我们可以选择影像的镶嵌方法，从而控制用户访问镶嵌数据集时可以使用哪些方法。同时，可以设置一种方法作为默认方法。</p>
 <ul>
 <li>None 根据镶嵌数据集属性表中的顺序 (ObjectID) 对栅格进行排序。</li>
@@ -795,38 +796,38 @@
 </ul>
 <p>假设我现在有这样9幅影像数据源的镶嵌数据集，可以把他们理解成9张卡片。看图比看例子更容易理解，下面通过一个例子来了解各种镶嵌方法，前提是我们都是用升序排序和使用默认的 First 镶嵌运算符。</p>
 <p>★ 选在<strong>None</strong>方法，默认使用了数据的存储顺序作为镶嵌顺序，也就是 ObjectID 的顺序。图中的数字即使各幅影像的 ObjectID，数字越靠前，镶嵌的也就越靠前。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_None.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_None.png"></p>
 <p>★ 选择 <strong>Center</strong> 方法，中心的影像最优先：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Center.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Center.png"></p>
 <p>★ 选择 <strong>NorthWest</strong> 方法，我们看到位于西北角的 7 获得了最优先的镶嵌顺序，反之，东南角的9排在最后：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_NorthWest.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_NorthWest.png"></p>
 <p>★ 选择 **Lock Raster **方法，允许客户端可以指定某些栅格数据，这样仅对被锁定的栅格进行显示：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_LockRaster.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_LockRaster2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_LockRaster.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_LockRaster2.png"></p>
 <p>★ 选择 <strong>ByAttribute</strong> 方法，需要指定 <strong><em>Order Field</em></strong> ，例如按照自定义字段 MyOrder 排序：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr.png"></p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr2.png"></p>
 <p>如果您的字段是数值或日期字段，则可以设置排序基础参数（**<em>Order_Base</em>**）。可以根据此值与 Order_Field 中的其他值之间的差异对影像进行排序。</p>
 <p>还可以指定排序是升序还是降序。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr3.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ByAttr3.png"></p>
 <p>★ 选择 <strong>Nadir</strong> 方法，类似于 Center 方法，只是像底点距离整个视图中心的距离成为镶嵌的标准：</p>
 <p>如下图，点A即为像底点（nadir），在垂直摄影测量中，影像中心点和像底点可能是重合的：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Nadir.pngr"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Nadir.pngr"></p>
 <p>此方法与“Center”方法类似，但使用的是栅格的像底点，像底点可以不是中心点，尤其是在倾斜的影像中。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Nidir2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Nidir2.png"></p>
 <p>★ 选择 **Viewport **方法，可以使用“ViewPoint”工具根据自定义的位置与栅格的像底点位置对栅格进行排序。</p>
 <p>ViewPoint 是个隐藏工具，我们可以在自定义菜单中找到并添加出来：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Viewport.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Viewport.png"></p>
 <p>打开 Viewpoint 窗口之后，我们就可以自定义视点，视点的位置将会影响栅格数据的镶嵌顺序，如下图。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_ViewPort2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_ViewPort2.png"></p>
 <p>在设置镶嵌数据集属性的时候，参数 View Point Spacing X 与 View Point Spacing Y 会影响 ViewPoint 对话框中的箭头按钮的偏移量，偏移量的长度单位是当前空间参考决定的。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Viewport3.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Viewport3.png"></p>
 <p>★ 选择 <strong>Seamline</strong> 方法，使用预定义的接缝线形状分割栅格，并且可以选择是否沿接边使用羽化功能。在生成接缝线的过程中对排序进行预定义。使用此镶嵌方法时，镶嵌运算符 LAST 无效。</p>
 <p>镶嵌数据集的接缝线可以通过 <strong>Build Seamlines</strong> 工具来创建，这个工具后面会单独的总结一下。这里就不罗嗦了。</p>
 <br>
 
 <h1 id="Mosaic-Operator（镶嵌运算符）"><a href="#Mosaic-Operator（镶嵌运算符）" class="headerlink" title="Mosaic Operator（镶嵌运算符）"></a><strong>Mosaic Operator（镶嵌运算符）</strong></h1><p>镶嵌运算符用于确定如何解析重叠像元。</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_Operator.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_Operator.jpg"></p>
 <ul>
 <li>First 重叠区域中所列出的第一个栅格数据集中的像元。</li>
 <li>Last 重叠区域中所列出的最后一个栅格数据集中的像元。</li>
@@ -841,7 +842,7 @@
 <p>跨越边界时此值将分成两半；因此，如果该值为 40，则将在轮廓线内部混合 20 像素，在轮廓线外部混合 20 像素。</p>
 <p>如果存在接缝线，可以在接缝线表中定义每个接缝线的混合宽度和类型，从而覆盖此值。</p>
 <p>除了镶嵌方法以及有关的这些参数，镶嵌属性的设置参数中还包含了其他一些与镶嵌有关的参数，放在下面以便参考：</p>
-<p><img src="http://kikitamap.com/images/blogImg/MDProperties2_MosaicPara.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/MDProperties2_MosaicPara.png"></p>
 <p><strong>Max Number Per Mosaic（每个镶嵌图的最大栅格数）</strong></p>
 <p>这个参数是为了镶嵌数据集镶嵌过多栅格数据，默认值为 20。</p>
 <p>例如，在没有创建概视图时，不希望让机器耗费资源过多的去镶嵌栅格数据。但是这种情况下，很可能20幅图像不足够观看，如果你的机器硬件过硬，这个数字也可以适量调大。这个参数相当于性能与体验的博弈，在没有概视图的时候可以自己尝试设置。</p>
@@ -967,36 +968,36 @@
 <li>（1）已经账号直接登录申请；</li>
 <li>（2）没有账号，先注册账号然后登录申请</li>
 </ul>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Login.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Login.png"></p>
 <h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>如果已经有账号登陆即可，跳过这一步。如果没有账号，填写下面的信息，邮箱地址一定要真实的，可以收到邮件的。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignUp.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignUp.png"></p>
 <p>创建新的账户之后，网站会向填写的邮箱发送一封邮件，去自己的邮箱中看看吧。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSent.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSent.png"></p>
 <p>邮件的主题为：<strong>Important information about activating your Esri Account</strong>。收到的邮件这个样子，点击最下面的激活按钮，跳转到 esri 网站。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSample.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EmailSample.png"></p>
 <p>在网页中填写对应的信息即可，这就不啰嗦了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn.png"></p>
 <h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>无论是新创建的账号还是已有账号，登录账号。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn2.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SignIn2.png"></p>
 <p>##Step 4</p>
 <p>登陆之后，就看到了ArcGIS Desktop 的试用页面。如果不确定自己的机器是否能安装 ArcGIS Desktop软件，可以点击页面上的 <strong>System Requirements（系统要求）</strong>，看看自己的机器的操作系统、硬件配置等是否满足要求。</p>
 <p>我们需要的是 ArcGIS for Desktop。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Download.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Download.png"></p>
 <h2 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h2><p>点击 ArcGIS for Desktop 后面的 Download 按钮，在弹出的小窗口中，有一个免费提供试用的许可号码，<strong>EVA123456789</strong>。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EVA.jpg"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_EVA.jpg"></p>
 <p>如果这个窗口不小心被关闭了，也没有关系，这个号码也发送了邮箱中，还是可以找到它的……</p>
 <p>如果没有ArcGIS安装包，那就点 Continue to Download 下载；已经有安装包了，就不需要下载了，保存好许可号码即可。</p>
 <h2 id="Step-6"><a href="#Step-6" class="headerlink" title="Step 6"></a>Step 6</h2><p>安装 ArcGIS Desktop 软件，安装完成之后，在【开始】菜单 的ArcGIS 目录中启动程序 ArcGIS Administrator。按照如下顺序找到授权按钮：</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SingleUse.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_SingleUse.png"></p>
 <p>在弹出的新窗口中选择：我已经安装了软件，现在要进行授权，下一步。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Authorize.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Authorize.png"></p>
 <p>如果安装 ArcGIS Desktop的机器是能够上网的，那就用最快捷的“通过Internet授权”，下一步。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Internet.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Internet.png"></p>
 <p>后面的两个页面是填写个人信息，工作行业与职业等信息，根据自己的实际情况填写即可，带星号的是必须填写的，然后下一步。</p>
 <p>将开始申请的许可号码填进去，下一步。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_FillEVA.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_FillEVA.png"></p>
 <p>然后，一路下一步，等到出现进度条开始联网授权，这时确保不要断网，耐心等待一两分钟。出现“Congratulations……”，授权就结束了。</p>
-<p><img src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Congrs.png"></p>
+<p><img data-src="http://kikitamap.com/images/blogImg/ArcMap60DayFreetrial_Congrs.png"></p>
 <p>好了，现在就可以开始使用 ArcGIS Desktop 软件了……</p>
 
       
@@ -1075,6 +1076,8 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
@@ -1083,6 +1086,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
 
