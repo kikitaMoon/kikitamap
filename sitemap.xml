@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2019/06/27/wlanNetworks/</loc>
+    <loc>https://kikitamap.com/2020/03/05/theShade/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2020/03/05/theShade/</loc>
+    <loc>https://kikitamap.com/2019/06/27/wlanNetworks/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -443,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2017/01/13/Painting/</loc>
+    <loc>https://kikitamap.com/2017/01/13/Childlike/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2017/01/13/Childlike/</loc>
+    <loc>https://kikitamap.com/2017/01/13/Painting/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -542,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
+    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -551,7 +551,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
+    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1217,7 +1217,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/01/23/DEMRendering/</loc>
+    <loc>https://kikitamap.com/2014/01/19/GeographicTransformation2/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1226,7 +1226,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/01/19/GeographicTransformation2/</loc>
+    <loc>https://kikitamap.com/2014/01/23/DEMRendering/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1316,7 +1316,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/06/26/ArcGISDataDrivenPage/</loc>
+    <loc>https://kikitamap.com/2013/07/02/ImportArcpy/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1325,7 +1325,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/07/02/ImportArcpy/</loc>
+    <loc>https://kikitamap.com/2013/06/26/ArcGISDataDrivenPage/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1863,7 +1863,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
+    <loc>https://kikitamap.com/tags/CAD/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1877,7 +1877,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/CAD/</loc>
+    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1898,13 +1898,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Deployment/</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Raster/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -1913,6 +1906,13 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Geoprocessing/</loc>
+    <lastmod>2024-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Deployment/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2024,14 +2024,14 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Vector-Tiles/</loc>
+    <loc>https://kikitamap.com/tags/Github/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Github/</loc>
+    <loc>https://kikitamap.com/tags/Vector-Tiles/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2073,20 +2073,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Network/</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Positioning/</loc>
-    <lastmod>2024-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Mobile-SDK/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -2095,6 +2081,20 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Android/</loc>
+    <lastmod>2024-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Network/</loc>
+    <lastmod>2024-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Positioning/</loc>
     <lastmod>2024-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
