@@ -1,6 +1,17 @@
+# Automatically normalize text files to LF line endings
 * text=auto
 *.html text eol=lf
 *.md text eol=lf
 *.yml text eol=lf
 *.css text eol=lf
 *.js text eol=lf
+*.xml text eol=lf
+*.txt text eol=lf
+
+# Treat binary files (images, icons, etc.) as binary to prevent line-ending conversions
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
