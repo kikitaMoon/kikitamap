@@ -209,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/27/SAInterpolation/">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/27/SAMultiDimensions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -227,7 +227,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/08/27/SAInterpolation/" class="post-title-link" itemprop="url">空间分析之插值分析</a>
+          <a href="/2012/08/27/SAMultiDimensions/" class="post-title-link" itemprop="url">空间分析之多元分析</a>
         </h2>
 
         <div class="post-meta-container">
@@ -246,7 +246,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
         </span>
     </span>
 
@@ -259,8 +259,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2012/08/27/SAInterpolation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/27/SAInterpolation/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2012/08/27/SAMultiDimensions/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/27/SAMultiDimensions/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -271,14 +271,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -289,30 +289,59 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>在实际工作中，由于成本的限制、测量工作实施困难大等因素，我们不能对研究区域的每一位置都进行测量（如高程、降雨、化学物质浓度和噪声等级）。这时，我们可以考虑合理选取采样点，然后通过采样点的测量值，使用适当的数学模型，对区域所有位置进行预测，形成测量值表面。插值之所以可称为一种可行的方案，是因为我们假设，空间分布对象都是空间相关的，也就是说，彼此接近的对象往往具有相似的特征。</p>
-<p>ArcGIS的空间分析中，提供了插值（Interpolation）工具集，如下：</p>
-<p><img data-src="/images/blogImg/SAInterpolation_Toolset.png"></p>
+          <p>通过多元统计分析可以探查许多不同类型的属性之间的关系。</p>
+<p>有两种可用的多元分析：分类（监督分类与非监督分类&#x2F;Supervised&amp;Unsupervised)）和主成分分析&#x2F;Principal Component Analysis  (PCA)。</p>
+<p>ArcGIS 提供了如下工具：</p>
+<p><img data-src="/images/blogImg/SAMultiDimensions_Toolset.png"></p>
 <br>
 
-<h1 id="1-反距离权重法（IDW–Inverse-Distance-Weighted）"><a href="#1-反距离权重法（IDW–Inverse-Distance-Weighted）" class="headerlink" title="1. 反距离权重法（IDW–Inverse Distance Weighted）"></a><strong>1. 反距离权重法（IDW–Inverse Distance Weighted）</strong></h1><p>此方法假定所映射的变量因受到与其采样位置间的距离的影响而减小。</p>
-<p><strong>幂参数：</strong></p>
-<p>IDW主要依赖于反距离的幂值。基于距输出点的距离，幂参数可以控制已知点对内插值的影响。幂参数是一个正实数，默认值为 2，一般在0.5至3之间取值。随着幂值的增大，内插值将逐渐接近最近采样点的值。指定较小的幂值，将对距离较远的周围点产生更大影响，会产生更加平滑的表面。由于反距离权重公式与任何实际物理过程都不关联，因此无法确定特定幂值是否过大。作为常规准则，认为值为 30 的幂是超大幂，因此不建议使用。此外还需牢记一点，如果距离或幂值较大，则可能生成错误结果。</p>
-<p><strong>障碍：</strong></p>
-<p>障碍是一个用作可限制输入采样点搜索的隔断线的折线 (polyline) 数据集。一条折线 (polyline) 可以表示地表中的悬崖、山脊或某种其他中断。仅将那些位于障碍同一侧的输入采样点视为当前待处理像元。</p>
-<p><strong>注意事项：</strong></p>
-<p>（1）因为反距离权重法是加权平均距离，所以该平均值不可能大于最大输入或小于最小输入。因此，如果尚未对这些极值采样，便无法创建山脊或山谷。</p>
-<p>（2）此工具最多可处理约 4,500 万个输入点。如果输入要素类包含 4,500 万个以上的点，工具可能无法创建结果。</p>
-<p>工具执行截图：</p>
-<p><img data-src="/images/blogImg/SAInterpolation_Demo.png"></p>
-<h1 id="2-克里金法（Kriging）"><a href="#2-克里金法（Kriging）" class="headerlink" title="2. 克里金法（Kriging）"></a><strong>2. 克里金法（Kriging）</strong></h1><p>克里金法假定采样点之间的距离或方向可以反映可用于说明表面变化的空间相关性。克里金法是一个多步过程；它包括数据的探索性统计分析、变异函数建模和创建表面，还包括研究方差表面。该方法通常用在土壤科学和地质中。</p>
-<h1 id="3-自然邻域法（Natural-Neighbor）"><a href="#3-自然邻域法（Natural-Neighbor）" class="headerlink" title="3. 自然邻域法（Natural Neighbor）"></a><strong>3. 自然邻域法（Natural Neighbor）</strong></h1><p>可找到距查询点最近的输入样本子集，并基于区域大小按比例对这些样本应用权重来进行插值。该插值也称为 Sibson 或“区域占用 (area-stealing)”插值。</p>
-<h1 id="4-样条函数（Spline）"><a href="#4-样条函数（Spline）" class="headerlink" title="4. 样条函数（Spline）"></a><strong>4. 样条函数（Spline）</strong></h1><p>使用二维最小曲率样条法将点插值成栅格表面。生成的平滑表面恰好经过输入点。</p>
-<h1 id="5-含障碍的样条函数（Spline-with-Barriers）"><a href="#5-含障碍的样条函数（Spline-with-Barriers）" class="headerlink" title="5. 含障碍的样条函数（Spline with Barriers）"></a><strong>5. 含障碍的样条函数（Spline with Barriers）</strong></h1><p>通过最小曲率样条法利用障碍将点插值成栅格表面。障碍以面要素或折线要素的形式输入。样条函数法工具所使用的插值方法使用可最小化整体表面曲率的数学函数来估计值。</p>
-<h1 id="6-地形转栅格（Topo-to-Raster）"><a href="#6-地形转栅格（Topo-to-Raster）" class="headerlink" title="6. 地形转栅格（Topo to Raster）"></a><strong>6. 地形转栅格（Topo to Raster）</strong></h1><p>将点、线和面数据插值成符合真实地表的栅格表面。</p>
-<p>依据文件实现地形转栅格（Topo to Raster by file）</p>
-<p>通过文件中指定的参数将点、线和面数据插值成符合真实地表的栅格表面。通过这种技术创建的表面可更好的保留输入等值线数据中的山脊线和河流网络。</p>
-<h1 id="7-趋势（trend）"><a href="#7-趋势（trend）" class="headerlink" title="7. 趋势（trend）"></a><strong>7. 趋势（trend）</strong></h1><p>使用趋势面法将点插值成栅格曲面。趋势表面会逐渐变化，并捕捉数据中的粗尺度模式。</p>
-<p>以上是插值工具的简单说明与比较，这些工具的背后都有庞大的理论基础和复杂的算法，需要进一步学习整理和补充。</p>
+<h1 id="一、波段集统计工具（Band-Collection-Statistics）"><a href="#一、波段集统计工具（Band-Collection-Statistics）" class="headerlink" title="一、波段集统计工具（Band Collection Statistics）"></a><strong>一、波段集统计工具（Band Collection Statistics）</strong></h1><p>栅格波段必须具有一个公共交集。如果不存在公共交集，则会出现错误，且不会创建任何输出。</p>
+<p>如果栅格波段的范围不同，统计数据将以所有输入栅格波段的共同的空间范围来计算。默认情况下，像元大小为输入栅格的最大像元的大小；否则，将取决于栅格分析环境设置。</p>
+<p>此工具计算每个图层的基本统计测量值（最小值、最大值、平均值和标准差），如果勾选协方差和相关矩阵，还可以得到这两个值。</p>
+<p><img data-src="/images/blogImg/SAMultiDimensions_BandColSts.png"></p>
+<h1 id="二、创建特征（Create-Signature）"><a href="#二、创建特征（Create-Signature）" class="headerlink" title="二、创建特征（Create Signature）"></a><strong>二、创建特征（Create Signature）</strong></h1><p>创建由输入样本数据和一组栅格波段定义的类的 ASCII 特征文件。该工具可创建将用作其他多元分析工具的输入参数的文件。</p>
+<p>该文件由两部分组成：</p>
+<p>1） 所有类的常规信息，例如图层数、输入栅格名称和类别数。<br>2） 每个类别的特征文件，由样本数、平均值和协方差矩阵组成。</p>
+<h1 id="三、编辑特征（Edit-Signature）"><a href="#三、编辑特征（Edit-Signature）" class="headerlink" title="三、编辑特征（Edit Signature）"></a><strong>三、编辑特征（Edit Signature）</strong></h1><p>通过合并、重新编号和删除类特征来编辑和更新特征文件。</p>
+<p>输入特征重映射文件是 ASCII 文件，其每一行有两列值与之对应，以冒号分隔。第一列是原始类 ID 值。第二列包含用于在特征文件中更新的新类 ID。文件中的所有条目必须基于第一列以升序进行排序。</p>
+<p>编辑特征文件的写法是固定的，如下：</p>
+<p>只有需要编辑的类才必须被放入特征重映射文件；任何在重映射文件中不存在的类将保持不变。</p>
+<p>要合并一组类，原类 ID：新类 ID。</p>
+<p>要删除类特征，使用 -9999 作为该类第二列的值。</p>
+<p>要重新编号，将类 ID 重新编号为某个不存在于输入特征文件中的值。</p>
+<p>示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 : 3</span><br><span class="line">4 : 11</span><br><span class="line">5 : -9999</span><br><span class="line">9 : 3</span><br></pre></td></tr></table></figure>
+
+<p>上例将使用 3 合并类 2 和 类 9，使用 11 合并类 4，并将删除类 5。</p>
+<h1 id="四、树状图（Dendrogram）"><a href="#四、树状图（Dendrogram）" class="headerlink" title="四、树状图（Dendrogram）"></a><strong>四、树状图（Dendrogram）</strong></h1><p>构造可显示特征文件中连续合并类之间的属性距离的树状图。</p>
+<p>有关其工作原理，详见：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS96aC1jbi9hcmNnaXNkZXNrdG9wLzEwLjAvaGVscC9pbmRleC5odG1sIy9uYS8wMDl6MDAwMDAwcTYwMDAwMDAv">http://help.arcgis.com/zh-cn/arcgisdesktop/10.0/help/index.html#/na/009z000000q6000000/<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="五、最大似然法分类（Maximum-Likelihood-Classification）"><a href="#五、最大似然法分类（Maximum-Likelihood-Classification）" class="headerlink" title="五、最大似然法分类（Maximum Likelihood Classification）"></a><strong>五、最大似然法分类（Maximum Likelihood Classification）</strong></h1><p>最大似然法分类工具所用的算法基于两条原则：</p>
+<p>1） 每个类样本中的像元在多维空间中呈正态分布<br>2） 贝叶斯决策理论</p>
+<p><strong>TIPS：</strong>工具中有几个参数需要注意：</p>
+<p>reject_fraction：将因最低正确分配概率而得不到分类的像元部分。</p>
+<p>默认值为 0.0；将对每个像元进行分类。共有 14 个有效输入：0.0、0.005、0.01、0.025、0.05、0.1、0.25、0.5、0.75、0.9、0.95、0.975、0.99 和 0.995。</p>
+<p>a_priori_probabilities：指定将如何确定先验概率。</p>
+<ul>
+<li>EQUAL — 所有类将具有相同的先验概率。</li>
+<li>SAMPLE — 先验概率将与特征文件内所有类中采样像元总数的相关的各类的像元数成比例。</li>
+<li>FILE — 先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</li>
+</ul>
+<p>以下是通过三类样本的特征文件，分类的栅格数据的示例：</p>
+<p><img data-src="/images/blogImg/SAMultiDimensions_Classification.png"></p>
+<h1 id="六、Iso-聚类（Iso-Cluster）"><a href="#六、Iso-聚类（Iso-Cluster）" class="headerlink" title="六、Iso 聚类（Iso Cluster）"></a><strong>六、Iso 聚类（Iso Cluster）</strong></h1><blockquote>
+<p>Iso表示：iterative self-organizing –迭代自组织方法。</p>
+</blockquote>
+<p>Iso聚类工具对输入波段列表中组合的多元数据执行聚类。所生成的特征文件（*.gsg）可用作生成非监督分类栅格的分类工具（例如最大似然法分类）的输入。</p>
+<p>类数的最小有效值为二。不存在最大聚类数。通常情况下，聚类越多，所需的迭代就越多。</p>
+<h1 id="七、Iso-聚类非监督分类（Iso-Cluster-Unsupervised-Classification）"><a href="#七、Iso-聚类非监督分类（Iso-Cluster-Unsupervised-Classification）" class="headerlink" title="七、Iso 聚类非监督分类（Iso Cluster Unsupervised Classification）"></a><strong>七、Iso 聚类非监督分类（Iso Cluster Unsupervised Classification）</strong></h1><p>此工具为脚本工具，此工具结合了 Iso 聚类工具与最大似然法分类工具的功能。输出经过分类的栅格。</p>
+<h1 id="八、类别概率（Class-Probability）"><a href="#八、类别概率（Class-Probability）" class="headerlink" title="八、类别概率（Class Probability）"></a><strong>八、类别概率（Class Probability）</strong></h1><p>如果发现分类中的某些区域被分配给某一类的概率不是很高，则说明可能存在混合类。</p>
+<p>例如，根据分类概率波段，一个已被分类为森林的区域属于森林类的概率只有 55%。您又发现同一区域属于草地类的概率却有 40%。显然，该区域既不属于森林类也不属于草地类。它更可能是一个森林草地混合类。对于使用分类概率工具生成的分类概率，最好检查分类结果。</p>
+<p>生成的多波段栅格数据的波段数等于类别数，每个波段表示某种分类的可能概率，像元值从0至100。</p>
+<h1 id="九、主成分分析（Principal-Components）"><a href="#九、主成分分析（Principal-Components）" class="headerlink" title="九、主成分分析（Principal Components）"></a><strong>九、主成分分析（Principal Components）</strong></h1><p>对一组栅格波段执行主成分分析 (PCA) 并生成单波段栅格作为输出。此工具生成的是波段数与指定的成分数相同的多波段栅格。</p>
+<p>主成分分析工具用于将输入多元属性空间中的输入波段内的数据变换到相对于原始空间对轴进行旋转的新的多元属性空间。新空间中的轴（属性）互不相关。之所以在主成分分析中对数据进行变换，主要是希望通过消除冗余的方式来压缩数据。</p>
+<p>以上提到的几个工具，在ArcGIS 10.x版本中，除了在ArcToolbox中可以找到，在 Image Classification 工具条中也可以找到对应的功能，如下图：</p>
+<p><img data-src="/images/blogImg/SAMultiDimensions_Toolbar.png"></p>
+<p>这个工具集涉及很多遥感的理论知识，仅仅使用工具是不够的，后面需要多多学习…… </p>
 
       
     </div>
@@ -376,7 +405,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
         </span>
     </span>
 
@@ -533,7 +562,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
         </span>
     </span>
 
@@ -688,7 +717,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
         </span>
     </span>
 
@@ -929,7 +958,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
         </span>
     </span>
 

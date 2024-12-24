@@ -30,7 +30,7 @@
 <meta property="og:description" content="我们可以通过工具 Generate Map Server Cache Tiling Scheme 来生成自定义的切片方案，无论是ArcMap还是ArcGIS Pro ，无论是栅格切片还是矢量切片，都屡试不爽。 前段时间，为了方便 ArcGIS Pro 的自动化工作，我尝试用python调用这个功能，然而后面在使用其生成的切片方案（.xml）文件时，会发现切片原点总是默认值，例如地理坐标系统下是“-">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-02-05T09:00:14.000Z">
-<meta property="article:modified_time" content="2018-02-08T01:54:29.000Z">
+<meta property="article:modified_time" content="2024-12-24T03:31:31.501Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="ArcGIS Pro">
@@ -250,7 +250,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
         </span>
     </span>
 
@@ -304,8 +304,6 @@
 <p><strong>绕行办法：</strong></p>
 <p>既然xml已经生成了，只有切片原点信息是错误，那就自己来解析xml修改对应参数即可。在自己的脚本中额外增加一个解析xml的逻辑吧，跳过这个坑。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xml.dom.minidom <span class="keyword">as</span> DOM</span><br><span class="line"><span class="comment"># Modify Scheme File to Avoid the tile_Origin Specification Bug of the Pro Tool</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">modifyTilingSchemeFile</span>(<span class="params">tileScheme,x_origin,y_origin</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        doc = DOM.parse(tileScheme)</span><br><span class="line">        tileOriginX = doc.getElementsByTagName(<span class="string">&#x27;X&#x27;</span>)</span><br><span class="line">        tileOriginY = doc.getElementsByTagName(<span class="string">&#x27;Y&#x27;</span>)</span><br><span class="line">        tileOriginX[<span class="number">0</span>].firstChild.data = x_origin</span><br><span class="line">        tileOriginY[<span class="number">0</span>].firstChild.data = y_origin</span><br><span class="line">        f = <span class="built_in">open</span>(tileScheme, <span class="string">&#x27;w+&#x27;</span>)</span><br><span class="line">        doc.writexml(f)</span><br><span class="line">        f.close()</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;tile scheme XML file does not exist.&quot;</span>)      </span><br></pre></td></tr></table></figure>
-
-
 
     </div>
 

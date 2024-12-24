@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://kikitamap.com/images/blogImg/LineDirectioninCE.png">
 <meta property="article:published_time" content="2016-09-30T06:44:20.000Z">
-<meta property="article:modified_time" content="2024-12-23T10:24:49.367Z">
+<meta property="article:modified_time" content="2024-12-24T03:31:31.484Z">
 <meta property="article:author" content="Xiaoyan MU">
 <meta property="article:tag" content="3D">
 <meta property="article:tag" content="CityEngine">
@@ -253,7 +253,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/" itemprop="url" rel="index"><span itemprop="name">木工开物</span></a>
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
         </span>
     </span>
 
@@ -299,8 +299,6 @@
 <p>这些有关线状要素的方向和左右的判断，可以通过UV坐标系来确定的。 线的UV坐标系与线的方向相关，</p>
 <p><img data-src="/images/blogImg/LineDirectioninCE.png"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    LineDirection.cga</span></span><br><span class="line"><span class="comment"> * Created: 22 Sep 2016 06:06:18 GMT</span></span><br><span class="line"><span class="comment"> * Author:  kikit</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2016.0&quot;</span></span><br><span class="line"></span><br><span class="line">init --&gt; </span><br><span class="line">Line2</span><br><span class="line"></span><br><span class="line"><span class="title function_">split</span><span class="params">(u,unitSpace,<span class="number">0</span>)</span>&#123;<span class="string">&#x27;0.1:StartSegment|&#x27;</span><span class="number">0.8</span>:NIL|<span class="string">&#x27;0.1:EndSegment&#125;</span></span><br><span class="line"><span class="string">StartSegment --&gt; color(0,1,0) #Green</span></span><br><span class="line"><span class="string">EndSegment --&gt; color(1,0,0)   #Red</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Line2 --&gt;</span></span><br><span class="line"><span class="string">translate(rel,world,0,0,-20)</span></span><br><span class="line"><span class="string">split(v,unitSpace,0)&#123;&#x27;</span><span class="number">0.2</span>:LeftSide|<span class="string">&#x27;0.6:NIL|&#x27;</span><span class="number">0.2</span>:RightSide&#125;</span><br><span class="line">LeftSide --&gt; color(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>)   #Yellow</span><br><span class="line">RightSide --&gt; color(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>)  #Blue</span><br></pre></td></tr></table></figure>
-
-
     </div>
 
     
