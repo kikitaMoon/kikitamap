@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -304,7 +304,14 @@
 <p>整个卫城中我最喜欢的是上图中最后一张的“厄瑞克忒翁神庙”，据说用于供奉雅典娜、波塞冬和英雄厄瑞克忒翁。</p>
 <p>神庙一侧的女神柱像精致优美，即使经过了这么多的时光，都可以感受到雕刻师的精湛技艺。</p>
 <p><img data-src="/images/blogImg/Parthenon_IMG_3545.jpg" alt="厄瑞克忒翁神庙"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/04/04/Parthenon/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -423,20 +430,14 @@
 <h2 id="material-opacitymap"><a href="#material-opacitymap" class="headerlink" title="material.opacitymap"></a>material.opacitymap</h2><p><code>material.opacitymap</code> 通道可以用于控制纹理的透明度。</p>
 <p><img data-src="/images/blogImg/textureinCE_7.png"></p>
 <p>继续上面的例子，如果希望做出透明的窗户效果，可以将Window的代码替换为如下的样子。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Window</span> --&gt;</span><br><span class="line">    <span class="title function_">offset</span>(<span class="number">0.05</span>) </span><br><span class="line">    <span class="title function_">comp</span>(<span class="params">f</span>) &#123; <span class="attr">inside</span>: <span class="title class_">WondowInner</span> | <span class="attr">border</span>: <span class="title class_">WondowFrame</span> &#125;</span><br><span class="line">    <span class="title class_">WondowInner</span> --&gt;    </span><br><span class="line">      <span class="title function_">setupProjection</span>(<span class="number">4</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>) </span><br><span class="line">      <span class="title function_">set</span>(material.<span class="property">opacitymap</span>, window_tex)</span><br><span class="line">      <span class="title function_">projectUV</span>(<span class="number">4</span>) </span><br><span class="line">    <span class="title class_">WondowFrame</span> --&gt;</span><br><span class="line">    <span class="title function_">extrude</span>(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="material-specularmap"><a href="#material-specularmap" class="headerlink" title="material.specularmap"></a>material.specularmap</h2><p>为了虚拟现实，窗户玻璃来点反光效果吧。</p>
-<p><img data-src="/images/blogImg/textureinCE_8.png"></p>
-<p>上代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Window</span> --&gt;</span><br><span class="line">    <span class="title function_">offset</span>(<span class="number">0.05</span>)   </span><br><span class="line">    <span class="title function_">comp</span>(<span class="params">f</span>) &#123; <span class="attr">inside</span>: <span class="title class_">WondowInner</span> | <span class="attr">border</span>: <span class="title class_">WondowFrame</span> &#125;</span><br><span class="line">    <span class="title class_">WondowInner</span> --&gt;   </span><br><span class="line">	 <span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>) </span><br><span class="line">	 <span class="title function_">texture</span>(window_tex)</span><br><span class="line">	 <span class="title function_">projectUV</span>(<span class="number">0</span>)</span><br><span class="line">	 <span class="title function_">set</span>(material.<span class="property">specular</span>.<span class="property">r</span>, <span class="number">1</span>) </span><br><span class="line">     <span class="title function_">set</span>(material.<span class="property">specular</span>.<span class="property">g</span>, <span class="number">1</span>)   </span><br><span class="line">     <span class="title function_">set</span>(material.<span class="property">specular</span>.<span class="property">b</span>, <span class="number">1</span>)</span><br><span class="line">	 <span class="title function_">set</span>(material.<span class="property">shininess</span>, <span class="number">2</span>)	</span><br><span class="line">	 <span class="title function_">setupProjection</span>(<span class="number">3</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>)</span><br><span class="line">	 <span class="title function_">set</span>(material.<span class="property">specularmap</span>, specular_tex)</span><br><span class="line">	 <span class="title function_">projectUV</span>(<span class="number">3</span>)</span><br><span class="line">    <span class="title class_">WondowFrame</span> --&gt;</span><br><span class="line">    <span class="title function_">extrude</span>(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>剩下最后的 normalmap了，法向贴图。手里没有什么好例子，找到一篇<span class="exturl" data-url="aHR0cDovL3d3dy5vcGVuZ2wtdHV0b3JpYWwub3JnL2NuL2ludGVybWVkaWF0ZS10dXRvcmlhbHMvdHV0b3JpYWwtMTMtbm9ybWFsLW1hcHBpbmcv">OpenGL的文档<i class="fa fa-external-link-alt"></i></span>，帮助理解。</p>
-<p>完结。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/30/textureinCE2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -587,32 +588,15 @@
 
 
 
-<h2 id="material-colormap"><a href="#material-colormap" class="headerlink" title="material.colormap"></a>material.colormap</h2><p><img data-src="/images/blogImg/textureinCE_2.png"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Sidefacade</span> --&gt;</span><br><span class="line">	<span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">	<span class="title function_">texture</span>(wall_tex)  # <span class="title function_">set</span>(material.<span class="property">colormap</span>,wall_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">0</span>) </span><br></pre></td></tr></table></figure>
-
-<p>​        <code>texture(wall_tex)</code> ，实际是 <code>set(material.colormap,wall_tex)</code> 的简写，这个函数仅用于为当前shape指定纹理图片，而没有创建纹理坐标系。因此事先需要使用 <code>setupProjection()</code> ，用于指定贴图表面上的UV坐标系，以及贴图矩阵的排布样式。最后使用 <code>ProjectUV()</code>将贴图UV坐标系应用到贴图表面，这个过程有时被称为“烘焙（bake）”。相关函数的具体语法请查 <a target="_blank" rel="noopener" href="http://cehelp.esri.com/help/index.jsp?topic=/com.procedural.cityengine.help/html/toc.html"><strong>帮助</strong></a>。</p>
-<p>​        “烘焙”是个形象生动的词，是个3D建模领域的常用词，对于GIS圈子的朋友可能有点陌生，在一个**<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmxlbmRlcmFydGlzdHMub3JnL2ZvcnVtL3Nob3d0aHJlYWQucGhwPzExNjI1OS13aGF0LWlzLXRleHR1cmUtYmFraW5n">论坛<i class="fa fa-external-link-alt"></i></span>**里找到一个描述觉得不错分享大家。</p>
-<blockquote>
-<p>“Baking” generally refers to the process of recording as an image, some aspect of the Material or Mesh characteristics of a model. One value of this is that certain kinds of Material parameters can take longer to compute and apply to a model than an Image Texture, so it saves rendering time. Baking is usually done once a Material or Mesh is finalized. </p>
-<p>In texture baking, for example, what is originally a procedural texture can be recorded as an image. Sometimes various “channels” of a material can be consolidated into a single image, simplifying the number of texture images used. Material colors applied in Texture Paint mode can be saved to an image. Texture baking can also help with disguising seams on a UV unwrap, a somewhat complicated but very useful process.</p>
-<p>In normal baking, the mesh normals (which affect how light appears to reflect from the model’s surface) can be recorded – this results in very specialized images with RGB values based on normal vectors.</p>
-<p>Usually baking requires having the model UV-unwrapped and -mapped, so the resulting image is properly fit to the model.</p>
-</blockquote>
-<h2 id="material-bumpmap"><a href="#material-bumpmap" class="headerlink" title="material.bumpmap"></a>material.bumpmap</h2><p>​    <code>material.bumpmap</code> 可以实现贴图的浮雕效果。</p>
-<p><img data-src="/images/blogImg/textureinCE_3.png"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Sidefacade</span> --&gt;</span><br><span class="line">	<span class="title function_">setupProjection</span>(<span class="number">1</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">	<span class="title function_">set</span>(material.<span class="property">bumpmap</span>,wall_tex)  </span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="material-dirtmap"><a href="#material-dirtmap" class="headerlink" title="material.dirtmap"></a>material.dirtmap</h2><p>​        如果想使这面墙更逼真，来点“做旧”的感觉，可以使用 <code>material.dirtmap</code> 通道来增加图片镶嵌的效果。</p>
-<p><img data-src="/images/blogImg/textureinCE_4.png"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Sidefacade</span> --&gt;</span><br><span class="line">	<span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>, <span class="number">1</span>) </span><br><span class="line">	<span class="title function_">texture</span>(wall_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">0</span>) </span><br><span class="line">    # <span class="title class_">Add</span> dirtmap channel</span><br><span class="line">    <span class="title function_">setupProjection</span>(<span class="number">2</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>, scope.<span class="property">sy</span>)</span><br><span class="line">	<span class="title function_">set</span>(material.<span class="property">dirtmap</span>, dirt_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-<p>​        相同的方法来做一面涂鸦墙也可以哦。（涂鸦图片来自网络，侵删）</p>
-<p>​        将dirtmap换张图，  <code>set(material.dirtmap, graffiti_tex)</code></p>
-<p><img data-src="/images/blogImg/textureinCE_5.png"></p>
-<p>先到这里，下篇继续……</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+<h2 id="material-colormap"><a href="#material-colormap" class="headerlink" title="material.colormap"></a>material.colormap</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/22/textureinCE/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -733,6 +717,14 @@
 <p>在如下示例图中了解：</p>
 <p><img data-src="/images/blogImg/importingmodels.png"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/21/importingmodels/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -852,6 +844,14 @@
 <p><img data-src="/images/blogImg/ScentofaWoman_1.jpg"></p>
 <p><img data-src="/images/blogImg/ScentofaWoman_2.jpg"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/18/ScentofaWoman/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

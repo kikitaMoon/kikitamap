@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -304,9 +304,14 @@
 <p>4、注销后用Administrator用户登录，导入指纹文件</p>
 <p><strong>方法二：</strong></p>
 <p>上述方法虽然有一个问题，就是用指纹开机后，在进入系统进还要再刷一次指纹，经过测试，找到了一个可以彻底解决这个问题的方法：</p>
-<p>一、本人先装了XP 32位，安装后在 管理–本地用户和组–用户 中启用administrator用户，将装系统时创建的用户禁用，用administrator注册指纹，然后导出指纹数据</p>
-<p>二、安装win7 64位，安装后在 管理–本地用户和组–用户 中启用administrator用户，将装系统时创建的用户禁用，重启系统，用administrator登录，导入第一步的指纹数据，即可完美破解win7注册指纹的问题</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/12/20/E7210005FingerPrint/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -421,47 +426,15 @@
 <p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_type.png"></p>
 <br>
 
-<h1 id="2-Terrain-Dataset-的属性"><a href="#2-Terrain-Dataset-的属性" class="headerlink" title="2 Terrain Dataset 的属性"></a><strong>2 Terrain Dataset 的属性</strong></h1><h2 id="基本属性设置："><a href="#基本属性设置：" class="headerlink" title="基本属性设置："></a><strong>基本属性设置：</strong></h2><p><strong>1） 平均点间距（Approximate Point Spacing）</strong></p>
-<p>创建地形数据集时，需要指定输入测量值的平均点间距。平均点间距的作用是对点进行归类或分组，从而构造出虚拟分块系统。</p>
-<p>平均点距的获得：查看元数据、向数据提供商或数据维护人员寻求帮助。实在无法获取，只能用量距工具估算了。</p>
-<p>这个参数能够决定 Tile Size，查看Terrain数据集属性可以看到。</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Pointspace.png"></p>
-<p><strong>2） 高度源（Height Source）</strong></p>
-<p>向地形添加要素类时，需要指明该要素类是否具有 z 值；如果具有 z 值，则还需要指明这些值的来源。</p>
-<p><strong>3） 表面要素类型（SFType）</strong></p>
-<p>定义在对地形数据集表面进行定义时该要素类所发挥的作用。存在离散多点、断裂线以及若干种多边形类型。上面图表中有说明。</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_SFtype.png"></p>
-<p><strong>4）地形金字塔（Terrain Pyramid）</strong></p>
-<p>地形金字塔等级采用的依据是对精确度的要求随比例的减小而降低。金字塔等级在概念和用途上均类似于栅格金字塔，但二者的实现方法不同。 Terrain Pyramid 通过点抽稀实现。也就是下一级金字塔使用的点数少于上一级，但是采用的点都是原始的点值。 金字塔不使用任何重采样、平均化或派生的数据。</p>
-<p>有两种金字塔类型：z 容差和窗口大小。<br><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Pyramid.png"></p>
-<p>在窗口大小的选项中，可以设置二次抽稀。</p>
-<h2 id="高级属性设置"><a href="#高级属性设置" class="headerlink" title="高级属性设置"></a><strong>高级属性设置</strong></h2><p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Advanced.png"></p>
-<p><strong>5）概貌地形（Overview Terrain）</strong></p>
-<p>概貌地形是地形数据集最粗略表示，专门用于小比例尺下的快速绘制。如下图：</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Overview.png"></p>
-<p><strong>6）定位点（Anchor Point）</strong></p>
-<p>定位点在地形数据集的所有金字塔等级中保持不变。这些点不会被过滤，也不会被细化掉。这将确保无论使用何种分辨率金字塔等级，定位点都会存在于地形表面中。对于显示和分析操作都是这样。支持定位点的目的是使用户始终能在地形中保留一个相对较小的重要测量值集合，如控制点、水准点和最佳水深。</p>
-<p><strong>7）组（Group）</strong></p>
-<p>组用于为线要素和多边形要素定义多种详细程度。将相同的组 ID 指定给每个多边形要素类，向地形告知它们属于同一主题（例如，研究区域边界）。</p>
-<p><strong>8）嵌入式要素类（Embedded feature classes）</strong></p>
-<p>terrain 金字塔的大小约相当于参与 terrain 的要素类中所包含几何的大小，需要较大的存储空间。对于较大的点集合（通常由激光雷达或声纳表示），开销可能相当大，可以将较大的多点要素类嵌入 terrain 数据集中，以节省存储空间。构建 terrain 后，它将成为点的容器，而不再引用源要素类。可以将这些要素类删除，以恢复其存储空间。</p>
-<h2 id="性能的提示"><a href="#性能的提示" class="headerlink" title="性能的提示"></a><strong>性能的提示</strong></h2><p>1） 最好将所有硬断线都放置在一个要素类中。</p>
-<p>2） 定义 terrain 时，使用的要素类越少越好。</p>
-<p>3） 不同数据库的数据量的选择：</p>
-<ul>
-<li>个人地理数据库的容量最小，应限制为包含 2,000 万或更少点数的地形。</li>
-<li>文件地理数据库可用于包含数十亿个点的地形。</li>
-<li>ArcSDE 的容量最大，适合点集可能会增长到数十亿的地形。</li>
-</ul>
-<p>4） 金字塔类型的选择：</p>
-<p>有两种方式可供选择： Z Tolerance 和 Windows Size。区别和使用情况如下：</p>
-<ul>
-<li>Z Tolerance：对地表裸露激光雷达最有效。金字塔过滤器速度较慢，但在某些分析中，控制垂直精度很重要，要细化此类分析中使用的数据，Z 容差金字塔过滤器更适合一些。</li>
-<li>Windows Size：对所有数据、第一回波激光雷达点最有效。窗口大小过滤器速度较快，适合于较常规的用途，它以水平采样密度为基础。Windows Size 金字塔过滤器是基于窗口大小以及用户指定的窗口统计数据来确定的。指定的窗口统计数据可以是最小点高度、最大点高度、平均点高度，或者是同时指定最小和最大点高度。</li>
-</ul>
-<p>5） 有关构建Terrain的建议和最佳方法：</p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4xL2luZGV4Lmh0bWwjL25hLzAwNXYwMDAwMDAxcjAwMDAwMC8=">http://resources.arcgis.com/zh-cn/help/main/10.1/index.html#/na/005v0000001r000000/<i class="fa fa-external-link-alt"></i></span></p>
-
+<h1 id="2-Terrain-Dataset-的属性"><a href="#2-Terrain-Dataset-的属性" class="headerlink" title="2 Terrain Dataset 的属性"></a><strong>2 Terrain Dataset 的属性</strong></h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/12/13/ArcGIS-Terrain-Dataset/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -576,89 +549,14 @@
 <p>TIN 是基于矢量的数字地理数据的一种形式，通过将一系列折点（点）组成三角形来构建。形成这些三角形的插值方法有很多种，例如 Delaunay 三角测量法或距离排序法。ArcGIS 支持 Delaunay 三角测量方法。</p>
 <p>TIN 的单位是英尺或米等长度单位，而不是度分秒。当使用地理坐标系的角度坐标进行构建时，Delaunay 三角测量无效。创建&nbsp;TIN 时，应使用<strong>投影坐标系（PCS）</strong>。</p>
 <p>TIN 模型的适用范围不及栅格表面模型那么广泛，且构建和处理所需的开销更大。获得优良源数据的成本可能会很高，并且，由于数据结构非常复杂，处理 TIN 的效率要比处理栅格数据低。</p>
-<p>TIN 通常用于较小区域的高精度建模（如在工程应用中），此时 TIN 非常有用，因为它们允许计算平面面积、表面积和体积。</p>
-<br>
-
-<h1 id="Ⅲ-TIN在ArcGIS中的存储"><a href="#Ⅲ-TIN在ArcGIS中的存储" class="headerlink" title="Ⅲ TIN在ArcGIS中的存储"></a>Ⅲ TIN在ArcGIS中的存储</h1><p>TIN 表面数据模型由<strong>结点（Node）、边（Edge）、三角形（Triangle）、包面（Hull）</strong>和<strong>拓扑（Topology）</strong>组成。</p>
-<p>与 coverage 类似，TIN 以文件目录形式存储。但TIN没有关联的 INFO 文件。TIN 目录由七个包含 TIN 表面信息的文件组成。这些文件以二进制格式编码，因此无法通过标准文本显示或编辑程序读取。</p>
-<p>TIN 的最大允许大小视连续可用内存资源而定。对于 Win32 系统而言，正常操作条件下，可达到的最大大小为 1000 到 1500 万个结点。出于可用性和性能的考虑，强烈建议始终将此大小限制在几百万。如果超出这一大小，则最好使用 terrain 数据集来表示。</p>
-<p>ArcGIS 10 中采用了约束性&nbsp;Delaunay 三角测量，也就是除了沿隔断线的位置，其他地方都遵守Delaunay准则。</p>
-<br>
-
-<h1 id="Ⅳ-如何创建TIN"><a href="#Ⅳ-如何创建TIN" class="headerlink" title="Ⅳ 如何创建TIN"></a>Ⅳ 如何创建TIN</h1><p>在ArcGIS中，TIN 主要是通过矢量数据、栅格数据、Terrain数据集来创建。</p>
-<h2 id="1-从矢量数据创建"><a href="#1-从矢量数据创建" class="headerlink" title="1. 从矢量数据创建"></a>1. 从矢量数据创建</h2><p>这是最常用的一种方法。可以通过点、线、面来构建TIN，不同的几何类型可以提供不同的表面要素类型（SF_Type），我们一起来了解下不同的 SF_Type。</p>
-<p><strong>（1） 离散多点（Mass Point）</strong></p>
-<p>离散多点是 TIN 中的主要输入要素，由它们来决定表面的总体形状。</p>
-<p><img data-src="/images/blogImg/AboutTIN_Points.png"><img data-src="/images/blogImg/AboutTIN_Points2.png"></p>
-<p><strong>(2) 隔断线（Breakline）</strong></p>
-<p>隔断线通常用于呈现自然要素（如山脊线或河流）或建筑要素（如道路）。隔断线有以下两种：硬隔断线与软隔断线。</p>
-<p>隔断线可以有高程信息，也可以没有高程信息。</p>
-<p>硬隔断线：硬隔断线用于表示表面坡度的不连续性。河流和道路断面可作为硬隔断线包括在 TIN 中。硬隔断线能够捕获表面的突变并能改进 TIN 的显示和分析质量。</p>
-<p>软隔断线：软隔断线是不会改变表面局部坡度的线状要素，例如表示研究区范围边界的线等。</p>
-<p><strong>(3) 多边形（Polygon）</strong></p>
-<p>裁剪多边形：用于定义 TIN 表面的边界。位于裁剪多边形之外的输入数据将从插值和分析操作（例如，等值线或体积计算）中排除。</p>
-<p>擦除多边形：位于擦除多边形之内的输入数据，将从插值和分析操作（例如，等值线或体积计算）中排除。</p>
-<p>替换多边形：用于将边界及所有内部高度设置为相同的值。可用于对湖泊或者坡度挖掘到水平面以下的区域进行建模。</p>
-<p>填充多边形：用于将一个整数属性值分配给位于此填充多边形内部的所有三角形。表面高度不受影响，并且不发生裁剪或擦除操作。</p>
-<p>以上多边形也有软硬之分，类似于软硬隔断线用法。</p>
-<p>创建 TIN 使用的的工具是<strong>Creat TIN</strong>，在输入要素列表中，可以为每种要素的角色进行指定。</p>
-<p>如果是更新、修改TIN，可以使用工具<strong>Edit TIN</strong>工具。</p>
-<h2 id="2-从栅格数据创建"><a href="#2-从栅格数据创建" class="headerlink" title="2. 从栅格数据创建"></a>2. 从栅格数据创建</h2><p>栅格数据可以转换为 TIN，并且可以用于简化地表模型。在ArcGIS中主要是通过 Raster to TIN 工具进行显示。</p>
-<p>栅格转 TIN 工作过程：首先根据足量的输入栅格点（像元中心）生成候选 TIN，以便完全覆盖栅格表面的边缘。然后，该工具会逐步改进 TIN 表面，直到符合指定的 Z 容差。这个工具的使用主要有两个参数需要注意：Z Tolerance，Max point。</p>
-<p><strong>Z Tolerance</strong> ：输入栅格与输出 TIN 之间所允许的最大高度差（z 单位）。默认情况下，z 容差是输入栅格 z 范围的 1&#x2F;10。</p>
-<p><strong>Max point</strong>：用于控制将在处理过程终止前添加到 TIN 的最大点数。默认情况下，该过程将一直持续到所有点被添加完。</p>
-<p>对比如下设置了默认 Z 容差和 500 的Z容差的TIN 效果：</p>
-<p><img data-src="/images/blogImg/AboutTIN_Tolerance.png"></p>
-<h2 id="3-从其他数据创建"><a href="#3-从其他数据创建" class="headerlink" title="3. 从其他数据创建"></a>3. 从其他数据创建</h2><p>（1）将 ArcGIS terrain dataset 数据转成 TIN。使用工具 terrain to TIN。</p>
-<p>可使用 terrain 金字塔等级的 z 容差或窗口大小分辨率来决定TIN的精细程度。默认值为 0（z 容差），或全分辨率（窗口大小）。</p>
-<p>（2）将 LAS Dataset 转成 TIN，使用工具 LAS Dataset to TIN。可通过一定得细化类型和细化方法生成TIN。</p>
-<p>（3）使用工具&nbsp;LandXML to TIN，将 LandXML 数据转为TIN。什么是 LandXML？在网上找了个连接：<span class="exturl" data-url="aHR0cDovL3d3dy5wcm9mc3Vydi5jb20vbWFnYXppbmUvYXJ0aWNsZS5hc3B4P2k9NzA5MjM=">点击<i class="fa fa-external-link-alt"></i></span>。</p>
-<p>有关 LAS Dataset 和 Terrain Dataset 后面会再整理总结。</p>
-<br>
-
-<h1 id="Ⅴ-编辑已有TIN"><a href="#Ⅴ-编辑已有TIN" class="headerlink" title="Ⅴ 编辑已有TIN"></a>Ⅴ 编辑已有TIN</h1><p>如果使用矢量数据批量编辑TIN，可以使用工具 Edit TIN，位于ArcToolbox中的3D分析工具箱。</p>
-<p>如果需要进行交互式的TIN编辑，可以使用ArcMap中提供的 TIN Editing 工具条。</p>
-<p><img data-src="/images/blogImg/AboutTIN_TINEditor.png"></p>
-<p>如果调出TIN Editing工具条后，工具都是灰色的，那是因为没有设置编辑对象。</p>
-<p>要编辑的 TIN 必须是 3D Analyst 工具条的下拉菜单中的选定图层。</p>
-<p><img data-src="/images/blogImg/AboutTIN_3DAnalyst.png"></p>
-<p>可见，TIN编辑的功能是依赖于3D分析扩展许可的。</p>
-<p>交互式的TIN编辑中有个GP工具没有的功能：</p>
-<p><strong>从中心线分级（Grade from centralline ……）</strong>，可用于向 TIN 表面添加道路、堤坝和类似护堤的要素。需要事先选中某一矢量线要素。</p>
-<p><img data-src="/images/blogImg/AboutTIN_Grade.png"></p>
-<br>
-
-<h1 id="Ⅵ-从TIN中输出几何信息"><a href="#Ⅵ-从TIN中输出几何信息" class="headerlink" title="Ⅵ 从TIN中输出几何信息"></a><strong>Ⅵ 从TIN中输出几何信息</strong></h1><p>使用ArcToolbox中的工具可以将TIN中的信息提取为矢量要素。位于3D分析工具箱中的转换工具集下：</p>
-<p><img data-src="/images/blogImg/AboutTIN_FromTIN.png"></p>
-<ol>
-<li><p><strong>TIN Domain</strong>：获得TIN的范围，可以选择生成线或者面。</p>
-</li>
-<li><p><strong>TIN Edge</strong>：生成表示 TIN 边的矢量线要素。0 — A regular edge；1 — A soft edge；2 — A hard edge</p>
-</li>
-<li><p><strong>TIN line</strong>： 生成TIN的隔断线。1—Soft breakline&nbsp;2— Hard breakline</p>
-</li>
-<li><p><strong>TIN Node</strong>： 将TIN的节点导出成点要素类，2D、3D要素可选。</p>
-</li>
-<li><p><strong>TIN Polygon Tag</strong>：&nbsp;使用 TIN 中的标签值创建面要素。标签是指：分配给三角形的简单形式的整数属性值。其边界在三角测量中将强化为隔断线。标签以有符号长整型数据形式存储。</p>
-</li>
-<li><p><strong>TIN Triangle</strong>： 生成构成TIN的三角形面。并为每个三角形提供山体阴影的坡度、坡向和可选属性以及标签值。</p>
-</li>
-</ol>
-<p><img data-src="/images/blogImg/AboutTIN_Triangle.png"></p>
-<ol start="7">
-<li><strong>TIN to Raster</strong>： 将TIN生成栅格数据。可选插值方法、数据类型、数据格式等。</li>
-</ol>
-<br>
-
-<h1 id="Ⅶ-其他仅适用于TIN的工具"><a href="#Ⅶ-其他仅适用于TIN的工具" class="headerlink" title="Ⅶ 其他仅适用于TIN的工具"></a>Ⅶ 其他仅适用于TIN的工具</h1><p>（1）如果使用的10.0之后的版本，TIN的存储版本有区别，可以使用<strong>Copy TIN</strong> 工具将 TIN 数据转成低版本（10.0之前）的 TIN 数据。</p>
-<p>（2）如果需要裁剪TIN的边界，可以使用工具<strong>Delineate TIN Data Area</strong> 工具，设置最长边参数，删除 TIN 中的长边。</p>
-<p><img data-src="/images/blogImg/AboutTIN_Delineate.gif"></p>
-<p>（3） 如果需要比较两个TIN的差异，使用工具<strong>Compare TIN</strong>。</p>
-<br>
-<br>
-
-<p>O了，至此有关TIN的一个概况结束喽。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/12/06/AboutTIN/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -779,24 +677,14 @@
 <br>
 
 <h1 id="2-需要得到-Multipatch-的-2D-轮廓线"><a href="#2-需要得到-Multipatch-的-2D-轮廓线" class="headerlink" title="2. 需要得到 Multipatch 的 2D 轮廓线"></a><strong>2. 需要得到 Multipatch 的 2D 轮廓线</strong></h1><p>使用 Multipatch Footprint 工具</p>
-<p><img data-src="/images/blogImg/3DConversionTool_Footprint.gif"></p>
-<br>
-
-<h1 id="3-获得栅格数据三维边界线-面"><a href="#3-获得栅格数据三维边界线-面" class="headerlink" title="3. 获得栅格数据三维边界线&#x2F;面"></a><strong>3. 获得栅格数据三维边界线&#x2F;面</strong></h1><p>使用 Raster Domain 工具</p>
-<p><img data-src="/images/blogImg/3DConversionTool_RasterDomain.gif"></p>
-<br>
-
-<h1 id="4-使用点数据和现有模型制作场景"><a href="#4-使用点数据和现有模型制作场景" class="headerlink" title="4. 使用点数据和现有模型制作场景"></a><strong>4. 使用点数据和现有模型制作场景</strong></h1><p>常常有这样的应用场景：手头有采集的兴趣点数据，并且有现成的3DS、Skp等等诸多模型，需要将这些模型放置在正确地理位置，并将它们统一存入GDB中进行维护。我们可以这样来做：</p>
-<p>（1） 在ArcScene或者ArcGlobe中添加点图层.</p>
-<p>（2）双击图层符号，弹出【符号选择器】窗口，点击【编辑符号】。</p>
-<p><img data-src="/images/blogImg/3DConversionTool_EditSymbol.png"></p>
-<p>（3）在弹出的【符号属性编辑器】中，类型下拉列表中选择【3D Marker Symbol】，并在之后的窗口中选择模型的路径。</p>
-<p><img data-src="/images/blogImg/3DConversionTool_3DMakerSymbol.png"></p>
-<p>（4）上步中，根据需要分门别类的给每类点配以不同的模型，最后得到丰富的3D模型组成的场景。</p>
-<p><img data-src="/images/blogImg/3DConversionTool_Scene.png"></p>
-<p>（5） 使用工具：**&nbsp;Layer 3D to Feature Class，**将模型统一转入GDB，集中存储和维护。原来的模型细节及纹理得到很好的保留。</p>
-<p><img data-src="/images/blogImg/3DConversionTool_Multipatch.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/11/21/3DConversionTool/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -932,23 +820,14 @@
 <p><img data-src="/images/blogImg/3DFunctionalSurface_InterpolateShape.gif"></p>
 <h1 id="3-nbsp-Intersect-3D-Line-With-Surface（-nbsp-3D线与表面相交）"><a href="#3-nbsp-Intersect-3D-Line-With-Surface（-nbsp-3D线与表面相交）" class="headerlink" title="3.&nbsp;Intersect 3D Line With Surface（&nbsp;3D线与表面相交）"></a><strong>3.&nbsp;Intersect 3D Line With Surface（&nbsp;3D线与表面相交）</strong></h1><p>计算 3D 线要素与一个或多个表面的几何交集，并以分割线要素和点的形式返回交集。</p>
 <p><img data-src="/images/blogImg/3DFunctionalSurface_IntersectLineSurface.png"></p>
-<h1 id="4-nbsp-Stack-Profile（堆栈剖面）"><a href="#4-nbsp-Stack-Profile（堆栈剖面）" class="headerlink" title="4.&nbsp;Stack Profile（堆栈剖面）"></a><strong>4.&nbsp;Stack Profile（堆栈剖面）</strong></h1><p>创建表格和可选图表，用于说明一个或多个多面体、栅格、TIN 或 terrain 表面上的线要素的剖面。</p>
-<p>这个工具可以来制作剖面图。</p>
-<p><img data-src="/images/blogImg/3DFunctionalSurface_Stack.png"></p>
-<p>表中各个字段的含义：</p>
-<ul>
-<li>FIRST_DIST - 到剖面段中第一个折点的距离。</li>
-<li>FIRST_Z - 剖面段中第一个折点的高度。</li>
-<li>SEC_DIST - 剖面段中第二个折点的距离。</li>
-<li>SEC_Z - 剖面段中第二个折点的高度。</li>
-<li>LINE_ID - 用于定义剖面的线要素的唯一 ID。</li>
-<li>SRC_TYPE - 剖面源的数据类型，是表面或多面体。</li>
-<li>SRC_ID - 要描绘剖面的多面体要素的唯一 ID。不适用于表面输入。</li>
-<li>SRC_NAME - 剖面源的名称和路径。</li>
-</ul>
-<h1 id="5-nbsp-Surface-Volume（表面体积）"><a href="#5-nbsp-Surface-Volume（表面体积）" class="headerlink" title="5.&nbsp;Surface Volume（表面体积）"></a><strong>5.&nbsp;Surface Volume（表面体积）</strong></h1><p>可计算指定参考平面以上或以下的栅格、不规则三角网 (TIN) 或 terrain 数据集表面的面积和体积。</p>
-<p><img data-src="/images/blogImg/3DFunctionalSurface_Volumn.gif"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/11/18/3DFunctionalSurface/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

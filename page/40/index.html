@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -320,11 +320,14 @@
 <li>scale（标度）—— 浮点或双精度类型字段中数值的小数点右侧的位数；</li>
 <li>length（长度）—— 字符型字段的文本字段的长度。</li>
 </ul>
-<p>注意，long integer 当精度超过 10 时，会自动转为 Double 型。</p>
-<p>相关资料：</p>
-<p>由于shape文件是公开数据格式，可以很好来作为交换格式，这里是Esri官方技术描述：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vbGlicmFyeS93aGl0ZXBhcGVycy9wZGZzL3NoYXBlZmlsZS5wZGY=">shape文件技术描述<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/Aboutshapefile/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -440,139 +443,14 @@
 <p><strong>错误消息与自定义大小</strong></p>
 <p>如果收到警告虚拟内存不足的错误消息，则需要添加更多的RAM 或增加分页文件的大小，这样才能在计算机上运行程序。Windows 通常会自动管理大小，但是如果默认的大小不能满足您的需要，则可以手动更改虚拟内存的大小。</p>
 <p>如何自定义虚拟内存的大小？</p>
-<p>如果您收到虚拟内存不足的警告，则您将需要增加&lt;分页文件的最小大小。Windows设置分页文件的初始最小大小等于您计算机上安装的随机存取内存(RAM)的数量加上300兆字节(MB)，最大大小是您计算机上安装的RAM 数量的3倍。如果您看到对这些建议级别的警告，则增加最小大小和最大大小。</p>
-<p>1.   单击打开我的电脑“属性”。<br>2.   在左窗格中，单击“高级系统设置”。<br>3.   在“高级”选项卡上，在“性能”下，单击“设置”。<br>4.   单击“高级”选项卡，然后在“虚拟内存”下，单击“更改”。<br>5.   清除“自动管理所有驱动器的分页文件大小”复选框。<br>6.   在“驱动器[卷标]”下，单击要更改的分页文件所在的驱动器。<br>7.   单击“自定义大小”，在“初始大小(MB)”或“最大大小(MB)”框中键入新的大小（以兆字节为单位），单击“设置”，然后单击“确定”。</p>
-<p>注意：增加大小通常不需要重新启动更改就能生效，但是如果减小大小，则需要重新启动计算机更改才能生效。建议不要禁用或删除页面文件。</p>
-<p><strong>“任务管理器”内存列的含义</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>列</strong></th>
-<th><strong>描述</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>PID（进程标识符）</td>
-<td>唯一标识所运行进程的编号。</td>
-</tr>
-<tr>
-<td>用户名</td>
-<td>运行该进程的用户帐户。</td>
-</tr>
-<tr>
-<td>会话标识</td>
-<td>标识进程所有者的编号。当多个用户登录时，每个用户都有一个唯一的会话标识。</td>
-</tr>
-<tr>
-<td>CPU使用率</td>
-<td>自上次更新以来，进程使用CPU的时间百分比（列标题中列为“CPU”）。</td>
-</tr>
-<tr>
-<td>CPU时间</td>
-<td>进程自其启动以来使用的总处理时间（以秒为单位）。</td>
-</tr>
-<tr>
-<td>内存-工作集</td>
-<td>私人工作集中的内存数量与进程正在使用且可以由其他进程共享的内存数量的总和。</td>
-</tr>
-<tr>
-<td>内存-高峰工作集</td>
-<td>进程所使用的工作集内存的最大数量。</td>
-</tr>
-<tr>
-<td>内存-工作集增量</td>
-<td>进程所使用的工作集内存中的更改量。</td>
-</tr>
-<tr>
-<td>内存-专用工作集</td>
-<td>工作集的子集，它专门描述了某个进程正在使用且无法与其他进程共享的内存数量。</td>
-</tr>
-<tr>
-<td>内存-提交大小</td>
-<td>为某进程使用而保留的虚拟内存的数量。</td>
-</tr>
-<tr>
-<td>内存-页面缓冲</td>
-<td>由内核或驱动程序代表进程分配的可分页内核内存的数量。可分页内存是可写入其他存储媒体（例如硬盘）的内存。</td>
-</tr>
-<tr>
-<td>内存-非页面缓冲池</td>
-<td>由内核或驱动程序代表进程分配的不可分页的内核内存的数量。不可分页的内存是不能写入其他存储媒体的内存。</td>
-</tr>
-<tr>
-<td>页面错误</td>
-<td>自某进程启动后该进程生成的页面错误数。进程访问当前不在工作集的内存页面时会出现页面错误。某些页面错误要求从磁盘中检索页面内容；其他的页面错误可在不访问磁盘的情况下解决。</td>
-</tr>
-<tr>
-<td>页面错误增量</td>
-<td>自上次更新以来页面错误数量的变化。</td>
-</tr>
-<tr>
-<td>基本优先级</td>
-<td>优先排名，它确定了所计划进程的线程顺序。</td>
-</tr>
-<tr>
-<td>句柄数</td>
-<td>进程的对象表中的对象句柄数。</td>
-</tr>
-<tr>
-<td>线程数</td>
-<td>进程中运行的线程数。</td>
-</tr>
-<tr>
-<td>USER对象</td>
-<td>当前由进程使用的USER对象数。USER 对象是来自Window管理器的对象，它包含窗口、菜单、光标、图标、挂接、加速器、监视器、键盘布局及其他内部对象。</td>
-</tr>
-<tr>
-<td>GDI对象</td>
-<td>图形输出设备应用程序编程接口(API)的图形设备接口(GDI)库中的对象数量。</td>
-</tr>
-<tr>
-<td>I&#x2F;O读取</td>
-<td>由进程（包括文件、网络和设备I&#x2F;O）生成的读取输入&#x2F;输出操作的数量。无法计算定向到CONSOLE（控制台输入对象）句柄的I&#x2F;O 读取数量。</td>
-</tr>
-<tr>
-<td>I&#x2F;O写入</td>
-<td>由进程（包括文件、网络和设备I&#x2F;O）生成的写入输入&#x2F;输出操作的数量。无法计算定向到CONSOLE（控制台输入对象）句柄的I&#x2F;O 写入数量。</td>
-</tr>
-<tr>
-<td>I&#x2F;O其他</td>
-<td>由既非读取又非写入的进程（包括文件、网络和设备I&#x2F;O）生成的输入&#x2F;输出操作的数量。此类操作的示例是控制功能。无法计算定向到CONSOLE（控制台输入对象）句柄的I&#x2F;O 其他操作数量。</td>
-</tr>
-<tr>
-<td>I&#x2F;O读取字节</td>
-<td>由进程（包括文件、网络和设备I&#x2F;O）生成的输入&#x2F;输出操作所读取的字节数。无法计算定向到CONSOLE（控制台输入对象）句柄的I&#x2F;O 读取字节数。</td>
-</tr>
-<tr>
-<td>I&#x2F;O写入字节</td>
-<td>由进程（包括文件、网络和设备I&#x2F;O）生成的输入&#x2F;输出操作所写入的字节数。无法计算定向到CONSOLE（控制台输入对象）句柄的I&#x2F;O 写入字节数。</td>
-</tr>
-<tr>
-<td>I&#x2F;O其他字节</td>
-<td>由既非读取又非写入的进程（包括文件、网络和设备I&#x2F;O）生成的输入&#x2F;输出操作所传输的字节数。此类操作的示例是控制功能。无法计算定向到CONSOLE（控制台输入对象）句柄的I&#x2F;O 其他字节数。</td>
-</tr>
-<tr>
-<td>映像路径名称</td>
-<td>硬盘上的进程位置。</td>
-</tr>
-<tr>
-<td>命令行</td>
-<td>指定为创建进程的完整命令行。</td>
-</tr>
-<tr>
-<td>用户帐户控制(UAC)虚拟化</td>
-<td>确定为此进程启用、禁用还是不允许使用用户帐户控制(UAC) 虚拟化。UAC虚拟化将文件和注册表写入错误重定向到每用户位置。</td>
-</tr>
-<tr>
-<td>描述</td>
-<td>进程的描述。</td>
-</tr>
-<tr>
-<td>数据执行保护</td>
-<td>是否为此进程启用或禁用数据执行保护。有关详细信息，请参阅什么是数据执行保护？</td>
-</tr>
-</tbody></table>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/virtualmemory/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -686,6 +564,14 @@
 <p>2、<strong>本地数据工作流程</strong>：原来已经有数据，需要到ArcGIS Desktop中将数据导出，这用到一个工具条ArcPad Data Manager。然后利用手持设备外业采集，在ArcPad中进行编辑，最后将数据再导入即可。这种工作流程通常是用于小型的工作组。</p>
 <p>3、<strong>ArcGIS Server 企业级工作流程</strong>：首先是在ArcCatalog或者ArcGIS Server Manager中发布服务，在ArcPad中浏览服务，进行数据的编辑。在ArcPad8中，增加了同步数据的功能，用户可以将在野外实时采集的数据同步到ArcGIS Server的GDB中。大大提高了工作效率。这种工作流程对SDE数据库有要求，就是数据要先注册版本，并且表中要含有字段“GlobalID”。</p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/ArcPad8Overview/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -807,13 +693,14 @@
 <li>多边形轮廓线上的最近点 Closest point on the polygon outline</li>
 </ol>
 <p>锚点将放置在多边形轮廓线上距离标注最接近的点。</p>
-<ol start="4">
-<li>未裁剪多边形的几何中心(然后侵蚀中心)   Geometric center of unclipped polygon (then eroded center)</li>
-</ol>
-<p>先尝试忽略中间“洞”的多边形的几何中心，不行再放到侵蚀中心。<br>​<br>下图作为这几个中心的比较：</p>
-<p><img data-src="/images/blogImg/AnchorPointinMaplex_Compare.gif"></p>
-<p>其实，如果嫌麻烦，把Placement选项设置好也可以满足大部分需求。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/AnchorPointinMaplex/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -931,6 +818,14 @@
 <li>地图转KML（Map to KML）</li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/importKMLKMZ/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -306,58 +306,14 @@
 <p><strong>欧氏距离（Euclidean Diatance）</strong>——  求得每个像元至最近源的距离。</p>
 <p><strong>欧氏方向（Euclidean Direction）</strong>——  求得每个像元至最近源的方向。</p>
 <p><strong>欧氏分配（Euclidean Allocation）</strong>——  求得每个像元的最近的源。</p>
-<p><strong>TIPS：</strong></p>
-<p><strong>1.源（Source）</strong></p>
-<p>可以是感兴趣的地物的位置，数据方面，既可以是栅格数据，也可以是矢量数据。但注意：如果数据选用了栅格数据，数据中必须仅包含表示源的像元，其他像元需要是Nodata。如果选用矢量，在执行工具之时，内部会将其先转成栅格。</p>
-<p><strong>2.欧氏距离的算法</strong></p>
-<p>简单理解为：工具会求得每个像元至每个源的距离，然后取得每个像元至每个源的最短距离以输出。其中，欧氏距离是像元中心与源像元的中心的直线距离。</p>
-<p><img data-src="/images/blogImg/SADistance_Distance.gif"></p>
-<p>如果像元与两个或更多源之间的距离相等，则计算都基于像元扫描过程中遇到的第一个源。无法控制该扫描过程。</p>
-<p>帮助中有这样的描述：</p>
-<blockquote>
-<p>工具在实际执行的过程中，进行两次顺序扫描。这样，工具的执行速度与源像元的数目、分布以及最大距离无关。影响工具执行速度的唯一因素是栅格的大小。计算时间与“分析”窗口中的像元数成线性比例。暂且不知道进行了什么样的两次顺序扫描。</p>
-</blockquote>
-<p><strong>3.欧氏距离输出栅格结果</strong></p>
-<p>投影平面上，像元与最近源之间的最短直线距离。如下图：</p>
-<p><img data-src="/images/blogImg/SADistance_EucDistance.png"></p>
-<p><strong>4.欧氏方向输出栅格结果</strong></p>
-<p>像元与最近源之间的方位角方向（以度为单位）。使用 360 度圆，刻度 360 指北，90指东，从刻度 1 顺时针增加。值 0 供源像元使用。如下图：</p>
-<p><img data-src="/images/blogImg/SADistance_EucDirection.png"></p>
-<p>5.欧氏分配输出栅格结果</p>
-<p>输出的每个像元都是距其最近源的值。如下图：</p>
-<p><img data-src="/images/blogImg/SADistance_EucAllocation.png"></p>
-<h1 id="二、成本加权距离工具"><a href="#二、成本加权距离工具" class="headerlink" title="二、成本加权距离工具"></a><strong>二、成本加权距离工具</strong></h1><p>成本加权距离工具可以看成是对欧氏直线距离的进一步修改，将经过某个像元的距离赋以成本因素。举个简单的例子，翻过一座山到达目的地是最短的直线距离，绕行这座山距离较长，但是更节省时间和体力，那就后者的成本加权距离最短了。</p>
-<p>1）<strong>成本距离（Cost Distance）</strong>：求得每个像元至最近源的成本距离。<br>2）<strong>成本回溯链接（Cost back link）</strong>：求的一个方向栅格，可以从任意像元沿最小成本路径返回最近源。<br>3）<strong>成本分配（Cost Allocation）</strong>：求得每个像元的最近的源。<br>4）<strong>成本路径（Cost Patch）</strong>：求的任意像元到最近源的最小成本路径。</p>
-<p><strong>TIPS：</strong></p>
-<ul>
-<li>成本栅格可以是整形或者浮点型，但是其值中不能含有负值或者0。成本栅格中的Nodata视为障碍。</li>
-<li>成本距离输出栅格数据<br>这里的简单示例中，下面一层黑白渲染的是成本栅格，颜色深的像元代表成本比较高，反之较低。结果如下：<br><img data-src="/images/blogImg/SADistance_CostDistance.png"></li>
-<li>成本距离回溯链接<br>要注意的是，它并不会求的要返回哪一个源像元以及如何返回。而是记录从任意像元回溯到最近源的路径上，每个像元向下一个像元指向的方向，这个方向以0-8的代码形式记录。如下图：<br><img data-src="/images/blogImg/SADistance_CostBacklink1.png"><br><img data-src="/images/blogImg/SADistance_CostBacklink2.png"></li>
-<li>成本距离分配<br>这个类似于前面的欧氏距离分配，得到的是每个像元至最近源的成本距离。<br><img data-src="/images/blogImg/SADistance_CostAllocation.png"></li>
-</ul>
-<h1 id="三、路径距离工具"><a href="#三、路径距离工具" class="headerlink" title="三、路径距离工具"></a><strong>三、路径距离工具</strong></h1><p>路径距离工具与成本距离相似，也可以确定从某个源到栅格上各像元位置的最小累积行程成本。但是，路径距离不仅可计算成本表面的累积成本，而且会考虑到行驶的实际曲面距离，和影响到移动总成本的水平和垂直因子。主要包含这几个工具</p>
-<p>1）<strong>路径距离（Path Distance）</strong><br>2）<strong>路径回溯链接（Path back link）</strong><br>3）<strong>路径分配（Path Allocation）</strong></p>
-<p>这些工具生成的累积成本表面可用于扩散模型、流动和最低成本路径分析。</p>
-<p>有关水平方向以及竖直方向的因子是如何影响的，工作原理是什么，ArcGIS帮助中有详细的解释：</p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvbWFpbi8xMC4xLyMvSG93X3RoZV9ob3Jpem9udGFsX2FuZF92ZXJ0aWNhbF9mYWN0b3JzX2FmZmVjdF9wYXRoX2Rpc3RhbmNlLzAwOXowMDAwMDB6OTAwMDAwMC8=">http://resources.arcgis.com/en/help/main/10.1/#/How_the_horizontal_and_vertical_factors_affect_path_distance&#x2F;009z000000z9000000&#x2F;<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="四、-获得最短路径"><a href="#四、-获得最短路径" class="headerlink" title="四、 获得最短路径"></a><strong>四、 获得最短路径</strong></h1><p>1.成本距离路径</p>
-<p>任意像元到最近源的最小成本路径，需要引用到上面工具中生成的成本距离和成本回溯链接栅格数据。如下图：</p>
-<p><img data-src="/images/blogImg/SADistance_ShortestPath.png"></p>
-<p>2.廊道</p>
-<p>另外要说的是廊道分析工具（Corridor）。此工具用于计算两个成本栅格的累积成本栅格结果，为了求得从一个源到另一个源且经过该像元位置的最小成本路径。</p>
-<p>输出栅格不是单个最小成本路径，但会得到源之间累积成本的范围。</p>
-<p>最后我们可以配合其他工具将小于某一阈值的结果提取出来，例如工具Extract by Attribute提取，或者通过Con进行条件赋值等等方法，获取结果。</p>
-<p>如下如所示：</p>
-<p>学校A、B成本距离分析结果：</p>
-<p><img data-src="/images/blogImg/SADistance_CostAB.png"></p>
-<p>学校C、D、E的成本距离分析结果：</p>
-<p><img data-src="/images/blogImg/SADistance_CostCDE.png"></p>
-<p>有此两个距离成本结果，来分析得到A、B到C、D、E之间的廊道，也就是两组源之间的最小累积成本距离。</p>
-<p><img data-src="/images/blogImg/SADistance_Corridor.png"></p>
-<p>然后结果中我们可以按照一定的阈值来提取结果。例如累积成本在75以下的我才能接受：</p>
-<p><img data-src="/images/blogImg/SADistance_Corridor2.png"></p>
-<p>至此，空间分析中的距离分析工具总结结束。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/10/SADistance/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -470,25 +426,14 @@
 <p><img data-src="/images/blogImg/SADensity_Tool.png"></p>
 <h2 id="1-Kernel-Density（核密度分析）"><a href="#1-Kernel-Density（核密度分析）" class="headerlink" title="1. Kernel Density（核密度分析）"></a><strong>1. Kernel Density（核密度分析）</strong></h2><p><img data-src="/images/blogImg/SADensity_Tool2.png"></p>
 <p>输入值可以是点或者线。</p>
-<p>工作原理引自帮助：</p>
-<blockquote>
-<p>概念上，每个点&#x2F;线上方均覆盖着一个平滑曲面。在点&#x2F;线所在位置处表面值最高，随着与点的距离的增大表面值逐渐减小，在与点&#x2F;线的距离等于搜索半径的位置处表面值为零。仅允许使用圆形邻域。曲面与下方的平面所围成的空间的体积等于此点的 Population 字段值，如果将此字段值指定为 NONE 则体积为 1。每个输出栅格像元的密度均为叠加在栅格像元中心的所有核表面的值之和。核函数以 Silverman 的著作（1986 年版，第 76 页，方程 4.5）中描述的二次核函数为基础。</p>
-</blockquote>
-<p>对于点，如果 population 字段设置使用的是除 NONE 之外的值，则每项的值用于确定点被计数的次数。例如，值 3 会导致点被算作三个点。值可以为整型也可以为浮点型。</p>
-<p>对于线，如果 population 字段使用的是除 NONE 之外的值，则线的长度将由线的实际长度乘以此线的 population 字段的值而得出。</p>
-<h2 id="2-Point-Density-Line-Density（点、线密度分析）："><a href="#2-Point-Density-Line-Density（点、线密度分析）：" class="headerlink" title="2. Point Density &#x2F; Line Density（点、线密度分析）："></a><strong>2. Point Density &#x2F; Line Density（点、线密度分析）：</strong></h2><p><img data-src="/images/blogImg/SADensity_PointLine.png"></p>
-<p>这两个工具的输出与核密度工具的输出的区别在于：</p>
-<p>对于点密度和线密度，需要指定一个邻域，以便计算出各输出像元周围像元的密度。而核密度则可将各点的已知总体数量从点位置开始向四周分散。在核密度中，在各点周围生成表面所依据的二次公式可为表面中心（点位置）赋予最高值，并在搜索半径距离范围内减少到零。对于各输出像元，将计算各分散表面的累计交汇点总数。</p>
-<p><strong>1）点密度分析</strong></p>
-<p>每个栅格像元中心的周围都定义了一个邻域（邻域可以使用圆形、矩形、环形、楔形的形状来定义），将邻域内点的数量相加，然后除以邻域面积，即得到点要素的密度。如果 Population 字段设置使用的是 NONE 之外的值，则每项的值用于确定点被计数的次数。例如，值为 3 的项会导致点被算作三个点。值可以为整型也可以为浮点型。</p>
-<p><strong>2）线密度分析</strong></p>
-<p>使用搜索半径以各个栅格像元中心为圆心绘制一个圆。每条线上落入该圆内的部分的长度与 Population 字段值相乘。对这些数值进行求和，然后将所得的总和除以圆面积。</p>
-<p><img data-src="/images/blogImg/SADensity_LineDetail.gif"></p>
-<p>上图中显示的是栅格像元与其圆形邻域。线 L1 和 L2 表示各条线上落入圆内部分的长度。相应的 population 字段值分别为 V1 和 V2。因此：</p>
-<p><strong>Density &#x3D; ((L1 * V1) + (L2 * V2)) &#x2F; (area_of_circle)</strong></p>
-<p>如果 population 字段使用的是除 NONE 之外的值，则线的长度将等于线的实际长度乘以其 population 字段的值。</p>
-<p>详情参见：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS96aC1jbi9hcmNnaXNkZXNrdG9wLzEwLjAvaGVscC9pbmRleC5odG1sIy9uYS8wMDl6MDAwMDAwMHcwMDAwMDAv">http://help.arcgis.com/zh-cn/arcgisdesktop/10.0/help/index.html#/na/009z0000000w000000/<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/06/SADensity/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -601,16 +546,14 @@
 <h1 id="分带投影："><a href="#分带投影：" class="headerlink" title="分带投影："></a><strong>分带投影：</strong></h1><p>高斯投影对投影函数的选择条件：</p>
 <p>  1）椭球面上的任意角度投影到平面后保持不变；</p>
 <p>  2）作为平面坐标轴的中央经线，投影后是一条直线，并且是投影点的对称轴；</p>
-<p>  3）中央子午线投影到平面后，其长度不变。</p>
-<p>为了限制长度变形，就需要将投影区限定在中央经线两旁的狭窄范围内。</p>
-<p>通常按经线每隔6°进行分带投影。由0°经线起每隔经差6°自西向东分带，依次编号1、2、3……。6°带的带号N和中央经线L的关系为：L&#x3D;6N-3。</p>
-<p>为了进一步限制变形，可以采用3°投影分带。3°带和6°带的中央经线重合，6°带的中央经线和分带经线均是3°带的中央经线。3°带的带号n和中央经线L的关系为：L&#x3D;3n。</p>
-<p><strong>我国3°带的范围 24<del>45，6°带的范围 13</del>23。</strong></p>
-<p><img data-src="/images/blogImg/AboutGaussKruger_Zones.jpg"></p>
-<p>x值无论在哪一带都是由赤道起算的自然值。</p>
-<p>而由于中央经线以东取正号，以西取负号。实际工作中，为了避免横坐标y出现负值，规定在y值上500km（false easting）。同时，为了区别各带坐标不同，又规定在y值前冠以带号。</p>
-<p>例如：6°带第20带中，y&#x3D;-200.25m，成果表中应写为20499799.75m。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/06/01/AboutGaussKruger/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -726,19 +669,14 @@
 <p>习惯上，使用长半轴 a 和扁率 f&#x3D;（a-b）&#x2F;a，来表示椭球的形状和大小。</p>
 <p><strong>椭球定位：</strong></p>
 <p>将地球椭球面与大地水准面的相关位置确定下来的的工作就是椭球定位。这样就能将以大地水准面为基准面的野外测量成果换算到这个表面上，在它上面计算坐标。</p>
-<p><strong>参考椭球：</strong></p>
-<p>我们把形状和大小与大地体相近，且两者之间相对位置确定的旋转椭球称为地球椭球。参考椭球面是测量计算的基准面，椭球面的法线则是测量计算的基准线。</p>
-<p>PS：世界各国总是根据本国的地面测量成果选择一个适合本国情况的参考椭球，所以参考椭球有很多个。</p>
-<p><strong>大地坐标系：</strong></p>
-<p>大地坐标系是在椭球面上建立起来的一种表示地面点位的球面坐标系。（大地经度L，大地维度B，大地高H）</p>
-<p><strong>高斯平面直角坐标系：</strong></p>
-<p>它是投影坐标系的一种，根据我国的地理情况，为建立地形图的测量控制和城市、矿山等区域性的测量控制，早在1952年决定，采用高斯克吕格平面直角坐标系。</p>
-<p>椭球面是不可展曲面，无论如何选择投影函数，椭球面上的元素，投影到平面上，都会产生变形（角度、长度、面积）。高斯投影是一种等角投影（正形投影），又称为横轴椭圆柱等角投影。想象用一个椭球柱面横套在椭球外面，并与某一条子午线相切，椭球的柱的中心轴通过椭球中心，然后用一定的投影方法将中央子午线两侧各一定经差范围内的地区投影到椭圆柱面上，再将此柱展开即成为投影面。</p>
-<p>在投影面上，中央经线和赤道的投影都是直线，并且以中央经线和赤道的交点作为坐标原点，以中央经线的投影为纵坐标，以赤道的投影为横坐标，这就形成了高斯平面直角坐标系。</p>
-<br>
-
-<p><strong>摘录出自《控制测量学》</strong></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/06/01/SurveyBasic/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -913,6 +851,14 @@
 <p>补充，方便直观理解，看看中国境内的重要经纬线：</p>
 <p><img data-src="/images/blogImg/ChineseUTMZone_1.gif"><img data-src="/images/blogImg/ChineseUTMZone_2.gif"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/05/23/ChineseUTMZone/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

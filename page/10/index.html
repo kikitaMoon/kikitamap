@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -304,14 +304,14 @@
 <br>
 
 <p>工具源码参考：<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0JhbWJvb0J1ZmZlci9QZXJwZW5kaWN1bGFyTGluZV8yLjBfVG9vbC5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/BambooBuffer/PerpendicularLine_2.0_Tool.py<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<p>基于工具的应用实例：</p>
-<p>1  统计公路各分段的拥堵情况</p>
-<p><img data-src="/images/blogImg/CreateSplittedBuffer_Road.png"></p>
-<p>2  河道分段水位模拟</p>
-<p><img data-src="/images/blogImg/CreateSplittedBuffer_River.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/23/CreateSplittedBuffer/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -428,32 +428,14 @@
 <p><strong>2  获取感兴趣的内容</strong></p>
 <p>通过 gis.content.search() 方法可以在组织中查找所需内容。例如我查找命名包含 “China_Railways” 的要素服务。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Search My Portal</span></span><br><span class="line">search_result = gis.content.search(<span class="string">&#x27;title: China_Railways&#x27;</span>, item_type=<span class="string">&#x27;Feature Layer&#x27;</span>)</span><br><span class="line">search_result</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&lt;Item title:&quot;China_Railways&quot; type:Feature Service owner:portaladmin&gt;,</span><br><span class="line"> &lt;Item title:&quot;China_Railways___county_pt_Density&quot; type:Feature Service owner:portaladmin&gt;]</span><br></pre></td></tr></table></figure>
-
-<p><strong>3  使用地图微件</strong></p>
-<p>GIS对象中包含一个地图微件，可以用来渲染（可视化）组织中的内容，比如要素服务。我们还可以通过关键字来确定地图的显示位置，和指定地图的幅面尺寸等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Create a map widget</span></span><br><span class="line">mymap = gis.<span class="built_in">map</span>(<span class="string">&#x27;China&#x27;</span>)</span><br><span class="line">mymap.height = <span class="string">&#x27;500px&#x27;</span></span><br><span class="line">mymap</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>4 添加图层并渲染</strong></p>
-<p>例如使用热度图&#x2F;Heatmap 渲染器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Add layer using heatmap renderer</span></span><br><span class="line">featureitem = search_result[<span class="number">0</span>]</span><br><span class="line">mymap.add_layer(featureitem.layers[<span class="number">0</span>], &#123;<span class="string">&quot;renderer&quot;</span>:<span class="string">&quot;HeatmapRenderer&quot;</span>, <span class="string">&quot;opacity&quot;</span>:<span class="number">0.7</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="/images/blogImg/PythonAPIFunction1_MapWidget.gif"></p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>假设需求是实现采样点插值，数据来源是桌面产品自带的ArcGIS Tutorial中的数据（Geostatistical Analyst\ca_ozone.gdb\O3_Sep06_3pm）。</p>
-<p>除了通过搜索的方法，如果知道 itemid ，也能直接获得到内容，可以使用方法 gis.content.get()</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> arcgis <span class="keyword">import</span> gis</span><br><span class="line">gis = gis.GIS(<span class="string">&quot;https://kikita.mycloud.com/arcgis&quot;</span>,<span class="string">&quot;portaladmin&quot;</span>,<span class="string">&quot;Super123&quot;</span>, verify_cert=<span class="literal">False</span>)</span><br><span class="line">search_result = gis.content.get(<span class="string">&#x27;15b012af7f15484293517c844d2d65ab&#x27;</span>)</span><br><span class="line">search_result</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="/images/blogImg/PythonAPIFunction1_GetItem.png"></p>
-<p>还是使用地图微件，用来显示下数据和分析结果。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mymap = gis.<span class="built_in">map</span>(<span class="string">&#x27;California&#x27;</span>)</span><br><span class="line">mymap.height = <span class="string">&#x27;500px&#x27;</span></span><br><span class="line">mymap</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">O3layer = search_result.layers[<span class="number">0</span>]</span><br><span class="line">mymap.add_layer(O3layer)</span><br></pre></td></tr></table></figure>
-
-<p>Portal 中提供了一系列的“工具”，可以辅助我们实现分析的需求，包括 标准的分析工具、矢量大数据分析GeoAnalytics Tools、栅格数据分析等，一系列分析功能都可以通过 ArcGIS Python API 调用。  这里就以 interpolate points 为例。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> arcgis.features.analyze_patterns <span class="keyword">import</span> interpolate_points</span><br><span class="line">Interpolate = interpolate_points(O3layer, field=<span class="string">&#x27;ozone&#x27;</span>, output_name=<span class="string">&#x27;O3layerInterpolated2&#x27;</span>)</span><br><span class="line">mymap.add_layer(Interpolate)</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/22/PythonAPIFunction1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -565,6 +547,14 @@
 <p><img data-src="/images/blogImg/XJL_IMG_5792.jpg"></p>
 <p>越长大越复杂，不提醒自己，常常就忘记了快乐<br>有时，我们需要像孩童般，简单直接开放地面对生活<br>2017，继续努力吧 </p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/13/Childlike/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -676,6 +666,14 @@
 <p><img data-src="/images/blogImg/XJL_IMG_5651.jpg"></p>
 <p>父亲节，刚好在海港城<br>偶然看到小朋友的作品，觉得好有爱<br>对宝宝多年无感的我们<br>那时忽然觉得有个孩子好像也不错<br>不是为了传宗接代，不是为了完成所谓的使命<br>只是静静地看着ta成长<br>我们尽可能多地给予陪伴</p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/01/13/Painting/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -793,26 +791,14 @@
 
 <h2 id="2-安装arcgis包"><a href="#2-安装arcgis包" class="headerlink" title="2 安装arcgis包"></a>2 安装arcgis包</h2><p>在Python Command Prompt，执行如下命令下载安装 ArcGIS Python API 到Conda环境。</p>
 <p><code>conda install -c esri arcgis</code></p>
-<p>从旧的 arcgis 包升级</p>
-<p><code>conda upgrade -c esri arcgis</code></p>
-<p>*在安装过程中，会自动下载很多包到 <strong>C:\Program Files\ArcGIS\Pro\bin\Python\pkgs</strong> ，并自动安装，我们可以随时关注命令窗口中的消息了解。 最后，也会自动激活 jupyter notebook 的扩展 arcgis&#x2F;mapview。  看到后面这个消息，这个过程就结束了： <strong>Enabling notebook extension arcgis&#x2F;mapview…  - Validating: ok</strong> *</p>
-<p><em>这里相比 0.1，0.3 等beta版本的安装简便易懂了一些，忘记上次的命令吧（ conda install -c conda-forge ipywidgets； conda install -c esri arcgis&#x3D;0.1； python -m arcgis.install）。</em></p>
-<br>
-
-<h2 id="3-启动-Jupiter-notebook"><a href="#3-启动-Jupiter-notebook" class="headerlink" title="3 启动 Jupiter notebook"></a>3 启动 Jupiter notebook</h2><p><code>jupyter notebook [--port=&lt;int&gt;]</code></p>
-<p>默认采用8888端口号，如有占用，注意切换。</p>
-<br>
-
-
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>新建一个 Python 3 的 notebook，然后输入如下几行：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> arcgis.gis <span class="keyword">import</span> *</span><br><span class="line">gis = GIS()</span><br><span class="line">gis.<span class="built_in">map</span>()</span><br></pre></td></tr></table></figure>
-
-<p>Bingo!</p>
-<p><img data-src="/images/blogImg/UsingArcGISPythonAPI.png"></p>
-<br>
-
-<p>ArcGIS Python API 的官方简短介绍视频 （<em>Youtube源，请翻墙，你懂的</em>）</p>
-<iframe width="960" height="540" src="http://www.esri.com//videos/iframe?videoid=SyFebn8ZgbU&channelid=UCgGDPs8cte-VLJbgpaK4GPw&title=arcgis-python-api-in-5-minutes&autoplay=false" frameborder="0" allowfullscreen></iframe>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/10/17/UsingArcGISPythonAPI/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -303,6 +303,14 @@
 <p>效果示例：</p>
 <p><img data-src="/images/blogImg/CityEnginePlantTree.jpg"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/04/17/CityEnginePlantTree/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -424,28 +432,14 @@
 <p>PS：<code>%JAVA_HOME%</code> 就是引用前面指定的<code> JAVA_HOME</code>；<br>​	<br>关于配置环境变量的详情，可参阅：<span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaHVhbmdobTg4L2FydGljbGUvZGV0YWlscy8zOTY1MjE4">http://blog.csdn.net/huanghm88/article/details/3965218<i class="fa fa-external-link-alt"></i></span><br>​	<br><img data-src="/images/blogImg/DeployCityEngineLocalHelp_EnvPara.jpg"></p>
 <p>2.键入命令 java，出现画面，说明环境变量配置成功；</p>
 <p><img data-src="/images/blogImg/DeployCityEngineLocalHelp_Java.jpg"></p>
-<br>
-
-<h1 id="二、单独运行帮助"><a href="#二、单独运行帮助" class="headerlink" title="二、单独运行帮助"></a>二、单独运行帮助</h1><p>制作个启动脚本–bat文件。</p>
-<p>内容如下：</p>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Esri\CityEngine</span><br><span class="line">cd %ehome%</span><br><span class="line">C:</span><br><span class="line">java -classpath plugins\org.eclipse.help.base_3.5.2.v201009090800.jar org.eclipse.help.standalone.Help -command displayHelp</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<hr>
-<p>PS：蓝色部分仍然是 CE 的安装目录，下面包含 jre，bin 等目录。</p>
-<p>关于单独使用eclipse帮助的详情：<span class="exturl" data-url="aHR0cDovL2hpLmJhaWR1LmNvbS9jYWljaGFvd2VpL2l0ZW0vNGFiNGNjYjhlODMwNGNkMzg1ZGQ3OTE3">http://hi.baidu.com/caichaowei/item/4ab4ccb8e8304cd385dd7917<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<h1 id="三、更改CE程序文件名"><a href="#三、更改CE程序文件名" class="headerlink" title="三、更改CE程序文件名"></a>三、更改CE程序文件名</h1><p>上面的脚本运行之后，也许会报错，找不到 eclipse.exe。</p>
-<p>可以将CityEngine.exe，做个副本，重命名之，变成一位伪eclipse.exe。</p>
-<p><img data-src="/images/blogImg/DeployCityEngineLocalHelp_rename.jpg">	<br>然后运行上一步中的 bat 脚本，单独的CE帮助就跳出来了~</p>
-<br>
-
-<p>CE进入esri怀抱已久，相信风格会越来越接近 ArcGIS 核心产品，现有的WebHelp链接如下：</p>
-<p><span class="exturl" data-url="aHR0cDovL2NlaGVscC5lc3JpLmNvbS9oZWxwL2luZGV4LmpzcD90b3BpYz0vY29tLnByb2NlZHVyYWwuY2l0eWVuZ2luZS5oZWxwL2h0bWwvdG9jLmh0bWw=">http://cehelp.esri.com/help/index.jsp?topic=/com.procedural.cityengine.help/html/toc.html<i class="fa fa-external-link-alt"></i></span>	</p>
-<br>
-
-<p><strong>郑重鸣谢：~ ~ <span class="exturl" data-url="aHR0cDovL2Jsb2cubmV3bmF3LmNvbS8=">菩提老王<i class="fa fa-external-link-alt"></i></span> ~ ~</strong></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/03/22/DeployCityEngineLocalHelp/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -561,18 +555,14 @@
 <h1 id="1-准备带弧的数据"><a href="#1-准备带弧的数据" class="headerlink" title="1. 准备带弧的数据"></a>1. 准备带弧的数据</h1><p>在ArcGIS Desktop 中准备数据，创建 File GDB，用于存储弧段。可以从空白开始，也可以在现有数据中编辑。</p>
 <p>创建圆、椭圆、贝塞尔曲线、圆弧构成的面等等：</p>
 <p><img data-src="/images/blogImg/CurveinCityEngine_Curve.png"></p>
-<p>以上图形都处于节点编辑状态，从节点数目我们可以发现，都是以复杂对象存储的。然而这些是CE不能读取的，那么下一步就是转折线了。</p>
-<br>
-
-<h1 id="2-弧转折线"><a href="#2-弧转折线" class="headerlink" title="2. 弧转折线"></a>2. 弧转折线</h1><p>使用 ArcToolbox中的工具 Densify 工具来对弧段加密，从而将高级的函数要素对象转为简单的点线面几何。</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_Density.png"><br>​	<br>根据需要设置间距或者偏移等参数，从而控制加密点的生成位置，这里的需要主要是指将来模型的详细程度。</p>
-<p>如果需要比较逼真，距离可以相对小一些，这样的节点会更密集些，但是在CE中建模时可能会更耗时，更加占用资源；</p>
-<p>如果相对可以粗略些，距离可以设置大些，这样的节点会稀疏些，建立模型会更加快速，但是边界相对不会很平滑。</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_DensifyResult.png"></p>
-<h1 id="3-导入CE，进一步加工"><a href="#3-导入CE，进一步加工" class="headerlink" title="3.导入CE，进一步加工"></a>3.导入CE，进一步加工</h1><p>经过简单的拉拔，可以做出简单的类似弧段建筑物。</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_Model.png"></p>
-<p>到这里，这些类弧段的楼房骨架就有了。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/03/12/CurveinCityEngine/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -685,17 +675,14 @@
 <p>2）输入&nbsp;<strong><code>dxdiag</code></strong>&nbsp;进入 DirectX诊断工具，即列出显卡信息。</p>
 <p><img data-src="/images/blogImg/checkOpenGLVersion_dxdiag.jpg"></p>
 <h2 id="2-检测-OpenGL版本（Windows，Mac，移动设备）"><a href="#2-检测-OpenGL版本（Windows，Mac，移动设备）" class="headerlink" title="2.检测 OpenGL版本（Windows，Mac，移动设备）"></a>2.检测 OpenGL版本（Windows，Mac，移动设备）</h2><p>需要安装个第三方小软件。。名字叫：OpenGL Extension Viewer.</p>
-<p>下载并安装 OpenGL Extension Viewer </p>
-<p><strong>Mac、移动设备</strong>：在 OpenGL Extension Viewer 网页中，对应的选择从 Mac App Store、iTunes Store、Android Market下载即可。</p>
-<p><img data-src="/images/blogImg/checkOpenGLVersion_download.png"></p>
-<br>
-
-<p>OpenGL Extension Viewer是个免费的应用程序，由 Realtech VR 开发。此工具可以显示当前安装的 OpenGL 版本，并且可以检测和升级显卡驱动。</p>
-<p><img data-src="/images/blogImg/checkOpenGLVersion_Viewer.jpg"></p>
-<br>
-
-<p>本文内容来源于 ArcGIS Resource Center 技术文件，编号：<span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzM5NDc2">39476<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/03/04/checkOpenGLVersion/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -814,8 +801,14 @@
 <br>
 
 <p>另外还有一种视图，称为“正射视图（orthographic）”，也就2D显示效果。</p>
-<p><img data-src="/images/blogImg/ArcGIS3DView_orthographic.jpg"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/03/04/ArcGIS3DView/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

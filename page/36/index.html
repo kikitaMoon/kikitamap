@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -302,50 +302,14 @@
 <p>如果栅格波段的范围不同，统计数据将以所有输入栅格波段的共同的空间范围来计算。默认情况下，像元大小为输入栅格的最大像元的大小；否则，将取决于栅格分析环境设置。</p>
 <p>此工具计算每个图层的基本统计测量值（最小值、最大值、平均值和标准差），如果勾选协方差和相关矩阵，还可以得到这两个值。</p>
 <p><img data-src="/images/blogImg/SAMultiDimensions_BandColSts.png"></p>
-<h1 id="二、创建特征（Create-Signature）"><a href="#二、创建特征（Create-Signature）" class="headerlink" title="二、创建特征（Create Signature）"></a><strong>二、创建特征（Create Signature）</strong></h1><p>创建由输入样本数据和一组栅格波段定义的类的 ASCII 特征文件。该工具可创建将用作其他多元分析工具的输入参数的文件。</p>
-<p>该文件由两部分组成：</p>
-<p>1） 所有类的常规信息，例如图层数、输入栅格名称和类别数。<br>2） 每个类别的特征文件，由样本数、平均值和协方差矩阵组成。</p>
-<h1 id="三、编辑特征（Edit-Signature）"><a href="#三、编辑特征（Edit-Signature）" class="headerlink" title="三、编辑特征（Edit Signature）"></a><strong>三、编辑特征（Edit Signature）</strong></h1><p>通过合并、重新编号和删除类特征来编辑和更新特征文件。</p>
-<p>输入特征重映射文件是 ASCII 文件，其每一行有两列值与之对应，以冒号分隔。第一列是原始类 ID 值。第二列包含用于在特征文件中更新的新类 ID。文件中的所有条目必须基于第一列以升序进行排序。</p>
-<p>编辑特征文件的写法是固定的，如下：</p>
-<p>只有需要编辑的类才必须被放入特征重映射文件；任何在重映射文件中不存在的类将保持不变。</p>
-<p>要合并一组类，原类 ID：新类 ID。</p>
-<p>要删除类特征，使用 -9999 作为该类第二列的值。</p>
-<p>要重新编号，将类 ID 重新编号为某个不存在于输入特征文件中的值。</p>
-<p>示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 : 3</span><br><span class="line">4 : 11</span><br><span class="line">5 : -9999</span><br><span class="line">9 : 3</span><br></pre></td></tr></table></figure>
-
-<p>上例将使用 3 合并类 2 和 类 9，使用 11 合并类 4，并将删除类 5。</p>
-<h1 id="四、树状图（Dendrogram）"><a href="#四、树状图（Dendrogram）" class="headerlink" title="四、树状图（Dendrogram）"></a><strong>四、树状图（Dendrogram）</strong></h1><p>构造可显示特征文件中连续合并类之间的属性距离的树状图。</p>
-<p>有关其工作原理，详见：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS96aC1jbi9hcmNnaXNkZXNrdG9wLzEwLjAvaGVscC9pbmRleC5odG1sIy9uYS8wMDl6MDAwMDAwcTYwMDAwMDAv">http://help.arcgis.com/zh-cn/arcgisdesktop/10.0/help/index.html#/na/009z000000q6000000/<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="五、最大似然法分类（Maximum-Likelihood-Classification）"><a href="#五、最大似然法分类（Maximum-Likelihood-Classification）" class="headerlink" title="五、最大似然法分类（Maximum Likelihood Classification）"></a><strong>五、最大似然法分类（Maximum Likelihood Classification）</strong></h1><p>最大似然法分类工具所用的算法基于两条原则：</p>
-<p>1） 每个类样本中的像元在多维空间中呈正态分布<br>2） 贝叶斯决策理论</p>
-<p><strong>TIPS：</strong>工具中有几个参数需要注意：</p>
-<p>reject_fraction：将因最低正确分配概率而得不到分类的像元部分。</p>
-<p>默认值为 0.0；将对每个像元进行分类。共有 14 个有效输入：0.0、0.005、0.01、0.025、0.05、0.1、0.25、0.5、0.75、0.9、0.95、0.975、0.99 和 0.995。</p>
-<p>a_priori_probabilities：指定将如何确定先验概率。</p>
-<ul>
-<li>EQUAL — 所有类将具有相同的先验概率。</li>
-<li>SAMPLE — 先验概率将与特征文件内所有类中采样像元总数的相关的各类的像元数成比例。</li>
-<li>FILE — 先验概率将会分配给输入 ASCII 先验概率文件中的各个类。</li>
-</ul>
-<p>以下是通过三类样本的特征文件，分类的栅格数据的示例：</p>
-<p><img data-src="/images/blogImg/SAMultiDimensions_Classification.png"></p>
-<h1 id="六、Iso-聚类（Iso-Cluster）"><a href="#六、Iso-聚类（Iso-Cluster）" class="headerlink" title="六、Iso 聚类（Iso Cluster）"></a><strong>六、Iso 聚类（Iso Cluster）</strong></h1><blockquote>
-<p>Iso表示：iterative self-organizing –迭代自组织方法。</p>
-</blockquote>
-<p>Iso聚类工具对输入波段列表中组合的多元数据执行聚类。所生成的特征文件（*.gsg）可用作生成非监督分类栅格的分类工具（例如最大似然法分类）的输入。</p>
-<p>类数的最小有效值为二。不存在最大聚类数。通常情况下，聚类越多，所需的迭代就越多。</p>
-<h1 id="七、Iso-聚类非监督分类（Iso-Cluster-Unsupervised-Classification）"><a href="#七、Iso-聚类非监督分类（Iso-Cluster-Unsupervised-Classification）" class="headerlink" title="七、Iso 聚类非监督分类（Iso Cluster Unsupervised Classification）"></a><strong>七、Iso 聚类非监督分类（Iso Cluster Unsupervised Classification）</strong></h1><p>此工具为脚本工具，此工具结合了 Iso 聚类工具与最大似然法分类工具的功能。输出经过分类的栅格。</p>
-<h1 id="八、类别概率（Class-Probability）"><a href="#八、类别概率（Class-Probability）" class="headerlink" title="八、类别概率（Class Probability）"></a><strong>八、类别概率（Class Probability）</strong></h1><p>如果发现分类中的某些区域被分配给某一类的概率不是很高，则说明可能存在混合类。</p>
-<p>例如，根据分类概率波段，一个已被分类为森林的区域属于森林类的概率只有 55%。您又发现同一区域属于草地类的概率却有 40%。显然，该区域既不属于森林类也不属于草地类。它更可能是一个森林草地混合类。对于使用分类概率工具生成的分类概率，最好检查分类结果。</p>
-<p>生成的多波段栅格数据的波段数等于类别数，每个波段表示某种分类的可能概率，像元值从0至100。</p>
-<h1 id="九、主成分分析（Principal-Components）"><a href="#九、主成分分析（Principal-Components）" class="headerlink" title="九、主成分分析（Principal Components）"></a><strong>九、主成分分析（Principal Components）</strong></h1><p>对一组栅格波段执行主成分分析 (PCA) 并生成单波段栅格作为输出。此工具生成的是波段数与指定的成分数相同的多波段栅格。</p>
-<p>主成分分析工具用于将输入多元属性空间中的输入波段内的数据变换到相对于原始空间对轴进行旋转的新的多元属性空间。新空间中的轴（属性）互不相关。之所以在主成分分析中对数据进行变换，主要是希望通过消除冗余的方式来压缩数据。</p>
-<p>以上提到的几个工具，在ArcGIS 10.x版本中，除了在ArcToolbox中可以找到，在 Image Classification 工具条中也可以找到对应的功能，如下图：</p>
-<p><img data-src="/images/blogImg/SAMultiDimensions_Toolbar.png"></p>
-<p>这个工具集涉及很多遥感的理论知识，仅仅使用工具是不够的，后面需要多多学习…… </p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/27/SAMultiDimensions/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -459,50 +423,14 @@
 <p>2）类数据集的每个唯一值均有一个字段。</p>
 <p>3）每个记录将存储每个区域内每个类的面积。</p>
 <p><img data-src="/images/blogImg/SAZonal_TabulateArea.gif"></p>
-<p><strong>TIPS：</strong></p>
-<p>使用此工具的常见错误：</p>
-<p>1.<strong>“一个或多个输入没有关联属性表</strong>” 错误</p>
-<p>此错误通常是由于区域输入中没有所需的属性表而导致的。</p>
-<p>如果区域输入是一个栅格数据，请先使用构建栅格属性表为其创建一个属性表。</p>
-<p>如果区域输入是一个要素数据集，则在内部转换为栅格的过程中会自动创建属性表。</p>
-<p>2.“<strong>无法分配内存</strong>” 错误</p>
-<p>程序使用内部表执行面积计算。如果区域输入的值域非常大（百万级别），则处理这些表的内存需求可能会接近或超出指定的系统分页文件大小。</p>
-<p>如果所配置的内存总量不足，操作将失败，并将显示“无法分配内存”消息。此问题通常有两种解决方法：</p>
-<p>A） 您可增大虚拟内存设置以避免出现此错误。但是，要注意的是，工具执行完毕后，操作系统不会立即释放其所占用的虚拟内存。从而可能会降低计算机的总体性能。</p>
-<p>B） 另一种方法是减小区域的值域（建议方法）。步骤如下：首先向区域属性表添加一个新项和一个索引值，然后对该项使用面积制表，最后再将结果与原始区域输入相关联。<br>例如，如有仅有三个区域值 2,120,000、4,070,000 和 9,540,000，则可将它们除以 10,000，从而得到区域值 212、407 和 954。</p>
-<p>3.<strong>输出面积小于预计结果</strong></p>
-<p>输出表中的某些面积值可能小于预计结果。</p>
-<p>这通常与输入中的 NoData 像元有关，经重采样以匹配其他更为粗糙的输入之后，这些具有高分辨率的像元将变为更大的 NoData 区域。</p>
-<p>为避免此情况，请对较粗糙的输入栅格进行重采样以使其与较精细的输入栅格的分辨率相匹配，或者将像元大小栅格分析环境设置为输入的最小值。</p>
-<br>
-
-<h1 id="二、填充指定区域的工具"><a href="#二、填充指定区域的工具" class="headerlink" title="二、填充指定区域的工具"></a><strong>二、填充指定区域的工具</strong></h1><h2 id="区域填充（Zonal-Fill-）"><a href="#区域填充（Zonal-Fill-）" class="headerlink" title="区域填充（Zonal Fill ）"></a><strong>区域填充（</strong>Zonal Fill <strong>）</strong></h2><p>输入区域栅格数据可以为整型或浮点型。使用权重栅格数据沿区域边界的最小像元值填充区域。</p>
-<p>区域填充可用作水文分析的一部分，将洼地填充至分水岭边界的最小高程。</p>
-<p>此工具有待实践，结合水文分析学习。</p>
-<h1 id="三、作用于区域形状的工具"><a href="#三、作用于区域形状的工具" class="headerlink" title="三、作用于区域形状的工具"></a><strong>三、作用于区域形状的工具</strong></h1><h2 id="分区几何统计（Zonal-Geometry）"><a href="#分区几何统计（Zonal-Geometry）" class="headerlink" title="分区几何统计（Zonal Geometry）"></a><strong>分区几何统计（Zonal Geometry）</strong></h2><p>这里说的区域是指具有相同值的所有像元。各区无需相连。栅格和要素数据集都可用于工具的输入。</p>
-<p>这个工具的亮点在于可以统计区的<strong>总面积（AREA）、总周长（PERIMETER）、厚度（THICKNESS）、质心（CENTROID）</strong>。其他三个比较好理解，我们看下厚度的概念。</p>
-<p>分区厚度分析可计算输入栅格上各个区域中最深或最厚点距其周围像元的距离。</p>
-<p>实际上，厚度就是可在各个区域中（不包括区域外部的任何像元）绘制的最大圆的半径（以像元为单位）。如下图：</p>
-<p><img data-src="/images/blogImg/SAZonal_ZonalGeometry.png">  </p>
-<h2 id="以表格显示分区几何统计（Zonal-Geometry-as-Table）"><a href="#以表格显示分区几何统计（Zonal-Geometry-as-Table）" class="headerlink" title="以表格显示分区几何统计（Zonal Geometry as Table）"></a><strong>以表格显示分区几何统计（Zonal Geometry as Table）</strong></h2><p>将上述统计结果输出到Table表中。</p>
-<p><img data-src="/images/blogImg/SAZonal_ZonalGeometryasTable.png"></p>
-<p>其中，最后三个参数，用于描述各个区域的椭圆近似的形状。定义椭圆形状和大小的参数为长轴、短轴和方向。各椭圆的面积与为其分配的区域的面积相等。</p>
-<p>MAJORAXIS：长轴的长度；MINORAXIS：短轴的长度。以地图单位表示。</p>
-<p>ORIENTATION 值的单位为度，取值范围为 0 至 180。方向定义为 x 轴与椭圆长轴之间的角度。方向的角度值以逆时针方向增加，起始于东方向（右侧水平位置）的 0 值，在长轴垂直时通过 90 位置。如果某个特定区域仅由一个像元组成，或者该区域为单个像元方块，那么会将椭圆（在此情况下为圆）的方向设置为 90 度。</p>
-<p><img data-src="/images/blogImg/SAZonal_Orientation.png"></p>
-<h1 id="四、确定某输入栅格值在另一区域中的频数分布的工具"><a href="#四、确定某输入栅格值在另一区域中的频数分布的工具" class="headerlink" title="四、确定某输入栅格值在另一区域中的频数分布的工具"></a><strong>四、确定某输入栅格值在另一区域中的频数分布的工具</strong></h1><h2 id="区域直方图（Zonal-Histogram）"><a href="#区域直方图（Zonal-Histogram）" class="headerlink" title="区域直方图（Zonal Histogram）"></a><strong>区域直方图（Zonal Histogram）</strong></h2><p>创建显示各唯一区域值输入中的像元值频数分布的表和直方图（Graph类型）。</p>
-<p>区域字段必须为整型或字符串类型。</p>
-<p><img data-src="/images/blogImg/SAZonal_Histograms.png"></p>
-<p><img data-src="/images/blogImg/SAZonal_ZonalHistogram.png"></p>
-<h1 id="五、作用于区域属性的工具"><a href="#五、作用于区域属性的工具" class="headerlink" title="五、作用于区域属性的工具"></a><strong>五、作用于区域属性的工具</strong></h1><h2 id="分区统计（Zonal-Statistics）"><a href="#分区统计（Zonal-Statistics）" class="headerlink" title="分区统计（Zonal Statistics）"></a><strong>分区统计（Zonal Statistics）</strong></h2><p><strong>以表格显示分区统计（<strong><strong>Zonal Statistics as Table</strong></strong>）</strong></p>
-<p>这两个工具是，计算在另一个数据集的区域内栅格数据值的统计信息。这里的区域定义为输入中具有相同值的所有区。各区无需相连。栅格和要素数据集都可用于区域输入。</p>
-<p>前者生成栅格数据，后者生成统计表。</p>
-<p><img data-src="/images/blogImg/SAZonal_ZonalStatistics.png"></p>
-<p><img data-src="/images/blogImg/SAZonal_ZonalStatistics2.png"></p>
-<br>
-
-<p>OK……</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/24/SAZonal/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -636,28 +564,14 @@
 <li><strong>SUM</strong>&#x2F;总和。</li>
 <li><strong>VARIETY</strong>&#x2F;变异度（唯一值的数量）。</li>
 </ul>
-<p>例如，输入为圆形邻域，输出为外接矩形的像元范围：</p>
-<p><img data-src="/images/blogImg/SAProximity_Radias.png"></p>
-<h1 id="2-滤波器（Filter）"><a href="#2-滤波器（Filter）" class="headerlink" title="2. 滤波器（Filter）"></a><strong>2. 滤波器（Filter）</strong></h1><p>对栅格执行平滑（低通）滤波器或边缘增强（高通）滤波器。</p>
-<p>滤波器工具既可用于消除不必要的数据，也可用于增强数据中不明显的要素的显示。</p>
-<p>低通滤波（平滑边界）：</p>
-<p><img data-src="/images/blogImg/SAProximity_Low.png">   </p>
-<p>高通滤波（边缘增强）：</p>
-<p><img data-src="/images/blogImg/SAProximity_High.png">   </p>
-<h1 id="3-焦点流（Focal-Flow）"><a href="#3-焦点流（Focal-Flow）" class="headerlink" title="3. 焦点流（Focal Flow）"></a><strong>3. 焦点流（Focal Flow）</strong></h1><p>焦点流工具使用直接的 3 x 3 邻域来确定一个像元的八个相邻点中哪一个流向此像元。</p>
-<p>焦点流也可以是液体由高到低流动的方向，也可以是定义的任何移动（比如污染物向污染浓度较低的地方流入）。</p>
-<p><img data-src="/images/blogImg/SAProximity_FocalFlow1.gif"></p>
-<p>举个例子，各个方向流向像元中心像元的值总和是最终值。</p>
-<p><img data-src="/images/blogImg/SAProximity_FocalFlow2.gif"></p>
-<h1 id="4-焦点统计（Focal-Statistics）"><a href="#4-焦点统计（Focal-Statistics）" class="headerlink" title="4. 焦点统计（Focal Statistics）"></a><strong>4. 焦点统计（Focal Statistics）</strong></h1><p>为每个输入像元位置计算其周围指定邻域内的值的统计数据。</p>
-<p>统计类型与邻域形状与块统计是相同的，区别在于，块统计的输出是整个邻域的外接矩形范围，而焦点统计的输出，是邻域内的焦点栅格。如下图：</p>
-<p><img data-src="/images/blogImg/SAProximity_FocalStatistics.png"></p>
-<h1 id="5-线统计"><a href="#5-线统计" class="headerlink" title="5. 线统计"></a><strong>5. 线统计</strong></h1><p>工具用于为每个输出栅格像元周围的圆形邻域内所有线的指定字段值计算统计量。</p>
-<p>可用的统计量类型有：均值、众数、最大值、中位数、最小值、少数、范围、标准差以及变异度。只有众数、少数和中位数统计量是根据线长度进行加权的。</p>
-<p><img data-src="/images/blogImg/SAProximity_LineStatistics.png"></p>
-<p>还没有想到此工具的应用场景，以后有了再来追加。</p>
-<h1 id="6-点统计"><a href="#6-点统计" class="headerlink" title="6. 点统计"></a><strong>6. 点统计</strong></h1><p>该工具类似于焦点统计工具，不同之处在于它直接对点要素而非栅格进行操作。直接对要素进行操作的其中一个优点在于，即使点距离过近，在转换成栅格时点也不会丢失。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/23/SAProximity/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -773,132 +687,14 @@
 <p><strong>填挖方（Cut Fill）：</strong>计算两表面间体积的变化。通常用于执行填挖操作。</p>
 <p><strong>山体阴影（HillShade）：</strong>通过考虑照明源的角度和阴影，根据表面栅格创建地貌晕渲。</p>
 <p><strong>视点分析（Observer Point）：</strong>识别从各栅格表面位置进行观察时可见的观察点。</p>
-<p><strong>坡度（Slope）：</strong>判断栅格表面的各像元中的坡度（梯度或 z 值的最大变化率）。</p>
-<p><strong>视域（Viewshed）：</strong>确定对一组观察点要素可见的栅格表面位置。</p>
-<p>下面分类来看一下这些工具：</p>
-<h1 id="一、-各种等值线工具"><a href="#一、-各种等值线工具" class="headerlink" title="一、 各种等值线工具"></a><strong>一、 各种等值线工具</strong></h1><p><strong>1） 等值线（Contour）</strong></p>
-<p>根据栅格表面数据创建等值线线要素类。可以指定起算线和间隔。</p>
-<p><img data-src="/images/blogImg/SASurface_Contour.png"></p>
-<p><strong>2） 等值线列表（Contour list）</strong></p>
-<p>根据栅格表面创建所指定等值线值的要素类。</p>
-<p><strong>3）含障碍的等值线（Contour with Barriers）</strong></p>
-<p>根据栅格表面创建等值线。如果包含障碍要素，则允许在障碍两侧独立生成等值线。</p>
-<p><strong>TIPS： 关于等值线的质量问题</strong></p>
-<p>少数情况下，所创建等值线的轮廓可能会呈方形或不均匀，看起来犹如沿着栅格像元的边界。出现这种情况可能是因为各栅格的值为整数且恰好落在等值线上。这并不是个问题，该等值线不过是原样呈现数据而已。</p>
-<p>如果希望等值线更平滑，可行的方法包括对源数据进行平滑处理或调整起始等值线。</p>
-<h1 id="二、表面特征相关工具"><a href="#二、表面特征相关工具" class="headerlink" title="二、表面特征相关工具"></a><strong>二、表面特征相关工具</strong></h1><p><strong>1） 坡向（Aspect）</strong></p>
-<p><img data-src="/images/blogImg/SASurface_Aspect.png"></p>
-<p>此工具求得每个像元到其相邻的各个像元方向的 z 值上变化率最大的下坡方向。</p>
-<p>从概念上讲，坡向工具将根据要处理的像元或中心像元周围一个 3 x 3 的像元邻域的 z 值拟合出一个平面。该平面的朝向就是待处理像元的坡向。</p>
-<p>输出栅格的值将是坡向的罗盘方向。坡向由 0 到 359.9 度之间的正度数表示，以北为基准方向按顺时针进行测量。会为输入栅格中的平坦（具有零坡度）像元分配 -1 坡向。</p>
-<p><img data-src="/images/blogImg/SASurface_Aspect2.png"></p>
-<p><strong>2） 坡度（Slope）</strong></p>
-<p>坡度是指各像元中 z 值的最大变化率。</p>
-<p>从概念上讲，该工具会将一个平面与要处理的像元或中心像元周围一个 3 x 3 的像元邻域的 z 值进行拟合。该平面的坡度值通过最大平均值法来计算。</p>
-<p>如果邻域内某个像元位置的 z 值为 NoData，则将中心像元的 z 值指定给该位置。如果直接邻域（3 x 3 窗口）中的中心像元为 NoData，则输出将为 NoData。</p>
-<p><img data-src="/images/blogImg/SASurface_Slope.gif"></p>
-<p>确定输出坡度数据的测量单位（度或百分比）。</p>
-<ul>
-<li>DEGREE — 坡度倾角，单位：度，范围：0 ~ 90。</li>
-<li>PERCENT_RISE — 高程增量百分比，也称为百分比坡度，范围：0 ~ ∞。</li>
-</ul>
-<p>该工具可与其他类型的连续数据（如人口）配合使用，用来识别值的急剧变化。</p>
-<p>关于工具的详细算法：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS96aC1jbi9hcmNnaXNkZXNrdG9wLzEwLjAvaGVscC9pbmRleC5odG1sIy9uYS8wMDl6MDAwMDAwdnowMDAwMDAv">http://help.arcgis.com/zh-cn/arcgisdesktop/10.0/help/index.html#/na/009z000000vz000000/<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>3） 曲率（Curvature）</strong></p>
-<p>主要输出结果为每个像元的表面曲率。曲率是表面的二阶导数，或者可称之为坡度的坡度。曲率为正说明该像元的表面向上凸。曲率为负说明该像元的表面开口朝上凹入。值为 0 说明表面是平的。</p>
-<p>可供选择的输出曲率类型为：剖面曲率（沿最大斜率的坡度）和平面曲率（垂直于最大坡度的方向）。</p>
-<p>从应用的角度看，该工具的输出可用于描述流域盆地的物理特征，从而便于理解侵蚀过程和径流形成过程。坡度会影响下坡时的总体移动速率。坡向将决定流向。剖面曲率将影响流动的加速和减速，进而将影响到侵蚀和沉积。平面曲率会影响流动的汇聚和分散。</p>
-<p><img data-src="/images/blogImg/SASurface_Curvature.gif"></p>
-<h1 id="三、-填挖方（Cut-Fill）"><a href="#三、-填挖方（Cut-Fill）" class="headerlink" title="三、 填挖方（Cut Fill）"></a><strong>三、 填挖方（Cut Fill）</strong></h1><p>计算两表面间体积的变化。通常用于执行填挖操作。</p>
-<p>默认情况下，将使用专用渲染器来高亮显示执行填挖操作的位置。该渲染器将被挖的区域绘制成蓝色，将被填的区域绘制成红色。没有变化的区域将显示为灰色。</p>
-<p><img data-src="/images/blogImg/SASurface_CutFill.png">  </p>
-<h1 id="四、山影（Hillshade）"><a href="#四、山影（Hillshade）" class="headerlink" title="四、山影（Hillshade）"></a><strong>四、山影（Hillshade）</strong></h1><p><img data-src="/images/blogImg/SASurface_Hillshade.gif"></p>
-<p>此工具考虑的主要因素是太阳（照明源）在天空中的位置。看下此工具的参数设置：</p>
-<p><img data-src="/images/blogImg/SASurface_HillshadeTool.png"></p>
-<p><strong>方位角（Azimuth）</strong>指的是太阳的角度方向，是以北为基准方向在 0 到 360 度范围内按顺时针进行测量的。90º 的方位角为东。此工具默认方向角为 315º (NW)。</p>
-<p><img data-src="/images/blogImg/SASurface_Azimuth.gif"></p>
-<p><strong>高度（Altitude）</strong>指的是太阳高出地平线的角度或坡度。高度的单位为度，范围为 0（位于地平线上）到 90（位于头上）之间。此工具默认值为 45 度。</p>
-<p><img data-src="/images/blogImg/SASurface_Altitude.gif"></p>
-<p><strong>Model shadows</strong></p>
-<p>通过对选择 Model shadows，可计算局部照明度以及像元是否落入阴影内。阴影值为0，所有其他像元的编码为介于 1 和 255 之间的整数。</p>
-<p><strong>Z 因子（Z factor）</strong></p>
-<p>z 单位与输入表面的 x,y 单位不同时，可使用 z 因子调整 z 单位的测量单位。计算最终输出表面时，将用 z 因子乘以输入表面的 z 值。</p>
-<p>如果 x,y 单位和 z 单位采用相同的测量单位；则 z 因子为 1。这是默认值。此外，z 因子还可用于地形夸大。</p>
-<p>例如，如果 z 单位是英尺而 x,y 单位是米，则应使用 z 因子 0.3048 将 z 单位从英尺转换为米（1 英尺 &#x3D; 0.3048 米）</p>
-<p>关于工具的详细算法：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS96aC1jbi9hcmNnaXNkZXNrdG9wLzEwLjAvaGVscC9pbmRleC5odG1sIy9uYS8wMDl6MDAwMDAwejIwMDAwMDAv">http://help.arcgis.com/zh-cn/arcgisdesktop/10.0/help/index.html#/na/009z000000z2000000/<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="五、可见性分析"><a href="#五、可见性分析" class="headerlink" title="五、可见性分析"></a><strong>五、可见性分析</strong></h1><p><strong>1） 视点分析</strong></p>
-<p><img data-src="/images/blogImg/SASurface_ViewPoint.png"></p>
-<p>视点工具生成的是在观测点处能够看到哪些位置的像元的二进制编码信息。观察点被限制为最多16 个。此工具仅支持点要素输入。</p>
-<p>可见性信息存储在 VALUE 项中。如果要显示通过视点 3 能看到的所有栅格区域，就打开输出栅格属性表，然后选择视点 3 (OBS3) 等于 1 而其他所有视点等于 0 的记录。</p>
-<p>例如，如下是7个观测点的可视性分析结果的属性表：</p>
-<p><img data-src="/images/blogImg/SASurface_MultiViewPoints.png"></p>
-<p><strong>2） 视域</strong></p>
-<p><img data-src="/images/blogImg/SASurface_Viewshed.png"></p>
-<p>视域工具会创建一个栅格数据，以记录可从输入<strong>视点</strong>或 <strong>视点折线要素</strong>位置看到每个区域的次数。该值记录在输出栅格表的 VALUE 项中。</p>
-<p><img data-src="/images/blogImg/SASurface_ViewshedTable.png"></p>
-<p><strong>TIPS：控制可见性分析</strong></p>
-<p>通过在要素属性数据集中指定不同的项，可限制所检查的栅格区域。共有九项：SPOT、OFFSETA、OFFSETB、AZIMUTH1、AZIMUTH2、VERT1、VERT2、RADIUS1 和 RADIUS2。</p>
-<p>附图帮助理解：</p>
-<p><img data-src="/images/blogImg/SASurface_Paras.png"></p>
-<p>这些值的默认值：</p>
-<table>
-<thead>
-<tr>
-<th><strong>选项</strong></th>
-<th><strong>默认值</strong></th>
-<th><strong>参数意义</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SPOT</td>
-<td>使用双线性插值进行估计</td>
-<td>观测点位置的高程</td>
-</tr>
-<tr>
-<td>OFFSETA</td>
-<td>1</td>
-<td>观测点高（例如，仪器高），必须为正数</td>
-</tr>
-<tr>
-<td>OFFSETB</td>
-<td>0</td>
-<td>各像元高(例如，目标高），必须为正数</td>
-</tr>
-<tr>
-<td>AZIMUTH1</td>
-<td>0</td>
-<td>观测起始方位角</td>
-</tr>
-<tr>
-<td>AZIMUTH2</td>
-<td>360</td>
-<td>观测终止方位角</td>
-</tr>
-<tr>
-<td>VERT1</td>
-<td>90</td>
-<td>观测起始竖直角</td>
-</tr>
-<tr>
-<td>VERT2</td>
-<td>-90</td>
-<td>观测终止竖直角</td>
-</tr>
-<tr>
-<td>RADIUS1</td>
-<td>0</td>
-<td>起始可见半径</td>
-</tr>
-<tr>
-<td>RADIUS2</td>
-<td>无穷大</td>
-<td>终止可见半径</td>
-</tr>
-</tbody></table>
-<p>如果视点要素数据集是点要素类，则每个观测点都可具有属性表中的唯一一组观测约束。如果视点要素数据集是折线要素类，则沿输入折线的每个折点都会使用属性表的折线记录中包含的相同观测约束。如果某项不存在，将使用默认值。</p>
-<p><img data-src="/images/blogImg/SASurface_ParaGraph.gif"></p>
-<p>O了，关于表面分析的工具，总结到此结束。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/20/SASurface/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1013,39 +809,14 @@
 <p><strong>Extract by Mask：</strong>按掩膜提取，按指定的栅格数据或者矢量数据的形状的提取像元。</p>
 <p><strong>Extract by Point：</strong>按点提取，按给定坐标值列表进行提取。</p>
 <p><strong>Extract by Polygon：</strong>按多边形提取，按给定坐标序列作为节点的多边形进行提取。</p>
-<p><strong>Extract by Rectangle：</strong>按矩形提取，按给定的图层的Extent，或者定义了四至的矩形进行提取。</p>
-<p><strong>Extract Value to Point ：</strong>按照点要素的位置提取对应的（一个&#x2F;多个）栅格数据的像元值，其中，提取的Value可以使用像元中心值或者选择进行双线性插值提取。</p>
-<p><strong>Extract Multi Value to Point：</strong>同上，只是提取多个栅格的像元值。</p>
-<p><strong>Sample：</strong>采样，根据给定的栅格或者矢量数据的位置提取像元值，采样方法可选：最邻近分配法（Nearest）、双线性插值法（Bilinear）、三次卷积插值法（Cubic）。</p>
-<p>以上工具用来提取栅格中的有效值、兴趣区域\点等很有用的。</p>
-<h1 id="二、综合（Generalization）"><a href="#二、综合（Generalization）" class="headerlink" title="二、综合（Generalization）"></a><strong>二、综合（Generalization）</strong></h1><p>这组工具主要用来清理栅格数据，可以大致分为三个方面的功能：<strong>更改数据的分辨率、对区域进行概化、对区域边缘进行平滑</strong>。</p>
-<p>这些工具的输入都要求为整型栅格。</p>
-<p><img data-src="/images/blogImg/SAGeneral_GToolset.png"></p>
-<p><strong>1. 更改数据分辨率：</strong></p>
-<p>**Aggregate： **聚合，生成降低分辨率的栅格。</p>
-<p>其中，Cell Factor需要是一个大于1的整数，表示生成栅格的像元大小是原来的几倍。</p>
-<p>生成新栅格的像元值可选：新的大像元所覆盖的输入像元的总和值、最小值、最大值、平均值、中间值。</p>
-<p>效果如下，Cell factor设置为 6：</p>
-<p><img data-src="/images/blogImg/SAGeneral_Aggregate.png">  &#x3D;&#x3D;&gt;  <img data-src="/images/blogImg/SAGeneral_Aggregate2.png"></p>
-<p><strong>2. 对区域进行概化：</strong></p>
-<p><strong>Expand：</strong>扩展，按指定的像元数目扩展指定的栅格区域。</p>
-<p><img data-src="/images/blogImg/SAGeneral_Expand.png"> &#x3D;&#x3D;&gt; <img data-src="/images/blogImg/SAGeneral_Expand2.png"></p>
-<p><strong>Shrink：</strong> 收缩，按指定像元数目收缩所选区域，方法是用邻域中出现最频繁的像元值替换该区域的值。同Expand。</p>
-<p><strong>Nibble：</strong>用最邻近点的值替换掩膜范围内的栅格像元的值。</p>
-<p><strong>Thin：</strong>细化，通过减少表示要素宽度的像元数来对栅格化的线状对象进行细化。</p>
-<p><strong>Region Group：</strong>区域合并，记录输出中每个像元所属的连接区域的标识。每个区域都将被分配给唯一编号。</p>
-<p>工作原理：扫描的第一个区域接收值 1，第二个区域接收值 2，依此类推，直到所有区域都已赋值。扫描将按从左至右、从上至下的顺序进行。被赋予输出区域的值取决于系统在扫描过程中是在什么时候遇到它们的。</p>
-<p>其中，添加链接选项为“真”时。这将在输出栅格的属性表中创建名为 LINK 的项，其保留输入栅格的每个像元的原始值。</p>
-<p><img data-src="/images/blogImg/SAGeneral_RegionGroup1.png"></p>
-<p>如下图，原始数据具有相同值的区域有的并不连通，这时会新生成很多Region：</p>
-<p><img data-src="/images/blogImg/SAGeneral_RegionGroup2.png"> &#x3D;&#x3D;&gt; <img data-src="/images/blogImg/SAGeneral_RegionGroup3.png"></p>
-<p><strong>3. 对区域边缘进行平滑：</strong></p>
-<p><strong>Boundary Clean：</strong>边界清理，通过扩展和收缩来平滑区域间的边界。该工具会去更改X或Y方向上所有少于三个像元的位置。</p>
-<p><strong>Majority Filter：</strong>众数滤波，根据相邻像元数据值的众数替换栅格中的像元。可以认为是“少数服从多数”，太突兀的像元被周围的大部队干掉了。其中“大部队”的参数可设置，相邻像元可以4邻域或者8邻域，众数可选，需要大部分（3&#x2F;4、5&#x2F;8）还是过半数即可。</p>
-<p><strong>TIPS： 这两个工具仅支持整形栅格输入。</strong></p>
-<p>看如下示例，清理后，还是有明显变化的，细碎像元已经被处理掉了。</p>
-<p><img data-src="/images/blogImg/SAGeneral_Majority.png"><br><img data-src="/images/blogImg/SAGeneral_Majority2.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/19/SAGeneral/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

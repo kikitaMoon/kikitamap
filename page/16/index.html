@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -304,57 +304,14 @@
 <br>
 
 <h2 id="动手做做"><a href="#动手做做" class="headerlink" title="动手做做"></a><strong>动手做做</strong></h2><p>下面我就依据这个模板，写一个简单的脚本工具箱。需求是批量裁剪，我希望我只提供一个文件夹或者数据库等这样的<strong>工作空间</strong>和一个<strong>裁剪区域面</strong>，就可以批量完成工作空间内全部数据的裁剪工作，并且无视栅格还是矢量，一并裁剪。</p>
-<p>Let the scripting begin ……</p>
-<br>
-
-<h3 id="1-创建工具箱"><a href="#1-创建工具箱" class="headerlink" title="1 创建工具箱"></a>1 创建工具箱</h3><p>工具箱的name就是 .pyt 文件的名字，通常我们把工具添加到 ArcToolbox窗口中时会显示工具箱的 label。在 <strong><code>Toolbox</code></strong> 类的 <strong><code>__init__</code></strong> 方法中定义属性，例如： <strong><code>alias</code><strong>、</strong><code>label</code></strong> 和 **<code>description</code>**。</p>
-<p>工具作为<strong>类</strong>被添加至 .pyt 中，工具箱的 tools 属性必须设置为包含定义的所有工具<strong>类</strong>的<strong>列表</strong>。比如，需要做ATool，ATool，CTool三个工具，不是写三个脚本，而是创建三个<strong>类</strong>，然后将类名放入列表， <strong><code>self.tools = [ATool,ATool,CTool]</code></strong> 。</p>
-<br>
-
-<p>这里，我仅定义一个工具类 ClipWorkspace，来说明构建过程即可  ：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">Source Name:   ClipWorkspace.pyt</span><br><span class="line">Author:        Kikita</span><br><span class="line">Description:   Python tool to clip spatial data in the same workspace by batch.</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">import arcpy</span><br><span class="line"></span><br><span class="line"># The class name must be &quot;Toolbox&quot; ...</span><br><span class="line">class Toolbox(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">    </span><br><span class="line">        self.label = &quot;Clip Workspace Toolbox&quot;</span><br><span class="line">        self.alias = &quot;&quot;</span><br><span class="line"></span><br><span class="line">        # List of tool classes associated with this toolbox</span><br><span class="line">        self.tools = [ClipWorkspace]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ClipWorkspace(object):</span><br><span class="line">	……</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>在 ArcGIS Desktop 中已经可以看到这个工具箱的雏形：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool3_Tool.png"></p>
-<br>
-
-<h2 id="2-定义工具"><a href="#2-定义工具" class="headerlink" title="2 定义工具"></a>2 定义工具</h2><p>下面就是完善工具内部的代码。我就以 ClipVectorWorkspace 为例。</p>
-<br>
-
-<p>每个工具类应至少包括 <strong><code>__init__</code></strong> 和 <strong><code>execute</code></strong> 方法。此外，还可以选择使用 <strong><code>getParameterInfo</code><strong>、</strong><code>isLicensed</code><strong>、</strong><code>updateParameters</code></strong> 和 <strong><code>updateMessages</code></strong> 方法向工具的行为中添加其他控制。</p>
-<p>工具类中的 <strong><code>__init__</code></strong> 方法是标准 Python 类初始化方法。对于 Python 工具箱中的工具，**<code>__init__</code>** 方法用于设置该工具的属性，例如工具的标注、描述、是否允许在后台运行等。</p>
-<p>下面的例子就创建了ClipVectorWorkspace这个工具：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ClipWorkspace</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Clip Workspace&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.description = <span class="string">&quot;clip spatial data in the same workspace by batch.&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.canRunInBackground = <span class="literal">True</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p>有了工具的构造函数，我们继续看如何给工具定义参数。在 Python 工具箱 (.pyt) 中，可在工具类的 <strong><code>getParameterInfo</code></strong> 方法中创建 <strong><code>Parameter</code></strong> 对象，并设置对象的属性来定义工具参数。**<code>Parameter</code><strong>的属性中</strong><code>datatype</code>**<br>包含的类型可以在帮助文档中查询，点**<span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9kZXNrdG9wL2xhdGVzdC9hbmFseXplL2NyZWF0aW5nLXRvb2xzL2RlZmluaW5nLXBhcmFtZXRlci1kYXRhLXR5cGVzLWluLWEtcHl0aG9uLXRvb2xib3guaHRt">这里<i class="fa fa-external-link-alt"></i></span>**。</p>
-<br>
-
-<p>此示例中的参数就是输入工作空间（inWorkspace）、裁剪区域面（ClipArea）、输出工作空间（outWorkspace）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">getParameterInfo</span>(<span class="params">self</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Parameter Definitions</span></span><br><span class="line">    <span class="comment"># First parameter - Input Workspace</span></span><br><span class="line">    param0 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Input Workspace&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;inWorkspace&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEWorkspace&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Second parameter - Clip Area</span></span><br><span class="line">    param1 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Clip Area&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;CLipArea&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEFeatureClass&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Third parameter - Output Workspace</span></span><br><span class="line">    param2 = arcpy.Parameter(</span><br><span class="line">        displayName=<span class="string">&quot;Output Workspace&quot;</span>,</span><br><span class="line">        name=<span class="string">&quot;outWorkspace&quot;</span>,</span><br><span class="line">        datatype=<span class="string">&quot;DEWorkspace&quot;</span>,</span><br><span class="line">        parameterType=<span class="string">&quot;Required&quot;</span>,</span><br><span class="line">        direction=<span class="string">&quot;Input&quot;</span>)</span><br><span class="line"></span><br><span class="line">    params = [param0,param1,param2]</span><br><span class="line">    <span class="keyword">return</span> params	</span><br></pre></td></tr></table></figure>
-
-<p><strong>PS</strong> : 在代码中，如果仔细看，或许你会疑惑，为何输出工作空间的方向是 input ，而不是 output？ 因为工具最终输出的为 Feature Class 或 Raster，输出工作空间也是作为输入参数传入工具使用的。如果不关心，也可以不在意这些细节…… 继续向下了解工具的构建过程。</p>
-<br>
-
-<p>下面就是工具的具体执行部分了，当然里面还加了些辅助了解工具执行状态的消息：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, parameters, messages</span>):</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;The source code of the tool.&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Get tool parameters</span></span><br><span class="line">    inWorkspace = parameters[<span class="number">0</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Input Workspace is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(inWorkspace))</span><br><span class="line"></span><br><span class="line">    ClipArea = parameters[<span class="number">1</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Clip Area is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(ClipArea))</span><br><span class="line"></span><br><span class="line">    outWorkspace =  parameters[<span class="number">2</span>].valueAsText</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;###Out Workspace is &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(outWorkspace))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Feature by Batch</span></span><br><span class="line">    arcpy.env.workspace = inWorkspace</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Vector</span></span><br><span class="line">    FeatureClasses = arcpy.ListFeatureClasses()</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;Input Workspace contains &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(FeatureClasses))</span><br><span class="line">    <span class="keyword">for</span> fc <span class="keyword">in</span> FeatureClasses:</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&gt;&gt; Clipping  &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(fc))</span><br><span class="line">        arcpy.Clip_analysis(fc,ClipArea, os.path.join(outWorkspace,fc))</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&#123;0&#125; has been clipped.&quot;</span>.<span class="built_in">format</span>(os.path.join(outWorkspace,fc)))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip Raster</span></span><br><span class="line">    Rasters = arcpy.ListRasters()</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;Input Workspace contains &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(Rasters))</span><br><span class="line">    <span class="keyword">for</span> Raster <span class="keyword">in</span> Rasters:</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&gt;&gt; Clipping  &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(Raster))</span><br><span class="line">        arcpy.Clip_management(in_raster = Raster,</span><br><span class="line">                              rectangle = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                              out_raster = os.path.join(outWorkspace,Raster),</span><br><span class="line">                              in_template_dataset = ClipArea,</span><br><span class="line">                              nodata_value = <span class="string">&quot;&quot;</span>,</span><br><span class="line">                              clipping_geometry = <span class="string">&quot;ClippingGeometry&quot;</span>,</span><br><span class="line">                              maintain_clipping_extent = <span class="string">&quot;NO_MAINTAIN_EXTENT&quot;</span>)</span><br><span class="line">        arcpy.AddMessage(<span class="string">&quot;&#123;0&#125; has been clipped.&quot;</span>.<span class="built_in">format</span>(os.path.join(outWorkspace,Raster)))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>到这里，工具的核心部分已经完成，执行下试试。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool3_Execute.png"></p>
-<br>
-
-<p>OK，应该是预期的结果：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool3_Result.png"></p>
-<br>
-
-<h3 id="3-完善"><a href="#3-完善" class="headerlink" title="3 完善"></a>3 完善</h3><p>我们发现不像标准工具箱中的脚本工具和脚本文件本身是散列存储的，python工具箱以及其中的所有工具的代码都在这一个pyt文件中，维护起来便利了不少。如果想在工具箱中继续添加工具，只要继续增加一个工具类即可。</p>
-<p>经过前两步的过程，工具已经可以拿去使用。如果为了工具更友好，还可以继续调整下代码，以便遇到异常的时候，让用户了解更详细的原因，这里就再往下进行了。工具分享给别人，最后只差要丰富下工具文档了，同样在 Python 工具的 Item Description 中编辑。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool3_Perfection.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/09/10/CreatePythonTool3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -473,109 +430,14 @@
 
 <h2 id="1-准备Python脚本文件"><a href="#1-准备Python脚本文件" class="headerlink" title="1 准备Python脚本文件"></a>1 准备Python脚本文件</h2><p>第一步，先写好脚本工具的核心 —— python脚本文件。</p>
 <br>
-
-<blockquote>
-<p>脚本中我希望根据指定环间距自动生成一个9环的缓冲面，然后添加一个字段，用于存储给各个缓冲面的透明度百分比。</p>
-<p>看下图就知道我想做什么了：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_Detail.png"></p>
-</blockquote>
-<br>
-
-<p>写一个py文件，将要用到的工具串联起来实现自己的需求，大致是下面的样子。这不是最终要做成脚本工具的版本，只是为了预先了解要如何实现，后面还要修改。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">__author__ = <span class="string">&#x27;kikita&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># FileName: EasyFeathering.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="comment"># arcpy.env.workspace = &quot;D:\something\Data.gdb&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = <span class="string">&quot;InterestArea&quot;</span></span><br><span class="line">OutputFeature = <span class="string">&quot;OutFeathering&quot;</span></span><br><span class="line">SingleRingWidth = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Some Predefined Parameters</span></span><br><span class="line">distances = []</span><br><span class="line">level = <span class="number">9</span></span><br><span class="line">bufferUnit = <span class="string">&quot;meters&quot;</span></span><br><span class="line">NewField = <span class="string">&quot;Percent&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># My Easy Feathering function</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(level):</span><br><span class="line">    distances.append(SingleRingWidth*(i+<span class="number">1</span>))</span><br><span class="line">    i = i+<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>  <span class="built_in">str</span>(distances)</span><br><span class="line"><span class="built_in">print</span>  <span class="string">&quot;Distance Complete!&quot;</span></span><br><span class="line"></span><br><span class="line">arcpy.MultipleRingBuffer_analysis(InputFeature, OutputFeature, distances, bufferUnit, <span class="string">&quot;&quot;</span>, <span class="string">&quot;ALL&quot;</span>,<span class="string">&quot;OUTSIDE_ONLY&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>  <span class="string">&quot;Success to execute Multi Ring Buffer.&quot;</span></span><br><span class="line"></span><br><span class="line">arcpy.AddField_management(OutputFeature,NewField,<span class="string">&quot;double&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;Success to add Transparency Percent Field.&quot;</span></span><br><span class="line"></span><br><span class="line">arcpy.CalculateField_management(OutputFeature, NewField, <span class="string">&quot;!OBJECTID! *10&quot;</span>, <span class="string">&quot;PYTHON&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;Success to Calculate Transparency Percent Field.&quot;</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<br>
-
-<h2 id="2-脚本工具参数配置"><a href="#2-脚本工具参数配置" class="headerlink" title="2 脚本工具参数配置"></a>2 脚本工具参数配置</h2><p>有了py文件之后，如何把它塞进工具箱里呢？</p>
-<p>在ArcMap的Catalog窗口中，找一个自己喜欢的任意文件夹，新建一个Toolbox，然后右键  Add –&gt; Script，进入向导，这些操作如果不了解，可以点 <a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/analyze/creating-tools/adding-a-script-tool.htm"><strong>这里</strong></a> 查查帮助，照着做即可，不赘述。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_Tool.png"></p>
-<p>这里我主要说说参数传递。</p>
-<p>我希望做好的工具中，我只去指定三个参数，分别是：输入的兴趣区域面（input Feature ），多环缓冲的环间距（Single Ring width ），输出结果（output Feature ）。预览下工具界面：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_UsingTool.png"></p>
-<br>
-
-<p>那么问题又来了，这三个参数如何从工具界面传给真正执行工具的 python 脚本？我们需要对前面的脚本参数定义部分做个修改，使用 arcpy 提供的 **<code>GetParameterAsText()</code>**函数即可在工具界面和脚本之间传递参数。用下面的代码替换前面对这三个参数的替换：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Script Tool Parameters</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">SingleRingWidth = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>对应的脚本工具参数配置：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_Paras.png"></p>
-<blockquote>
-<p>为工具配置参数的时候，有2个原则需要遵守：</p>
-</blockquote>
-<ul>
-<li>工具对话框中的参数顺序必须与脚本中的<strong>参数顺序一致</strong>。</li>
-<li>每个脚本工具参数都有关联的<strong>数据类型</strong>。ArcGIS的地理处理不会将值发送给数据类型不正确的脚本，从这点上看，脚本工具比下一篇要说到的脚本工具箱多了一个优势，就是，在参数值发送给脚本之前会有数据类型检验。</li>
-</ul>
-<br>
-
-<p>修改Python脚本文件后，现在就运行工具，发现可以得到预期的结果：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_UsingTool2.png"></p>
-<br>
-
-<p>但是有点不完美，就是在工具的运行过程中，工具给我返回的信息并不充足，我只知道 “Running Script EasyFeathering …”，而不了解工具在做什么，执行到了哪个步骤。这不是好的体验。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_RunningTool.png"></p>
-<br>
-
-<br>
-
-<h2 id="3-消息"><a href="#3-消息" class="headerlink" title="3 消息"></a>3 消息</h2><p>工具和用户之间的所有沟通均通过消息来实现。接着上一步提出的问题，如何在工具进度窗口中传递消息给用户？</p>
-<p>虽然在开始调试脚本的时候，如开头代码所示，我加了些 Print 语句，方便我了解自己的脚本独立执行时的状态，但是如果运行脚本工具，这些print语句是看不到的。可以使用 ArcPy中提供的有关消息的函数，<code>AddMessage</code>、<code>AddWarning</code>、<code>AddError</code>等向工具进度条界面发送消息。这里我做了个简单的步骤的消息性提示，以及，如果结果没有记录输出，会提示警告。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">__author__ = <span class="string">&#x27;kikita&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># FileName: EasyFeathering.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"></span><br><span class="line"><span class="comment">#arcpy.env.workspace = &quot;D:\IncidentSupport2015\something\Data.gdb&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the input values from tool UI</span></span><br><span class="line">InputFeature = arcpy.GetParameterAsText(<span class="number">0</span>)</span><br><span class="line">SingleRingWidth = arcpy.GetParameterAsText(<span class="number">1</span>)</span><br><span class="line">OutputFeature = arcpy.GetParameterAsText(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Some Predefined Parameters</span></span><br><span class="line">distances = []</span><br><span class="line">level = <span class="number">9</span></span><br><span class="line">bufferUnit = <span class="string">&quot;meters&quot;</span></span><br><span class="line">NewField = <span class="string">&quot;Percent&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># My Easy Feathering function</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(level):</span><br><span class="line">    distances.append(<span class="built_in">int</span>(SingleRingWidth)*(i+<span class="number">1</span>))</span><br><span class="line">    i = i+<span class="number">1</span></span><br><span class="line">arcpy.AddMessage(<span class="string">&quot;Step1 Distance list Complete!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">arcpy.MultipleRingBuffer_analysis(InputFeature, OutputFeature, distances, bufferUnit, <span class="string">&quot;&quot;</span>, <span class="string">&quot;ALL&quot;</span>,<span class="string">&quot;OUTSIDE_ONLY&quot;</span>)</span><br><span class="line">arcpy.AddMessage(<span class="string">&quot;Step2 Success to execute Multi Ring Buffer.&quot;</span>)</span><br><span class="line"></span><br><span class="line">arcpy.AddField_management(OutputFeature,NewField,<span class="string">&quot;double&quot;</span>)</span><br><span class="line">arcpy.AddMessage(<span class="string">&quot;Step3 Success to add Transparency Percent Field.&quot;</span>)</span><br><span class="line"></span><br><span class="line">arcpy.CalculateField_management(OutputFeature, NewField, <span class="string">&quot;!OBJECTID! *10&quot;</span>, <span class="string">&quot;PYTHON&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">InputFeatureCount = <span class="built_in">int</span>(arcpy.GetCount_management(OutputFeature).getOutput(<span class="number">0</span>))</span><br><span class="line"><span class="keyword">if</span> InputFeatureCount == <span class="number">0</span>:</span><br><span class="line">    arcpy.AddWarning(<span class="string">&quot;&#123;0&#125; has no features.&quot;</span>.<span class="built_in">format</span>(OutputFeature))</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    arcpy.AddMessage(<span class="string">&quot;Step4 Success to Calculate Transparency Percent Field.&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>这样在工具的执行过程中，我就收到了消息：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_FinishingTool.png"></p>
-<p>到这里，工具的功能部分就完成了。</p>
-<br>
-
-<br>
-
-<h2 id="4-显示结果图层"><a href="#4-显示结果图层" class="headerlink" title="4 显示结果图层"></a>4 显示结果图层</h2><p> 我进一步希望脚本工具运行之后，自动显示在当前的地图文档中，从而避免重复设置透明度的操作。</p>
-<br>
-
-<ol>
-<li>为输出参数配置模板图层。</li>
-</ol>
-<p><img data-src="/images/blogImg/CreatePythonTool2_Template.png"></p>
-<ol start="2">
-<li>在处理设置中，激活设置</li>
-</ol>
-<p><img data-src="/images/blogImg/CreatePythonTool2_GpSetting.png"></p>
-<p>这样在运行工具之后，结果即自动添加显示。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_final.png"></p>
-<br>
-
-<br>
-
-<h2 id="5-配置路径"><a href="#5-配置路径" class="headerlink" title="5 配置路径"></a>5 配置路径</h2><p>如果是在本机使用脚本工具，一般我们会使用绝对路径，但是如果希望分享自己的工具给别人，就要考虑路径问题，也就是新用户运行脚本工具时，相关的脚本文件和其他用到的资源能否访问到。我的工具按照如下的结构组织：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_Folder.png"></p>
-<br>
-
-<p>在脚本工具的属性中，可以配置存储相对路径引用 py 文件：</p>
-<p>PS：但是不要想太多，这个设置仅仅会将脚本文件所在位置按照相对路径存储，而不会将脚本内部的路径进行转换。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_Relative.png"></p>
-<br>
-
-<p>这个示例中我还需要用到一个图层文件作为模板，如果希望使用相对路径使用，就建议将符号化信息写在脚本内部，而不是在参数窗口中配置。所以，要继续修改下Python脚本文件。</p>
-<p>在脚本文件的最后追加两行代码，我这里将获取与Python脚本文件在相同目录下的lyr文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Layer files are located in same folder as the .py file</span></span><br><span class="line">PythonFilePath = os.path.dirname(__file__)</span><br><span class="line">params = arcpy.GetParameterInfo()</span><br><span class="line">params[<span class="number">2</span>].symbology = os.path.join(PythonFilePath, <span class="string">&quot;FeatheringEffectTemplate.lyr&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pass message </span></span><br><span class="line">arcpy.AddMessage(<span class="string">&quot;Finding Feathering Effect Template Layer ...&quot;</span> +<span class="string">&quot;/n&quot;</span>+ os.path.join(PythonFilePath, <span class="string">&quot;FeatheringEffectTemplate.lyr&quot;</span>))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>OK，路径的问题就解决了。</p>
-<br>
-
-<br>
-
-<h2 id="6-帮助文档"><a href="#6-帮助文档" class="headerlink" title="6 帮助文档"></a>6 帮助文档</h2><p>还可以进一步为工具添加帮助文档，让更多的人了解如何使用这个工具。</p>
-<p>在ArcCatalog 或者ArcMap的Catalog 中，在脚本工具上右键，点击 Item Description 菜单，点击 Edit 就可以对工具的帮助文档进行编辑。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_helpDoc.png"></p>
-<p>这样当别人打开你的工具时，就看到帮助喽。</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_ToolInterface.png"></p>
-<br>
-
-<p>好啦，关于ArcGIS 中使用脚本工具的过程就说到这里。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/09/02/CreatePythonTool2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -693,13 +555,14 @@
 
 <p>到这里，可能你会有和我一样的疑问，二者有什么<strong>区别</strong>？</p>
 <p>第一种 <strong>脚本工具</strong> 需要我们首先在 ArcGIS 环境中创建一个工具箱，然后添加 Python脚本文件（*.py），并通过向导来精确配置参数。这种工具很适合脚本工具的初学者，通过前面说的三步就可以搭建出一个自定义工具。但是这种模式也有一些缺点，工具箱和源脚本是分离的，我们很难集中的去管理和维护它们。</p>
-<p>相比于前者的难以集中管理的缺点，第二种的 <strong>Python工具箱</strong> 就体现出了它的优势。在 Python 工具箱中，参数定义、代码验证和源代码都在同一位置进行处理，因此Python 工具的创建和维护更加容易。此外，Python 工具箱支持脚本工具不支持的功能，例如值表、复合数据类型和自定义许可检查。</p>
-<p>Python 工具箱是在 ArcGIS 10.1 之后的版本出现的。如果你熟悉 Python，就可以充分利用所掌握的 Python 技能来创建 Python 工具箱。</p>
-<br>
-
-<p>下面是一些更加具体的对比列表：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool1_Compare.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/08/31/CreatePythonTool1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -817,38 +680,15 @@
 
 <br>
 
-<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>ArcGIS Online上有 GISers 分享的生产六边形格网的工具：</p>
-<p>ModelBuilder版本的  <strong><span class="exturl" data-url="aHR0cDovL3d3dy5hcmNnaXMuY29tL2hvbWUvaXRlbS5odG1sP2lkPTAzMzg4OTkwZDMyNzQxNjBhZmUyNDBhYzU0NzYzZTU3">Create Hexagon Tessellation<i class="fa fa-external-link-alt"></i></span></strong></p>
-<p>Python版本的 <a target="_blank" rel="noopener" href="http://arcscripts.esri.com/details.asp?dbid=15839"><strong>Create Hexagons</strong></a></p>
-<br>
-
-
-<p>我就以第一个工具为例，运行状态打开：</p>
-<p><img data-src="/images/blogImg/Hexagon_Tool.png"></p>
-<p>如果有关心工具内部的同学，编辑状态下看看工具：</p>
-<p><img data-src="/images/blogImg/Hexagon_Model.png"></p>
-<p>运行之后，得到布满兴趣区域的蜂巢格网：</p>
-<p><img data-src="/images/blogImg/Hexagon_Grid.png"></p>
-<br>
-
-<br>
-
-
-<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>统计每个六边形内有多少座机场（多少个点），统计是ArcMap的强项。这里我就使用 Spatial Join 工具实现，其中我只保留有连接要素的目标要素，也就是仅保留有机场点的六边形。</p>
-<p><img data-src="/images/blogImg/Hexagon_Join.png"></p>
-<br>
-
-<br>
-
-
-<h1 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h1><p>上一步自动统计得到六边形包含的机场的数目 Join_Count 字段，那我们就根据它渲染起来。</p>
-<p><img data-src="/images/blogImg/Hexagon_Result.png"></p>
-<br>
-
-<br>
-
-<p>再放个ArcGIS Online 的web map，作者也是用到了六边形网格，<span class="exturl" data-url="aHR0cDovL3d3dy5hcmNnaXMuY29tL2FwcHMvU3Rvcnl0ZWxsaW5nVGV4dExlZ2VuZC9pbmRleC5odG1sP2FwcGlkPTBkNDFiYWVmZDEzMzQ5N2RiMGExMDAxOGFmNTc5YjVh">来看看<i class="fa fa-external-link-alt"></i></span>。</p>
-
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/08/07/Hexagon/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -968,21 +808,15 @@
 <br>
 
 
-<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>使用 Choropleth Hillshade 工具制造“浮雕”栅格。感谢作者jwasil的分享，这个工具可以在Github上自取：<a target="_blank" rel="noopener" href="https://github.com/jwasil/choropleth-hillshade"><strong>点这里</strong></a>。</p>
-<p><img data-src="/images/blogImg/ChoroplethHillshade_Tool.png"></p>
-<br>
-
-<br>
-
-
-<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>给矢量面图层设置30%的透明，完成。</p>
-<p><img data-src="/images/blogImg/ChoroplethHillshade_Transparency.png"></p>
-<br>
-<br>
-
-
-<p><span class="exturl" data-url="aHR0cDovL3d3dy5lc3JpLmNvbS9wcm9kdWN0cy9tYXBzLXdlLWxvdmUvdXNhLXBvcHVsYXRpb24tY2hhbmdl">Maps we love<i class="fa fa-external-link-alt"></i></span> 中也有一个web map，就是使用这个工具做的，<span class="exturl" data-url="aHR0cDovL25hdGlvbi5tYXBzLmFyY2dpcy5jb20vYXBwcy9TaW1wbGVWaWV3ZXIvaW5kZXguaHRtbD9hcHBpZD1hNmNiM2UxY2FhNzU0OTQxOGIxYTU5NDViY2IzNjcxNw==">来看看<i class="fa fa-external-link-alt"></i></span>。</p>
-
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/08/07/ChoroplethHillshade/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

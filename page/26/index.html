@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -305,14 +305,14 @@
 <p>Python IDE 有很多，采用最常用的 PythonWin。</p>
 <p>PythonWin 下载地址：<span class="exturl" data-url="aHR0cDovL3NvdXJjZWZvcmdlLm5ldC9wcm9qZWN0cy9weXdpbjMyL2ZpbGVzL3B5d2luMzIv">http://sourceforge.net/projects/pywin32/files/pywin32/<i class="fa fa-external-link-alt"></i></span></p>
 <p>在链接中选择最新的 PythonWin 可用版本。</p>
-<br>
-
-
-<p><strong>ArcGIS for Desktop 和 ArcGIS Engine 产品使用 32 位 Python 可执行文件；</strong> </p>
-<p><strong>ArcGIS for Server 和 ArcGIS for Desktop—Background Geoprocessing 产品使用 64 位 Python 可执行文件。</strong></p>
-<p><strong>Arcmap Python Window 与 PythonWin 的选择与对比：</strong></p>
-<p><img data-src="/images/blogImg/SetupPythonWin_Compare.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/05/29/SetupPythonWin/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -427,36 +427,14 @@
 <p><strong>等积投影：</strong></p>
 <p>保留所显示要素的面积。为此，形状、角和比例等其他属性将发生变形。在等积投影中，经线和纬线可能不垂直相交。有些情况下，尤其是较小区域的地图，形状不会明显变形，且很难区分等积投影和等角投影，除非加以说明或进行测量。</p>
 <p><strong>等距投影：</strong></p>
-<p>保留某些点间的距离。任何投影都无法在整幅地图中正确保持比例不变。不过，多数情况下，地图上总会存在一条或多条这样的线：比例沿着这些线将正确地保持不变。多数等距投影都具有一条或多条这样的线：在此类线中，地图上线的长度（按地图比例尺计算）与地球上同一条线的长度相同，无论它是大圆还是小圆，是直线还是曲线。此类距离被视为真实距离。例如，在正弦投影中，赤道和所有纬线就是其真实长度。在其他等距投影中，赤道和所有经线具有真实长度。而其他投影（例如，两点等距离）仍会显示地图上一点或两点与相隔点间的真实比例。请记住，任何投影都不能实现地图上的所有点是等距离的。</p>
-<br>
-
-<h1 id="Ⅱ-投影方法"><a href="#Ⅱ-投影方法" class="headerlink" title="Ⅱ 投影方法"></a>Ⅱ 投影方法</h1><p>地图投影使用数学公式将地球上的球面坐标与平面坐标关联起来。</p>
-<p>圆锥投影：</p>
-<p><img data-src="/images/blogImg/MapProjectionType_Cone.gif"></p>
-<p>最简单的圆锥投影是沿一条纬线与地球相切获得的投影。这条纬线称作标准纬线。所有的经线都投影到圆锥面上，并在圆锥的顶点或某一点处相交。纬线在圆锥面上的投影是一个个环。将圆锥沿任意一条经线“剪开”后即可获得最终的圆锥投影，投影中的经线显示为汇聚到一点的直线，而纬线显示为许多的同心圆弧。与剪开线相对的经线成为中央子午线。</p>
-<p>通常距标准纬线越远，变形就越严重。因此去掉圆锥的顶部会产生更精确的投影。此过程可以通过不使用极点区域的投影数据来实现。圆锥投影用于沿东西方向延伸的中纬度地区。</p>
-<p><img data-src="/images/blogImg/MapProjectionType_Cone2.gif"></p>
-<p>较复杂的圆锥投影会与地球表面的两处位置相接触。这类投影被称作割投影，并带有两条标准纬线。也可以使用一条标准纬线和一个比例尺因子来定义割投影。在割投影中，标准纬线之间与标准纬线之外的部分变形模式是不同的。通常，割线投影的整体变形程度小于切线投影。在更复杂的圆锥投影中，圆锥的轴并不与地球的极轴重合。此类投影称作斜轴投影。</p>
-<p>地理要素的制图表达取决于纬线的间距。等间距排列纬线时，投影在南北方向是等距的，但不是等角或等积的。此类投影的一个示例是等距圆锥投影。对于小面积区域，整体变形是最小的。在兰勃特等角圆锥投影中，中央的纬线比靠近边缘的纬线排列得更紧密，在小比例尺和大比例尺地图中都可以保持小地理区域的形状。在阿尔伯斯等积圆锥投影中，靠近北部和南部边缘的纬线比中间的纬线更加紧密，且投影的面积不变。</p>
-<p><strong>圆柱投影：</strong></p>
-<p><img data-src="/images/blogImg/MapProjectionType_Cylinder.gif"></p>
-<p>与圆锥投影类似，圆柱投影也存在相切或相割两种情况。</p>
-<p>墨卡托投影是最常用的圆柱投影之一，并且通常以赤道为切线。经线以几何方式投影到圆柱面上，而纬线以数学方式进行投影。这种投影方式产生成 90 度的经纬网格。将圆柱沿任意一条经线“剪开”可以获得最终的圆柱投影。经线等间距排列，而纬线间的间距越靠近极点越大。此投影是等角投影，并沿直线显示真实的方向。在墨卡托投影中，恒向线、等方位角线是直线，但大多数的大圆都不是直线。</p>
-<p>对于更复杂的圆柱投影，圆柱发生了旋转，因此切线和割线的位置发生了变化。横轴圆柱投影，例如横轴墨卡托投影，使用经线作为相切的接触线，或使用平行于经线的线作为割线。这样标准线即为南北方向的线，且其上的比例是真实的。斜轴圆柱是围绕赤道和经线间的任意大圆线旋转而成的圆柱。在此类更加复杂的投影中，大多数经线和纬线都不再是直线。</p>
-<p>在所有的圆柱投影中，切线和割线都不发生变形，因此它们是等距离线。其他的地理属性因具体的投影方式而异。</p>
-<p><strong>平面投影：</strong></p>
-<p><img data-src="/images/blogImg/MapProjectionType_Plane.gif"></p>
-<p>平面投影将地图数据投影到与地球接触的平面。平面投影也称为方位投影或天顶投影。</p>
-<p>此类型的投影通常在一点与地球相切，但也可能相割。接触点可以是北极、南极、赤道上的某点或者赤道与两极之间的任意点。此点会指定投影中心，并将作为投影的焦点。焦点由中央经度和中央纬度标识。可能的投影方法包括极方位投影、赤道投影和斜轴投影。<br>极方位投影是最简单的形式。纬线是以极点为中心的同心圆，经线是在极点处与其真实的方向角相交的直线。在其他投影方法中，平面投影在焦点处将具有 90 度的经纬网格角度。由焦点确定的方向是精确的。</p>
-<p>穿过焦点的大圆由直线表示；因此从中心到地图上其他任意点的最短距离是直线。面积和形状变形后的图案是以焦点为中心的圆。由于这个原因，方位投影更适合圆形区域，而不太适合矩形区域。平面投影最常用于绘制两极地区的地图。</p>
-<p>某些平面投影会在空间中从特定点来观测表面数据。观测点将确定球面数据如何投影到平面。在不同的方位投影中，用于观测所有位置的透视图也有所不同。透视点可以是地球的中心、与焦点正对的表面点或者地球外部的某点，就如同从卫星或其他星球上遥看一样。</p>
-<p>有部分方位投影是按焦点和透视点（如果适用）分类的。球心投影从地心来观测表面数据，而立体投影是在两极之间进行观测。正射投影从无穷远点（如同从外太空）观察地球。注意观察透视图之间的差异如何决定与赤道相对的变形程度。</p>
-<p>详情参见：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjLy8wMDNyMDAwMDAwMHAwMDAwMDA=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//003r0000000p000000<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<p><strong>ArcGIS 支持的全部投影的列表：</strong></p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjL25hLzAwM3IwMDAwMDAxNzAwMDAwMC8=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#/na/003r00000017000000/<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/03/19/MapProjectionType/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -621,119 +599,14 @@
 </tr>
 </tbody></table>
 <br>
-
-
-
-<p><strong>Landset 7 与 landset 8 对比新增波段：</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>Landsat 7</strong></th>
-<th></th>
-<th></th>
-<th>Landsat 8</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Band Name</td>
-<td>Bandwidth (µm)</td>
-<td>Resolution (m)</td>
-<td><strong>Band Name</strong></td>
-<td><strong>Bandwidth (µm)</strong></td>
-<td><strong>Resolution (m)</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td><strong>Band 1 Coastal</strong></td>
-<td><strong>0.43 – 0.45</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 1 Blue</td>
-<td>0.45 – 0.52</td>
-<td>30</td>
-<td><strong>Band 2 Blue</strong></td>
-<td><strong>0.45 – 0.51</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 2 Green</td>
-<td>0.52 – 0.60</td>
-<td>30</td>
-<td><strong>Band 3 Green</strong></td>
-<td><strong>0.53 – 0.59</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 3 Red</td>
-<td>0.63 – 0.69</td>
-<td>30</td>
-<td><strong>Band 4 Red</strong></td>
-<td><strong>0.64 – 0.67</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 4 NIR</td>
-<td>0.77 – 0.90</td>
-<td>30</td>
-<td><strong>Band 5 NIR</strong></td>
-<td><strong>0.85 – 0.88</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 5 SWIR 1</td>
-<td>1.55 – 1.75</td>
-<td>30</td>
-<td><strong>Band 6 SWIR 1</strong></td>
-<td><strong>1.57 – 1.65</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 7 SWIR 2</td>
-<td>2.09 – 2.35</td>
-<td>30</td>
-<td><strong>Band 7 SWIR 2</strong></td>
-<td><strong>2.11 – 2.29</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 8 Pan</td>
-<td>0.52 – 0.90</td>
-<td>15</td>
-<td><strong>Band 8 Pan</strong></td>
-<td><strong>0.50 – 0.68</strong></td>
-<td><strong>15</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td><strong>Band 9 Cirrus</strong></td>
-<td><strong>1.36 – 1.38</strong></td>
-<td><strong>30</strong></td>
-</tr>
-<tr>
-<td>Band 6 TIR</td>
-<td>10.40 – 12.50</td>
-<td>30&#x2F;60</td>
-<td><strong>Band 10 TIRS 1</strong></td>
-<td><strong>10.6 – 11.19</strong></td>
-<td><strong>100</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td><strong>Band 11 TIRS 2</strong></td>
-<td><strong>11.5 – 12.51</strong></td>
-<td><strong>100</strong></td>
-</tr>
-</tbody></table>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/03/03/Landset8_ArcGIS/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -840,89 +713,20 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>Shapefile 是一种开放的非拓扑的简单几何数据类型，深受数据处理人员的喜爱。 Shapefile 利用 dBASE 文件格式（.dbf 文件）来存储属性，dBase这种上世纪80年代的数据格式，现在基本淡出舞台。 虽然Shapefile有万般好，但是，今天还是要来说说shapefile的局限性，也就是使用限制有什么，以便合理的选择使用Shapefile数据。</p>
-<h1 id="1-文件容量限制："><a href="#1-文件容量限制：" class="headerlink" title="1. 文件容量限制："></a><strong>1. 文件容量限制：</strong></h1><p>Shapefile 每个子文件都有大小最大不能超过 2 GB ，以点要素为例，最多约能存储 7000 万个。</span></p>
+<h1 id="1-文件容量限制："><a href="#1-文件容量限制：" class="headerlink" title="1. 文件容量限制："></a><strong>1. 文件容量限制：</strong></h1><p>Shapefile 每个子文件都有大小最大不能超过 2 GB ，以点要素为例，最多约能存储 7000 万个。</p>
 <h1 id="2-不支持高级对象："><a href="#2-不支持高级对象：" class="headerlink" title="2. 不支持高级对象："></a><strong>2. 不支持高级对象：</strong></h1><p>Shapefile不支持注记要素类、关系类、拓扑关系、属性域和子类、坐标精度和分辨率等。</p>
 <p>不支持通过参数定义的曲线（也称为圆弧曲线）。</p>
 <h1 id="3-字段存储限制："><a href="#3-字段存储限制：" class="headerlink" title="3. 字段存储限制："></a><strong>3. 字段存储限制：</strong></h1><p>Shapefile无法存储：空值，无法向上舍入数字，对 Unicode 字符串的支持不足，字段名称最长只能为 10 个字符，且在同一字段中无法同时存储日期和时间。</p>
 <p>Shapefile支持的最大字段数为 255。若超出此上限，当转换为 shapefile 时只会转换前 255 个字段。</p>
 <p>dBASE 文件不支持类型 blob、guid、全局 ID、坐标 ID 或栅格字段类型。</p>
-<br>
-
-<table>
-<thead>
-<tr>
-<th>包含空值的数据类型</th>
-<th align="left">空值替换</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>数字 - 当工具需要输出“空”、无穷大或 NaN（非数字）时</td>
-<td align="left">-1.7976931348623158e+308（最大负值的 IEEE 标准）</td>
-</tr>
-<tr>
-<td>数字（所有其他地理处理工具）</td>
-<td align="left">0</td>
-</tr>
-<tr>
-<td>文本</td>
-<td align="left">“ ”（空白 - 无空格）</td>
-</tr>
-<tr>
-<td>Date</td>
-<td align="left">存储为零，但显示为“&lt;空&gt;”</td>
-</tr>
-</tbody></table>
-<h1 id="4-字段宽度限制："><a href="#4-字段宽度限制：" class="headerlink" title="4. 字段宽度限制："></a>4. 字段宽度限制：</h1><table>
-<thead>
-<tr>
-<th>地理数据库数据类型</th>
-<th align="left">dBASE 字段类型</th>
-<th align="center">dBASE 字段宽度（字符数）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>对象 ID</td>
-<td align="left">数值</td>
-<td align="center">9</td>
-</tr>
-<tr>
-<td>短整型</td>
-<td align="left">数值</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td>长整型</td>
-<td align="left">数值</td>
-<td align="center">9</td>
-</tr>
-<tr>
-<td>浮点型</td>
-<td align="left">浮点型</td>
-<td align="center">13</td>
-</tr>
-<tr>
-<td>双精度</td>
-<td align="left">浮点型</td>
-<td align="center">13</td>
-</tr>
-<tr>
-<td>文本</td>
-<td align="left">字符</td>
-<td align="center">254</td>
-</tr>
-<tr>
-<td>Date</td>
-<td align="left">Date</td>
-<td align="center">8</td>
-</tr>
-</tbody></table>
-<h1 id="5-性能限制-nbsp"><a href="#5-性能限制-nbsp" class="headerlink" title="5. 性能限制&nbsp;"></a><strong>5. 性能限制&nbsp;</strong></h1><p>由于形状压缩方法的不同，shapefile 所占用的空间可能为文件地理数据库或 SDE 的三到五倍。</span></p>
-<p>Shapefile 的空间索引效率较数据库低。这就意味着，同地理数据库要素类相比，空间查询耗时更长。当处理大量要素时，效率低。</p>
-<p>dBASE 文件不支持 WHERE 子句，也不支持 SQL。</p>
-<p>当保存所做编辑时属性索引会被删除，因此必须重新创建属性索引。</p>
-<h1 id="6-多面体存储限制"><a href="#6-多面体存储限制" class="headerlink" title="6. 多面体存储限制"></a><strong>6. 多面体存储限制</strong></h1><p>Shapefiles 支持多面体，但不支持以下多面体的高级功能：纹理坐标、纹理及部分色带、光线法向量。</p>
-<p>详情参考：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjL0dlb3Byb2Nlc3NpbmdfY29uc2lkZXJhdGlvbnNfZm9yX3NoYXBlZmlsZV9vdXRwdXQvMDA1NjAwMDAwMDEzMDAwMDAwLw==">http://resources.arcgis.com/en/help/main/10.2/index.html#/Geoprocessing_considerations_for_shapefile_output&#x2F;005600000013000000&#x2F;<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/02/27/LimitsofShapefile/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1035,85 +839,18 @@
 
 <hr>
 <p>更新内容（2014.8.1）</p>
-<p>ArcGIS Desktop 10.2.1 和 10.2.2 版本下需要修改编码行为，先打补丁，然后再按照 <strong>‘dbfDefault’ 设置方法</strong> 到注册表中修改。</span></span>**</span></p>
+<p>ArcGIS Desktop 10.2.1 和 10.2.2 版本下需要修改编码行为，先打补丁，然后再按照 <strong>‘dbfDefault’ 设置方法</strong> 到注册表中修改。**</p>
 <p><strong>10.2.1</strong>：  <span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE2MC9tZXRhaWQvMjA5MA==">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/160/metaid/2090<i class="fa fa-external-link-alt"></i></span> </p>
 <p><strong>10.2.2</strong>：  <span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzY3L21ldGFpZC8yMDg5">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/67/metaid/2089<i class="fa fa-external-link-alt"></i></span></p>
 <hr>
-<br>
-
-
-<h1 id="‘dbfDefault’-的作用"><a href="#‘dbfDefault’-的作用" class="headerlink" title="‘dbfDefault’ 的作用"></a>‘dbfDefault’ 的作用</h1><p>使用 ArcGIS for Desktop 打开 dBase 表文件时，程序先去读头文件中的 &nbsp;Language Driver ID (LDID) 或者是同名 *.CPG文件。前面二者都是用来在读文件之前，决定用什么编码类型来正确读出文件。如果有必要， ArcGIS for Desktop 会进行编码转换来显示字符串。</p>
-<p>如果文件缺失&nbsp;LDID 或者 &nbsp;.CPG 文件，编码就会被假定为 Windows (ANSI&#x2F;Multi-byte)。也是因为这个原因，</span><span style="font-size:12px">如果文件是 OEM 编码的，并且没有写入 LDID 或者 .CPG，字符就会出现乱码。 也就说 ArcGIS 把 OEM 文件当成 ANSI 文件来处理了。</p>
-<p>多数情况下， shapefiles 和 dBASE 文件都会存储编码页信息。 但是有些程序的 OEM 文件没有包含编码页信息，例如 Microsoft Access 2000 and Excel 2000，所以这些文件读取时，就会乱码。为了避免这个问题，用户可以给没有编码页信息的文件设置<br><strong>dbfDefault</strong>。</p>
-<p><strong>写</strong></p>
-<p>在注册表中设置 ‘dbfDefault’ ，可以决定导出的 shapefile 和 dBASE 的编码类型。例如，把 ‘dbfDefault’ 设置为 OEM ，那么用 ArcMap, ArcCatalog, ArcToolbox 生成出来的 shapefile 和 dBASE 文件就是以 OEM编码的，设置成 ANSI ，那 shapefile 和 dBASE 文件就是 ANSI 编码的。 </p>
-<p><strong>读</strong></p>
-<p>读 shapefile 和 dBASE 文件的逻辑与写是相同的，如果缺失编码信息，ArcGIS 读取文件的编码类型由 <strong>dbfDefault</strong>决定。</p>
-<br>
-
-<h1 id="不适用’dbfDefault’-的情况"><a href="#不适用’dbfDefault’-的情况" class="headerlink" title="不适用’dbfDefault’ 的情况"></a>不适用’dbfDefault’ 的情况</h1><p>‘dbfDefault’ 这项设置仅对 ArcGIS Desktop 生效，对于一些很老版本的ArcGIS 产品不适用；仅对 shapefile 生效，Personal GDB等不生效。</p>
-<br>
-
-<p><strong>无视 ‘dbfDefault’ 设置的包括：</strong></p>
-<p><em>In ArcInfo Workstation:</em></p>
-<ul>
-<li><p>ARCSHAPE with &amp;CODEPAGE OEM creates a shapefile in OEM&nbsp;</p>
-</li>
-<li><p>ARCSHAPE with &amp;CODEPAGE ANSI creates a shapefile in ANSI&nbsp;</p>
-</li>
-<li><p>INFODBASE with &amp;CODEPAGE OEM creates a dBASE file in OEM&nbsp;</p>
-</li>
-<li><p>INFODBASE with &amp;CODEPAGE ANSI creates a dBASE file in ANSI&nbsp;</p>
-</li>
-</ul>
-<p><em>In ArcView 3.x,&nbsp;</em></p>
-<ul>
-<li>Shapefile and dBASE files are saved in the ANSI code page.&nbsp;</li>
-</ul>
-<p><em>In ArcGIS for Desktop (regardless of the dbfDefault setting),&nbsp;</em></p>
-<ul>
-<li><p>Personal geodatabases are saved in Unicode&nbsp;</p>
-</li>
-<li><p>Personal geodatabase tables are saved in Unicode&nbsp;</p>
-</li>
-<li><p>Coverages are saved in the ISO code page&nbsp;</p>
-</li>
-<li><p>INFO files are saved in the ISO code page&nbsp;</p>
-</li>
-<li><p>Interchange files are saved in the ANSI code page&nbsp;</p>
-</li>
-<li><p>Text files are saved in the ANSI code page</span></span></p>
-</li>
-</ul>
-<br>
-
-
-<h1 id="‘dbfDefault’-设置方法"><a href="#‘dbfDefault’-设置方法" class="headerlink" title="‘dbfDefault’ 设置方法"></a>‘dbfDefault’ 设置方法</h1><ol>
-<li><p>开始 – 运行，输入”Regedit“，打开&nbsp;<strong>注册表</strong>。</p>
-</li>
-<li><p>如是用的是 10.x 版本 ArcGIS Desktop，定位到 <strong><code>My Computer\HKEY_CURRENT_USER\Software\ESRI\Desktop 10.x</code></strong>. 如果是9.3.1之前的版本，定位到 **<code>&#39;My Computer\HKEY_CURRENT_USER\Software\ESRI&#39;</code>**。 </p>
-</li>
-<li><p>创建项 **<code>Common</code>**， 接着在其下创建 <strong><code>CodePage</code></strong> 项， 添加 <strong><code>字符串</code></strong> ，名称： <strong><code>dbfDefault</code></strong> ，健值： <strong><code>oem</code> （或者<code>936</code>）</strong>。</p>
-</li>
-</ol>
-<p><img data-src="/images/blogImg/shapefileCodePage.jpg"></p>
-<br>
-
-<p>如下为支持的编码值：</p>
-<p><strong>OEM</strong> Code Page Values:</p>
-<p>OEM, 437, 708, 720, 737, 775, 850, 852, 855, 857, 860, 861, 862, 863, 864, 865, 866, 869, 932, 936, 950</p>
-<p><strong>ANSI</strong> Code Page Values:</p>
-<p>ANSI, 1250, 1251, 1252, 1253, 1254, 1255, 1256, 1257, 1258, Big5, SJIS&nbsp;</span></span></p>
-<p><strong>ISO</strong> Code Page Values:</p>
-<p>ISO, 88591, 88592, 88593, 88594, 88595, 88596, 88597, 88598, 88599, 885910, 885913, 885915, EUC</p>
-<p><strong>Unicode</strong> Values:</p>
-<p>UTF-8</p>
-<br>
-
-<p>现在，Shapefiles 可以以 UTF-8 存储，但是，只有在 ArcGIS Desktop 中才能被识别。</p>
-<p>相关技术文章：</p>
-<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzIxMTA2">http://support.esri.com/en/knowledgebase/techarticles/detail/21106<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/02/13/shapefileCodePage/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

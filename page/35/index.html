@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -312,77 +312,14 @@
 <p>坡度以百分比值或度数的形式返回.</p>
 <p>最小坡度根据值最接近 0 或水平度的线段获得。</p>
 <p>最大坡度根据具有最大计算值的线段获得。</p>
-<p>平均坡度通过按 3D 长度对每条线段进行加权后对所有线段的坡度求平均值获得。这会导致较长线段对结果值的影响比较短线段更大。</p>
-<p>面要素的坡度值仅针对边要素计算，使用的方法与线段应用的方法一样。</p>
-<p><strong>关于体积：</strong></p>
-<p>只能对闭合多面体计算体积。非闭合多面体要素将返回值 0.0。</p>
-<p>在 Solaris 平台上，设计的局限性当前将使工具无法确定多面体是否闭合，因此假定所有多面体均为闭合多面体，将针对所有多面体计算体积测量。</p>
-<p><strong>关于噪点过滤器：</strong></p>
-<p>提供可用于在进行统计计算时排除一小部分要素的选项。此选项非常适用于获得准确的最大坡度估值，因为一小部分要素的坡度值通常较极端，可能使统计结果产生偏差。</p>
-<p>面积或长度选项中给出的值将被用于排除这部分要素。此参数不适用于点和多点要素。</p>
-<p>NO_FILTER —不使用任何噪点过滤器。这是默认设置。</p>
-<p>AREA &lt;…&gt; —对多面体要素类中的部分要素应用面积过滤器。面积 值为 0.001 表示系统将忽略多面体中面积小于 0.001 的部分。</p>
-<p>LENGTH &lt;…&gt; — 对线要素类或面要素类中的部分要素应用长度过滤器。长度值为 0.001 时表示系统将忽略长度小于 0.001 的那部分要素。</p>
-<h1 id="2-Buffer-3D（3D-缓冲区）"><a href="#2-Buffer-3D（3D-缓冲区）" class="headerlink" title="2. Buffer 3D（3D 缓冲区）"></a><strong>2. Buffer 3D（3D 缓冲区）</strong></h1><p><img data-src="/images/blogImg/3D3DFeatures_buffer3D.png"></p>
-<p>在点或线要素周围创建 3D 缓冲区。点输入将会生成<strong>球体</strong>，线输入将会生成<strong>圆柱</strong>要素。结果为Multipatch要素。</p>
-<p>提高缓冲<strong>质量</strong>会生成更平滑的 3D 要素，但处理时间将会更长。</p>
-<p>考虑指定一个<strong>简化值</strong>以提高复杂线要素（例如带有大量折点的曲线）的性能。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Buffer3D2.png"></p>
-<h1 id="3-nbsp-Difference-3D（3D-差异）"><a href="#3-nbsp-Difference-3D（3D-差异）" class="headerlink" title="3.&nbsp;Difference 3D（3D 差异）"></a><strong>3.&nbsp;Difference 3D（3D 差异）</strong></h1><p><img data-src="/images/blogImg/3D3DFeatures_diff3D.png"></p>
-<p>类似于2D中 Erase 工具。</p>
-<p>输入面必须是闭合的Multipatch，生成的结果不包含任何属性信息。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Diff3DTool.png"></p>
-<p>参数 Output Table，勾选后，生成这样三列：</p>
-<blockquote>
-<p>Output_ID - 输出要素类的唯一 ID。<br>Minuend_ID - 主多面体的唯一 ID。<br>Subtrahend - 已从主多面体中减去的多面体要素的唯一 ID。</p>
-</blockquote>
-<h1 id="4-Enclose-Multipatch-（封闭多面体）"><a href="#4-Enclose-Multipatch-（封闭多面体）" class="headerlink" title="4. Enclose Multipatch （封闭多面体）"></a><strong>4. Enclose Multipatch （封闭多面体）</strong></h1><p>创建闭合多面体要素。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Enclose.png"></p>
-<p>Grid Size：用于构造闭合多面体要素的精度。此值使用输入要素的空间参考的线性单位定义。</p>
-<h1 id="5-nbsp-Feature-To-3D-By-Attribute（通过属性从要素转换到-3D）"><a href="#5-nbsp-Feature-To-3D-By-Attribute（通过属性从要素转换到-3D）" class="headerlink" title="5.&nbsp;Feature To 3D By Attribute（通过属性从要素转换到 3D）"></a><strong>5.&nbsp;Feature To 3D By Attribute（通过属性从要素转换到 3D）</strong></h1><p>从输入要素的属性中获得的Z值创建 3D 要素。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Featureto3DAttr.png"></p>
-<p>此工具支持点、多点、线和面几何。</p>
-<p>各要素的高程都从在指定的字段中获得。</p>
-<p>对于线要素还可提供第二个高度字段。每条线的起点使用第一个高度，终点使用第二个高度。中间所有折点的高度都将根据两个端点连线的坡度进行内插。</p>
-<h1 id="6-Inside-3D（3D-内部）"><a href="#6-Inside-3D（3D-内部）" class="headerlink" title="6. Inside 3D（3D 内部）"></a><strong>6. Inside 3D（3D 内部）</strong></h1><p>用于识别3D 要素是否包含在闭合的多面体中。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Inside3D.png"></p>
-<p>Input Feature 可以是：point、polyline、polygon、multipatch feature class；</p>
-<p>输出的表中包含：</p>
-<blockquote>
-<p><strong>Target_ID</strong> - 输入要素的唯一 ID。<br><strong>Status</strong> - 要素完全还是部分落入多面体内。</p>
-</blockquote>
-<p>如果勾选了 Complex Output Table ，生成的表中会多出来：<strong>Container_ID</strong> - 多面体的唯一 ID。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Complex.png"></p>
-<h1 id="7-Intersect-3D（3D-相交）"><a href="#7-Intersect-3D（3D-相交）" class="headerlink" title="7. Intersect 3D（3D 相交）"></a><strong>7. Intersect 3D（3D 相交）</strong></h1><p>计算闭合多面体要素的交集。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Intersect3D.png"></p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Intersect3DTool.png"></p>
-<p><strong>注意：</strong></p>
-<p>如果只提供了一个输入要素类，将会计算该多面体数据集中各要素的相交情况；</p>
-<p>如果提供了两个要素，将会确定这两个数据集的要素的相交部分，同时忽略那些只存在于一个输入中相交情形。</p>
-<p><strong>输出类型：</strong></p>
-<ul>
-<li><p>SOLID — 创建交集闭合多面体。这是默认设置。</p>
-</li>
-<li><p>SURFACE — 创建表示输入要素之间共享面的多面体表面。</p>
-</li>
-<li><p>POLYLINE — 创建表示输入要素之间共享边的折线。</p>
-</li>
-</ul>
-<h1 id="8-nbsp-Intersect-3D-Line-With-Multipatch（3D-线与多面体相交）"><a href="#8-nbsp-Intersect-3D-Line-With-Multipatch（3D-线与多面体相交）" class="headerlink" title="8.&nbsp;Intersect 3D Line With Multipatch（3D 线与多面体相交）"></a><strong>8.&nbsp;Intersect 3D Line With Multipatch（3D 线与多面体相交）</strong></h1><p><img data-src="/images/blogImg/3D3DFeatures_Intersect3DLine.png"></p>
-<p>确定并返回线与多面体要素之间几何交集的数量。可选择性地将表示交集的点要素和表示在此类点分开的输入线的线要素写入输出要素类中。</p>
-<p>交点计数将在消息窗口中作为整数结果返回，并可在模型和脚本中用于建立后续操作的前提条件。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Intersect3DLineMessage.png"></p>
-<h1 id="9-nbsp-Is-Closed-3D（是否为闭合-3D）"><a href="#9-nbsp-Is-Closed-3D（是否为闭合-3D）" class="headerlink" title="9.&nbsp;Is Closed 3D（是否为闭合 3D）"></a><strong>9.&nbsp;Is Closed 3D（是否为闭合 3D）</strong></h1><p>评估多面体要素是否是完全封闭的。</p>
-<p>将 IsClose 字段添加到现有Multipatch要素的属性表中。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_IsClosed.png"></p>
-<h1 id="10-Near-3D（3D-邻近）"><a href="#10-Near-3D（3D-邻近）" class="headerlink" title="10. Near 3D（3D 邻近）"></a><strong>10. Near 3D（3D 邻近）</strong></h1><p>计算每个输入要素到一个或多个邻近要素类中的最近要素的三维距离。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Near3D.png"></p>
-<p>在原输入数据的属性表中增加N多最邻近点的信息。</p>
-<h1 id="11-Union-3D（3D-联合）"><a href="#11-Union-3D（3D-联合）" class="headerlink" title="11. Union 3D（3D 联合）"></a><strong>11. Union 3D（3D 联合）</strong></h1><p>基于输入要素类对闭合的重叠多面体要素进行合并。</p>
-<p><img data-src="/images/blogImg/3D3DFeatures_Union3D.png"></p>
-<p>如果两个或多个多面体要素仅共享一条边或一个折点，则会发出一个警告，说明生成的要素不是简单要素，因此无法创建。</p>
-<p>如果组中包含的多面体没有共享的体积或空间，则会返回相同的消息。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/11/18/3D3DFeatures/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -498,10 +435,14 @@
 <p><strong>3.LAS Dataset</strong></p>
 <p><img data-src="/images/blogImg/3DSupportedSurface_LAS.png"></p>
 <p><strong>4.Terrain Dataset</strong></p>
-<p><img data-src="/images/blogImg/3DSupportedSurface_Terrain.gif"></p>
-<p><strong>四种格式，在各种GDB中的支持情况：</strong></p>
-<p><img data-src="/images/blogImg/3DSupportedSurface_GDB.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/11/17/3DSupportedSurface/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -616,8 +557,14 @@
 <p><img data-src="/images/blogImg/ArcSceneArcGlobe.gif"></p>
 <p>需要说明，这种投影，经线和纬线都是直线；在纬度 +45° 和 -45° 之间，东南西北方向是准确的，比例尺是正确的；在极面上，由中心确定的方向是真实的。<br>但是这种投影不适合制图，仅适用于ArcGlobe。</p>
 <h1 id="3-内存管理与缓存机制"><a href="#3-内存管理与缓存机制" class="headerlink" title="3. 内存管理与缓存机制"></a>3. 内存管理与缓存机制</h1><p>ArcScene - 将所有数据加载到内存中，必要的时候使用虚拟内存。也因此，ArcScene通常用来展示小场景、小数据量。<br>ArcGlobe - 通常专用于超大型数据集，缓存过程中会建立索引并将所有数据组织为各个切片和细节层次。</p>
-<h1 id="4-数据类型的支持"><a href="#4-数据类型的支持" class="headerlink" title="4. 数据类型的支持"></a>4. 数据类型的支持</h1><p>ArcGlobe支持terrain数据，但是ArcScene不支持。<br>ArcScene中不支持Annotation。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/11/17/ArcSceneArcGlobe/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -733,91 +680,14 @@
 <p><strong>汇（Sink）</strong>：创建识别所有汇或内流水系区域的栅格。</p>
 <p><strong>捕捉倾泻点（Snap pour point）</strong>：将倾泻点捕捉到指定范围内累积流量最大的像元。</p>
 <p><strong>河流连接（Stream link）</strong>：向各交汇点之间的栅格线状网络的各部分分配唯一值。</p>
-<p><strong>河网分级（Stream Order）</strong>：为表示线状网络分支的栅格线段指定数值顺序。</p>
-<p><strong>栅格河网矢量化（Stream to Feature）</strong>：将表示线状网络的栅格转换为表示线状网络的要素。</p>
-<p><strong>分水岭（Watershed）</strong>：确定栅格中一组像元之上的汇流区域。</p>
-<br>
-
-<p>了解水系的术语，如下图：</p>
-<p><img data-src="/images/blogImg/SAHydrology_Term.png"></p>
-<p>以下流程图显示的是从数字高程模型 (DEM) 中提取水文信息（如分水岭边界和河流网络）的过程：</p>
-<p><img data-src="/images/blogImg/SAHydrology_Workflow.png"></p>
-<p>现在就以手中的这个DEM为例来依次使用工具集中的工具，来学习这部分功能：</p>
-<p><img data-src="/images/blogImg/SAHydrology_DEM.png"></p>
-<br>
-
-<h1 id="一、流向（Flow-Direction）"><a href="#一、流向（Flow-Direction）" class="headerlink" title="一、流向（Flow Direction）"></a>一、流向（Flow Direction）</h1><p>流向工具的输出是值范围介于 1 到 255 之间的整型栅格。从中心出发的各个方向值为：</p>
-<p><img data-src="/images/blogImg/SAHydrology_FlowDirection.gif"></p>
-<p>例如，如果最陡下降方向位于当前处理像元的左侧，则将该处理像元的流向编码将为 16。</p>
-<p>如果像元的 z 值在多个方向上均发生相同变化，并且该像元是凹陷点的一部分，则该像元的流向将被视为未定义。此时，该像元在输出流向栅格中的值将为这些方向的总和。例如，如果 z 值向右（流向 &#x3D; 1）和向下（流向 &#x3D; 4）的变化相同，则该像元的流向为 1 + 4 &#x3D; 5。可以使用汇工具将具有未定义流向的像元标记为凹陷点。</p>
-<p><img data-src="/images/blogImg/SAHydrology_FLowDirection2.png"></p>
-<br>
-
-<h1 id="二、汇（Sink）"><a href="#二、汇（Sink）" class="headerlink" title="二、汇（Sink）"></a>二、汇（Sink）</h1><p>汇是指流向栅格中流向无法被赋予八个有效值之一的一个或一组空间连接像元。汇被视为具有未定义的流向，并被赋予等于其可能方向总和的值。</p>
-<p>汇工具的输出是一个整型栅格，其中每个汇都被赋予一个唯一值。汇的编号介于 1 到汇的数量之间。</p>
-<p><img data-src="/images/blogImg/SAHydrology_Sink.png"></p>
-<br>
-
-<h1 id="三、填洼（Fill）"><a href="#三、填洼（Fill）" class="headerlink" title="三、填洼（Fill）"></a>三、填洼（Fill）</h1><p>通过填充表面栅格中的汇来移除数据中的小缺陷。</p>
-<p>凹陷点是指具有未定义流域方向的像元；其周围的像元均高于它。倾泻点相对于凹陷点的汇流区域高程最低的边界像元。如果凹陷点中充满了水，则水将从该点倾泻出去。</p>
-<p><strong>TIPS：</strong>有关填充的Z限制</p>
-<p>要填充的凹陷点与其倾泻点之间的最大高程差。如果凹陷点与其倾泻点之间的 z 值差大于 z 限制，则不会填充此凹陷点。</p>
-<p>默认情况下将填充所有凹陷点（不考虑深度）。</p>
-<br>
-
-<h1 id="四、流量（Flow-Accumulation）"><a href="#四、流量（Flow-Accumulation）" class="headerlink" title="四、流量（Flow Accumulation）"></a>四、流量（Flow Accumulation）</h1><p>创建每个像元累积流量的栅格。流量累积将基于流入输出栅格中每个像元的像元数。</p>
-<p>高流量的输出像元是集中流动区域，可用于标识河道。流量为零的输出像元是局部地形高点，可用于识别山脊。</p>
-<p>流量工具不遵循压缩环境设置。输出栅格将始终处于未压缩状态。</p>
-<p><img data-src="/images/blogImg/SAHydrology_FLowAccu.png"></p>
-<p>通过上面的填洼，求流向，得到如下流量图，看到了河道：</p>
-<p><img data-src="/images/blogImg/SAHydrology_FlowAccu2.png"></p>
-<br>
-
-<h1 id="五、河网分级（Stream-Order）"><a href="#五、河网分级（Stream-Order）" class="headerlink" title="五、河网分级（Stream Order）"></a>五、河网分级（Stream Order）</h1><p>河网分级是一种将级别数分配给河流网络中的连接线的方法。此级别是一种根据支流数对河流类型进行识别和分类的方法。仅需知道河流的级别，即可推断出河流的某些特征。</p>
-<p>河网分级工具有两种可用于分配级别的方法。这两种方法由 Strahler (1957) 和 Shreve (1966) 提出。在这两种方法中，始终将 1 级分配给上游河段。</p>
-<p><strong>Strahler 河流分级方法：</strong></p>
-<p>在 Strahler 法中，所有没有支流的连接线都被分为 1 级，它们称为第一级别。当级别相同的河流交汇时，河网分级将升高。</p>
-<p>因此，两条一级连接线相交会创建一条二级连接线，两条二级连接线相交会创建一条三级连接线，依此类推。但是，级别不同的两条连接线相交不会使级别升高。例如，一条一级连接线和一条二级连接线相交不会创建一条三级连接线，但会保留最高级连接线的级别。</p>
-<p><img data-src="/images/blogImg/SAHydrology_Strahler.png"></p>
-<p><strong>Shreve 河流分级方法：</strong></p>
-<p>Shreve 法考虑网络中的所有连接线。与 Strahler 法相同，所有外连接线都被分为 1 级。但对于 Shreve 法中的内连接线，级别是增加的。例如，两条一级连接线相交会创建一条二级连接线，一条一级连接线和一条二级连接线相交会创建一条三级连接线，而一条二级连接线和一条三级连接线相交则会创建一条五级连接线。</p>
-<p>因为级别可增加，所以 Shreve 法中的数字有时指的是量级，而不是级别。在 Shreve 法中，连接线的量级是指上游连接线的数量。</p>
-<p><img data-src="/images/blogImg/SAHydrology_Shreve.png"></p>
-<br>
-
-<h1 id="六、栅格河网矢量化（Stream-to-Feature）"><a href="#六、栅格河网矢量化（Stream-to-Feature）" class="headerlink" title="六、栅格河网矢量化（Stream to Feature）"></a>六、栅格河网矢量化（Stream to Feature）</h1><p>栅格河网矢量化工具使用的算法主要用于矢量化河流网络或任何表示方向已知的栅格线性网络的栅格。</p>
-<p>该工具使用方向栅格来帮助矢量化相交像元和相邻像元。可将两个值相同的相邻栅格河网矢量化为两条平行线。</p>
-<p>这与栅格转折线 (Raster to Polyline) 工具相反，后者通常更倾向于将线折叠在一起。下图是两者的对比：</p>
-<p><img data-src="/images/blogImg/SAHydrology_Stream2Feature.png"></p>
-<br>
-
-<h1 id="七、河流连接（Stream-link）"><a href="#七、河流连接（Stream-link）" class="headerlink" title="七、河流连接（Stream link）"></a>七、河流连接（Stream link）</h1><p>向各交汇点之间的栅格线状网络的各部分分配唯一值。</p>
-<p>“连接”是指连接两个相邻交汇点、连接一个交汇点和出水口或连接一个交汇点和分水岭的河道的河段。</p>
-<p><img data-src="/images/blogImg/SAHydrology_Streamlink1.gif"></p>
-<p><img data-src="/images/blogImg/SAHydrology_Streamlink2.png"></p>
-<br>
-
-<h1 id="八、水流长度（Flow-Length）"><a href="#八、水流长度（Flow-Length）" class="headerlink" title="八、水流长度（Flow Length）"></a>八、水流长度（Flow Length）</h1><p>水流长度工具的主要用途是计算给定盆地内最长水流的长度。该度量值常用于计算盆地的聚集时间。这可使用 UPSTREAM 选项来完成。</p>
-<p>该工具也可通过将权重栅格用作下坡运动的阻抗，来创建假设降雨和径流事件的距离-面积图。</p>
-<p><img data-src="/images/blogImg/SAHydrology_Flowlength1.png">   <img data-src="/images/blogImg/SAHydrology_Flowlength2.png"></p>
-<br>
-
-<h1 id="九、捕捉倾泻点（Snap-pour-point）"><a href="#九、捕捉倾泻点（Snap-pour-point）" class="headerlink" title="九、捕捉倾泻点（Snap pour point）"></a>九、捕捉倾泻点（Snap pour point）</h1><p>捕捉倾泻点工具用于确保在使用分水岭工具描绘流域盆地时选择累积流量大的点。</p>
-<p>捕捉倾泻点将在指定倾泻点周围的捕捉距离范围内搜索累积流量最大的像元，然后将倾泻点移动到该位置。</p>
-<br>
-
-<h1 id="十、分水岭（Watershed）"><a href="#十、分水岭（Watershed）" class="headerlink" title="十、分水岭（Watershed）"></a>十、分水岭（Watershed）</h1><p>确定栅格中一组像元之上的汇流区域。</p>
-<p><img data-src="/images/blogImg/SAHydrology_Watershed.png"></p>
-<br>
-
-<h1 id="十一、盆域"><a href="#十一、盆域" class="headerlink" title="十一、盆域"></a>十一、盆域</h1><p>创建描绘所有流域盆地的栅格。</p>
-<p>通过识别盆地间的山脊线，在分析窗口中描绘流域盆地。通过分析输入流向栅格数据找出属于同一流域盆地的所有已连接像元组。通过定位窗口边缘的倾泻点（水将从栅格倾泻出的地方）及凹陷点，然后再识别每个倾泻点上的汇流区域，来创建流域盆地。这样就得到流域盆地的栅格。</p>
-<p>以下是盆域分析示例：</p>
-<p><img data-src="/images/blogImg/SAHydrology_bash.png"></p>
-<br>
-
-<p>That’s all.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/27/SAHydrology/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -933,21 +803,14 @@
 <p>IDW主要依赖于反距离的幂值。基于距输出点的距离，幂参数可以控制已知点对内插值的影响。幂参数是一个正实数，默认值为 2，一般在0.5至3之间取值。随着幂值的增大，内插值将逐渐接近最近采样点的值。指定较小的幂值，将对距离较远的周围点产生更大影响，会产生更加平滑的表面。由于反距离权重公式与任何实际物理过程都不关联，因此无法确定特定幂值是否过大。作为常规准则，认为值为 30 的幂是超大幂，因此不建议使用。此外还需牢记一点，如果距离或幂值较大，则可能生成错误结果。</p>
 <p><strong>障碍：</strong></p>
 <p>障碍是一个用作可限制输入采样点搜索的隔断线的折线 (polyline) 数据集。一条折线 (polyline) 可以表示地表中的悬崖、山脊或某种其他中断。仅将那些位于障碍同一侧的输入采样点视为当前待处理像元。</p>
-<p><strong>注意事项：</strong></p>
-<p>（1）因为反距离权重法是加权平均距离，所以该平均值不可能大于最大输入或小于最小输入。因此，如果尚未对这些极值采样，便无法创建山脊或山谷。</p>
-<p>（2）此工具最多可处理约 4,500 万个输入点。如果输入要素类包含 4,500 万个以上的点，工具可能无法创建结果。</p>
-<p>工具执行截图：</p>
-<p><img data-src="/images/blogImg/SAInterpolation_Demo.png"></p>
-<h1 id="2-克里金法（Kriging）"><a href="#2-克里金法（Kriging）" class="headerlink" title="2. 克里金法（Kriging）"></a><strong>2. 克里金法（Kriging）</strong></h1><p>克里金法假定采样点之间的距离或方向可以反映可用于说明表面变化的空间相关性。克里金法是一个多步过程；它包括数据的探索性统计分析、变异函数建模和创建表面，还包括研究方差表面。该方法通常用在土壤科学和地质中。</p>
-<h1 id="3-自然邻域法（Natural-Neighbor）"><a href="#3-自然邻域法（Natural-Neighbor）" class="headerlink" title="3. 自然邻域法（Natural Neighbor）"></a><strong>3. 自然邻域法（Natural Neighbor）</strong></h1><p>可找到距查询点最近的输入样本子集，并基于区域大小按比例对这些样本应用权重来进行插值。该插值也称为 Sibson 或“区域占用 (area-stealing)”插值。</p>
-<h1 id="4-样条函数（Spline）"><a href="#4-样条函数（Spline）" class="headerlink" title="4. 样条函数（Spline）"></a><strong>4. 样条函数（Spline）</strong></h1><p>使用二维最小曲率样条法将点插值成栅格表面。生成的平滑表面恰好经过输入点。</p>
-<h1 id="5-含障碍的样条函数（Spline-with-Barriers）"><a href="#5-含障碍的样条函数（Spline-with-Barriers）" class="headerlink" title="5. 含障碍的样条函数（Spline with Barriers）"></a><strong>5. 含障碍的样条函数（Spline with Barriers）</strong></h1><p>通过最小曲率样条法利用障碍将点插值成栅格表面。障碍以面要素或折线要素的形式输入。样条函数法工具所使用的插值方法使用可最小化整体表面曲率的数学函数来估计值。</p>
-<h1 id="6-地形转栅格（Topo-to-Raster）"><a href="#6-地形转栅格（Topo-to-Raster）" class="headerlink" title="6. 地形转栅格（Topo to Raster）"></a><strong>6. 地形转栅格（Topo to Raster）</strong></h1><p>将点、线和面数据插值成符合真实地表的栅格表面。</p>
-<p>依据文件实现地形转栅格（Topo to Raster by file）</p>
-<p>通过文件中指定的参数将点、线和面数据插值成符合真实地表的栅格表面。通过这种技术创建的表面可更好的保留输入等值线数据中的山脊线和河流网络。</p>
-<h1 id="7-趋势（trend）"><a href="#7-趋势（trend）" class="headerlink" title="7. 趋势（trend）"></a><strong>7. 趋势（trend）</strong></h1><p>使用趋势面法将点插值成栅格曲面。趋势表面会逐渐变化，并捕捉数据中的粗尺度模式。</p>
-<p>以上是插值工具的简单说明与比较，这些工具的背后都有庞大的理论基础和复杂的算法，需要进一步学习整理和补充。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/27/SAInterpolation/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

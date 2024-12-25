@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -303,36 +303,15 @@
 <li>python可以集成第三方的资源。例如R语言等第三方类库来处理数据执行任务。</li>
 <li>python可以不在ArcGIS软件内部执行任务，只需要安装并授权ArcGIS软件，然后通过独立脚本的形式运行。既然可以独立运行，就可以定义系统任务定时执行。</li>
 </ul>
-<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><p>​        这本书中也提到了命名规范的内容，这是我在初期没有考虑到的问题。随着时间的推移和协同工作的需要，渐渐发现这是个非常重要的内容，大型的科技公司会更重视这个方面。编程和写文章一样，仅仅懂得一种语言的语法、词汇是不足够的，更重要的是如何将文章写的清晰优雅，对应到代码中就是简洁高效。python的官方命名规范：<span class="exturl" data-url="aHR0cHM6Ly93d3cucHl0aG9uLm9yZy9kZXYvcGVwcy9wZXAtMDAwOC8=">Style Guide for Python Code<i class="fa fa-external-link-alt"></i></span>，它是PEPs（Python Enhancement Proposals）中的一部分。</p>
-<p>​        变量名及脚本文件名：</p>
-<ul>
-<li>变量名以字母开头，不能使用特殊字符开头</li>
-<li>全部使用小写字母</li>
-<li>必要的时候使用下划线，增加代码可读性</li>
-<li>使用描述性变量，避免使用俚语或缩写</li>
-<li>变量名尽量简短</li>
-</ul>
-<p>​        缩进：</p>
-<ul>
-<li>建议使用四个空格表示缩进</li>
-<li>不要同时使用tab和空格进行缩进</li>
-</ul>
-<p>​        注释：</p>
-<ul>
-<li>建议每个功能块都有相关注释</li>
-<li>每个脚本工具或函数文件前需要有个头文件，应该包含脚本文件名、功能介绍、运行要求、作者、开发时间等信息。</li>
-</ul>
-<h3 id="从脚本外部输入参数"><a href="#从脚本外部输入参数" class="headerlink" title="从脚本外部输入参数"></a>从脚本外部输入参数</h3><p>​        使用系统参数 sys.agv 。系统参数sys.argv[0]存储的是脚本自身的地址，因此额外的系统参数是从1开始。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is content of testInputPara.py.</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">x = <span class="built_in">int</span>(sys.argv[<span class="number">1</span>])</span><br><span class="line">y = <span class="built_in">int</span>(sys.argv[<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(x*y)</span><br></pre></td></tr></table></figure>
-
-<p>​        在命令行中执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\ForTempTest&gt;python testInputPara.py 2 8</span><br><span class="line">16</span><br></pre></td></tr></table></figure>
-
-<p>​        在交互式python编译器中使用 input()，可以接收用户输入。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="built_in">input</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">bingo</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(x)</span><br><span class="line">bingo</span><br></pre></td></tr></table></figure>
-
-<p>​        ArcGIS 中通过创建脚本工具，与GP框架结合的调用方法，是更适合ArcGIS用户的方法。以前写过 《在ArcGIS中创建Python工具<a href="http://kikitamap.com/2015/08/31/CreatePythonTool1/"><strong>（一）</strong></a>、<a href="http://kikitamap.com/2015/09/02/CreatePythonTool2/"><strong>（二）</strong></a>、<a href="http://kikitamap.com/2015/09/10/CreatePythonTool3/"><strong>（三）</strong></a>》几篇，点击链接可以近一步了解脚本工具。</p>
-
+<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/01/11/ReadingPyScriptingforAGS/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -448,6 +427,14 @@
 <p><strong>影像服务</strong></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9UZWNoQ29uZmVyZW5jZXMvMjAxNi1EZXZlbG9wZXJUZWNoQ29uZmVyZW5jZS1EZW1vLzQtUHVibGlzaEltYWdlU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/TechConferences/2016-DeveloperTechConference-Demo/4-PublishImageService.py<i class="fa fa-external-link-alt"></i></span></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/12/19/AutoPublishingService/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -568,14 +555,14 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125; else if (theme.comment.livere) &#123; %&gt;</span><br><span class="line">       &lt;%- partial(&#x27;comment/livere&#x27;) %&gt;</span><br></pre></td></tr></table></figure>
 
 <p><code>...\themes\hueman\layout\comment\scripts.ejs</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125; else if (theme.comment.livere) &#123; %&gt;</span><br><span class="line">    &lt;%- partial(&#x27;comment/livere&#x27;, &#123; script: true &#125;) %&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>可是现在有个奇怪的问题，为什么评论框会出现两次？ 求高手解救！</p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/12/13/AddLiveRe/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -685,6 +672,14 @@
 <p>开始从来不知道自己会在编程的道路上越走越远，积极用脑、专注做事可能是推迟进入油腻中年的最好途径。 这一年生命中多了一个人，生活有了很多变化，纵然精力旺盛的我也开始觉得分身乏力，感谢宝宝的乖巧才让我有了很多的时间做“贤妻良母”之外的事情。希望我的宝宝长大后，可以看到妈妈的文字，互相感恩乐观前行。</p>
 <p><img data-src="/images/blogImg/SSN_tydyup_pythonTbx.jpg"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/14/tidyup/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -821,43 +816,14 @@
 <li>Security audits and vulnerability assessments</li>
 </ul>
 <h2 id="Skill-Measured"><a href="#Skill-Measured" class="headerlink" title="Skill Measured"></a>Skill Measured</h2><p>The following list will familiarize candidates with the exam sections to help guide exam preparation. The relative weight of each section is provided to illustrate the approximate size of each section. Candidates should review this list and assess their knowledge of each skill. Specific preparation resources are available to assist with refreshing in areas where any knowledge gaps are found.</p>
-<p><strong>Implement and Deploy a Solution — 15%</strong></p>
-<ul>
-<li>Given a set of requirements, determine the appropriate ArcGIS Enterprise licensing role</li>
-<li>Given a set of requirements, apply procedural concepts to configure security for an ArcGIS Enterprise deployment</li>
-<li>Given a set of requirements, determine the appropriate ArcGIS Enterprise component(s)</li>
-<li>Identify considerations for installing components of an ArcGIS Enterprise deployment</li>
-</ul>
-<p><strong>Maintain and Support a Solution — 30%</strong></p>
-<ul>
-<li>Apply procedural concepts to manage updates to services</li>
-<li>Apply procedural concepts to manage updates to system</li>
-<li>Apply procedural concepts to manage updates to apps</li>
-<li>Identify steps to backup and restore an ArcGIS Enterprise deployment</li>
-<li>Identify tools and workflows to administer ArcGIS Enterprise</li>
-</ul>
-<p><strong>Troubleshoot Problems with ArcGIS Enterprise — 30%</strong></p>
-<ul>
-<li>Interpret ArcGIS Enterprise log messages</li>
-<li>Troubleshoot causes of performance issues in an ArcGIS Enterprise deployment</li>
-<li>Troubleshoot errors with the ArcGIS Enterprise system</li>
-<li>Troubleshoot errors with sharing workflows in an ArcGIS Enterprise deployment</li>
-<li>Identify functional components of ArcGIS Enterprise</li>
-</ul>
-<p><strong>Prepare and Publish Services — 24%</strong></p>
-<ul>
-<li>Given a set of requirements, identify which service type is required</li>
-<li>Determine the requirements for sharing a given service type</li>
-<li>Identify which workflow is required to share a given service type</li>
-<li>Apply procedural concepts to configure service capabilities and properties to meet user requirements</li>
-</ul>
-<h2 id="Software"><a href="#Software" class="headerlink" title="Software"></a>Software</h2><p>A qualified candidate should be familiar with the following software:</p>
-<ul>
-<li>ArcGIS Desktop 10.5</li>
-<li>ArcGIS Enterprise 10.5</li>
-</ul>
-<h2 id="Exam-Details"><a href="#Exam-Details" class="headerlink" title="Exam Details"></a>Exam Details</h2><p>Number of questions: 80<br>Certification code: EEAA105<br>Exam duration:  2 Hours<br>Exam type: Multiple choice, multiple select<br>Published date: June 2017<br>Exam state: Available to public</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/01/AGSEntAdminCA/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

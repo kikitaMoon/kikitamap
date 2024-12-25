@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -303,18 +303,14 @@
 <p>（2）将 webviewer 文件夹丢到 wwwroot 文件夹下；</p>
 <p>（3）计算机管理中，webviewer目录中，双击打开右边的窗口中选中MIME类型，添加类型，如下图：</p>
 <br>
-
-<ul>
-<li><p>参数项：</p>
-</li>
-<li><p>文件扩展名： .3ws </p>
-</li>
-<li><p>MIME类型：application&#x2F;octet-stream</p>
-</li>
-</ul>
-<p><img data-src="/images/blogImg/CityEngineWebViewerIIS.png">    </p>
-<p>访问地址：<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdC93ZWJ2aWV3ZXIvY2V2aWV3ZXJfb2ZmbGluZS5odG1s">http://localhost/webviewer/ceviewer_offline.html<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/09/11/CityEngineWebViewerIIS/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -434,15 +430,14 @@
 
 
 <p><strong>以静默方式取消授权：</strong></p>
-<p>要从机器中取消所有许可的授权，请运行 <code>softwareauthorizationls.exe -s -return all</code>。</p>
-<p>要从机器中取消特定许可的授权，您需要输入要取消授权的具体授权码。运行 <code>softwareauthorizationls.exe -s -return EFLxxxxxxxxx,EFLxxxxxxxxx</code>。</p>
-<br>
-
-
-<p><strong>以静默方式升级许可：</strong></p>
-<p>要在机器中升级所有许可，请运行 <code>softwareauthorization.exe -s -upgrade all</code>。</p>
-<p>要在机器中升级特定许可，您需要输入具体的授权码。运行 <code>softwareauthorization.exe -s -upgrade EFLxxxxxxxxx,EFLxxxxxxxxx</code>。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/08/06/ArcGISLMSilentAuthorization/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -560,7 +555,14 @@
 <p>CDbl 函数可把表达式转换为双精度（Double）类型。</p>
 <p>结果示例：</p>
 <p><img data-src="/images/blogImg/ConvertDMS.jpg"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/07/22/ConvertDMS/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -676,50 +678,14 @@
 <p><img data-src="/images/blogImg/BuildingCountor_Points.jpg"></p>
 <p>使用 IDW 工具，设置输入数据，插值使用的字段，搜索半径等参数，获得栅格表面。</p>
 <p><img data-src="/images/blogImg/BuildingCountor_IDW.jpg"></p>
-<br>
-
-<h1 id="二、等值线的获取"><a href="#二、等值线的获取" class="headerlink" title="二、等值线的获取"></a>二、等值线的获取</h1><p>Spatial Analyst 中提供了从栅格表面提取等值线的工具，Contour，设置等值线间隔，以及选择设置起算线。</p>
-<p>&nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_Contour.jpg"></p>
-<p>得到结果：</p>
-<p>&nbsp; &nbsp; &nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_result.jpg"></p>
-<br>
-
-<h1 id="三、等值面提取"><a href="#三、等值面提取" class="headerlink" title="三、等值面提取"></a>三、等值面提取</h1><p>在做等值面之前，我们需要思考下，等值面是指什么？等值面是否是两条等值线之间的闭合区域？等值面的划分依据是什么？</p>
-<p>先说一种比较常用的场景，得到等值线后，为了美化制图，等值线之间的间隔也需要用渐变色予以填充，通常想到的方案是使用工具 Feature to Polygon。这样就得到了与等值线无缝贴合的等值面。如下图：</p>
-<p><img data-src="/images/blogImg/BuildingCountor_polygon.png"></p>
-<p>从而获得等值面，这个类似于等间距分类或者等值面的方法。</p>
-<br>
-
-<br>
-
-
-
-<p><strong>如果抛开等值线而言，比较准确的获取等值面的方法是什么呢？</strong></p>
-<br>
-
-<p>答案是对栅格表面进行重分类，用一定的数学算法将数据进行数值的重新划分与赋予。</p>
-<p>下面来总结一下方案：</p>
-<p><strong>（1）使用工具 Reclassify 进行栅格数据重分类：</strong></p>
-<p>如下是一个由高程采样点获得的DEM，然后进行重分类，分类方法是等间距法：</p>
-<p>PS：分类是有很多方法可以选择的，具体在分类面板中可以设置：</p>
-<p><img data-src="/images/blogImg/BuildingCountor_Relassify.png"></p>
-<p><img data-src="/images/blogImg/BuildingCountor_ReclassifyResult.png"></p>
-<p><strong>（2）然后将栅格数据转为矢量面:</strong></p>
-<p>使用转换工具， Raster to Polygon，得到矢量等值面：</p>
-<p><img data-src="/images/blogImg/BuildingCountor_toFeature.jpg"></p>
-<p><strong>（3）等值面，等值线的后期平滑处理</strong></p>
-<p>由栅格数据得到的矢量数据，通常边界会出现很多方格子或者锯齿，后面要做的工作就是对面进行平滑和美化，当然这步是选做工作了。</p>
-<p>前两步是数据的真实提取，这一步就是对地图画个妆，把最佳的效果展示出来。</p>
-<p>为了防止直接平滑面出现边界不重合的问题，建议对面转线（Feature to line），平滑线后再转回面。做了个模型，把这个思路完整的展现出来，如下图：</p>
-<p><img data-src="/images/blogImg/BuildingCountor_Model.png"></p>
-<p>这样就会得到相对漂亮平滑的等值线和等值面。</p>
-<p>细节对比图：</p>
-<p><img data-src="/images/blogImg/BuildingCountor_smooth.png"></p>
-<br>
-
-
-<p>以上就是制作等值面的方法。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/07/12/BuildingCountor/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -838,20 +804,14 @@
 
 
 <br>
-
-<h1 id="2-导入模块的一部分"><a href="#2-导入模块的一部分" class="headerlink" title="2.导入模块的一部分"></a>2.导入模块的一部分</h1><p>如果只导入某一模块的一部分，可以使用 from-import 语句。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from arcpy import env</span><br><span class="line">env.workspace = &quot;c:/data&quot;</span><br></pre></td></tr></table></figure>
-
-<p>使用from-import-as 的形式，为其制定名称。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from arcpy import env as ENV</span><br><span class="line">ENV.workspace = &quot;c:/data&quot;</span><br></pre></td></tr></table></figure>
-
-<p>再来个例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from arcpy import mapping as MAP</span><br><span class="line">mxd = MAP.MapDocument(&quot;C:/maps/basemap.mxd&quot;)</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h1 id="3-导入模块全部内容"><a href="#3-导入模块全部内容" class="headerlink" title="3. 导入模块全部内容"></a>3. 导入模块全部内容</h1><p>模块的内容将被直接导入到命名空间中，随后无需添加前缀。在某些情况下，from-import-* 可以简化代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Import arcpy and the sa module as *</span><br><span class="line"></span><br><span class="line">import arcpy</span><br><span class="line">from arcpy.sa import *</span><br><span class="line">arcpy.CheckOutExtension(&quot;spatial&quot;)</span><br><span class="line"># Get input parameters</span><br><span class="line">#</span><br><span class="line">inRaster1 = arcpy.GetParameterAsText(0)</span><br><span class="line">inRaster2 = arcpy.GetParameterAsText(1)</span><br><span class="line">inRaster3 = arcpy.GetParameterAsText(2)</span><br><span class="line">outRaster = (Raster(inRaster1) + (Raster(inRaster2) - Raster(inRaster3)))</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/07/02/ImportArcpy/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

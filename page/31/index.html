@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -312,6 +312,14 @@
 </ul>
 <p><img data-src="/images/blogImg/FeatureEnvelopPython_Expression.jpg"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/05/21/FeatureEnvelopPython/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -429,42 +437,14 @@
 <p><strong>@Group(“level_1-group”, …, “level_n-group”):</strong></p>
 <p>设置属性的在 Inspector 中的分组显示。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Group(&quot;First&quot;, &quot;Second&quot;)</span><br><span class="line">attr grouped = 0</span><br></pre></td></tr></table></figure>
-
-<p><strong>@Range(min, max):</strong></p>
-<p>设置某个属性的最大、最小值，控制属性的范围。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Range(5, 50)</span><br><span class="line">attr height = 20</span><br></pre></td></tr></table></figure>
-
-<p><strong>@Range(item_1 &#x3D; value, …, item_n &#x3D; value):</strong></p>
-<p>设置某个属性的指定选择项，值可以是数值型或者文本型。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Range(Low=0, Mid=1, High=2)</span><br><span class="line">attr lod = 0</span><br><span class="line">@Range(Red=&quot;#ff0000&quot;, Green=&quot;#00ff00&quot;, Blue=&quot;#0000ff&quot;)</span><br><span class="line">attr color = &quot;#000000&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>@Color:</strong></p>
-<p>在 Inspector 中显示某个色彩属性使用色彩选择器。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Color</span><br><span class="line">attr userColor = &quot;#000000&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>@File:</strong></p>
-<p>将某个属性标记为一个文件名，在 Inspector 中以文件选择器显示。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@File</span><br><span class="line">attr asset = &quot;myfile.obj&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>@File(“ext_1”, … , “ext_n”):</strong> </p>
-<p>将某个属性标记为一个文件名，在 Inspector 中以文件选择器显示，规定指定的扩展名(“ext_1”, … , “ext_n”)。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@File(&quot;tif&quot;, &quot;tiff&quot;)</span><br><span class="line">attr texture = &quot;tex0.tiff&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>@Directory:</strong> </p>
-<p>将一个属性标记为路径名，在 inspector 中，会显示路径选择器。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Directory</span><br><span class="line">attr assets = &quot;/assets/lod&quot; + lod</span><br></pre></td></tr></table></figure>
-
-<p><strong>@Location(x, y):</strong> </p>
-<p>为可视化 CGA 编辑器设置某个属性或者规则 2D 位置。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Location(0, 0)</span><br><span class="line">Init--&gt;NIL</span><br></pre></td></tr></table></figure>
-
-<p><strong>@Order(order):</strong></p>
-<p>设置在 Inspector 中属性的显示顺序。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Order(1)</span><br><span class="line">attr i_m_1st = 0</span><br><span class="line">@Order(2)</span><br><span class="line">attr i_m_2nd = 0</span><br><span class="line">@Order(3)</span><br><span class="line">attr i_m_3rd = 0</span><br></pre></td></tr></table></figure>
-
-<p><strong>@Description(“description”):</strong></p>
-<p>为某个属性或者规则添加描述，这些描述会在 Inspector 中产生工具提示，或者在起始规则选择器中，或者样式管理器中作为描述显示。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Description(&quot;The building width&quot;)</span><br><span class="line">attr width = 40</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/05/13/CityEgnineAnnotation/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -580,19 +560,14 @@
 <p>ArcGIS has technologies embedded which ‘dynamically’ load only the part of a dataset which is currently visible on screen. Thus, with this technology HUGE raster datasets (&gt; 1GB) can easily be displayed.<br>CityEngine does NOT have such a streaming service, thus raster files &#x2F; textures should be prepared with some basic knowledge how they shall be used in a CityEngine project.</p>
 <p>Important things to know :</p>
 <p>1] Arc GIS’ basemaps can not directly be loaded in CityEngine as a layer. The user must export the specific ‘area of interest’ (extent) as a texture to be used within CityEngine.<br>2] To be able to work with textures, all the textures must reside within the opened project, usually in the ‘assets’ folder general textures, respectively the ‘maps’ folder for map-&#x2F;basemap - textures (or a subdirectory).<br>3] CityEngine is a 3d application which uses a technology called ‘OpenGL’ to display the 3d models (and the scene). Displaying 3d graphics this way uses the computer’s graphics card . For this, all textures are fully loaded in thatgraphics card’s memory. [Please note that the computer has ‘main memory’, which is usually called RAM. A graphics card has it’s own RAM, often called ‘Video RAM’. ]<br>4] Since the amount of memory on graphics cards is usually quite small (~ 256 MegaBytes - 1.5 GigaBytes), one can imagine that the resources should be handled carefully !<br>5] Please note that when importing raster files from ArcGIS (e.g. GeoTIF), the file’s projection MUST MATCH the CityEngine scene’s Scene Coordinate System. CityEngine can not (yet) reproject raster files when importing into the scene (as opposed to Shapes and Graph Segments !).</p>
-<p>Since the amount of memory used per texture is directly linked to it’s resolution (e.g. 500x500 pixels) plus the bit-depth of the file, we recommend to work with as efficient files as possible :</p>
-<ul>
-<li>use graphics card drivers which are UP TO DATE !</li>
-<li>use 8 bit textures whenever possible (except the terrain’s ‘heightmap’ which usually just is 32 bit)</li>
-<li>use texture resolutions &lt;&#x3D; 1024 x 1024 px (does not need a square ratio)</li>
-<li>terrains may be higher in resolution, I’d say &lt;&#x3D; 2048 x 2048 px.</li>
-<li>higher resolution textures may be downsampled automatically by CityEngine ( for viewport display only ! ).</li>
-<li>if a texture has too large a resolution (e.g. 13’000 x 13’000 px), it will not be displayed at all.</li>
-</ul>
-<hr>
-<p>原文链接：</p>
-<p><span class="exturl" data-url="aHR0cDovL2ZvcnVtcy5hcmNnaXMuY29tL3RocmVhZHMvNTQwNzItdGV4dHVyZXMtcmFzdGVyLWZpbGVzLWNvbmNlcHRzLWluLUNpdHlFbmdpbmUtQXJjR0lT">http://forums.arcgis.com/threads/54072-textures-raster-files-concepts-in-CityEngine-ArcGIS<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/05/13/CityEngineRasterReqirement/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -707,6 +682,14 @@
 <p>文件夹中支持子文件夹进行分类。 </p>
 <p><img data-src="/images/blogImg/WhereArethePRJs.jpg"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/04/22/WhereArethePRJs/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -836,6 +819,14 @@
 </ul>
 <p>链接：<br><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvbWFpbi8xMC4xL2luZGV4Lmh0bWwjLy8wMThzMDAwMDAwMDIwMDAwMDA=">http://resources.arcgis.com/en/help/main/10.1/index.html#//018s00000002000000<i class="fa fa-external-link-alt"></i></span></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/04/18/FileGDBlimits/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

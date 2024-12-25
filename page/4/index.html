@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -313,17 +313,14 @@
 <h2 id="实践过程"><a href="#实践过程" class="headerlink" title="实践过程"></a>实践过程</h2><p>选择了第一种方式，问题解决，因为看起来像是批量的。</p>
 <p>按照提示下载的zip包类似 qshell-v2.2.0.zip 这样的名字，里面包含了Windows，Linux，Mac各操作系统使用的程序。</p>
 <p>我以Mac为例，使用Mac自带的 Commandline 访问解压之后的文件夹 qshell-v2.2.0。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kikitamoondeMBP:SoftwareSetup kikitamoon$ cd qshell-v2.2.0</span><br><span class="line">kikitamoondeMBP:qshell-v2.2.0 kikitamoon$ ls</span><br><span class="line">qshell-darwin-x64	qshell-linux-x64	qshell-windows-x64.exe</span><br><span class="line">qshell-linux-arm	qshell-linux-x86	qshell-windows-x86.exe</span><br></pre></td></tr></table></figure>
-<p>其中 qshell-darwin-x64 是Mac可用的 Qshell 版本。在使用Qshell之前需要配置账户信息，qshell account即可设置AK和SK。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64</span></span><br><span class="line">Use help or help [cmd1 [cmd2 [cmd3 ...]]] to see supported commands.</span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 account</span></span><br><span class="line">Open account file error, open /Users/kikitamoon/.qshell/account.json: no such file or directory, please use `account` to set AccessKey and SecretKey first</span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 account &lt;AK&gt; &lt;SK&gt;</span></span><br></pre></td></tr></table></figure>
-<p>接着使用七牛技术支持给出的建议，将旧库的文件list出来，然后batchcopy到新库中。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 listbucket kikitamapgallery list.txt</span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash"><span class="built_in">cat</span> list.txt | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> &gt;list_final.txt</span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 batchcopy kikitamapgallery kikitamapgallerycopy list_final.txt</span></span><br></pre></td></tr></table></figure>
-
-<p>最后，通过 qdownload 命令下载所有源文件。在执行命令之前还需要做个配置文件，download.conf ; 并且可以设置开几个任务并行下载。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 qdownload 4 download.conf</span></span><br><span class="line"></span><br><span class="line">Writing download log to file /Users/kikitamoon/.qshell/qdownload/7d41b43ca364d28da34dbd030f1331be/7d41b43ca364d28da34dbd030f1331be.log</span><br><span class="line">Downloading MGKW_ArcGIS_Daemon.png [1/62, 1.6%] ...</span><br><span class="line">Downloading MGKW_ArcMapStartupLog.png [2/62, 3.2%] ...</span><br><span class="line">Downloading MGKW_BatchClip.png [3/62, 4.8%] ...</span><br><span class="line">Downloading MGKW_FeatureTable.png [4/62, 6.5%] ...</span><br><span class="line">Downloading MGKW_HelloArcGISPythonAPI.png [5/62, 8.1%] ...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">Downloading XJL_TripToGreece.png [61/62, 98.4%] ...</span><br><span class="line">Downloading XJL_TripToHongkong.png [62/62, 100.0%] ...</span><br><span class="line">See download log at path /Users/kikitamoon/.qshell/qdownload/7d41b43ca364d28da34dbd030f1331be/7d41b43ca364d28da34dbd030f1331be.log</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"></span></span><br></pre></td></tr></table></figure>
-
-<p>至此，源图片文件算是都找回来了。当然我还需要把我的网站中使用到旧地址的位置update一下喽。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/11/11/qiniuIssue/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -437,9 +434,14 @@
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>考虑到用户在更新矢量切片之前，已经做过该地图的矢量切片，那么在User那个目录下已经有了对应的xml文件，那么我只要代码中获取了地图的坐标系，然后按照xml的命名规则顺藤摸瓜并顺手牵羊即可。<br>现实总是比想象骨感。ArcGIS Pro 的 arcpy 中提供的 Map 对象竟然没有提供查询其坐标系统的属性或方法…… 测试基于ArcGIS Pro 2.2.1，写这篇时的最新版本。相信新的版本早晚会有的。好在我还是找到了一个workaround：从map的defaultCamera属性中获取，如下图左边最下部分所示。（现在没有测试环境，图出自讨论时的聊天记录，将就看吧）<br><img data-src="/images/blogImg/partialUpdateVTPKv3_defaultCamera.jpg"></p>
 <p>使用这个思路之后，解决了本文开头提到的问题，但是要求用户本机user目录下事先有相关的xml文件，没有的话需要打开创建矢量切片工具自动生产一次。</p>
 <p>工具的相关代码都进行了更新，采用了新的逻辑，目前可以支持矢量切片工具自身支持的全部坐标系统。并同时保留了，上个版本的局部更新工具中可以自动解析 Advanced Vector Tile Package 功能。<br><img data-src="/images/blogImg/partialUpdateVTPKv3_AdvancedSupport.jpg"></p>
-<h2 id="工具地址"><a href="#工具地址" class="headerlink" title="工具地址"></a>工具地址</h2><p><strong>Latest Version</strong>： <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMy4xLjA=">Partially Upate ArcGIS Vector Tiles Toolbox 3.1.0<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="收尾"><a href="#收尾" class="headerlink" title="收尾"></a>收尾</h2><p>这个工具即与工作相关，又是业余之作。自己执念太重，希望在esri工作的最后一天归还机器前尽快改好发布出来，因为将来的投入时间和测试环境，不知道是否能够保证。自己可见的坑还是自己填好比较稳妥，哈。姑且把这个版本当成最后的latest版本吧。因为这个工具的更新，搞得最后一天的时间特别紧张，没有和很多同事道别，不过将来总有机会再见的。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/09/27/partialUpdateVTPKv3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -582,15 +584,14 @@
 <li>Consume this service in various client browsers                                             (×)</li>
 </ol>
 <p><strong>Explanation</strong></p>
-<ul>
-<li><p>It requires  EA version installed on English language windows OS to avoid the failure of step 1 and step 2.</p>
-</li>
-<li><p>Checkerboarding on image service at now. and new case summitted for diagnose this issue.</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNzIyMDc=">Internal Case #02172207<i class="fa fa-external-link-alt"></i></span> summited</p>
-</li>
-</ul>
-<p><img data-src="/images/blogImg/cloudStorageImageService_8Issue.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/30/cloudStorageImageService/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -720,137 +721,15 @@
 
 <br>
 
-<h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><h3 id="ArcMap"><a href="#ArcMap" class="headerlink" title="ArcMap"></a>ArcMap</h3><ul>
-<li><p><strong>Steps</strong></p>
-<ol>
-<li>Create Huawei Cloud connection file                              (√)</li>
-<li>Add raster to a local mosaic dataset                               (√)</li>
-</ol>
-</li>
-<li><p><strong>Conclusion</strong></p>
-<ul>
-<li>Bingo !   This workflow for source raster dataset in Huawei Cloud is perfect.</li>
-</ul>
-</li>
-</ul>
-<h3 id="ArcGIS-Pro"><a href="#ArcGIS-Pro" class="headerlink" title="ArcGIS Pro"></a>ArcGIS Pro</h3><ul>
-<li><p><strong>Steps</strong></p>
-<ol>
-<li><p>Create Huawei Cloud connection file                             (√)</p>
-</li>
-<li><p>Add Raster to Mosaic Dataset                                         (×)</p>
-<ul>
-<li><p>Error Message as below:</p>
-<p>Failed to execute. Parameters are not valid.</p>
-<p>Error: 000732  Input Data: Dataset …\HuaWeiConnection.acs\…LGN00_MTL.txt does not exist or is not supported</p>
-</li>
-</ul>
-</li>
-<li><p>Trying  workaround:  Add Raster to Mosaic Dataset using arcpy  (python 3.x for ArcGIS Pro).   </p>
-<p>For the purpose of verification ,  Add Raster to Mosaic Dataset using arcpy  (python 2.x for ArcMap), it works.                                                                                (√)</p>
-</li>
-</ol>
-</li>
-<li><p><strong>Conclusion</strong></p>
-<ul>
-<li><p>It should be a bug of ArcGIS Pro,  that the  tool <strong>Add Rasters To Mosaic Dataset</strong> can not recognize the logical file path including cloud connection.  The tool will justify the path if it exists. The path containing cloud connection is a logical path , not a physical path.   The same input file path works in ArcMap.</p>
-</li>
-<li><p>Internal case submitted <span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNjYwNjk=">#02166069<i class="fa fa-external-link-alt"></i></span>  - <em>closed</em></p>
-<p>Related bug:  <em>BUG-000116191</em> </p>
-<p>Workaround:  Store the rasters in the root of the bucket, and add them from that location.</p>
-</li>
-</ul>
- <br></li>
-</ul>
-<h2 id="ALiBaBa-Cloud"><a href="#ALiBaBa-Cloud" class="headerlink" title="ALiBaBa Cloud"></a>ALiBaBa Cloud</h2><p>   In China, we also call it ALiYun.</p>
-<h3 id="ArcMap-1"><a href="#ArcMap-1" class="headerlink" title="ArcMap"></a>ArcMap</h3><ul>
-<li><p><strong>Steps</strong></p>
-<ol>
-<li><p>Create ALiBaBa Cloud connection file   (×)</p>
-<p>The connection file was created,  but there was a warning:  <em>WARNING 002574: Could not connect to cloud storage</em>  in the log </p>
-</li>
-<li><p>Create a mosaic dataset in a local file geodatabase   (√)</p>
-</li>
-<li><p>Add raster to mosaic dataset   (×) </p>
-<p>An error occurred:  <em>Error: 8004205f: No new mosaic dataset item was added.</em>  </p>
-<p>This error may due to the warning before, I think.</p>
-</li>
-</ol>
-</li>
-<li><p><strong>Conclusion</strong></p>
-<ul>
-<li><p>It may be a bug related to creating connection file to ALiBaBa Cloud Storage.  ArcPy (python 27) for ArcMap didn’t work, either.</p>
-</li>
-<li><p>Extra diagnose</p>
-<ul>
-<li><p>Using Fiddler to capture the HTTP(S) requests…</p>
-<p>I have used Fiddler Software to catch the HTTP(S) requests made by ArcMap, but nothing was found. I had enable the https capture before testing. At the same time , I checked the Windows Task Manager and Resource Monitor that there was a lot of network activities.</p>
-</li>
-<li><p>Using Wireshark to  capture the network transaction …</p>
-<p>Bad TCP records were found.</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="ArcGIS-Pro-1"><a href="#ArcGIS-Pro-1" class="headerlink" title="ArcGIS Pro"></a>ArcGIS Pro</h3><ul>
-<li><p><strong>Steps</strong></p>
-<ol>
-<li>Create ALiBaBa Cloud connection file                              (×)</li>
-<li>Create a mosaic dataset in a local file geodatabase      (√)</li>
-<li>Add raster to mosaic dataset                                             (×)</li>
-</ol>
-</li>
-<li><p><strong>Conclusion</strong></p>
-<ul>
-<li>Same issue with using HUAWEI cloud source data, and the issue points to the tool not to the cloud itself.</li>
-<li>ArcPy (python 36) for ArcGIS Pro didn’t work, either.</li>
-</ul>
-</li>
-</ul>
-<p>Internal case submitted  <span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNTc3NjI=">#02157762<i class="fa fa-external-link-alt"></i></span></p>
-<p>Related bug:  <em>BUG-000116297</em></p>
-<p>Workaround:  Internal Version 9226</p>
-<br>
-
-
-
-<h2 id="Custom-Cloud"><a href="#Custom-Cloud" class="headerlink" title="Custom Cloud"></a>Custom Cloud</h2><p>using s3 compatible cloud, for example,  Tencent Cloud.</p>
-<ul>
-<li><p><strong>Steps</strong></p>
-<ol>
-<li>Create Tencent Cloud connection file using ArcPy (python 27) for ArcMap </li>
-<li>Capture network interaction information using WireShark<ul>
-<li>As Amazon Provider selected, the region and endpoint will request Amazon CNAME address. In this condition, I don’t think the custom cloud works for now.</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>Internal case submitted</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNTc3NzI=">#02157772 Can Service End Point parameter be customized by users when connecting to the cloud storage ?<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-</ul>
-<br>
-
-
-
-<h2 id="Other-Issue"><a href="#Other-Issue" class="headerlink" title="Other Issue"></a>Other Issue</h2><p>failure with file Geodatabase transfer</p>
-<ul>
-<li><p><strong>Details</strong></p>
-<p>When the file geodatabase was copied to a new location ,which was some scheme of path as before, on the other new machine . The mosaic dataset didn’t show up the source raster data at all. </p>
-</li>
-<li><p>Internal case submitted</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNjUyODc=">#02165287 how to transfer mosaic dataset referencing raster dataset in cloud storage<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-</ul>
-<br>
-
-<br>
-
-<p>The information above is valid as the day it published, I will try my best to have it up to date.</p>
-<p>Thank you for reviewing.</p>
-
+<h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><h3 id="ArcMap"><a href="#ArcMap" class="headerlink" title="ArcMap"></a>ArcMap</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/15/cloudStorage4MD/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -966,16 +845,14 @@
 <blockquote>
 <p>PS：上图是完全由 ArcGIS Pro 制作导出的，使用到了 Layout , Extent Indicator; 从制图角度来说，ArcGIS Pro 是个非常好的桌面端应用，可以继承和超越ArcMap。 </p>
 </blockquote>
-<p>以13级为例，更新的这一角仅需替换一个bundle：</p>
-<p><img data-src="/images/blogImg/vectorTileBundle_BundleReplace.png"></p>
-<p>那么自定义工具 Create Part Vector Tile Package 所要做的工作，逻辑就变得非常清晰，也就是通过用户提供的待更新区域（AOI）来计算每级被影响到的bundle文件的地理范围，从而进行bundle的替换工作；包含了为其服务的，解包、打包、解析类的工作。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>Latest Version：</strong>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMi4xLjE=">Partially Upate ArcGIS Vector Tiles Toolbox 2.1.1<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>待解决的问题</strong>：</p>
-<ul>
-<li>投影坐标系和自定义坐标系支持</li>
-<li>tile scheme 原生获取</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/13/vectorTileBundle/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

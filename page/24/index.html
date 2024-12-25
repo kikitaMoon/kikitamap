@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -302,20 +302,14 @@
 <p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4xL2luZGV4Lmh0bWw=">http://resources.arcgis.com/en/help/system-requirements/10.1/index.html<i class="fa fa-external-link-alt"></i></span></p>
 <p><strong>ArcGIS 10.2.x</strong></p>
 <p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4yL2luZGV4Lmh0bWw=">http://resources.arcgis.com/en/help/system-requirements/10.2/index.html<i class="fa fa-external-link-alt"></i></span></p>
-<p><em><strong>过气版本 ArcGIS 9.3</strong></em></p>
-<p>Desktop：<span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L3N5c3RlbXJlcXVpcmVtZW50cy9BcmNHSVNfRGVza3RvcF85M19TeXN0ZW1SZXF1aXJlbWVudHMucGRm">http://downloads.esri.com/support/systemrequirements/ArcGIS_Desktop_93_SystemRequirements.pdf<i class="fa fa-external-link-alt"></i></span></p>
-<p>Server：<span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L3N5c3RlbXJlcXVpcmVtZW50cy9hcmNnaXNfc2VydmVyLnBkZg==">http://downloads.esri.com/support/systemrequirements/arcgis_server.pdf<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<br>
-
-
-<p>ArcGIS 9.2 甚至更早的版本就不说了，太久远了，现在的操作系统没有几个能支持的了，如果还在使用这8年前的版本，算了，丢了吧，反正你不爱ArcGIS。</p>
-<p>以前整理过各个版本的补丁下载链接，<a href="http://kikitamap.com/2013/05/29/AllPackages/"><strong>点击</strong></a> 跳转另一篇博客。</p>
-<p>另外，从10.2版本之后，不再提供像上面链接中一样的单独的补丁下载，而是做成完整的安装包，例如，截至到这篇博客的时间，最新的版本 10.2.1，10.2.2 这些版本既是如此。这样就可以在空白机器上直接安装最新版本，而不需要像以前一样，先安装旧版本再打补丁，避免重复劳动多次；对于已经安装10.1，10.2的机器，可以直接覆盖安装 10.2.1等新版本，也节省了卸载的时间。</p>
-<p>产品的生命周期最可以说明问题，有图有真相：</p>
-<p><img data-src="/images/blogImg/ArcGISSystemRequirment.jpg"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/09/24/ArcGISSystemRequirment/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -432,34 +426,14 @@
 <p><img data-src="/images/blogImg/ArcGISImageClassification_Samples.png"></p>
 <p>在创建样本之后，我们可以评估训练样本，使用直方图、散点图、统计数据。</p>
 <p><strong>（1）直方图</strong></p>
-<p>打开直方图，每个波段对应一个直方图。不同类的直方图不应重叠。如果发生重叠，则需要删除或合并其中一些类。</p>
-<p>直方图按钮仅用于整型影像，不适用于浮点型。</p>
-<p><img data-src="/images/blogImg/ArcGISImageClassification_Histogram.png"></p>
-<p><strong>（2）散点图</strong></p>
-<p>散点图是参加分类的影像数据的波段的两两组合，如果有N个波段，就有1 + 2 + … + (N – 1) 个散点图。</p>
-<p>对于所有波段组合，散点图和统计数据不应彼此重叠。</p>
-<p><img data-src="/images/blogImg/ArcGISImageClassification_Scatterplots.png"></p>
-<p><strong>（3）统计数据</strong></p>
-<p>统计数据包括最小值、最大值、平均值、标准差和协方差矩阵。</p>
-<p><img data-src="/images/blogImg/ArcGISImageClassification_Statistics.png"></p>
-<p>创建训练样本后，可以使用交互式监督分类工具，探索性的直接查看分类结果。这个工具不需要事先创建特征文件，工具后台使用的是最大似然法分类方法。</p>
-<p><img data-src="/images/blogImg/ArcGISImageClassification_interactive.png"></p>
-<p><img data-src="/images/blogImg/ArcGISImageClassification_Result.png"></p>
-<p>在ArcGIS 中，监督分类的主要GP工具是&nbsp;<strong>最大似然法分类工具（Maximum Likelihood Classification）</strong>。</p>
-<p>（1）需要使用&nbsp;<strong>特征文件（Signature File）</strong>，既可以是通过训练样本制作的，也可以是ISO聚类工具求取，*.gsg文件。</p>
-<p>（2）可以根据需要设置&nbsp;<strong>剔除分数（Reject Fraction&nbsp;）</strong>，例如0.01。这样表示，正确分类的几率不到 1% 的像元就会成为 NoData。</p>
-<p>（3）<strong>先验概率（priori probability）</strong>，工具默认使用 Equal 先验概率，会给像元分配可能性最大的分类。但是，如果某些类出现的可能性大于（或小于）平均值，则应将 FILE 先验选项与输入先验概率文件结合使用。输入先验概率文件必须是包含两列的 ASCII 文件。左列中的值表示类 ID。右列中的值表示相应类的先验概率。类别先验概率的有效值必须大于或等于零。如果指定零作为概率，则类无法显示在输出栅格中。指定先验概率的总和必须小于或等于1。</p>
-<p>（4）最大似然法分类工具还可以附带可选生成&nbsp;<strong>置信栅格（confidence raster）</strong>，这样可以了解每个像元的正确分类的概率。</p>
-<br>
-
-<h1 id="非监督分类"><a href="#非监督分类" class="headerlink" title="非监督分类"></a><strong>非监督分类</strong></h1><p>非监督分类不预先确定类别，而是直接对相似的像元进行归类，根据归类的结果来确定类别。也就是在事先没有任何先验知识的情况下对未知类别的样本进行分类。当我们没有训练区，有对研究区不熟悉时，或者对图像中包含的目标物不明确的时候，采用此方法。</p>
-<p>在 ArcGIS 中进行非监督分类，主要使用工具&nbsp;<strong>ISO聚类非监督分类工具（Iso Cluster Unsupervised Classification）。</strong></p>
-<p>需要指定希望分出来的类别的数量，并且根据需要调整迭代的次数、类的最小尺寸、采样间隔。</p>
-<p>ISO 是&nbsp;iterative self-organizing 的缩写，也就是迭代自组织方法。此工具的工作原理从帮助中扒出来，供参考：</p>
-<blockquote>
-<p>iso 聚类算法是一种迭代过程，用于在将各个候选像元指定给聚类时计算最小欧氏距离。该过程从处理软件指定的任意平均值开始，每个聚类一个任意平均值（您指定聚类数量）。将每个像元指定给最接近的平均值（多维属性空间中的所有平均值）。基于首次迭代后从属于每个聚类的像元的属性距离，重新计算各个聚类的新平均值。重复执行此过程：将各个像元指定给多维属性空间中最接近的平均值，然后基于迭代中像元的成员资格计算各个聚类的新平均值。您可通过迭代次数指定该过程的迭代次数。该值应该足够大，才能确保执行指定次数的迭代后，像元从一个聚类迁移至另一个聚类的次数最少；从而，使所有聚类变为稳定状态。迭代次数应该随着聚类数的增加而增加。</p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/09/18/ArcGISImageClassification/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -575,75 +549,14 @@
 <p>简单录制功能是通过使用与动画控制对话框中的视频播放器类似的控件来实现的。单击录制按钮录制导航。</p>
 <p><img data-src="/images/blogImg/Building3DAnimation_Navi.jpg"></p>
 <p>录制导航时，可使用 ArcScene 或 ArcGlobe 中的飞行工具飞行 来创建照相机轨迹。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_Fly.jpg"></p>
-<br>
-
-
-
-<p><strong>3 创建关键帧（Creat KeyFrames）</strong></p>
-<p>这种方法与捕获透视图相似，可以为当前视图进行快照，作为一个关键帧，可以插入到已有的轨迹中。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_KeyFrame.jpg"></p>
-<p>在创建动画关键帧对话框上，使用相同的属性（如相同的照相机位置）创建多个关键帧，然后在动画管理器的“关键帧”选项卡上修改关键帧属性，细化动画创建。</p>
-<p>如下例子，中通过创建两个相同的关键帧，控制照相机在某处的停留时间。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_keyframeDemo.jpg"></p>
-<br>
-
-<p><strong>4 使用书签创建动画（Using Bookmark）</strong></p>
-<p>将已经创建的书签作为关键帧也是个很好的方法，如果地图或者场景中以前做过书签，并且想把他们利用起来连贯的展现出来，就可以使用这种方法。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_bookmark.jpg"></p>
-<br>
-
-
-<p><strong>5 沿路径移动照相机或视图（Moving the Camera or View along a Path）</strong></p>
-<p>我们还可以根据路径创建照相机轨迹或地图视图轨迹。所选线要素或图形可以用来定义路径，这样就将照相机的移动轨迹就约束在这个路径上。</p>
-<p>例如下图所示：</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_SelectedPath.jpg"></p>
-<p><img data-src="/images/blogImg/Building3DAnimation_Flyby.jpg"></p>
-<p>照相机的方向可由观察点和目标点这两个 3D 点定义。使用“根据路径设置照相机飞行路线”对话框上的“路径目标”选项可修改照相机的移动方式。有三个选项可用于沿路径移动照相机：</p>
-<p>（1）沿飞行路径同时移动观察点和目标。</p>
-<p>（2）保持当前目标沿路径移动观察点。</p>
-<p>（3）保持当前观察点沿路径移动目标。</p>
-<br>
-
-<br>
-
-<h2 id="Ⅱ-以动画形表现图层属性"><a href="#Ⅱ-以动画形表现图层属性" class="headerlink" title="Ⅱ 以动画形表现图层属性"></a><strong>Ⅱ 以动画形表现图层属性</strong></h2><p>创建图层轨迹的几种方式：</p>
-<p>（1）图层透明度动画</p>
-<p>使某些图层变得透明，以便其他图层能够随着动画的发展而可见；</p>
-<p>方法：在创建关键帧的时候，设置图层的透明度百分比。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_3DEffect.jpg"></p>
-<p><img data-src="/images/blogImg/Building3DAnimation_Transparent.jpg"></p>
-<p>（2）图层可见性动画</p>
-<p>关闭图层使之不可见。例如在某个时间，指定图层不需要显示；操作类似上面的，只不过截取关键帧的时候，打开&#x2F;关闭图层即可，不赘述。</p>
-<p>（3）<strong>ArcScene</strong> 中沿路径移动某个图层（例如汽车）</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_AlongLine.png"></p>
-<p>（4）图层组动画</p>
-<p>使用现有图层组，按照顺序播放一系列的图层，这个动画效果也比较常用，如果一个组中是相关的主题的一系列数据，通过播放，可以看到图层之间的演进关系。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_GroupLayer.png"></p>
-<br>
-
-<br>
-
-
-<h2 id="Ⅲ-以动画表现场景属性（ArcScene）"><a href="#Ⅲ-以动画表现场景属性（ArcScene）" class="headerlink" title="Ⅲ 以动画表现场景属性（ArcScene）"></a><strong>Ⅲ 以动画表现场景属性（ArcScene）</strong></h2><p>这种动画类型是仅用于 ArcScene 的场景属性配置的。最常用的就是一天从日出到日落不同太阳位置的场景效果的连续播放。</p>
-<p>我们要做的仅仅是在每个太阳位置时间点创建关键帧。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_Scene.png"></p>
-<p>场景属性设置：</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_SunPosition.jpg"></p>
-<p><img data-src="/images/blogImg/Building3DAnimation_dark.jpg"></p>
-<p><img data-src="/images/blogImg/Building3DAnimation_bright.jpg"></p>
-<br>
-
-<br>
-
-
-
-<h2 id="Ⅳ-以动画表现时态数据"><a href="#Ⅳ-以动画表现时态数据" class="headerlink" title="Ⅳ 以动画表现时态数据"></a><strong>Ⅳ 以动画表现时态数据</strong></h2><p>如果数据是含有时间字段的，我们还可以进行按照时间序列的播放时态数据的动画。</p>
-<p>首先在图层属性中时间选项卡 <strong>激活时态</strong>。 然后创建时间动画。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_Time.png"></p>
-<p>关于最后一个时间动画不想说很多，ArcGIS 有个关于时态的扩展模块，Tracking Analyst，这个扩展对于时态数据有更多的控制。</p>
-<p>配置出的时间图层有更好的展现力，因此，这里就不再多说时间动画了。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/09/16/Building3DAnimation/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -760,62 +673,14 @@
 <p>当 VRMA 大于切削角下限且小于切削角上限时，在两个像元之间移动的 VF 设置为与零系数相关联的值。如果 VRMA 大于切削角上限或者小于<span style="font-family: 'Microsoft YaHei';font-size:14px;">切削角下限</span>，则 VF 设置为无穷大。工具默认的切削角为正负30度。</p>
 <p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Binary.gif"></p>
 <p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_BInary2.jpg"></p>
-<br>
-
-<p><strong>（2）Linear——线性垂直系数</strong></p>
-<p>VF 由 VRMA-VF 坐标系中的一条直线确定。这条线在 y 轴上与零系数相关联的值处进行截取。线的斜率可以使用 SLOPE 属性进行指定。如果未确定斜率，则默认值为 1&#x2F;90（指定为 0.01111）。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Linear.png"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Linear2.jpg"></p>
-<br>
-
-<p><strong>（3）Inverse Linear——逆线性垂直系数</strong></p>
-<p>这个与线性垂直系数类似，VF 由 VRMA-VF 坐标系中的一条直线的逆向值确定。这条线在 y 轴（表示 VF 系数）上与零系数相关联的值处进行截取。线的斜率可以确定（如果使用 SLOPE 修饰属性指定）。如果未确定斜率，则默认值为 -1&#x2F;45（指定为 0.02222）。默认的切削角下限为 -45 度，而默认的切削角上限为 45 度。</p>
-<p><strong>注意：这个算法的图表，在ArcGIS的帮助中绘制错误了，画成了二次曲线的样子，如下是改正后正确图表。</strong>_</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_InverseLinear.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_InverseLinear2.jpg"></p>
-<br>
-
-<p><strong>（4）Symmetric Linear——对称线性垂直系数</strong></p>
-<p>SYM_LINEAR 由两个与 VRMA 相关的线性函数组成，这两个函数关于 VF (y) 轴对称。两条线都在与零系数相关联的 VF 值处截取 y 轴。使用 SLOPE 垂直系数修饰属性相对于正 VRMA 定义线的斜率，然后将针对负 VRMA 生成一个镜像。默认斜率为 1&#x2F;90（指定为 0.01111）。默认的切削角下限为 -90，而默认的切削角上限为 90。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_SymmetricLinear.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_SymmetricLinear.jpg"></p>
-<br>
-
-<p><strong>（5）Symmetric Inverse Linear——对称线性垂直系数</strong></p>
-<p>顾名思义，SYM_INVERSE_LINEAR 与 SYM_LINEAR 垂直系数关键字正相反。它由两个与 VRMA 相关的线性函数组成，这两个函数关于 VF (y) 轴相对称。两条线都在 VF 值为 1 处截取 y 轴。使用 SLOPE 垂直系数修饰属性相对于与正 VRMA 定义线的斜率，然后将针对负 VRMA 生成一个镜像。默认斜率为 -1&#x2F;45（指定为 .02222）。默认的切削角下限为 -45，而默认的切削角上限为 45。</p>
-<p><strong>注意：这个算法的图表，在ArcGIS的帮助中也绘制错误了，也画成了二次曲线的样子，如下是改正后正确图表。</strong></span></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_SymInverseLinear.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_SymInverseLinear.jpg"></p>
-<br>
-
-<p><strong>（6）Cos——余弦垂直系数</strong></p>
-<p>VF 由 VRMA 的余弦函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 COSPOWER 为 1.0。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Cos.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Cos.jpg"></p>
-<br>
-
-<p><strong>（7）Sec——正割垂直系数</strong></p>
-<p>VF 由 VRMA 的正割函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 SECPOWER 为 1.0。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Sec.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Sec2.jpg"></p>
-<br>
-
-<p><strong>（8）Cos-Sec——余弦正割垂直系数</strong></p>
-<p>当 VRMA 度数为负值时，VF 由 VRMA 的余弦函数确定。如 VRMA 度数为正值，VF 则由 VRMA 的正割函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 COSPOWER 和 SECPOWER 均为 1.0。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_CosSec.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_CosSec2.jpg"></p>
-<br>
-
-<p><strong>（9）Sec-Cos——正割余弦垂直系数</strong></p>
-<p>当 VRMA 度数为负值时，VF 由 VRMA 的正割函数确定。如 VRMA 度数为正值，VF 则由 VRMA 的余弦函数确定。默认的切削角下限为 -90 度，而默认的切削角上限为 90 度。默认的 COSPOWER 和 SECPOWER 均为 1.0。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_SecCos.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_SecCos.jpg"></p>
-<br>
-
-<p><strong>（10）Table——自定义表格垂直系数</strong></p>
-<p>与 HRMA 图一样，VRMA 图中的字符可由修饰属性进行进一步的控制，从而细化垂直系数。这个就不再赘述了。</p>
-<p>好了，到这里路径距离分析就说完了，也就是说，当需要计算最短路径的时候，需要考虑和前进方向有关的水平阻力因子和垂直阻力因子的时候，可以使用 ArcGIS 的路径距离分析工具，可以使用工具中的既定算法模型，通过配置参数达到目的，或者自定义表格自定义细化水平或垂直系数。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/09/15/DiveinPathDistanceAnalyst3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -930,36 +795,14 @@
 <p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Angle.gif"></p>
 <p>另外引入的一个概念是，水平相对移动角度 (HRMA)，这是水平角度和前进角度的夹角，对于上面的例子，就是汽车的行驶角度和风向的夹角。</p>
 <p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_HRMA.png"></p>
-<p>HRMA 值的范围介于 -180 到 180 度之间。但是，在水平系数图中，x 轴上的值介于 0 到 180 之间，也就是工具中使用的是HRMA的绝对值。确定了 HRMA 后，会使用一个图表来确定实际的水平系数。y 轴表示 HF，而 x 轴表示 HRMA。</p>
-<p><strong>水平系数关键字</strong>，允许我们通过选择工具中提供的适合的算法，工具中提供了：&nbsp;BINARY、FORWARD、LINEAR、INVERSE_LINEAR、TABLE 五种方法。<br>​	</p>
-<p><strong>（1）Binary——二元水平系数：</strong></p>
-<p>当 HRMA 小于切削角时，通过像元部分的 HF 设置为与零系数（Zero Factor）相关联的值。如果 HRMA 大于切削角，则此部分的 HF 设置为无穷大。默认切削角（Cut Angle）为 45 度。默认零系数为 1.0。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Binary.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Binary2.jpg"></p>
-<p><strong>（2）Forward——前向水平系数：</strong></p>
-<p>如果某段行程的 HRMA 小于 45 度，则 HF 设置为与零系数（Zero Factor）相关联的值。当 HRMA 大于或等于 45 度且小于 90 度时，HF 设置为边值（Side Value）。如果未指定边值，则默认边值为 1。如果 HRMA 大于或等于 90 度，则 HF 设置为无穷大。默认零系数为0 .5。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Forward.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Forward2.jpg"><br>​	</p>
-<p><strong>（3）LINEAR——线性水平系数</strong></p>
-<p>HF 由 HRMA-HF 坐标系中的一条直线确定。这条线在 y 轴（表示 HF 系数）上与零系数（Zero Factor）相关联的值处进行截取。线的斜率（Slop）可以使用 SLOPE参数指定。如果未确定斜率，则默认值为 0.5&#x2F;45 或 1&#x2F;90（指定为 0.01111）。默认切削角为 181 度，这相当于无切削。默认零系数为 0.5。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Linear.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Linear2.jpg"></p>
-<p>​	</p>
-<p><strong>（4）INVERSE_LINEAR——逆线性水平系数</strong></p>
-<p>HF 由 HRMA-HF 坐标系中的一条直线的逆向值确定。这条线在 y 轴（表示 HF 系数）上与零系数相关联的值处进行截取。线的斜率可以使用 SLOPE 修饰属性进行指定。如果未确定斜率，则默认值为 -2&#x2F;180 或 -1&#x2F;90（指定为 0.01111）。默认切削角为 181 度，这相当于无切削。默认零系数为 2.0。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_InverseLinear.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_InverseLinear2.jpg"></p>
-<p><strong>（5）Table——自定义表格</strong></p>
-<p>如果前面四种既定算法不能满足要求，我们还可以自定表格，方法就是，在任意文本编辑器中创建的 ASCII 文件来定义图表。</p>
-<p>该文件的每一行有两列值与之对应。第一列值用于识别 HRMA（以度为单位表示），第二列值为 HF。文件中的每行指定图表中的一个点。</p>
-<p>两个连续的点定义 HRMA-HF 坐标系中的一条线段。HRMA 角度必须按升序输入。对于所有小于第一个（最低）输入值或大于最后一个（最大）输入值的 HRMA 角度，其 HF 系数将设置为无穷大。</p>
-<p>在 ASCII 文件中，无穷大的 HF 表示为 -1。</p>
-<p>示例：</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Table.jpg">	</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Table2.jpg"></p>
-<p>有关水平影响因子的总结就到这里，下一篇继续整理和讲解垂直因子……</p>
-<p>​	</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/09/15/DiveinPathDistanceAnalyst2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

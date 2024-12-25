@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -304,40 +304,14 @@
 <h1 id="2-打包发布"><a href="#2-打包发布" class="headerlink" title="2. 打包发布"></a>2. 打包发布</h1><p>使用Window自带的命令窗口，转到上一步创建的文件夹目录，输入命令，<strong>python setup.py sdist</strong>：</p>
 <p><img data-src="/images/blogImg/SetupPythonModule_setup.png"></p>
 <p>通过上面的状态信息知道，产生了下面的结果：</p>
-<p><img data-src="/images/blogImg/SetupPythonModule_Folder.png"></p>
-<br>
-
-
-<h1 id="3-安装"><a href="#3-安装" class="headerlink" title="3. 安装"></a>3. 安装</h1><p>在命令窗口输入命令： <strong>python setup.py install</strong></p>
-<p><img data-src="/images/blogImg/SetupPythonModule_Install.png"></p>
-<p>安装命令也会产生额外的目录，build&#x2F;lib 。</p>
-<p><img data-src="/images/blogImg/SetupPythonModule_Folder2.png"></p>
-<br>
-
-<h1 id="4-导入模块"><a href="#4-导入模块" class="headerlink" title="4. 导入模块"></a>4. 导入模块</h1><p>import nesterprint ，导入这个自定模块，开始使用其中的myprint函数吧。</p>
-<p><img data-src="/images/blogImg/SetupPythonModule_Import.png"></p>
-<blockquote>
-<p>PS:这一篇重在发布安装模块的流程，模块内部脚本没提及，在前一篇的最后Demo中有写，可以参考，但是这真的不是重点。</p>
-</blockquote>
-<br>
-
-
-<h1 id="5-升级模块"><a href="#5-升级模块" class="headerlink" title="5. 升级模块"></a>5. 升级模块</h1><p>如果我们想升级模块，可以不？ 可以！</p>
-<p>更新了nesterprint.py 中的一些代码，改进了功能后，来升级下模块。到 setup.py 文件中修改下版本信息，我就叫他2.0.0 。</p>
-<p><img data-src="/images/blogImg/SetupPythonModule_Update.png"></p>
-<p>用 2， 3 两步一样的方法发布安装就好了。</p>
-<p><img data-src="/images/blogImg/SetupPythonModule_Install2.png"></p>
-<br>
-
-<br>
-
-<p>试验一下：</p>
-<p>nesterprint 的功能已经升级到 2.0 版本了。</p>
-<p><img data-src="/images/blogImg/SetupPythonModule_Update2.png"></p>
-<blockquote>
-<p>what’s new？ 增加了根据列表的深度自动缩进的功能。 </p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/07/09/SetupPythonModule/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -455,26 +429,14 @@
 <h2 id="2-注册登录"><a href="#2-注册登录" class="headerlink" title="2 注册登录"></a>2 注册登录</h2><p>使用命令行窗口，跳转到要发布的py所在的文件夹目录，首先进行注册登录，让命令行上传工具知道我的PyPI账户和密码。输入命令：**<code>python setup.py register</code>**，选择 1，输入账户和密码，并且保存登录信息，下次上传可以跳过这个步骤。</p>
 <p><img data-src="/images/blogImg/UploadCodetoPyPI_Login.png"></p>
 <br>
-
-<h2 id="3-上传发布"><a href="#3-上传发布" class="headerlink" title="3 上传发布"></a>3 上传发布</h2><p>接着在命令行窗口中，输入命令： **<code>python setup.py sdist upload</code>**：</p>
-<p><img data-src="/images/blogImg/UploadCodetoPyPI_upload.png"></p>
-<p>看到 OK 即上传成功。到 PyPI 自己的账户下看看吧。</p>
-<p><img data-src="/images/blogImg/UploadCodetoPyPI_MyProfile.png"></p>
-<p>Bingo ~</p>
-<br>
-
-<h2 id="4-更新模块"><a href="#4-更新模块" class="headerlink" title="4 更新模块"></a>4 更新模块</h2><p>当我们修改了模块中的代码，并想更新 PyPI 上的模块，那就在上传之前更改下 setup.py 的 version 参数，告诉 PyPI 这是个新的版本。</p>
-<p><img data-src="/images/blogImg/UploadCodetoPyPI_Update.png"></p>
-<p>并使用相同的命令来上传新的发布版本。</p>
-<p><img data-src="/images/blogImg/UploadCodetoPyPI_UploadUpdate.png"></p>
-<p>好了，看看 PyPI，两个版本的模块都在，其中旧的版本默认被隐藏。</p>
-<p><img data-src="/images/blogImg/UploadCodetoPyPI_Verisons.png"></p>
-<br>
-
-
-<p>我们可以下载最新版本直接解压安装使用。</p>
-<p><img data-src="/images/blogImg/UploadCodetoPyPI_Download.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/07/09/UploadCodetoPyPI/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -594,70 +556,14 @@
 <p><strong>len() 得出列表中有多少数据项；</strong></p>
 <p><strong>append() 在列表末尾追加一个数据项；</strong></p>
 <p><strong>extend() 在列表末尾增加一个数据项集合；</strong></p>
-<p><strong>pop() 在列表末尾删除一个数据项；</strong></p>
-<p><strong>remove() 在列表中删除一个特定的数据项；</strong></p>
-<p><strong>insert()  在特定位置前面增加一个数据项；</strong></p>
-<p><strong>count()  统计某个数据项在列表中出现的次数；</strong></p>
-<p><strong>reverse() 反向列表中数据项。</strong></p>
-<br>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit = [<span class="string">&quot;Apple&quot;</span>,<span class="string">&quot;Pear&quot;</span>,<span class="string">&quot;Grape&quot;</span>,<span class="string">&quot;Peach&quot;</span>,<span class="string">&quot;Bananer&quot;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">len</span>(Fruit))</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit[<span class="number">0</span>])</span><br><span class="line">Apple</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit[<span class="number">4</span>])</span><br><span class="line">Bananer</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.append(<span class="string">&quot;tomato&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Peach&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.extend([<span class="string">&quot;lemon&quot;</span>,<span class="string">&quot;coconut&quot;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Peach&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>, <span class="string">&#x27;coconut&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.pop()</span><br><span class="line"><span class="string">&#x27;coconut&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Peach&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.remove(<span class="string">&quot;Peach&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.remove(Fruit[<span class="number">0</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.insert(<span class="number">0</span>,<span class="string">&quot;Apple&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.insert(<span class="number">6</span>,<span class="string">&quot;coconut&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="string">&#x27;Grape&#x27;</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="string">&#x27;tomato&#x27;</span>, <span class="string">&#x27;lemon&#x27;</span>, <span class="string">&#x27;coconut&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.count(<span class="string">&quot;Apple&quot;</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>用迭代显示列表中的数据项，以下的代码段中 <strong>for</strong> 和 <strong>while</strong> 完成的工作是一样的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> item <span class="keyword">in</span> Fruit:</span><br><span class="line">	<span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> count &lt; <span class="built_in">len</span>(Fruit):</span><br><span class="line">	  <span class="built_in">print</span>(Fruit[count]) </span><br><span class="line">	  count = count + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 输出结果</span><br><span class="line">Apple</span><br><span class="line">1</span><br><span class="line">Pear</span><br><span class="line">2</span><br><span class="line">Bananer</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>如果字符串中需要包含双引号，不要忘记转义 ，<strong>&quot;</strong>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.append(<span class="string">&quot;\&quot;Tomato\&quot;&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;&quot;Tomato&quot;&#x27;</span>]</span><br></pre></td></tr></table></figure>
-
-
-<br>
-
-<p><strong>isinstance()</strong> 函数可以用来判断特定标识符是否包含某个特定类型的数据。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span>(Fruit,<span class="built_in">list</span>)</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">isinstance</span>(count,<span class="built_in">list</span>)</span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<br>
-
-<p>Python中列表可以嵌套，并且可以支持任意多层的嵌套，例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit.append([<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;&quot;Tomato&quot;&#x27;</span>, [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Fruit[-<span class="number">1</span>].append([<span class="string">&quot;aa&quot;</span>,<span class="string">&quot;bb&quot;</span>,<span class="string">&quot;cc&quot;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(Fruit)</span><br><span class="line">[<span class="string">&#x27;Apple&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;Pear&#x27;</span>, <span class="number">2</span>, <span class="string">&#x27;Bananer&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;&quot;Tomato&quot;&#x27;</span>, [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>]]]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> Fruit:</span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line">	</span><br><span class="line">Apple</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Pear</span><br><span class="line"><span class="number">2</span></span><br><span class="line">Bananer</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="string">&quot;Tomato&quot;</span></span><br><span class="line">[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, [<span class="string">&#x27;aa&#x27;</span>, <span class="string">&#x27;bb&#x27;</span>, <span class="string">&#x27;cc&#x27;</span>]]</span><br></pre></td></tr></table></figure>
-
-
-
-<p>试试输出三层嵌套的列表中的各个数据项：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> Fruit:</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">isinstance</span>(i,<span class="built_in">list</span>):</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> i:</span><br><span class="line">			<span class="keyword">if</span> <span class="built_in">isinstance</span>(j,<span class="built_in">list</span>):</span><br><span class="line">				<span class="keyword">for</span> k <span class="keyword">in</span> j:</span><br><span class="line">					<span class="built_in">print</span>(k)</span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				<span class="built_in">print</span>(j)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		<span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">Apple</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Pear</span><br><span class="line"><span class="number">2</span></span><br><span class="line">Bananer</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="string">&quot;Tomato&quot;</span></span><br><span class="line">A</span><br><span class="line">B</span><br><span class="line">C</span><br><span class="line">aa</span><br><span class="line">bb</span><br><span class="line">cc</span><br></pre></td></tr></table></figure>
-
-
-<br>
-
-<br>
-
-<p>上面的循环嵌入的有点多，如果是N层嵌套的列表重复代码会很多，来点优化试试：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">my_print</span>(<span class="params">mylist</span>):</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> mylist:</span><br><span class="line">		<span class="keyword">if</span> <span class="built_in">isinstance</span>(i,<span class="built_in">list</span>):</span><br><span class="line">			my_print(i)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			<span class="built_in">print</span>(i)</span><br><span class="line">		</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>my_print(Fruit)</span><br><span class="line"></span><br><span class="line">Apple</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Pear</span><br><span class="line"><span class="number">2</span></span><br><span class="line">Bananer</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="string">&quot;Tomato&quot;</span></span><br><span class="line">A</span><br><span class="line">B</span><br><span class="line">C</span><br><span class="line">aa</span><br><span class="line">bb</span><br><span class="line">cc</span><br></pre></td></tr></table></figure>
-
-
-<p>定义个递归函数实现，看起来好多了。</p>
-<br>
-
-<br>
-
-<p>列表操作符部分，+表示列表组合，*表示列表重复：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] + [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> mylist</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = mylist*<span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(mylist)</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>今天就写到这里吧。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/07/07/PythonList/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -777,75 +683,14 @@
 <h2 id="·-空间参考-Spatial-Reference"><a href="#·-空间参考-Spatial-Reference" class="headerlink" title="· 空间参考&#x2F;Spatial Reference"></a>· 空间参考&#x2F;Spatial Reference</h2><p>在ArcMap中配置地图文档，要尽可能将所有数据与数据框使用相同的空间参考，特别是编辑或创建要提供服务的数据的时候。虽然ArcMap可以进行动态投影，但是这样做可以避免动态投影计算所造成的性能损耗。</p>
 <p>对于不同空间参考的数据，可以使用工具 Project 进行转换。</p>
 <h2 id="·-连接与关联-Join-Relate"><a href="#·-连接与关联-Join-Relate" class="headerlink" title="· 连接与关联&#x2F;Join &amp; Relate"></a>· 连接与关联&#x2F;Join &amp; Relate</h2><p>我们有时会通过Join表中的字段进行标注或符号化，也可能会通过Relate操作来执行查询等。然而，通过连接和关联访问数据可能会降低性能，需要执行额外的工作来维护连接。</p>
-<p>对于需要使用Join过来的字段内容，可以考虑导出数据，获得包含连接字段的新要素类。</p>
-<h2 id="·-索引-Index"><a href="#·-索引-Index" class="headerlink" title="· 索引&#x2F;Index"></a>· 索引&#x2F;Index</h2><p>这里说的索引包含空间索引和属性索引。空间索引在大多数情况下，ArcGIS 都会自动维护。如果遇到没有自动更新的情况，可以手动更新创建；如果数据源允许使用索引，则应为所有查询字段或渲染字段建立索引。</p>
-<p>有关创建删除索引，ArcToolbox有个工具箱 Index可以找到需要的工具。</p>
-<h2 id="·-数据简化-Data-Simplification"><a href="#·-数据简化-Data-Simplification" class="headerlink" title="· 数据简化&#x2F;Data Simplification"></a>· 数据简化&#x2F;Data Simplification</h2><p>如果需要使用小比例尺出图，无需展示非常详细细节，那就可以考虑简化、概化数据。如果将图层简化为具有更少的折点和线段，图层在小比例下将绘制得更快并且差别不大。此外，简化的数据可以提高查询和识别操作的性能。</p>
-<p>需要的工具在工具箱也可以找到，例如：Simplify Polyline、Simplify Polygon。</p>
-<h2 id="·-底图图层-Basemap"><a href="#·-底图图层-Basemap" class="headerlink" title="· 底图图层&#x2F;Basemap"></a>· 底图图层&#x2F;Basemap</h2><p>使用底图图层以优化绘制性能，底图图层支持本地硬盘缓存。我们可以把不经常更新的数据作为底图图层，例如衬托在业务数据下的数据图层、影像数据图层等。</p>
-<p>如何配置地图图层不啰嗦，点这里看<span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9kZXNrdG9wL2xhdGVzdC9tYXAvd29ya2luZy13aXRoLWxheWVycy93b3JraW5nLXdpdGgtYmFzZW1hcC1sYXllcnMuaHRt">帮助<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="·-隐藏图层或要素"><a href="#·-隐藏图层或要素" class="headerlink" title="· 隐藏图层或要素"></a>· 隐藏图层或要素</h2><p>通过设置图层属性中的可见比例尺范围（Scale Range）和定义查询（Query Defination）来避免绘制不必要的图层或者要素。</p>
-<h2 id="·-要素缓存-Feature-Cache"><a href="#·-要素缓存-Feature-Cache" class="headerlink" title="· 要素缓存&#x2F;Feature Cache"></a>· 要素缓存&#x2F;Feature Cache</h2><p>ArcMap 要素缓存可以将 ArcMap 当前地图显示中的要素临时存储到本地计算机的内存中。由于从本地内存中检索要素是一个非常快的操作，因此使用要素缓存通常可以提高性能。例如：绘制较大或复杂的数据集；标注、编辑和选择要素；为地图上的多个图层检索相同的要素；使用定义查询来绘制要素。</p>
-<h2 id="·-栅格数据金字塔-Pyramid"><a href="#·-栅格数据金字塔-Pyramid" class="headerlink" title="· 栅格数据金字塔&#x2F;Pyramid"></a>· 栅格数据金字塔&#x2F;Pyramid</h2><p>改善和缩短显示大型栅格数据集时间的最好方法是创建金字塔，目的在于提高显示速度及降低 CPU 使用率。ArcMap 使用合适的分辨率等级来快速绘制整个数据集。如果不使用金字塔，则必须从磁盘中读取整个数据集，然后将其重采样为更精细的大小。对于镶嵌数据集需要创建概视图（Overview）。</p>
-<h2 id="·-布局视图-Layout"><a href="#·-布局视图-Layout" class="headerlink" title="· 布局视图&#x2F;Layout"></a>· 布局视图&#x2F;Layout</h2><p>需要打印输出时，查看一下布局视图的数据框的边界。圆角拐角、背景和阴影会降低性能。消除这些影响并将这些属性设置为方形拐角可以提高布局视图中数据框的绘制性能。</p>
-<br>
-
-<br>
-
-
-
-<h1 id="2-地图符号"><a href="#2-地图符号" class="headerlink" title="2 地图符号"></a><strong>2 地图符号</strong></h1><br>
-
-<h2 id="·-标记符号-Marker-Symbol"><a href="#·-标记符号-Marker-Symbol" class="headerlink" title="· 标记符号&#x2F;Marker Symbol"></a>· 标记符号&#x2F;Marker Symbol</h2><p>尽可能使用简单样式标记，避免使用多层符号。</p>
-<p>使用图片标记符号来代替晕圈。</p>
-<p>尽可能使用简单形状。</p>
-<p>将标记符号的大小属性设置为小于 60 磅。</p>
-<p>尽可能不使用图片标记符号，特别是数据量较大的时候。当标记符号只有一种颜色时，.emf 文件所提供的性能要好于 .bmp、.png 或 .jpg&#x2F;.jpeg 文件。但是，当标记符号有两种或更多种颜色时，.png 文件是性能更好的格式。</p>
-<br>
-
-<h2 id="·-线符号-Line-Symbol"><a href="#·-线符号-Line-Symbol" class="headerlink" title="· 线符号&#x2F;Line Symbol"></a>· 线符号&#x2F;Line Symbol</h2><p>如果要减少显示时间，简单线符号是最好的选择；制图线作为最常用的线符号，在使用更多选项时绘制得相对缓慢一些。</p>
-<p>使用多图层符号时，请避免将不同的符号类型混合在一起。</p>
-<p>谨慎使用偏移或虚线样式，因为它们会增加绘制时间。</p>
-<p>宽线和带有整饰的线（例如标记和箭头）绘制起来较慢。</p>
-<br>
-
-<h2 id="·-面符号-Fill-Symbol"><a href="#·-面符号-Fill-Symbol" class="headerlink" title="· 面符号&#x2F;Fill Symbol"></a>· 面符号&#x2F;Fill Symbol</h2><p>对面进行符号化处理时，没有轮廓的简单填充符号将绘制得最快。</p>
-<p>需要在面周围加上轮廓时，应尽量选择简单线符号，其他的线类型（例如制图线、标记线和混列线）会显著增加绘制时间。</p>
-<p>与其他符号相同，使用尽可能少的图层来构成填充符号。</p>
-<p>特别是带有掩膜图层的点密度填充符号绘制起来更慢，因此应尽量避免使用这种填充符号。</p>
-<p>使用线填充符号时，无论是填充还是轮廓，尽量使用简单线。</p>
-<p>当图片填充符号只有一种颜色时，.emf 文件所提供的性能要好于 .bmp、.png, 或.jpg&#x2F;.jpeg 文件。但是，当标记符号有两种或更多种颜色时，.png 文件是性能更好的格式。</p>
-<br>
-
-<br>
-
-
-<h1 id="3-地图文本"><a href="#3-地图文本" class="headerlink" title="3 地图文本"></a><strong>3 地图文本</strong></h1><br>
-
-
-<h2 id="·-通用"><a href="#·-通用" class="headerlink" title="· 通用"></a><strong>· 通用</strong></h2><p>文本符号与其他类型的符号一样，ArcMap 需要做出的处理决策越少，地图的绘制速度就越快。一般来说，使用注记代替标注可以提高性能。</p>
-<p>尽可能地减小文本的大小。非常大的文本符号（例如那些大于 60 磅的文本符号）会增加绘制时间。</p>
-<p>符号越复杂，绘制速度越慢。因此，应尽可能少使用文本效果（例如，注释、牵引线、偏移、晕圈、背景和填充方式）。</p>
-<p>在文本周围使用阴影，不使用晕圈或掩膜。</p>
-<br>
-
-
-
-<h2 id="·-标注"><a href="#·-标注" class="headerlink" title="· 标注"></a><strong>· 标注</strong></h2><p>尽可能简化 SQL 查询和标注放置要求。如果标注文本存储在图层属性表中的单个字段中，绘制标注将非常快。</p>
-<p>标注表达式会减慢绘制速度。尽可能避免在绘制时使用标注表达式脚本进行条件判断，或格式化标注字符串，或将多个字段值串连到一个标注字符串中。</p>
-<p>尽量为 SQL 查询中的字段建立索引。</p>
-<p>谨慎使用标注和要素冲突权重。</p>
-<p>直线型标注的绘制速度要快于曲线型标注。</p>
-<p>设置标注的显示比例尺范围。地图被缩小时，需要绘制更多的标注，而这需要时间。检查某些标注在较小的比例下是否需要绘制。</p>
-<p>“Maplex 标注引擎”拥有比“标准标注引擎”更多的标注放置选项。高级放置决策可能会影响性能。</p>
-<br>
-
-
-
-<h2 id="·-注记"><a href="#·-注记" class="headerlink" title="· 注记"></a><strong>· 注记</strong></h2><p>使用 ArcMap 创建注记时，可以存储在地图文档的注记组中，或存储在Geodatabase的注记要素类中。</p>
-<p>一般情况下，应该将注记存储在地理数据库中，因为相比地图文档注记，ArcMap 可以更快地访问和显示地理数据库注记。这是推荐的方式。</p>
-<p>如果要创建一张地图并且注记文本只应用到当前地图上，那么可以将文本存储到地图文档的一个或多个注记组中。这种情况很少。如果删除了地图，则该注记也被删除，因为其存储在地图文档中。另外，每个添加到注记组的注记都会增大地图文档文件 (.mxd) 的大小。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/06/26/MapDesignPerformance/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -965,86 +810,14 @@
 <p><img data-src="/images/blogImg/DeployAGSLMonLinux_vsftp.png"></p>
 <p>使用ftp客户端上传 ArcGIS License Manager （LM）安装包。如果上传的 iso 镜像文件之后使用 mount 命令挂载，其实也可以仅将光盘中 LicenseManager 目录下的 linux 文件夹上传，此文件夹为 LM 的Linux安装包。</p>
 <p>包含如下几个文件（夹）：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
-<br>
-
-<br>
-
-
-<h1 id="2-创建账户"><a href="#2-创建账户" class="headerlink" title="2. 创建账户"></a>2. 创建账户</h1><p>ArcGIS License Manager 不允许 root 账户安装，因此要创建一个其它账户，例如：arcgis</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_CreateArcGIS.png"></p>
-<blockquote>
-<p>PS : 如果使用 root 账户直接安装，则会遇到错误提示：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_RootError.png"></p>
-</blockquote>
-<br>
-
-<br>
-
-<h1 id="3-创建-Trusted-Storage目录并赋权"><a href="#3-创建-Trusted-Storage目录并赋权" class="headerlink" title="3. 创建 Trusted Storage目录并赋权"></a>3. 创建 Trusted Storage目录并赋权</h1><p>在安装 ArcGIS License Manager 之前，需要手动创建用于存储许可 Trusted Storage File (TSF) 的目录，具体目录为：“&#x2F;usr&#x2F;local&#x2F;share&#x2F;macrovision&#x2F;storage” </p>
-<p>创建目录：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_mkdir.png"></p>
-<p>为目录赋权：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_chmod.png"></p>
-<blockquote>
-<p>如果不创建这个目录而直接安装 LM 程序，就会遇到 Fatal Error 提示：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_GrantError.png"></p>
-</blockquote>
-<br>
-
-<br>
-
-
-<h1 id="4-安装-ArcGIS-License-Manager"><a href="#4-安装-ArcGIS-License-Manager" class="headerlink" title="4. 安装 ArcGIS License Manager"></a>4. 安装 ArcGIS License Manager</h1><br>
-
-<p>有图形界面模式和静默模式两种安装模式，建议选择前者：</p>
-<h2 id="Option-1-图形界面安装"><a href="#Option-1-图形界面安装" class="headerlink" title="Option 1 图形界面安装"></a><strong>Option 1 图形界面安装</strong></h2><p>安装 ArcGIS License Manager 需要 X Windows Display的支持来进行图形界面的交互。尽管我们可以选择使用静默安装和静默授权，但是在许可管理过程中，还是会用到图形界面。强烈建议安装个 Xmanager，来连接Linux主机。</p>
-<p>设置DISPLAY环境变量 :<br>例如： <strong>$ export DISPLAY&#x3D;<em>192.168.100.115</em>:0.0</strong></p>
-<p>运行 Setup 文件开始安装，建议使用精细模式（Verbose Mode），这样如果安装失败，我们可以通过运行过程中的消息判断问题的所在。例如，没有创建必要的目录，没有安装必要地包，没有足够的权限，等等问题。</p>
-<p><strong>$ .&#x2F;Setup -v</strong></p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Setup.png"></p>
-<p>稍等片刻，即弹出界面：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_GraphicWindows.png"></p>
-<p>后面按照向导，下一步即可，此处省略100字……</p>
-<br>
-
-<h2 id="Option-2-静默安装"><a href="#Option-2-静默安装" class="headerlink" title="Option 2 静默安装"></a><strong>Option 2 静默安装</strong></h2><p>如果选择静默安装也可以，例如：</p>
-<p><strong>$ .&#x2F;Setup -m silent -v -l Yes</strong></p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Silence.png"></p>
-<blockquote>
-<p><strong>如果需要了解安装ArcGIS 许可管理器的选项：</strong></p>
-</blockquote>
-<blockquote>
-<p>-m  silent&#x2F;gui  静默安装&#x2F;图形界面<br>-v   精细模式<br>-h   帮助<br>-e   示例<br>静默安装专用选项：<br>-l    Yes&#x2F;No 是否同意许可条款<br>-d   安装目录</p>
-</blockquote>
-<br>
-
-<br>
-
-<h1 id="5-授权许可"><a href="#5-授权许可" class="headerlink" title="5. 授权许可"></a>5. 授权许可</h1><p>LM安装完成之后，需要进行许可的授权，事先将自己的许可文件 *.prvs 上传到Linux主机中。</p>
-<br>
-
-
-
-<p>仍然建议GUI mode 授权，运行LM安装目录中的 SoftwareAuthorizationLS 程序：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Authorization.png"></p>
-<p>稍后弹出界面：</p>
-<p><img data-src="/images/blogImg/DeployAGSLMonLinux_Authorization2.png"></p>
-<p>后面按照向导，下一步即可，可以参考windows的授权手册，此处省略100字……</p>
-<br>
-
-<p>运行 LSAdmin 程序可以打开 License Manger ，查看和管理许可。</p>
-<br>
-
-<br>
-
-<br>
-
-<h1 id="相关资源整理"><a href="#相关资源整理" class="headerlink" title="相关资源整理"></a>相关资源整理</h1><p>FAQ:  What are the best practices when installing and troubleshooting Esri software on Linux?</p>
-<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW0va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzQyOTIx">http://support.esri.com/em/knowledgebase/techarticles/detail/42921<i class="fa fa-external-link-alt"></i></span></p>
-<p>HowTo:  Silently authorize ArcGIS License Manager 10.x on Linux</p>
-<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZXMva25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzM4NDEy">http://support.esri.com/es/knowledgebase/techarticles/detail/38412<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/06/10/DeployAGSLMonLinux/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

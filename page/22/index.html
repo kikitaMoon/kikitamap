@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -302,12 +302,14 @@
 <p>属性表中还有两列：<strong>MinPS</strong> 列和 <strong>MaxPS</strong> 列，用来定义在什么像元大小范围内请求什么栅格数据。当我们向镶嵌数据集中添加栅格数据时，选中添加栅格至镶嵌数据集对话框上的 <strong>Update Cell Size Ranges (optional)</strong> 选项，或使用工具 <strong>Calculate Cell Size Ranges</strong> 时，就会填充两列字段值；也可以手动编辑表中的值。<br>MinPS 和 MaxPS 是根据栅格数据和叠加在上面的概视图来计算的。</p>
 <p>用下面一幅图，可以看出默认情况下，MinPS，MaxPS 与 LowPS，HighPS 的关系：</p>
 <p><img data-src="/images/blogImg/MDCellRange_CellSize.png"></p>
-<p>当加入镶嵌数据集的栅格数据源有多种分辨率时，就可以利用像元大小范围来控制不同比例尺下显示不同的栅格数据。</p>
-<p>例如，在国家级别查看影像，可以使用 <span class="exturl" data-url="aHR0cDovL2JhaWtlLmJhaWR1LmNvbS92aWV3LzQyMjE1NjcuaHRtP2Zyb210aXRsZT1MYW5kc2F0JmZyb21pZD03MTk1NzY1JnR5cGU9c3lu">Landsat<i class="fa fa-external-link-alt"></i></span> 影像，约 30 米的像元大小；当放大到更高的比例，镶嵌数据集可以提供 SPOT 图像，像元大小约 5 米；进一步放大时，最终将看到航空正射影像，像元大小更小，分辨率更高。</p>
-<p>比例尺和像元大小有很大的关系，如果我们希望求取计算的话，可以参考如下公式：<br>    <strong>Scale &#x3D; CellSize * 96 &#x2F; 0.0254</strong><br>    其中，ArcGIS 中 DPI 的默认值为 96，1 英寸（Inch） &#x3D; 0.0254米，CellSize是以“米”为单位的。<br>    公式反之，可以通过比例推算像元大小：<br>    <strong>CellSize &#x3D; Scale * 0.0254 &#x2F; 96</strong></p>
-<p>如果我们访问镶嵌数据集时，不断的放大地图，最终请求的影像的 Cell Size 小于了全部的 MinPS，那么就会请求失败，不再会返回影像；反之，如果我们不断的缩小地图，最终请求的Cell Size 大于了全部的的 MaxPS，那么也会请求失败，返回黑色和白色的棋盘状图案。也就是说，镶嵌数据集的像元大小范围会直接影响我们在缩放地图时影像数据的可见性。</p>
-<p>That’s all …</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/28/MDCellRange/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -421,42 +423,14 @@
 <p><strong>Computation Method</strong></p>
 <p>构建接缝线，有五种计算方法可选：**GEOMETRY ,&nbsp;RADIOMETRY , COPY_FOOTPRINT ,&nbsp;COPY_TO_SIBLING ,&nbsp;EDGE_DETECTION&nbsp;**。</p>
 <p>为了更直观的认识上面构建接缝线的方法，我还是用个简单的数据来说明问题：</p>
-<p>数据是按照北西方法镶嵌，加上Footprint是这样的：</p>
-<p><img data-src="/images/blogImg/MDColorBalance2_Default.png"></p>
-<p><strong>Geometry &#x2F; 几何</strong>—— 根据当前的排序方法和Footprint来生成接缝线。通过这种方法生成的接缝线一眼就知道了栅格数据之间的压盖关系，并且接缝线（面）之间没有要素压盖。</p>
-<p><img data-src="/images/blogImg/MDColorBalance2_Geometry.png"><img data-src="/images/blogImg/MDColorBalance2_Geometry2.png"></p>
-<p><strong>Radiometry&#x2F; 辐射度</strong>—— 通过检查相交区域的值和样式来构建接缝线，接缝线是Footprint交点之间的折线。这种方法拼接的影像看起来更自然一些。</p>
-<p><img data-src="/images/blogImg/MDColorBalance2_Radiometry.jpg"><img data-src="/images/blogImg/MDColorBalance2_Radiometry2.jpg"></p>
-<p><strong>Copy_footprint&#x2F;复制轮廓</strong>—— 这种方法的接缝线只是相应轮廓线的副本。</p>
-<p><img data-src="/images/blogImg/MDColorBalance2_CopyFootprint.png"></p>
-<p><strong>Copy_to_sibling&#x2F;复制到同类</strong>—— 此方法将已有的接缝线复制到与其组名相同的同类要素中。这种方法常常用于全色波段与多光谱波段范围不同的卫星影像，从而确保它们共享相同的接缝线。&nbsp;这里没有合适的数据，不放图了。</p>
-<p><strong>Edge_detection&#x2F;边缘检测</strong>—— 对相交区域应用边缘检测过滤器，以确定该区域中要素的边。然后，沿检测到的边创建接缝线。这种方法创建的接缝线也很漂亮和自然。</p>
-<p>举个例子，看下面的影像边界是不是扎眼？</p>
-<p><img data-src="/images/blogImg/MDColorBalance2_EdgeDetection.jpg"></p>
-<p>使用边界探测方法创建接缝线后，一条沿着马路的折线（面的边界）产生了。</p>
-<p><img data-src="/images/blogImg/MDColorBalance2_EdgeCreation.jpg"></p>
-<p>使用 接缝线方法拼接后就更加自然了。</p>
-<p><img data-src="/images/blogImg/MDColorBalance2_Done.png"></p>
-<p><strong>Sort Method</strong></p>
-<p>默认情况下，Seamline 排序是使用 “North-West” 镶嵌方法生成的。还可以选择使用 “CLOSEST_TO_VIEWPOINT&nbsp;” 或 “BY_ATTRIBUTE&nbsp;” 镶嵌方法来创建接缝线。这与前面说的镶嵌方法的理念是一样的，不再啰嗦了。</p>
-<p><strong>Cell Size</strong></p>
-<p>像元大小用于确定要生成接缝线时的栅格大小。</p>
-<p>通常用在镶嵌数据集中存在多种数据分辨率并且只想为一个等级生成接缝线的情况。例如，如果将高分辨率数据源与低分辨率数据源进行混合，则可指定适合其中一个数据源范围的像元大小。如果存在多个 LOWPS（低像素大小）值，或者不确定要指定哪个像元大小，可将此参数留空。该工具将自动在适当的等级上创建接缝线。此参数的单位与镶嵌数据集的空间参照单位相同。</p>
-<p><strong>沿接缝线混合（羽化）</strong></p>
-<p>可以定义沿接缝线发生的混合的混合值（羽化）和类型，混合发生在接缝线上有重叠栅格的像素之间。</p>
-<p><strong>Blend Width Units</strong></p>
-<p>定义混合宽度的单位。默认是 PIXELS（像素）；还可选择 GROUND_UNITS，也就是也镶嵌数据集的单位相同。</p>
-<p><strong>Blend Width</strong></p>
-<p>混合宽度定义要混合的像素数目。</p>
-<p><strong>Blend Type</strong></p>
-<p>BOTH，INSIDE，OUTSIDE 三种混合类型。</p>
-<p>例如：如果“混合宽度”值为 10，且使用 BOTH 作为混合类型，则将在接缝线的内部和外部分别混合 5 个像素。如果该值为 10，且混合类型为 INSIDE，则将在接缝线的内部混合 10 个像素。</p>
-<p><strong>Request Size Type</strong></p>
-<p>PIXELS — 将根据像素大小修改请求大小。根据栅格像素大小对最近图像进行重采样。</p>
-<p>PIXELSIZE_FACTOR —将根据像素大小因子修改请求大小。通过将像元大小等级表（Level Table）中的 &nbsp;Cell Size 与 Pixel Size Factor 相乘对最近图像进行重采样。</p>
-<p><strong>Request Size</strong></p>
-<p>此参数决定对栅格进行重采样的大小，用于定义行列数。最大值为 5000。可以基于栅格数据的复杂程度增大或减小该值。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/20/MDColorBalance2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -582,78 +556,15 @@
 
 <br>
 
-<h1 id="Color-Balance-Mosaic-Dataset-工具用于实现镶嵌数据集的色彩平衡。"><a href="#Color-Balance-Mosaic-Dataset-工具用于实现镶嵌数据集的色彩平衡。" class="headerlink" title="Color Balance Mosaic Dataset 工具用于实现镶嵌数据集的色彩平衡。"></a><strong>Color Balance Mosaic Dataset</strong> 工具用于实现镶嵌数据集的色彩平衡。</h1><h2 id="Balance-Method"><a href="#Balance-Method" class="headerlink" title="Balance Method"></a><strong>Balance Method</strong></h2><p>工具提供了三种匀色的算法：</p>
-<p><strong>匀光&#x2F;Dodging</strong></p>
-<p>这是传统的匀光摄影测量方法。 如果选择“匀光&#x2F;Dodging”，需要同时选择<strong>目标颜色表面类型</strong> 。此方法会参照目标颜色来更改每个像素值，使图像均匀过渡到目标颜色。多数情况下，匀光平衡效果最佳。</p>
-<ul>
-<li>SINGLE_COLOR  — 所有像素都参照一个单色点（即，平均值）进行匀光处理。</li>
-<li>COLOR_GRID    — 所有像素都参照分布在整个镶嵌数据集中的多组点进行匀光处理。</li>
-<li>FIRST_ORDER   — 所有像素都参照从二维多项式倾斜平面获取的多个点进行匀光处理。与“颜色格网”表面相似。                           </li>
-<li>SECOND_ORDER  — 所有像素都参照从二维多项式抛物线&#x2F;双曲线&#x2F;椭圆表面获取的一组多点进行匀光处理。与“颜色格网”表面相似。</li>
-<li>THIRD_ORDER   — 所有像素都参照从三次表面获取的多个点进行匀光处理。</li>
-</ul>
-<p>PS：</p>
-<ul>
-<li>当栅格数量较少且地物类型较少时，单色表面会取得良好的效果。如果栅格数据较多或者地物类型较多时，这种方法输出颜色可能会变得模糊。</li>
-<li>如果有大量的栅格或区域含有大量的地面物体类型，这种方法会产生非常好的输出效果。</li>
-<li>First Order，Second Order, Third Oder 这三种方法与“颜色格网”表面相比，多项式阶表面的颜色变化通常更为平滑，并且使用的辅助表存储空间更少，但往往需要花费更长的时间进行处理。</li>
-</ul>
-<p><strong>直方图&#x2F;Histogram</strong></p>
-<p>此方法将根据目标直方图更改各像素值。可基于所有栅格自动计算目标直方图，也可以指定一个目标栅格。<br>当镶嵌数据集中的所有栅格的直方图形状都相似时，直方图平衡会取得较好的效果。</p>
-<p><strong>标准差&#x2F;Standard Deviation</strong></p>
-<p>此方法将根据标准差计算更改每个像素值。可基于所有栅格或指定的目标栅格自动计算标准差值。<br>当镶嵌数据集中的所有栅格的正态值具有相同的直方图分布时，标准差平衡的效果最好。</p>
-<h2 id="Target-Raster"><a href="#Target-Raster" class="headerlink" title="Target Raster"></a><strong>Target Raster</strong></h2><p>上面三种方法中所使用到的数值，既可以来源于镶嵌数据集自身，也可以来源于自己指定的目标栅格。</p>
-<p>不同的色彩平衡方法：</p>
-<ul>
-<li>使用匀光平衡时，得出的目标颜色取决于当时所选择的目标颜色表面类型。</li>
-<li>对于 SINGLE_COLOR，将使用参照目标图像的平均值。</li>
-<li>对于 COLOR_GRID，会将参照目标图像重采样为适合的格网。</li>
-<li>对于 多项式阶表面，通过最小二乘拟合从参照目标图像获得多项式的系数。</li>
-<li>使用直方图平衡时，将基于参照目标图像获得目标直方图。</li>
-<li>使用标准差平衡时，将基于参照目标图像获得目标标准差。</li>
-</ul>
-<h2 id="Block-Filed"><a href="#Block-Filed" class="headerlink" title="Block Filed"></a><strong>Block Filed</strong></h2><p>从镶嵌数据集的属性表中指定一个用于“分组”的字段，在执行计算和操作时，用于标识应被视为单一项目的多个项目。</p>
-<br>
-<br>
-
-
-<p><strong>预处理选项</strong></p>
-<p><img data-src="/images/blogImg/MDColorBalance1_PreProcessing.png"></p>
-<p>在执行栅格数据集色彩平衡之前，工具会先执行预处理选项。</p>
-<h1 id="Exclude-Area-Raster"><a href="#Exclude-Area-Raster" class="headerlink" title="**Exclude Area Raster **"></a>**Exclude Area Raster **</h1><p>用于排除不能或者难于进行色彩校正的区域，例如：水、云和异常区域等。本质上就是创建一个掩膜，从而从镶嵌数据集色彩校正算法中排除一些像素。</p>
-<p>PS： 对镶嵌数据集进行色彩校正时，排除区域并不会经常用到。只有当存在较难校正的区域，且不希望因为这些问题区域产生偏差时，可创建排除区域。另外，像素分布中的极值（极低像素值和极高像素值）区域也可能成为色彩校正的问题区域。</p>
-<p><img data-src="/images/blogImg/MDColorBalance1_Exclude.png"></p>
-<p>那如何生成这个排除区域栅格呢？</p>
-<p>工具箱中提供 <strong>Generate Exclude Area</strong> 工具，下面就来看看这个工具。</p>
-<p><img data-src="/images/blogImg/MDColorBalance1_ExcludeArea.png"></p>
-<p>通过输入数据选择 <strong>位深</strong> 和 <strong>生成</strong> 方法：</p>
-<p><strong>Pixel type：</strong></p>
-<p>此参数用于选择输入栅格数据集的像素深度。像素深度非常重要，因为需要对所有 8 位以上的像素深度调整色彩掩膜和直方图值。</p>
-<ul>
-<li>8_BIT  —  0 到 255 之间。这是默认值；</li>
-<li>11_BIT —  0 到 2047 之间；</li>
-<li>12_BIT —  0 到 4095 之间；</li>
-<li>16_BIT —  0 到 65535 之间。</li>
-</ul>
-<p><strong>Generate Method：</strong></p>
-<p>提供了两种方法：COLOR_MASK ，HISTOGRAM_PERCENTAGE</p>
-<ul>
-<li>COLOR_MASK — 可以设置要在输出中排除的最大颜色值。这是默认设置。</li>
-<li>HISTOGRAM_PERCENTAGE — 可以设置像素的最小和最大直方图百分比。</li>
-</ul>
-<p><strong>Stretch Type</strong></p>
-<p>如果我们指定的了拉伸类型，那么就意味着在色彩平衡的过程中，使用的是栅格数据拉伸后的值，而不是栅格数据的原始像元值。</p>
-<ul>
-<li>NONE — 不应用预拉伸。这是默认设置。</li>
-<li>ADAPTIVE — 自适应预拉伸。</li>
-<li>MINIMUM_MAXIMUM — 最小值-最大值预拉伸。</li>
-<li>STANDARD_DEVIATION — 标准差预拉伸。</li>
-</ul>
-<p><strong>Gamma</strong></p>
-<p>当选择了标准差拉伸或最小值-最大值拉伸时，可以额外的设置Gamma值。可通过应用 Gamma 拉伸来控制图像的整体亮度。<br>如果 Gamma 系数设置得太低，中间色调将太暗；而如果 Gamma 系数设置得太高，中间色调又会太亮。Gamma 系数不仅会改变图像的亮度，还会改变红绿蓝之间的比率。</p>
-<p>如果对色彩校正的不满意，我们也可以移除效果，镶嵌数据集的右键菜单中，Remove – Color Balancing。</p>
-<p><img data-src="/images/blogImg/MDColorBalance1_Remove.png"></p>
-
+<h1 id="Color-Balance-Mosaic-Dataset-工具用于实现镶嵌数据集的色彩平衡。"><a href="#Color-Balance-Mosaic-Dataset-工具用于实现镶嵌数据集的色彩平衡。" class="headerlink" title="Color Balance Mosaic Dataset 工具用于实现镶嵌数据集的色彩平衡。"></a><strong>Color Balance Mosaic Dataset</strong> 工具用于实现镶嵌数据集的色彩平衡。</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/17/MDColorBalance1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -774,26 +685,14 @@
 <li>NONE —不提供任何元数据给客户端。</li>
 </ul>
 <p><strong>允许传输的字段</strong></p>
-<p>Allowed Transmission Field 参数列表，定义将镶嵌数据集作为服务提供时属性表中对客户端可见的字段。</p>
-<p>默认情况下，此列表包括字段：Name, MinPS, MaxPS, LowPS, HighPS, Tag, GroupName, ProductName, CenterX, CenterY, ZOrder, Shape_Length, Shape_Area。如果镶嵌数据集中包含自定义字段，这个列表中除了上面的字段，还会出现自定字段。</p>
-<p><strong>许是否启用时间</strong></p>
-<p><img data-src="/images/blogImg/MDProperties3_Time.png"></p>
-<p>如果镶嵌数据集包含定义时间的属性字段，可创建自动具有时间感知性的镶嵌数据集。</p>
-<p>如果激活了时间，则需要指定与时间有关的其他参数——起始和结束字段，以及时间格式。建议将时间值存储在日期字段中，但也支持字符串和数值字段。</p>
-<p><strong>地理变换方法</strong></p>
-<p>如果镶嵌数据集的坐标系统不同于源栅格数据坐标系统，则可能需要指定特定的地理变换方法。通过 Geographic Transformation 参数列表选择地理变换。</p>
-<p><strong>可下载的最大项目数</strong></p>
-<p>Max Number of Download Items 参数用来限制客户端可从影像服务中下载的栅格数量。该值会影响系统负荷。</p>
-<p>如果不希望客户端从镶嵌数据集内下载任何栅格，可将其设置为 0。另外注意，Grid格式数据源的镶嵌数据集不能下载。</p>
-<p><strong>返回的最大记录数</strong></p>
-<p>以影像服务的形式查看镶嵌数据集时，Max Number of Records Returned 参数用来限制，针对客户端每个请求，服务器返回的记录数。</p>
-<p><strong>最小像素作用</strong></p>
-<p>只看中文名字让人有点晕，实际上 Minimum Pixel Contribution 参数用于指定镶嵌数据集中的项目需要至少具有多少像素才能在镶嵌数据集中使用。默认值为1个像素。</p>
-<p>我们可以设置合理的值，这样镶嵌数据集会跳过所有像素量不够大的栅格项目。跳过这些镶嵌数据集项目将有助于提高镶嵌数据集的计算或显示性能。这在大量叠置栅格只具有少量像素时尤其有用。</p>
-<p>但是，同时需要知道，较大的值可能减少重叠项目成为感兴趣区组成部分的可能性；这会导致您的镶嵌数据集的某些区域空白。</p>
-<p>特别需要注意的是，镶嵌数据集的属性中有其他两项属性与这个选项可能存在矛盾关系，因此，此属性仅在 <strong><em>始终将栅格裁剪至其轮廓</em></strong> 设置为“<strong>是</strong>”，并且 <strong><em>轮廓线可能含有 NoData</em></strong> 设置为 <strong>否</strong> 时有效。否则可能会无视这个选项。</p>
-<p><img data-src="/images/blogImg/MDProperties3_MinPixel.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/11/MDProperties3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -909,74 +808,14 @@
 
 <h1 id="Mosaic-Methods（镶嵌方法）"><a href="#Mosaic-Methods（镶嵌方法）" class="headerlink" title="Mosaic Methods（镶嵌方法）"></a><strong>Mosaic Methods（镶嵌方法）</strong></h1><p><img data-src="/images/blogImg/MDProperties2_Method.png"></p>
 <p>在“允许的镶嵌方法”中我们可以选择影像的镶嵌方法，从而控制用户访问镶嵌数据集时可以使用哪些方法。同时，可以设置一种方法作为默认方法。</p>
-<ul>
-<li>None 根据镶嵌数据集属性表中的顺序 (ObjectID) 对栅格进行排序。</li>
-<li>Center - 根据栅格中心与视图中心的距离对栅格进行排序，与视图中心距离越小，栅格的默认次序越靠前。</li>
-<li>NorthWest - 中心越靠近西北的栅格显示的位置越靠上。</li>
-<li>LockRaster - 允许用户根据 ObjectID 锁定单个或多个栅格数据的显示。</li>
-<li>ByAttribute - 根据已定义的元数据属性及其与基值的差对栅格进行排序。</li>
-<li>Nadir - 根据像底点位置和视图中心的距离对栅格进行排序。此方法与“Center”方法类似，但使用的是栅格的像底点，像底点可以不是中心点，尤其是在倾斜的影像中。</li>
-<li>Viewpoint - 使用“视点”工具根据用户定义的位置与栅格的像底点位置对栅格进行排序。</li>
-<li>Seamline - 使用预定义的接缝线形状分割栅格（可以选择是否沿接缝线使用羽化功能）并根据属性表中的 SOrder 字段对影像进行排序。</li>
-</ul>
-<p>假设我现在有这样9幅影像数据源的镶嵌数据集，可以把他们理解成9张卡片。看图比看例子更容易理解，下面通过一个例子来了解各种镶嵌方法，前提是我们都是用升序排序和使用默认的 First 镶嵌运算符。</p>
-<p>★ 选在<strong>None</strong>方法，默认使用了数据的存储顺序作为镶嵌顺序，也就是 ObjectID 的顺序。图中的数字即使各幅影像的 ObjectID，数字越靠前，镶嵌的也就越靠前。</p>
-<p><img data-src="/images/blogImg/MDProperties2_None.png"></p>
-<p>★ 选择 <strong>Center</strong> 方法，中心的影像最优先：</p>
-<p><img data-src="/images/blogImg/MDProperties2_Center.png"></p>
-<p>★ 选择 <strong>NorthWest</strong> 方法，我们看到位于西北角的 7 获得了最优先的镶嵌顺序，反之，东南角的9排在最后：</p>
-<p><img data-src="/images/blogImg/MDProperties2_NorthWest.png"></p>
-<p>★ 选择 **Lock Raster **方法，允许客户端可以指定某些栅格数据，这样仅对被锁定的栅格进行显示：</p>
-<p><img data-src="/images/blogImg/MDProperties2_LockRaster.png"></p>
-<p><img data-src="/images/blogImg/MDProperties2_LockRaster2.png"></p>
-<p>★ 选择 <strong>ByAttribute</strong> 方法，需要指定 <strong><em>Order Field</em></strong> ，例如按照自定义字段 MyOrder 排序：</p>
-<p><img data-src="/images/blogImg/MDProperties2_ByAttr.png"></p>
-<p><img data-src="/images/blogImg/MDProperties2_ByAttr2.png"></p>
-<p>如果您的字段是数值或日期字段，则可以设置排序基础参数（**<em>Order_Base</em>**）。可以根据此值与 Order_Field 中的其他值之间的差异对影像进行排序。</p>
-<p>还可以指定排序是升序还是降序。</p>
-<p><img data-src="/images/blogImg/MDProperties2_ByAttr3.png"></p>
-<p>★ 选择 <strong>Nadir</strong> 方法，类似于 Center 方法，只是像底点距离整个视图中心的距离成为镶嵌的标准：</p>
-<p>如下图，点A即为像底点（nadir），在垂直摄影测量中，影像中心点和像底点可能是重合的：</p>
-<p><img data-src="/images/blogImg/MDProperties2_Nadir.pngr"></p>
-<p>此方法与“Center”方法类似，但使用的是栅格的像底点，像底点可以不是中心点，尤其是在倾斜的影像中。</p>
-<p><img data-src="/images/blogImg/MDProperties2_Nidir2.png"></p>
-<p>★ 选择 **Viewport **方法，可以使用“ViewPoint”工具根据自定义的位置与栅格的像底点位置对栅格进行排序。</p>
-<p>ViewPoint 是个隐藏工具，我们可以在自定义菜单中找到并添加出来：</p>
-<p><img data-src="/images/blogImg/MDProperties2_Viewport.png"></p>
-<p>打开 Viewpoint 窗口之后，我们就可以自定义视点，视点的位置将会影响栅格数据的镶嵌顺序，如下图。</p>
-<p><img data-src="/images/blogImg/MDProperties2_ViewPort2.png"></p>
-<p>在设置镶嵌数据集属性的时候，参数 View Point Spacing X 与 View Point Spacing Y 会影响 ViewPoint 对话框中的箭头按钮的偏移量，偏移量的长度单位是当前空间参考决定的。</p>
-<p><img data-src="/images/blogImg/MDProperties2_Viewport3.png"></p>
-<p>★ 选择 <strong>Seamline</strong> 方法，使用预定义的接缝线形状分割栅格，并且可以选择是否沿接边使用羽化功能。在生成接缝线的过程中对排序进行预定义。使用此镶嵌方法时，镶嵌运算符 LAST 无效。</p>
-<p>镶嵌数据集的接缝线可以通过 <strong>Build Seamlines</strong> 工具来创建，这个工具后面会单独的总结一下。这里就不罗嗦了。</p>
-<br>
-
-<h1 id="Mosaic-Operator（镶嵌运算符）"><a href="#Mosaic-Operator（镶嵌运算符）" class="headerlink" title="Mosaic Operator（镶嵌运算符）"></a><strong>Mosaic Operator（镶嵌运算符）</strong></h1><p>镶嵌运算符用于确定如何解析重叠像元。</p>
-<p><img data-src="/images/blogImg/MDProperties2_Operator.jpg"></p>
-<ul>
-<li>First 重叠区域中所列出的第一个栅格数据集中的像元。</li>
-<li>Last 重叠区域中所列出的最后一个栅格数据集中的像元。</li>
-<li>Min 重叠区域中包含所有重叠像元中的最小像元值。</li>
-<li>Max 重叠区域中包含所有重叠像元中的最大像元值。</li>
-<li>Mean 重叠区域中包含所有重叠像元的平均像元值。</li>
-<li>Blend 重叠区域是镶嵌影像中沿各栅格数据集边缘重叠的像元值的混合。默认情况下，各栅格的边由轮廓线或接缝线定义。</li>
-<li>Sum 重叠区域中包含所有重叠像元的像元值总和。</li>
-</ul>
-<p><strong>Blend Width（混合宽度）</strong></p>
-<p>当在上述方法中，定义混合（Blend）镶嵌运算符所使用的像素距离。</p>
-<p>跨越边界时此值将分成两半；因此，如果该值为 40，则将在轮廓线内部混合 20 像素，在轮廓线外部混合 20 像素。</p>
-<p>如果存在接缝线，可以在接缝线表中定义每个接缝线的混合宽度和类型，从而覆盖此值。</p>
-<p>除了镶嵌方法以及有关的这些参数，镶嵌属性的设置参数中还包含了其他一些与镶嵌有关的参数，放在下面以便参考：</p>
-<p><img data-src="/images/blogImg/MDProperties2_MosaicPara.png"></p>
-<p><strong>Max Number Per Mosaic（每个镶嵌图的最大栅格数）</strong></p>
-<p>这个参数是为了镶嵌数据集镶嵌过多栅格数据，默认值为 20。</p>
-<p>例如，在没有创建概视图时，不希望让机器耗费资源过多的去镶嵌栅格数据。但是这种情况下，很可能20幅图像不足够观看，如果你的机器硬件过硬，这个数字也可以适量调大。这个参数相当于性能与体验的博弈，在没有概视图的时候可以自己尝试设置。</p>
-<p><strong>Cell Size Tolerance Factor （像元大小容差系数）</strong></p>
-<p>用于控制具有不同像素大小的镶嵌数据集项目在某些操作（例如镶嵌或接缝线生成）中的分组方式。</p>
-<p>系数 0.1 表示所有比最低像素大小高百分之十的 LowPS 值都被视为相同的值。此值必须大于或等于 0.0。可在等级表中查看结果。</p>
-<p><strong>Output Cell Size（输出像元大小）</strong></p>
-<p>镶嵌数据集的像元大小一般是自动计算的，我们也可以进行自定义。这个参数用于自定义指定镶嵌数据集的像元大小，可选择图层作为像元大小模板，也可指定实际像元大小。如果指定像元大小，可以将单个值用于方形像元大小，或者将 X 值和 Y 值用于矩形像元大小。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/11/10/MDProperties2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -304,31 +304,14 @@
 
 
 <h1 id="1Plus-知其所以然"><a href="#1Plus-知其所以然" class="headerlink" title="1Plus   知其所以然"></a>1Plus   知其所以然</h1><p>如果你对问题的原因不感兴趣，那么直接跳至2。  </p>
-<p>ArcGIS License Server Administrator（旧称ArcGIS License Manager）的后台进程有两个：<strong>lmgrd.exe</strong> 和 <strong>ArcGIS.exe</strong>，用于响应客户端获取许可的请求。</p>
-<blockquote>
-<p>在 Service.txt 文档中：</p>
-<p>第一行配置的是 <strong>lmgrd.exe</strong> 这个进程的端口，默认是 27000，自 10.3 版本之后，有效范围仅可以是 27000-27009 这个几个端口号之一；</p>
-<p>第二行是用于 <strong>ArcGIS.exe</strong> 进程的端口配置，<strong>默然情况下，这个端口是动态的，系统可以使用任何监听到的空闲端口</strong>。 </p>
-</blockquote>
-<p>我们用个小工具来检测一下，<strong>Process Explorer</strong>，官网下载点**<span class="exturl" data-url="aHR0cHM6Ly90ZWNobmV0Lm1pY3Jvc29mdC5jb20vZW4tdXMvc3lzaW50ZXJuYWxzL3Byb2Nlc3NleHBsb3Jlci5hc3B4" title="Process Explorer">这里<i class="fa fa-external-link-alt"></i></span>**，即可一目了然。在安装有 ArcGIS License Manger 的测试机上的执行小工具，抓取有用的信息：</p>
-<p><img data-src="/images/blogImg/LMthroughFireWall_lmgrd.png"></p>
-<p>从结果中可以得到，ArcGIS.exe 采用了 49479 这个端口与其他客户端通信。 在下次 ArcGIS License Service 启动时，这个端口会动态选择另一个。 这也就是问题的 key point，为什么用户即使在防火墙中开放了27000，甚至 27000-27009段的端口，然而许可服务器还是连不上。</p>
-<br>
-
-
-<h1 id="2-锁定后台进程端口号"><a href="#2-锁定后台进程端口号" class="headerlink" title="2  锁定后台进程端口号"></a>2  锁定后台进程端口号</h1><p>前文提到 ArcGIS.exe 端口是动态的，为了方便防火墙的设置，锁定端口是最简单有效的方法。</p>
-<p>在 Service.txt 文件中，第二行结尾增加 PORT&#x3D;&lt;端口号&gt; 的参数。 例如我选择 50000 ，如下图：</p>
-<p><img data-src="/images/blogImg/LMthroughFireWall_ServiceTXT2.png"></p>
-<p>修改完成，保存txt，重启 ArcGIS License Service ，然后过一会再去抓信息，发现 ArcGIS.exe 的端口号已经被锁定为 50000 ，变成静态。</p>
-<p><img data-src="/images/blogImg/LMthroughFireWall_AGSDaemon.png"></p>
-<br>
-
-
-<h1 id="3-在防火墙中创建规则放行端口"><a href="#3-在防火墙中创建规则放行端口" class="headerlink" title="3  在防火墙中创建规则放行端口"></a>3  在防火墙中创建规则放行端口</h1><p>现在需要做的仅是，在防火墙上建立白名单，设置规则允许 27000 和 50000 端口的 TCP&#x2F;IP 协议通信即可。 </p>
-<br>
-
-<p>这个配置方法在 <a target="_blank" rel="noopener" href="http://desktop.arcgis.com/en/license-manager/latest/configure-the-arcgis-license-manager-to-work-through-a-firewall.htm"><strong>官方文档</strong></a> 中有很清楚的说明，如果感兴趣也一起看看。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/06/17/LMthroughFireWall/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -441,6 +424,14 @@
 <p><img data-src="/images/blogImg/XJL_IMG_5103.jpg"></p>
 <p><img data-src="/images/blogImg/XJL_IMG_5095.jpg"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/05/24/theBlueSea/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -554,29 +545,14 @@
 <p>有一个简单但耗体力的裁剪任务，希望通过大量面分割（逐一裁剪）大量的数据，类似Split工具要完成的任务，并且要按照一定的规则命名将分割结果输出到指定的位置，例如要求有指定前缀。</p>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>例如，一种思路是逐一遍历面要素，然后去裁剪目标数据再输出，这时你可能会遇到下面的小问题：</p>
 <p><strong>我如何通过ArcPy获取要素的几何？</strong></p>
-<p>在ArcPy中提供了一个数据访问模块&#x2F;Data Access (arcpy.da)，我们可以通过游标（Cursor）来查询要素的几何或属性。在这个需求中是逐一遍历面要素的几何，我们选择 SearchCursor，通过 <strong><code>SHAPE@</code></strong> 可以访问要素的几何。 </p>
-<p>语法： <code>SearchCursor(in_table, field_names, &#123;where_clause&#125;, &#123;spatial_reference&#125;, &#123;explode_to_points&#125;, &#123;sql_clause&#125;)</code></p>
-<p>了解详细的帮助信息点<span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9hcmNtYXAvbGF0ZXN0L2FuYWx5emUvYXJjcHktZGF0YS1hY2Nlc3Mvc2VhcmNoY3Vyc29yLWNsYXNzLmh0bQ==">这里<i class="fa fa-external-link-alt"></i></span>。</p>
-<p>那么可以把函数主体定义成这样，即可实现需求：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">MyBatchClip</span>(<span class="params">Parameter</span>):</span><br><span class="line">    <span class="comment"># 参数</span></span><br><span class="line">    inputFC = Parameter[<span class="number">0</span>]</span><br><span class="line">    ClipArea = Parameter[<span class="number">1</span>]</span><br><span class="line">    OutputWS = Parameter[<span class="number">2</span>]</span><br><span class="line">    Prefix = Parameter[<span class="number">3</span>]</span><br><span class="line">    <span class="comment"># 字段列表，SHAPE@ 访问要素几何对象</span></span><br><span class="line">    Fields = [<span class="string">&#x27;FID&#x27;</span>,<span class="string">&#x27;SHAPE@&#x27;</span>]</span><br><span class="line">    <span class="comment"># 遍历面要素逐一裁剪目标数据并输出自定义前缀的结果。</span></span><br><span class="line">    <span class="keyword">with</span> arcpy.da.SearchCursor(ClipArea,Fields) <span class="keyword">as</span> cursor:</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> cursor:</span><br><span class="line">            outputFC = os.path.join(OutputWS, Prefix+<span class="built_in">str</span>(row[<span class="number">0</span>])+<span class="string">&#x27;.shp&#x27;</span>)</span><br><span class="line">            arcpy.Clip_analysis(inputFC, row[<span class="number">1</span>], outputFC)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h1 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h1><p>如果这个批量任务是大量的，<strong>如何更高效地开动起来？</strong></p>
-<p>这里按照esri以前的一篇 <span class="exturl" data-url="aHR0cHM6Ly9ibG9ncy5lc3JpLmNvbS9lc3JpL2FyY2dpcy8yMDEyLzA5LzI2L2Rpc3RyaWJ1dGVkLXByb2Nlc3Npbmctd2l0aC1hcmNnaXMtcGFydC0xLw==">Blog<i class="fa fa-external-link-alt"></i></span> 提到的方法分享给大家，使用Multiprocessing模块并行处理。 <span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMi9saWJyYXJ5L211bHRpcHJvY2Vzc2luZy5odG1sIw==">Multiprocessing<i class="fa fa-external-link-alt"></i></span> 模块是Python的一个标准库，通过这个库，我们可以利用多核CPU，来实现多进程处理大数据量的任务。 </p>
-<p>可以通过 <code>multiprocessing.Pool</code> 来使用进程池，Pool类可以管理固定数目的进程，默认是开启和机器CPU数目相同的进程。</p>
-<blockquote>
-<p>语法：<br><code>multiprocessing.Pool([processes[, initializer[, initargs[, maxtasksperchild]]]])</code><br>processes表示pool中进程的数目，默认地为当前CPU的核数。<br>initializer表示新进程的初始化函数。<br>initargs表示新进程的初始化函数的参数。<br>maxtasksperchild表示每个进程执行task的最大数目</p>
-</blockquote>
-<p>把脚本修改下，加上多进程处理的部分：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line">__author__ = <span class="string">&#x27;kikita&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"><span class="keyword">import</span> timeit</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">arcpy.env.workspace =  <span class="string">r&#x27;D:\LearnAboutPython\MyPythonProject\UsingCurser\DemoDataS.gdb&#x27;</span></span><br><span class="line">arcpy.env.overwriteOutput = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量裁剪函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">MyBatchClip</span>(<span class="params">Parameter</span>):</span><br><span class="line">    <span class="comment"># 参数</span></span><br><span class="line">    inputFC = Parameter[<span class="number">0</span>]</span><br><span class="line">    ClipArea = Parameter[<span class="number">1</span>]</span><br><span class="line">    OutputWS = Parameter[<span class="number">2</span>]</span><br><span class="line">    Prefix = Parameter[<span class="number">3</span>]</span><br><span class="line">    <span class="comment"># 字段列表，其中 SHAPE@用于访问数据几何</span></span><br><span class="line">    Fields = [<span class="string">&#x27;OBJECTID&#x27;</span>,<span class="string">&#x27;SHAPE@&#x27;</span>]</span><br><span class="line">    <span class="keyword">with</span> arcpy.da.SearchCursor(ClipArea,Fields) <span class="keyword">as</span> cursor:</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> cursor:</span><br><span class="line">            outputFC = os.path.join(OutputWS, Prefix+<span class="built_in">str</span>(row[<span class="number">0</span>])+<span class="string">&#x27;.shp&#x27;</span>)</span><br><span class="line">            arcpy.Clip_analysis(inputFC, row[<span class="number">1</span>], outputFC)</span><br><span class="line">            <span class="built_in">print</span> Prefix+<span class="built_in">str</span>(row[<span class="number">0</span>])+<span class="string">&#x27;.shp&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 参数</span></span><br><span class="line">    OutputWS = <span class="string">r&#x27;D:\LearnAboutPython\MyPythonProject\UsingCurser\OutputWS&#x27;</span></span><br><span class="line">    <span class="comment"># SDE库输出</span></span><br><span class="line">    <span class="comment">#OutputWS = r&#x27;C:\Connection131.sde&#x27;</span></span><br><span class="line">    Parameter1 = [<span class="string">&#x27;CountyPoints&#x27;</span>,<span class="string">&#x27;Area_A&#x27;</span>,OutputWS, <span class="string">&#x27;AAA_&#x27;</span>]</span><br><span class="line">    Parameter2 = [<span class="string">&#x27;hyd_line&#x27;</span>,<span class="string">&#x27;Area_B&#x27;</span>,OutputWS, <span class="string">&#x27;BBB_&#x27;</span>]</span><br><span class="line">    Parameter3 = [<span class="string">&#x27;River_line.shp&#x27;</span>,<span class="string">&#x27;Area_C.shp&#x27;</span>,OutputWS,<span class="string">&#x27;CCC_&#x27;</span>]</span><br><span class="line">    Parameters = [Parameter1,Parameter2,Parameter3]</span><br><span class="line">    <span class="comment"># 当前CPU核数</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;CPU Count:&#x27;</span> + <span class="built_in">str</span>(multiprocessing.cpu_count())</span><br><span class="line">    <span class="comment"># 进程池</span></span><br><span class="line">    MyGPpool = multiprocessing.Pool()</span><br><span class="line">    <span class="comment"># 多进程并行处理</span></span><br><span class="line">    StartTime = time.time()</span><br><span class="line">    results = MyGPpool.<span class="built_in">map</span>(MyBatchClip,Parameters)</span><br><span class="line">    EndTime = time.time()</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;Elapsed:  &#x27;</span> + <span class="built_in">str</span>(EndTime - StartTime) + <span class="string">&#x27;  Seconds...&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>结果</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">CPU Count:8</span><br><span class="line">AAA_0.shp</span><br><span class="line">BBB_0.shp</span><br><span class="line">CCC_0.shp</span><br><span class="line">BBB_1.shp</span><br><span class="line">AAA_1.shp</span><br><span class="line">CCC_1.shp</span><br><span class="line">BBB_2.shp</span><br><span class="line">AAA_2.shp</span><br><span class="line">CCC_2.shp</span><br><span class="line">……</span><br><span class="line">……</span><br><span class="line">……</span><br><span class="line">BBB_28.shp</span><br><span class="line">AAA_27.shp</span><br><span class="line">BBB_29.shp</span><br><span class="line">CCC_28.shp</span><br><span class="line">CCC_29.shp</span><br><span class="line">AAA_28.shp</span><br><span class="line">BBB_30.shp</span><br><span class="line">CCC_30.shp</span><br><span class="line">AAA_29.shp</span><br><span class="line">AAA_30.shp</span><br><span class="line">Elapsed:  28.628000021  Seconds...</span><br></pre></td></tr></table></figure>
-
-<h1 id="一点有用的提示："><a href="#一点有用的提示：" class="headerlink" title="一点有用的提示："></a>一点有用的提示：</h1><p>1.在使用Multiprocessing时，注意数据锁定（Schema Lock）的问题，例如这个例子中，当输出工作空间选择为FileGDB时出现异常。 使用文件夹输出 Shapefile，或者以SDE数据库作为输出工作空间，都是可以的。</p>
-<p>2.我在代码中也加入了计时，用于比较并行与否的耗时情况。 但是有时确实会发现，较简单的处理任务时，多进程并行并不比单进程快，因为导入模块和启动进程都需要花时间。 </p>
-<p><strong>参考：</strong><br><span class="exturl" data-url="aHR0cHM6Ly9ibG9ncy5lc3JpLmNvbS9lc3JpL2FyY2dpcy8yMDEyLzA5LzI2L2Rpc3RyaWJ1dGVkLXByb2Nlc3Npbmctd2l0aC1hcmNnaXMtcGFydC0xLw==">https://blogs.esri.com/esri/arcgis/2012/09/26/distributed-processing-with-arcgis-part-1/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLnB5dGhvbi5vcmcvMi9saWJyYXJ5L211bHRpcHJvY2Vzc2luZy5odG1sI3VzaW5nLWEtcG9vbC1vZi13b3JrZXJz">https://docs.python.org/2/library/multiprocessing.html#using-a-pool-of-workers<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlucHJlc3MuY29tL3R1dG9yaWFsL3NpbXBsZS1weXRob24tcGFyYWxsZWxpc20vMTIx">https://www.binpress.com/tutorial/simple-python-parallelism/121<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL2Nsb2dhLmluZm8vcHl0aG9uLzIwMTQvMDEvMTIvUHl0aG9uTXVsdGlwcm9jZXNzaW5naW50cm8v">http://cloga.info/python/2014/01/12/PythonMultiprocessingintro/<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL2ttZG91Z2xhc3MuZ2l0aHViLmlvL3Bvc3RzL2xlYXJuaW5nLXB5dGhvbnMtbXVsdGlwcm9jZXNzaW5nLW1vZHVsZS5odG1s">http://kmdouglass.github.io/posts/learning-pythons-multiprocessing-module.html<i class="fa fa-external-link-alt"></i></span><br><span class="exturl" data-url="aHR0cDovL2Jyb2FkY2FzdC5vcmVpbGx5LmNvbS8yMDA5LzA0L3B5bW90dy1tdWx0aXByb2Nlc3NpbmctcGFydC0yLmh0bWw=">http://broadcast.oreilly.com/2009/04/pymotw-multiprocessing-part-2.html<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/28/ParallelPython/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -708,7 +684,14 @@
 <p>Don’t have negative thoughts or things you cannot control. Instead invest your energy in the positive present moment.</p>
 </blockquote>
 <p>道理简单深刻，能够持久地实践才是真的懂了</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/14/ForMyself/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -819,6 +802,14 @@
 </blockquote>
 <p><img data-src="/images/blogImg/XJL_IMG_5106.jpg"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/04/08/RedBeach/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

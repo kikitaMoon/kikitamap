@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -301,97 +301,14 @@
 <p><img data-src="/images/blogImg/MappingCluster_SanDiego.png"></p>
 <p>工具中我做如下配置：</p>
 <p><img data-src="/images/blogImg/MappingCluster_Env.png"></p>
-<p>结果在这里，其中 Similarly Rank 为 1 的即为三个年龄属性最相似的城市 Orange：</p>
-<p><img data-src="/images/blogImg/MappingCluster_SimilarCity.png"></p>
-<p>匹配方法参数中提供了3种算法，分别为：属性值、等级属性值或属性剖面（余弦相似性）。</p>
-<blockquote>
-<p><strong>可能的应用</strong>：</p>
-<ul>
-<li>人力资源经理可能希望能够证明公司的工资范围。找出在大小、生活成本、市容建筑方面相似的城市后，她便可以查看这些城市的工资范围，从而查看他们是否在此行列。</li>
-<li>犯罪分析师希望搜索数据库以查看某罪行是否属于较重犯罪形式或有重罪趋势。</li>
-<li>课外健身计划在 A 城极其成功。计划提倡者期望找到与其计划推广的候选城市具有相似特征的其他城市。</li>
-<li>执法机构用此方法揭露毒品种植地或生产地。标识具有相似特征的地方可能有助于制定未来的搜索目标。</li>
-<li>大型零售商不仅拥有数个成功店铺，也有少数业绩不佳的店铺。找到一些具有相似人口特征和环境特征（交通便利性、知名度以及商业互补性等等）的地方有助于标识新店的最佳位置。</li>
-</ul>
-</blockquote>
-<br>
-
-<h1 id="Grouping-Analysis"><a href="#Grouping-Analysis" class="headerlink" title="Grouping Analysis"></a><strong>Grouping Analysis</strong></h1><p>我们在学习研究事物时，有事需要对事物进行归类从而帮助理解与分析。在ArcGIS 中，分析分组分析工具就是来进行这个逻辑分类过程，它会执行一个分类过程来查找数据中存在的自然聚类。要素相似性是基于您为分析字段参数指定的一组特性，同时还可以包括空间属性或空间-时间属性。</p>
-<p><img data-src="/images/blogImg/MappingCluster_GroupAnalysis.png"></p>
-<p>在这个工具中有个重要的参数—— Spatial Constrains，用于设置分组过程是否受某种空间关系约束，具体可选的方法如下：</p>
-<ul>
-<li>CONTIGUITY_EDGES_ONLY — 共享一条边的相连的面才属于同一个组。</li>
-<li>CONTIGUITY_EDGES_CORNERS — 共享一条边或一个折点的相连面才属于同一个组。</li>
-<li>DELAUNAY_TRIANGULATION — 同一个组中的要素至少具有一个与该组中的另一要素共用的自然邻域。自然邻域关系基于 Delaunay 三角测量。从概念上讲，Delaunay 三角测量可以根据要素质心创建不重叠的三角网。每个要素是一个三角形结点，具有公共边的结点被视为邻域。</li>
-<li>K_NEAREST_NEIGHBORS — 同一个组中的要素将相互邻近；每个要素至少是该组中某一其他要素的邻域。邻域关系基于最近的 K 要素，您可以在此为“相邻要素的数目”参数指定整型值 K。</li>
-<li>GET_SPATIAL_WEIGHTS_FROM_FILE — 空间关系和可选的时态关系通过空间权重文件 (.swm) 进行定义。使用“生成空间权重矩阵”工具创建空间权重矩阵文件。</li>
-<li>NO_SPATIAL_CONSTRAINT — 只能使用数据空间邻域法对要素进行分组。要素不是必须在空间或时间上互相接近，才能属于同一个组。</li>
-</ul>
-<blockquote>
-<p><strong>可能的应用</strong>：</p>
-<ul>
-<li>假设您拥有来自所在州周围农场的沙门氏菌样本，以及包括类型&#x2F;类别、位置和日期&#x2F;时间在内的属性。为了更好地了解细菌如何传播和扩散，您可以使用分组分析工具将样本划分为各个“爆发”。您可能决定使用空间-时间约束，因为同一次爆发的样本会在空间和时间上会非常接近，而且也会与相同类型&#x2F;类别的细菌关联。确定分组之后，可以使用其他空间模式分析工具，比如标准差椭圆、平均中心或近邻来分析每一次爆发。</li>
-<li>如果您收集了有关动物观察方面的数据，以便更好地了解它们的领地，分组分析工具可能很有帮助。例如，了解鲑鱼在不同生命阶段的聚集地点和时间，可以帮助您规划保护区，以帮助确保成功繁育。</li>
-<li>作为一名农学家，您可能想将研究领域内的不同土壤进行分类。对通过一系列样本发现的土壤特征使用分组分析可以帮助识别出明显的、空间上相邻的土壤类型的聚类。<br>按购买方式、人口统计特征和&#x2F;或旅行方式对客户进行分组，可以帮助您为公司产品制订有效的营销策略。</li>
-<li>城市规则师常常需要将各个城市划分成不同的邻域，以便有效地定位公共设施、促进地方能动性和提高社区参与度。对城市街区的物理和人口统计特征使用分组分析，可以帮助规划师确定具有相似物理和人口统计特征并且在空间上相邻的城市区域。</li>
-<li>每当对聚合的数据进行分析时，生态谬误都是一个众所周知的统计推断问题。通常，用于分析的聚合方案对我们想要分析的内容没有任何关系。例如，人口普查数据是根据人口分布而聚合，而人口分布情况可能不是用来进行火灾分析的最佳选择。针对与目前分析问题准确相关的一组属性，将可能的最小聚合单位划分成同质区域，是降低聚合偏差和避免生态谬误的一种有效方法。</li>
-</ul>
-</blockquote>
-<br>
-
-<h1 id="Hot-Spot-Analysis-Getis-Ord-Gi"><a href="#Hot-Spot-Analysis-Getis-Ord-Gi" class="headerlink" title="Hot Spot Analysis (Getis-Ord Gi)*"></a><em><em>Hot Spot Analysis (Getis-Ord Gi</em>)</em>*</h1><p>热点分析工具是个 Most Popular 工具，经常会被用到，通过此工具，我们可以来识别有统计显著性的热点和冷点。例如，警察局会调查哪个区域是刑事案件的高发区？这就是一个典型的热点分析例子。如下图，黑点表示报警位置，其中属性表中包含一个报案次数的字段，得到了犯罪热点。从而警察局可以考虑在热点位置增设警力。</p>
-<p><img data-src="/images/blogImg/MappingCluster_HotPots.png"></p>
-<p>此工具的工作方式为：查看邻近要素环境中的每一个要素。因此，仅仅一个孤立的高值不会构成热点，说白了就是，单个要素以及它的邻居都是高值才算是热点。在热点分析工具中，z 得分和 p 值都是统计显著性的度量，用于逐要素地判断是否拒绝零假设。置信区间（Gi_Bin字段） +3 到 -3 中的要素反映置信度为 99% 的统计显著性，置信区间 +2 到 -2 中的要素反映置信度为 95% 的统计显著性，置信区间 +1 到 -1 中的要素反映置信度为 90% 的统计显著性；而置信区间 0 中要素的聚类则没有统计学意义。</p>
-<p>如果要素的 z 得分高且 p 值小，则表示有一个高值的空间聚类。如果 z 得分低并为负数且 p 值小，则表示有一个低值的空间聚类。z 得分越高（或越低），聚类程度就越大。如果 z 得分接近于零，则表示不存在明显的空间聚类。</p>
-<p><strong>关于此工具的建议：</strong></p>
-<ul>
-<li>输入要素类是否至少包含 30 个要素？如果少于 30 个要素，则结果不可靠。</li>
-<li>您选择的空间关系的概念化是否合适？对于此工具，建议使用固定距离范围方法</li>
-</ul>
-<blockquote>
-<p> <strong>可能的应用</strong>：</p>
-<ul>
-<li>应用领域包括：犯罪分析、流行病学、投票模式分析、经济地理学、零售分析、交通事故分析以及人口统计学。其中的一些应用示例包括：</li>
-<li>疾病集中爆发在什么位置？</li>
-<li>何处的厨房火灾在所有住宅火灾中所占的比例超出了正常范围？</li>
-<li>紧急疏散区应位于何处？</li>
-<li>峰值密集区出现于何处&#x2F;何时？</li>
-<li>我们应在哪些位置和什么时间段分配更多的资源？</li>
-</ul>
-</blockquote>
-<br>
-
-<h1 id="Optimized-Hot-Spot-Analysis"><a href="#Optimized-Hot-Spot-Analysis" class="headerlink" title="Optimized Hot Spot Analysis"></a><strong>Optimized Hot Spot Analysis</strong></h1><p>在最近几个版本的 ArcGIS 中多了一个 “优化的热点分析工具”，我们如何理解这个工具呢？打个比方，好比“数码相机自动根据光线、拍摄主体与背景对比度的读数，来确定合适的光圈、快门速度和焦点”，优化的热点分析是根据输入数据的特征派生参数，从而获得产生最佳热点结果的设置，然后执行热点分析工具。</p>
-<p>简而言之，如果拿到单反，使用“优化的热点分析工具”好比把拍照模式调成了“全自动”，而使用“热点分析工具”好比把拍照模式调成“手动”，热点分析工具允许我们完全控制所有参数选项。运行优化的热点分析工具并记录其使用的参数设置，有助于优化设置热点分析 (Getis-Ord Gi*) 工具的参数。</p>
-<p>打开这个工具，我们会发现，这个工具太可爱了，除了输入和输出参数，其他所有参数都是可选的，都可以不填！ 果然是全自动模式，傻瓜相机版热点分析。但是，这几个参数决定了优化热点分析的方式，为了“照片”更美，还是需要了解些东西的，一起来看看：</p>
-<p><strong>分析字段</strong>：当要分析的数据中存在一个字段存储了采样值，我们想了解这个采样值的高值与低值的聚集区域，那分析字段就需要选择这个字段。</p>
-<p>当我们的数据不具有这样的采样值，并且我们希望研究的是点的计数，也就是研究：哪里存在很多点？哪里存在很少点？这时，选择一种<strong>聚合方案</strong>就变得重要了。</p>
-<p>工具中提供了三种聚合方案：</p>
-<p>1） COUNT_INCIDENTS_WITHIN_FISHNET_POLYGONS：采用渔网聚合，渔网的网格大小由工具根据点的距离关系决定。</p>
-<p><img data-src="/images/blogImg/MappingCluster_Fishnet.png"></p>
-<p>2） COUNT_INCIDENTS_WITHIN_AGGREGATION_POLYGONS：提供聚合面以覆盖事件聚合面参数中的事件点数据。计算每个面内的事件数。例如：计算加州每个城市的消防站的聚集情况。</p>
-<p><img data-src="/images/blogImg/MappingCluster_PolygonAggr.png"></p>
-<p>3）SNAP_NEARBY_INCIDENTS_TO_CREATE_WEIGHTED_POINTS：邻近事件将聚合在一起，从而创建单个加权点。各点的权重值是该位置的聚合事件数。</p>
-<p><img data-src="/images/blogImg/MappingCluster_Points.png"></p>
-<p>无论是哪种方法，在工具的日志中会提供一个研究这些数据聚类的最优的距离，类似：</p>
-<p><img data-src="/images/blogImg/MappingCluster_Log.png"></p>
-<br>
-
-<h1 id="Cluster-and-Outlier-Analysis-Anselin-Local-Moran’s-I"><a href="#Cluster-and-Outlier-Analysis-Anselin-Local-Moran’s-I" class="headerlink" title="Cluster and Outlier Analysis (Anselin Local Moran’s I)"></a>Cluster and Outlier Analysis (Anselin Local Moran’s I)</h1><p>给定一组加权要素，使用 Anselin Local Moran’s I 统计量来识别具有统计显著性的热点、冷点和空间异常值。</p>
-<p>热点分析(Getis-Ord Gi*) 工具也是查找热点和冷点位置的有效工具。但是，<strong>只有</strong>聚类和异常值分析(Anselin Local Moran’s I) 工具可以识别具有统计学上的显著性的空间异常值（高值由低值围绕或低值由高围绕的值）。</p>
-<p>输出要素类中包含：**Local Moran’s I 指数、z 得分、p 值、聚类&#x2F;异常值类型 (COType)**。</p>
-<p>如果要素的 z 得分是一个较高的正值，则表示周围的要素拥有相似值（高值或低值）。输出要素类中的 COType 字段会将具有统计显著性的高值聚类表示为 HH，将具有统计显著性的低值聚类表示为 LL。<br>如果要素的 z 得分是一个较低的负值（如，小于 -3.96），则表示有一个具有统计显著性的空间数据异常值。输出要素类中的 COType 字段将指明要素是否是高值要素而四周围绕的是低值要素 (HL)，或者要素是否是低值要素而四周围绕的是高值要素 (LH)。如下图可以帮助理解：</p>
-<p><img data-src="/images/blogImg/MappingCluster_HHLL.png"></p>
-<p>COType 字段将始终指明置信度为 95% 的统计显著性聚类和异常值。只有统计显著性要素在 COType 字段中具有值。</p>
-<blockquote>
-<p><strong>可能的应用</strong><br>聚类和异常值分析(Anselin Local Moran’s I) 工具可识别高值密度、低值密度和空间异常值。还可帮助您解决如下问题：</p>
-</blockquote>
-<ul>
-<li>研究区域中的富裕区和贫困区之间的最清晰边界在哪里？</li>
-<li>研究区域中存在可以找到异常消费模式的位置吗？</li>
-<li>研究区域中意想不到的糖尿病高发地在哪里？<br>  可在经济学、资源管理、生物地理学、政治地理学和人口统计等许多领域中应用此工具。</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/17/MappingCluster/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -509,59 +426,14 @@
 <h1 id="First-，找到Esri官方试用地址"><a href="#First-，找到Esri官方试用地址" class="headerlink" title="First ，找到Esri官方试用地址"></a>First ，找到Esri官方试用地址</h1><p><span class="exturl" data-url="aHR0cDovL3d3dy5lc3JpLmNvbS9zb2Z0d2FyZS9hcmNnaXMvYXJjZ2lzLWZvci1kZXNrdG9wL2ZyZWUtdHJpYWw=">http://www.esri.com/software/arcgis/arcgis-for-desktop/free-trial<i class="fa fa-external-link-alt"></i></span></p>
 <p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_SignUp.png"></p>
 <br>
-<br>
-
-<h1 id="2-填写姓名、邮箱地址，用于接收验证邮件"><a href="#2-填写姓名、邮箱地址，用于接收验证邮件" class="headerlink" title="2 填写姓名、邮箱地址，用于接收验证邮件"></a>2 填写姓名、邮箱地址，用于接收验证邮件</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_EmailSent.png"></p>
-<br>
-<br>
-
-<h1 id="3-收取邮件，激活链接"><a href="#3-收取邮件，激活链接" class="headerlink" title="3 收取邮件，激活链接"></a>3 收取邮件，激活链接</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_EmailSample.png"></p>
-<br>
-<br>
-
-
-<h1 id="4-创建ArcGISOnline账户"><a href="#4-创建ArcGISOnline账户" class="headerlink" title="4 创建ArcGISOnline账户"></a>4 创建ArcGISOnline账户</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_OnlineAccount.png"></p>
-<br>
-<br>
-
-<h1 id="5-设置组织信息，并保存继续"><a href="#5-设置组织信息，并保存继续" class="headerlink" title="5 设置组织信息，并保存继续"></a>5 设置组织信息，并保存继续</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_Organization.png"></p>
-<br>
-<br>
-
-<h1 id="6-获取应用程序"><a href="#6-获取应用程序" class="headerlink" title="6 获取应用程序"></a>6 获取应用程序</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_GetApp.png"></p>
-<br>
-<br>
-
-
-<h1 id="7-下载-ArcGIS-Pro-程序"><a href="#7-下载-ArcGIS-Pro-程序" class="headerlink" title="7 下载 ArcGIS Pro 程序"></a>7 下载 ArcGIS Pro 程序</h1><blockquote>
-<p>** PS：**</p>
-<p>ArcGIS Pro 暂时只有英文版，注意切换语言。</p>
-<p><strong>ArcGIS Desktop 的程序也可以在这里下载，授权号码就在右边的位置，与以往授权方式不变。</strong><br>如果需要了解如何授权 ArcGIS Desktop ，还是看我 **<span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhbW9vbi9hcnRpY2xlL2RldGFpbHMvNDA3MDgxMzM=">以前写的一篇<i class="fa fa-external-link-alt"></i></span>**，从第6步开始看即可。</p>
-</blockquote>
-<p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_EVA.png"></p>
-<br>
-<br>
-
-<h1 id="8-转到-ArcGIS-Online"><a href="#8-转到-ArcGIS-Online" class="headerlink" title="8 转到 ArcGIS Online"></a>8 转到 ArcGIS Online</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_Turn2Online.png"></p>
-<br>
-<br>
-
-<h1 id="9-在组织中管理-ArcGIS-Pro-的许可"><a href="#9-在组织中管理-ArcGIS-Pro-的许可" class="headerlink" title="9 在组织中管理 ArcGIS Pro 的许可"></a>9 在组织中管理 ArcGIS Pro 的许可</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_ManageLicense.png"></p>
-<br>
-<br>
-
-<h1 id="10-分配许可给指定用户（Named-User）"><a href="#10-分配许可给指定用户（Named-User）" class="headerlink" title="10 分配许可给指定用户（Named User）"></a>10 分配许可给指定用户（Named User）</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_Asign.png"></p>
-<p>↓↓↓</p>
-<p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_Asign2.png"></p>
-<p>↓↓↓</p>
-<p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_Asign3.png"><br><br><br><br><br><br><br><br></p>
-<h1 id="Final，开启-ArcGIS-Pro-登录账号"><a href="#Final，开启-ArcGIS-Pro-登录账号" class="headerlink" title="Final，开启 ArcGIS Pro 登录账号"></a>Final，开启 ArcGIS Pro 登录账号</h1><p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_ProLaunch.png"></p>
-<p>↓↓↓</p>
-<p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_SignIn.png"></p>
-<p>↓↓↓</p>
-<p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_SignIn2.png"></p>
-<p>现在就开始 ArcGIS Pro 之旅喽。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/06/ArcGISPro60DayFreetrial/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -684,76 +556,14 @@
 <li>p值 &#x2F; p-value</li>
 </ul>
 <p>其中，最近邻指数是观测平均值与期望平均值的比率，最近邻如果最近邻比率小于1，则表现的模式为聚类。如果指数大于1，则表现的模式趋向于扩散。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_AverageNearest.png" alt="最近邻比率"></p>
-<p>在HTML报告文件中可以更显见的了解数据的趋势：</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_AverageNearestSummary.png" alt="报告"></p>
-<blockquote>
-<p>可能的应用：</p>
-</blockquote>
-<ul>
-<li>评估竞争或领地：量化并比较固定研究区域中的多种植物种类或动物种类的空间分布；比较城市中不同类型的企业的平均最近邻距离。</li>
-<li>监视随时间变化的更改：评估固定研究区域中一种类型的企业的空间聚类中随时间变化的更改。</li>
-<li>将观测分布与控制分布进行比较：在木材分析中，如果给定全部可收获木材的分布，则您最好将已收获面积图案与可收获面积图案进行比较，以确定砍伐面积是否比期望面积更为聚类。</li>
-</ul>
-<br>
-
-<h2 id="Spatial-Autocorrelation"><a href="#Spatial-Autocorrelation" class="headerlink" title="Spatial Autocorrelation"></a>Spatial Autocorrelation</h2><p>空间自相关 (Global Moran’s I) 工具同时根据要素位置和要素的属性值来度量空间自相关。在给定一组要素及相关属性的情况下，评估所表达的模式是聚类模式、离散模式还是随机模式。</p>
-<p>此工具将返回五个值：</p>
-<ul>
-<li>Moran’s I指数 &#x2F; Moran’s I Index</li>
-<li>预期指数 &#x2F; Expected Index</li>
-<li>方差 &#x2F; Variance</li>
-<li>z得分 &#x2F; z-score</li>
-<li>p值 &#x2F; p-value</li>
-</ul>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_SpatialAutocorrelationReport.png"></p>
-<p><strong>Moran’s I 指数</strong>：</p>
-<p>Global Moran‘s I 工具计算所评估属性的<strong>均值&#x2F;Mean</strong>和<strong>方差&#x2F;Variance</strong>。然后，将每个要素值减去均值，从而得到与均值的<strong>偏差&#x2F;Deviation</strong>。 将所有相邻要素（例如位于指定距离范围内的要素）的偏差值相乘，从而得到<strong>叉积&#x2F;Cross Production</strong>。Global Moran’s I 统计量的分子是这些叉积的和。</p>
-<p>如果数据在空间上趋于聚类，则Moran’s I指数为正值；如果空间上高值排斥其他高值而分散存在，则Moran’s I 指数为负值；如果叉积的正负值趋于平衡，则指数趋于0。</p>
-<p>在使用这个工具的时候，<strong>注意</strong>以下几点：</p>
-<ul>
-<li>输入要素的记录数至少30个，少于30结果不可靠。</li>
-<li>选择的适当的概念化空间关系，具体根据自己的数据参考前一篇。</li>
-</ul>
-<blockquote>
-<p>可能的应用</p>
-</blockquote>
-<ul>
-<li>通过查找距离（即空间自相关最强的位置对应的距离），可为各种空间分析方法确定合适的邻近距离。</li>
-<li>度量种族或民族分离随时间推移的总体趋势 - 分离程度是逐渐增强还是逐渐减弱？</li>
-<li>总结某种观点、疾病或趋势随空间和时间变化的传播情况 - 观点、疾病或趋势是保持隔离和集中，还是传播开并变得更加分散？</li>
-</ul>
-<br>
-
-<h2 id="Incremental-Spatial-Autocorrelation"><a href="#Incremental-Spatial-Autocorrelation" class="headerlink" title="Incremental Spatial Autocorrelation"></a>Incremental Spatial Autocorrelation</h2><p>增量自相关工具会去测量一系列的空间自相关，并且可以创建Z得分折线图。Z得分反映空间聚类的程度，峰值Z得分表示聚类最明显的距离。<br>这些峰值能做什么呢？我们可以将这些峰值作为其他工具（例如热点分析，将来会说到）的必要参数，例如距离范围，距离半径等等。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_Incremental.png"></p>
-<p>以下面的数据为例：</p>
-<p>我欲研究下面几个城市的人口分布情况：</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_SamplePoints.png"></p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_SamplePoint2.png"></p>
-<p><img data-src="http://img.blog.csdn.net/20150305091915238"></p>
-<p>第一个峰值位于大约 250000 处。当显示多个具有统计显著性的峰值时（例如，本示例数据中有两个峰值），聚类在这些距离处均很明显。选择与感兴趣的分析比例对应的峰值距离，我们通常选择第一个具有统计显著性的峰值。</p>
-<br>
-
-<h2 id="High-Low-Clustering-Getis-Ord-General-G"><a href="#High-Low-Clustering-Getis-Ord-General-G" class="headerlink" title="High&#x2F;Low Clustering (Getis-Ord General G)"></a>High&#x2F;Low Clustering (Getis-Ord General G)</h2><p>高&#x2F;低聚类 (General G) 统计的零假设规定被研究的要素值不存在空间聚类。当返回的 p 值较小且在统计学上显著，则可以拒绝零假设。如果零假设被拒绝，则 z 得分的符号将变得十分重要。如果 z 得分值为正数，则观测的 General G 指数会比期望的 General G 指数要大一些，表明属性的高值将在研究区域中聚类。如果 z 得分值为负数，则观测的 General G 指数会比期望的 General G 指数要小一些，表明属性的低值将在研究区域中聚类。</p>
-<p>当存在完全均匀分布的值并且要查找高值的异常空间峰值时，首选高&#x2F;低聚类(Getis-Ord General G)工具。遗憾的是，高值和低值同时聚类时，它们倾向于彼此相互抵消。如果在高值和低值同时聚类时测量空间聚类，则使用空间自相关工具。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_HighLow.png"></p>
-<p>“高&#x2F;低聚类”工具可返回五个值：General G 观测值、General G 期望值、方差、z 得分以及 p 值。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_HighLowReport.png"></p>
-<blockquote>
-<p>可能的应用：</p>
-</blockquote>
-<ul>
-<li>在访问急症室的次数中查找出现的异常峰值，可能表明在局部或区域的健康问题的爆发。</li>
-<li>比较在城市中不同种类零售业的空间模式，利用比较购物的方式来了解哪类行业充满竞争性（如汽车经销商）以及哪类行业拒绝竞争（如健康中心&#x2F;健身房）。</li>
-<li>汇总空间现象聚类的程度以检查不同时期或不同位置的变化。例如，众所周知的城市及其人口聚类。使用高&#x2F;低聚类分析时，可以随时间来比较某个城市的人口聚类的程度（城镇发展以及密集度的分析）。</li>
-</ul>
-<br>
-
-<h2 id="Multi-Distance-Spatial-Cluster-Analysis-Ripley’s-K-Function"><a href="#Multi-Distance-Spatial-Cluster-Analysis-Ripley’s-K-Function" class="headerlink" title="Multi-Distance Spatial Cluster Analysis (Ripley’s K Function)"></a>Multi-Distance Spatial Cluster Analysis (Ripley’s K Function)</h2><p>基于 Ripley’s K 函数的多距离空间聚类分析工具是另外一种分析事件点数据的空间模式的方法。Ripley’s K 函数可表明要素质心的空间聚集或空间扩散在邻域大小发生变化时是如何变化的。</p>
-<p>如果有兴趣研究要素的聚类&#x2F;扩散如何相对于不同距离（不同的分析规模）进行变化，可以使用此工具。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_MultiDistance.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/05/AnalysisPatternsB/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -869,39 +679,14 @@
 <p><strong>P值</strong> 就是概率值，它表示观测到的空间模式是由某随机过程创建而成的概率，或者我们简单的理解成是观测到的空间模式是随机空间模式的概率。P 值越小，也就是观测到的空间模式是随机空间模式的可能性越小，也就是我们越可以拒绝开始的零假设。</p>
 <p><strong>Z得分</strong> 表示标准差的倍数。例如，如果工具返回的 z 得分为 +2.5，我们就会说，结果是 2.5 倍标准差。如下所示，z 得分和 p 值都与标准正态分布相关联。</p>
 <p><img data-src="/images/blogImg/AnalysisPatternsA_Normal.png" alt="正态分布"></p>
-<p>z 得分和 p 值结果是统计显著性的量度，用来判断是否拒绝零假设。在正态分布的两端出现非常高（正值）或非常低（负值）的 z 得分，这些得分与非常小的 p 值关联。当运行要素模式分析工具得到很小的 p 值以及绝对值很大的 z 得分时，就表明观测到的空间模式不太可能反映零假设中假定的随机模式。</p>
-<p>那么，P值需要多小？或者说要小到什么程度，才能拒绝零假设呢？这时就需要我们自己主观选择一个 <strong>置信度（Confidence Level）</strong>，典型的置信度有 90%、95%、99%。其中显见，99%的置信度是最保守的。</p>
-<br>
-
-<h1 id="空间关系的概念化"><a href="#空间关系的概念化" class="headerlink" title="空间关系的概念化"></a>空间关系的概念化</h1><p>空间统计分析和传统（非空间）统计分析的一个重要区别是空间统计分析将空间关系整合到算法中。在我们执行各种各样的空间统计工具时，需要选择一项“空间关系概念化”，如何选择就主要取决于要测量的对象。如下是常见的选项：</p>
-<br>
-
-<h2 id="反距离、反距离平方（阻抗）"><a href="#反距离、反距离平方（阻抗）" class="headerlink" title="反距离、反距离平方（阻抗）"></a>反距离、反距离平方（阻抗）</h2><p> <img data-src="/images/blogImg/AnalysisPatternsA_InverseDistance.png"><br>使用“反距离”选项时，空间关系的概念模型是一种阻抗或距离衰减。距离越远，影响越小。<br>INVERSE_DISTANCE：表示与远处的要素相比，附近的邻近要素对目标要素的计算的影响要大一些；INVERSE_DISTANCE_SQUARED：与 INVERSE_DISTANCE 类似，但它的坡度更明显，因此影响下降得更快，并且只有目标要素的最近邻域会对要素的计算产生重大影响。</p>
-<blockquote>
-<p>例如：反欧氏距离适用于对连续数据（如温度变化）进行建模。再比如测量某种种子植物的聚集程度，使用反距离可能最合适。</p>
-</blockquote>
-<br>
-
-<h2 id="距离范围（影响的范围）"><a href="#距离范围（影响的范围）" class="headerlink" title="距离范围（影响的范围）"></a>距离范围（影响的范围）</h2><p><img data-src="/images/blogImg/AnalysisPatternsA_FixDistance.png"><br>FIXED_DISTANCE_BAND：将对邻近要素环境中的每个要素进行分析。在指定临界距离内的邻近要素将分配值为 1 的权重，并对目标要素的计算产生重大影响。在指定临界距离外的邻近要素将分配值为零的权重，并且不会对目标要素的计算产生任何影响。</p>
-<blockquote>
-<p>例如：要研究通勤模式并且已知平均上下班路程为 15 英里，则最好使用 15 英里的固定距离进行分析。</p>
-</blockquote>
-<br>
-
-<h2 id="无差别的区域"><a href="#无差别的区域" class="headerlink" title="无差别的区域"></a>无差别的区域</h2><p><img data-src="/images/blogImg/AnalysisPatternsA_ZoneIndiff.png"><br>ZONE_OF_INDIFFERENCE：将“反距离”模型和“固定距离范围”模型合并为一体，在目标要素的指定临界距离内的要素将分配值为 1 的权重，并且会影响目标要素的计算。一旦超出该临界距离，权重就会随距离的增加而减小。</p>
-<blockquote>
-<p>举个常见的例子，工作日的午饭我们通常会在公司附近解决，选餐馆的时候，可能在500米以内哪家都行，超过500米就可能太过占用时间从而影响中午的休息、娱乐等等，当餐馆距离公司超过500米，随着距离的增加，权重就不断减小。</p>
-</blockquote>
-<br>
-
-<h2 id="面邻接（一阶）"><a href="#面邻接（一阶）" class="headerlink" title="面邻接（一阶）"></a>面邻接（一阶）</h2><p>对于面要素类，可选择 CONTIGUITY_EDGES_ONLY或 CONTIGUITY_EDGES_CORNERS。其中，CONTIGUITY_EDGES_ONLY：只有共用边界的相邻面要素会影响目标面要素的计算，不共享边的面被排除在目标要素计算之外。CONTIGUITY_EDGES_CORNERS：共享边界、结点的面要素会影响目标面要素的计算。如果两个面存在重叠的部分，则将视为相邻要素并包含在彼此的计算中。</p>
-<blockquote>
-<p>例如，研究某些传染病的传染区域时，可以考虑此空间关系概念化。</p>
-</blockquote>
-<h2 id="K最近邻域"><a href="#K最近邻域" class="headerlink" title="K最近邻域"></a>K最近邻域</h2><p>K表示最近邻域数目。如果 K（邻域数）为 8，则距目标要素最近的 8 个邻域都会包含在该要素的计算中。在要素密度高的位置处，分析的空间范围会比较小。与此类似，要素密度稀的位置，分析的空间范围会比较大。使用生成空间权重矩阵工具时该方法可用。</p>
-<h2 id="通过文件获取空间权重（用户定义的空间关系）"><a href="#通过文件获取空间权重（用户定义的空间关系）" class="headerlink" title="通过文件获取空间权重（用户定义的空间关系）"></a>通过文件获取空间权重（用户定义的空间关系）</h2><p>GET_SPATIAL_WEIGHTS_FROM_FILE：将在空间权重文件(.SWM) 中定义空间关系，文件可以使用空间统计工具箱中其他相关的工具创建，这里先不展开，后面再说。</p>
-<p>有了这些基础知识，我们就来看看ArcGIS Desktop 中提供的这些工具，有点长了，再另起一篇看工具吧。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/05/AnalysisPatternsA/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1018,103 +803,14 @@
 
 <h1 id="Central-Feature"><a href="#Central-Feature" class="headerlink" title="Central Feature"></a>Central Feature</h1><p>中心要素（Central Feature）这个工具可用于寻找一组要素中处于最中心位置的要素，这一组要素可以是点、线、面。<br>算法：测量每个要素与其他要素之间两两的距离，然后求和，和值最小的要素即判定为central feature。</p>
 <p>可解决的问题，例如：</p>
-<p>某个区域的仓库中最中心位置的是哪个? </p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_CentralFeature.png"></p>
-<p>在几个区块中，哪一个具有最中心的位置？</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_CentralFeature2.png"></p>
-<p>工具的算法是将每个要素质心与其他各要素质心之间的距离计算并求和，取最小值。那么问题来了……</p>
-<p><strong>距离测量方法是什么？</strong></p>
-<p>有欧式距离与曼哈顿距离可选，区别点这里。并且需牢记，投影坐标系下才有准确的测量值，如果数据是经纬度坐标系，需要投影变换。</p>
-<p><strong>要素的质心如何确定？</strong></p>
-<p>对于线和面要素，距离计算中会使用要素的质心。对于多点、折线或由多部件组成的面，将会使用所有要素部件的加权平均中心来计算质心。点要素的加权项是1，线要素的加权项是长度，而面要素的加权项是面积。</p>
-<p><strong>如何求多组要素的各自的中心要素？</strong></p>
-<p>设置分组&#x2F;case字段，可以对多个分组的要素分别计算中心要素。</p>
-<br>
-
-<h1 id="Mean-Center"><a href="#Mean-Center" class="headerlink" title="Mean Center"></a>Mean Center</h1><p>平均中心（Mean Center）用于计算输入的要素的质心的平均中心，因此这个工具会计算出一个新的点。</p>
-<p>如果输入数据包含 Z 值，那么在平均中心也会计算 Z 值，也就是得到3D点。</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_MeanCenter.png"></p>
-<blockquote>
-<p>这个工具在现实中有什么应用呢？我从帮助中引用几个有意思的应用：</p>
-</blockquote>
-<blockquote>
-<p>★  犯罪分析师在对白天事件点与夜间事件点进行对比评估时，可能希望查看盗窃行为的平均中心是否会有所变化。这有助于公安部门更好地分配资源。</p>
-</blockquote>
-<blockquote>
-<p>★  野生生物学家可以计算某个公园若干年内的麋鹿观测值的平均中心，以了解夏季和冬季麋鹿会在何处聚集，从而为公园游客提供更好的信息。</p>
-</blockquote>
-<blockquote>
-<p>★  GIS 分析师可以通过将 911 紧急电话的平均中心与紧急响应站的位置进行比较来评估服务水平。此外，该分析师还可以对由超过 65 岁的个人加权所得的平均中心进行评估，从而确定提供老人服务的理想位置。</p>
-</blockquote>
-<p>举个栗子：</p>
-<p>2012年西非的马里暴动的位置信息采集后，求取平均中心大致可以了解事件的分布情况。</p>
-<p>所有事件：</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_Events.png"></p>
-<p>各类事件的平均中心：</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_Events2.png"></p>
-<br>
-
-<h1 id="Median-Center"><a href="#Median-Center" class="headerlink" title="Median Center"></a>Median Center</h1><p>中位数中心（Median Center）工具使用迭代算法来查找可使所有要素间的欧氏距离达到最小的点。</p>
-<p>平均中心和中位数中心均是中心趋势度量。但是，比较而言，中位数中心工具的算法受数据异常值的影响较小。</p>
-<p>例如，对紧凑性群集点的平均中心进行计算的结果是该群集中心处的某个位置点。如果随后添加一个远离该群集的新点并重新进行计算平均中心，会注意到结果会向新的异常值靠近。而如果要使用中位数中心工具执行相同的测试，会发现新的异常值对结果位置的影响明显减小。</p>
-<p>如下图中，向数据中增加两个相隔较远的点， Median Center 看起来要比 Mean Center 偏移的更小。</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_Compare.png"></p>
-<p>PS： 尽管中位数中心工具只返回一个点，但实际上,距所有要素的距离最小的位置点可能有多个。</p>
-<br>
-
-<h1 id="Directional-Distribution-Standard-Deviational-Ellipse"><a href="#Directional-Distribution-Standard-Deviational-Ellipse" class="headerlink" title="Directional Distribution (Standard Deviational Ellipse)"></a>Directional Distribution (Standard Deviational Ellipse)</h1><p>方向分布（标准差椭圆）工具可以查看要素的分布是否是狭长的，是否具有方向性，从而使我们直观的感受数据的趋向。该方法是由平均中心作为起点对 x 坐标和 y 坐标的标准差进行计算，从而定义椭圆的轴，因此该椭圆被称为标准差椭圆。</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_Ellipse.png"></p>
-<p>在工具生成的椭圆面中会包含：</p>
-<ul>
-<li>平均中心的 X 和 Y 坐标、两个标准距离（长轴和短轴）及椭圆的方向，这五个值。</li>
-<li>如果要素的基础空间模式是中心处集中而朝向外围的要素较少（一种空间正态分布），则一个标准差椭圆面会包含聚类中约 68％ 的要素，两个标准差椭圆面会包含聚类中约 95％ 的要素，三个标准差椭圆面则可包含聚类中约 99％ 的要素。</li>
-</ul>
-<blockquote>
-<p>这个工具可能的应有哪些呢？从帮助文档中摘录过来：</p>
-<ul>
-<li>在地图上标示一组犯罪行为的分布趋势可以确定该行为与特定要素（一系列酒吧或餐馆、某条特定街道等）的关系。 </li>
-<li>在地图上标示地下水井样本的特定污染可以指示毒素的扩散方式，这在部署减灾策略时非常有用。</li>
-<li>对各个种族或民族所在区域的椭圆的大小、形状和重叠部分进行比较可以提供与种族隔离或民族隔离相关的深入信息。</li>
-<li>绘制一段时间内疾病爆发情况的椭圆可建立疾病传播的模型。</li>
-</ul>
-</blockquote>
-<p>我还使用上面马里的例子，了解各种事件的分布情况：</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_Ellipse2.png"></p>
-<p>且不说分布方向，我们可以看出，无论是哪种暴动事件，与之并发导致的无家可归的难民是分布最广的。</p>
-<br>
-
-
-<h1 id="Standard-Distance"><a href="#Standard-Distance" class="headerlink" title="Standard Distance"></a>Standard Distance</h1><p>标准距离工具可通过绘制一个圆心位于平均中心&#x2F;meancenter、半径等于标准距离值的圆在地图上体现一组要素的紧密度。 </p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_StandardDistance.png"></p>
-<blockquote>
-<p>可能的应用：</p>
-<ul>
-<li>利用两种或多种分布的值对分布进行比较。例如，犯罪分析家可以对袭击行为和汽车偷窃行为的紧密度进行比较。了解不同犯罪类型的分布情况可能有助于警察制定出应对犯罪行为的策略。如果特定区域内的犯罪行为分布很紧凑，那么在该区域中心附近配置一辆警车也许就足够了。但如果分布较分散，则可能需要几辆警车同时巡查该区域，才能更有效地对犯罪行为做出响应。</li>
-<li>可以对同一类型要素在不同时间段内的分布情况进行比较。例如，犯罪分析家可以对白天盗窃行为和夜间盗窃行为进行比较，以了解白天与夜间相比，盗窃行为是更加分散还是更加紧凑。</li>
-<li>可将要素分布与静态要素进行比较。例如，可以针对某个区域内各响应消防站在几个月内接到的紧急电话的分布情况进行度量和比较，以了解哪些消防站响应的区域较广。</li>
-</ul>
-</blockquote>
-<h1 id="Linear-Directional-Mean"><a href="#Linear-Directional-Mean" class="headerlink" title="Linear Directional Mean"></a>Linear Directional Mean</h1><p>线性方向平均值工具可以计算一组线要素的趋势的平均角度。</p>
-<p>许多具有一个起点和一个终点的线要素，例如飓风路径，我们就可以使用这个工具计算飓风的平均方向。再比如断层线，这种线要素我们一般认为它们有方位（orientation），但是没有方向（direction），我们也可以使用这个工具计算平均方位。</p>
-<p>所以，如果要计算平均方向，请确保所有线的方向都是正确的。如果要计算平均方位，则会忽略线的方向。</p>
-<p>请牢记，尽管大多数线在起点和终点之间具有多个折点，此工具将只使用起点和终点来确定方向。</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_MeanDirection.png"></p>
-<p>输出线要素的为位于要素平均中心，长度为输入要素的平均长度。包含了罗盘角（以正北为基准方向按顺时针旋转）、方向平均值（以正东为基准方向按逆时针旋转）、圆方差（指示方向&#x2F;方位偏离方向平均值的程度）、平均中心 X 和 Y 坐标及平均长度。</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_MeanDirection2.png"></p>
-<blockquote>
-<p>可能的应用：</p>
-<ul>
-<li>比较两组或多组线。例如，研究河谷中麋鹿和驼鹿迁移状况的野生生物学家可计算这两个物种迁徙路径的方向趋势。</li>
-<li>比较不同时期的要素。例如，鸟类学家可逐月计算猎鹰迁徙的趋势。方向平均值可汇总多个个体的飞行路径并对每日的迁移进行平滑处理。这样便可很容易地了解鸟类在哪个月进得最快，以及迁徙在何时结束。</li>
-<li>评估森林中的伐木状况以了解风型和风向。</li>
-<li>分析可以指示冰川移动方式的冰擦痕。</li>
-<li>标识汽车失窃及被盗车辆追回的大体方向。</li>
-</ul>
-</blockquote>
-<p>再举个栗子：</p>
-<p>如下图中绿色的线段表示历年不同日期采集的风向数据，现在根据不同的年份计算每年的平均风向，结果如图，图形总是比表格数据直观的很：</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_MeanDirection3.png"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/02/26/MeasuringGeographicDistributions/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

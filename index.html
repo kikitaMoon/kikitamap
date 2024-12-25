@@ -93,7 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -305,6 +305,14 @@
 <li>图片地址优化</li>
 </ol>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/12/23/Ending2024/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -432,45 +440,14 @@
 
 
 <h3 id="1-2-安装-Data-Hub-CLI"><a href="#1-2-安装-Data-Hub-CLI" class="headerlink" title="1.2 安装 Data Hub CLI"></a>1.2 安装 Data Hub CLI</h3><p>使用如下命令完成 Data Hub CLI 安装。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> @here/<span class="built_in">cli</span></span><br></pre></td></tr></table></figure>
-
-<p>提示：全局安装在某些环境下，需要管理员权限。</p>
-<p>验证 Data Hub CLI 安装成功，  输入命令 <code>here -V</code> :</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;here <span class="literal">-V</span></span><br><span class="line"><span class="number">1.5</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h2 id="2-连接-HERE-账号"><a href="#2-连接-HERE-账号" class="headerlink" title="2 连接 HERE 账号"></a>2 连接 HERE 账号</h2><p>安装部署成功后，连接 HERE Developer 账号，从而管理自己账号下的项目和数据集。使用命令 <code>here configure account</code>：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;here configure account</span><br><span class="line">prompt: Email:  sharon.mu@here.com</span><br><span class="line">prompt: Password:</span><br><span class="line">Secrets verified successfully</span><br><span class="line"><span class="built_in">Add-on</span> features enabled.</span><br><span class="line">Default App Selected - oyNWTbKIov6XPMlrXxCH</span><br></pre></td></tr></table></figure>
-
-<p>连接成功后，你的账号配置信息会加密存储在当前系统账户目录下，文件名为：**.herecli** 。</p>
-<p>命令 <code>here configure verify</code> 来验证当前 credentials 是否有权限使用 Data Hub APIs。</p>
-<br>
-
-<h2 id="3-常用命令"><a href="#3-常用命令" class="headerlink" title="3 常用命令"></a>3 常用命令</h2><p>Data Hub CLI 的命令都遵循如下格式：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;HERE command&gt; &lt;API command&gt;</span><br></pre></td></tr></table></figure>
-
-<p>常用命令：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">C:\WINDOWS\system32&gt;here <span class="literal">-h</span></span><br><span class="line">Usage: here [<span class="type">options</span>] [<span class="type">command</span>]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  <span class="literal">-V</span>, <span class="literal">--version</span>                           output the version number</span><br><span class="line">  <span class="literal">-h</span>, <span class="literal">--help</span>                              display help <span class="keyword">for</span> command</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  configure|c [<span class="type">verify</span>|<span class="type">refresh</span>]            setup configuration <span class="keyword">for</span> authentication</span><br><span class="line">  xyz|xs [<span class="type">list</span>|<span class="type">create</span>|<span class="type">upload</span>]             work with <span class="keyword">Data</span> Hub spaces</span><br><span class="line">  studio [<span class="type">list</span>|<span class="type">delete</span>|<span class="type">show</span>]               work with HERE Studio projects</span><br><span class="line">  transform|tf [<span class="type">csv2geo</span>|<span class="type">shp2geo</span>|<span class="type">gpx2geo</span>]  convert from csv/shapefile/gpx to geojson</span><br><span class="line">  geocode|<span class="built_in">gc</span>                              geocode feature</span><br><span class="line">  help [<span class="type">command</span>]                          display help <span class="keyword">for</span> command</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例：</strong></p>
-<ul>
-<li><p>List All Spaces – <code>here xyz list</code></p>
-<p><img data-src="/images/blogImg/HDataHubCLI_list.jpg"></p>
-</li>
-<li><p>Create a New Space</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">here xyz create <span class="literal">-t</span> <span class="string">&quot;title for space&quot;</span> <span class="literal">-d</span> <span class="string">&quot;description for space&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Upload Data to a Space， Geojson&#x2F;CSV&#x2F;Shapefile……</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">here xyz upload YOUR_SPACE_ID <span class="operator">-f</span> /Users/xyz/data.geojson</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>更多命令示例，详见文档： <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9zdHVkaW8vbWFwX2N1c3RvbWl6YXRpb25fc3VpdGVfY2xpX2hscC9kZXZfZ3VpZGUvdG9waWNzL2NvbW1hbmRzLmh0bWw=">HERE Studio and HERE Data Hub  -  Commands<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-
-<h2 id="4-Source-Code-on-Github"><a href="#4-Source-Code-on-Github" class="headerlink" title="4 Source Code on Github"></a>4 Source Code on Github</h2><p>Data Hub CLI 是 HERE 官方提供的跨平台的开源库，如果感兴趣可以扩展定制的其功能。</p>
-<p><strong>heremaps&#x2F;here-cli</strong>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlcmVtYXBzL2hlcmUtY2xp">https://github.com/heremaps/here-cli<i class="fa fa-external-link-alt"></i></span></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/24/HDataHubCLI/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -591,30 +568,14 @@
 </ul>
 </blockquote>
 <p>YES， 这说的就是 HERE Data Hub，  包括 HERE Studio。</p>
-<p>截止到今天，HERE Studio 的最新版本为 1.8.0。</p>
-<p>最后，用 HERE Develper 账号登入： <a target="_blank" rel="noopener" href="https://studio.here.com/studio/"><em><strong>studio.here.com&#x2F;studio</strong></em></a> 。</p>
-<br>
-
-<h3 id="HERE-Studio-可以做什么？"><a href="#HERE-Studio-可以做什么？" class="headerlink" title="HERE Studio 可以做什么？"></a>HERE Studio 可以做什么？</h3><ul>
-<li><p>HERE Studio 提供了很多友好的地图数据管理与可视化的工具，能使用户便利高效地完成地图工作；</p>
-</li>
-<li><p>HERE Studio 提供了很多可供用户交互操作的 UI 组件，设置精细地地图样式就变得很容易啦， so easy；</p>
-</li>
-<li><p>所有的地图数据基于HERE Server host 的云存储，实时交互；</p>
-</li>
-<li><p>商业化服务环境的REST&#x2F;JS API 和 命令行客户端工具 CLI可调用 HERE Studio 上传的数据。</p>
-</li>
-<li><p>一键分布和分享给你的朋友或读者。</p>
-</li>
-</ul>
-<p><img data-src="/images/blogImg/HStudio_homepage.jpg"></p>
-<p><img data-src="/images/blogImg/HStudio_basemap.jpg"></p>
-<p><img data-src="/images/blogImg/HStudio_customization.jpg"></p>
-<p><img data-src="/images/blogImg/HStudio_sharing.jpg"></p>
-<br>
-
-<h3 id="PS："><a href="#PS：" class="headerlink" title="PS："></a><em>PS：</em></h3><p>如果你从产品文档中，看到 HERE XYZ *** 等产品名称，请自动脑补映射到 HERE Data Hub &#x2F; HERE Studio  即可。傲娇的产品技术团队就是这么任性，觉得产品名称不能表达他们当下的思绪时，那就改个名字吧。 开个玩笑，XYZ 是这个产品的曾用名，文档通用，大家读起来吧。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/23/HStudio-intro/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -730,23 +691,14 @@
 
 <h3 id="硬技能精进"><a href="#硬技能精进" class="headerlink" title="硬技能精进"></a><strong>硬技能精进</strong></h3><p><strong>Hard</strong> skill 方面，需要不断学习，拓展和精进产品技术。所有技术同学都懂，IT技术日新月异，一直学习都很难乘风破浪，何况随波逐流放弃治疗？任何一个”我知道”都不是信手拈来。</p>
 <p>之前在esri的几年阅读英文技术文档的习惯对我有巨大的帮助，静心读文档解题总是会有助思路。前任和现任供职的这两家公司，有个共同特点，就是产品谱系庞大，产品名录远长于一般餐厅菜单，product manual 页数动辄几千，外加一个在线产品不断更新的developer portal。时间碎片，团队迷你，克服浮躁，学习速度和用户赛跑，都是重重挑战。</p>
-<p>压力的边缘，心平气和地读完文档并研究解决实际问题，给我的是一种积极反馈。享受这个抽丝剥茧的过程，一旦上瘾也不好戒。技术工种必须保持学习，后面我会为自己分配的更多的学习时间来精进硬技能。摄入不够，输出就无力。</p>
-<br>
-
-<h3 id="软技能提升"><a href="#软技能提升" class="headerlink" title="软技能提升"></a><strong>软技能提升</strong></h3><p><strong>Soft</strong> skill 方面，是沟通和管理沟通。例如，常常需要同时至少面对3个客户企业，每个企业有2个人和我对接问题，那么外侧至少有6个人；几个问题并发，自己解决分析问题的同时，如有必要还要和不同国家不同技术团队沟通确认，内侧通常也会是同时几个人active；这是一个典型的 m:n relationship 多头沟通。</p>
-<p>工作方式类似人肉版的 large-scale matrix routing 位置服务 ，我大概就是这些stakeholder们的沟通处理server，为每对匹配的Q&amp;A 双方建立最佳路径。既要向内侧说清楚当前客户诉求，又要把解决方案客观得体地反馈给外侧，兼顾沟通过程对双方的正向促进。</p>
-<p>如上已经是理想情况，实际环境中毕竟是多方沟通，各有各的诉求，各有各的boundary和scope，如何能平衡和管理期待，取最大公约数，也是需要推敲的困难模式。论如何优雅地argue。正如，在很多个因子的统计归一化过程中，每一个因子都必要而不突出了；每个因子的最优不一定是整个算式的最优。大家好才是真的好。</p>
-<p>这个部分需要我自己时常剖析问题，完善自己认知体系，勾画个人边界，锻炼实践能力。既然是所有问题和人的接口和处理器，外部环境不以自己的意志转移时，只有通过自我提升才能优化性能。沿用企业文化金句：be true.  be bold.  win together !</p>
-<br>
-
-<h3 id="平衡生活"><a href="#平衡生活" class="headerlink" title="平衡生活"></a><strong>平衡生活</strong></h3><p>疫情期间在家办公，无论主动被动，工作和生活搅在一起。遇到紧急状况，生活时间不得不被工作侵占，而这种侵占常常是无意识的。不知不觉错过吃饭休息时间，被家人催促和说教，而我又常常流露出不耐烦，差的脾气总是给了亲近的人。在孩子最淘气的 2,3岁都是父母在默默守护。我支持了所有别人，而家人默默地支持了我。仔细思考，这不是可持续的发展。好的状态是我们能自循环，而不是汲取与被汲取是不同方。所谓平衡生活，不是平衡自己的，是平衡一家人的。</p>
-<p>厌恶标榜加班，尤其是自己在从事一份智力型工作。当出现模式化倾向，要思考陷入长期加班，是不是有什么系统性的问题？是不是模糊了某些边界和原则？是否还有合理改善的空间？如何能从本质上提高效率摆脱窘境？如果是，怎么做？如果否，现在怎么做？很多事情不是单纯延长工作时间本身能解决的。</p>
-<p>能用智力解决的问题，不要只用体力；能用体力解决的问题，不要只用精力。越来越理解：成年人的世界没有容易二字。但是我和很多人有一样的执念，喜欢自己看起来游刃有余、举重若轻、深入浅出，而无需渲染背后的努力过程。</p>
-<p><img data-src="/images/blogImg/Thinkings2020.jpeg"></p>
-<p>人的一生是方方面面的。 如何做一个有趣的人？至少做一个不匮乏不枯燥的人？这是我人生探求的方向。人生各个维度的积极力量是可以相互影响的。</p>
-<p>没有什么大不了，趁着还享受现在的大多数时刻，及时地优化系统，清除垃圾，或许又是新的篇章。虽然我们没有以前那么年轻了，但现在已经是这一生最年轻的时刻了，去日无多，笃定前行。</p>
-<p>“生活不息，折腾不止”，不然不可能怎么可能发生。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/22/Thinkings2020/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -871,30 +823,14 @@
 
 <p>以上功能列表解释几个点：</p>
 <p><strong>GNSS</strong>（Global Navigation Satellite System）包括除了我们熟知的 GPS，还包括 GLONASS,  Beidou, </p>
-<p>QZSS,  Galileo 这些星座。 HERE Positioning 产品族系中，还有可支持到芯片级的 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaGVyZS5jb20vcHJvZHVjdHMvdHJhY2tpbmctcG9zaXRpb25pbmctc29sdXRpb25zL2hkLWduc3M=">HD GNSS &#x2F; A-GNSS 产品<i class="fa fa-external-link-alt"></i></span>，用于显著提高首次定位时间和GNSS离线辅助定位。这里不展开了，以后有空再约起。</p>
-<p><strong>WiFi离线定位</strong>，略复杂，是室内定位中成本较低的一种，不依赖于事先部署 Beacon。从使用者角度可以理解为两个使用场景：</p>
-<ul>
-<li><p>经常连接WiFi，有时断线使用，例如在办公室等熟悉场所。</p>
-</li>
-<li><p>周围无熟悉WiFi，例如进入一个陌生的大型购物中心。</p>
-<p>前者可通过online WiFi定位的定位缓存数据解决离线问题；后者则需要大量的众包数据作为前提实现。</p>
-<p>后者是一种更黑科技的技术，但是从原理上也不是难于理解。 可以想象，大型购物中心通常布满 WiFi热点，移动设备即使无法连接这些热点，也可以探测到这些WiFi热点的信息。根据信号场强的算法黑科技，最终是从已知点位解算未知点位的数学问题。</p>
-<p>这里的问题是：已知点位怎么来？这正是源自众包、托关于定位服务器的 HERE Radio Map。采集和管理 Radio Map 实际官方也有给出工具<span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scw=="> HERE Indoor Radio Mapper<i class="fa fa-external-link-alt"></i></span> 和 <span class="exturl" data-url="aHR0cHM6Ly9pbmRvb3IuaGVyZS5jb20vIy90b29scy9oZWxwLXRleHQtMyNpbmRvb3ItcmFkaW8tbWFwLWFkbWluLXRvb2w=">HERE Radio Map Admin Tool<i class="fa fa-external-link-alt"></i></span> 。</p>
-<p><img data-src="/images/blogImg/HmSDK_Positioning_RadioMap.jpg"></p>
-</li>
-</ul>
-<p><strong>室内地图 &#x2F;Venue Map</strong>，在实际的使用场景中，室内定位一般与3D室内地图结合使用，但始终要理解，地图是地图，定位是定位，只是为了终端用户的视觉显示时，二者才绑到了一起。室内地图的显示和制作也有单独的工具，点<span class="exturl" data-url="aHR0cHM6Ly92ZW51ZXMuaGVyZS5jb20vcHJvZHVjdHMvb3ZlcnZpZXc=">这里<i class="fa fa-external-link-alt"></i></span>看官网。</p>
-<p><img data-src="/images/blogImg/HmSDK_Positioning_indoor.jpg"></p>
-<p>定位部分的开发部署，强烈建议仔细阅读开发文档，有关设备访问权限的几点一定要确保配置正确。</p>
-<ul>
-<li><p>HERE Mobile SDK - <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vMy4xNS9kZXZfZ3VpZGUvdG9waWNzL2FkdmFuY2VkLXBvc2l0aW9uaW5nLmh0bWw=">Developer Doc<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li><p>HERE Mobile SDK on Github - <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlcmVtYXBzL2hlcmUtYW5kcm9pZC1zZGstZXhhbXBsZXMvdHJlZS9tYXN0ZXIvcG9zaXRpb25pbmc=">Sample Code<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-</ul>
-<p>可以带手机到室外和室内试一下这个Demo，支持选择定位模式。</p>
-<p><img data-src="/images/blogImg/HmSDK_Positioning_Demo.jpg"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/19/HmSDK_Positioning/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -25,12 +25,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="想要下面这样一副地图，怎么做？       1.准备包含一个数值属性字段的面数据，比如包含人口信息的欧洲大陆数据，使用分级色带渲染。       2.使用 Choropleth Hillshade 工具制造“浮雕”栅格。感谢作者jwasil的分享，这个工具可以在Github上自取：点这里。       3.给矢量面图层设置30%的透明，完成。      Maps we love 中也有一个web">
+    <meta name="description" content="想要下面这样一副地图，怎么做？       1.准备包含一个数值属性字段的面数据，比如包含人口信息的欧洲大陆数据，使用分级色带渲染。       2.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="凹凸有致的地图——浮雕风">
 <meta property="og:url" content="https://kikitamap.com/2015/08/07/ChoroplethHillshade/index.html">
 <meta property="og:site_name" content="kikita &amp; Maps">
-<meta property="og:description" content="想要下面这样一副地图，怎么做？       1.准备包含一个数值属性字段的面数据，比如包含人口信息的欧洲大陆数据，使用分级色带渲染。       2.使用 Choropleth Hillshade 工具制造“浮雕”栅格。感谢作者jwasil的分享，这个工具可以在Github上自取：点这里。       3.给矢量面图层设置30%的透明，完成。      Maps we love 中也有一个web">
+<meta property="og:description" content="想要下面这样一副地图，怎么做？       1.准备包含一个数值属性字段的面数据，比如包含人口信息的欧洲大陆数据，使用分级色带渲染。       2.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://kikitamap.com/images/blogImg/ChoroplethHillshade_Done.png">
 <meta property="og:image" content="https://kikitamap.com/images/blogImg/ChoroplethHillshade_ColorRamp.png">
@@ -101,7 +101,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
