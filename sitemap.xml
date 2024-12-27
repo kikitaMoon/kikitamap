@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kikitamap.com/2024/12/25/BBC-Volcanos-1/</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2024/12/25/en-2024-12-25-BBC-Volcanos-1-en/</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/en/schedule/index.html</loc>
     
     <lastmod>2024-12-27</lastmod>
@@ -21,24 +39,6 @@
   
   <url>
     <loc>https://kikitamap.com/en/categories/index.html</loc>
-    
-    <lastmod>2024-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2024/12/25/BBC-Volcanos-1/</loc>
-    
-    <lastmod>2024-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/en/BBC-Volcanos-1/</loc>
     
     <lastmod>2024-12-27</lastmod>
     
@@ -614,7 +614,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
+    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -623,7 +623,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
+    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -992,7 +992,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/12/26/Complete/</loc>
+    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1001,7 +1001,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
+    <loc>https://kikitamap.com/2014/12/26/Complete/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1289,7 +1289,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/01/23/DEMRendering/</loc>
+    <loc>https://kikitamap.com/2014/01/19/GeographicTransformation2/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1298,7 +1298,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/01/19/GeographicTransformation2/</loc>
+    <loc>https://kikitamap.com/2014/01/23/DEMRendering/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1388,7 +1388,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/07/02/ImportArcpy/</loc>
+    <loc>https://kikitamap.com/2013/06/26/ArcGISDataDrivenPage/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1397,7 +1397,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/06/26/ArcGISDataDrivenPage/</loc>
+    <loc>https://kikitamap.com/2013/07/02/ImportArcpy/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1919,13 +1919,6 @@
 
   
   <url>
-    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Geodata/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1934,6 +1927,20 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Mapping/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Performance/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1954,20 +1961,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Performance/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Deployment/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Raster/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1976,6 +1969,13 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Geoprocessing/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Deployment/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2192,7 +2192,28 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/ArcGIS-Earth-BBC-Tutorials-Jump-start-3D/</loc>
+    <loc>https://kikitamap.com/tags/ArcGIS-Earth/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/BBC/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Tutorials/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Jump-start/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

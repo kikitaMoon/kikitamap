@@ -928,8 +928,8 @@ pre code {
   margin-bottom: 20px;
   padding: 1em;
   position: relative;
-  border: 1px solid #eee;
-  border-left-width: 5px;
+  background: #f5f5f5;
+  border: 1px solid transparent;
 }
 .post-body .note summary {
   cursor: pointer;
@@ -954,64 +954,172 @@ pre code {
   margin-bottom: 0;
 }
 .post-body .note.default {
-  border-left-color: #777;
+  background: #f3f3f3;
+  border-color: #e1e1e1;
+  color: #666;
 }
-.post-body .note.default h2,
-.post-body .note.default h3,
-.post-body .note.default h4,
-.post-body .note.default h5,
-.post-body .note.default h6 {
-  color: #777;
+.post-body .note.default a:not(.btn) {
+  border-bottom-color: #666;
+  color: #666;
+}
+.post-body .note.default a:not(.btn):hover {
+  border-bottom-color: #454545;
+  color: #454545;
+}
+@media (prefers-color-scheme: dark) {
+  .post-body .note.default {
+    background: #525252;
+    border-color: #585858;
+    color: #dbdbdb;
+  }
+  .post-body .note.default a:not(.btn) {
+    border-bottom-color: #dbdbdb;
+    color: #dbdbdb;
+  }
+  .post-body .note.default a:not(.btn):hover {
+    border-bottom-color: #f8f8f8;
+    color: #f8f8f8;
+  }
 }
 .post-body .note.primary {
-  border-left-color: #6f42c1;
-}
-.post-body .note.primary h2,
-.post-body .note.primary h3,
-.post-body .note.primary h4,
-.post-body .note.primary h5,
-.post-body .note.primary h6 {
+  background: #f3daff;
+  border-color: #e1c2ff;
   color: #6f42c1;
 }
-.post-body .note.info {
-  border-left-color: #428bca;
+.post-body .note.primary a:not(.btn) {
+  border-bottom-color: #6f42c1;
+  color: #6f42c1;
 }
-.post-body .note.info h2,
-.post-body .note.info h3,
-.post-body .note.info h4,
-.post-body .note.info h5,
-.post-body .note.info h6 {
-  color: #428bca;
+.post-body .note.primary a:not(.btn):hover {
+  border-bottom-color: #453298;
+  color: #453298;
+}
+@media (prefers-color-scheme: dark) {
+  .post-body .note.primary {
+    background: #5b3e92;
+    border-color: #503aaf;
+    color: #e4abff;
+  }
+  .post-body .note.primary a:not(.btn) {
+    border-bottom-color: #e4abff;
+    color: #e4abff;
+  }
+  .post-body .note.primary a:not(.btn):hover {
+    border-bottom-color: #f7f0ff;
+    color: #f7f0ff;
+  }
+}
+.post-body .note.info {
+  background: #d9edf7;
+  border-color: #b3e5ef;
+  color: #31708f;
+}
+.post-body .note.info a:not(.btn) {
+  border-bottom-color: #31708f;
+  color: #31708f;
+}
+.post-body .note.info a:not(.btn):hover {
+  border-bottom-color: #215761;
+  color: #215761;
+}
+@media (prefers-color-scheme: dark) {
+  .post-body .note.info {
+    background: #2f576b;
+    border-color: #2b707d;
+    color: #b3dbef;
+  }
+  .post-body .note.info a:not(.btn) {
+    border-bottom-color: #b3dbef;
+    color: #b3dbef;
+  }
+  .post-body .note.info a:not(.btn):hover {
+    border-bottom-color: #ecf8fb;
+    color: #ecf8fb;
+  }
 }
 .post-body .note.success {
-  border-left-color: #5cb85c;
+  background: #dff0d8;
+  border-color: #d0e6be;
+  color: #3c763d;
 }
-.post-body .note.success h2,
-.post-body .note.success h3,
-.post-body .note.success h4,
-.post-body .note.success h5,
-.post-body .note.success h6 {
-  color: #5cb85c;
+.post-body .note.success a:not(.btn) {
+  border-bottom-color: #3c763d;
+  color: #3c763d;
+}
+.post-body .note.success a:not(.btn):hover {
+  border-bottom-color: #32562c;
+  color: #32562c;
+}
+@media (prefers-color-scheme: dark) {
+  .post-body .note.success {
+    background: #355935;
+    border-color: #416f39;
+    color: #c4e3b7;
+  }
+  .post-body .note.success a:not(.btn) {
+    border-bottom-color: #c4e3b7;
+    color: #c4e3b7;
+  }
+  .post-body .note.success a:not(.btn):hover {
+    border-bottom-color: #f3f9ef;
+    color: #f3f9ef;
+  }
 }
 .post-body .note.warning {
-  border-left-color: #f0ad4e;
+  background: #fcf4e3;
+  border-color: #fae4cd;
+  color: #8a6d3b;
 }
-.post-body .note.warning h2,
-.post-body .note.warning h3,
-.post-body .note.warning h4,
-.post-body .note.warning h5,
-.post-body .note.warning h6 {
-  color: #f0ad4e;
+.post-body .note.warning a:not(.btn) {
+  border-bottom-color: #8a6d3b;
+  color: #8a6d3b;
+}
+.post-body .note.warning a:not(.btn):hover {
+  border-bottom-color: #714f30;
+  color: #714f30;
+}
+@media (prefers-color-scheme: dark) {
+  .post-body .note.warning {
+    background: #685535;
+    border-color: #89603a;
+    color: #f7e3b8;
+  }
+  .post-body .note.warning a:not(.btn) {
+    border-bottom-color: #f7e3b8;
+    color: #f7e3b8;
+  }
+  .post-body .note.warning a:not(.btn):hover {
+    border-bottom-color: #fef8f3;
+    color: #fef8f3;
+  }
 }
 .post-body .note.danger {
-  border-left-color: #d9534f;
+  background: #f2dfdf;
+  border-color: #ebcdd2;
+  color: #a94442;
 }
-.post-body .note.danger h2,
-.post-body .note.danger h3,
-.post-body .note.danger h4,
-.post-body .note.danger h5,
-.post-body .note.danger h6 {
-  color: #d9534f;
+.post-body .note.danger a:not(.btn) {
+  border-bottom-color: #a94442;
+  color: #a94442;
+}
+.post-body .note.danger a:not(.btn):hover {
+  border-bottom-color: #84333f;
+  color: #84333f;
+}
+@media (prefers-color-scheme: dark) {
+  .post-body .note.danger {
+    background: #7f3e3d;
+    border-color: #9c3c4a;
+    color: #e5bebe;
+  }
+  .post-body .note.danger a:not(.btn) {
+    border-bottom-color: #e5bebe;
+    color: #e5bebe;
+  }
+  .post-body .note.danger a:not(.btn):hover {
+    border-bottom-color: #faf2f4;
+    color: #faf2f4;
+  }
 }
 .post-body .tabs {
   margin-bottom: 20px;
@@ -1390,6 +1498,39 @@ pre code {
 .book-mark-link-fixed {
   top: -2px;
 }
+.github-corner :hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+.github-corner svg {
+  color: #fff;
+  fill: var(--theme-color);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+@media (max-width: 991px) {
+  .github-corner {
+    display: none;
+  }
+  .github-corner .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
 .sidebar {
   right: -320px;
 }
@@ -1429,7 +1570,7 @@ pre code {
   transition: all 0.2s ease-in-out;
 }
 .links-of-author a::before {
-  background: #f2b5ff;
+  background: #f7f;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

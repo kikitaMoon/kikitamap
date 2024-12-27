@@ -6,7 +6,7 @@
   <link href="https://kikitamap.com/atom.xml" rel="self"/>
   
   <link href="https://kikitamap.com/"/>
-  <updated>2024-12-27T07:13:29.456Z</updated>
+  <updated>2024-12-27T09:03:14.691Z</updated>
   <id>https://kikitamap.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"/>
     <id>https://kikitamap.com/2024/12/25/BBC-Volcanos-1/</id>
     <published>2024-12-25T08:10:11.000Z</published>
-    <updated>2024-12-27T07:13:29.456Z</updated>
+    <updated>2024-12-27T09:03:14.691Z</updated>
     
     <content type="html"><![CDATA[<p>BBC的纪录片几乎每部都堪称神作，我当然也是资深忠粉之一，尤其大爱星球系列。壁纸级的画面和金句频出的旁白，是足不出户的日子里的万丈光芒。<br>2021年初BBC推出的《完美星球&#x2F;Perfect Planet》，历时4年制作，拍摄地遍布六大洲31个国家，分四集讲述了在地球上自然造物的神奇力量，火山，太阳，气候，海洋无可替代地创造和维护着地球这颗完美星球的独特微妙的平衡；以及最后一部分，人类自身对地球的影响。</p><p>小朋友非常感兴趣，不断地问我这些摄影的地点在哪里？这也是我想知道的答案，那我就来做个扩展阅读。<br>这篇分享下第一集《火山》中出现的摄影地点，云端共赏地形地貌。如果家中有投影仪和一整面墙，那沉浸效果更佳。</p><p>地球表面上，现有超过 1500 座活火山。没有火山，地球上就不会产生海洋、陆地、大气，乃至生命。</p><h2 id="01-基拉韦厄火山-Kilauea-Volcano"><a href="#01-基拉韦厄火山-Kilauea-Volcano" class="headerlink" title="01 基拉韦厄火山&#x2F;Kilauea Volcano"></a>01 基拉韦厄火山&#x2F;Kilauea Volcano</h2><p>跟随着火山喷发的壮观画面和 大卫·爱登堡 熟悉的声音，首先看到的是 <strong>基拉韦厄火山</strong>（Kilauea volcano, Hawaii），一座位于夏威夷的非常活跃的巨大活火山。</p><p>想找到这座火山的位置本身不难，如果想从“上帝视角”和“无人机视角”去看这座火山，那 <strong>ArcGIS Earth</strong> 是个不错的选择。免费下载使用，新手友好，小朋友可用。</p><p>ArcGIS Earth 提供了全球高清影像底图&#x2F;basemap，并包含全球高程服务，支持真实地形的展示。也提供了位置搜索&#x2F;GeoSearch，输入地名即带你飞到推荐的位置。设置地形夸张，增强地形起伏对比，可以仔细了解火山口的形态。</p><p>小朋友问我火山在哪里？ 这样3D地图看一遍，夏威夷，太平洋，群岛，东南部，火山口…… 这些名词就不难解释了。更换不同的底图对比观察地形。</p><p><img data-src="/images/blogImg/Volcano_1_Kilauea_1.png"><br><img data-src="/images/blogImg/Volcano_1_Kilauea_2.png"></p><h2 id="02-伦盖伊火山-Ol-Doinyo-Lengai"><a href="#02-伦盖伊火山-Ol-Doinyo-Lengai" class="headerlink" title="02 伦盖伊火山&#x2F;Ol Doinyo Lengai"></a>02 伦盖伊火山&#x2F;Ol Doinyo Lengai</h2><p><strong>伦盖伊火山</strong> (Ol Doinyo Lengai,Tanzania ) 位于坦桑尼亚北部，属于东非大裂谷火山，是非洲最活跃的火山之一。它的北侧是高腐蚀性的<strong>纳特龙湖</strong> (Lake Natron)，这里是火烈鸟的天堂，为雏鸟们提供了天然的庇护所。</p><p>火山口和地表脉络在3D地图上清晰可见，往北可以找到纳特龙湖。插入 Screen Overlay, 让地图更漂亮更有故事感。</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F1.png"></p><p>火烈鸟在湖水干涸时，才开始筑巢产卵抚育幼鸟，这样周围的盐沼会成为托儿所的天然护城河。卫星影像是在不同时期采集的，有时湖水丰盈，有时适逢干涸，在缩放地图的时候，运气好就可以刚好看到红红粉粉的河床。</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F2.png"></p><p>从 NASA 网页下载了一张图，在 ArcGIS Earth 中插入 <strong>Ground Overlay</strong>，拖拖拽拽就这样。</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F3.png"><br><img data-src="/images/blogImg/Volcano_1_LakeNatron_F4.png"></p><h2 id="03-加拉帕戈斯群岛-Galapagos-Islands"><a href="#03-加拉帕戈斯群岛-Galapagos-Islands" class="headerlink" title="03 加拉帕戈斯群岛&#x2F;Galapagos Islands"></a>03 加拉帕戈斯群岛&#x2F;Galapagos Islands</h2><p><strong>加拉帕戈斯群岛</strong>(Galapagos Islands)  位于太平洋东部，完全是由海底火山喷发形成的。</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_1.png"><br><img data-src="/images/blogImg/Volcano_1_Galapagos_2.png"></p><p><strong>费尔南迪娜岛</strong>(Isla Fernandina) 是其中最年轻的，目前仍在增长。巨大的火山口的热量吸引着陆地鬣蜥翻山越岭，披荆斩棘，前来产卵孵化。</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_3.png"></p><p><strong>下载 ArcGIS Earth：</strong><br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p><p><strong>参考</strong></p><ul><li>BBC: <span class="exturl" data-url="aHR0cDovL3d3dy5iYmNlYXJ0aC5jb20vc2hvd3MvYS1wZXJmZWN0LXBsYW5ldA==">www.bbcearth.com/shows/a-perfect-planet<i class="fa fa-external-link-alt"></i></span></li><li>腾讯视频: v.qq.com&#x2F;x&#x2F;cover&#x2F;mzc00200mmwc0xg&#x2F;n0035bhlkmn.html</li><li>NASA: earthobservatory.nasa.gov&#x2F;images&#x2F;90191&#x2F;lake-natron-tanzania</li></ul>]]></content>
     
@@ -41,16 +41,24 @@
     <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
     
     
-    <category term="ArcGIS Earth, BBC, Tutorials, Jump start, 3D" scheme="https://kikitamap.com/tags/ArcGIS-Earth-BBC-Tutorials-Jump-start-3D/"/>
+    <category term="3D" scheme="https://kikitamap.com/tags/3D/"/>
+    
+    <category term="ArcGIS Earth" scheme="https://kikitamap.com/tags/ArcGIS-Earth/"/>
+    
+    <category term="BBC" scheme="https://kikitamap.com/tags/BBC/"/>
+    
+    <category term="Tutorials" scheme="https://kikitamap.com/tags/Tutorials/"/>
+    
+    <category term="Jump start" scheme="https://kikitamap.com/tags/Jump-start/"/>
     
   </entry>
   
   <entry>
     <title>Exploring the Footprints of BBC Documentaries in ArcGIS Earth</title>
-    <link href="https://kikitamap.com/en/BBC-Volcanos-1/"/>
-    <id>https://kikitamap.com/en/BBC-Volcanos-1/</id>
+    <link href="https://kikitamap.com/2024/12/25/en-2024-12-25-BBC-Volcanos-1-en/"/>
+    <id>https://kikitamap.com/2024/12/25/en-2024-12-25-BBC-Volcanos-1-en/</id>
     <published>2024-12-25T08:10:11.000Z</published>
-    <updated>2024-12-27T07:12:53.393Z</updated>
+    <updated>2024-12-27T09:02:39.523Z</updated>
     
     <content type="html"><![CDATA[<p>The BBC’s documentaries are almost all masterpieces, and of course, I am an avid fan—especially of the Planet series. The wallpaper-grade visuals and the narration full of memorable quotes bring brilliance to days spent indoors. </p><p>In early 2021, the BBC released <em>A Perfect Planet</em>, a documentary that took four years to produce. Filmed across six continents and 31 countries, it spans four episodes, illustrating the wondrous forces shaping Earth—volcanoes, the sun, weather, and the ocean—while maintaining its delicate balance. The final segment examines humanity’s impact on our planet.</p><p>My child was particularly curious, repeatedly asking me where these filming locations were. That’s also the question I wanted to explore, so I decided to dive deeper. This article focuses on the filming locations featured in the first episode, <em>Volcanoes</em>, exploring the terrains and landscapes together. If you have a projector and a blank wall at home, the immersive effect is even better.</p><p>Across Earth’s surface, there are more than 1,500 active volcanoes. Without volcanoes, Earth wouldn’t have oceans, land, an atmosphere, or even life itself.</p><h2 id="01-Kilauea-Volcano"><a href="#01-Kilauea-Volcano" class="headerlink" title="01 Kilauea Volcano"></a>01 Kilauea Volcano</h2><p>Accompanied by the spectacular eruption footage and Sir David Attenborough’s familiar voice, the journey begins with <strong>Kilauea Volcano</strong> in Hawaii, one of the most active and massive volcanoes in the world.</p><p>Finding this volcano’s location is simple, but if you want to view it from a “God’s eye view” or a “drone perspective,” <strong>ArcGIS Earth</strong> is an excellent choice. It’s free to download, beginner-friendly, and even suitable for kids.</p><p>ArcGIS Earth provides high-resolution global basemaps and includes global elevation services to support realistic terrain visualization. Its GeoSearch feature allows you to type in a location name and fly directly to the recommended spot. By adjusting terrain exaggeration, you can enhance the contrast of terrain undulations to closely study the shape of the crater.</p><p>When my child asked where the volcano is, exploring the 3D map made it easier to explain terms like Hawaii, Pacific Ocean, archipelago, southeastern region, and crater. Switching between basemaps offers diverse views of the terrain.</p><p><img data-src="/images/blogImg/Volcano_1_Kilauea_1.png"><br><img data-src="/images/blogImg/Volcano_1_Kilauea_2.png"></p><h2 id="02-Ol-Doinyo-Lengai"><a href="#02-Ol-Doinyo-Lengai" class="headerlink" title="02 Ol Doinyo Lengai"></a>02 Ol Doinyo Lengai</h2><p><strong>Ol Doinyo Lengai</strong> (Tanzania) is situated in northern Tanzania within the East African Rift. It is one of Africa’s most active volcanoes. To its north lies the highly alkaline <strong>Lake Natron</strong>, a haven for flamingos, providing a natural sanctuary for their chicks.</p><p>The volcano’s crater and surface patterns are distinctly visible on a 3D map. To the north, you can locate Lake Natron. By inserting a screen overlay, the map becomes more vivid and engaging.</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F1.png"></p><p>Flamingos begin nesting and laying eggs when the lake dries up, as the surrounding salt flats form a natural protective moat for the nursery. Satellite imagery, captured at different times, sometimes shows the lake full and other times dry. With a bit of luck, zooming in on the map might reveal the pink and red riverbeds.</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F2.png"></p><p>I downloaded an image from NASA’s website and inserted it as a <strong>Ground Overlay</strong> in ArcGIS Earth. After a bit of dragging and adjusting, voilà!</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F3.png"><br><img data-src="/images/blogImg/Volcano_1_LakeNatron_F4.png"></p><h2 id="03-Galapagos-Islands"><a href="#03-Galapagos-Islands" class="headerlink" title="03 Galapagos Islands"></a>03 Galapagos Islands</h2><p>The <strong>Galapagos Islands</strong>, located in the eastern Pacific Ocean, were entirely formed by undersea volcanic eruptions.</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_1.png"><br><img data-src="/images/blogImg/Volcano_1_Galapagos_2.png"></p><p><strong>Fernandina Island</strong> is the youngest in the archipelago and is still growing. The heat from its massive crater attracts land iguanas, which cross rugged terrains to lay and incubate their eggs.</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_3.png"></p><p><strong>Download ArcGIS Earth:</strong><br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p><p><strong>References</strong></p><ul><li>BBC: <span class="exturl" data-url="aHR0cDovL3d3dy5iYmNlYXJ0aC5jb20vc2hvd3MvYS1wZXJmZWN0LXBsYW5ldA==">www.bbcearth.com/shows/a-perfect-planet<i class="fa fa-external-link-alt"></i></span></li><li>Tencent Video: v.qq.com&#x2F;x&#x2F;cover&#x2F;mzc00200mmwc0xg&#x2F;n0035bhlkmn.html</li><li>NASA: earthobservatory.nasa.gov&#x2F;images&#x2F;90191&#x2F;lake-natron-tanzania</li></ul>]]></content>
     
@@ -70,7 +78,15 @@
     <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
     
     
-    <category term="ArcGIS Earth, BBC, Tutorials, Jump start, 3D" scheme="https://kikitamap.com/tags/ArcGIS-Earth-BBC-Tutorials-Jump-start-3D/"/>
+    <category term="3D" scheme="https://kikitamap.com/tags/3D/"/>
+    
+    <category term="ArcGIS Earth" scheme="https://kikitamap.com/tags/ArcGIS-Earth/"/>
+    
+    <category term="BBC" scheme="https://kikitamap.com/tags/BBC/"/>
+    
+    <category term="Tutorials" scheme="https://kikitamap.com/tags/Tutorials/"/>
+    
+    <category term="Jump start" scheme="https://kikitamap.com/tags/Jump-start/"/>
     
   </entry>
   
