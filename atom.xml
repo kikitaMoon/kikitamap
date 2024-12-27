@@ -6,7 +6,7 @@
   <link href="https://kikitamap.com/atom.xml" rel="self"/>
   
   <link href="https://kikitamap.com/"/>
-  <updated>2024-12-24T03:31:31.534Z</updated>
+  <updated>2024-12-27T07:13:29.456Z</updated>
   <id>https://kikitamap.com/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在ArcGIS Earth中寻找BBC纪录片的足迹</title>
+    <link href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"/>
+    <id>https://kikitamap.com/2024/12/25/BBC-Volcanos-1/</id>
+    <published>2024-12-25T08:10:11.000Z</published>
+    <updated>2024-12-27T07:13:29.456Z</updated>
+    
+    <content type="html"><![CDATA[<p>BBC的纪录片几乎每部都堪称神作，我当然也是资深忠粉之一，尤其大爱星球系列。壁纸级的画面和金句频出的旁白，是足不出户的日子里的万丈光芒。<br>2021年初BBC推出的《完美星球&#x2F;Perfect Planet》，历时4年制作，拍摄地遍布六大洲31个国家，分四集讲述了在地球上自然造物的神奇力量，火山，太阳，气候，海洋无可替代地创造和维护着地球这颗完美星球的独特微妙的平衡；以及最后一部分，人类自身对地球的影响。</p><p>小朋友非常感兴趣，不断地问我这些摄影的地点在哪里？这也是我想知道的答案，那我就来做个扩展阅读。<br>这篇分享下第一集《火山》中出现的摄影地点，云端共赏地形地貌。如果家中有投影仪和一整面墙，那沉浸效果更佳。</p><p>地球表面上，现有超过 1500 座活火山。没有火山，地球上就不会产生海洋、陆地、大气，乃至生命。</p><h2 id="01-基拉韦厄火山-Kilauea-Volcano"><a href="#01-基拉韦厄火山-Kilauea-Volcano" class="headerlink" title="01 基拉韦厄火山&#x2F;Kilauea Volcano"></a>01 基拉韦厄火山&#x2F;Kilauea Volcano</h2><p>跟随着火山喷发的壮观画面和 大卫·爱登堡 熟悉的声音，首先看到的是 <strong>基拉韦厄火山</strong>（Kilauea volcano, Hawaii），一座位于夏威夷的非常活跃的巨大活火山。</p><p>想找到这座火山的位置本身不难，如果想从“上帝视角”和“无人机视角”去看这座火山，那 <strong>ArcGIS Earth</strong> 是个不错的选择。免费下载使用，新手友好，小朋友可用。</p><p>ArcGIS Earth 提供了全球高清影像底图&#x2F;basemap，并包含全球高程服务，支持真实地形的展示。也提供了位置搜索&#x2F;GeoSearch，输入地名即带你飞到推荐的位置。设置地形夸张，增强地形起伏对比，可以仔细了解火山口的形态。</p><p>小朋友问我火山在哪里？ 这样3D地图看一遍，夏威夷，太平洋，群岛，东南部，火山口…… 这些名词就不难解释了。更换不同的底图对比观察地形。</p><p><img data-src="/images/blogImg/Volcano_1_Kilauea_1.png"><br><img data-src="/images/blogImg/Volcano_1_Kilauea_2.png"></p><h2 id="02-伦盖伊火山-Ol-Doinyo-Lengai"><a href="#02-伦盖伊火山-Ol-Doinyo-Lengai" class="headerlink" title="02 伦盖伊火山&#x2F;Ol Doinyo Lengai"></a>02 伦盖伊火山&#x2F;Ol Doinyo Lengai</h2><p><strong>伦盖伊火山</strong> (Ol Doinyo Lengai,Tanzania ) 位于坦桑尼亚北部，属于东非大裂谷火山，是非洲最活跃的火山之一。它的北侧是高腐蚀性的<strong>纳特龙湖</strong> (Lake Natron)，这里是火烈鸟的天堂，为雏鸟们提供了天然的庇护所。</p><p>火山口和地表脉络在3D地图上清晰可见，往北可以找到纳特龙湖。插入 Screen Overlay, 让地图更漂亮更有故事感。</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F1.png"></p><p>火烈鸟在湖水干涸时，才开始筑巢产卵抚育幼鸟，这样周围的盐沼会成为托儿所的天然护城河。卫星影像是在不同时期采集的，有时湖水丰盈，有时适逢干涸，在缩放地图的时候，运气好就可以刚好看到红红粉粉的河床。</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F2.png"></p><p>从 NASA 网页下载了一张图，在 ArcGIS Earth 中插入 <strong>Ground Overlay</strong>，拖拖拽拽就这样。</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F3.png"><br><img data-src="/images/blogImg/Volcano_1_LakeNatron_F4.png"></p><h2 id="03-加拉帕戈斯群岛-Galapagos-Islands"><a href="#03-加拉帕戈斯群岛-Galapagos-Islands" class="headerlink" title="03 加拉帕戈斯群岛&#x2F;Galapagos Islands"></a>03 加拉帕戈斯群岛&#x2F;Galapagos Islands</h2><p><strong>加拉帕戈斯群岛</strong>(Galapagos Islands)  位于太平洋东部，完全是由海底火山喷发形成的。</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_1.png"><br><img data-src="/images/blogImg/Volcano_1_Galapagos_2.png"></p><p><strong>费尔南迪娜岛</strong>(Isla Fernandina) 是其中最年轻的，目前仍在增长。巨大的火山口的热量吸引着陆地鬣蜥翻山越岭，披荆斩棘，前来产卵孵化。</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_3.png"></p><p><strong>下载 ArcGIS Earth：</strong><br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p><p><strong>参考</strong></p><ul><li>BBC: <span class="exturl" data-url="aHR0cDovL3d3dy5iYmNlYXJ0aC5jb20vc2hvd3MvYS1wZXJmZWN0LXBsYW5ldA==">www.bbcearth.com/shows/a-perfect-planet<i class="fa fa-external-link-alt"></i></span></li><li>腾讯视频: v.qq.com&#x2F;x&#x2F;cover&#x2F;mzc00200mmwc0xg&#x2F;n0035bhlkmn.html</li><li>NASA: earthobservatory.nasa.gov&#x2F;images&#x2F;90191&#x2F;lake-natron-tanzania</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;BBC的纪录片几乎每部都堪称神作，我当然也是资深忠粉之一，尤其大爱星球系列。壁纸级的画面和金句频出的旁白，是足不出户的日子里的万丈光芒。&lt;br&gt;2021年初BBC推出的《完美星球&amp;#x2F;Perfect Planet》，历时4年制作，拍摄地遍布六大洲31个国家，分四集讲述了在地球上自然造物的神奇力量，火山，太阳，气候，海洋无可替代地创造和维护着地球这颗完美星球的独特微妙的平衡；以及最后一部分，人类自身对地球的影响。&lt;/p&gt;
+&lt;p&gt;小朋友非常感兴趣，不断地问我这些摄影的地点在哪里？这也是我想知道的答案，那我就来做个扩展阅读。&lt;br&gt;这篇分享下第一集《火山》中出现的摄影地点，云端共赏地形地貌。如果家中有投影仪和一整面墙，那沉浸效果更佳。&lt;/p&gt;
+&lt;p&gt;地球表面上，现有超过 1500 座活火山。没有火山，地球上就不会产生海洋、陆地、大气，乃至生命。&lt;/p&gt;
+&lt;h2 id=&quot;01-基拉韦厄火山-Kilauea-Volcano&quot;&gt;&lt;a href=&quot;#01-基拉韦厄火山-Kilauea-Volcano&quot; class=&quot;headerlink&quot; title=&quot;01 基拉韦厄火山&amp;#x2F;Kilauea Volcano&quot;&gt;&lt;/a&gt;01 基拉韦厄火山&amp;#x2F;Kilauea Volcano&lt;/h2&gt;&lt;p&gt;跟随着火山喷发的壮观画面和 大卫·爱登堡 熟悉的声音，首先看到的是 &lt;strong&gt;基拉韦厄火山&lt;/strong&gt;（Kilauea volcano, Hawaii），一座位于夏威夷的非常活跃的巨大活火山。&lt;/p&gt;
+&lt;p&gt;想找到这座火山的位置本身不难，如果想从“上帝视角”和“无人机视角”去看这座火山，那 &lt;strong&gt;ArcGIS Earth&lt;/strong&gt; 是个不错的选择。免费下载使用，新手友好，小朋友可用。&lt;/p&gt;
+&lt;p&gt;ArcGIS Earth 提供了全球高清影像底图&amp;#x2F;basemap，并包含全球高程服务，支持真实地形的展示。也提供了位置搜索&amp;#x2F;GeoSearch，输入地名即带你飞到推荐的位置。设置地形夸张，增强地形起伏对比，可以仔细了解火山口的形态。&lt;/p&gt;
+&lt;p&gt;小朋友问我火山在哪里？ 这样3D地图看一遍，夏威夷，太平洋，群岛，东南部，火山口…… 这些名词就不难解释了。更换不同的底图对比观察地形。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_1_Kilauea_1.png&quot;&gt;&lt;br&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_1_Kilauea_2.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;02-伦盖伊火山-Ol-Doinyo-Lengai&quot;&gt;&lt;a href=&quot;#02-伦盖伊火山-Ol-Doinyo-Lengai&quot; class=&quot;headerlink&quot; title=&quot;02 伦盖伊火山&amp;#x2F;Ol Doinyo Lengai&quot;&gt;&lt;/a&gt;02 伦盖伊火山&amp;#x2F;Ol Doinyo Lengai&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+    <category term="ArcGIS Earth, BBC, Tutorials, Jump start, 3D" scheme="https://kikitamap.com/tags/ArcGIS-Earth-BBC-Tutorials-Jump-start-3D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Exploring the Footprints of BBC Documentaries in ArcGIS Earth</title>
+    <link href="https://kikitamap.com/en/BBC-Volcanos-1/"/>
+    <id>https://kikitamap.com/en/BBC-Volcanos-1/</id>
+    <published>2024-12-25T08:10:11.000Z</published>
+    <updated>2024-12-27T07:12:53.393Z</updated>
+    
+    <content type="html"><![CDATA[<p>The BBC’s documentaries are almost all masterpieces, and of course, I am an avid fan—especially of the Planet series. The wallpaper-grade visuals and the narration full of memorable quotes bring brilliance to days spent indoors. </p><p>In early 2021, the BBC released <em>A Perfect Planet</em>, a documentary that took four years to produce. Filmed across six continents and 31 countries, it spans four episodes, illustrating the wondrous forces shaping Earth—volcanoes, the sun, weather, and the ocean—while maintaining its delicate balance. The final segment examines humanity’s impact on our planet.</p><p>My child was particularly curious, repeatedly asking me where these filming locations were. That’s also the question I wanted to explore, so I decided to dive deeper. This article focuses on the filming locations featured in the first episode, <em>Volcanoes</em>, exploring the terrains and landscapes together. If you have a projector and a blank wall at home, the immersive effect is even better.</p><p>Across Earth’s surface, there are more than 1,500 active volcanoes. Without volcanoes, Earth wouldn’t have oceans, land, an atmosphere, or even life itself.</p><h2 id="01-Kilauea-Volcano"><a href="#01-Kilauea-Volcano" class="headerlink" title="01 Kilauea Volcano"></a>01 Kilauea Volcano</h2><p>Accompanied by the spectacular eruption footage and Sir David Attenborough’s familiar voice, the journey begins with <strong>Kilauea Volcano</strong> in Hawaii, one of the most active and massive volcanoes in the world.</p><p>Finding this volcano’s location is simple, but if you want to view it from a “God’s eye view” or a “drone perspective,” <strong>ArcGIS Earth</strong> is an excellent choice. It’s free to download, beginner-friendly, and even suitable for kids.</p><p>ArcGIS Earth provides high-resolution global basemaps and includes global elevation services to support realistic terrain visualization. Its GeoSearch feature allows you to type in a location name and fly directly to the recommended spot. By adjusting terrain exaggeration, you can enhance the contrast of terrain undulations to closely study the shape of the crater.</p><p>When my child asked where the volcano is, exploring the 3D map made it easier to explain terms like Hawaii, Pacific Ocean, archipelago, southeastern region, and crater. Switching between basemaps offers diverse views of the terrain.</p><p><img data-src="/images/blogImg/Volcano_1_Kilauea_1.png"><br><img data-src="/images/blogImg/Volcano_1_Kilauea_2.png"></p><h2 id="02-Ol-Doinyo-Lengai"><a href="#02-Ol-Doinyo-Lengai" class="headerlink" title="02 Ol Doinyo Lengai"></a>02 Ol Doinyo Lengai</h2><p><strong>Ol Doinyo Lengai</strong> (Tanzania) is situated in northern Tanzania within the East African Rift. It is one of Africa’s most active volcanoes. To its north lies the highly alkaline <strong>Lake Natron</strong>, a haven for flamingos, providing a natural sanctuary for their chicks.</p><p>The volcano’s crater and surface patterns are distinctly visible on a 3D map. To the north, you can locate Lake Natron. By inserting a screen overlay, the map becomes more vivid and engaging.</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F1.png"></p><p>Flamingos begin nesting and laying eggs when the lake dries up, as the surrounding salt flats form a natural protective moat for the nursery. Satellite imagery, captured at different times, sometimes shows the lake full and other times dry. With a bit of luck, zooming in on the map might reveal the pink and red riverbeds.</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F2.png"></p><p>I downloaded an image from NASA’s website and inserted it as a <strong>Ground Overlay</strong> in ArcGIS Earth. After a bit of dragging and adjusting, voilà!</p><p><img data-src="/images/blogImg/Volcano_1_LakeNatron_F3.png"><br><img data-src="/images/blogImg/Volcano_1_LakeNatron_F4.png"></p><h2 id="03-Galapagos-Islands"><a href="#03-Galapagos-Islands" class="headerlink" title="03 Galapagos Islands"></a>03 Galapagos Islands</h2><p>The <strong>Galapagos Islands</strong>, located in the eastern Pacific Ocean, were entirely formed by undersea volcanic eruptions.</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_1.png"><br><img data-src="/images/blogImg/Volcano_1_Galapagos_2.png"></p><p><strong>Fernandina Island</strong> is the youngest in the archipelago and is still growing. The heat from its massive crater attracts land iguanas, which cross rugged terrains to lay and incubate their eggs.</p><p><img data-src="/images/blogImg/Volcano_1_Galapagos_3.png"></p><p><strong>Download ArcGIS Earth:</strong><br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p><p><strong>References</strong></p><ul><li>BBC: <span class="exturl" data-url="aHR0cDovL3d3dy5iYmNlYXJ0aC5jb20vc2hvd3MvYS1wZXJmZWN0LXBsYW5ldA==">www.bbcearth.com/shows/a-perfect-planet<i class="fa fa-external-link-alt"></i></span></li><li>Tencent Video: v.qq.com&#x2F;x&#x2F;cover&#x2F;mzc00200mmwc0xg&#x2F;n0035bhlkmn.html</li><li>NASA: earthobservatory.nasa.gov&#x2F;images&#x2F;90191&#x2F;lake-natron-tanzania</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;The BBC’s documentaries are almost all masterpieces, and of course, I am an avid fan—especially of the Planet series. The wallpaper-grade visuals and the narration full of memorable quotes bring brilliance to days spent indoors. &lt;/p&gt;
+&lt;p&gt;In early 2021, the BBC released &lt;em&gt;A Perfect Planet&lt;/em&gt;, a documentary that took four years to produce. Filmed across six continents and 31 countries, it spans four episodes, illustrating the wondrous forces shaping Earth—volcanoes, the sun, weather, and the ocean—while maintaining its delicate balance. The final segment examines humanity’s impact on our planet.&lt;/p&gt;
+&lt;p&gt;My child was particularly curious, repeatedly asking me where these filming locations were. That’s also the question I wanted to explore, so I decided to dive deeper. This article focuses on the filming locations featured in the first episode, &lt;em&gt;Volcanoes&lt;/em&gt;, exploring the terrains and landscapes together. If you have a projector and a blank wall at home, the immersive effect is even better.&lt;/p&gt;
+&lt;p&gt;Across Earth’s surface, there are more than 1,500 active volcanoes. Without volcanoes, Earth wouldn’t have oceans, land, an atmosphere, or even life itself.&lt;/p&gt;
+&lt;h2 id=&quot;01-Kilauea-Volcano&quot;&gt;&lt;a href=&quot;#01-Kilauea-Volcano&quot; class=&quot;headerlink&quot; title=&quot;01 Kilauea Volcano&quot;&gt;&lt;/a&gt;01 Kilauea Volcano&lt;/h2&gt;&lt;p&gt;Accompanied by the spectacular eruption footage and Sir David Attenborough’s familiar voice, the journey begins with &lt;strong&gt;Kilauea Volcano&lt;/strong&gt; in Hawaii, one of the most active and massive volcanoes in the world.&lt;/p&gt;
+&lt;p&gt;Finding this volcano’s location is simple, but if you want to view it from a “God’s eye view” or a “drone perspective,” &lt;strong&gt;ArcGIS Earth&lt;/strong&gt; is an excellent choice. It’s free to download, beginner-friendly, and even suitable for kids.&lt;/p&gt;
+&lt;p&gt;ArcGIS Earth provides high-resolution global basemaps and includes global elevation services to support realistic terrain visualization. Its GeoSearch feature allows you to type in a location name and fly directly to the recommended spot. By adjusting terrain exaggeration, you can enhance the contrast of terrain undulations to closely study the shape of the crater.&lt;/p&gt;
+&lt;p&gt;When my child asked where the volcano is, exploring the 3D map made it easier to explain terms like Hawaii, Pacific Ocean, archipelago, southeastern region, and crater. Switching between basemaps offers diverse views of the terrain.&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_1_Kilauea_1.png&quot;&gt;&lt;br&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_1_Kilauea_2.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+    <category term="ArcGIS Earth, BBC, Tutorials, Jump start, 3D" scheme="https://kikitamap.com/tags/ArcGIS-Earth-BBC-Tutorials-Jump-start-3D/"/>
+    
+  </entry>
   
   <entry>
     <title>Ending 2024</title>
@@ -26,19 +84,16 @@
     <content type="html"><![CDATA[<p>重拾下写作，网站换个新衣服，洗尘迎接2025。</p><p>Change log：</p><ol><li>Theme –&gt; NexT</li><li>评论系统 –&gt; Disqus</li><li>SEO优化</li><li>DNS+SSL优化</li><li>Sitemap优化</li><li>RSS优化</li><li>Categories,Tags优化</li><li>图片地址优化</li></ol>]]></content>
     
     
+      
+      
     <summary type="html">&lt;p&gt;重拾下写作，网站换个新衣服，洗尘迎接2025。&lt;/p&gt;
 &lt;p&gt;Change log：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Theme –&amp;gt; NexT&lt;/li&gt;
 &lt;li&gt;评论系统 –&amp;gt; Disqus&lt;/li&gt;
 &lt;li&gt;SEO优化&lt;/li&gt;
-&lt;li&gt;DNS+SSL优化&lt;/li&gt;
-&lt;li&gt;Sitemap优化&lt;/li&gt;
-&lt;li&gt;RSS优化&lt;/li&gt;
-&lt;li&gt;Categories,Tags优化&lt;/li&gt;
-&lt;li&gt;图片地址优化&lt;/li&gt;
-&lt;/ol&gt;
-</summary>
+&lt;li&gt;DNS+SSL优化&lt;/li</summary>
+      
     
     
     
@@ -345,12 +400,11 @@
     <content type="html"><![CDATA[<p>又是很久没来更新，以至于kikitamap.com这个域名因为没有续费而已经停用接近两周；要不是今晚忽然想写点什么，还不知道什么时候我才能发现。</p><p>工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了你的休息时间，反而又要”熬夜“ ？事情不能明天做吗？ 我总是无言以对，我这种矫情的时间独占需求，估计她不会理解，只好安抚她说马上就睡。大概，也不是所有人都有与自己独处的强需求。</p><p>我喜欢拍照，拍各种自认为有趣的东西，因此手机空间经常告急，只好翻一翻，删除一些不喜欢的或是没有什么内容的。忽然发现了这张很久前拍的。</p><p><img data-src="/images/blogImg/SSN_theShade_20160403_TJWQ.jpg"></p><p>当时的场景是我在等人，刚好从站的位置，看到自己的影子叠在橱窗里的模特身上，感觉很有点意思，就顺手拍了下来。世间熙熙攘攘，我们大多数都是追寻成为模特壳子的样子；住在壳子里面的人的样子呢？ta们是同一个吗？</p>]]></content>
     
     
+      
+      
     <summary type="html">&lt;p&gt;又是很久没来更新，以至于kikitamap.com这个域名因为没有续费而已经停用接近两周；要不是今晚忽然想写点什么，还不知道什么时候我才能发现。&lt;/p&gt;
-&lt;p&gt;工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了你的休息时间，反而又要”熬夜“ ？事情不能明天做吗？ 我总是无言以对，我这种矫情的时间独占需求，估计她不会理解，只好安抚她说马上就睡。大概，也不是所有人都有与自己独处的强需求。&lt;/p&gt;
-&lt;p&gt;我喜欢拍照，拍各种自认为有趣的东西，因此手机空间经常告急，只好翻一翻，删除一些不喜欢的或是没有什么内容的。忽然发现了这张很久前拍的。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/SSN_theShade_20160403_TJWQ.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;当时的场景是我在等人，刚好从站的位置，看到自己的影子叠在橱窗里的模特身上，感觉很有点意思，就顺手拍了下来。世间熙熙攘攘，我们大多数都是追寻成为模特壳子的样子；住在壳子里面的人的样子呢？ta们是同一个吗？&lt;/p&gt;
-</summary>
+&lt;p&gt;工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了</summary>
+      
     
     
     
@@ -726,93 +780,6 @@
     <category term="Python" scheme="https://kikitamap.com/tags/Python/"/>
     
     <category term="Cloud Storage" scheme="https://kikitamap.com/tags/Cloud-Storage/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Testing Report for Raster Data Source in Cloud Storage</title>
-    <link href="https://kikitamap.com/2018/08/15/cloudStorage4MD/"/>
-    <id>https://kikitamap.com/2018/08/15/cloudStorage4MD/</id>
-    <published>2018-08-15T01:50:20.000Z</published>
-    <updated>2024-12-24T03:31:31.516Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>For the purpose of assisting and sharing ,  I will try to write in English. </p></blockquote><p>The new tool <strong>Create Cloud Storage Connection File</strong> is first introduced to ArcGIS Desktop 10.6.1 which is the latest version until now.  The <span class="exturl" data-url="ZmlsZTovLy9DOi9Qcm9ncmFtJTIwRmlsZXMvQXJjR0lTL1Byby9SZXNvdXJjZXMvSGVscC9wcm8tYXBwL3Rvb2wtcmVmZXJlbmNlL2RhdGEtbWFuYWdlbWVudC9jcmVhdGUtY2xvdWQtc3RvcmFnZS1jb25uZWN0aW9uLWZpbGUuaHRt">Create Cloud Storage Connection File<i class="fa fa-external-link-alt"></i></span> tool creates a connection file (***.acs**) for ArcGIS-supported cloud storage.  It allows existing raster geoprocessing tools to <strong>write</strong> cloud raster format (CRF) datasets into the cloud storage bucket or <strong>read</strong> raster datasets (not limited to CRF) stored in the cloud storage as input.</p><p>This is an amazing new feature of ArcGIS Desktop, including <strong>ArcMap 10.6.1</strong> and <strong>ArcGIS Pro 2.2</strong>.  The stuff from one of our partners and I are doing some researching on the new capability.  This article is something about the testing report, which indicates the feasibility of various workflows for adding raster datasets to mosaic dataset. </p><br><p><strong>Local Testing Environment</strong></p><ul><li><p>Latest Esri Technologies</p><ul><li><p>ArcMap 10.6.1</p></li><li><p>ArcGIS Pro 2.2.1</p></li></ul></li><li><p>Windows 10 Pro 64 bit English Version</p></li></ul><br><br><h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><h3 id="ArcMap"><a href="#ArcMap" class="headerlink" title="ArcMap"></a>ArcMap</h3><ul><li><p><strong>Steps</strong></p><ol><li>Create Huawei Cloud connection file                              (√)</li><li>Add raster to a local mosaic dataset                               (√)</li></ol></li><li><p><strong>Conclusion</strong></p><ul><li>Bingo !   This workflow for source raster dataset in Huawei Cloud is perfect.</li></ul></li></ul><h3 id="ArcGIS-Pro"><a href="#ArcGIS-Pro" class="headerlink" title="ArcGIS Pro"></a>ArcGIS Pro</h3><ul><li><p><strong>Steps</strong></p><ol><li><p>Create Huawei Cloud connection file                             (√)</p></li><li><p>Add Raster to Mosaic Dataset                                         (×)</p><ul><li><p>Error Message as below:</p><p>Failed to execute. Parameters are not valid.</p><p>Error: 000732  Input Data: Dataset …\HuaWeiConnection.acs\…LGN00_MTL.txt does not exist or is not supported</p></li></ul></li><li><p>Trying  workaround:  Add Raster to Mosaic Dataset using arcpy  (python 3.x for ArcGIS Pro).   </p><p>For the purpose of verification ,  Add Raster to Mosaic Dataset using arcpy  (python 2.x for ArcMap), it works.                                                                                (√)</p></li></ol></li><li><p><strong>Conclusion</strong></p><ul><li><p>It should be a bug of ArcGIS Pro,  that the  tool <strong>Add Rasters To Mosaic Dataset</strong> can not recognize the logical file path including cloud connection.  The tool will justify the path if it exists. The path containing cloud connection is a logical path , not a physical path.   The same input file path works in ArcMap.</p></li><li><p>Internal case submitted <span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNjYwNjk=">#02166069<i class="fa fa-external-link-alt"></i></span>  - <em>closed</em></p><p>Related bug:  <em>BUG-000116191</em> </p><p>Workaround:  Store the rasters in the root of the bucket, and add them from that location.</p></li></ul> <br></li></ul><h2 id="ALiBaBa-Cloud"><a href="#ALiBaBa-Cloud" class="headerlink" title="ALiBaBa Cloud"></a>ALiBaBa Cloud</h2><p>   In China, we also call it ALiYun.</p><h3 id="ArcMap-1"><a href="#ArcMap-1" class="headerlink" title="ArcMap"></a>ArcMap</h3><ul><li><p><strong>Steps</strong></p><ol><li><p>Create ALiBaBa Cloud connection file   (×)</p><p>The connection file was created,  but there was a warning:  <em>WARNING 002574: Could not connect to cloud storage</em>  in the log </p></li><li><p>Create a mosaic dataset in a local file geodatabase   (√)</p></li><li><p>Add raster to mosaic dataset   (×) </p><p>An error occurred:  <em>Error: 8004205f: No new mosaic dataset item was added.</em>  </p><p>This error may due to the warning before, I think.</p></li></ol></li><li><p><strong>Conclusion</strong></p><ul><li><p>It may be a bug related to creating connection file to ALiBaBa Cloud Storage.  ArcPy (python 27) for ArcMap didn’t work, either.</p></li><li><p>Extra diagnose</p><ul><li><p>Using Fiddler to capture the HTTP(S) requests…</p><p>I have used Fiddler Software to catch the HTTP(S) requests made by ArcMap, but nothing was found. I had enable the https capture before testing. At the same time , I checked the Windows Task Manager and Resource Monitor that there was a lot of network activities.</p></li><li><p>Using Wireshark to  capture the network transaction …</p><p>Bad TCP records were found.</p></li></ul></li></ul></li></ul><h3 id="ArcGIS-Pro-1"><a href="#ArcGIS-Pro-1" class="headerlink" title="ArcGIS Pro"></a>ArcGIS Pro</h3><ul><li><p><strong>Steps</strong></p><ol><li>Create ALiBaBa Cloud connection file                              (×)</li><li>Create a mosaic dataset in a local file geodatabase      (√)</li><li>Add raster to mosaic dataset                                             (×)</li></ol></li><li><p><strong>Conclusion</strong></p><ul><li>Same issue with using HUAWEI cloud source data, and the issue points to the tool not to the cloud itself.</li><li>ArcPy (python 36) for ArcGIS Pro didn’t work, either.</li></ul></li></ul><p>Internal case submitted  <span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNTc3NjI=">#02157762<i class="fa fa-external-link-alt"></i></span></p><p>Related bug:  <em>BUG-000116297</em></p><p>Workaround:  Internal Version 9226</p><br><h2 id="Custom-Cloud"><a href="#Custom-Cloud" class="headerlink" title="Custom Cloud"></a>Custom Cloud</h2><p>using s3 compatible cloud, for example,  Tencent Cloud.</p><ul><li><p><strong>Steps</strong></p><ol><li>Create Tencent Cloud connection file using ArcPy (python 27) for ArcMap </li><li>Capture network interaction information using WireShark<ul><li>As Amazon Provider selected, the region and endpoint will request Amazon CNAME address. In this condition, I don’t think the custom cloud works for now.</li></ul></li></ol></li><li><p>Internal case submitted</p><p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNTc3NzI=">#02157772 Can Service End Point parameter be customized by users when connecting to the cloud storage ?<i class="fa fa-external-link-alt"></i></span></p></li></ul><br><h2 id="Other-Issue"><a href="#Other-Issue" class="headerlink" title="Other Issue"></a>Other Issue</h2><p>failure with file Geodatabase transfer</p><ul><li><p><strong>Details</strong></p><p>When the file geodatabase was copied to a new location ,which was some scheme of path as before, on the other new machine . The mosaic dataset didn’t show up the source raster data at all. </p></li><li><p>Internal case submitted</p><p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNjUyODc=">#02165287 how to transfer mosaic dataset referencing raster dataset in cloud storage<i class="fa fa-external-link-alt"></i></span></p></li></ul><br><br><p>The information above is valid as the day it published, I will try my best to have it up to date.</p><p>Thank you for reviewing.</p>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;For the purpose of assisting and sharing ,  I will try to write in English. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The new tool &lt;strong&gt;Create Cloud Storage Connection File&lt;/strong&gt; is first introduced to ArcGIS Desktop 10.6.1 which is the latest version until now.  The &lt;span class=&quot;exturl&quot; data-url=&quot;ZmlsZTovLy9DOi9Qcm9ncmFtJTIwRmlsZXMvQXJjR0lTL1Byby9SZXNvdXJjZXMvSGVscC9wcm8tYXBwL3Rvb2wtcmVmZXJlbmNlL2RhdGEtbWFuYWdlbWVudC9jcmVhdGUtY2xvdWQtc3RvcmFnZS1jb25uZWN0aW9uLWZpbGUuaHRt&quot;&gt;Create Cloud Storage Connection File&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; tool creates a connection file (***.acs**) for ArcGIS-supported cloud storage.  It allows existing raster geoprocessing tools to &lt;strong&gt;write&lt;/strong&gt; cloud raster format (CRF) datasets into the cloud storage bucket or &lt;strong&gt;read&lt;/strong&gt; raster datasets (not limited to CRF) stored in the cloud storage as input.&lt;/p&gt;
-&lt;p&gt;This is an amazing new feature of ArcGIS Desktop, including &lt;strong&gt;ArcMap 10.6.1&lt;/strong&gt; and &lt;strong&gt;ArcGIS Pro 2.2&lt;/strong&gt;.  The stuff from one of our partners and I are doing some researching on the new capability.  This article is something about the testing report, which indicates the feasibility of various workflows for adding raster datasets to mosaic dataset. &lt;/p&gt;
-&lt;br&gt;
-
-&lt;p&gt;&lt;strong&gt;Local Testing Environment&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Latest Esri Technologies&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;ArcMap 10.6.1&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;ArcGIS Pro 2.2.1&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Windows 10 Pro 64 bit English Version&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-
-&lt;br&gt;
-
-&lt;h2 id=&quot;Huawei-Cloud&quot;&gt;&lt;a href=&quot;#Huawei-Cloud&quot; class=&quot;headerlink&quot; title=&quot;Huawei Cloud&quot;&gt;&lt;/a&gt;Huawei Cloud&lt;/h2&gt;&lt;h3 id=&quot;ArcMap&quot;&gt;&lt;a href=&quot;#ArcMap&quot; class=&quot;headerlink&quot; title=&quot;ArcMap&quot;&gt;&lt;/a&gt;ArcMap&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
-    
-    
-    <category term="Raster" scheme="https://kikitamap.com/tags/Raster/"/>
-    
-    <category term="Geoprocessing" scheme="https://kikitamap.com/tags/Geoprocessing/"/>
-    
-    <category term="Python" scheme="https://kikitamap.com/tags/Python/"/>
-    
-    <category term="Cloud Storage" scheme="https://kikitamap.com/tags/Cloud-Storage/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>探索矢量切片的Bundle</title>
-    <link href="https://kikitamap.com/2018/08/13/vectorTileBundle/"/>
-    <id>https://kikitamap.com/2018/08/13/vectorTileBundle/</id>
-    <published>2018-08-13T02:13:29.000Z</published>
-    <updated>2024-12-24T03:31:31.515Z</updated>
-    
-    <content type="html"><![CDATA[<p>为什么会有这个需求和想法呢？还是源自于 <a href="http://kikitamap.com/2018/07/20/lovelyGit/"><strong>局部更新矢量切片</strong></a> 的想法，当我们遭遇一个海量矢量数据的矢量切片<strong>创建</strong>和<strong>更新</strong>任务时，希望尽可能少且尽可能准确地更新受影响的bundle，而不是全局，那么了解bundle的范围是十分必要的。在写上一篇<a href="http://kikitamap.com/2018/07/23/CompactCache/"><strong>《紧凑型缓存技术小结》</strong></a>的时候，目的在于在其基础之上探索矢量切片的bundle。</p><p>为了确保单个bundle文件的矢量切片数据的完整性，每级每次至少需要更新一个bundle文件。当矢量切片的数据量不显著的时候，可能每级本身也就一个或几个bundle，那局部更新体现不出它的优势； 当某些等级（例如LOD比较大的级别）矢量切片bundle非常多的时候，如果更新的范围只影响了其中一个，或者几个文件时，局部更新是有必要的。</p><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参照栅格切片的 <span class="exturl" data-url="aHR0cDovL2VudGVycHJpc2UuYXJjZ2lzLmNvbS9lbi9zZXJ2ZXIvbGF0ZXN0L3B1Ymxpc2gtc2VydmljZXMvd2luZG93cy9pbnNpZGUtdGhlLWNvbXBhY3QtY2FjaGUtc3RvcmFnZS1mb3JtYXQuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span> 中明确说明的，  “A bundle contains up to 16,384 tiles. ”   那就是 128 × 128 的关系，照搬到矢量切片是否适用呢？ 通过验证，确实如此。</p><p>先上结论，第N级的矢量切片的bundle范围刚好是第N-7级的切片范围，如下图，红线是 level 6 的切片索引，刚好可以作为level 13 的bundle范围：</p><p><img data-src="/images/blogImg/vectorTileBundle_bundlelevel.png"></p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>为了做验证和测试，我用了美国大选的区块数据做实验，这个面数据包含182895条记录，节点较多，很适合做矢量切片。假设，需要更新的切片范围仅仅是密歇根湖的一角：</p><p><img data-src="/images/blogImg/vectorTileBundle_UpdateDetails.png"></p><blockquote><p>PS：上图是完全由 ArcGIS Pro 制作导出的，使用到了 Layout , Extent Indicator; 从制图角度来说，ArcGIS Pro 是个非常好的桌面端应用，可以继承和超越ArcMap。 </p></blockquote><p>以13级为例，更新的这一角仅需替换一个bundle：</p><p><img data-src="/images/blogImg/vectorTileBundle_BundleReplace.png"></p><p>那么自定义工具 Create Part Vector Tile Package 所要做的工作，逻辑就变得非常清晰，也就是通过用户提供的待更新区域（AOI）来计算每级被影响到的bundle文件的地理范围，从而进行bundle的替换工作；包含了为其服务的，解包、打包、解析类的工作。</p><h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>Latest Version：</strong>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMi4xLjE=">Partially Upate ArcGIS Vector Tiles Toolbox 2.1.1<i class="fa fa-external-link-alt"></i></span></p><p><strong>待解决的问题</strong>：</p><ul><li>投影坐标系和自定义坐标系支持</li><li>tile scheme 原生获取</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;为什么会有这个需求和想法呢？还是源自于 &lt;a href=&quot;http://kikitamap.com/2018/07/20/lovelyGit/&quot;&gt;&lt;strong&gt;局部更新矢量切片&lt;/strong&gt;&lt;/a&gt; 的想法，当我们遭遇一个海量矢量数据的矢量切片&lt;strong&gt;创建&lt;/strong&gt;和&lt;strong&gt;更新&lt;/strong&gt;任务时，希望尽可能少且尽可能准确地更新受影响的bundle，而不是全局，那么了解bundle的范围是十分必要的。在写上一篇&lt;a href=&quot;http://kikitamap.com/2018/07/23/CompactCache/&quot;&gt;&lt;strong&gt;《紧凑型缓存技术小结》&lt;/strong&gt;&lt;/a&gt;的时候，目的在于在其基础之上探索矢量切片的bundle。&lt;/p&gt;
-&lt;p&gt;为了确保单个bundle文件的矢量切片数据的完整性，每级每次至少需要更新一个bundle文件。当矢量切片的数据量不显著的时候，可能每级本身也就一个或几个bundle，那局部更新体现不出它的优势； 当某些等级（例如LOD比较大的级别）矢量切片bundle非常多的时候，如果更新的范围只影响了其中一个，或者几个文件时，局部更新是有必要的。&lt;/p&gt;
-&lt;h2 id=&quot;结论&quot;&gt;&lt;a href=&quot;#结论&quot; class=&quot;headerlink&quot; title=&quot;结论&quot;&gt;&lt;/a&gt;结论&lt;/h2&gt;&lt;p&gt;参照栅格切片的 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cDovL2VudGVycHJpc2UuYXJjZ2lzLmNvbS9lbi9zZXJ2ZXIvbGF0ZXN0L3B1Ymxpc2gtc2VydmljZXMvd2luZG93cy9pbnNpZGUtdGhlLWNvbXBhY3QtY2FjaGUtc3RvcmFnZS1mb3JtYXQuaHRt&quot;&gt;帮助文档&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 中明确说明的，  “A bundle contains up to 16,384 tiles. ”   那就是 128 × 128 的关系，照搬到矢量切片是否适用呢？ 通过验证，确实如此。&lt;/p&gt;
-&lt;p&gt;先上结论，第N级的矢量切片的bundle范围刚好是第N-7级的切片范围，如下图，红线是 level 6 的切片索引，刚好可以作为level 13 的bundle范围：&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/vectorTileBundle_bundlelevel.png&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h2&gt;&lt;p&gt;为了做验证和测试，我用了美国大选的区块数据做实验，这个面数据包含182895条记录，节点较多，很适合做矢量切片。假设，需要更新的切片范围仅仅是密歇根湖的一角：&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/vectorTileBundle_UpdateDetails.png&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;PS：上图是完全由 ArcGIS Pro 制作导出的，使用到了 Layout , Extent Indicator; 从制图角度来说，ArcGIS Pro 是个非常好的桌面端应用，可以继承和超越ArcMap。 &lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
-    
-    
-    <category term="ArcGIS Pro" scheme="https://kikitamap.com/tags/ArcGIS-Pro/"/>
-    
-    <category term="ArcGIS Enterprise" scheme="https://kikitamap.com/tags/ArcGIS-Enterprise/"/>
-    
-    <category term="Web" scheme="https://kikitamap.com/tags/Web/"/>
-    
-    <category term="Vector Tiles" scheme="https://kikitamap.com/tags/Vector-Tiles/"/>
     
   </entry>
   

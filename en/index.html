@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+  <meta name="google-site-verification" content="D7-VIdezAZxRhdHLyeHi4PbgNGtvMEITdfvlHsTzq40">
+  <meta name="msvalidate.01" content="269e6924d5038746f000dbb6ca5057d4">
+  <meta name="yandex-verification" content="c1d44182f015562a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:type" content="website">
+<meta property="og:title" content="kikita &amp; Maps">
+<meta property="og:url" content="https://kikitamap.com/en/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="kikita&#39;s Blog | For Tech and Fun">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="spatial inteligence,AI,3D,tech-enhanced geography,geospatial AI">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/en/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"en/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>kikita & Maps - GIS,spatial and artificial intellegence learning and share</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="kikita & Maps" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">kikita & Maps</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGF5YW4=" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitayan"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/12/25/BBC-Volcanos-1/" class="post-title-link" itemprop="url">在ArcGIS Earth中寻找BBC纪录片的足迹</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-12-25 16:10:11" itemprop="dateCreated datePublished" datetime="2024-12-25T16:10:11+08:00">2024-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/12/25/BBC-Volcanos-1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/25/BBC-Volcanos-1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>915</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>BBC的纪录片几乎每部都堪称神作，我当然也是资深忠粉之一，尤其大爱星球系列。壁纸级的画面和金句频出的旁白，是足不出户的日子里的万丈光芒。<br>2021年初BBC推出的《完美星球&#x2F;Perfect Planet》，历时4年制作，拍摄地遍布六大洲31个国家，分四集讲述了在地球上自然造物的神奇力量，火山，太阳，气候，海洋无可替代地创造和维护着地球这颗完美星球的独特微妙的平衡；以及最后一部分，人类自身对地球的影响。</p>
+<p>小朋友非常感兴趣，不断地问我这些摄影的地点在哪里？这也是我想知道的答案，那我就来做个扩展阅读。<br>这篇分享下第一集《火山》中出现的摄影地点，云端共赏地形地貌。如果家中有投影仪和一整面墙，那沉浸效果更佳。</p>
+<p>地球表面上，现有超过 1500 座活火山。没有火山，地球上就不会产生海洋、陆地、大气，乃至生命。</p>
+<h2 id="01-基拉韦厄火山-Kilauea-Volcano"><a href="#01-基拉韦厄火山-Kilauea-Volcano" class="headerlink" title="01 基拉韦厄火山&#x2F;Kilauea Volcano"></a>01 基拉韦厄火山&#x2F;Kilauea Volcano</h2><p>跟随着火山喷发的壮观画面和 大卫·爱登堡 熟悉的声音，首先看到的是 <strong>基拉韦厄火山</strong>（Kilauea volcano, Hawaii），一座位于夏威夷的非常活跃的巨大活火山。</p>
+<p>想找到这座火山的位置本身不难，如果想从“上帝视角”和“无人机视角”去看这座火山，那 <strong>ArcGIS Earth</strong> 是个不错的选择。免费下载使用，新手友好，小朋友可用。</p>
+<p>ArcGIS Earth 提供了全球高清影像底图&#x2F;basemap，并包含全球高程服务，支持真实地形的展示。也提供了位置搜索&#x2F;GeoSearch，输入地名即带你飞到推荐的位置。设置地形夸张，增强地形起伏对比，可以仔细了解火山口的形态。</p>
+<p>小朋友问我火山在哪里？ 这样3D地图看一遍，夏威夷，太平洋，群岛，东南部，火山口…… 这些名词就不难解释了。更换不同的底图对比观察地形。</p>
+<p><img data-src="/images/blogImg/Volcano_1_Kilauea_1.png"><br><img data-src="/images/blogImg/Volcano_1_Kilauea_2.png"></p>
+<h2 id="02-伦盖伊火山-Ol-Doinyo-Lengai"><a href="#02-伦盖伊火山-Ol-Doinyo-Lengai" class="headerlink" title="02 伦盖伊火山&#x2F;Ol Doinyo Lengai"></a>02 伦盖伊火山&#x2F;Ol Doinyo Lengai</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/12/25/BBC-Volcanos-1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/en/BBC-Volcanos-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/en/BBC-Volcanos-1/" class="post-title-link" itemprop="url">Exploring the Footprints of BBC Documentaries in ArcGIS Earth</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-12-25 16:10:11" itemprop="dateCreated datePublished" datetime="2024-12-25T16:10:11+08:00">2024-12-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/en/BBC-Volcanos-1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="/en/BBC-Volcanos-1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>585</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>The BBC’s documentaries are almost all masterpieces, and of course, I am an avid fan—especially of the Planet series. The wallpaper-grade visuals and the narration full of memorable quotes bring brilliance to days spent indoors. </p>
+<p>In early 2021, the BBC released <em>A Perfect Planet</em>, a documentary that took four years to produce. Filmed across six continents and 31 countries, it spans four episodes, illustrating the wondrous forces shaping Earth—volcanoes, the sun, weather, and the ocean—while maintaining its delicate balance. The final segment examines humanity’s impact on our planet.</p>
+<p>My child was particularly curious, repeatedly asking me where these filming locations were. That’s also the question I wanted to explore, so I decided to dive deeper. This article focuses on the filming locations featured in the first episode, <em>Volcanoes</em>, exploring the terrains and landscapes together. If you have a projector and a blank wall at home, the immersive effect is even better.</p>
+<p>Across Earth’s surface, there are more than 1,500 active volcanoes. Without volcanoes, Earth wouldn’t have oceans, land, an atmosphere, or even life itself.</p>
+<h2 id="01-Kilauea-Volcano"><a href="#01-Kilauea-Volcano" class="headerlink" title="01 Kilauea Volcano"></a>01 Kilauea Volcano</h2><p>Accompanied by the spectacular eruption footage and Sir David Attenborough’s familiar voice, the journey begins with <strong>Kilauea Volcano</strong> in Hawaii, one of the most active and massive volcanoes in the world.</p>
+<p>Finding this volcano’s location is simple, but if you want to view it from a “God’s eye view” or a “drone perspective,” <strong>ArcGIS Earth</strong> is an excellent choice. It’s free to download, beginner-friendly, and even suitable for kids.</p>
+<p>ArcGIS Earth provides high-resolution global basemaps and includes global elevation services to support realistic terrain visualization. Its GeoSearch feature allows you to type in a location name and fly directly to the recommended spot. By adjusting terrain exaggeration, you can enhance the contrast of terrain undulations to closely study the shape of the crater.</p>
+<p>When my child asked where the volcano is, exploring the 3D map made it easier to explain terms like Hawaii, Pacific Ocean, archipelago, southeastern region, and crater. Switching between basemaps offers diverse views of the terrain.</p>
+<p><img data-src="/images/blogImg/Volcano_1_Kilauea_1.png"><br><img data-src="/images/blogImg/Volcano_1_Kilauea_2.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/en/BBC-Volcanos-1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2024/12/23/Ending2024/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/12/23/Ending2024/" class="post-title-link" itemprop="url">Ending 2024</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-12-23 16:09:36" itemprop="dateCreated datePublished" datetime="2024-12-23T16:09:36+08:00">2024-12-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Inner-Thoughts/" itemprop="url" rel="index"><span itemprop="name">Inner Thoughts</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/12/23/Ending2024/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/23/Ending2024/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>57</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>重拾下写作，网站换个新衣服，洗尘迎接2025。</p>
+<p>Change log：</p>
+<ol>
+<li>Theme –&gt; NexT</li>
+<li>评论系统 –&gt; Disqus</li>
+<li>SEO优化</li>
+<li>DNS+SSL优化</li>
+<li>Sitemap优化</li>
+<li>RSS优化</li>
+<li>Categories,Tags优化</li>
+<li>图片地址优化</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/08/24/HDataHubCLI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/24/HDataHubCLI/" class="post-title-link" itemprop="url">HERE Data Hub CLI</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-24 20:03:24" itemprop="dateCreated datePublished" datetime="2020-08-24T20:03:24+08:00">2020-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/08/24/HDataHubCLI/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/24/HDataHubCLI/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>700</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>HERE Data Hub 是一个用于空间数据存储的云服务，能够使用户简便地访问、管理空间数据。上一篇 HERE Studio 就是构建在 Data Hub 之上的网页应用程序。</p>
+<p>Data Hub CLI （Command Line Interface）是基于 Node.js 的命令行接口，可以帮助用户进行一些数据管理方面的交互操作。</p>
+<br>
+
+<h2 id="1-如何安装-？"><a href="#1-如何安装-？" class="headerlink" title="1 如何安装 ？"></a>1 如何安装 ？</h2><h3 id="1-1-安装-Node-js-和-npm"><a href="#1-1-安装-Node-js-和-npm" class="headerlink" title="1.1 安装 Node.js 和 npm"></a>1.1 安装 Node.js 和 npm</h3><blockquote>
+<p>安装方式很多种，我直接搬运了 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv">Hexo 官网<i class="fa fa-external-link-alt"></i></span> 的安装指引。当年搭我这个博客时参考过，简洁好用，五星推荐：</p>
+<p>Node.js 为大多数平台提供了官方的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuL2Rvd25sb2FkLw==">安装程序<i class="fa fa-external-link-alt"></i></span>。<br>对于中国大陆地区用户，可以前往 <span class="exturl" data-url="aHR0cHM6Ly9ucG0udGFvYmFvLm9yZy9taXJyb3JzL25vZGU=">淘宝 Node.js 镜像<i class="fa fa-external-link-alt"></i></span> 下载。</p>
+<p>其它的安装方法：</p>
+<ul>
+<li>Windows：通过 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2phc29uZ2luL252cy8=">nvs<i class="fa fa-external-link-alt"></i></span>（推荐）或者<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL252bS1zaC9udm0=">nvm<i class="fa fa-external-link-alt"></i></span> 安装。</li>
+<li>Mac：使用 <span class="exturl" data-url="aHR0cHM6Ly9icmV3LnNoLw==">Homebrew<i class="fa fa-external-link-alt"></i></span> 或 <span class="exturl" data-url="aHR0cDovL3d3dy5tYWNwb3J0cy5vcmcv">MacPorts<i class="fa fa-external-link-alt"></i></span> 安装。</li>
+<li>Linux（DEB&#x2F;RPM-based）：从 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25vZGVzb3VyY2UvZGlzdHJpYnV0aW9ucw==">NodeSource<i class="fa fa-external-link-alt"></i></span> 安装。</li>
+<li>其它：使用相应的软件包管理器进行安装，可以参考由 Node.js 提供的 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuL2Rvd25sb2FkL3BhY2thZ2UtbWFuYWdlci8=">指导<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<p>对于 Mac 和 Linux 同样建议使用 nvs 或者 nvm，以避免可能会出现的权限问题。</p>
+</blockquote>
+<p>验证 Node.js 安装成功。  命令 <code>node -v</code>； <code>npm -v</code> ，看到当前版本号即可：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\xiamu&gt;node <span class="literal">-v</span></span><br><span class="line">v10.<span class="number">16.3</span></span><br><span class="line"></span><br><span class="line">C:\Users\xiamu&gt;npm <span class="literal">-v</span></span><br><span class="line"><span class="number">6.9</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-2-安装-Data-Hub-CLI"><a href="#1-2-安装-Data-Hub-CLI" class="headerlink" title="1.2 安装 Data Hub CLI"></a>1.2 安装 Data Hub CLI</h3><p>使用如下命令完成 Data Hub CLI 安装。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/24/HDataHubCLI/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/08/23/HStudio-intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/08/23/HStudio-intro/" class="post-title-link" itemprop="url">玩一玩 HERE Studio</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-23 23:41:29" itemprop="dateCreated datePublished" datetime="2020-08-23T23:41:29+08:00">2020-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/08/23/HStudio-intro/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/23/HStudio-intro/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>604</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>可能国内并没有太多人知道， HERE 也有一款轻量级的地图在线应用程序 ，可以帮助用户管理自己的数据，快速配置出一幅看起来还不错的在线地图， 它叫 **<span class="exturl" data-url="aHR0cHM6Ly9zdHVkaW8uaGVyZS5jb20v">HERE Studio<i class="fa fa-external-link-alt"></i></span>**。</p>
+<p>HERE Studio 提供了平台上的在线地图服务作为底图，并提供了常用的基础地图配置工具和样式，即使不愿意写代码，也可以配置出漂亮的地图； 当然，如果有更深入或批处理的数据管理和渲染需求，也可以使用 HERE Data Hub CLI 命令行或 RESTful API，Javascript API，因为 HERE Studio 本身就是基于 HERE Data Hub 的一个轻量级网页端应用。 </p>
+<br>
+
+<h3 id="如何获取-HERE-Studio-？"><a href="#如何获取-HERE-Studio-？" class="headerlink" title="如何获取 HERE Studio ？"></a>如何获取 HERE Studio ？</h3><p>首先，注册（Sign Up）或登录（Log In）HERE Developer 官网： <a target="_blank" rel="noopener" href="https://developer.here.com/"><em><strong>developer.here.com</strong></em></a> ；</p>
+<p>然后，创建 Project： <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJvamVjdHM=">***developer.here.com&#x2F;projects ***<i class="fa fa-external-link-alt"></i></span> ；</p>
+<p>这样个人 developer 默认就可以获得一系列的产品的试用 key， 例如 JS API， REST API， SDK 等。 当然，免费流量是有限制的，但对于个人developer了解功能做测试可以啦。</p>
+<p>除了这些 key，免费账号中还有一个很低调的描述，以至于很多用户得了宝藏，还不知道是什么：</p>
+<blockquote>
+<ul>
+<li>Data transfer per month 2.5GB</li>
+<li>Database storage per month 5GB</li>
+</ul>
+</blockquote>
+<p>YES， 这说的就是 HERE Data Hub，  包括 HERE Studio。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/23/HStudio-intro/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/en/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/en/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/en/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>English</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="Select language">
+      
+        <option value="zh-CN" data-href="/index.html" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/index.html" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">155k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:24</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kikitamap","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

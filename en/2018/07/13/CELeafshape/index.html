@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+  <meta name="google-site-verification" content="D7-VIdezAZxRhdHLyeHi4PbgNGtvMEITdfvlHsTzq40">
+  <meta name="msvalidate.01" content="269e6924d5038746f000dbb6ca5057d4">
+  <meta name="yandex-verification" content="c1d44182f015562a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CityEngine 的CGA建模过程是个不断迭代繁衍的过程，我们将这个过程想象成一棵树。 通过 Shapefile，File Geodatabase，AutoCAD DXF 这些矢量数据格式导入CityEngine中的2D基面（Footprint），通常称为 CityEngine Initial Shape，这是这棵树的根节点。通过CGA中的命令符 --&gt; ，将一个shape经过各种形状（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你知道 CityEngine 中的 Leaf Shape 吗？">
+<meta property="og:url" content="https://kikitamap.com/en/2018/07/13/CELeafshape/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="CityEngine 的CGA建模过程是个不断迭代繁衍的过程，我们将这个过程想象成一棵树。 通过 Shapefile，File Geodatabase，AutoCAD DXF 这些矢量数据格式导入CityEngine中的2D基面（Footprint），通常称为 CityEngine Initial Shape，这是这棵树的根节点。通过CGA中的命令符 --&gt; ，将一个shape经过各种形状（">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_2013DS.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_2013DS2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_FGDB.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_SLPK.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CELeafShape_Pro.png">
+<meta property="article:published_time" content="2018-07-13T02:50:36.000Z">
+<meta property="article:modified_time" content="2024-12-24T03:31:31.512Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="3D">
+<meta property="article:tag" content="CityEngine">
+<meta property="article:tag" content="ArcGIS Pro">
+<meta property="article:tag" content="CGA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/CELeafShape_2013DS.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/en/2018/07/13/CELeafshape/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2018/07/13/CELeafshape/","path":"en/2018/07/13/CELeafshape/","title":"你知道 CityEngine 中的 Leaf Shape 吗？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>你知道 CityEngine 中的 Leaf Shape 吗？ | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="kikita & Maps" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGF5YW4=" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitayan"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/13/CELeafshape/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="你知道 CityEngine 中的 Leaf Shape 吗？ | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          你知道 CityEngine 中的 Leaf Shape 吗？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-07-13 10:50:36" itemprop="dateCreated datePublished" datetime="2018-07-13T10:50:36+08:00">2018-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/en/2018/07/13/CELeafshape/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="en/2018/07/13/CELeafshape/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>440</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>CityEngine 的CGA建模过程是个不断迭代繁衍的过程，我们将这个过程想象成一棵树。</p>
+<p>通过 Shapefile，File Geodatabase，AutoCAD DXF 这些矢量数据格式导入CityEngine中的2D基面（Footprint），通常称为 CityEngine <strong>Initial Shape</strong>，这是这棵树的根节点。通过CGA中的命令符 <code>--&gt;</code> ，将一个shape经过各种形状（Geometry）和位置（Pivot，Scope） 的函数操作，生成另一个shape。直到最后，模型建立，最终的shape节点，通常称为 CityEngine <strong>Leaf Shape</strong>。</p>
+<blockquote>
+<p>这个细节的概念，在2013年的开发者大会中提过一次，结合模型层次结构的幻灯片理解下：</p>
+<p><img data-src="/images/blogImg/CELeafShape_2013DS.png"></p>
+<p><img data-src="/images/blogImg/CELeafShape_2013DS2.png"></p>
+<p>完整的幻灯片可以点 <a href="/files/EsriChinaDevSum-2013-EsriCityEngineRuleDev.pdf"><strong>这里</strong></a> 下载。</p>
+</blockquote>
+<p>为什么说是“迭代繁衍”？ 因为除了 Leaf Shape 之外的所有shape 在建模过程中都被紧跟它其后的shape替代而消亡了。</p>
+<p>举例子，在这条规则中，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; function() B </span><br><span class="line">      B  --&gt; function() C </span><br></pre></td></tr></table></figure>
+
+<p>这条规则中 ，A shape 对象已经消亡被B替代，在后续的规则中无法再调用到 A， 如果希望取到与A相同的对象，就需要提前复制出来，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; Anew <span class="title function_">function</span><span class="params">()</span> B            <span class="comment">//A被复制而创建了分支</span></span><br><span class="line">      B    --&gt; function() C</span><br><span class="line">      Anew --&gt; function() D</span><br></pre></td></tr></table></figure>
+
+
+
+<p>了解了这些，那么我们可以进一步回答这个问题：“如何将CityEngine规则建模的模型导出成各组件独立存储的模型？”   </p>
+<p>可以的，再导出FileGDB或 Scene Layer Package的时候选中 “<strong>One Feature per Leaf Shape</strong>” 即可。</p>
+<p><img data-src="/images/blogImg/CELeafShape_FGDB.png" alt="Export to FileGDB"></p>
+<p><img data-src="/images/blogImg/CELeafShape_SLPK.png" alt="Export to Scene Layer Package"></p>
+<p>这些导出的模型数据拿到其他软件中使用，例如ArcGIS Pro，各组件即为不同的静态模型对象。</p>
+<p><img data-src="/images/blogImg/CELeafShape_Pro.png"></p>
+<p><em>这个示例的CGA脚本在 <a target="_blank" rel="noopener" href="https://github.com/kikitaMoon/BuildingCGA/tree/master/Demoforkikitamap.com/4-FloorsAsLeafshape">我的<strong>Github</strong></a> 可以查看和下载。</em></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/3D/" rel="tag"><i class="fa fa-tag"></i> 3D</a>
+              <a href="/tags/CityEngine/" rel="tag"><i class="fa fa-tag"></i> CityEngine</a>
+              <a href="/tags/ArcGIS-Pro/" rel="tag"><i class="fa fa-tag"></i> ArcGIS Pro</a>
+              <a href="/tags/CGA/" rel="tag"><i class="fa fa-tag"></i> CGA</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/07/11/CEFreeTrial/" rel="prev" title="如何获取30天试用版 Esri CityEngine ？">
+                  <i class="fa fa-angle-left"></i> 如何获取30天试用版 Esri CityEngine ？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/07/20/lovelyGit/" rel="next" title="Contributing to Our Github Project">
+                  Contributing to Our Github Project <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>English</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="Select language">
+      
+        <option value="zh-CN" data-href="/2018/07/13/CELeafshape/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/2018/07/13/CELeafshape/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">155k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:24</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kikitamap","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

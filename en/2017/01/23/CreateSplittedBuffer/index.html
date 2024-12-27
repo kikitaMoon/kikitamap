@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+  <meta name="google-site-verification" content="D7-VIdezAZxRhdHLyeHi4PbgNGtvMEITdfvlHsTzq40">
+  <meta name="msvalidate.01" content="269e6924d5038746f000dbb6ca5057d4">
+  <meta name="yandex-verification" content="c1d44182f015562a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前段时间做了个小工具，可以生成线要素的分段缓冲区，补充 ArcGIS 现有缓冲区工具的不足，用来辅助实现更多的功能。  工具基于 arcpy、maths、os 几个模块实习，arcpy 中并没有提供现成的计算切线方向的函数或接口，我就尝试通过点处微小偏移量的三角定理计算方法构造切线，然后进行角度换算实现垂线的构造，最后再用垂线去切割缓冲区条带。   链接中可以下载 ArcGIS Desktop 或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生成线要素分段缓冲区">
+<meta property="og:url" content="https://kikitamap.com/en/2017/01/23/CreateSplittedBuffer/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="前段时间做了个小工具，可以生成线要素的分段缓冲区，补充 ArcGIS 现有缓冲区工具的不足，用来辅助实现更多的功能。  工具基于 arcpy、maths、os 几个模块实习，arcpy 中并没有提供现成的计算切线方向的函数或接口，我就尝试通过点处微小偏移量的三角定理计算方法构造切线，然后进行角度换算实现垂线的构造，最后再用垂线去切割缓冲区条带。   链接中可以下载 ArcGIS Desktop 或">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreateSplittedBuffer_Tool.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreateSplittedBuffer_UI.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreateSplittedBuffer_Road.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/CreateSplittedBuffer_River.png">
+<meta property="article:published_time" content="2017-01-23T07:43:20.000Z">
+<meta property="article:modified_time" content="2024-12-24T03:31:31.488Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Geoprocessing">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="ArcGIS Pro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/CreateSplittedBuffer_Tool.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/en/2017/01/23/CreateSplittedBuffer/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2017/01/23/CreateSplittedBuffer/","path":"en/2017/01/23/CreateSplittedBuffer/","title":"生成线要素分段缓冲区"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>生成线要素分段缓冲区 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="kikita & Maps" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGF5YW4=" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitayan"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/01/23/CreateSplittedBuffer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="生成线要素分段缓冲区 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          生成线要素分段缓冲区
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-01-23 15:43:20" itemprop="dateCreated datePublished" datetime="2017-01-23T15:43:20+08:00">2017-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/en/2017/01/23/CreateSplittedBuffer/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="en/2017/01/23/CreateSplittedBuffer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>260</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>前段时间做了个小工具，可以生成线要素的分段缓冲区，补充 ArcGIS 现有缓冲区工具的不足，用来辅助实现更多的功能。</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_Tool.png"></p>
+<p>工具基于 arcpy、maths、os 几个模块实习，arcpy 中并没有提供现成的计算切线方向的函数或接口，我就尝试通过点处微小偏移量的三角定理计算方法构造切线，然后进行角度换算实现垂线的构造，最后再用垂线去切割缓冲区条带。</p>
+<br>
+
+<p>链接中可以下载 ArcGIS Desktop 或者 ArcGIS Pro 的工具箱版本（ 开发版本：Desktop 10.5，Pro 1.3，其他版本需要自己测试下 ）：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi90cmVlL21hc3Rlci9MYXp5V29ya2VyL0JhbWJvb0J1ZmZlcg==">https://github.com/kikitaMoon/ArcGIS-Python/tree/master/LazyWorker/BambooBuffer<i class="fa fa-external-link-alt"></i></span><br>(更新20171204：改SplittedBuffer为BambooBuffer，好像更形象一点)</p>
+<p>以在 ArcGIS Pro 中添加和使用为例：</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_UI.png"></p>
+<br>
+
+<p>工具源码参考：<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0JhbWJvb0J1ZmZlci9QZXJwZW5kaWN1bGFyTGluZV8yLjBfVG9vbC5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/BambooBuffer/PerpendicularLine_2.0_Tool.py<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<p>基于工具的应用实例：</p>
+<p>1  统计公路各分段的拥堵情况</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_Road.png"></p>
+<p>2  河道分段水位模拟</p>
+<p><img data-src="/images/blogImg/CreateSplittedBuffer_River.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Geoprocessing/" rel="tag"><i class="fa fa-tag"></i> Geoprocessing</a>
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/ArcGIS-Pro/" rel="tag"><i class="fa fa-tag"></i> ArcGIS Pro</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/01/22/PythonAPIFunction1/" rel="prev" title="ArcGIS Python API 功能一瞥">
+                  <i class="fa fa-angle-left"></i> ArcGIS Python API 功能一瞥
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/02/07/VSpublishFailure/" rel="next" title="VS部署应用程序失败'找不到SignTool.exe'">
+                  VS部署应用程序失败'找不到SignTool.exe' <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>English</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="Select language">
+      
+        <option value="zh-CN" data-href="/2017/01/23/CreateSplittedBuffer/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/2017/01/23/CreateSplittedBuffer/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">155k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:24</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kikitamap","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+  <meta name="google-site-verification" content="D7-VIdezAZxRhdHLyeHi4PbgNGtvMEITdfvlHsTzq40">
+  <meta name="msvalidate.01" content="269e6924d5038746f000dbb6ca5057d4">
+  <meta name="yandex-verification" content="c1d44182f015562a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="制作一幅较高性能的地图检查如下方面是否注意到了 ？      1 内容组织：     · 空间参考&#x2F;Spatial Reference在ArcMap中配置地图文档，要尽可能将所有数据与数据框使用相同的空间参考，特别是编辑或创建要提供服务的数据的时候。虽然ArcMap可以进行动态投影，但是这样做可以避免动态投影计算所造成的性能损耗。 对于不同空间参考的数据，可以使用工具 Project 进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArcGIS地图设计性能优化">
+<meta property="og:url" content="https://kikitamap.com/en/2015/06/26/MapDesignPerformance/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="制作一幅较高性能的地图检查如下方面是否注意到了 ？      1 内容组织：     · 空间参考&#x2F;Spatial Reference在ArcMap中配置地图文档，要尽可能将所有数据与数据框使用相同的空间参考，特别是编辑或创建要提供服务的数据的时候。虽然ArcMap可以进行动态投影，但是这样做可以避免动态投影计算所造成的性能损耗。 对于不同空间参考的数据，可以使用工具 Project 进">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2015-06-26T05:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-24T03:31:31.452Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Mapping">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kikitamap.com/en/2015/06/26/MapDesignPerformance/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2015/06/26/MapDesignPerformance/","path":"en/2015/06/26/MapDesignPerformance/","title":"ArcGIS地图设计性能优化"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ArcGIS地图设计性能优化 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="kikita & Maps" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%86%85%E5%AE%B9%E7%BB%84%E7%BB%87%EF%BC%9A"><span class="nav-text">1 内容组织：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E7%A9%BA%E9%97%B4%E5%8F%82%E8%80%83-Spatial-Reference"><span class="nav-text">· 空间参考&#x2F;Spatial Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E8%BF%9E%E6%8E%A5%E4%B8%8E%E5%85%B3%E8%81%94-Join-Relate"><span class="nav-text">· 连接与关联&#x2F;Join &amp; Relate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E7%B4%A2%E5%BC%95-Index"><span class="nav-text">· 索引&#x2F;Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E6%95%B0%E6%8D%AE%E7%AE%80%E5%8C%96-Data-Simplification"><span class="nav-text">· 数据简化&#x2F;Data Simplification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E5%BA%95%E5%9B%BE%E5%9B%BE%E5%B1%82-Basemap"><span class="nav-text">· 底图图层&#x2F;Basemap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E9%9A%90%E8%97%8F%E5%9B%BE%E5%B1%82%E6%88%96%E8%A6%81%E7%B4%A0"><span class="nav-text">· 隐藏图层或要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E8%A6%81%E7%B4%A0%E7%BC%93%E5%AD%98-Feature-Cache"><span class="nav-text">· 要素缓存&#x2F;Feature Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E6%A0%85%E6%A0%BC%E6%95%B0%E6%8D%AE%E9%87%91%E5%AD%97%E5%A1%94-Pyramid"><span class="nav-text">· 栅格数据金字塔&#x2F;Pyramid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E5%B8%83%E5%B1%80%E8%A7%86%E5%9B%BE-Layout"><span class="nav-text">· 布局视图&#x2F;Layout</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E5%9C%B0%E5%9B%BE%E7%AC%A6%E5%8F%B7"><span class="nav-text">2 地图符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E6%A0%87%E8%AE%B0%E7%AC%A6%E5%8F%B7-Marker-Symbol"><span class="nav-text">· 标记符号&#x2F;Marker Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E7%BA%BF%E7%AC%A6%E5%8F%B7-Line-Symbol"><span class="nav-text">· 线符号&#x2F;Line Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E9%9D%A2%E7%AC%A6%E5%8F%B7-Fill-Symbol"><span class="nav-text">· 面符号&#x2F;Fill Symbol</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%9C%B0%E5%9B%BE%E6%96%87%E6%9C%AC"><span class="nav-text">3 地图文本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E9%80%9A%E7%94%A8"><span class="nav-text">· 通用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E6%A0%87%E6%B3%A8"><span class="nav-text">· 标注</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C2%B7-%E6%B3%A8%E8%AE%B0"><span class="nav-text">· 注记</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGF5YW4=" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitayan"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/26/MapDesignPerformance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ArcGIS地图设计性能优化 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ArcGIS地图设计性能优化
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-06-26 13:00:00" itemprop="dateCreated datePublished" datetime="2015-06-26T13:00:00+08:00">2015-06-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/en/2015/06/26/MapDesignPerformance/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="en/2015/06/26/MapDesignPerformance/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>2.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>制作一幅较高性能的地图检查如下方面是否注意到了 ？</p>
+<br>
+
+<br>
+
+
+<h1 id="1-内容组织："><a href="#1-内容组织：" class="headerlink" title="1 内容组织："></a><strong>1 内容组织：</strong></h1><br>
+
+
+
+
+<h2 id="·-空间参考-Spatial-Reference"><a href="#·-空间参考-Spatial-Reference" class="headerlink" title="· 空间参考&#x2F;Spatial Reference"></a>· 空间参考&#x2F;Spatial Reference</h2><p>在ArcMap中配置地图文档，要尽可能将所有数据与数据框使用相同的空间参考，特别是编辑或创建要提供服务的数据的时候。虽然ArcMap可以进行动态投影，但是这样做可以避免动态投影计算所造成的性能损耗。</p>
+<p>对于不同空间参考的数据，可以使用工具 Project 进行转换。</p>
+<h2 id="·-连接与关联-Join-Relate"><a href="#·-连接与关联-Join-Relate" class="headerlink" title="· 连接与关联&#x2F;Join &amp; Relate"></a>· 连接与关联&#x2F;Join &amp; Relate</h2><p>我们有时会通过Join表中的字段进行标注或符号化，也可能会通过Relate操作来执行查询等。然而，通过连接和关联访问数据可能会降低性能，需要执行额外的工作来维护连接。</p>
+<p>对于需要使用Join过来的字段内容，可以考虑导出数据，获得包含连接字段的新要素类。</p>
+<h2 id="·-索引-Index"><a href="#·-索引-Index" class="headerlink" title="· 索引&#x2F;Index"></a>· 索引&#x2F;Index</h2><p>这里说的索引包含空间索引和属性索引。空间索引在大多数情况下，ArcGIS 都会自动维护。如果遇到没有自动更新的情况，可以手动更新创建；如果数据源允许使用索引，则应为所有查询字段或渲染字段建立索引。</p>
+<p>有关创建删除索引，ArcToolbox有个工具箱 Index可以找到需要的工具。</p>
+<h2 id="·-数据简化-Data-Simplification"><a href="#·-数据简化-Data-Simplification" class="headerlink" title="· 数据简化&#x2F;Data Simplification"></a>· 数据简化&#x2F;Data Simplification</h2><p>如果需要使用小比例尺出图，无需展示非常详细细节，那就可以考虑简化、概化数据。如果将图层简化为具有更少的折点和线段，图层在小比例下将绘制得更快并且差别不大。此外，简化的数据可以提高查询和识别操作的性能。</p>
+<p>需要的工具在工具箱也可以找到，例如：Simplify Polyline、Simplify Polygon。</p>
+<h2 id="·-底图图层-Basemap"><a href="#·-底图图层-Basemap" class="headerlink" title="· 底图图层&#x2F;Basemap"></a>· 底图图层&#x2F;Basemap</h2><p>使用底图图层以优化绘制性能，底图图层支持本地硬盘缓存。我们可以把不经常更新的数据作为底图图层，例如衬托在业务数据下的数据图层、影像数据图层等。</p>
+<p>如何配置地图图层不啰嗦，点这里看<span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9kZXNrdG9wL2xhdGVzdC9tYXAvd29ya2luZy13aXRoLWxheWVycy93b3JraW5nLXdpdGgtYmFzZW1hcC1sYXllcnMuaHRt">帮助<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="·-隐藏图层或要素"><a href="#·-隐藏图层或要素" class="headerlink" title="· 隐藏图层或要素"></a>· 隐藏图层或要素</h2><p>通过设置图层属性中的可见比例尺范围（Scale Range）和定义查询（Query Defination）来避免绘制不必要的图层或者要素。</p>
+<h2 id="·-要素缓存-Feature-Cache"><a href="#·-要素缓存-Feature-Cache" class="headerlink" title="· 要素缓存&#x2F;Feature Cache"></a>· 要素缓存&#x2F;Feature Cache</h2><p>ArcMap 要素缓存可以将 ArcMap 当前地图显示中的要素临时存储到本地计算机的内存中。由于从本地内存中检索要素是一个非常快的操作，因此使用要素缓存通常可以提高性能。例如：绘制较大或复杂的数据集；标注、编辑和选择要素；为地图上的多个图层检索相同的要素；使用定义查询来绘制要素。</p>
+<h2 id="·-栅格数据金字塔-Pyramid"><a href="#·-栅格数据金字塔-Pyramid" class="headerlink" title="· 栅格数据金字塔&#x2F;Pyramid"></a>· 栅格数据金字塔&#x2F;Pyramid</h2><p>改善和缩短显示大型栅格数据集时间的最好方法是创建金字塔，目的在于提高显示速度及降低 CPU 使用率。ArcMap 使用合适的分辨率等级来快速绘制整个数据集。如果不使用金字塔，则必须从磁盘中读取整个数据集，然后将其重采样为更精细的大小。对于镶嵌数据集需要创建概视图（Overview）。</p>
+<h2 id="·-布局视图-Layout"><a href="#·-布局视图-Layout" class="headerlink" title="· 布局视图&#x2F;Layout"></a>· 布局视图&#x2F;Layout</h2><p>需要打印输出时，查看一下布局视图的数据框的边界。圆角拐角、背景和阴影会降低性能。消除这些影响并将这些属性设置为方形拐角可以提高布局视图中数据框的绘制性能。</p>
+<br>
+
+<br>
+
+
+
+<h1 id="2-地图符号"><a href="#2-地图符号" class="headerlink" title="2 地图符号"></a><strong>2 地图符号</strong></h1><br>
+
+<h2 id="·-标记符号-Marker-Symbol"><a href="#·-标记符号-Marker-Symbol" class="headerlink" title="· 标记符号&#x2F;Marker Symbol"></a>· 标记符号&#x2F;Marker Symbol</h2><p>尽可能使用简单样式标记，避免使用多层符号。</p>
+<p>使用图片标记符号来代替晕圈。</p>
+<p>尽可能使用简单形状。</p>
+<p>将标记符号的大小属性设置为小于 60 磅。</p>
+<p>尽可能不使用图片标记符号，特别是数据量较大的时候。当标记符号只有一种颜色时，.emf 文件所提供的性能要好于 .bmp、.png 或 .jpg&#x2F;.jpeg 文件。但是，当标记符号有两种或更多种颜色时，.png 文件是性能更好的格式。</p>
+<br>
+
+<h2 id="·-线符号-Line-Symbol"><a href="#·-线符号-Line-Symbol" class="headerlink" title="· 线符号&#x2F;Line Symbol"></a>· 线符号&#x2F;Line Symbol</h2><p>如果要减少显示时间，简单线符号是最好的选择；制图线作为最常用的线符号，在使用更多选项时绘制得相对缓慢一些。</p>
+<p>使用多图层符号时，请避免将不同的符号类型混合在一起。</p>
+<p>谨慎使用偏移或虚线样式，因为它们会增加绘制时间。</p>
+<p>宽线和带有整饰的线（例如标记和箭头）绘制起来较慢。</p>
+<br>
+
+<h2 id="·-面符号-Fill-Symbol"><a href="#·-面符号-Fill-Symbol" class="headerlink" title="· 面符号&#x2F;Fill Symbol"></a>· 面符号&#x2F;Fill Symbol</h2><p>对面进行符号化处理时，没有轮廓的简单填充符号将绘制得最快。</p>
+<p>需要在面周围加上轮廓时，应尽量选择简单线符号，其他的线类型（例如制图线、标记线和混列线）会显著增加绘制时间。</p>
+<p>与其他符号相同，使用尽可能少的图层来构成填充符号。</p>
+<p>特别是带有掩膜图层的点密度填充符号绘制起来更慢，因此应尽量避免使用这种填充符号。</p>
+<p>使用线填充符号时，无论是填充还是轮廓，尽量使用简单线。</p>
+<p>当图片填充符号只有一种颜色时，.emf 文件所提供的性能要好于 .bmp、.png, 或.jpg&#x2F;.jpeg 文件。但是，当标记符号有两种或更多种颜色时，.png 文件是性能更好的格式。</p>
+<br>
+
+<br>
+
+
+<h1 id="3-地图文本"><a href="#3-地图文本" class="headerlink" title="3 地图文本"></a><strong>3 地图文本</strong></h1><br>
+
+
+<h2 id="·-通用"><a href="#·-通用" class="headerlink" title="· 通用"></a><strong>· 通用</strong></h2><p>文本符号与其他类型的符号一样，ArcMap 需要做出的处理决策越少，地图的绘制速度就越快。一般来说，使用注记代替标注可以提高性能。</p>
+<p>尽可能地减小文本的大小。非常大的文本符号（例如那些大于 60 磅的文本符号）会增加绘制时间。</p>
+<p>符号越复杂，绘制速度越慢。因此，应尽可能少使用文本效果（例如，注释、牵引线、偏移、晕圈、背景和填充方式）。</p>
+<p>在文本周围使用阴影，不使用晕圈或掩膜。</p>
+<br>
+
+
+
+<h2 id="·-标注"><a href="#·-标注" class="headerlink" title="· 标注"></a><strong>· 标注</strong></h2><p>尽可能简化 SQL 查询和标注放置要求。如果标注文本存储在图层属性表中的单个字段中，绘制标注将非常快。</p>
+<p>标注表达式会减慢绘制速度。尽可能避免在绘制时使用标注表达式脚本进行条件判断，或格式化标注字符串，或将多个字段值串连到一个标注字符串中。</p>
+<p>尽量为 SQL 查询中的字段建立索引。</p>
+<p>谨慎使用标注和要素冲突权重。</p>
+<p>直线型标注的绘制速度要快于曲线型标注。</p>
+<p>设置标注的显示比例尺范围。地图被缩小时，需要绘制更多的标注，而这需要时间。检查某些标注在较小的比例下是否需要绘制。</p>
+<p>“Maplex 标注引擎”拥有比“标准标注引擎”更多的标注放置选项。高级放置决策可能会影响性能。</p>
+<br>
+
+
+
+<h2 id="·-注记"><a href="#·-注记" class="headerlink" title="· 注记"></a><strong>· 注记</strong></h2><p>使用 ArcMap 创建注记时，可以存储在地图文档的注记组中，或存储在Geodatabase的注记要素类中。</p>
+<p>一般情况下，应该将注记存储在地理数据库中，因为相比地图文档注记，ArcMap 可以更快地访问和显示地理数据库注记。这是推荐的方式。</p>
+<p>如果要创建一张地图并且注记文本只应用到当前地图上，那么可以将文本存储到地图文档的一个或多个注记组中。这种情况很少。如果删除了地图，则该注记也被删除，因为其存储在地图文档中。另外，每个添加到注记组的注记都会增大地图文档文件 (.mxd) 的大小。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Mapping/" rel="tag"><i class="fa fa-tag"></i> Mapping</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/06/10/DeployAGSLMonLinux/" rel="prev" title="在Linux上安装ArcGIS许可管理器备忘录">
+                  <i class="fa fa-angle-left"></i> 在Linux上安装ArcGIS许可管理器备忘录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/07/07/PythonList/" rel="next" title="Python列表常用操作">
+                  Python列表常用操作 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>English</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="Select language">
+      
+        <option value="zh-CN" data-href="/2015/06/26/MapDesignPerformance/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/2015/06/26/MapDesignPerformance/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">155k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:24</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kikitamap","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

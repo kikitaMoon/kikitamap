@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+  <meta name="google-site-verification" content="D7-VIdezAZxRhdHLyeHi4PbgNGtvMEITdfvlHsTzq40">
+  <meta name="msvalidate.01" content="269e6924d5038746f000dbb6ca5057d4">
+  <meta name="yandex-verification" content="c1d44182f015562a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Updated: 2017-10-11修改了文中表意含糊的语句，增加了更多解释性描述。   这一篇具体看分析模式工具集中的具体工具，整理这一篇的目的，不是要读者了解每个工具的背后使用了多么高级的算法，运用了多么庞大的公式，而是一起了解这些工具究竟可以为我们研究什么样的空间数据分布模式，当需要探索数据的空间性质时，知道应该如何去应用这些分析工具。    Average Nearest Neighbo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="空间统计（二）分析模式 B">
+<meta property="og:url" content="https://kikitamap.com/en/2015/03/05/AnalysisPatternsB/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="Updated: 2017-10-11修改了文中表意含糊的语句，增加了更多解释性描述。   这一篇具体看分析模式工具集中的具体工具，整理这一篇的目的，不是要读者了解每个工具的背后使用了多么高级的算法，运用了多么庞大的公式，而是一起了解这些工具究竟可以为我们研究什么样的空间数据分布模式，当需要探索数据的空间性质时，知道应该如何去应用这些分析工具。    Average Nearest Neighbo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_Toolset.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_AverageNearest.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_AverageNearestSummary.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_SpatialAutocorrelationReport.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_Incremental.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_SamplePoints.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_SamplePoint2.png">
+<meta property="og:image" content="http://img.blog.csdn.net/20150305091915238">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_HighLow.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_HighLowReport.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_MultiDistance.png">
+<meta property="article:published_time" content="2015-03-05T04:21:40.000Z">
+<meta property="article:modified_time" content="2024-12-24T03:31:31.438Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="Geoprocessing">
+<meta property="article:tag" content="Spatial Statistics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/AnalysisPatternsB_Toolset.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/en/2015/03/05/AnalysisPatternsB/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2015/03/05/AnalysisPatternsB/","path":"en/2015/03/05/AnalysisPatternsB/","title":"空间统计（二）分析模式 B"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>空间统计（二）分析模式 B | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="kikita & Maps" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Average-Nearest-Neighbor"><span class="nav-text">Average Nearest Neighbor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spatial-Autocorrelation"><span class="nav-text">Spatial Autocorrelation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Incremental-Spatial-Autocorrelation"><span class="nav-text">Incremental Spatial Autocorrelation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-Low-Clustering-Getis-Ord-General-G"><span class="nav-text">High&#x2F;Low Clustering (Getis-Ord General G)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Distance-Spatial-Cluster-Analysis-Ripley%E2%80%99s-K-Function"><span class="nav-text">Multi-Distance Spatial Cluster Analysis (Ripley’s K Function)</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGF5YW4=" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitayan"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/05/AnalysisPatternsB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="空间统计（二）分析模式 B | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          空间统计（二）分析模式 B
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-03-05 12:21:40" itemprop="dateCreated datePublished" datetime="2015-03-05T12:21:40+08:00">2015-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/en/2015/03/05/AnalysisPatternsB/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="en/2015/03/05/AnalysisPatternsB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.9k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><em>Updated: 2017-10-11</em><br><em>修改了文中表意含糊的语句，增加了更多解释性描述。</em></p>
+<br>
+
+<p>这一篇具体看分析模式工具集中的具体工具，整理这一篇的目的，不是要读者了解每个工具的背后使用了多么高级的算法，运用了多么庞大的公式，而是一起了解这些工具究竟可以为我们研究什么样的空间数据分布模式，当需要探索数据的空间性质时，知道应该如何去应用这些分析工具。</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_Toolset.png"></p>
+<br>
+
+<h2 id="Average-Nearest-Neighbor"><a href="#Average-Nearest-Neighbor" class="headerlink" title="Average Nearest Neighbor"></a>Average Nearest Neighbor</h2><p>平均最近邻工具，计算每个要素中心与其最邻近要素中心的距离，然后求取所有最近邻距离的平均值，然后用这个观测平均值与随机分布的期望平均值进行比较，从而可以反应数据的空间分布是聚合的还是分散的。 </p>
+<p>Average Nearest Neighbor 工具将返回五个值：</p>
+<ul>
+<li>观测的平均距离 &#x2F; Observed Mean Distance</li>
+<li>期望的平均距离 &#x2F; Excepted Mean Distance</li>
+<li>最近邻指数 &#x2F; Nearest Neighbor Ratio</li>
+<li>z得分 &#x2F; z-score</li>
+<li>p值 &#x2F; p-value</li>
+</ul>
+<p>其中，最近邻指数是观测平均值与期望平均值的比率，最近邻如果最近邻比率小于1，则表现的模式为聚类。如果指数大于1，则表现的模式趋向于扩散。</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_AverageNearest.png" alt="最近邻比率"></p>
+<p>在HTML报告文件中可以更显见的了解数据的趋势：</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_AverageNearestSummary.png" alt="报告"></p>
+<blockquote>
+<p>可能的应用：</p>
+</blockquote>
+<ul>
+<li>评估竞争或领地：量化并比较固定研究区域中的多种植物种类或动物种类的空间分布；比较城市中不同类型的企业的平均最近邻距离。</li>
+<li>监视随时间变化的更改：评估固定研究区域中一种类型的企业的空间聚类中随时间变化的更改。</li>
+<li>将观测分布与控制分布进行比较：在木材分析中，如果给定全部可收获木材的分布，则您最好将已收获面积图案与可收获面积图案进行比较，以确定砍伐面积是否比期望面积更为聚类。</li>
+</ul>
+<br>
+
+<h2 id="Spatial-Autocorrelation"><a href="#Spatial-Autocorrelation" class="headerlink" title="Spatial Autocorrelation"></a>Spatial Autocorrelation</h2><p>空间自相关 (Global Moran’s I) 工具同时根据要素位置和要素的属性值来度量空间自相关。在给定一组要素及相关属性的情况下，评估所表达的模式是聚类模式、离散模式还是随机模式。</p>
+<p>此工具将返回五个值：</p>
+<ul>
+<li>Moran’s I指数 &#x2F; Moran’s I Index</li>
+<li>预期指数 &#x2F; Expected Index</li>
+<li>方差 &#x2F; Variance</li>
+<li>z得分 &#x2F; z-score</li>
+<li>p值 &#x2F; p-value</li>
+</ul>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_SpatialAutocorrelationReport.png"></p>
+<p><strong>Moran’s I 指数</strong>：</p>
+<p>Global Moran‘s I 工具计算所评估属性的<strong>均值&#x2F;Mean</strong>和<strong>方差&#x2F;Variance</strong>。然后，将每个要素值减去均值，从而得到与均值的<strong>偏差&#x2F;Deviation</strong>。 将所有相邻要素（例如位于指定距离范围内的要素）的偏差值相乘，从而得到<strong>叉积&#x2F;Cross Production</strong>。Global Moran’s I 统计量的分子是这些叉积的和。</p>
+<p>如果数据在空间上趋于聚类，则Moran’s I指数为正值；如果空间上高值排斥其他高值而分散存在，则Moran’s I 指数为负值；如果叉积的正负值趋于平衡，则指数趋于0。</p>
+<p>在使用这个工具的时候，<strong>注意</strong>以下几点：</p>
+<ul>
+<li>输入要素的记录数至少30个，少于30结果不可靠。</li>
+<li>选择的适当的概念化空间关系，具体根据自己的数据参考前一篇。</li>
+</ul>
+<blockquote>
+<p>可能的应用</p>
+</blockquote>
+<ul>
+<li>通过查找距离（即空间自相关最强的位置对应的距离），可为各种空间分析方法确定合适的邻近距离。</li>
+<li>度量种族或民族分离随时间推移的总体趋势 - 分离程度是逐渐增强还是逐渐减弱？</li>
+<li>总结某种观点、疾病或趋势随空间和时间变化的传播情况 - 观点、疾病或趋势是保持隔离和集中，还是传播开并变得更加分散？</li>
+</ul>
+<br>
+
+<h2 id="Incremental-Spatial-Autocorrelation"><a href="#Incremental-Spatial-Autocorrelation" class="headerlink" title="Incremental Spatial Autocorrelation"></a>Incremental Spatial Autocorrelation</h2><p>增量自相关工具会去测量一系列的空间自相关，并且可以创建Z得分折线图。Z得分反映空间聚类的程度，峰值Z得分表示聚类最明显的距离。<br>这些峰值能做什么呢？我们可以将这些峰值作为其他工具（例如热点分析，将来会说到）的必要参数，例如距离范围，距离半径等等。</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_Incremental.png"></p>
+<p>以下面的数据为例：</p>
+<p>我欲研究下面几个城市的人口分布情况：</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_SamplePoints.png"></p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_SamplePoint2.png"></p>
+<p><img data-src="http://img.blog.csdn.net/20150305091915238"></p>
+<p>第一个峰值位于大约 250000 处。当显示多个具有统计显著性的峰值时（例如，本示例数据中有两个峰值），聚类在这些距离处均很明显。选择与感兴趣的分析比例对应的峰值距离，我们通常选择第一个具有统计显著性的峰值。</p>
+<br>
+
+<h2 id="High-Low-Clustering-Getis-Ord-General-G"><a href="#High-Low-Clustering-Getis-Ord-General-G" class="headerlink" title="High&#x2F;Low Clustering (Getis-Ord General G)"></a>High&#x2F;Low Clustering (Getis-Ord General G)</h2><p>高&#x2F;低聚类 (General G) 统计的零假设规定被研究的要素值不存在空间聚类。当返回的 p 值较小且在统计学上显著，则可以拒绝零假设。如果零假设被拒绝，则 z 得分的符号将变得十分重要。如果 z 得分值为正数，则观测的 General G 指数会比期望的 General G 指数要大一些，表明属性的高值将在研究区域中聚类。如果 z 得分值为负数，则观测的 General G 指数会比期望的 General G 指数要小一些，表明属性的低值将在研究区域中聚类。</p>
+<p>当存在完全均匀分布的值并且要查找高值的异常空间峰值时，首选高&#x2F;低聚类(Getis-Ord General G)工具。遗憾的是，高值和低值同时聚类时，它们倾向于彼此相互抵消。如果在高值和低值同时聚类时测量空间聚类，则使用空间自相关工具。</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_HighLow.png"></p>
+<p>“高&#x2F;低聚类”工具可返回五个值：General G 观测值、General G 期望值、方差、z 得分以及 p 值。</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_HighLowReport.png"></p>
+<blockquote>
+<p>可能的应用：</p>
+</blockquote>
+<ul>
+<li>在访问急症室的次数中查找出现的异常峰值，可能表明在局部或区域的健康问题的爆发。</li>
+<li>比较在城市中不同种类零售业的空间模式，利用比较购物的方式来了解哪类行业充满竞争性（如汽车经销商）以及哪类行业拒绝竞争（如健康中心&#x2F;健身房）。</li>
+<li>汇总空间现象聚类的程度以检查不同时期或不同位置的变化。例如，众所周知的城市及其人口聚类。使用高&#x2F;低聚类分析时，可以随时间来比较某个城市的人口聚类的程度（城镇发展以及密集度的分析）。</li>
+</ul>
+<br>
+
+<h2 id="Multi-Distance-Spatial-Cluster-Analysis-Ripley’s-K-Function"><a href="#Multi-Distance-Spatial-Cluster-Analysis-Ripley’s-K-Function" class="headerlink" title="Multi-Distance Spatial Cluster Analysis (Ripley’s K Function)"></a>Multi-Distance Spatial Cluster Analysis (Ripley’s K Function)</h2><p>基于 Ripley’s K 函数的多距离空间聚类分析工具是另外一种分析事件点数据的空间模式的方法。Ripley’s K 函数可表明要素质心的空间聚集或空间扩散在邻域大小发生变化时是如何变化的。</p>
+<p>如果有兴趣研究要素的聚类&#x2F;扩散如何相对于不同距离（不同的分析规模）进行变化，可以使用此工具。</p>
+<p><img data-src="/images/blogImg/AnalysisPatternsB_MultiDistance.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Geoprocessing/" rel="tag"><i class="fa fa-tag"></i> Geoprocessing</a>
+              <a href="/tags/Spatial-Statistics/" rel="tag"><i class="fa fa-tag"></i> Spatial Statistics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/03/05/AnalysisPatternsA/" rel="prev" title="空间统计（二）分析模式 A">
+                  <i class="fa fa-angle-left"></i> 空间统计（二）分析模式 A
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/03/06/ArcGISPro60DayFreetrial/" rel="next" title="NEW！获取 ArcGIS Pro 与 ArcGIS Desktop 60天试用许可">
+                  NEW！获取 ArcGIS Pro 与 ArcGIS Desktop 60天试用许可 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>English</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="Select language">
+      
+        <option value="zh-CN" data-href="/2015/03/05/AnalysisPatternsB/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/2015/03/05/AnalysisPatternsB/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">155k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:24</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kikitamap","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
