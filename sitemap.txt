@@ -1,5 +1,5 @@
 https://kikitamap.com/2024/12/25/BBC-Volcanos-1/
-https://kikitamap.com/2024/12/25/en-2024-12-25-BBC-Volcanos-1-en/
+https://kikitamap.com/2024/12/25/BBC-Volcanos-1-en/
 https://kikitamap.com/en/schedule/index.html
 https://kikitamap.com/en/tags/index.html
 https://kikitamap.com/en/categories/index.html
@@ -108,8 +108,8 @@ https://kikitamap.com/2015/03/06/ArcGISPro60DayFreetrial/
 https://kikitamap.com/2015/03/05/AnalysisPatternsB/
 https://kikitamap.com/2015/03/05/AnalysisPatternsA/
 https://kikitamap.com/2015/02/26/MeasuringGeographicDistributions/
-https://kikitamap.com/2015/01/12/ParallelProcessing/
 https://kikitamap.com/2014/12/26/Complete/
+https://kikitamap.com/2015/01/12/ParallelProcessing/
 https://kikitamap.com/2014/12/25/MeasureDistances/
 https://kikitamap.com/2014/12/09/MDAnalyzeRepairMD/
 https://kikitamap.com/2014/12/04/MDFunctionChain/
@@ -157,8 +157,8 @@ https://kikitamap.com/2013/07/02/ImportArcpy/
 https://kikitamap.com/2013/06/06/sketchupVSArcGIS10/
 https://kikitamap.com/2013/06/03/ViewPortNo/
 https://kikitamap.com/2013/05/29/AllPackages/
-https://kikitamap.com/2013/05/21/FeatureEnvelopPython/
 https://kikitamap.com/2013/05/24/TransferArcView33to10/
+https://kikitamap.com/2013/05/21/FeatureEnvelopPython/
 https://kikitamap.com/2013/05/13/CityEngineRasterReqirement/
 https://kikitamap.com/2013/05/13/CityEgnineAnnotation/
 https://kikitamap.com/2013/04/22/WhereArethePRJs/
@@ -211,15 +211,15 @@ https://kikitamap.com/2012/02/07/Aboutshapefile/
 https://kikitamap.com/categories/index.html
 https://kikitamap.com/tags/index.html
 https://kikitamap.com/
-https://kikitamap.com/tags/Geodata/
 https://kikitamap.com/tags/Mapping/
+https://kikitamap.com/tags/Geodata/
 https://kikitamap.com/tags/Coordinate-System/
 https://kikitamap.com/tags/Performance/
 https://kikitamap.com/tags/CAD/
 https://kikitamap.com/tags/ArcPad/
+https://kikitamap.com/tags/Deployment/
 https://kikitamap.com/tags/Raster/
 https://kikitamap.com/tags/Geoprocessing/
-https://kikitamap.com/tags/Deployment/
 https://kikitamap.com/tags/Spatial-Analyst/
 https://kikitamap.com/tags/3D/
 https://kikitamap.com/tags/CityEngine/

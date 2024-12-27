@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2024/12/25/en-2024-12-25-BBC-Volcanos-1-en/</loc>
+    <loc>https://kikitamap.com/2024/12/25/BBC-Volcanos-1-en/</loc>
     
     <lastmod>2024-12-27</lastmod>
     
@@ -992,7 +992,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
+    <loc>https://kikitamap.com/2014/12/26/Complete/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1001,7 +1001,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/12/26/Complete/</loc>
+    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1433,7 +1433,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/05/21/FeatureEnvelopPython/</loc>
+    <loc>https://kikitamap.com/2013/05/24/TransferArcView33to10/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1442,7 +1442,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/05/24/TransferArcView33to10/</loc>
+    <loc>https://kikitamap.com/2013/05/21/FeatureEnvelopPython/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1919,14 +1919,14 @@
 
   
   <url>
-    <loc>https://kikitamap.com/tags/Geodata/</loc>
+    <loc>https://kikitamap.com/tags/Mapping/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Mapping/</loc>
+    <loc>https://kikitamap.com/tags/Geodata/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1961,6 +1961,13 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/tags/Deployment/</loc>
+    <lastmod>2024-12-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/tags/Raster/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1969,13 +1976,6 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Geoprocessing/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Deployment/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
