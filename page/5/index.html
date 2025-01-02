@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,411 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/11/11/qiniuIssue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/11/11/qiniuIssue/" class="post-title-link" itemprop="url">解决七牛云存储bucket无法访问问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-11-11 08:56:07" itemprop="dateCreated datePublished" datetime="2018-11-11T08:56:07+08:00">2018-11-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/11/11/qiniuIssue/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/qiniuIssue/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>770</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>因为工作的事情，最近忙于切换节奏适应新环境，有一个月没来 kikitaMap “巡检”了。果然昨天发现了小故障，七牛云存储的存储空间的临时域名失效了，之上的我的图床也就挂了。涉及到的对象：<a href="https://kikitamap.com/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a> 、<a href="http://kikitamap.com/categories/%E7%9B%B8%E6%9C%BA%E9%87%8C/">Visual Musing</a> 中的全部图片和 <a href="https://kikitamap.com/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/">Tech Notes</a> 的小部分博客中图片。Just too bad …</p>
+<h2 id="解决方法建议"><a href="#解决方法建议" class="headerlink" title="解决方法建议"></a>解决方法建议</h2><p>这种情况下只能发工单联系技术支持了，七牛的技术支持回复比较及时，给出了解决方案，如下：</p>
+<blockquote>
+<p>有两种方式来获取文件：</p>
+<ol>
+<li>您需要先新建一个同区域存储空间，会分配一个新的测试域名到新空间。<br>通过qshell batchcopy 到有域名的同区域空间然后再进行qdownload下载操作<br>1）<code>qshell listbucket 原bucket名 list.txt</code><br>​       （list出全部文件，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2xpc3RidWNrZXQubWQ=">listbucket的文档<i class="fa fa-external-link-alt"></i></span>）</li>
+</ol>
+<p>2）<code>cat list.txt | awk &#39;&#123;print $1&#125;&#39; &gt;list_final.txt</code><br>​       （用awk获取list结果的第一列）<br>3）<code>qshell batchcopy 原bucket名 新bucket名 list_final.txt</code><br>​       （复制到新bucket的文件和原bucket文件名一致，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2JhdGNoY29weS5tZA==">batchcopy的文档<i class="fa fa-external-link-alt"></i></span>）<br>4）<code>qshell qdownload newfilelist.txt</code><br>​      （newfilelist.txt为下载的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL3Fkb3dubG9hZC5tZA==">配置文档<i class="fa fa-external-link-alt"></i></span>）</p>
+</blockquote>
+<blockquote>
+<p>qshell安装包及文档请参考<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGw=">https://developer.qiniu.com/kodo/tools/1302/qshell<i class="fa fa-external-link-alt"></i></span></p>
+<p>如果您不熟悉命令行工具的安装使用，也可以结合文档最后提供的视频教程<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGwjOQ==">https://developer.qiniu.com/kodo/tools/1302/qshell#9<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>使用工具qrsctl<br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMC9xcnNjdGw=">https://developer.qiniu.com/kodo/tools/1300/qrsctl<i class="fa fa-external-link-alt"></i></span><br><code>qrsctl get &lt;bucket&gt; &lt;file&gt; &lt;file&gt;</code></li>
+</ol>
+</blockquote>
+<h2 id="实践过程"><a href="#实践过程" class="headerlink" title="实践过程"></a>实践过程</h2><p>选择了第一种方式，问题解决，因为看起来像是批量的。</p>
+<p>按照提示下载的zip包类似 qshell-v2.2.0.zip 这样的名字，里面包含了Windows，Linux，Mac各操作系统使用的程序。</p>
+<p>我以Mac为例，使用Mac自带的 Commandline 访问解压之后的文件夹 qshell-v2.2.0。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/11/11/qiniuIssue/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/09/27/partialUpdateVTPKv3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/09/27/partialUpdateVTPKv3/" class="post-title-link" itemprop="url">矢量切片局部更新工具改进与工作收尾</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-09-27 19:56:08" itemprop="dateCreated datePublished" datetime="2018-09-27T19:56:08+08:00">2018-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/09/27/partialUpdateVTPKv3/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/27/partialUpdateVTPKv3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在<a href="http://kikitamap.com/2018/08/13/vectorTileBundle/">上一篇博客</a>中提到工具还有投影坐标系支持和切片方案（.xml）自动获取的问题尚未解决，更新这篇的目的在于说明问题已经找到了workaround，并且新的版本已经在上周五（9.21）发布了。</p>
+<h2 id="问题诊断过程"><a href="#问题诊断过程" class="headerlink" title="问题诊断过程"></a>问题诊断过程</h2><p>这两个问题其实本质上是一个问题。</p>
+<p>我们知道，当需要生成矢量切片的地图的坐标系不是 3857（web mercator）时，ArcGIS Pro 提供的 Create Vector Tile Package &#x2F; Index 工具可以自动生成与地图的坐标系统一致的切片方案（.xml）文件，默认放置于 C:\Users\当前用户\AppData\Local\ESRI\Geoprocessing 下。<br>这是个极好的功能，但是通过python调用此工具时，这个功能是没有提供接口的。此处的疑惑，也咨询了Esri US 的工程师，确实arcpy没有提供像工具UI中的自动计算功能。</p>
+<p>在最初的版本中，我尝试使用arcpy.GenerateMapServerCacheTilingScheme_server() 来生成xml文件，可以应对地理坐标系的地图。也是这个过程中遇到了切片原点传参失败<a href="http://kikitamap.com/2018/02/05/AlterXMLScheme/">这个坑</a>。<br>投影坐标系的切片原点不像是地理坐标系一样简单粗暴，不同的投影方法都会导致不同的原点坐标，我想过将常用坐标系枚举出来，可是从工具的通用角度来讲，不是个好事。最佳的解决方法还是想办法生成相同的xml，至少可以获取工具生成的xml。</p>
+<p>在上个版本的局部更新矢量切片工具中，我和马老师还自命名了“Advanced Vector Tile Package”的矢量切片包，我们在矢量切片包中还打包塞入了切片方案和切片索引面。这样，局部工具在更新这种包时，可以自动解析原包获取xml和index。但是，需要用户事先使用我们定制的 Create Advanced Vector Tile Package 工具来创建矢量切片包。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>考虑到用户在更新矢量切片之前，已经做过该地图的矢量切片，那么在User那个目录下已经有了对应的xml文件，那么我只要代码中获取了地图的坐标系，然后按照xml的命名规则顺藤摸瓜并顺手牵羊即可。<br>现实总是比想象骨感。ArcGIS Pro 的 arcpy 中提供的 Map 对象竟然没有提供查询其坐标系统的属性或方法…… 测试基于ArcGIS Pro 2.2.1，写这篇时的最新版本。相信新的版本早晚会有的。好在我还是找到了一个workaround：从map的defaultCamera属性中获取，如下图左边最下部分所示。（现在没有测试环境，图出自讨论时的聊天记录，将就看吧）<br><img data-src="/images/blogImg/partialUpdateVTPKv3_defaultCamera.jpg"></p>
+<p>使用这个思路之后，解决了本文开头提到的问题，但是要求用户本机user目录下事先有相关的xml文件，没有的话需要打开创建矢量切片工具自动生产一次。</p>
+<p>工具的相关代码都进行了更新，采用了新的逻辑，目前可以支持矢量切片工具自身支持的全部坐标系统。并同时保留了，上个版本的局部更新工具中可以自动解析 Advanced Vector Tile Package 功能。<br><img data-src="/images/blogImg/partialUpdateVTPKv3_AdvancedSupport.jpg"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/09/27/partialUpdateVTPKv3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/08/30/cloudStorageImageService/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/08/30/cloudStorageImageService/" class="post-title-link" itemprop="url">Testing Report for Image Service</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-08-30 11:30:40" itemprop="dateCreated datePublished" datetime="2018-08-30T11:30:40+08:00">2018-08-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/08/30/cloudStorageImageService/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/30/cloudStorageImageService/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>197</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>An image service of ArcGIS Server provides access to raster data through a web service.  ArcGIS Image Server is required to share a mosaic dataset.  This testing reporting indicates workflows and issues of sharing Image Service which is basing on a mosaic dataset referencing the raster dataset on a cloud storage.</p>
+<p><strong>Local Testing Environment</strong></p>
+<ul>
+<li>Latest Esri Technologies<ul>
+<li>ArcMap 10.6.1 ( both final release version and  early adopter version)</li>
+<li>ArcGIS Enterprise 10.6.1 with ArcGIS Image Server 10.6.1</li>
+</ul>
+</li>
+<li>Windows 10 Pro 64 bit English Version</li>
+</ul>
+<h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><p><strong>Steps</strong></p>
+<ol>
+<li><p>Create Huawei Cloud connection file                                                                (√)</p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_1Connection.png"></p>
+</li>
+<li><p>Add raster to a local mosaic dataset referencing the connection file          (√)</p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_2AddRaster.png"></p>
+</li>
+<li><p>Share the mosaic dataset as an image service                                                 (√)</p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_3Publishing.png"></p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_3Publishing2.png"></p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_4ServerMan.png"></p>
+</li>
+<li><p>Consume this service in various client browsers                                             (√)</p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_5MapViewer.png"></p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_6JSviewer.png"></p>
+<p><img data-src="/images/blogImg/cloudStorageImageService_7ArcMap.png"></p>
+</li>
+</ol>
+<h2 id="Alibaba-Cloud"><a href="#Alibaba-Cloud" class="headerlink" title="Alibaba Cloud"></a>Alibaba Cloud</h2><p><strong>Steps</strong></p>
+<ol>
+<li>Create Huawei Cloud connection file                                                                (√)</li>
+<li>Add raster to a local mosaic dataset referencing the connection file          (√)</li>
+<li>Share the mosaic dataset as an image service                                                 (√)</li>
+<li>Consume this service in various client browsers                                             (×)</li>
+</ol>
+<p><strong>Explanation</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/30/cloudStorageImageService/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -465,400 +870,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/23/CompactCache/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/23/CompactCache/" class="post-title-link" itemprop="url">紧凑型缓存技术小结</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-07-23 12:49:48" itemprop="dateCreated datePublished" datetime="2018-07-23T12:49:48+08:00">2018-07-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/07/23/CompactCache/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/23/CompactCache/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Tiling-Scheme"><a href="#Tiling-Scheme" class="headerlink" title="Tiling Scheme"></a>Tiling Scheme</h2><p>每个缓存服务的切片目录中都会包含一个 <strong>Conf.xml</strong>，也是就是tile scheme 文件了。</p>
-<p>这个文件包含了很多有关切片设置的信息：</p>
-<ul>
-<li>Spatial reference information</li>
-<li>Tile origin</li>
-<li>Tile width&#x2F;height</li>
-<li>DPI</li>
-<li>LODs (Levels of detail - scales)</li>
-<li>Tile Image format</li>
-<li>Compression quality</li>
-<li>Antialiasing settings</li>
-<li>Storage method</li>
-</ul>
-<h2 id="Version-Issue"><a href="#Version-Issue" class="headerlink" title="Version Issue"></a>Version Issue</h2><p>紧凑型缓存的存储格式为**.bundle** 。但有时我们会看到缓存目录中包含**.bundlx** 这样的文件，这说明这些缓存是ArcGIS 10.2.2 或以下版本创建的。从 ArcGIS 10.3 开始，紧凑型缓存做了些改进， .bundlx（tile index information） 文件被包含到了 .bundle 文件中 ，从而进一步降低了文件的数量。</p>
-<p>你可以在缓存服务的tiling scheme “<strong>Conf.xml</strong>“ 中查看确认：</p>
-<p><em>10.3 or later (Compact cache V1)</em></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">CacheStorageInfo</span> <span class="attr">xsi:type</span>=<span class="string">&#x27;typens:CacheStorageInfo&#x27;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">StorageFormat</span>&gt;</span>esriMapCacheStorageModeCompact<span class="tag">&lt;/<span class="name">StorageFormat</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">PacketSize</span>&gt;</span>128<span class="tag">&lt;/<span class="name">PacketSize</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">CacheStorageInfo</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><em>10.2.2 or former (Compact cache V2)</em></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/23/CompactCache/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/20/lovelyGit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/20/lovelyGit/" class="post-title-link" itemprop="url">Contributing to Our Github Project</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-07-20 17:47:40" itemprop="dateCreated datePublished" datetime="2018-07-20T17:47:40+08:00">2018-07-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/07/20/lovelyGit/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/20/lovelyGit/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>692</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这是一篇日记。</p>
-<p>最近，终于把年初我和<span class="exturl" data-url="aHR0cHM6Ly9tYWtlbGluZy5naXRodWIuaW8v">马老师<i class="fa fa-external-link-alt"></i></span>的脑洞项目 <a target="_blank" rel="noopener" href="https://github.com/makeling/PartiallyUpateArcGISVectorTilesTools"><strong>局部更新矢量切片</strong></a> 放在了大型程序员G友交流社区，开始出 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcw==">release<i class="fa fa-external-link-alt"></i></span>了…… </p>
-<p>在项目的开始，这个需求来自于用户的真实需求，如下是正经的背景信息：</p>
-<blockquote>
-<p>矢量切片是Esri在新版本中推出的一项亮点新技术，通过ArcGIS Pro中的Create Vector Tile Service工具生成切片包，再通过Portal发布成 Vector Tile Service，在前端支持各种应用，采用统一的接口进行调用，实现了一体化的平台应用解决方案。矢量切片技术充分利用GPU的渲染能力，以全新方式在设备、浏览器中以矢量的方式展现缓存地图。这项技术解决了传统基于栅格缓存切片展现地图存在的诸多问题：如设备分辨率对地图渲染效果的影响，缓存创建后无法再动态更改样式，生成缓存切片的周期过长，对硬件的需求过大等等。</p>
-<p>众所周知，矢量切片包的生成速度相对于传统的栅格切片包具有指数极的性能提升，这也是体现矢量切片优越性的一个重要方面。对于一个常规数据量在100MB-10GB级的数据，全部生成一次矢量切片包的速度在分钟级。可能正是因为这个原因，截至目前最新版本（ArcGIS Pro 2.2），Esri仍未提供局部更新矢量切片包的功能。虽然矢量切片生成速度很快，但是到了TB级别的大数据来说，生成一次完整的切片包也是需要相当长的时间的，如果仅是更新了局部的小范围数据，那基于更新范围自动化更新矢量切片就是一个非常有实际应用价值的需求。 正是在这样的背景下，我们发起了创建自动化局部更新矢量切片工具的项目。</p>
-<p>—— @马老师</p>
-</blockquote>
-<p>既然是两个人的项目，又会涉及很多版本的更新同步问题，<em>Why not Github</em> ？</p>
-<p>我们一共设计了5个Python工具，用于扩展ArcGIS Pro的功能，分别实现原始矢量切片包的创建，局部矢量切片包的创建，以及矢量切片包的更新，矢量切片服务的更新，托管在阿里云平台的矢量切片服务的更新。</p>
-<p>截止到今天的版本 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMS4xLjA=">Partially Upate ArcGIS Vector Tiles Toolbox 1.1.0<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>Mark：</strong></p>
-<p>后续还有很多有待优化的关键点：</p>
-<ul>
-<li>Bundle空间范围的精确计算</li>
-<li>LOD值的自动计算</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/20/lovelyGit/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/13/CELeafshape/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/07/13/CELeafshape/" class="post-title-link" itemprop="url">你知道 CityEngine 中的 Leaf Shape 吗？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-07-13 10:50:36" itemprop="dateCreated datePublished" datetime="2018-07-13T10:50:36+08:00">2018-07-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/07/13/CELeafshape/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/13/CELeafshape/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>440</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>CityEngine 的CGA建模过程是个不断迭代繁衍的过程，我们将这个过程想象成一棵树。</p>
-<p>通过 Shapefile，File Geodatabase，AutoCAD DXF 这些矢量数据格式导入CityEngine中的2D基面（Footprint），通常称为 CityEngine <strong>Initial Shape</strong>，这是这棵树的根节点。通过CGA中的命令符 <code>--&gt;</code> ，将一个shape经过各种形状（Geometry）和位置（Pivot，Scope） 的函数操作，生成另一个shape。直到最后，模型建立，最终的shape节点，通常称为 CityEngine <strong>Leaf Shape</strong>。</p>
-<blockquote>
-<p>这个细节的概念，在2013年的开发者大会中提过一次，结合模型层次结构的幻灯片理解下：</p>
-<p><img data-src="/images/blogImg/CELeafShape_2013DS.png"></p>
-<p><img data-src="/images/blogImg/CELeafShape_2013DS2.png"></p>
-<p>完整的幻灯片可以点 <a href="/files/EsriChinaDevSum-2013-EsriCityEngineRuleDev.pdf"><strong>这里</strong></a> 下载。</p>
-</blockquote>
-<p>为什么说是“迭代繁衍”？ 因为除了 Leaf Shape 之外的所有shape 在建模过程中都被紧跟它其后的shape替代而消亡了。</p>
-<p>举例子，在这条规则中，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; function() B </span><br><span class="line">      B  --&gt; function() C </span><br></pre></td></tr></table></figure>
-
-<p>这条规则中 ，A shape 对象已经消亡被B替代，在后续的规则中无法再调用到 A， 如果希望取到与A相同的对象，就需要提前复制出来，如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; Anew <span class="title function_">function</span><span class="params">()</span> B            <span class="comment">//A被复制而创建了分支</span></span><br><span class="line">      B    --&gt; function() C</span><br><span class="line">      Anew --&gt; function() D</span><br></pre></td></tr></table></figure>
-
-
-
-<p>了解了这些，那么我们可以进一步回答这个问题：“如何将CityEngine规则建模的模型导出成各组件独立存储的模型？”   </p>
-<p>可以的，再导出FileGDB或 Scene Layer Package的时候选中 “<strong>One Feature per Leaf Shape</strong>” 即可。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/07/13/CELeafshape/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -871,7 +882,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -882,13 +893,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

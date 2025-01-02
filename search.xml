@@ -10171,4 +10171,94 @@
         <tag>Jump start</tag>
       </tags>
   </entry>
+  <entry>
+    <title>夸父日记</title>
+    <url>/2020/07/23/LifeAccordingtoDad/</url>
+    <content><![CDATA[<p>总是感觉父亲比我更有生活的智慧，他总能从平淡恬静的生活中发现乐趣、秩序和美好。无论是手作、烹饪、园艺… 生活的方方面面。</p>
+<p>我和很多人一样，异地求学工作，之前的十几年都没有在家乡和父母一起长期生活；自己放飞了太久了，我心中对美好生活的刻板印象时常被父亲“讥讽”。</p>
+<p>疫情这段特别的日子，给每个人的时间轴都烙上了特别的时间戳。而于我，是难得与家人腻在一起的时光。</p>
+<p>父亲是位幽默有趣的老男孩，对生活工作有自己的理解，他总是能给我一些启发。他有时也会给我讲讲他早年体制内工作时的轶事，顺便指点下我的资本主义打工迷津。</p>
+<p>生活和工作的平衡，在疫情之前我从来不觉得需要特别思考，一切节奏跟着通勤按部就班。之前多年一日的习惯早已固定了。</p>
+<p>而现在各种因素都在潜移默化，空间边界消失，时间边界就容易也不清晰，高度自治的环境和工作中不断涌现的问题，经常让人久伏案板忘记时间。</p>
+<p>这时，以父亲为代表的敲打团就开始要求中场休息。keep的slogan-“自律给我自由”，已然成了劝诫的反面，哭笑不得。那我是自律呢还是不自律呢？</p>
+<p>谢谢你，感恩所有，珍惜当下🌈🌈🌈</p>
+]]></content>
+      <categories>
+        <category>Inner Thoughts</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>海上火山遗迹 —— 用 ArcGIS Earth 探索解读</title>
+    <url>/2024/12/30/BBC-Volcanos-2/</url>
+    <content><![CDATA[<p>火山不仅是地球的雕塑家，还是科学家们研究地质活动的窗口。</p>
+<p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>上一篇</strong></a> 中，我们用 ArcGIS Earth 开启了火山探索之旅, 熟悉了 ArcGIS Earth 的基础操作。今天，让我们进一步进入火山的三维世界，探索地貌与数据结合的无限可能。</p>
+<p>告别了险象环生的费尔南迪娜火山，我们继续前进。跟随镜头，在太平洋东部继续向北滑行……</p>
+<h2 id="04-沃尔夫岛-Wolf-Island"><a href="#04-沃尔夫岛-Wolf-Island" class="headerlink" title="04 沃尔夫岛&#x2F;Wolf Island"></a>04 沃尔夫岛&#x2F;Wolf Island</h2><p>沃尔夫岛是一座已经年过百万岁的死火山，距离最近的大陆有1200多公里。 它是加拉帕戈斯群岛中极为偏远的火山岛。</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p>
+<p>在这个孤立的火山岛上，生存似乎是开启了地狱模式，为了适应环境，动物们迅猛进化。在贫瘠的小岛上，小小的鸟雀为了获取食物，已经进化成了嗜血的新物种——吸血地雀。</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p>
+<p>如果你对大陆板块感兴趣，在 ArcGIS Earth 中， 点击 Add Data 并搜索关键字 “Earth” 或 “Tectonic”, ArcGIS Online 中的公开资源 —— <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>。添加此数据到ArcGIS Earth后，我们可以清晰地看到，加拉帕戈斯群岛位于纳斯卡(Nazca)、科科斯(Cocos) 和 太平洋(Pacific) 这三个主要的构造板块的交汇处。</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p>
+<h2 id="05-阿尔达布拉环礁-Aldabra-Atoll"><a href="#05-阿尔达布拉环礁-Aldabra-Atoll" class="headerlink" title="05 阿尔达布拉环礁&#x2F;Aldabra Atoll"></a>05 阿尔达布拉环礁&#x2F;Aldabra Atoll</h2><p>如同生命体一样，火山岛不会永远存在。当火山口内部逐渐平静直至死亡之后，在外力的不断侵蚀下会形成环礁。</p>
+<p>在热带海洋上有数百个环礁，这都是火山的遗迹。阿尔达布拉环礁，是世界上最大最原始的环礁之一，位于印度洋上，距离马达加斯加以北约420千米。阿尔达布拉环礁岛，又被称为龟岛，因其上生活着巨型龟。</p>
+<p>在 ArcGIS Earth 中，默认的地球底图是全球影像–<a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"><strong>Imagery</strong></a>，用户可以根据实际需求任意更换为其他底图，例如更换为 <a href="https://www.arcgis.com/home/item.html?id=620875bf8a1945e799cf8bd5f25784d7"><strong>Ocean</strong></a> 来了解下环礁在海面以下的地形。 除了底图，ArcGIS Earth 中默认的的地形高程图层是 <a href="https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"><strong>Terrain</strong></a>，全球的陆地地形高程数据。用户还可以额外设置高程图层来表达地形的起伏，这里新增一个 <a href="https://www.arcgis.com/home/item.html?id=0c69ba5a5d254118841d43f03aa3e97d"><strong>TopoBathy3D</strong></a> 来增补表达海底的地形。</p>
+<p><img data-src="/images/blogImg/Volcano_2_Aldabra.png"></p>
+<p>Bookmarks 是ArcGIS Earth 中提供的一个“地理收藏夹”工具，可以记录当前场景的相机、底图、地形等等设置，让你在不同配置的场景中一键快速切换。</p>
+<p><img data-src="/images/blogImg/Volcano_2_Aldabra_BM.gif"></p>
+<p>从基础的导航到简单的地理观察，我们已经迈出了使用 ArcGIS Earth 的第一步。在下一篇文章中，我们将深入探讨火山的地貌与三维场景的魅力，揭开隐藏在地表下的更多地理秘密。</p>
+<h2 id="下载-ArcGIS-Earth"><a href="#下载-ArcGIS-Earth" class="headerlink" title="下载 ArcGIS Earth"></a>下载 ArcGIS Earth</h2><p>ArcGIS Earth 工具是免费下载使用的，其中可以添加 ArcGIS Online 平台中的诸多来自Esri官方、业界大V和个人爱好者分享的公开免费资源。上面的视频的录制都来自这些内容，上传公众号时会压损画质，为了达到更好的游览效果，大家不妨躬亲实验下。</p>
+<p>如果感兴趣，这里可以找到各平台对应的版本：<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>3D</tag>
+        <tag>ArcGIS Earth</tag>
+        <tag>BBC</tag>
+        <tag>Tutorials</tag>
+        <tag>Jump start</tag>
+        <tag>Bookmark</tag>
+        <tag>Terrain</tag>
+        <tag>Basemap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Volcanic Islands and Atolls — Exploring and Interpreting with ArcGIS Earth</title>
+    <url>/2025/01/02/BBC-Volcanos-2-en/</url>
+    <content><![CDATA[<p>Volcanoes are not only sculptors of the Earth but also windows for scientists to study geological activity.</p>
+<p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>Previous Article</strong></a>: In our previous exploration, we embarked on a journey using ArcGIS Earth to uncover the mysteries of volcanoes and familiarize ourselves with its basic operations. Today, let’s dive further into the three-dimensional world of volcanoes and explore the possibilities of combining terrain and data.</p>
+<p>Leaving behind the perilous Fernandina Volcano, we continue onward. Following the lens, we slide northward in the eastern Pacific…</p>
+<h2 id="04-Wolf-Island"><a href="#04-Wolf-Island" class="headerlink" title="04 Wolf Island"></a>04 Wolf Island</h2><p>Wolf Island is a dormant volcano over a million years old, located more than 1,200 kilometers from the nearest continent. It is one of the most remote volcanic islands in the Galápagos Archipelago.</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p>
+<p>Survival on this isolated volcanic island seems to have activated “hell mode.” To adapt to the harsh environment, animals here have evolved rapidly. On this barren island, small finches have evolved into a blood-sucking species—the vampire finch.</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p>
+<p>If you’re interested in tectonic plates, in ArcGIS Earth, you can click <strong>Add Data</strong> and search keywords like “Earth” or “Tectonic.” Among the publicly available resources on ArcGIS Online is <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>. After adding this data to ArcGIS Earth, we can clearly see that the Galápagos Archipelago sits at the intersection of three major tectonic plates: the Nazca, Cocos, and Pacific Plates.</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p>
+<h2 id="05-Aldabra-Atoll"><a href="#05-Aldabra-Atoll" class="headerlink" title="05 Aldabra Atoll"></a>05 Aldabra Atoll</h2><p>Like living organisms, volcanic islands do not exist forever. Once the volcano’s interior becomes dormant and dies, external forces gradually erode it, forming atolls.</p>
+<p>There are hundreds of atolls in tropical oceans, all remnants of volcanoes. The Aldabra Atoll is one of the largest and most pristine atolls in the world, located in the Indian Ocean about 420 kilometers north of Madagascar. It is also known as Turtle Island because it is home to giant tortoises.</p>
+<p>In ArcGIS Earth, the default basemap is the global imagery map—<a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"><strong>Imagery</strong></a>. Users can replace it with other basemaps based on their needs, such as switching to <a href="https://www.arcgis.com/home/item.html?id=620875bf8a1945e799cf8bd5f25784d7"><strong>Ocean</strong></a> to explore the underwater terrain of atolls. In addition to basemaps, ArcGIS Earth’s default elevation layer is <a href="https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"><strong>Terrain</strong></a>, which provides global elevation data. Users can also add additional elevation layers to highlight terrain features, such as adding <a href="https://www.arcgis.com/home/item.html?id=0c69ba5a5d254118841d43f03aa3e97d"><strong>TopoBathy3D</strong></a> to better visualize underwater terrain.</p>
+<p><img data-src="/images/blogImg/Volcano_2_Aldabra.png"></p>
+<p><strong>Bookmarks</strong> in ArcGIS Earth act as a “geographic favorites” tool, allowing you to save the current scene’s camera position, basemap, terrain, and other settings, enabling quick one-click switching between different scene configurations.</p>
+<p><img data-src="/images/blogImg/Volcano_2_Aldabra_BM.gif"></p>
+<p>From basic navigation to simple geographic observation, we’ve taken our first steps in using ArcGIS Earth. In the next article, we’ll delve deeper into the allure of volcano topography and 3D scenes, unveiling more geological secrets hidden beneath the surface.</p>
+<h2 id="Download-ArcGIS-Earth"><a href="#Download-ArcGIS-Earth" class="headerlink" title="Download ArcGIS Earth"></a>Download ArcGIS Earth</h2><p>ArcGIS Earth is a free tool available for download. It allows you to add many publicly shared free resources from ArcGIS Online, including those from Esri, industry leaders, and individual enthusiasts. The videos featured here were created using this content. While video quality may be compressed for uploading, for the best experience, you’re encouraged to try it out for yourself.</p>
+<p>If you’re interested, here’s where you can find versions for different platforms:<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<p>Let me know if further edits are needed!</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>3D</tag>
+        <tag>ArcGIS Earth</tag>
+        <tag>BBC</tag>
+        <tag>Tutorials</tag>
+        <tag>Jump start</tag>
+        <tag>Bookmark</tag>
+        <tag>Terrain</tag>
+        <tag>Basemap</tag>
+      </tags>
+  </entry>
 </search>

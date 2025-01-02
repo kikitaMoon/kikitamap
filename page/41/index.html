@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,383 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/Aboutshapefile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/Aboutshapefile/" class="post-title-link" itemprop="url">有关shape文件的说明</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:04:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:04:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/02/07/Aboutshapefile/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/Aboutshapefile/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>548</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>shapefile 是存储地理信息的简单文件格式，但是工作中，常会接到用户的很多问题，这里把常见的汇总下。</p>
+<p><strong>一、shape 文件到底可以多大？</strong></p>
+<p>shapefile 的每个文件都不能超过 2 GB。也就是说，存储数据的 .dbf 与.shp 分别不能超过 2GB。但是，所有文件的总大小可以超过 2 GB。</p>
+<p><strong>二、 shape 文件是怎么构成的？</strong></p>
+<p>shape 文件用 ArcGIS 查看仅显示一个文件，但是用 windows 资源管理器查看就可能看到以下文件。</p>
+<ul>
+<li>.shp - 存储要素几何的主文件；必需文件。</li>
+<li>.shx - 存储要素几何索引的索引文件；必需文件。</li>
+<li>.dbf - 存储要素属性信息的 dBASE 表；必需文件。</li>
+<li>.prj - 存储坐标系信息的文件；由 ArcGIS 使用。</li>
+<li>.xml - ArcGIS 的元数据 - 用于存储 shapefile 的相关信息。</li>
+<li>.sbn 和 .sbx - 存储要素空间索引的文件。</li>
+<li>.fbn 和 .fbx - 存储只读 shapefile 的要素空间索引的文件。</li>
+<li>.ain 和 .aih - 存储某个表中或专题属性表中活动字段属性索引的文件。</li>
+<li>.atx - .atx 文件针对各个 shapefile 或在 ArcCatalog 中创建的 dBASE属性索引而创建。</li>
+<li>.ixs - 读&#x2F;写 shapefile 的地理编码索引。</li>
+<li>.mxs - 读&#x2F;写 shapefile（ODB 格式）的地理编码索引。</li>
+<li>.cpg - 可选文件，指定用于标识要使用的字符集的代码页。</li>
+<li>强烈建议，对shape操作时，在 ArcGIS 中进行。</li>
+</ul>
+<p><strong>三、 shape 中创建字段注意什么？</strong></p>
+<p>不能对现有字段修改，可以新建字段包括自定义数据类型；字段名长度不要超过10，超过会被截断。</p>
+<p>新建字段时，有三个参数可供设置：</p>
+<ul>
+<li>precision（精度）—— 数字字段中可存储的位数；</li>
+<li>scale（标度）—— 浮点或双精度类型字段中数值的小数点右侧的位数；</li>
+<li>length（长度）—— 字符型字段的文本字段的长度。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/Aboutshapefile/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/virtualmemory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/virtualmemory/" class="post-title-link" itemprop="url">认识虚拟内存与分页文件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:00:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:00:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/02/07/virtualmemory/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/virtualmemory/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>如果计算机缺少运行程序或操作所需的RAM，则 Windows 使用虚拟内存进行补偿。</p>
+<p>查看RAM数量：</p>
+<p><img data-src="/images/blogImg/virtualmemory.gif"></p>
+<p>注意：某些情况下，Windows会报告计算机上安装的内存数量以及可以使用的内存数量。如果使用的是32位版本的Windows，则可用内存的数量可能低于安装的内存总量。</p>
+<p>虚拟内存将计算机的RAM和硬盘上的临时空间组合在一起。当RAM运行速度缓慢时，虚拟内存将数据从RAM移动到称为分页文件的空间中。将数据移入与移出分页文件可以释放RAM，以便计算机可以完成工作。</p>
+<p>一般而言，计算机的RAM越多，程序运行得越快。如果计算机的速度由于缺少RAM而降低，则可以尝试增加虚拟内存来进行补偿。但是，计算机从RAM读取数据的速度要比从硬盘读取数据的速度快得多，因此增加RAM是更好的方法。</p>
+<p>分页文件：硬盘上一个或者多个隐藏文件 pagefile.sys，Windows用于存储未存入内存的部分程序和数据文件。页面文件和物理内存或随机存取内存（RAM）构成了虚拟内存。Windows会根据需要将数据从页面文件移至内存，或将数据从内存移至页面文件以便为新数据释放内存。也叫“交换文件”。</p>
+<p><strong>错误消息与自定义大小</strong></p>
+<p>如果收到警告虚拟内存不足的错误消息，则需要添加更多的RAM 或增加分页文件的大小，这样才能在计算机上运行程序。Windows 通常会自动管理大小，但是如果默认的大小不能满足您的需要，则可以手动更改虚拟内存的大小。</p>
+<p>如何自定义虚拟内存的大小？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/virtualmemory/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/ArcPad8Overview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/ArcPad8Overview/" class="post-title-link" itemprop="url">ArcPad 8 简介</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 13:59:00" itemprop="dateCreated datePublished" datetime="2012-02-07T13:59:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/02/07/ArcPad8Overview/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/ArcPad8Overview/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>542</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ArcPad主要是针对外业数据采集人员的一款产品，它相对独立，但不是完全孤立的，可以与GPS、测距仪、数码相机进行一体化作业。2009年4月推出的ArcPad8以其强大的功能为GIS外业人员提供了巨大的便利。</p>
+<p>ArcPad包中包含了Arcpad和ArcPad Application Builder，前者主要用于外业数据采集，后者主要用于定制功能。由此大家可能还联想到ArcGIS Mobile，它是集成与ArcGIS Server高级企业版中的，主要用于通过开发来定制移动GIS功能，提供解决方案。ArcPad与ArcGIS Mobile二者可以用ArcGIS Desktop和AE来类比。</p>
+<p>ArcPad在移动设备上支持Windows Mobile 5.0以上的系统，PC上支持Vista、XP，目前我用的Windows7，也没发现什么问题。注意：ArcPad8是不再支持Windows CE .NET的。</p>
+<p>ArcPad的工作流程大致有三种：</p>
+<p>1、<strong>快速工程</strong>：这是一种立即可用的数据采集方案，没有正式的数据结构和现有数据背景，通常需求是临时提的。直接在移动设备上打开ArcPad，选择快速工程，自动生成点线面图层，是shapefiles。通过采集和编辑之后，将这些数据文件copy到ArcGIS Desktop中，利用ArcGIS来管理数据即可。</p>
+<p>2、<strong>本地数据工作流程</strong>：原来已经有数据，需要到ArcGIS Desktop中将数据导出，这用到一个工具条ArcPad Data Manager。然后利用手持设备外业采集，在ArcPad中进行编辑，最后将数据再导入即可。这种工作流程通常是用于小型的工作组。</p>
+<p>3、<strong>ArcGIS Server 企业级工作流程</strong>：首先是在ArcCatalog或者ArcGIS Server Manager中发布服务，在ArcPad中浏览服务，进行数据的编辑。在ArcPad8中，增加了同步数据的功能，用户可以将在野外实时采集的数据同步到ArcGIS Server的GDB中。大大提高了工作效率。这种工作流程对SDE数据库有要求，就是数据要先注册版本，并且表中要含有字段“GlobalID”。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -462,7 +839,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -473,13 +850,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

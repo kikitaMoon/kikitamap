@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/image/manifest.json">
+  <meta name="google-site-verification" content="D7-VIdezAZxRhdHLyeHi4PbgNGtvMEITdfvlHsTzq40">
+  <meta name="msvalidate.01" content="269e6924d5038746f000dbb6ca5057d4">
+  <meta name="yandex-verification" content="c1d44182f015562a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kikitamap.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.21.1","exturl":true,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":5,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="火山不仅是地球的雕塑家，还是科学家们研究地质活动的窗口。 上一篇 中，我们用 ArcGIS Earth 开启了火山探索之旅, 熟悉了 ArcGIS Earth 的基础操作。今天，让我们进一步进入火山的三维世界，探索地貌与数据结合的无限可能。 告别了险象环生的费尔南迪娜火山，我们继续前进。跟随镜头，在太平洋东部继续向北滑行…… 04 沃尔夫岛&#x2F;Wolf Island沃尔夫岛是一座已经年过百">
+<meta property="og:type" content="article">
+<meta property="og:title" content="海上火山遗迹 —— 用 ArcGIS Earth 探索解读">
+<meta property="og:url" content="https://kikitamap.com/2024/12/30/BBC-Volcanos-2/index.html">
+<meta property="og:site_name" content="kikita &amp; Maps">
+<meta property="og:description" content="火山不仅是地球的雕塑家，还是科学家们研究地质活动的窗口。 上一篇 中，我们用 ArcGIS Earth 开启了火山探索之旅, 熟悉了 ArcGIS Earth 的基础操作。今天，让我们进一步进入火山的三维世界，探索地貌与数据结合的无限可能。 告别了险象环生的费尔南迪娜火山，我们继续前进。跟随镜头，在太平洋东部继续向北滑行…… 04 沃尔夫岛&#x2F;Wolf Island沃尔夫岛是一座已经年过百">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Volcano_2_WolfIsland_1.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Volcano_2_WolfIsland_2.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Volcano_2_WolfIsland_3.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Volcano_2_Aldabra.png">
+<meta property="og:image" content="https://kikitamap.com/images/blogImg/Volcano_2_Aldabra_BM.gif">
+<meta property="article:published_time" content="2024-12-30T07:45:15.000Z">
+<meta property="article:modified_time" content="2025-01-02T09:34:54.330Z">
+<meta property="article:author" content="Xiaoyan MU">
+<meta property="article:tag" content="3D">
+<meta property="article:tag" content="ArcGIS Earth">
+<meta property="article:tag" content="BBC">
+<meta property="article:tag" content="Tutorials">
+<meta property="article:tag" content="Jump start">
+<meta property="article:tag" content="Bookmark">
+<meta property="article:tag" content="Terrain">
+<meta property="article:tag" content="Basemap">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kikitamap.com/images/blogImg/Volcano_2_WolfIsland_1.png">
+
+
+<link rel="canonical" href="https://kikitamap.com/2024/12/30/BBC-Volcanos-2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kikitamap.com/2024/12/30/BBC-Volcanos-2/","path":"2024/12/30/BBC-Volcanos-2/","title":"海上火山遗迹 —— 用 ArcGIS Earth 探索解读"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>海上火山遗迹 —— 用 ArcGIS Earth 探索解读 | kikita & Maps</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="kikita & Maps" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">kikita & Maps</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">GIS,spatial and artificial intellegence learning and share</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="Searching..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#04-%E6%B2%83%E5%B0%94%E5%A4%AB%E5%B2%9B-Wolf-Island"><span class="nav-text">04 沃尔夫岛&#x2F;Wolf Island</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-%E9%98%BF%E5%B0%94%E8%BE%BE%E5%B8%83%E6%8B%89%E7%8E%AF%E7%A4%81-Aldabra-Atoll"><span class="nav-text">05 阿尔达布拉环礁&#x2F;Aldabra Atoll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-ArcGIS-Earth"><span class="nav-text">下载 ArcGIS Earth</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyan MU"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Xiaoyan MU</p>
+  <div class="site-description" itemprop="description">kikita's Blog | For Tech and Fun</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kikitamoon"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmtpa2l0YS5tYXBAb3V0bG9vay5jb20=" title="E-Mail → mailto:kikita.map@outlook.com"><i class="fa fa-envelope fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9raWtpdGFtb29u" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;kikitamoon"><i class="fab fa-twitter fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2tpa2l0YW1vb24=" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;kikitamoon"><i class="fab fa-facebook fa-fw"></i></span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly95b3V0dWJlLmNvbS9raWtpdGF5YW4=" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;kikitayan"><i class="fab fa-youtube fa-fw"></i></span>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2024/12/30/BBC-Volcanos-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="海上火山遗迹 —— 用 ArcGIS Earth 探索解读 | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          海上火山遗迹 —— 用 ArcGIS Earth 探索解读
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-12-30 15:45:15" itemprop="dateCreated datePublished" datetime="2024-12-30T15:45:15+08:00">2024-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2024/12/30/BBC-Volcanos-2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/30/BBC-Volcanos-2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>854</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>火山不仅是地球的雕塑家，还是科学家们研究地质活动的窗口。</p>
+<p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>上一篇</strong></a> 中，我们用 ArcGIS Earth 开启了火山探索之旅, 熟悉了 ArcGIS Earth 的基础操作。今天，让我们进一步进入火山的三维世界，探索地貌与数据结合的无限可能。</p>
+<p>告别了险象环生的费尔南迪娜火山，我们继续前进。跟随镜头，在太平洋东部继续向北滑行……</p>
+<h2 id="04-沃尔夫岛-Wolf-Island"><a href="#04-沃尔夫岛-Wolf-Island" class="headerlink" title="04 沃尔夫岛&#x2F;Wolf Island"></a>04 沃尔夫岛&#x2F;Wolf Island</h2><p>沃尔夫岛是一座已经年过百万岁的死火山，距离最近的大陆有1200多公里。 它是加拉帕戈斯群岛中极为偏远的火山岛。</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p>
+<p>在这个孤立的火山岛上，生存似乎是开启了地狱模式，为了适应环境，动物们迅猛进化。在贫瘠的小岛上，小小的鸟雀为了获取食物，已经进化成了嗜血的新物种——吸血地雀。</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p>
+<p>如果你对大陆板块感兴趣，在 ArcGIS Earth 中， 点击 Add Data 并搜索关键字 “Earth” 或 “Tectonic”, ArcGIS Online 中的公开资源 —— <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>。添加此数据到ArcGIS Earth后，我们可以清晰地看到，加拉帕戈斯群岛位于纳斯卡(Nazca)、科科斯(Cocos) 和 太平洋(Pacific) 这三个主要的构造板块的交汇处。</p>
+<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p>
+<h2 id="05-阿尔达布拉环礁-Aldabra-Atoll"><a href="#05-阿尔达布拉环礁-Aldabra-Atoll" class="headerlink" title="05 阿尔达布拉环礁&#x2F;Aldabra Atoll"></a>05 阿尔达布拉环礁&#x2F;Aldabra Atoll</h2><p>如同生命体一样，火山岛不会永远存在。当火山口内部逐渐平静直至死亡之后，在外力的不断侵蚀下会形成环礁。</p>
+<p>在热带海洋上有数百个环礁，这都是火山的遗迹。阿尔达布拉环礁，是世界上最大最原始的环礁之一，位于印度洋上，距离马达加斯加以北约420千米。阿尔达布拉环礁岛，又被称为龟岛，因其上生活着巨型龟。</p>
+<p>在 ArcGIS Earth 中，默认的地球底图是全球影像–<a target="_blank" rel="noopener" href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"><strong>Imagery</strong></a>，用户可以根据实际需求任意更换为其他底图，例如更换为 <a target="_blank" rel="noopener" href="https://www.arcgis.com/home/item.html?id=620875bf8a1945e799cf8bd5f25784d7"><strong>Ocean</strong></a> 来了解下环礁在海面以下的地形。 除了底图，ArcGIS Earth 中默认的的地形高程图层是 <a target="_blank" rel="noopener" href="https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"><strong>Terrain</strong></a>，全球的陆地地形高程数据。用户还可以额外设置高程图层来表达地形的起伏，这里新增一个 <a target="_blank" rel="noopener" href="https://www.arcgis.com/home/item.html?id=0c69ba5a5d254118841d43f03aa3e97d"><strong>TopoBathy3D</strong></a> 来增补表达海底的地形。</p>
+<p><img data-src="/images/blogImg/Volcano_2_Aldabra.png"></p>
+<p>Bookmarks 是ArcGIS Earth 中提供的一个“地理收藏夹”工具，可以记录当前场景的相机、底图、地形等等设置，让你在不同配置的场景中一键快速切换。</p>
+<p><img data-src="/images/blogImg/Volcano_2_Aldabra_BM.gif"></p>
+<p>从基础的导航到简单的地理观察，我们已经迈出了使用 ArcGIS Earth 的第一步。在下一篇文章中，我们将深入探讨火山的地貌与三维场景的魅力，揭开隐藏在地表下的更多地理秘密。</p>
+<h2 id="下载-ArcGIS-Earth"><a href="#下载-ArcGIS-Earth" class="headerlink" title="下载 ArcGIS Earth"></a>下载 ArcGIS Earth</h2><p>ArcGIS Earth 工具是免费下载使用的，其中可以添加 ArcGIS Online 平台中的诸多来自Esri官方、业界大V和个人爱好者分享的公开免费资源。上面的视频的录制都来自这些内容，上传公众号时会压损画质，为了达到更好的游览效果，大家不妨躬亲实验下。</p>
+<p>如果感兴趣，这里可以找到各平台对应的版本：<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/3D/" rel="tag"><i class="fa fa-tag"></i> 3D</a>
+              <a href="/tags/ArcGIS-Earth/" rel="tag"><i class="fa fa-tag"></i> ArcGIS Earth</a>
+              <a href="/tags/BBC/" rel="tag"><i class="fa fa-tag"></i> BBC</a>
+              <a href="/tags/Tutorials/" rel="tag"><i class="fa fa-tag"></i> Tutorials</a>
+              <a href="/tags/Jump-start/" rel="tag"><i class="fa fa-tag"></i> Jump start</a>
+              <a href="/tags/Bookmark/" rel="tag"><i class="fa fa-tag"></i> Bookmark</a>
+              <a href="/tags/Terrain/" rel="tag"><i class="fa fa-tag"></i> Terrain</a>
+              <a href="/tags/Basemap/" rel="tag"><i class="fa fa-tag"></i> Basemap</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_LinkedIn"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/12/25/BBC-Volcanos-1-en/" rel="prev" title="Exploring the Footprints of BBC Documentaries in ArcGIS Earth">
+                  <i class="fa fa-angle-left"></i> Exploring the Footprints of BBC Documentaries in ArcGIS Earth
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/01/02/BBC-Volcanos-2-en/" rel="next" title="Volcanic Islands and Atolls — Exploring and Interpreting with ArcGIS Earth">
+                  Volcanic Islands and Atolls — Exploring and Interpreting with ArcGIS Earth <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2012 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class=""></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">157k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">9:31</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YW1vb24=" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kikitamap","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

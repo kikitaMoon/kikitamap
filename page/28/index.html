@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,384 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/11/3DVisibility/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/11/3DVisibility/" class="post-title-link" itemprop="url">3D分析之可见性分析工具</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-02-11 11:41:38" itemprop="dateCreated datePublished" datetime="2014-02-11T11:41:38+08:00">2014-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/02/11/3DVisibility/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/02/11/3DVisibility/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>583</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img data-src="/images/blogImg/3DVisibility_Toolset.png"></p>
+<p>ArcGIS 通过分析功能面的视域来确定不同区域中的可见性。</p>
+<p>视域的计算：如果仅有一个观测点，则为可从观测点看到的单元赋值 1，为无法从观测点看到的所有单元赋值 0。</p>
+<br>
+
+<h2 id="Construct-Sight-Lines（构造视线）"><a href="#Construct-Sight-Lines（构造视线）" class="headerlink" title="Construct Sight Lines（构造视线）"></a><strong>Construct Sight Lines（构造视线）</strong></h2><p>创建表示视线（从一个或多个视点到目标要素类的要素）的线要素。</p>
+<p><img data-src="/images/blogImg/3DVisibility_SightLine.png"></p>
+<p>注意，关于高度字段的认定：</p>
+<p>观察点和目标要素的高度源默认为以下列表中遇到的第一个字段名称：</p>
+<ul>
+<li>Shape.Z（只对启用 Z 值的要素可用）</li>
+<li>Spot</li>
+<li>Z</li>
+<li>Z_Value</li>
+<li>Height</li>
+<li>Elev</li>
+<li>Elevation</li>
+<li>Contour</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/02/11/3DVisibility/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/11/LASDatasetOverview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/11/LASDatasetOverview/" class="post-title-link" itemprop="url">LAS Dataset 概览</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-02-11 11:40:11" itemprop="dateCreated datePublished" datetime="2014-02-11T11:40:11+08:00">2014-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/02/11/LASDatasetOverview/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/02/11/LASDatasetOverview/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="一、了解激光雷达"><a href="#一、了解激光雷达" class="headerlink" title="一、了解激光雷达"></a><strong>一、了解激光雷达</strong></h1><p>Lidar(Light Detection And Ranging)：激光探测及测距，是一种光学遥感技术，使用激光对地球表面的密集采样，产生高精度X、Y、Z测量值。</p>
+<p>激光雷达系统的主要硬件组成部分包括一组车辆（飞机、直升机、车辆以及三脚架）、激光扫描系统、GPS（全球定位系统）和 INS（惯性导航系统）。INS 系统测量激光雷达系统的滚动角、俯仰角与前进方向。</p>
+<p>激光雷达是一个主动光学传感器，它在沿着特定的测量路径移动时向一个目标发射激光束。激光雷达传感器中的接收器会对从目标反射回来的激光进行检测和分析。这些接收器会记录激光脉冲从离开系统到返回系统的精确时间，以此计算传感器与目标之间的范围距离。这些距离测量值会与位置信息（GPS 和 INS）一起转换为对象空间中反射目标实际三维点的测量值。完成激光雷达数据采集测量之后，将通过分析激光的时间范围、激光的扫描角度、GPS 位置和 INS 信息将点数据后处理成高度精确的地理配准 x,y,z 坐标。</p>
+<p>采集到的激光雷达点的附加信息与 x、y 和 z 位置值存储在一起。为每个记录的激光脉冲保留以下激光雷达点属性：强度、回波编号、回波数、点分类值、在飞行航线边缘的点、RGB（红、绿和蓝）值、GPS 时间、扫描角度和扫描方向。</p>
+<br>
+
+<h1 id="二、激光雷达的类型："><a href="#二、激光雷达的类型：" class="headerlink" title="二、激光雷达的类型："></a><strong>二、激光雷达的类型：</strong></h1><p><strong>i &nbsp; 机载激光雷达（Airborne）</strong></p>
+<p>A）地形探测激光雷达（Topographic lidar）</p>
+<p>应用如如林业、水文、地貌、城市计划、景观生态、海岸工程、调查评估和体积计算等。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/02/11/LASDatasetOverview/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/11/ArcGISDesktopVSExcel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/11/ArcGISDesktopVSExcel/" class="post-title-link" itemprop="url">ArcGIS Desktop 与 Excel</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-02-11 11:35:40" itemprop="dateCreated datePublished" datetime="2014-02-11T11:35:40+08:00">2014-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/02/11/ArcGISDesktopVSExcel/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/02/11/ArcGISDesktopVSExcel/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>690</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。</p>
+<h2 id="ArcGIS-Desktop-中访问-Excel-数据"><a href="#ArcGIS-Desktop-中访问-Excel-数据" class="headerlink" title="ArcGIS Desktop 中访问 Excel 数据"></a>ArcGIS Desktop 中访问 Excel 数据</h2><p>Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览这种表，并可将这种表作为地理处理工具的输入数据。</p>
+<p>通过 ArcGIS 进行访问Excel表时，每个工作表在 ArcGIS 中都是一个单独的表，名称末尾带有美元符号 $ 标识，但是这个$并不是表名的一部分。如果工作表的表名中包含空格，那表名称周围会括有单引号。</p>
+<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
+<h2 id="对于ArcGIS-Desktop-对-office-版本的支持情况"><a href="#对于ArcGIS-Desktop-对-office-版本的支持情况" class="headerlink" title="对于ArcGIS Desktop 对 office 版本的支持情况"></a>对于ArcGIS Desktop 对 office 版本的支持情况</h2><p>ArcGIS 支持 ：</p>
+<ul>
+<li>Excel 2003 以及更早版本的 .xls 文件；</li>
+<li>Excel 2007 的 .xlsx 文件。</li>
+</ul>
+<p>为什么要分开说呢？</p>
+<p>*.xls 文件可以直接在ArcGIS中以只读的形式打开，例如直接在ArcMap中添加数据、在ArcMap中添加XY数据显示为点、在ArcCatalog中进行查看等等。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/02/11/ArcGISDesktopVSExcel/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -450,390 +828,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/17/GeographicTransformation1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/01/17/GeographicTransformation1/" class="post-title-link" itemprop="url">ArcGIS中的地理坐标系转换方法参数（一）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-01-17 18:00:00" itemprop="dateCreated datePublished" datetime="2014-01-17T18:00:00+08:00">2014-01-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/01/17/GeographicTransformation1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/17/GeographicTransformation1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>852</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>地理坐标系变换是数据处理过程中常遇到的问题，今天就说下这方面的问题。</p>
-<p>如果遇到这种情景：两份数据有不同的坐标系，想叠加在一起显示，作图或显示精度要求不高。</p>
-<p>这种情况使用 ArcMap 的动态投影即可，ArcMap 的内部动投影机制会解决地理坐标系变换的问题。数据在显示的过程中，会实时的被转换，但不改变数据本身。</p>
-<p>如果我们需要进行地理坐标系转换，我们知道 ArcGIS Desktop 中提供了 Project 工具。</p>
-<p>此工具界面上有个至关重要的参数：<strong>Geographic Transformation</strong>。我们发现它的后面赫然写着。依照使用其他工具的经验，这种打了 Optional 标志的参数，不就是可填可不填的意思吗？</p>
-<p>但是，它真的让你随便的可填可不填吗？ Naive！ 图样图森破！ 这个参数的填写与否，完全是受前面两个参数决定的，主要三种情景吧。</p>
-<br>
-
-<h2 id="情景1："><a href="#情景1：" class="headerlink" title="情景1："></a>情景1：</h2><p>不涉及到地理坐标系变换的坐标变换，这个参数完全不需要，而不是 optional 哦。</p>
-<p>例如：从 GCS_Xian_1980 进行投影变换，转换为 Xian_1980_3_Degree_GK_CM_120E 投影坐标系。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/01/17/GeographicTransformation1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/06/RasterSupportinCityEngine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/01/06/RasterSupportinCityEngine/" class="post-title-link" itemprop="url">CityEngine支持多少种栅格数据？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-01-06 11:11:29" itemprop="dateCreated datePublished" datetime="2014-01-06T11:11:29+08:00">2014-01-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/01/06/RasterSupportinCityEngine/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/06/RasterSupportinCityEngine/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>482</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&nbsp; &nbsp; 许多用户会问 CityEinge 到底支持多少种栅格数据作为底图数据？</p>
-<p>&nbsp; &nbsp; CityEngine目前的帮助文档略显单薄，作为工具书查看是很好的，但是作为知识类资料就不如ArcGIS Desktop的帮助文档完整饱满。因此像“栅格数据支持列表”这种归纳性的文档当然现在还是没有……</p>
-<p>&nbsp; &nbsp; 只能从软件界面自身去寻找了，就把这页贴出来，方便大家参考。从以下这个长长的下列表中可以了解CityEngine支持的类型：</p>
-<p>（png，jpg，tif，jpeg，img，data，ico，xpm，dds，tga，psp，tiff，vbs，sid，mpeg，jsl，xbm，sit，bmp，mpg，dat，com，hqx，cur，dll，bin，emf，exe，gif，xyz，sgi）</p>
-<p><img data-src="/images/blogImg/RasterSupportinCityEngine.jpg"></p>
-<p>&nbsp; &nbsp;CityEngine在显示栅格数据时，对数据有一定的要求，不满足要求时可能会出现不显示等情况。</p>
-<p>&nbsp; &nbsp;CityEngine使用了OpenGL技术用于3D模型&#x2F;场景的显示，当显示模型的时候，会将所有的texture数据输入到显存（不是内存哦！）显存的大小在机器中通常是不大的（256M~1.5G，或者更大一点吧），因此CE对输入的栅格数据是要求的。</p>
-<p>&nbsp; &nbsp; 为了获取最佳的效果，如下几点要注意哦~</p>
-<p>（1）显卡驱动一定要安装至最新版本！</p>
-<p>（2）Texture图层尽量选择 8-bit 的，terrain 图层中的Heightmap也可以是32-bit的。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/01/06/RasterSupportinCityEngine/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/12/05/GeometryErrorinshapefileGDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/12/05/GeometryErrorinshapefileGDB/" class="post-title-link" itemprop="url">shapefile与GDB中不能允许存在的几何错误</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-12-05 11:36:17" itemprop="dateCreated datePublished" datetime="2013-12-05T11:36:17+08:00">2013-12-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/12/05/GeometryErrorinshapefileGDB/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/12/05/GeometryErrorinshapefileGDB/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>482</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>每种软件都有自己的数据规范，ArcGIS也不例外，当数据不满足ArcGIS的规范时，就会遇到各种无响应和崩溃。</p>
-<p>有关数据几何错误总是问题相对较多的部分。其中，shapefile作为一种开放的格式，除了ArcGIS程序可以读写，也可以按照数据规范在非ArcGIS环境中生产。后者生产的数据通常包含这样那样的问题，这些问题都是几何错误的范畴。</p>
-<p>帮助原文说的精辟：</p>
-<blockquote>
-<p>The shapefile is an open format to which many software packages write. Unfortunately, some of these software packages—sometimes due to bugs, sometimes due to lack of knowledge—do not follow the documented specification of the shapefile format.</p>
-</blockquote>
-<p>简单罗列下ArcGIS中不能允许的几何错误类型：</p>
-<ul>
-<li><p><strong>短线段&#x2F;Short segment</strong><br>Some segments are shorter than allowed by the system units of the spatial reference associated with the geometry.</p>
-</li>
-<li><p><strong>空几何&#x2F;Null geometry</strong><br>The feature has no geometry or nothing in the SHAPE field.</p>
-</li>
-<li><p><strong>不正确的环顺序&#x2F;Incorrect ring ordering</strong><br>The polygon is topologically simple, but its rings may not be oriented correctly (outer rings—clockwise, inner rings—counterclockwise).</p>
-</li>
-<li><p><strong>不正确的线段方向&#x2F;Incorrect segment orientation</strong><br>Individual segments are not consistently oriented. The “to” point of seg i should be incident on the “from” point of seg i+1.</p>
-</li>
-<li><p><strong>自相交&#x2F;Self intersections</strong><br>A polygon must not intersect itself.</p>
-</li>
-<li><p><strong>非封闭环&#x2F;Unclosed rings</strong><br>The last segment in a ring must have its “to” point incident on the “from” point of the first segment.</p>
-</li>
-<li><p><strong>空部分&#x2F;Empty parts</strong><br>The geometry has multiple parts and one of them is empty (has no geometry).</p>
-</li>
-<li><p><strong>重复折点&#x2F;Duplicate vertex</strong><br>The geometry has two or more vertices with identical coordinates.</p>
-</li>
-<li><p><strong>属性不匹配&#x2F;Mismatched attributes</strong><br>The Z or M coordinate of a line segment’s endpoint does not match the Z or M coordinate of the coincident endpoint on the next segment.</p>
-</li>
-<li><p><strong>不连续部分&#x2F;Discontinuous parts</strong><br>One of the geometry’s part is made up of disconnected or discontinuous parts.</p>
-</li>
-<li><p><strong>空Z值&#x2F;Empty Z values</strong><br>The geometry has one or more vertex with empty Z value (NaN, for example).</p>
-</li>
-</ul>
-<p>以上的错误，可以用使用工具 Check Geometry 进行检查，工具会生成有关几何错误的报表。使用 Repaired Geometry 工具进行修复。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/27/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/29/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -846,7 +840,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -857,13 +851,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

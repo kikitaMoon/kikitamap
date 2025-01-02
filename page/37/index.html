@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,391 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/27/SAMultiDimensions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/08/27/SAMultiDimensions/" class="post-title-link" itemprop="url">空间分析之多元分析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-08-27 09:10:00" itemprop="dateCreated datePublished" datetime="2012-08-27T09:10:00+08:00">2012-08-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/08/27/SAMultiDimensions/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/27/SAMultiDimensions/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>通过多元统计分析可以探查许多不同类型的属性之间的关系。</p>
+<p>有两种可用的多元分析：分类（监督分类与非监督分类&#x2F;Supervised&amp;Unsupervised)）和主成分分析&#x2F;Principal Component Analysis  (PCA)。</p>
+<p>ArcGIS 提供了如下工具：</p>
+<p><img data-src="/images/blogImg/SAMultiDimensions_Toolset.png"></p>
+<br>
+
+<h1 id="一、波段集统计工具（Band-Collection-Statistics）"><a href="#一、波段集统计工具（Band-Collection-Statistics）" class="headerlink" title="一、波段集统计工具（Band Collection Statistics）"></a><strong>一、波段集统计工具（Band Collection Statistics）</strong></h1><p>栅格波段必须具有一个公共交集。如果不存在公共交集，则会出现错误，且不会创建任何输出。</p>
+<p>如果栅格波段的范围不同，统计数据将以所有输入栅格波段的共同的空间范围来计算。默认情况下，像元大小为输入栅格的最大像元的大小；否则，将取决于栅格分析环境设置。</p>
+<p>此工具计算每个图层的基本统计测量值（最小值、最大值、平均值和标准差），如果勾选协方差和相关矩阵，还可以得到这两个值。</p>
+<p><img data-src="/images/blogImg/SAMultiDimensions_BandColSts.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/27/SAMultiDimensions/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/24/SAZonal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/08/24/SAZonal/" class="post-title-link" itemprop="url">空间分析之区域分析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-08-24 17:12:00" itemprop="dateCreated datePublished" datetime="2012-08-24T17:12:00+08:00">2012-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/08/24/SAZonal/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/24/SAZonal/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>空间分析扩展中，有关区域分析，提供了如下工具：</p>
+<p><img data-src="/images/blogImg/SAZonal_Toolset.png"></p>
+<p>可以将其分为这样几类：</p>
+<h1 id="一、确定区域中类的面积的工具"><a href="#一、确定区域中类的面积的工具" class="headerlink" title="一、确定区域中类的面积的工具"></a><strong>一、确定区域中类的面积的工具</strong></h1><h2 id="面积制表（Tabulate-Area）"><a href="#面积制表（Tabulate-Area）" class="headerlink" title="面积制表（Tabulate Area）"></a><strong>面积制表（Tabulate Area）</strong></h2><p>面积制表工具以表的形式进行输出。在此表中：</p>
+<p>1）区域数据集的每个唯一值均有一条记录。</p>
+<p>2）类数据集的每个唯一值均有一个字段。</p>
+<p>3）每个记录将存储每个区域内每个类的面积。</p>
+<p><img data-src="/images/blogImg/SAZonal_TabulateArea.gif"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/24/SAZonal/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/23/SAProximity/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/08/23/SAProximity/" class="post-title-link" itemprop="url">空间分析之邻域分析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-08-23 16:49:00" itemprop="dateCreated datePublished" datetime="2012-08-23T16:49:00+08:00">2012-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/08/23/SAProximity/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/23/SAProximity/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>693</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ArcGIS 的空间分析扩展中，提供了这样一组邻域分析工具：</p>
+<p><img data-src="/images/blogImg/SAProximity_Toolset.png"></p>
+<br>
+
+<h1 id="1-块统计（Block-Statistics）"><a href="#1-块统计（Block-Statistics）" class="headerlink" title="1. 块统计（Block Statistics）"></a><strong>1. 块统计（Block Statistics）</strong></h1><p>分块统计，按照指定邻域类型计算区域统计值，输出区域为指定邻域类型的外接矩形。</p>
+<p>以下为邻域的形式：</p>
+<ul>
+<li>Nbr<strong>Annulus</strong>({innerRadius}, {outerRadius}, {CELL | MAP})</li>
+<li>Nbr<strong>Circle</strong>({radius}, {CELL | MAP}</li>
+<li>Nbr<strong>Rectangle</strong>({width}, {height}, {CELL | MAP})</li>
+<li>Nbr<strong>Wedge</strong>({radius}, {start_angle}, {end_angle}, {CELL | MAP})</li>
+<li>Nbr<strong>Irregular</strong>(kernel_file)</li>
+<li>Nbr<strong>Weight</strong>(kernel_file)</li>
+</ul>
+<p>Irregular与Weight邻域类型需要指定核文件（ .txt 文件）。</p>
+<p>可以进行统计的计算类型：</p>
+<ul>
+<li><strong>MEAN</strong>&#x2F;平均值；</li>
+<li><strong>MAJORITY</strong>&#x2F;众数（出现次数最多的值）；</li>
+<li><strong>MAXIMUM</strong>&#x2F;最大值；</li>
+<li><strong>MEDIAN</strong>&#x2F;中值；</li>
+<li><strong>MINIMUM</strong>&#x2F;最小值；</li>
+<li><strong>MINORITY</strong>&#x2F;少数（出现次数最少的值）；</li>
+<li><strong>RANGE</strong>&#x2F;范围（最大值和最小值之差）。</li>
+<li><strong>STD</strong>&#x2F;标准差。</li>
+<li><strong>SUM</strong>&#x2F;总和。</li>
+<li><strong>VARIETY</strong>&#x2F;变异度（唯一值的数量）。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/23/SAProximity/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -449,373 +834,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/10/SADistance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/08/10/SADistance/" class="post-title-link" itemprop="url">空间分析之距离分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-08-10 13:08:00" itemprop="dateCreated datePublished" datetime="2012-08-10T13:08:00+08:00">2012-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/08/10/SADistance/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/10/SADistance/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.7k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>继续总结下距离分析。如下是ArcGIS 10.x中，距离分析相关的工具：</p>
-<p><img data-src="/images/blogImg/SADistance_Toolset.png"></p>
-<p>ArcGIS中，主要可以通过如下的几种方式进行距离分析：</p>
-<ul>
-<li>1） 欧氏距离分析</li>
-<li>2） 成本加权距离分析</li>
-<li>3） 用于垂直移动限制和水平移动限制的成本加权距离分析</li>
-<li>4） 获取最短路径</li>
-</ul>
-<p>使用ArcGIS空间分析扩展实现距离分析，最主要的是欧氏距离分析和成本加权距离分析两类工具。</p>
-<h1 id="一、欧氏距离工具"><a href="#一、欧氏距离工具" class="headerlink" title="一、欧氏距离工具"></a><strong>一、欧氏距离工具</strong></h1><p>欧氏距离工具测量每个像元距离最近源的<strong>直线</strong>距离（像元中心至像元中心的距离）。</p>
-<p><strong>欧氏距离（Euclidean Diatance）</strong>——  求得每个像元至最近源的距离。</p>
-<p><strong>欧氏方向（Euclidean Direction）</strong>——  求得每个像元至最近源的方向。</p>
-<p><strong>欧氏分配（Euclidean Allocation）</strong>——  求得每个像元的最近的源。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/08/10/SADistance/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/06/SADensity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/08/06/SADensity/" class="post-title-link" itemprop="url">空间分析之密度分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-08-06 17:13:00" itemprop="dateCreated datePublished" datetime="2012-08-06T17:13:00+08:00">2012-08-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/08/06/SADensity/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/06/SADensity/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="一、WHY-DENSITY-？"><a href="#一、WHY-DENSITY-？" class="headerlink" title="一、WHY DENSITY ？"></a>一、WHY DENSITY ？</h1><p>通过密度分析，我们可以讲测量的来的点或者线生成连续表面，从而可以找出那些地方点或者线比较集中。也就是，密度分析是根据输入要素数据计算整个区域的数据聚集状况。</p>
-<p>密度分析是通过离散点数据或者线数据进行内插的过程，根据插值原理不同，主要是分为核密度分析和普通的点\线密度分析。核密度分心中，落入搜索区的点具有不同的权重，靠近搜索中心的点或线会被赋予较大的权重，反之，权重较小，它的计算结果分布较平滑。在普通的点\线密度分析中，落在搜索区域内的点或线有相同的权重，先对其求和，再除以搜索区域的大小，从而得到每个点的密度值。</p>
-<p><img data-src="/images/blogImg/SADensity_Demo.png"></p>
-<h1 id="二、HOWTO-DENSITY-？"><a href="#二、HOWTO-DENSITY-？" class="headerlink" title="二、HOWTO DENSITY ？"></a><strong>二、HOWTO DENSITY ？</strong></h1><p>ArcGIS 的空间分析工具箱中提供了密度分析工具集中的三个工具：</p>
-<p><img data-src="/images/blogImg/SADensity_Tool.png"></p>
-<h2 id="1-Kernel-Density（核密度分析）"><a href="#1-Kernel-Density（核密度分析）" class="headerlink" title="1. Kernel Density（核密度分析）"></a><strong>1. Kernel Density（核密度分析）</strong></h2><p><img data-src="/images/blogImg/SADensity_Tool2.png"></p>
-<p>输入值可以是点或者线。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/08/06/SADensity/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/06/01/AboutGaussKruger/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/06/01/AboutGaussKruger/" class="post-title-link" itemprop="url">关于高斯克吕格平面直角坐标系</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-06-01 16:43:00" itemprop="dateCreated datePublished" datetime="2012-06-01T16:43:00+08:00">2012-06-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/06/01/AboutGaussKruger/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/06/01/AboutGaussKruger/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>680</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>高斯克吕格平面直角坐标系是投影坐标系的一种，根据我国的地理情况，为建立地形图的测量控制和城市、矿山等区域性的测量控制，早在1952年决定，采用高斯克吕格平面直角坐标系。</p>
-<h1 id="投影面的形成："><a href="#投影面的形成：" class="headerlink" title="投影面的形成："></a><strong>投影面的形成：</strong></h1><p>椭球面是不可展曲面，无论如何选择投影函数，椭球面上的元素，投影到平面上，都会产生变形（角度、长度、面积）。高斯投影是一种等角投影（正形投影），又称为横轴椭圆柱等角投影。想象用一个椭球柱面横套在椭球外面，并与某一条子午线相切，椭球的柱的中心轴通过椭球中心，然后用一定的投影方法将中央子午线两侧各一定经差范围内的地区投影到椭圆柱面上，再将此柱展开即成为投影面。</p>
-<h1 id="坐标系的定义："><a href="#坐标系的定义：" class="headerlink" title="坐标系的定义："></a><strong>坐标系的定义：</strong></h1><p>在投影面上，中央经线和赤道的投影都是直线，并且以中央经线和赤道的交点作为坐标原点，以中央经线的投影为纵坐标，以赤道的投影为横坐标，这就形成了高斯平面直角坐标系。</p>
-<p><img data-src="/images/blogImg/AboutGaussKruger_Defination.jpg"></p>
-<h1 id="分带投影："><a href="#分带投影：" class="headerlink" title="分带投影："></a><strong>分带投影：</strong></h1><p>高斯投影对投影函数的选择条件：</p>
-<p>  1）椭球面上的任意角度投影到平面后保持不变；</p>
-<p>  2）作为平面坐标轴的中央经线，投影后是一条直线，并且是投影点的对称轴；</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/06/01/AboutGaussKruger/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/36/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/38/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -828,7 +846,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -839,13 +857,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

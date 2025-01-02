@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,389 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/05/08/LinuxArcGISServerDeployment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/05/08/LinuxArcGISServerDeployment/" class="post-title-link" itemprop="url">Linux 下安装 ArcGIS Server 前的准备工作备忘录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-05-08 16:55:01" itemprop="dateCreated datePublished" datetime="2015-05-08T16:55:01+08:00">2015-05-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/05/08/LinuxArcGISServerDeployment/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/08/LinuxArcGISServerDeployment/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>495</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p><strong>安装环境： ArcGIS for Server Linux 10.2.2 ， Redhat 6</strong></p>
+</blockquote>
+<p>因为是在网络虚拟机中安装部署，首先需要一个远程Linux的客户端，这里使用 putty，可以在官方的 <span class="exturl" data-url="aHR0cDovL3d3dy5wdXR0eS5vcmcv">www.putty.org<i class="fa fa-external-link-alt"></i></span> 下载，但是貌似网站被墙了，我也放了一份在<span class="exturl" data-url="aHR0cDovL2Rvd25sb2FkLmNzZG4ubmV0L2RldGFpbC9raWtpdGFtb29uLzg2NzU1MzE=">我的资源<i class="fa fa-external-link-alt"></i></span>中。</p>
+<p><strong>1） 运行 putty.exe ,登陆linux服务器</strong>：</p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Putty.png"></p>
+<p><strong>2） 输入用户名密码，登入服务器：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Login.png"></p>
+<p><strong>3） 查询主机的 IP 地址：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_IP.png"></p>
+<p><strong>4） 查询 hostname：</strong></p>
+<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_hostname.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/05/08/LinuxArcGISServerDeployment/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/04/21/MappingASCIIRaster/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/04/21/MappingASCIIRaster/" class="post-title-link" itemprop="url">ASCII 栅格的显示</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-04-21 18:25:39" itemprop="dateCreated datePublished" datetime="2015-04-21T18:25:39+08:00">2015-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/04/21/MappingASCIIRaster/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/04/21/MappingASCIIRaster/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>218</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>今天刚好有人问到一个有关 ASCII 栅格数据的问题，这里梳理下，用最简单的方式极速理解。</p>
+<br>
+
+<blockquote>
+<p><strong>什么是ASCII栅格？</strong>      就是用ASCII文本记录的栅格数据……</p>
+<p><strong>怎么得到ASCII栅格？</strong>   比如使用工具 Raster to ASCII……</p>
+</blockquote>
+<br>
+
+<br>
+
+
+
+
+
+
+<p>一般在 ASCII 栅格的文件头中我们会看到这几行：</p>
+<p><img data-src="/images/blogImg/MappingASCIIRaster_TXT.png"></p>
+<p><strong>ncols</strong>  和 <strong>nrows</strong>   表示这份数据的行列数，这份数据是10×10。</p>
+<p><strong>xllcorner</strong> 和 <strong>yllcorner</strong> 表示的就是栅格的左下角（low left）角点的坐标。</p>
+<p><strong>cellsize</strong> 也就是像元大小，表示每个正方形单元的尺寸。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/04/21/MappingASCIIRaster/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/04/01/ArcGISEditorforOSM103xDesktop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/04/01/ArcGISEditorforOSM103xDesktop/" class="post-title-link" itemprop="url">ArcGIS Editor for OSM, 10.3.x Desktop</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-04-01 12:32:13" itemprop="dateCreated datePublished" datetime="2015-04-01T12:32:13+08:00">2015-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/04/01/ArcGISEditorforOSM103xDesktop/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/04/01/ArcGISEditorforOSM103xDesktop/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>314</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>对于好多地图爱好者，由于保（众）密（所）严（周）格（知），获取高精度的数据不是个容易事，幸亏有了可爱的 <span class="exturl" data-url="aHR0cDovL3d3dy5vcGVuc3RyZWV0bWFwLm9yZy8=">OpenStreetMap<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p> ArcGIS Editor for OpenStreetMap 是一个免费开源的 ArcGIS Desktop 插件。上个月Esri官网提供可用于Desktop 10.3 的最新版本插件。</p>
+<p><strong>下载页面：<span class="exturl" data-url="aHR0cDovL3d3dy5hcmNnaXMuY29tL2hvbWUvaXRlbS5odG1sP2lkPTc1NzE2ZDkzM2YxYzQwYTc4NDI0MzE5OGUwZGMxMWExJl9nYT0xLjQwNTgwODM3LjYzMTkzMTU1MS4xNDI3MjY5NTQy">ArcGIS Editor for OSM, 10.3.x Desktop<i class="fa fa-external-link-alt"></i></span></strong></p>
+<p>相关资源自取：<a target="_blank" rel="noopener" href="https://github.com/Esri/arcgis-osm-editor/wiki"><strong>点这里</strong></a></p>
+<br>
+<br>
+
+<p>下载之后，有32位和64位两个安装包，如果你安装了Desktop的64位后台GP补丁，就把64位的插件程序也安装上。</p>
+<p>ArcToolbox中多了好多工具……</p>
+<p><img data-src="/images/blogImg/ArcGISEditorforOSM103xDesktop_Toolset.png"></p>
+<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/04/01/ArcGISEditorforOSM103xDesktop/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -471,383 +854,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/17/MappingCluster/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/03/17/MappingCluster/" class="post-title-link" itemprop="url">空间统计（三）聚类分布制图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-03-17 15:59:35" itemprop="dateCreated datePublished" datetime="2015-03-17T15:59:35+08:00">2015-03-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/03/17/MappingCluster/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/03/17/MappingCluster/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>3.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>13 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img data-src="/images/blogImg/MappingCluster_Toolset.png"></p>
-<p>这组工具中包含众所周知的热点分析工具，通过这个工具我们能捕获到大量数据中的热点和冷点，对我们分析问题有很大的帮助。例如，在犯罪分析中，我们可以研究哪些位置犯罪频繁并且聚集，对增设警力有重要的辅助作用。工具集中的其他工具也有类似的作用，都是通过执行聚类分析来识别具有统计显著性的热点、冷点和空间异常值的位置。</p>
-<p>依照惯例，我们还是 one by one 来看。</p>
-<h1 id="Similarity-Search"><a href="#Similarity-Search" class="headerlink" title="Similarity Search"></a><strong>Similarity Search</strong></h1><p>相似搜索工具，顾名思义，工具根据要素属性确定哪些候选要素与输入要素最相似或者最不相似。</p>
-<p>举个栗子：</p>
-<p>我希望找到与圣地亚哥5岁以下儿童、未成年人、65岁以上老年人人数分布相似的城市：</p>
-<p><img data-src="/images/blogImg/MappingCluster_SanDiego.png"></p>
-<p>工具中我做如下配置：</p>
-<p><img data-src="/images/blogImg/MappingCluster_Env.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/03/17/MappingCluster/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/06/ArcGISPro60DayFreetrial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/03/06/ArcGISPro60DayFreetrial/" class="post-title-link" itemprop="url">NEW！获取 ArcGIS Pro 与 ArcGIS Desktop 60天试用许可</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-03-06 12:29:22" itemprop="dateCreated datePublished" datetime="2015-03-06T12:29:22+08:00">2015-03-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/03/06/ArcGISPro60DayFreetrial/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/03/06/ArcGISPro60DayFreetrial/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>354</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>春节之后，美国esri官网给了我们一些小惊喜，千呼万唤的 ArcGIS Pro 的试用许可终于放出来了。与ArcGIS Desktop Advanced 一起提供 60天的试用，同时附赠了 200 个 credit。</p>
-<p>ArcGIS Pro 使用了全新的 Named User 方式授权许可，我们可以多个设备同时在线使用。</p>
-<blockquote>
-<p>PS：如果你希望得到 ArcGIS Desktop的使用许可，这篇文章也能帮到你。</p>
-</blockquote>
-<p>下面就说说申请途径和激活方式。</p>
-<br>
-<br>
-
-<h1 id="First-，找到Esri官方试用地址"><a href="#First-，找到Esri官方试用地址" class="headerlink" title="First ，找到Esri官方试用地址"></a>First ，找到Esri官方试用地址</h1><p><span class="exturl" data-url="aHR0cDovL3d3dy5lc3JpLmNvbS9zb2Z0d2FyZS9hcmNnaXMvYXJjZ2lzLWZvci1kZXNrdG9wL2ZyZWUtdHJpYWw=">http://www.esri.com/software/arcgis/arcgis-for-desktop/free-trial<i class="fa fa-external-link-alt"></i></span></p>
-<p><img data-src="/images/blogImg/ArcGISPro60DayFreetrial_SignUp.png"></p>
-<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/03/06/ArcGISPro60DayFreetrial/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/05/AnalysisPatternsB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/03/05/AnalysisPatternsB/" class="post-title-link" itemprop="url">空间统计（二）分析模式 B</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-03-05 12:21:40" itemprop="dateCreated datePublished" datetime="2015-03-05T12:21:40+08:00">2015-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/03/05/AnalysisPatternsB/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/03/05/AnalysisPatternsB/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>7 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><em>Updated: 2017-10-11</em><br><em>修改了文中表意含糊的语句，增加了更多解释性描述。</em></p>
-<br>
-
-<p>这一篇具体看分析模式工具集中的具体工具，整理这一篇的目的，不是要读者了解每个工具的背后使用了多么高级的算法，运用了多么庞大的公式，而是一起了解这些工具究竟可以为我们研究什么样的空间数据分布模式，当需要探索数据的空间性质时，知道应该如何去应用这些分析工具。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsB_Toolset.png"></p>
-<br>
-
-<h2 id="Average-Nearest-Neighbor"><a href="#Average-Nearest-Neighbor" class="headerlink" title="Average Nearest Neighbor"></a>Average Nearest Neighbor</h2><p>平均最近邻工具，计算每个要素中心与其最邻近要素中心的距离，然后求取所有最近邻距离的平均值，然后用这个观测平均值与随机分布的期望平均值进行比较，从而可以反应数据的空间分布是聚合的还是分散的。 </p>
-<p>Average Nearest Neighbor 工具将返回五个值：</p>
-<ul>
-<li>观测的平均距离 &#x2F; Observed Mean Distance</li>
-<li>期望的平均距离 &#x2F; Excepted Mean Distance</li>
-<li>最近邻指数 &#x2F; Nearest Neighbor Ratio</li>
-<li>z得分 &#x2F; z-score</li>
-<li>p值 &#x2F; p-value</li>
-</ul>
-<p>其中，最近邻指数是观测平均值与期望平均值的比率，最近邻如果最近邻比率小于1，则表现的模式为聚类。如果指数大于1，则表现的模式趋向于扩散。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/03/05/AnalysisPatternsB/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/21/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -860,7 +866,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -871,13 +877,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

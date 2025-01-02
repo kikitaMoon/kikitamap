@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,413 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/15/osm2ce/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/15/osm2ce/" class="post-title-link" itemprop="url">OSM在ArcGIS产品线中的使用小结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-15 14:56:00" itemprop="dateCreated datePublished" datetime="2018-03-15T14:56:00+08:00">2018-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/03/15/osm2ce/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/15/osm2ce/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>730</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img data-src="/images/blogImg/osm2ce_1.png"></p>
+<p>说到免费开放的数据，自然会想到 Open Street Map，这里分享下在 ArcGIS 产品线中osm数据的使用实践。</p>
+<blockquote>
+<p>环境：ArcGIS Desktop 10.6， Esri CityEngine 2017.1</p>
+</blockquote>
+<h3 id="在ArcMap中使用osm数据"><a href="#在ArcMap中使用osm数据" class="headerlink" title="在ArcMap中使用osm数据"></a><strong>在ArcMap中使用osm数据</strong></h3><p>一般情况下，我们可以在 <span class="exturl" data-url="aHR0cHM6Ly93d3cub3BlbnN0cmVldG1hcC5vcmcv">Open Street Map<i class="fa fa-external-link-alt"></i></span> 官网可以通过指定范围直接下载osm格式数据，然后在 ArcMap中直接读取。如下，以Esri中国所在的金泰大厦为中心的数据：</p>
+<p><img data-src="/images/blogImg/osm2ce_2.png" alt="ArcMap直读OSM"></p>
+<p>osm数据是基于xml的数据格式，ArcMap不能直接编辑。如果希望导入地理数据库中编辑，可以利用插件，这是Esri额外提供的一个桌面端的免费开源的osm插件，<span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD0wYzRiMjQ2MDhmYzk0NTQyYmE1ZDExMzBjMDYwNjgwMg==">ArcGIS Editor for OSM 10.6.x Desktop<i class="fa fa-external-link-alt"></i></span>。 通过这个插件可以下载、更新OSM数据有关这个插件的源码、文档，可以在<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0VzcmkvYXJjZ2lzLW9zbS1lZGl0b3I=">Github<i class="fa fa-external-link-alt"></i></span>上获得。</p>
+<blockquote>
+<p>OSM is an XML-based format used to describe vector data in a map. It defines three basic data types—nodes, ways, and closed ways—which are used to describe all the other elements: </p>
+<ul>
+<li>Nodes—Points between which segments are drawn. </li>
+<li>Ways—Ordered list of nodes, displayed as connected by line segments in the editor. </li>
+<li>Closed Ways—Ways that go in a complete loop. They are used to describe areas such as parks, lakes, or islands.</li>
+</ul>
+</blockquote>
+<p>以前10.3年代的时候，整理过一次简单的说明，点<a href="http://kikitamap.com/2015/04/01/ArcGISEditorforOSM103xDesktop/">这里</a>直达。通过测试，相同的网络环境下，官网下载osm数据，之后再使用 Load OSM File 导入GDB，效率明显优于直接使用 Download OSM Data导入GDB。</p>
+<h3 id="在CityEngine中使用osm数据"><a href="#在CityEngine中使用osm数据" class="headerlink" title="在CityEngine中使用osm数据"></a><strong>在CityEngine中使用osm数据</strong></h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/15/osm2ce/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/13/CEMaplayer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/13/CEMaplayer/" class="post-title-link" itemprop="url">CityEngine中的Terrain Map Layer</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-13 12:40:14" itemprop="dateCreated datePublished" datetime="2018-03-13T12:40:14+08:00">2018-03-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/03/13/CEMaplayer/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/13/CEMaplayer/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>419</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>​    CityEngine 中的Map Layer可以参与到批量建模当中，根据角色的不同可以分为Terrain，Texture，Obstacle，Mapping，Function几个类型的图层。</p>
+<p><strong>Terrain Map Layer</strong> </p>
+<p>​    顾名思义，用于表示场景的地表结构和底图图层，这个图层可以由一个DEM和一个影像共同构成。 这类图层在创建的时候，可以设置影像取值的通道、高程的拉伸范围、影像的尺寸、锚点位置、偏移量等参数。</p>
+<p>​    在图层创建之后，我们可以看到属性窗口中，有这样一段代码表述了上面的一些设置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attr elevation = map_01(brightness, 0.0, 150.0) + elevationDelta</span><br></pre></td></tr></table></figure>
+
+<p>这时，有个疑问，<code>elevationDelta</code> 是什么？如何体现出来的？带着这个疑问我们来看看CE对于场景高程的作用机制。</p>
+<p>导入CE场景中的道路线数据一般被识别为Graph Segment，静态模型一般为Static Shape，这两种类型数据可以通过 Align graph to terrain，Align shapes to terrain 来向地形数据对齐。在实际应用中，很多建筑物或道路的底面是个平面，需要将地形整平到与模型底面完美贴合，这时再使用工具 Align terrain to shape 来解决这个问题。</p>
+<p>这时保存场景，在CE的工程目录的data文件夹下，就会出现一个场景同名的文件夹，并在其下自动生成一个16bit的栅格数据，储存地形变化量，这个栅格数据即为 elevationDelta。当预览数据时，从渲染方案上可以得到直观印象，灰色为无变化，黑色为减低，白色为增加。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/09/ProNamedUserforPortalUse/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/09/ProNamedUserforPortalUse/" class="post-title-link" itemprop="url">如何部署通过Portal管理的ArcGIS Pro Named User许可？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-09 11:50:45" itemprop="dateCreated datePublished" datetime="2018-03-09T11:50:45+08:00">2018-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/03/09/ProNamedUserforPortalUse/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/09/ProNamedUserforPortalUse/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在开始如下部署之前，一定要注意下<strong>版本对应</strong>的情况，否则会部署失败：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>Portal 10.6</td>
+<td>Portal 10.5.1</td>
+<td>Portal 10.5</td>
+<td>Portal10.4.1</td>
+</tr>
+<tr>
+<td>Pro 2.1</td>
+<td>LM 10.6</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>Pro 2.0</td>
+<td>LM 10.6</td>
+<td>LM 10.5.1、10.6</td>
+<td>LM 10.5.1、10.6</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>Pro 1.4</td>
+<td>LM 10.6</td>
+<td>LM 10.5.1、10.6</td>
+<td>LM 10.5、10.5.1、10.6</td>
+<td>LM 10.4.1</td>
+</tr>
+</tbody></table>
+<p><em>LM : License Manager,  Portal: Portal for ArcGIS;   Pro: ArcGIS Pro</em> </p>
+<br>
+
+<p>如果您购买并已经部署了 Portal for ArcGIS，搭建了您的组织门户， 并且您希望在内网环境中通过 Named User 方式使用 ArcGIS Pro，那么您可以选择通过Portal for ArcGIS为组织成员配置Named User许可的方式。</p>
+<h2 id="1-为组织配置-ArcGIS-Pro-许可"><a href="#1-为组织配置-ArcGIS-Pro-许可" class="headerlink" title="1 为组织配置 ArcGIS Pro 许可"></a>1 为组织配置 ArcGIS Pro 许可</h2><p><strong>1)</strong> 首先您需要确定哪个组织门户将用于管理ArcGIS Pro的许可（这个指定的组织门户称为“许可门户”）， 尤其当您的组织有多个门户的时候，请确保您指定的门户是您想要用来管理许可的那个门户。此种许可模式，需要安装ArcGIS License Server Administrator 程序。</p>
+<p><strong>2)</strong> 完成安装后，打开 ArcGIS License Server Administrator，并单击“计算机 ID…” 按钮。</p>
+<p><img data-src="http://images.esrichina.com.cn/article/20170310/dbb2b70dea49a6649e5fed410bf1dc28.png"></p>
+<p><strong>3)</strong> 复制并保存计算机标识符对话框中的 MAC 地址 </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/09/ProNamedUserforPortalUse/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -478,374 +885,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/01/11/ReadingPyScriptingforAGS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/01/11/ReadingPyScriptingforAGS/" class="post-title-link" itemprop="url">《面向ArcGIS的Python脚本编程》读后</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-01-11 12:57:19" itemprop="dateCreated datePublished" datetime="2018-01-11T12:57:19+08:00">2018-01-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/01/11/ReadingPyScriptingforAGS/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/11/ReadingPyScriptingforAGS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.2k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>​        这篇是读书笔记。同事手里有本《面向ArcGIS的Python脚本编程》，系统的介绍了如何结合ArcGIS使用python。最近拿来阅读，觉得受益颇多。最早期我是通过python自身的学习资源、书籍、ArcGIS帮助文档入门的，知识体系虽然建立起来了，但是很多细节没有考虑到，对照书中的内容温故知新、查漏补缺。</p>
-<h2 id="arcpy与AO"><a href="#arcpy与AO" class="headerlink" title="arcpy与AO"></a>arcpy与AO</h2><p>​        书的开篇就介绍了脚本语言和程序语言的区别。我将其引申到日常工作中用户会经常问到的，“为什么AO可以实现的东西，arcpy却不能？”“为什么arcpy的功能这么‘粗粒度’？” </p>
-<p>​         AO中包含了ArcGIS用到的所有编程对象，包含了数以千计的不同对象，因此程序员可以精细控制软件的外观和运行机制。Python作为一种非常平易近人的语言，既是脚本语言又是程序语言，在ArcGIS平台中，python更多充当的是脚本语言的角色，例如：访问ArcGIS现有的功能，组合各种现有功能来扩展ArcGIS的功能，更可以作为一种“粘合剂”将更多的功能整合进来。用书中的话讲，脚本语言就是在“控制其他应用程序以实现任务自动化”。arcpy是ArcGIS提供的python站点包，用于访问ArcGIS 的地理处理功能，定位正在于此。</p>
-<h2 id="arcpy与model-builder"><a href="#arcpy与model-builder" class="headerlink" title="arcpy与model builder"></a><strong>arcpy</strong>与<strong>model builder</strong></h2><p>​          model builder（简称MB吧）是ArcGIS Desktop中我认为最可爱的功能没有之一，它采用了编程的思想却免去了书写代码，是给非程序员实践创造的启航之地。日常工作中，很多逻辑简单、功能清晰的任务都可以使用MB实现。以前写过一篇，<a href="http://kikitamap.com/2015/12/06/IterationinArcGISforDesktop/">《如何在ArcGIS for Desktop中实现批量任务》</a>，具体不再展开。你可能由这些疑问，“MB也能完成批量任务，我何时应该考虑使用python？”  当然这里回答的是“不得不”的问题，如果你本来就是编程高手，从一开始就会觉得MB限制了你的想象力，如下回答可能不需要考虑。 </p>
-<p>​          MB的局限性有什么？或者说相比之下，python能更多实现什么？</p>
-<ul>
-<li>python可以实现更高级的编程逻辑。例如嵌套循环是MB的软肋，一遇到多重遍历之类的任务就只能呵呵了。</li>
-<li>python可以实现更底层的处理任务。例如我们可以使用Cursor，遍历表并对其增删改等等。</li>
-<li>python可以集成第三方的资源。例如R语言等第三方类库来处理数据执行任务。</li>
-<li>python可以不在ArcGIS软件内部执行任务，只需要安装并授权ArcGIS软件，然后通过独立脚本的形式运行。既然可以独立运行，就可以定义系统任务定时执行。</li>
-</ul>
-<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/01/11/ReadingPyScriptingforAGS/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/12/19/AutoPublishingService/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/12/19/AutoPublishingService/" class="post-title-link" itemprop="url">通过arcpy自动发布服务</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-12-19 12:12:44" itemprop="dateCreated datePublished" datetime="2017-12-19T12:12:44+08:00">2017-12-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/12/19/AutoPublishingService/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/19/AutoPublishingService/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>102</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><em><strong>示例</strong></em></p>
-<p><strong>地图服务</strong></p>
-<p>发布单个地图服务：<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvTWFwU2VydmNpZVBZMjcvUHVibGlzaGluZ1NpbmdsZU1hcFNlcnZpY2UucHk=">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/MapServciePY27/PublishingSingleMapService.py<i class="fa fa-external-link-alt"></i></span></p>
-<p>批量发布地图服务：<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvTWFwU2VydmNpZVBZMjcvQmF0Y2hQdWJsaXNoaW5nTWFwU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/MapServciePY27/BatchPublishingMapService.py<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>要素服务</strong></p>
-<p>批量发布要素服务：<br>Hosted Feature Service<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvRmVhdHVyZVNlcnZpY2VQWTI3L1B1Ymxpc2hpbmdIb3N0ZWRGZWF0dXJlU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/FeatureServicePY27/PublishingHostedFeatureService.py<i class="fa fa-external-link-alt"></i></span></p>
-<p>ArcGIS Server Feature Service<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvRmVhdHVyZVNlcnZpY2VQWTI3L1B1Ymxpc2hpbmdTZXJ2ZXJGZWF0dXJlU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/FeatureServicePY27/PublishingServerFeatureService.py<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>影像服务</strong></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9UZWNoQ29uZmVyZW5jZXMvMjAxNi1EZXZlbG9wZXJUZWNoQ29uZmVyZW5jZS1EZW1vLzQtUHVibGlzaEltYWdlU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/TechConferences/2016-DeveloperTechConference-Demo/4-PublishImageService.py<i class="fa fa-external-link-alt"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/12/13/AddLiveRe/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/12/13/AddLiveRe/" class="post-title-link" itemprop="url">Add LiveRe Comments</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-12-13 09:58:58" itemprop="dateCreated datePublished" datetime="2017-12-13T09:58:58+08:00">2017-12-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/12/13/AddLiveRe/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/13/AddLiveRe/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>214</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img data-src="https://livere.com/img/icon/main/img_header_livereman.png"></p>
-<p>自从多说挂了之后，网站的评论系统一直缺席中，今天自己部署个<span class="exturl" data-url="aHR0cHM6Ly9saXZlcmUuY29tLw==">LiveRe<i class="fa fa-external-link-alt"></i></span>吧，现在用的hueman主题，就以此主题为例，自己动手丰衣足食了。</p>
-<ol>
-<li>在主题的配置文件中增加一项，livere<br> <code>...\themes\hueman\_config.yml</code></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">comment:</span><br><span class="line">    livere: your data id</span><br></pre></td></tr></table></figure>
-
-<p>2.在<code>...\themes\hueman\layout\comment</code>增加<code>livere.ejs</code>评论模块代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- LiveRe City install code --&gt;</span><br><span class="line">&lt;div id=&quot;lv-container&quot; data-id=&quot;city&quot; data-uid=&quot;********&quot;&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">   (function(d, s) &#123;</span><br><span class="line">       var j, e = d.getElementsByTagName(s)[0];</span><br><span class="line"></span><br><span class="line">       if (typeof LivereTower === &#x27;function&#x27;) &#123; return; &#125;</span><br><span class="line"></span><br><span class="line">       j = d.createElement(s);</span><br><span class="line">       j.src = &#x27;https://cdn-city.livere.com/js/embed.dist.js&#x27;;</span><br><span class="line">       j.async = true;</span><br><span class="line"></span><br><span class="line">       e.parentNode.insertBefore(j, e);</span><br><span class="line">   &#125;)(document, &#x27;script&#x27;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;noscript&gt;Please activate JavaScript for write a comment in LiveRe&lt;/noscript&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- completed City install code --&gt;</span><br></pre></td></tr></table></figure>
-
-<p>3.相关文件增加判断</p>
-<p><code>...\themes\hueman\layout\comment\index.ejs</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125; else if (theme.comment.livere) &#123; %&gt;</span><br><span class="line">       &lt;%- partial(&#x27;comment/livere&#x27;) %&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>...\themes\hueman\layout\comment\scripts.ejs</code></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/12/13/AddLiveRe/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -858,7 +897,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -869,13 +908,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

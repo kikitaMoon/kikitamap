@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,352 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/09/30/LineDirectioninCE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/09/30/LineDirectioninCE/" class="post-title-link" itemprop="url">在CityEngine中如何判断线的方向与左右？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-09-30 14:44:20" itemprop="dateCreated datePublished" datetime="2016-09-30T14:44:20+08:00">2016-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/09/30/LineDirectioninCE/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/30/LineDirectioninCE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>163</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在我们建模的过程中，通常会遇到一些实际问题，例如，如何在道路右边放置交通指示灯？ 如何在道路的左边放置行树？如何在管线的末尾放置阀门？等等。</p>
+<p>这些有关线状要素的方向和左右的判断，可以通过UV坐标系来确定的。 线的UV坐标系与线的方向相关，</p>
+<p><img data-src="/images/blogImg/LineDirectioninCE.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    LineDirection.cga</span></span><br><span class="line"><span class="comment"> * Created: 22 Sep 2016 06:06:18 GMT</span></span><br><span class="line"><span class="comment"> * Author:  kikit</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2016.0&quot;</span></span><br><span class="line"></span><br><span class="line">init --&gt; </span><br><span class="line">Line2</span><br><span class="line"></span><br><span class="line"><span class="title function_">split</span><span class="params">(u,unitSpace,<span class="number">0</span>)</span>&#123;<span class="string">&#x27;0.1:StartSegment|&#x27;</span><span class="number">0.8</span>:NIL|<span class="string">&#x27;0.1:EndSegment&#125;</span></span><br><span class="line"><span class="string">StartSegment --&gt; color(0,1,0) #Green</span></span><br><span class="line"><span class="string">EndSegment --&gt; color(1,0,0)   #Red</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Line2 --&gt;</span></span><br><span class="line"><span class="string">translate(rel,world,0,0,-20)</span></span><br><span class="line"><span class="string">split(v,unitSpace,0)&#123;&#x27;</span><span class="number">0.2</span>:LeftSide|<span class="string">&#x27;0.6:NIL|&#x27;</span><span class="number">0.2</span>:RightSide&#125;</span><br><span class="line">LeftSide --&gt; color(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>)   #Yellow</span><br><span class="line">RightSide --&gt; color(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>)  #Blue</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/09/29/PackageArcpyEXE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/09/29/PackageArcpyEXE/" class="post-title-link" itemprop="url">如何使用py2exe打包arcpy脚本？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-09-29 09:03:35" itemprop="dateCreated datePublished" datetime="2016-09-29T09:03:35+08:00">2016-09-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/09/29/PackageArcpyEXE/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/29/PackageArcpyEXE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我们可以在ArcGIS之外调用arcpy站点包运行python独立脚本，从而批量化任务提高工作效率。 如果可以把做好的脚本打包成exe是不是就更方便了呢？想想一键式处理也挺开心的。</p>
+<p>Python打包的问题最早是在 <span class="exturl" data-url="aHR0cDovL3poaWh1LmVzcmljaGluYS5jb20uY24v">ArcGIS知乎<i class="fa fa-external-link-alt"></i></span> 中看到的，有人提问为何打包失败，我还有幸被邀请回答，虽然在这一块我也是小白一枚。 后来，得空时也搜了下相关的资源，虽然大部分人持悲观态度说arcpy不支持打包，但刚好<span class="exturl" data-url="aHR0cHM6Ly9nZW9uZXQuZXNyaS5jb20vdGhyZWFkLzE2NDEwMQ==">有个帖子<i class="fa fa-external-link-alt"></i></span>说可以实现，并且宣称 “It can be done easily!”，那我就动手试试吧。</p>
+<h1 id="Step1-下载安装Py2exe"><a href="#Step1-下载安装Py2exe" class="headerlink" title="Step1 下载安装Py2exe"></a>Step1 下载安装Py2exe</h1><p>Py2exe是一个Python工具发布扩展包，可以用来将Python脚本转化为Windows的可执行程序，详情看 <span class="exturl" data-url="aHR0cDovL3B5MmV4ZS5vcmcv">官网 py2exe.org<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p>下载Py2exe安装程序，下载地址戳 <span class="exturl" data-url="aHR0cHM6Ly9zb3VyY2Vmb3JnZS5uZXQvcHJvamVjdHMvcHkyZXhlL2ZpbGVzL3B5MmV4ZS8wLjYuOS8=">这里<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p>ArcGIS Desktop使用的Python 2.7.x版本，可以对应下载安装 <strong><code>py2exe-0.6.9.win32-py2.7.exe</code></strong> 这个32位的版本；如果你的机器上安装 ArcGIS Desktop 64-bit Background Geoprocessing 补丁或者安装了 ArcGIS Server产品，也可以下载安装 **<code>py2exe-0.6.9.win64-py2.7.amd64.exe</code>**。 在这篇博客中，我就以 64位的包为例来说明打包的过程。</p>
+<br>
+
+<h1 id="Step2-编写脚本文件准备打包"><a href="#Step2-编写脚本文件准备打包" class="headerlink" title="Step2 编写脚本文件准备打包"></a>Step2 编写脚本文件准备打包</h1><p>打包时需要有至少两个脚本文件，一个是 <code>setup_py2exe.py</code>, 一个是执行实际任务的 <code>HelloPy2exe.py</code> 脚本文件。</p>
+<p><strong>先</strong> 看第一个脚本 setup_py2exe.py，包含如下两行：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/09/29/PackageArcpyEXE/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/09/02/TripToHngKong/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/09/02/TripToHngKong/" class="post-title-link" itemprop="url">Trip To HngKong</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-09-02 17:30:02" itemprop="dateCreated datePublished" datetime="2016-09-02T17:30:02+08:00">2016-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Visual-Musing/" itemprop="url" rel="index"><span itemprop="name">Visual Musing</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/09/02/TripToHngKong/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/02/TripToHngKong/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>36</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>2016年6月 海港与童心</p>
+</blockquote>
+<iframe width="720"   height="600"  frameborder="0"    scrolling="no"   marginheight="0"  marginwidth="0" 
+ src="http://kikitamoon.maps.arcgis.com/apps/MapTour/index.html?appid=6e14b73f21414cf6823c607be05cd916"></iframe>
+
+
+<p>详情访问：<span class="exturl" data-url="aHR0cDovL2tpa2l0YW1vb24ubWFwcy5hcmNnaXMuY29tL2FwcHMvTWFwVG91ci9pbmRleC5odG1sP2FwcGlkPTZlMTRiNzNmMjE0MTRjZjY4MjNjNjA3YmUwNWNkOTE2">kikitamoon.maps.arcgis.com<i class="fa fa-external-link-alt"></i></span></p>
+<p><img data-src="/images/blogImg/XJL_TripToHongkong.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -456,364 +802,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/06/17/LMthroughFireWall/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/06/17/LMthroughFireWall/" class="post-title-link" itemprop="url">Troubleshooting： 有防火墙的情况下你需要如何部署许可服务器？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2016-06-17 16:11:33" itemprop="dateCreated datePublished" datetime="2016-06-17T16:11:33+08:00">2016-06-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2016/06/17/LMthroughFireWall/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/17/LMthroughFireWall/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>658</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>防火墙是一种有效的安全策略，如果部署ArcGIS许可的环境中不允许关闭防火墙，你可能会遇到这个错误：ArcGIS administrator 连不到许可服务器，提示错误， “ <em>“xxx.xxx.xxx.xxx”没有有效的许可管理器。请输入一个有效的许可管理器服务器。</em> ”</p>
-<p>那么，如何解决这个问题？ 如下。</p>
-<br>
-
-
-<h1 id="1-找到-Service-txt-文件"><a href="#1-找到-Service-txt-文件" class="headerlink" title="1  找到 Service.txt 文件"></a>1  找到 Service.txt 文件</h1><p>在许可服务器所在的机器上，默认位于：C:\Program Files (x86)\ArcGIS\License10.x\bin 目录下。 打开之后，类似下图：</p>
-<p><img data-src="/images/blogImg/LMthroughFireWall_ServiceTXT1.png"></p>
-<p>通过修改此配置文件可以控制ArcGIS许可服务器后台进程使用哪个端口。</p>
-<br>
-
-
-<h1 id="1Plus-知其所以然"><a href="#1Plus-知其所以然" class="headerlink" title="1Plus   知其所以然"></a>1Plus   知其所以然</h1><p>如果你对问题的原因不感兴趣，那么直接跳至2。  </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/06/17/LMthroughFireWall/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/05/24/theBlueSea/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/05/24/theBlueSea/" class="post-title-link" itemprop="url">海</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2016-05-24 13:27:49" itemprop="dateCreated datePublished" datetime="2016-05-24T13:27:49+08:00">2016-05-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Visual-Musing/" itemprop="url" rel="index"><span itemprop="name">Visual Musing</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2016/05/24/theBlueSea/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/24/theBlueSea/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>35</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>摄于 2014-5-4, Paros Island,  Greece</p>
-</blockquote>
-<p>瞄了一眼《太阳的后裔》，看到里面的沉船湾，又想起了那片海，真的美！</p>
-<p><img data-src="/images/blogImg/XJL_IMG_5103.jpg"></p>
-<p><img data-src="/images/blogImg/XJL_IMG_5095.jpg"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/04/28/ParallelPython/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/04/28/ParallelPython/" class="post-title-link" itemprop="url">浅谈使用ArcPy执行大数据量处理任务</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2016-04-28 12:31:40" itemprop="dateCreated datePublished" datetime="2016-04-28T12:31:40+08:00">2016-04-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2016/04/28/ParallelPython/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/28/ParallelPython/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Python功能强大而易于学习。对于ArcGIS for Desktop用户来讲，Python是提高工作效率的不二选择。 </p>
-<p><span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS96aC1jbi9hcmNtYXAvbGF0ZXN0L2FuYWx5emUvYXJjcHkvd2hhdC1pcy1hcmNweS0uaHRt">Arcpy<i class="fa fa-external-link-alt"></i></span>是esri提供的用于高效数据处理分析、制图等的Python站点包。 利用ArcPy，我们可以在ArcMap的Python窗口交互执行脚本，还可以创建自定义脚本工具或脚本工具箱，还可以在ArcGIS之外运行独立脚本，享受更纯正的python体验。</p>
-<p>这一篇说说如何利用Python批量执行数据处理任务，这个问题也是前段时间遇到的用户的实际问题，比较有价值。</p>
-<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>还是从实例开始……</p>
-<p><img data-src="/images/blogImg/ParallelPython.png"></p>
-<p>有一个简单但耗体力的裁剪任务，希望通过大量面分割（逐一裁剪）大量的数据，类似Split工具要完成的任务，并且要按照一定的规则命名将分割结果输出到指定的位置，例如要求有指定前缀。</p>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>例如，一种思路是逐一遍历面要素，然后去裁剪目标数据再输出，这时你可能会遇到下面的小问题：</p>
-<p><strong>我如何通过ArcPy获取要素的几何？</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/04/28/ParallelPython/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/13/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -826,7 +814,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -837,13 +825,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

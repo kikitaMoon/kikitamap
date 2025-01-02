@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,374 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/01/11/ReadingPyScriptingforAGS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/01/11/ReadingPyScriptingforAGS/" class="post-title-link" itemprop="url">《面向ArcGIS的Python脚本编程》读后</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-01-11 12:57:19" itemprop="dateCreated datePublished" datetime="2018-01-11T12:57:19+08:00">2018-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/01/11/ReadingPyScriptingforAGS/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/11/ReadingPyScriptingforAGS/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>​        这篇是读书笔记。同事手里有本《面向ArcGIS的Python脚本编程》，系统的介绍了如何结合ArcGIS使用python。最近拿来阅读，觉得受益颇多。最早期我是通过python自身的学习资源、书籍、ArcGIS帮助文档入门的，知识体系虽然建立起来了，但是很多细节没有考虑到，对照书中的内容温故知新、查漏补缺。</p>
+<h2 id="arcpy与AO"><a href="#arcpy与AO" class="headerlink" title="arcpy与AO"></a>arcpy与AO</h2><p>​        书的开篇就介绍了脚本语言和程序语言的区别。我将其引申到日常工作中用户会经常问到的，“为什么AO可以实现的东西，arcpy却不能？”“为什么arcpy的功能这么‘粗粒度’？” </p>
+<p>​         AO中包含了ArcGIS用到的所有编程对象，包含了数以千计的不同对象，因此程序员可以精细控制软件的外观和运行机制。Python作为一种非常平易近人的语言，既是脚本语言又是程序语言，在ArcGIS平台中，python更多充当的是脚本语言的角色，例如：访问ArcGIS现有的功能，组合各种现有功能来扩展ArcGIS的功能，更可以作为一种“粘合剂”将更多的功能整合进来。用书中的话讲，脚本语言就是在“控制其他应用程序以实现任务自动化”。arcpy是ArcGIS提供的python站点包，用于访问ArcGIS 的地理处理功能，定位正在于此。</p>
+<h2 id="arcpy与model-builder"><a href="#arcpy与model-builder" class="headerlink" title="arcpy与model builder"></a><strong>arcpy</strong>与<strong>model builder</strong></h2><p>​          model builder（简称MB吧）是ArcGIS Desktop中我认为最可爱的功能没有之一，它采用了编程的思想却免去了书写代码，是给非程序员实践创造的启航之地。日常工作中，很多逻辑简单、功能清晰的任务都可以使用MB实现。以前写过一篇，<a href="http://kikitamap.com/2015/12/06/IterationinArcGISforDesktop/">《如何在ArcGIS for Desktop中实现批量任务》</a>，具体不再展开。你可能由这些疑问，“MB也能完成批量任务，我何时应该考虑使用python？”  当然这里回答的是“不得不”的问题，如果你本来就是编程高手，从一开始就会觉得MB限制了你的想象力，如下回答可能不需要考虑。 </p>
+<p>​          MB的局限性有什么？或者说相比之下，python能更多实现什么？</p>
+<ul>
+<li>python可以实现更高级的编程逻辑。例如嵌套循环是MB的软肋，一遇到多重遍历之类的任务就只能呵呵了。</li>
+<li>python可以实现更底层的处理任务。例如我们可以使用Cursor，遍历表并对其增删改等等。</li>
+<li>python可以集成第三方的资源。例如R语言等第三方类库来处理数据执行任务。</li>
+<li>python可以不在ArcGIS软件内部执行任务，只需要安装并授权ArcGIS软件，然后通过独立脚本的形式运行。既然可以独立运行，就可以定义系统任务定时执行。</li>
+</ul>
+<h2 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h2><h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/01/11/ReadingPyScriptingforAGS/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/12/19/AutoPublishingService/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/12/19/AutoPublishingService/" class="post-title-link" itemprop="url">通过arcpy自动发布服务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-12-19 12:12:44" itemprop="dateCreated datePublished" datetime="2017-12-19T12:12:44+08:00">2017-12-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/12/19/AutoPublishingService/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/19/AutoPublishingService/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>102</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><em><strong>示例</strong></em></p>
+<p><strong>地图服务</strong></p>
+<p>发布单个地图服务：<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvTWFwU2VydmNpZVBZMjcvUHVibGlzaGluZ1NpbmdsZU1hcFNlcnZpY2UucHk=">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/MapServciePY27/PublishingSingleMapService.py<i class="fa fa-external-link-alt"></i></span></p>
+<p>批量发布地图服务：<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvTWFwU2VydmNpZVBZMjcvQmF0Y2hQdWJsaXNoaW5nTWFwU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/MapServciePY27/BatchPublishingMapService.py<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>要素服务</strong></p>
+<p>批量发布要素服务：<br>Hosted Feature Service<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvRmVhdHVyZVNlcnZpY2VQWTI3L1B1Ymxpc2hpbmdIb3N0ZWRGZWF0dXJlU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/FeatureServicePY27/PublishingHostedFeatureService.py<i class="fa fa-external-link-alt"></i></span></p>
+<p>ArcGIS Server Feature Service<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9MYXp5V29ya2VyL0F1dG9tYXRpY2FsbHlQdWJsaXNoaW5nU2VydmljZXMvRmVhdHVyZVNlcnZpY2VQWTI3L1B1Ymxpc2hpbmdTZXJ2ZXJGZWF0dXJlU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/LazyWorker/AutomaticallyPublishingServices/FeatureServicePY27/PublishingServerFeatureService.py<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>影像服务</strong></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vQXJjR0lTLVB5dGhvbi9ibG9iL21hc3Rlci9UZWNoQ29uZmVyZW5jZXMvMjAxNi1EZXZlbG9wZXJUZWNoQ29uZmVyZW5jZS1EZW1vLzQtUHVibGlzaEltYWdlU2VydmljZS5weQ==">https://github.com/kikitaMoon/ArcGIS-Python/blob/master/TechConferences/2016-DeveloperTechConference-Demo/4-PublishImageService.py<i class="fa fa-external-link-alt"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/12/13/AddLiveRe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/12/13/AddLiveRe/" class="post-title-link" itemprop="url">Add LiveRe Comments</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-12-13 09:58:58" itemprop="dateCreated datePublished" datetime="2017-12-13T09:58:58+08:00">2017-12-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/12/13/AddLiveRe/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/12/13/AddLiveRe/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>214</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img data-src="https://livere.com/img/icon/main/img_header_livereman.png"></p>
+<p>自从多说挂了之后，网站的评论系统一直缺席中，今天自己部署个<span class="exturl" data-url="aHR0cHM6Ly9saXZlcmUuY29tLw==">LiveRe<i class="fa fa-external-link-alt"></i></span>吧，现在用的hueman主题，就以此主题为例，自己动手丰衣足食了。</p>
+<ol>
+<li>在主题的配置文件中增加一项，livere<br> <code>...\themes\hueman\_config.yml</code></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">comment:</span><br><span class="line">    livere: your data id</span><br></pre></td></tr></table></figure>
+
+<p>2.在<code>...\themes\hueman\layout\comment</code>增加<code>livere.ejs</code>评论模块代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- LiveRe City install code --&gt;</span><br><span class="line">&lt;div id=&quot;lv-container&quot; data-id=&quot;city&quot; data-uid=&quot;********&quot;&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">   (function(d, s) &#123;</span><br><span class="line">       var j, e = d.getElementsByTagName(s)[0];</span><br><span class="line"></span><br><span class="line">       if (typeof LivereTower === &#x27;function&#x27;) &#123; return; &#125;</span><br><span class="line"></span><br><span class="line">       j = d.createElement(s);</span><br><span class="line">       j.src = &#x27;https://cdn-city.livere.com/js/embed.dist.js&#x27;;</span><br><span class="line">       j.async = true;</span><br><span class="line"></span><br><span class="line">       e.parentNode.insertBefore(j, e);</span><br><span class="line">   &#125;)(document, &#x27;script&#x27;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;noscript&gt;Please activate JavaScript for write a comment in LiveRe&lt;/noscript&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- completed City install code --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3.相关文件增加判断</p>
+<p><code>...\themes\hueman\layout\comment\index.ejs</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;% &#125; else if (theme.comment.livere) &#123; %&gt;</span><br><span class="line">       &lt;%- partial(&#x27;comment/livere&#x27;) %&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>...\themes\hueman\layout\comment\scripts.ejs</code></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/12/13/AddLiveRe/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -457,397 +825,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/10/26/AGSDeskProCA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/10/26/AGSDeskProCA/" class="post-title-link" itemprop="url">ArcGIS Desktop Professional 10.5 Certification</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-10-26 09:41:48" itemprop="dateCreated datePublished" datetime="2017-10-26T09:41:48+08:00">2017-10-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/10/26/AGSDeskProCA/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/26/AGSDeskProCA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>735</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>The ArcGIS Desktop Professional exam tests the candidate’s experience applying ArcGIS concepts and processes to workflows. Qualified candidates should demonstrate proficiency when applying advanced GIS concepts and knowledge to establish workflows, processes, troubleshooting non-routine issues, and skilled at defining and successfully completing complex GIS projects. Qualified candidates should have five years of applied experience, and should be proficient in best practices and uses of Esri’s ArcGIS technologies.</p>
-<h2 id="Qualifications"><a href="#Qualifications" class="headerlink" title="Qualifications"></a>Qualifications</h2><p><strong>A qualified candidate should be able to perform the following tasks:</strong></p>
-<ul>
-<li>Apply and interpret fundamental spatial statistics and visualization techniques</li>
-<li>Build a reference data set and an address locator</li>
-<li>Build a transportation network and apply solvers</li>
-<li>Implement and apply Python scripting</li>
-<li>Perform advanced vector and raster analysis</li>
-<li>Perform fundamentals of geodatabase design and operate within a multi-user geodatabase</li>
-<li>Perform surface modeling and analysis</li>
-<li>Utilize advanced modeling techniques</li>
-<li>Identify and resolve common workflows</li>
-<li>Author a mosaic dataset</li>
-<li>Demonstrate proficiency in ArcGIS Desktop user interface and environment configuration</li>
-<li>Determine and define an appropriate coordinate system</li>
-<li>Manipulate data with Spatial Analyst, 3D Analyst, and Network Analyst extensions</li>
-<li>Author and publish to a web GIS portal</li>
-<li>Implement and apply web content or services to perform analyses</li>
-<li>Configure web app templates and Web AppBuilder widgets</li>
-</ul>
-<p><strong>A qualified candidate should be familiar with the following tools:</strong></p>
-<ul>
-<li>ArcGIS Desktop (ArcCatalog, ArcMap and ArcGIS Pro)</li>
-<li>ArcGIS Online</li>
-<li>ArcGIS Enterprise</li>
-<li>ArcGIS Network Analyst</li>
-<li>ArcGIS Spatial Analyst</li>
-<li>ArcGIS 3D Analyst</li>
-<li>Python</li>
-</ul>
-<p><strong>A qualified candidate should NOT be expected to perform the following tasks:</strong></p>
-<ul>
-<li>Deliver production quality cartographic output with specific industry solutions</li>
-<li>Administer a multi-user geodatabase</li>
-<li>Develop or administer websites</li>
-<li>Develop tools or apps using any SDK or API</li>
-<li>Network or systems administration</li>
-<li>Administer an ArcGIS Online organization</li>
-</ul>
-<h2 id="Skill-Measured"><a href="#Skill-Measured" class="headerlink" title="Skill Measured"></a>Skill Measured</h2><p>The following list will familiarize candidates with the exam sections to help guide exam preparation. The relative weight of each section is provided to illustrate the approximate size of each section. Candidates should review this list and assess their knowledge of each skill. Specific preparation resources are available to assist with refreshing in areas where any knowledge gaps are found.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/10/26/AGSDeskProCA/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/10/15/SpatialInteroplation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/10/15/SpatialInteroplation/" class="post-title-link" itemprop="url">小结空间插值分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-10-15 14:10:44" itemprop="dateCreated datePublished" datetime="2017-10-15T14:10:44+08:00">2017-10-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/10/15/SpatialInteroplation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/15/SpatialInteroplation/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.7k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>空间插值分析的基本原则是“<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVG9ibGVyJTI3c19maXJzdF9sYXdfb2ZfZ2VvZ3JhcGh5">地理学第一定律<i class="fa fa-external-link-alt"></i></span>”，即“Everything is related to everything else, but near things are more related than distant things”，这是Waldo Tobler提出的。 例如，如果你所在的位置正在下雨，那么很有可能离你100米的位置也在下雨，而20公里以外的地方下雨就不一定了，或者说可能性就低了很多。 大多数插值方法遵循了这样的准则。</p>
-<p>插值方法大致可以分为，<strong>确定性插值方法&#x2F;Deterministic interpolation methods</strong>和随机性插值方法： 确定性插值方法使用了<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRGV0ZXJtaW5pc3RpY19hbGdvcml0aG0=">确定性算法<i class="fa fa-external-link-alt"></i></span>，即，给予特定的输入数据我们会得到相同的结果； 而<strong>随机性插值方法</strong>是基于统计学的，通常用于更高级的表面预测建模，这种建模方法不仅可以预测表面的数值，也可能会带来误差或者不确定性，一些常见的地统计插值方法就属于这个范畴。</p>
-<p>从参与计算预测值的采样点的范围来看，确定性插值方法可以分为<strong>全局&#x2F;Globe</strong>和<strong>局部&#x2F;Local</strong>两种。 全局插值方法在计算预测值时使用了整个数据集，而局部插值方法是通过特定的领域来计算预测值。</p>
-<p>从预测表面是否穿过已知采样点来看，确定性插值还可以分为<strong>精确&#x2F;exact</strong>和<strong>非精确&#x2F;inexact</strong>两种。 如果插值算法预测的采样点位置的数值与采样点自身的数据一致，那么就是精确插值；否则为非精确插值。</p>
-<ul>
-<li>精确插值：   反距离权重法&#x2F;IDW，径向基函数法&#x2F;radial basis functions，样条函数法&#x2F;Spline</li>
-<li>非精确插值： 全局或局部多项式法&#x2F;global and local polynomial</li>
-</ul>
-<p><strong>IDW 插值方法</strong></p>
-<p>IDW是一种非常实用又很好理解的插值方法，适用于大多数情况。但是有关这个算法还有些注意事项：IDW并没有考虑数据的趋势，例如，如果数据在不同的方向上有不同的变化，那么这会被IDW方法忽略，IDW得到的是各个方向均一的预测插值；IDW插值仅在采样点的最大值和最小值之间进行预测插值，如果你是高程表面建模，那么山峰和河谷很有可能被抹平了。</p>
-<p>IDW插值时，可以设置power参数来控制周围采样点对插值影响的显著性。 power值越大，较远的点对预测插值的影响就会越弱，也就是说，远处的采样点对预测值的影响随着power的增大而削减越快。power可以是任意正数，但是通常取值范围是0.5-3，默认为2。</p>
-<p>有关IDW还有个常见小问题。既然IDW是精确插值，那为什么有时候看采样点所在像元的预测值与采样点值还是稍有差异？这是因为采样点并没有恰好落在像元的正中心。</p>
-<p><strong>样条函数插值方法&#x2F;Spline Method</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2017/10/15/SpatialInteroplation/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/08/14/ArcMapStartupLog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2017/08/14/ArcMapStartupLog/" class="post-title-link" itemprop="url">如何创建ArcMap的启动日志？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-08-14 14:41:36" itemprop="dateCreated datePublished" datetime="2017-08-14T14:41:36+08:00">2017-08-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2017/08/14/ArcMapStartupLog/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/14/ArcMapStartupLog/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>132</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ArcMap 启动时崩溃，想看看究竟发生了什么，ArcMap卡在哪一步失败了？</p>
-<p>那么 “cmd” 打开命令行，跳转到 ArcGIS Desktop 安装目录，然后使用 <code>arcmap.exe /log</code> 来启动 ArcMap同时创建日志。</p>
-<p>日志默认创建在 arcmap.exe 的相同目录，命令行直接打开日志 <code>notepad arcmap.log</code></p>
-<p><img data-src="http://7xs3vz.com1.z0.glb.clouddn.com/ArcMapStartupLog.png"></p>
-<p>日志样例：</p>
-<p>Initializing license…done<br>Parsed command line<br>Creating App…<br>done<br>Processing shell command…<br>Creating New Document…<br>Opening normal template…done…<br>Loading printer information…done…<br>New VBA project…done…<br>Add first mapDone creating New Document<br>done<br>Loading extensions…done<br>Startup complete<br>Done processing shell command<br>Calling ApcSethWnd()…done</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -860,7 +837,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -871,13 +848,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

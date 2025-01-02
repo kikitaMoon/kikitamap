@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">202</span>
+          <span class="site-state-item-count">205</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,382 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/10/CreatePythonTool3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/09/10/CreatePythonTool3/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（三）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-09-10 14:42:04" itemprop="dateCreated datePublished" datetime="2015-09-10T14:42:04+08:00">2015-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/09/10/CreatePythonTool3/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/10/CreatePythonTool3/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>从 ArcGIS 10.1 版本开始，我们可以创建 <strong>python工具箱</strong> 来自定义脚本工具，这种工具箱相比较上一篇提到的标准工具箱。有着独特的优势，具体二者的区别总结过，看<a href="http://kikitamap.com/2015/08/31/CreatePythonTool1/">这一篇</a>。</p>
+<br>
+
+<h2 id="认识-Python工具箱"><a href="#认识-Python工具箱" class="headerlink" title="认识 Python工具箱"></a><strong>认识 Python工具箱</strong></h2><p>Python 工具箱 (.pyt) 是一个简单的文本文件，可以在任何文本编辑器中或者任何 Python IDE 中创建、查看和编辑。要确保 ArcGIS 正确识别 Python 工具箱，工具箱类的名称必须是 **<code>Toolbox</code>**。在 <strong><code>Toolbox</code></strong> 类的 <strong><code>__init__</code></strong> 方法中定义工具箱的属性，这些属性包括 alias、label 和 description，我们可以按照 <strong><span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS9lbi9kZXNrdG9wL2xhdGVzdC9hbmFseXplL2NyZWF0aW5nLXRvb2xzL2EtdGVtcGxhdGUtZm9yLXB5dGhvbi10b29sYm94ZXMuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span></strong> 中的模板构建 Python 工具箱模板。</p>
+<p>如下代码中创建了包含一个工具（名为 Tool）的 Python 工具箱：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Toolbox</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the toolbox (the name of the toolbox is the name of the</span></span><br><span class="line"><span class="string">        .pyt file).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Toolbox&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.alias = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># List of tool classes associated with this toolbox</span></span><br><span class="line">        <span class="variable language_">self</span>.tools = [Tool]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Tool</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the tool (tool name is the name of the class).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Tool&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.description = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.canRunInBackground = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getParameterInfo</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define parameter definitions&quot;&quot;&quot;</span></span><br><span class="line">        params = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> params</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isLicensed</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Set whether tool is licensed to execute.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateParameters</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the values and properties of parameters before internal</span></span><br><span class="line"><span class="string">        validation is performed.  This method is called whenever a parameter</span></span><br><span class="line"><span class="string">        has been changed.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateMessages</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the messages created by internal validation for each tool</span></span><br><span class="line"><span class="string">        parameter.  This method is called after internal validation.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, parameters, messages</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;The source code of the tool.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<br>
+
+<h2 id="动手做做"><a href="#动手做做" class="headerlink" title="动手做做"></a><strong>动手做做</strong></h2><p>下面我就依据这个模板，写一个简单的脚本工具箱。需求是批量裁剪，我希望我只提供一个文件夹或者数据库等这样的<strong>工作空间</strong>和一个<strong>裁剪区域面</strong>，就可以批量完成工作空间内全部数据的裁剪工作，并且无视栅格还是矢量，一并裁剪。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/09/10/CreatePythonTool3/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/02/CreatePythonTool2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/09/02/CreatePythonTool2/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（二）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-09-02 22:19:20" itemprop="dateCreated datePublished" datetime="2015-09-02T22:19:20+08:00">2015-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/09/02/CreatePythonTool2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/02/CreatePythonTool2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>上一篇中我们了解到有两种方式在 ArcGIS 中创建 Python工具，这一篇就来看看如何在标准工具箱中创建脚本工具。</p>
+<br>
+
+<p>ArcGIS Help 中脚本工具的帮助过于枯燥，在这里，我以一个具体的实例来总结构建脚本工具的过程，我要实现的需求是做个快速实现羽化边界效果的小工具，预期得到如下的效果：</p>
+<p><img data-src="/images/blogImg/CreatePythonTool2_Result.png"></p>
+<p>上面效果在ArcMap中完全可以手工运行几个工具实现，但是过程稍微繁琐，那么需求来了，如何做个自定的一键生成羽化边界的小工具？</p>
+<br>
+
+
+<br>
+
+<h2 id="1-准备Python脚本文件"><a href="#1-准备Python脚本文件" class="headerlink" title="1 准备Python脚本文件"></a>1 准备Python脚本文件</h2><p>第一步，先写好脚本工具的核心 —— python脚本文件。</p>
+<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/09/02/CreatePythonTool2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/08/31/CreatePythonTool1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/08/31/CreatePythonTool1/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-08-31 12:00:00" itemprop="dateCreated datePublished" datetime="2015-08-31T12:00:00+08:00">2015-08-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/08/31/CreatePythonTool1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/31/CreatePythonTool1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>439</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ArcGIS Desktop 自带有大量的工具，可以执行各种各样的地理处理任务。通过 python 我们可以灵活地调用这些工具，把工具组织成自己的工作流，甚至创建一些新的工具。今天就说说在 ArcGIS 中创建 Python工具这个话题。</p>
+<br>
+
+<p>在 ArcGIS 中我们可以通过两种方式来创建python工具：</p>
+<p>一种是在标准工具箱下创建 <strong>脚本工具</strong>:</p>
+<p><img data-src="/images/blogImg/CreatePythonTool1_ScriptTool.png"></p>
+<p>一种是创建 <strong>脚本工具箱</strong>：</p>
+<p><img data-src="/images/blogImg/CreatePythonTool1_PythonToolbox.png"></p>
+<br>
+
+<p>到这里，可能你会有和我一样的疑问，二者有什么<strong>区别</strong>？</p>
+<p>第一种 <strong>脚本工具</strong> 需要我们首先在 ArcGIS 环境中创建一个工具箱，然后添加 Python脚本文件（*.py），并通过向导来精确配置参数。这种工具很适合脚本工具的初学者，通过前面说的三步就可以搭建出一个自定义工具。但是这种模式也有一些缺点，工具箱和源脚本是分离的，我们很难集中的去管理和维护它们。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/08/31/CreatePythonTool1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -458,383 +834,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/07/09/SetupPythonModule/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/07/09/SetupPythonModule/" class="post-title-link" itemprop="url">发布和安装python自定义模块</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-07-09 13:00:00" itemprop="dateCreated datePublished" datetime="2015-07-09T13:00:00+08:00">2015-07-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/07/09/SetupPythonModule/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/07/09/SetupPythonModule/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>435</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这一篇说下如何发布和安装python自定义模块，版本：Python 2.7 。</p>
-<br>
-
-<h1 id="1-创建setup-py"><a href="#1-创建setup-py" class="headerlink" title="1.创建setup.py"></a>1.创建setup.py</h1><p>现在如果已经写好一个python文件，为了尽量简明，创建一个新的文件夹，把自己py文件放进去。接着在这个文件夹中创建一个名为 setup.py 的文件，用来表示模块的元数据，文件的内容类似下面这个样子。除了手工创建，有很多python编辑器也可以更简便的来创建这个文件，例如 pycharm。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">&#x27;nesterprint&#x27;</span>,</span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span>,</span><br><span class="line">    packages=[<span class="string">&#x27;&#x27;</span>],</span><br><span class="line">    url=<span class="string">&#x27;http://blog.csdn.net/kikitaMoon&#x27;</span>,</span><br><span class="line">    license=<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    author=<span class="string">&#x27;kikita&#x27;</span>,</span><br><span class="line">    author_email=<span class="string">&#x27;kikitamoopn@gmail.com&#x27;</span>,</span><br><span class="line">    description=<span class="string">&#x27;My Test&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<br>
-
-
-<h1 id="2-打包发布"><a href="#2-打包发布" class="headerlink" title="2. 打包发布"></a>2. 打包发布</h1><p>使用Window自带的命令窗口，转到上一步创建的文件夹目录，输入命令，<strong>python setup.py sdist</strong>：</p>
-<p><img data-src="/images/blogImg/SetupPythonModule_setup.png"></p>
-<p>通过上面的状态信息知道，产生了下面的结果：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/07/09/SetupPythonModule/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/07/09/UploadCodetoPyPI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/07/09/UploadCodetoPyPI/" class="post-title-link" itemprop="url">上传代码到PyPI</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-07-09 12:26:05" itemprop="dateCreated datePublished" datetime="2015-07-09T12:26:05+08:00">2015-07-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/07/09/UploadCodetoPyPI/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/07/09/UploadCodetoPyPI/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>383</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我们可以把自己的代码，尤其是期待分享的得意代码，上传分享到第三方Python模块的“集中营” —— **<span class="exturl" data-url="aHR0cHM6Ly9weXBpLnB5dGhvbi5vcmcv">PyPI<i class="fa fa-external-link-alt"></i></span>**，如果没有账号，可以注册个先。</p>
-<br>
-
-<h2 id="1-准备发布"><a href="#1-准备发布" class="headerlink" title="1  准备发布"></a>1  准备发布</h2><p>像在本地发布安装一样，先新建一个文件夹，然后将自己的py文件放进去，然后再这个文件夹中创建一个  <code>setup.py</code> 的文件，内容如下面的样子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">&#x27;nesterprint&#x27;</span>,</span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span>,</span><br><span class="line">    packages=[<span class="string">&#x27;&#x27;</span>],</span><br><span class="line">    url=<span class="string">&#x27;http://blog.csdn.net/kikitaMoon&#x27;</span>,</span><br><span class="line">    license=<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    author=<span class="string">&#x27;kikita&#x27;</span>,</span><br><span class="line">    author_email=<span class="string">&#x27;kikitamoopn@gmail.com&#x27;</span>,</span><br><span class="line">    description=<span class="string">&#x27;My Test&#x27;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-
-<br>
-
-<h2 id="2-注册登录"><a href="#2-注册登录" class="headerlink" title="2 注册登录"></a>2 注册登录</h2><p>使用命令行窗口，跳转到要发布的py所在的文件夹目录，首先进行注册登录，让命令行上传工具知道我的PyPI账户和密码。输入命令：**<code>python setup.py register</code>**，选择 1，输入账户和密码，并且保存登录信息，下次上传可以跳过这个步骤。</p>
-<p><img data-src="/images/blogImg/UploadCodetoPyPI_Login.png"></p>
-<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/07/09/UploadCodetoPyPI/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/07/07/PythonList/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/07/07/PythonList/" class="post-title-link" itemprop="url">Python列表常用操作</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-07-07 17:49:58" itemprop="dateCreated datePublished" datetime="2015-07-07T17:49:58+08:00">2015-07-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/07/07/PythonList/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/07/07/PythonList/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>729</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Python的列表非常好用，一些常用的操作写在这里。</p>
-<br>
-
-<p>在Python中创建一个列表时，解释器会在内存中创建一个类似数组（但不是数组）的数据结构来存储数据。列表中的编号从 0 开始，然后是1，依此类推。</p>
-<p><img data-src="/images/blogImg/PythonList_List.png"></p>
-<br>
-
-<br>
-
-
-<p><strong>print() 显示列表；</strong></p>
-<p><strong>len() 得出列表中有多少数据项；</strong></p>
-<p><strong>append() 在列表末尾追加一个数据项；</strong></p>
-<p><strong>extend() 在列表末尾增加一个数据项集合；</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/07/07/PythonList/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/16/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/18/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -847,7 +846,7 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2024</span>
+    <span itemprop="copyrightYear">2025</span>
     <span class="with-love">
       <i class=""></i>
     </span>
@@ -858,13 +857,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">155k</span>
+    <span title="Word count total">157k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:24</span>
+    <span title="Reading time total">9:31</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

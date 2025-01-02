@@ -6,7 +6,7 @@
   <link href="https://kikitamap.com/atom.xml" rel="self"/>
   
   <link href="https://kikitamap.com/"/>
-  <updated>2024-12-27T09:02:39.523Z</updated>
+  <updated>2025-01-02T09:44:15.041Z</updated>
   <id>https://kikitamap.com/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Volcanic Islands and Atolls — Exploring and Interpreting with ArcGIS Earth</title>
+    <link href="https://kikitamap.com/2025/01/02/BBC-Volcanos-2-en/"/>
+    <id>https://kikitamap.com/2025/01/02/BBC-Volcanos-2-en/</id>
+    <published>2025-01-02T09:35:34.000Z</published>
+    <updated>2025-01-02T09:44:15.041Z</updated>
+    
+    <content type="html"><![CDATA[<p>Volcanoes are not only sculptors of the Earth but also windows for scientists to study geological activity.</p><p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>Previous Article</strong></a>: In our previous exploration, we embarked on a journey using ArcGIS Earth to uncover the mysteries of volcanoes and familiarize ourselves with its basic operations. Today, let’s dive further into the three-dimensional world of volcanoes and explore the possibilities of combining terrain and data.</p><p>Leaving behind the perilous Fernandina Volcano, we continue onward. Following the lens, we slide northward in the eastern Pacific…</p><h2 id="04-Wolf-Island"><a href="#04-Wolf-Island" class="headerlink" title="04 Wolf Island"></a>04 Wolf Island</h2><p>Wolf Island is a dormant volcano over a million years old, located more than 1,200 kilometers from the nearest continent. It is one of the most remote volcanic islands in the Galápagos Archipelago.</p><p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p><p>Survival on this isolated volcanic island seems to have activated “hell mode.” To adapt to the harsh environment, animals here have evolved rapidly. On this barren island, small finches have evolved into a blood-sucking species—the vampire finch.</p><p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p><p>If you’re interested in tectonic plates, in ArcGIS Earth, you can click <strong>Add Data</strong> and search keywords like “Earth” or “Tectonic.” Among the publicly available resources on ArcGIS Online is <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>. After adding this data to ArcGIS Earth, we can clearly see that the Galápagos Archipelago sits at the intersection of three major tectonic plates: the Nazca, Cocos, and Pacific Plates.</p><p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p><h2 id="05-Aldabra-Atoll"><a href="#05-Aldabra-Atoll" class="headerlink" title="05 Aldabra Atoll"></a>05 Aldabra Atoll</h2><p>Like living organisms, volcanic islands do not exist forever. Once the volcano’s interior becomes dormant and dies, external forces gradually erode it, forming atolls.</p><p>There are hundreds of atolls in tropical oceans, all remnants of volcanoes. The Aldabra Atoll is one of the largest and most pristine atolls in the world, located in the Indian Ocean about 420 kilometers north of Madagascar. It is also known as Turtle Island because it is home to giant tortoises.</p><p>In ArcGIS Earth, the default basemap is the global imagery map—<a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"><strong>Imagery</strong></a>. Users can replace it with other basemaps based on their needs, such as switching to <a href="https://www.arcgis.com/home/item.html?id=620875bf8a1945e799cf8bd5f25784d7"><strong>Ocean</strong></a> to explore the underwater terrain of atolls. In addition to basemaps, ArcGIS Earth’s default elevation layer is <a href="https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"><strong>Terrain</strong></a>, which provides global elevation data. Users can also add additional elevation layers to highlight terrain features, such as adding <a href="https://www.arcgis.com/home/item.html?id=0c69ba5a5d254118841d43f03aa3e97d"><strong>TopoBathy3D</strong></a> to better visualize underwater terrain.</p><p><img data-src="/images/blogImg/Volcano_2_Aldabra.png"></p><p><strong>Bookmarks</strong> in ArcGIS Earth act as a “geographic favorites” tool, allowing you to save the current scene’s camera position, basemap, terrain, and other settings, enabling quick one-click switching between different scene configurations.</p><p><img data-src="/images/blogImg/Volcano_2_Aldabra_BM.gif"></p><p>From basic navigation to simple geographic observation, we’ve taken our first steps in using ArcGIS Earth. In the next article, we’ll delve deeper into the allure of volcano topography and 3D scenes, unveiling more geological secrets hidden beneath the surface.</p><h2 id="Download-ArcGIS-Earth"><a href="#Download-ArcGIS-Earth" class="headerlink" title="Download ArcGIS Earth"></a>Download ArcGIS Earth</h2><p>ArcGIS Earth is a free tool available for download. It allows you to add many publicly shared free resources from ArcGIS Online, including those from Esri, industry leaders, and individual enthusiasts. The videos featured here were created using this content. While video quality may be compressed for uploading, for the best experience, you’re encouraged to try it out for yourself.</p><p>If you’re interested, here’s where you can find versions for different platforms:<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p><hr><p>Let me know if further edits are needed!</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Volcanoes are not only sculptors of the Earth but also windows for scientists to study geological activity.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://kikitamap.com/2024/12/25/BBC-Volcanos-1/&quot;&gt;&lt;strong&gt;Previous Article&lt;/strong&gt;&lt;/a&gt;: In our previous exploration, we embarked on a journey using ArcGIS Earth to uncover the mysteries of volcanoes and familiarize ourselves with its basic operations. Today, let’s dive further into the three-dimensional world of volcanoes and explore the possibilities of combining terrain and data.&lt;/p&gt;
+&lt;p&gt;Leaving behind the perilous Fernandina Volcano, we continue onward. Following the lens, we slide northward in the eastern Pacific…&lt;/p&gt;
+&lt;h2 id=&quot;04-Wolf-Island&quot;&gt;&lt;a href=&quot;#04-Wolf-Island&quot; class=&quot;headerlink&quot; title=&quot;04 Wolf Island&quot;&gt;&lt;/a&gt;04 Wolf Island&lt;/h2&gt;&lt;p&gt;Wolf Island is a dormant volcano over a million years old, located more than 1,200 kilometers from the nearest continent. It is one of the most remote volcanic islands in the Galápagos Archipelago.&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_2_WolfIsland_1.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Survival on this isolated volcanic island seems to have activated “hell mode.” To adapt to the harsh environment, animals here have evolved rapidly. On this barren island, small finches have evolved into a blood-sucking species—the vampire finch.&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_2_WolfIsland_2.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;If you’re interested in tectonic plates, in ArcGIS Earth, you can click &lt;strong&gt;Add Data&lt;/strong&gt; and search keywords like “Earth” or “Tectonic.” Among the publicly available resources on ArcGIS Online is &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==&quot;&gt;Earth’s Tectonic Plates&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;. After adding this data to ArcGIS Earth, we can clearly see that the Galápagos Archipelago sits at the intersection of three major tectonic plates: the Nazca, Cocos, and Pacific Plates.&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_2_WolfIsland_3.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+    <category term="3D" scheme="https://kikitamap.com/tags/3D/"/>
+    
+    <category term="ArcGIS Earth" scheme="https://kikitamap.com/tags/ArcGIS-Earth/"/>
+    
+    <category term="BBC" scheme="https://kikitamap.com/tags/BBC/"/>
+    
+    <category term="Tutorials" scheme="https://kikitamap.com/tags/Tutorials/"/>
+    
+    <category term="Jump start" scheme="https://kikitamap.com/tags/Jump-start/"/>
+    
+    <category term="Bookmark" scheme="https://kikitamap.com/tags/Bookmark/"/>
+    
+    <category term="Terrain" scheme="https://kikitamap.com/tags/Terrain/"/>
+    
+    <category term="Basemap" scheme="https://kikitamap.com/tags/Basemap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>海上火山遗迹 —— 用 ArcGIS Earth 探索解读</title>
+    <link href="https://kikitamap.com/2024/12/30/BBC-Volcanos-2/"/>
+    <id>https://kikitamap.com/2024/12/30/BBC-Volcanos-2/</id>
+    <published>2024-12-30T07:45:15.000Z</published>
+    <updated>2025-01-02T09:34:54.330Z</updated>
+    
+    <content type="html"><![CDATA[<p>火山不仅是地球的雕塑家，还是科学家们研究地质活动的窗口。</p><p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>上一篇</strong></a> 中，我们用 ArcGIS Earth 开启了火山探索之旅, 熟悉了 ArcGIS Earth 的基础操作。今天，让我们进一步进入火山的三维世界，探索地貌与数据结合的无限可能。</p><p>告别了险象环生的费尔南迪娜火山，我们继续前进。跟随镜头，在太平洋东部继续向北滑行……</p><h2 id="04-沃尔夫岛-Wolf-Island"><a href="#04-沃尔夫岛-Wolf-Island" class="headerlink" title="04 沃尔夫岛&#x2F;Wolf Island"></a>04 沃尔夫岛&#x2F;Wolf Island</h2><p>沃尔夫岛是一座已经年过百万岁的死火山，距离最近的大陆有1200多公里。 它是加拉帕戈斯群岛中极为偏远的火山岛。</p><p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p><p>在这个孤立的火山岛上，生存似乎是开启了地狱模式，为了适应环境，动物们迅猛进化。在贫瘠的小岛上，小小的鸟雀为了获取食物，已经进化成了嗜血的新物种——吸血地雀。</p><p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p><p>如果你对大陆板块感兴趣，在 ArcGIS Earth 中， 点击 Add Data 并搜索关键字 “Earth” 或 “Tectonic”, ArcGIS Online 中的公开资源 —— <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>。添加此数据到ArcGIS Earth后，我们可以清晰地看到，加拉帕戈斯群岛位于纳斯卡(Nazca)、科科斯(Cocos) 和 太平洋(Pacific) 这三个主要的构造板块的交汇处。</p><p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p><h2 id="05-阿尔达布拉环礁-Aldabra-Atoll"><a href="#05-阿尔达布拉环礁-Aldabra-Atoll" class="headerlink" title="05 阿尔达布拉环礁&#x2F;Aldabra Atoll"></a>05 阿尔达布拉环礁&#x2F;Aldabra Atoll</h2><p>如同生命体一样，火山岛不会永远存在。当火山口内部逐渐平静直至死亡之后，在外力的不断侵蚀下会形成环礁。</p><p>在热带海洋上有数百个环礁，这都是火山的遗迹。阿尔达布拉环礁，是世界上最大最原始的环礁之一，位于印度洋上，距离马达加斯加以北约420千米。阿尔达布拉环礁岛，又被称为龟岛，因其上生活着巨型龟。</p><p>在 ArcGIS Earth 中，默认的地球底图是全球影像–<a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"><strong>Imagery</strong></a>，用户可以根据实际需求任意更换为其他底图，例如更换为 <a href="https://www.arcgis.com/home/item.html?id=620875bf8a1945e799cf8bd5f25784d7"><strong>Ocean</strong></a> 来了解下环礁在海面以下的地形。 除了底图，ArcGIS Earth 中默认的的地形高程图层是 <a href="https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"><strong>Terrain</strong></a>，全球的陆地地形高程数据。用户还可以额外设置高程图层来表达地形的起伏，这里新增一个 <a href="https://www.arcgis.com/home/item.html?id=0c69ba5a5d254118841d43f03aa3e97d"><strong>TopoBathy3D</strong></a> 来增补表达海底的地形。</p><p><img data-src="/images/blogImg/Volcano_2_Aldabra.png"></p><p>Bookmarks 是ArcGIS Earth 中提供的一个“地理收藏夹”工具，可以记录当前场景的相机、底图、地形等等设置，让你在不同配置的场景中一键快速切换。</p><p><img data-src="/images/blogImg/Volcano_2_Aldabra_BM.gif"></p><p>从基础的导航到简单的地理观察，我们已经迈出了使用 ArcGIS Earth 的第一步。在下一篇文章中，我们将深入探讨火山的地貌与三维场景的魅力，揭开隐藏在地表下的更多地理秘密。</p><h2 id="下载-ArcGIS-Earth"><a href="#下载-ArcGIS-Earth" class="headerlink" title="下载 ArcGIS Earth"></a>下载 ArcGIS Earth</h2><p>ArcGIS Earth 工具是免费下载使用的，其中可以添加 ArcGIS Online 平台中的诸多来自Esri官方、业界大V和个人爱好者分享的公开免费资源。上面的视频的录制都来自这些内容，上传公众号时会压损画质，为了达到更好的游览效果，大家不妨躬亲实验下。</p><p>如果感兴趣，这里可以找到各平台对应的版本：<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;火山不仅是地球的雕塑家，还是科学家们研究地质活动的窗口。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://kikitamap.com/2024/12/25/BBC-Volcanos-1/&quot;&gt;&lt;strong&gt;上一篇&lt;/strong&gt;&lt;/a&gt; 中，我们用 ArcGIS Earth 开启了火山探索之旅, 熟悉了 ArcGIS Earth 的基础操作。今天，让我们进一步进入火山的三维世界，探索地貌与数据结合的无限可能。&lt;/p&gt;
+&lt;p&gt;告别了险象环生的费尔南迪娜火山，我们继续前进。跟随镜头，在太平洋东部继续向北滑行……&lt;/p&gt;
+&lt;h2 id=&quot;04-沃尔夫岛-Wolf-Island&quot;&gt;&lt;a href=&quot;#04-沃尔夫岛-Wolf-Island&quot; class=&quot;headerlink&quot; title=&quot;04 沃尔夫岛&amp;#x2F;Wolf Island&quot;&gt;&lt;/a&gt;04 沃尔夫岛&amp;#x2F;Wolf Island&lt;/h2&gt;&lt;p&gt;沃尔夫岛是一座已经年过百万岁的死火山，距离最近的大陆有1200多公里。 它是加拉帕戈斯群岛中极为偏远的火山岛。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_2_WolfIsland_1.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在这个孤立的火山岛上，生存似乎是开启了地狱模式，为了适应环境，动物们迅猛进化。在贫瘠的小岛上，小小的鸟雀为了获取食物，已经进化成了嗜血的新物种——吸血地雀。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_2_WolfIsland_2.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如果你对大陆板块感兴趣，在 ArcGIS Earth 中， 点击 Add Data 并搜索关键字 “Earth” 或 “Tectonic”, ArcGIS Online 中的公开资源 —— &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==&quot;&gt;Earth’s Tectonic Plates&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;。添加此数据到ArcGIS Earth后，我们可以清晰地看到，加拉帕戈斯群岛位于纳斯卡(Nazca)、科科斯(Cocos) 和 太平洋(Pacific) 这三个主要的构造板块的交汇处。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/Volcano_2_WolfIsland_3.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+    <category term="3D" scheme="https://kikitamap.com/tags/3D/"/>
+    
+    <category term="ArcGIS Earth" scheme="https://kikitamap.com/tags/ArcGIS-Earth/"/>
+    
+    <category term="BBC" scheme="https://kikitamap.com/tags/BBC/"/>
+    
+    <category term="Tutorials" scheme="https://kikitamap.com/tags/Tutorials/"/>
+    
+    <category term="Jump start" scheme="https://kikitamap.com/tags/Jump-start/"/>
+    
+    <category term="Bookmark" scheme="https://kikitamap.com/tags/Bookmark/"/>
+    
+    <category term="Terrain" scheme="https://kikitamap.com/tags/Terrain/"/>
+    
+    <category term="Basemap" scheme="https://kikitamap.com/tags/Basemap/"/>
+    
+  </entry>
   
   <entry>
     <title>Exploring the Footprints of BBC Documentaries in ArcGIS Earth</title>
@@ -225,6 +311,29 @@
 
 &lt;h3 id=&quot;硬技能精进&quot;&gt;&lt;a href=&quot;#硬技能精进&quot; class=&quot;headerlink&quot; title=&quot;硬技能精进&quot;&gt;&lt;/a&gt;&lt;strong&gt;硬技能精进&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Hard&lt;/strong&gt; skill 方面，需要不断学习，拓展和精进产品技术。所有技术同学都懂，IT技术日新月异，一直学习都很难乘风破浪，何况随波逐流放弃治疗？任何一个”我知道”都不是信手拈来。&lt;/p&gt;
 &lt;p&gt;之前在esri的几年阅读英文技术文档的习惯对我有巨大的帮助，静心读文档解题总是会有助思路。前任和现任供职的这两家公司，有个共同特点，就是产品谱系庞大，产品名录远长于一般餐厅菜单，product manual 页数动辄几千，外加一个在线产品不断更新的developer portal。时间碎片，团队迷你，克服浮躁，学习速度和用户赛跑，都是重重挑战。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Inner Thoughts" scheme="https://kikitamap.com/categories/Inner-Thoughts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>夸父日记</title>
+    <link href="https://kikitamap.com/2020/07/23/LifeAccordingtoDad/"/>
+    <id>https://kikitamap.com/2020/07/23/LifeAccordingtoDad/</id>
+    <published>2020-07-23T07:39:44.000Z</published>
+    <updated>2024-12-30T07:44:31.731Z</updated>
+    
+    <content type="html"><![CDATA[<p>总是感觉父亲比我更有生活的智慧，他总能从平淡恬静的生活中发现乐趣、秩序和美好。无论是手作、烹饪、园艺… 生活的方方面面。</p><p>我和很多人一样，异地求学工作，之前的十几年都没有在家乡和父母一起长期生活；自己放飞了太久了，我心中对美好生活的刻板印象时常被父亲“讥讽”。</p><p>疫情这段特别的日子，给每个人的时间轴都烙上了特别的时间戳。而于我，是难得与家人腻在一起的时光。</p><p>父亲是位幽默有趣的老男孩，对生活工作有自己的理解，他总是能给我一些启发。他有时也会给我讲讲他早年体制内工作时的轶事，顺便指点下我的资本主义打工迷津。</p><p>生活和工作的平衡，在疫情之前我从来不觉得需要特别思考，一切节奏跟着通勤按部就班。之前多年一日的习惯早已固定了。</p><p>而现在各种因素都在潜移默化，空间边界消失，时间边界就容易也不清晰，高度自治的环境和工作中不断涌现的问题，经常让人久伏案板忘记时间。</p><p>这时，以父亲为代表的敲打团就开始要求中场休息。keep的slogan-“自律给我自由”，已然成了劝诫的反面，哭笑不得。那我是自律呢还是不自律呢？</p><p>谢谢你，感恩所有，珍惜当下🌈🌈🌈</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;总是感觉父亲比我更有生活的智慧，他总能从平淡恬静的生活中发现乐趣、秩序和美好。无论是手作、烹饪、园艺… 生活的方方面面。&lt;/p&gt;
+&lt;p&gt;我和很多人一样，异地求学工作，之前的十几年都没有在家乡和父母一起长期生活；自己放飞了太久了，我心中对美好生活的刻板印象时常被父亲“讥讽”。</summary>
+      
     
     
     
@@ -652,150 +761,6 @@
     <category term="HLS" scheme="https://kikitamap.com/tags/HLS/"/>
     
     <category term="Javascript" scheme="https://kikitamap.com/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决七牛云存储bucket无法访问问题</title>
-    <link href="https://kikitamap.com/2018/11/11/qiniuIssue/"/>
-    <id>https://kikitamap.com/2018/11/11/qiniuIssue/</id>
-    <published>2018-11-11T00:56:07.000Z</published>
-    <updated>2024-12-24T03:31:31.519Z</updated>
-    
-    <content type="html"><![CDATA[<p>因为工作的事情，最近忙于切换节奏适应新环境，有一个月没来 kikitaMap “巡检”了。果然昨天发现了小故障，七牛云存储的存储空间的临时域名失效了，之上的我的图床也就挂了。涉及到的对象：<a href="https://kikitamap.com/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a> 、<a href="http://kikitamap.com/categories/%E7%9B%B8%E6%9C%BA%E9%87%8C/">Visual Musing</a> 中的全部图片和 <a href="https://kikitamap.com/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/">Tech Notes</a> 的小部分博客中图片。Just too bad …</p><h2 id="解决方法建议"><a href="#解决方法建议" class="headerlink" title="解决方法建议"></a>解决方法建议</h2><p>这种情况下只能发工单联系技术支持了，七牛的技术支持回复比较及时，给出了解决方案，如下：</p><blockquote><p>有两种方式来获取文件：</p><ol><li>您需要先新建一个同区域存储空间，会分配一个新的测试域名到新空间。<br>通过qshell batchcopy 到有域名的同区域空间然后再进行qdownload下载操作<br>1）<code>qshell listbucket 原bucket名 list.txt</code><br>​       （list出全部文件，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2xpc3RidWNrZXQubWQ=">listbucket的文档<i class="fa fa-external-link-alt"></i></span>）</li></ol><p>2）<code>cat list.txt | awk &#39;&#123;print $1&#125;&#39; &gt;list_final.txt</code><br>​       （用awk获取list结果的第一列）<br>3）<code>qshell batchcopy 原bucket名 新bucket名 list_final.txt</code><br>​       （复制到新bucket的文件和原bucket文件名一致，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2JhdGNoY29weS5tZA==">batchcopy的文档<i class="fa fa-external-link-alt"></i></span>）<br>4）<code>qshell qdownload newfilelist.txt</code><br>​      （newfilelist.txt为下载的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL3Fkb3dubG9hZC5tZA==">配置文档<i class="fa fa-external-link-alt"></i></span>）</p></blockquote><blockquote><p>qshell安装包及文档请参考<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGw=">https://developer.qiniu.com/kodo/tools/1302/qshell<i class="fa fa-external-link-alt"></i></span></p><p>如果您不熟悉命令行工具的安装使用，也可以结合文档最后提供的视频教程<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGwjOQ==">https://developer.qiniu.com/kodo/tools/1302/qshell#9<i class="fa fa-external-link-alt"></i></span></p></blockquote><blockquote><ol start="2"><li>使用工具qrsctl<br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMC9xcnNjdGw=">https://developer.qiniu.com/kodo/tools/1300/qrsctl<i class="fa fa-external-link-alt"></i></span><br><code>qrsctl get &lt;bucket&gt; &lt;file&gt; &lt;file&gt;</code></li></ol></blockquote><h2 id="实践过程"><a href="#实践过程" class="headerlink" title="实践过程"></a>实践过程</h2><p>选择了第一种方式，问题解决，因为看起来像是批量的。</p><p>按照提示下载的zip包类似 qshell-v2.2.0.zip 这样的名字，里面包含了Windows，Linux，Mac各操作系统使用的程序。</p><p>我以Mac为例，使用Mac自带的 Commandline 访问解压之后的文件夹 qshell-v2.2.0。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kikitamoondeMBP:SoftwareSetup kikitamoon$ cd qshell-v2.2.0</span><br><span class="line">kikitamoondeMBP:qshell-v2.2.0 kikitamoon$ ls</span><br><span class="line">qshell-darwin-x64qshell-linux-x64qshell-windows-x64.exe</span><br><span class="line">qshell-linux-armqshell-linux-x86qshell-windows-x86.exe</span><br></pre></td></tr></table></figure><p>其中 qshell-darwin-x64 是Mac可用的 Qshell 版本。在使用Qshell之前需要配置账户信息，qshell account即可设置AK和SK。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64</span></span><br><span class="line">Use help or help [cmd1 [cmd2 [cmd3 ...]]] to see supported commands.</span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 account</span></span><br><span class="line">Open account file error, open /Users/kikitamoon/.qshell/account.json: no such file or directory, please use `account` to set AccessKey and SecretKey first</span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 account &lt;AK&gt; &lt;SK&gt;</span></span><br></pre></td></tr></table></figure><p>接着使用七牛技术支持给出的建议，将旧库的文件list出来，然后batchcopy到新库中。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 listbucket kikitamapgallery list.txt</span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash"><span class="built_in">cat</span> list.txt | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> &gt;list_final.txt</span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 batchcopy kikitamapgallery kikitamapgallerycopy list_final.txt</span></span><br></pre></td></tr></table></figure><p>最后，通过 qdownload 命令下载所有源文件。在执行命令之前还需要做个配置文件，download.conf ; 并且可以设置开几个任务并行下载。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash">./qshell-darwin-x64 qdownload 4 download.conf</span></span><br><span class="line"></span><br><span class="line">Writing download log to file /Users/kikitamoon/.qshell/qdownload/7d41b43ca364d28da34dbd030f1331be/7d41b43ca364d28da34dbd030f1331be.log</span><br><span class="line">Downloading MGKW_ArcGIS_Daemon.png [1/62, 1.6%] ...</span><br><span class="line">Downloading MGKW_ArcMapStartupLog.png [2/62, 3.2%] ...</span><br><span class="line">Downloading MGKW_BatchClip.png [3/62, 4.8%] ...</span><br><span class="line">Downloading MGKW_FeatureTable.png [4/62, 6.5%] ...</span><br><span class="line">Downloading MGKW_HelloArcGISPythonAPI.png [5/62, 8.1%] ...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">Downloading XJL_TripToGreece.png [61/62, 98.4%] ...</span><br><span class="line">Downloading XJL_TripToHongkong.png [62/62, 100.0%] ...</span><br><span class="line">See download log at path /Users/kikitamoon/.qshell/qdownload/7d41b43ca364d28da34dbd030f1331be/7d41b43ca364d28da34dbd030f1331be.log</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">kikitamoon$ </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"></span></span><br></pre></td></tr></table></figure><p>至此，源图片文件算是都找回来了。当然我还需要把我的网站中使用到旧地址的位置update一下喽。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;因为工作的事情，最近忙于切换节奏适应新环境，有一个月没来 kikitaMap “巡检”了。果然昨天发现了小故障，七牛云存储的存储空间的临时域名失效了，之上的我的图床也就挂了。涉及到的对象：&lt;a href=&quot;https://kikitamap.com/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/&quot;&gt;碎碎念&lt;/a&gt; 、&lt;a href=&quot;http://kikitamap.com/categories/%E7%9B%B8%E6%9C%BA%E9%87%8C/&quot;&gt;Visual Musing&lt;/a&gt; 中的全部图片和 &lt;a href=&quot;https://kikitamap.com/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/&quot;&gt;Tech Notes&lt;/a&gt; 的小部分博客中图片。Just too bad …&lt;/p&gt;
-&lt;h2 id=&quot;解决方法建议&quot;&gt;&lt;a href=&quot;#解决方法建议&quot; class=&quot;headerlink&quot; title=&quot;解决方法建议&quot;&gt;&lt;/a&gt;解决方法建议&lt;/h2&gt;&lt;p&gt;这种情况下只能发工单联系技术支持了，七牛的技术支持回复比较及时，给出了解决方案，如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;有两种方式来获取文件：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;您需要先新建一个同区域存储空间，会分配一个新的测试域名到新空间。&lt;br&gt;通过qshell batchcopy 到有域名的同区域空间然后再进行qdownload下载操作&lt;br&gt;1）&lt;code&gt;qshell listbucket 原bucket名 list.txt&lt;/code&gt;&lt;br&gt;​       （list出全部文件，&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2xpc3RidWNrZXQubWQ=&quot;&gt;listbucket的文档&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;2）&lt;code&gt;cat list.txt | awk &amp;#39;&amp;#123;print $1&amp;#125;&amp;#39; &amp;gt;list_final.txt&lt;/code&gt;&lt;br&gt;​       （用awk获取list结果的第一列）&lt;br&gt;3）&lt;code&gt;qshell batchcopy 原bucket名 新bucket名 list_final.txt&lt;/code&gt;&lt;br&gt;​       （复制到新bucket的文件和原bucket文件名一致，&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2JhdGNoY29weS5tZA==&quot;&gt;batchcopy的文档&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;）&lt;br&gt;4）&lt;code&gt;qshell qdownload newfilelist.txt&lt;/code&gt;&lt;br&gt;​      （newfilelist.txt为下载的&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL3Fkb3dubG9hZC5tZA==&quot;&gt;配置文档&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;qshell安装包及文档请参考&lt;br&gt; &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGw=&quot;&gt;https://developer.qiniu.com/kodo/tools/1302/qshell&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;如果您不熟悉命令行工具的安装使用，也可以结合文档最后提供的视频教程&lt;br&gt; &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGwjOQ==&quot;&gt;https://developer.qiniu.com/kodo/tools/1302/qshell#9&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;使用工具qrsctl&lt;br&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMC9xcnNjdGw=&quot;&gt;https://developer.qiniu.com/kodo/tools/1300/qrsctl&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;br&gt;&lt;code&gt;qrsctl get &amp;lt;bucket&amp;gt; &amp;lt;file&amp;gt; &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;实践过程&quot;&gt;&lt;a href=&quot;#实践过程&quot; class=&quot;headerlink&quot; title=&quot;实践过程&quot;&gt;&lt;/a&gt;实践过程&lt;/h2&gt;&lt;p&gt;选择了第一种方式，问题解决，因为看起来像是批量的。&lt;/p&gt;
-&lt;p&gt;按照提示下载的zip包类似 qshell-v2.2.0.zip 这样的名字，里面包含了Windows，Linux，Mac各操作系统使用的程序。&lt;/p&gt;
-&lt;p&gt;我以Mac为例，使用Mac自带的 Commandline 访问解压之后的文件夹 qshell-v2.2.0。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
-    
-    
-    <category term="Deployment" scheme="https://kikitamap.com/tags/Deployment/"/>
-    
-    <category term="Webmaster" scheme="https://kikitamap.com/tags/Webmaster/"/>
-    
-    <category term="Cloud Storage" scheme="https://kikitamap.com/tags/Cloud-Storage/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>矢量切片局部更新工具改进与工作收尾</title>
-    <link href="https://kikitamap.com/2018/09/27/partialUpdateVTPKv3/"/>
-    <id>https://kikitamap.com/2018/09/27/partialUpdateVTPKv3/</id>
-    <published>2018-09-27T11:56:08.000Z</published>
-    <updated>2024-12-24T03:31:31.518Z</updated>
-    
-    <content type="html"><![CDATA[<p>在<a href="http://kikitamap.com/2018/08/13/vectorTileBundle/">上一篇博客</a>中提到工具还有投影坐标系支持和切片方案（.xml）自动获取的问题尚未解决，更新这篇的目的在于说明问题已经找到了workaround，并且新的版本已经在上周五（9.21）发布了。</p><h2 id="问题诊断过程"><a href="#问题诊断过程" class="headerlink" title="问题诊断过程"></a>问题诊断过程</h2><p>这两个问题其实本质上是一个问题。</p><p>我们知道，当需要生成矢量切片的地图的坐标系不是 3857（web mercator）时，ArcGIS Pro 提供的 Create Vector Tile Package &#x2F; Index 工具可以自动生成与地图的坐标系统一致的切片方案（.xml）文件，默认放置于 C:\Users\当前用户\AppData\Local\ESRI\Geoprocessing 下。<br>这是个极好的功能，但是通过python调用此工具时，这个功能是没有提供接口的。此处的疑惑，也咨询了Esri US 的工程师，确实arcpy没有提供像工具UI中的自动计算功能。</p><p>在最初的版本中，我尝试使用arcpy.GenerateMapServerCacheTilingScheme_server() 来生成xml文件，可以应对地理坐标系的地图。也是这个过程中遇到了切片原点传参失败<a href="http://kikitamap.com/2018/02/05/AlterXMLScheme/">这个坑</a>。<br>投影坐标系的切片原点不像是地理坐标系一样简单粗暴，不同的投影方法都会导致不同的原点坐标，我想过将常用坐标系枚举出来，可是从工具的通用角度来讲，不是个好事。最佳的解决方法还是想办法生成相同的xml，至少可以获取工具生成的xml。</p><p>在上个版本的局部更新矢量切片工具中，我和马老师还自命名了“Advanced Vector Tile Package”的矢量切片包，我们在矢量切片包中还打包塞入了切片方案和切片索引面。这样，局部工具在更新这种包时，可以自动解析原包获取xml和index。但是，需要用户事先使用我们定制的 Create Advanced Vector Tile Package 工具来创建矢量切片包。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>考虑到用户在更新矢量切片之前，已经做过该地图的矢量切片，那么在User那个目录下已经有了对应的xml文件，那么我只要代码中获取了地图的坐标系，然后按照xml的命名规则顺藤摸瓜并顺手牵羊即可。<br>现实总是比想象骨感。ArcGIS Pro 的 arcpy 中提供的 Map 对象竟然没有提供查询其坐标系统的属性或方法…… 测试基于ArcGIS Pro 2.2.1，写这篇时的最新版本。相信新的版本早晚会有的。好在我还是找到了一个workaround：从map的defaultCamera属性中获取，如下图左边最下部分所示。（现在没有测试环境，图出自讨论时的聊天记录，将就看吧）<br><img data-src="/images/blogImg/partialUpdateVTPKv3_defaultCamera.jpg"></p><p>使用这个思路之后，解决了本文开头提到的问题，但是要求用户本机user目录下事先有相关的xml文件，没有的话需要打开创建矢量切片工具自动生产一次。</p><p>工具的相关代码都进行了更新，采用了新的逻辑，目前可以支持矢量切片工具自身支持的全部坐标系统。并同时保留了，上个版本的局部更新工具中可以自动解析 Advanced Vector Tile Package 功能。<br><img data-src="/images/blogImg/partialUpdateVTPKv3_AdvancedSupport.jpg"></p><h2 id="工具地址"><a href="#工具地址" class="headerlink" title="工具地址"></a>工具地址</h2><p><strong>Latest Version</strong>： <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMy4xLjA=">Partially Upate ArcGIS Vector Tiles Toolbox 3.1.0<i class="fa fa-external-link-alt"></i></span></p><h2 id="收尾"><a href="#收尾" class="headerlink" title="收尾"></a>收尾</h2><p>这个工具即与工作相关，又是业余之作。自己执念太重，希望在esri工作的最后一天归还机器前尽快改好发布出来，因为将来的投入时间和测试环境，不知道是否能够保证。自己可见的坑还是自己填好比较稳妥，哈。姑且把这个版本当成最后的latest版本吧。因为这个工具的更新，搞得最后一天的时间特别紧张，没有和很多同事道别，不过将来总有机会再见的。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;在&lt;a href=&quot;http://kikitamap.com/2018/08/13/vectorTileBundle/&quot;&gt;上一篇博客&lt;/a&gt;中提到工具还有投影坐标系支持和切片方案（.xml）自动获取的问题尚未解决，更新这篇的目的在于说明问题已经找到了workaround，并且新的版本已经在上周五（9.21）发布了。&lt;/p&gt;
-&lt;h2 id=&quot;问题诊断过程&quot;&gt;&lt;a href=&quot;#问题诊断过程&quot; class=&quot;headerlink&quot; title=&quot;问题诊断过程&quot;&gt;&lt;/a&gt;问题诊断过程&lt;/h2&gt;&lt;p&gt;这两个问题其实本质上是一个问题。&lt;/p&gt;
-&lt;p&gt;我们知道，当需要生成矢量切片的地图的坐标系不是 3857（web mercator）时，ArcGIS Pro 提供的 Create Vector Tile Package &amp;#x2F; Index 工具可以自动生成与地图的坐标系统一致的切片方案（.xml）文件，默认放置于 C:&#92;Users&#92;当前用户&#92;AppData&#92;Local&#92;ESRI&#92;Geoprocessing 下。&lt;br&gt;这是个极好的功能，但是通过python调用此工具时，这个功能是没有提供接口的。此处的疑惑，也咨询了Esri US 的工程师，确实arcpy没有提供像工具UI中的自动计算功能。&lt;/p&gt;
-&lt;p&gt;在最初的版本中，我尝试使用arcpy.GenerateMapServerCacheTilingScheme_server() 来生成xml文件，可以应对地理坐标系的地图。也是这个过程中遇到了切片原点传参失败&lt;a href=&quot;http://kikitamap.com/2018/02/05/AlterXMLScheme/&quot;&gt;这个坑&lt;/a&gt;。&lt;br&gt;投影坐标系的切片原点不像是地理坐标系一样简单粗暴，不同的投影方法都会导致不同的原点坐标，我想过将常用坐标系枚举出来，可是从工具的通用角度来讲，不是个好事。最佳的解决方法还是想办法生成相同的xml，至少可以获取工具生成的xml。&lt;/p&gt;
-&lt;p&gt;在上个版本的局部更新矢量切片工具中，我和马老师还自命名了“Advanced Vector Tile Package”的矢量切片包，我们在矢量切片包中还打包塞入了切片方案和切片索引面。这样，局部工具在更新这种包时，可以自动解析原包获取xml和index。但是，需要用户事先使用我们定制的 Create Advanced Vector Tile Package 工具来创建矢量切片包。&lt;/p&gt;
-&lt;h2 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h2&gt;&lt;p&gt;考虑到用户在更新矢量切片之前，已经做过该地图的矢量切片，那么在User那个目录下已经有了对应的xml文件，那么我只要代码中获取了地图的坐标系，然后按照xml的命名规则顺藤摸瓜并顺手牵羊即可。&lt;br&gt;现实总是比想象骨感。ArcGIS Pro 的 arcpy 中提供的 Map 对象竟然没有提供查询其坐标系统的属性或方法…… 测试基于ArcGIS Pro 2.2.1，写这篇时的最新版本。相信新的版本早晚会有的。好在我还是找到了一个workaround：从map的defaultCamera属性中获取，如下图左边最下部分所示。（现在没有测试环境，图出自讨论时的聊天记录，将就看吧）&lt;br&gt;&lt;img data-src=&quot;/images/blogImg/partialUpdateVTPKv3_defaultCamera.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;使用这个思路之后，解决了本文开头提到的问题，但是要求用户本机user目录下事先有相关的xml文件，没有的话需要打开创建矢量切片工具自动生产一次。&lt;/p&gt;
-&lt;p&gt;工具的相关代码都进行了更新，采用了新的逻辑，目前可以支持矢量切片工具自身支持的全部坐标系统。并同时保留了，上个版本的局部更新工具中可以自动解析 Advanced Vector Tile Package 功能。&lt;br&gt;&lt;img data-src=&quot;/images/blogImg/partialUpdateVTPKv3_AdvancedSupport.jpg&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
-    
-    
-    <category term="Raster" scheme="https://kikitamap.com/tags/Raster/"/>
-    
-    <category term="Geoprocessing" scheme="https://kikitamap.com/tags/Geoprocessing/"/>
-    
-    <category term="Python" scheme="https://kikitamap.com/tags/Python/"/>
-    
-    <category term="Vector Tiles" scheme="https://kikitamap.com/tags/Vector-Tiles/"/>
-    
-    <category term="Cloud Storage" scheme="https://kikitamap.com/tags/Cloud-Storage/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Testing Report for Image Service</title>
-    <link href="https://kikitamap.com/2018/08/30/cloudStorageImageService/"/>
-    <id>https://kikitamap.com/2018/08/30/cloudStorageImageService/</id>
-    <published>2018-08-30T03:30:40.000Z</published>
-    <updated>2024-12-24T03:31:31.517Z</updated>
-    
-    <content type="html"><![CDATA[<p>An image service of ArcGIS Server provides access to raster data through a web service.  ArcGIS Image Server is required to share a mosaic dataset.  This testing reporting indicates workflows and issues of sharing Image Service which is basing on a mosaic dataset referencing the raster dataset on a cloud storage.</p><p><strong>Local Testing Environment</strong></p><ul><li>Latest Esri Technologies<ul><li>ArcMap 10.6.1 ( both final release version and  early adopter version)</li><li>ArcGIS Enterprise 10.6.1 with ArcGIS Image Server 10.6.1</li></ul></li><li>Windows 10 Pro 64 bit English Version</li></ul><h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><p><strong>Steps</strong></p><ol><li><p>Create Huawei Cloud connection file                                                                (√)</p><p><img data-src="/images/blogImg/cloudStorageImageService_1Connection.png"></p></li><li><p>Add raster to a local mosaic dataset referencing the connection file          (√)</p><p><img data-src="/images/blogImg/cloudStorageImageService_2AddRaster.png"></p></li><li><p>Share the mosaic dataset as an image service                                                 (√)</p><p><img data-src="/images/blogImg/cloudStorageImageService_3Publishing.png"></p><p><img data-src="/images/blogImg/cloudStorageImageService_3Publishing2.png"></p><p><img data-src="/images/blogImg/cloudStorageImageService_4ServerMan.png"></p></li><li><p>Consume this service in various client browsers                                             (√)</p><p><img data-src="/images/blogImg/cloudStorageImageService_5MapViewer.png"></p><p><img data-src="/images/blogImg/cloudStorageImageService_6JSviewer.png"></p><p><img data-src="/images/blogImg/cloudStorageImageService_7ArcMap.png"></p></li></ol><h2 id="Alibaba-Cloud"><a href="#Alibaba-Cloud" class="headerlink" title="Alibaba Cloud"></a>Alibaba Cloud</h2><p><strong>Steps</strong></p><ol><li>Create Huawei Cloud connection file                                                                (√)</li><li>Add raster to a local mosaic dataset referencing the connection file          (√)</li><li>Share the mosaic dataset as an image service                                                 (√)</li><li>Consume this service in various client browsers                                             (×)</li></ol><p><strong>Explanation</strong></p><ul><li><p>It requires  EA version installed on English language windows OS to avoid the failure of step 1 and step 2.</p></li><li><p>Checkerboarding on image service at now. and new case summitted for diagnose this issue.</p><p><span class="exturl" data-url="aHR0cHM6Ly9teS5lc3JpLmNvbS8jL3N1cHBvcnQvY2FzZXMvMDIxNzIyMDc=">Internal Case #02172207<i class="fa fa-external-link-alt"></i></span> summited</p></li></ul><p><img data-src="/images/blogImg/cloudStorageImageService_8Issue.png"></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;An image service of ArcGIS Server provides access to raster data through a web service.  ArcGIS Image Server is required to share a mosaic dataset.  This testing reporting indicates workflows and issues of sharing Image Service which is basing on a mosaic dataset referencing the raster dataset on a cloud storage.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Local Testing Environment&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Latest Esri Technologies&lt;ul&gt;
-&lt;li&gt;ArcMap 10.6.1 ( both final release version and  early adopter version)&lt;/li&gt;
-&lt;li&gt;ArcGIS Enterprise 10.6.1 with ArcGIS Image Server 10.6.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Windows 10 Pro 64 bit English Version&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Huawei-Cloud&quot;&gt;&lt;a href=&quot;#Huawei-Cloud&quot; class=&quot;headerlink&quot; title=&quot;Huawei Cloud&quot;&gt;&lt;/a&gt;Huawei Cloud&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Steps&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Create Huawei Cloud connection file                                                                (√)&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_1Connection.png&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Add raster to a local mosaic dataset referencing the connection file          (√)&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_2AddRaster.png&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Share the mosaic dataset as an image service                                                 (√)&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_3Publishing.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_3Publishing2.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_4ServerMan.png&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Consume this service in various client browsers                                             (√)&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_5MapViewer.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_6JSviewer.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/cloudStorageImageService_7ArcMap.png&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Alibaba-Cloud&quot;&gt;&lt;a href=&quot;#Alibaba-Cloud&quot; class=&quot;headerlink&quot; title=&quot;Alibaba Cloud&quot;&gt;&lt;/a&gt;Alibaba Cloud&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Steps&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Create Huawei Cloud connection file                                                                (√)&lt;/li&gt;
-&lt;li&gt;Add raster to a local mosaic dataset referencing the connection file          (√)&lt;/li&gt;
-&lt;li&gt;Share the mosaic dataset as an image service                                                 (√)&lt;/li&gt;
-&lt;li&gt;Consume this service in various client browsers                                             (×)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Explanation&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
-    
-    
-    <category term="Raster" scheme="https://kikitamap.com/tags/Raster/"/>
-    
-    <category term="Geoprocessing" scheme="https://kikitamap.com/tags/Geoprocessing/"/>
-    
-    <category term="Python" scheme="https://kikitamap.com/tags/Python/"/>
-    
-    <category term="Cloud Storage" scheme="https://kikitamap.com/tags/Cloud-Storage/"/>
     
   </entry>
   
