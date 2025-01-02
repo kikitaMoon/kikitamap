@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2019/06/27/wlanNetworks/</loc>
+    <loc>https://kikitamap.com/2020/03/05/theShade/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2020/03/05/theShade/</loc>
+    <loc>https://kikitamap.com/2019/06/27/wlanNetworks/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -641,7 +641,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
+    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -650,7 +650,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
+    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -938,7 +938,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/04/01/ArcGISEditorforOSM103xDesktop/</loc>
+    <loc>https://kikitamap.com/2015/04/21/MappingASCIIRaster/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -947,7 +947,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/04/21/MappingASCIIRaster/</loc>
+    <loc>https://kikitamap.com/2015/04/01/ArcGISEditorforOSM103xDesktop/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1388,7 +1388,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/07/22/ConvertDMS/</loc>
+    <loc>https://kikitamap.com/2013/08/06/ArcGISLMSilentAuthorization/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1397,7 +1397,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/08/06/ArcGISLMSilentAuthorization/</loc>
+    <loc>https://kikitamap.com/2013/07/22/ConvertDMS/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1460,7 +1460,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/05/24/TransferArcView33to10/</loc>
+    <loc>https://kikitamap.com/2013/05/21/FeatureEnvelopPython/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1469,7 +1469,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/05/21/FeatureEnvelopPython/</loc>
+    <loc>https://kikitamap.com/2013/05/24/TransferArcView33to10/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1953,14 +1953,14 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Geodata/</loc>
+    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
+    <loc>https://kikitamap.com/tags/Geodata/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2163,20 +2163,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Network/</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Positioning/</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Mobile-SDK/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -2191,14 +2177,21 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/HERE-Platform/</loc>
+    <loc>https://kikitamap.com/tags/Network/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Visualization/</loc>
+    <loc>https://kikitamap.com/tags/Positioning/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/HERE-Platform/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2213,6 +2206,13 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Data-Management/</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/Visualization/</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
