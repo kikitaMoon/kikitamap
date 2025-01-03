@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-count">207</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,250 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/05/Icecream_Part2_Geolocation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/05/Icecream_Part2_Geolocation/" class="post-title-link" itemprop="url">HERE MAP API - Part2 Geolocation</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-03-05 15:52:54" itemprop="dateCreated datePublished" datetime="2019-03-05T15:52:54+08:00">2019-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/03/05/Icecream_Part2_Geolocation/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/05/Icecream_Part2_Geolocation/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>337</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 Part 1 地图底图准备好的基础之上，我们增加一个获取浏览器当前位置并持续更新的功能，来解决“Where am I ？”的问题。</p>
+<p>具体可以通过浏览器的 Geolocation API 来实现。在app.js 脚本中，使用 <code>navigator.geolocation</code> 对象来访问此API。 <code>navigator.geolocation</code> 对象有这样几个方法：<code>getCurrentPosition()</code>，<code>watchPosition()</code>，<code>clearWatch()</code>， 可以帮助我们实现开始的需求。</p>
+<h3 id="1-获取位置"><a href="#1-获取位置" class="headerlink" title="1 获取位置"></a>1 获取位置</h3><p>首先，通过 <code>getCurrentPosition()</code> 一次性获取浏览器当前位置，在 app.js 中使用如下代码 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navigator.<span class="property">geolocation</span>.<span class="title function_">getCurrentPosition</span>(success[, error[, options]]);</span><br></pre></td></tr></table></figure>
+
+<p>各个浏览器都有 Geolocation API 的支持，建议参考相关的帮助文档。这个Demo建议在 Firefox 中测试，因为Chrome似乎禁用从本地文件访问位置。你可以根据需要增加获取位置是否成功后的行为，详情查看 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvQVBJL1Bvc2l0aW9uT3B0aW9ucw==">Firefox的开发者文档<i class="fa fa-external-link-alt"></i></span>。 </p>
+<p><img data-src="/images/blogImg/Icecream_Part2_Geolocation.png"></p>
+<h3 id="2-持续更新位置"><a href="#2-持续更新位置" class="headerlink" title="2 持续更新位置"></a>2 持续更新位置</h3><p><code>watchPosition()</code> 用于持续“关注” 客户端位置的变化，在每次变化之后，都会将新的位置返回。在 app.js 中增加如下代码，用于在当前位置不断地显示“冰激凌”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">updatePosition</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> coordinates = &#123;</span><br><span class="line">    <span class="attr">lat</span>: event.<span class="property">coords</span>.<span class="property">latitude</span>,</span><br><span class="line">    <span class="attr">lng</span>: event.<span class="property">coords</span>.<span class="property">longitude</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">var</span> iconUrl = <span class="string">&#x27;./images/icecream.svg&#x27;</span>;</span><br><span class="line">  <span class="keyword">var</span> iconOptions = &#123;</span><br><span class="line">    <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">26</span>, <span class="number">34</span>),</span><br><span class="line">    <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">14</span>, <span class="number">34</span>)</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">var</span> markerOptions = &#123;</span><br><span class="line">    <span class="attr">icon</span>: <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Icon</span>(iconUrl, iconOptions)</span><br><span class="line">  &#125;;</span><br><span class="line">   <span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates, markerOptions);</span><br><span class="line">  map.<span class="title function_">addObject</span>(marker);</span><br><span class="line">  map.<span class="title function_">setCenter</span>(coordinates);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Action</span></span><br><span class="line">navigator.<span class="property">geolocation</span>.<span class="title function_">watchPosition</span>(updatePosition);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/03/05/Icecream_Part2_Geolocation/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/05/Icecream_Part1_Basemap_Setup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/05/Icecream_Part1_Basemap_Setup/" class="post-title-link" itemprop="url">HERE MAP API - Part1 Basemap Setup</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-03-05 15:20:58" itemprop="dateCreated datePublished" datetime="2019-03-05T15:20:58+08:00">2019-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/03/05/Icecream_Part1_Basemap_Setup/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/05/Icecream_Part1_Basemap_Setup/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>612</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Quick Start for HERE Map Javascript API</p>
+<p>HERE 官网有一个很有趣的Tutorial， <strong>Who wants ice cream !?</strong> </p>
+<p>如果你注册了HERE Developer 账号，很可能会被推送到这个教程的小广告。</p>
+<p>假设你是冰激凌店的老板，那么用HERE Map 做个交互式的地图小网页，边测试边记录。</p>
+<p><em><strong>Let’s get our hands dirty……</strong></em></p>
+<h3 id="1-准备资源"><a href="#1-准备资源" class="headerlink" title="1. 准备资源"></a>1. 准备资源</h3><p>准备如下结构的目录和文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WhoWantsIceCream</span><br><span class="line">|--base_map_set_up.html</span><br><span class="line">|--scripts</span><br><span class="line">	|--app.js</span><br><span class="line">|--images</span><br><span class="line">	|--icecream.svg</span><br><span class="line">|--styles</span><br><span class="line">	|--main.css</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-设计页面"><a href="#2-设计页面" class="headerlink" title="2.  设计页面"></a>2.  设计页面</h3><p>HTML 的 <code>head</code> 中引用 HERE Map JS API 以及必要的 CSS；</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/03/05/Icecream_Part1_Basemap_Setup/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -609,269 +853,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/08/15/cloudStorage4MD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/15/cloudStorage4MD/" class="post-title-link" itemprop="url">Testing Report for Raster Data Source in Cloud Storage</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-08-15 09:50:20" itemprop="dateCreated datePublished" datetime="2018-08-15T09:50:20+08:00">2018-08-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/08/15/cloudStorage4MD/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/15/cloudStorage4MD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>747</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>For the purpose of assisting and sharing ,  I will try to write in English. </p>
-</blockquote>
-<p>The new tool <strong>Create Cloud Storage Connection File</strong> is first introduced to ArcGIS Desktop 10.6.1 which is the latest version until now.  The <span class="exturl" data-url="ZmlsZTovLy9DOi9Qcm9ncmFtJTIwRmlsZXMvQXJjR0lTL1Byby9SZXNvdXJjZXMvSGVscC9wcm8tYXBwL3Rvb2wtcmVmZXJlbmNlL2RhdGEtbWFuYWdlbWVudC9jcmVhdGUtY2xvdWQtc3RvcmFnZS1jb25uZWN0aW9uLWZpbGUuaHRt">Create Cloud Storage Connection File<i class="fa fa-external-link-alt"></i></span> tool creates a connection file (***.acs**) for ArcGIS-supported cloud storage.  It allows existing raster geoprocessing tools to <strong>write</strong> cloud raster format (CRF) datasets into the cloud storage bucket or <strong>read</strong> raster datasets (not limited to CRF) stored in the cloud storage as input.</p>
-<p>This is an amazing new feature of ArcGIS Desktop, including <strong>ArcMap 10.6.1</strong> and <strong>ArcGIS Pro 2.2</strong>.  The stuff from one of our partners and I are doing some researching on the new capability.  This article is something about the testing report, which indicates the feasibility of various workflows for adding raster datasets to mosaic dataset. </p>
-<br>
-
-<p><strong>Local Testing Environment</strong></p>
-<ul>
-<li><p>Latest Esri Technologies</p>
-<ul>
-<li><p>ArcMap 10.6.1</p>
-</li>
-<li><p>ArcGIS Pro 2.2.1</p>
-</li>
-</ul>
-</li>
-<li><p>Windows 10 Pro 64 bit English Version</p>
-</li>
-</ul>
-<br>
-
-<br>
-
-<h2 id="Huawei-Cloud"><a href="#Huawei-Cloud" class="headerlink" title="Huawei Cloud"></a>Huawei Cloud</h2><h3 id="ArcMap"><a href="#ArcMap" class="headerlink" title="ArcMap"></a>ArcMap</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/15/cloudStorage4MD/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/08/13/vectorTileBundle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/08/13/vectorTileBundle/" class="post-title-link" itemprop="url">探索矢量切片的Bundle</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-08-13 10:13:29" itemprop="dateCreated datePublished" datetime="2018-08-13T10:13:29+08:00">2018-08-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/08/13/vectorTileBundle/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/13/vectorTileBundle/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>631</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>为什么会有这个需求和想法呢？还是源自于 <a href="http://kikitamap.com/2018/07/20/lovelyGit/"><strong>局部更新矢量切片</strong></a> 的想法，当我们遭遇一个海量矢量数据的矢量切片<strong>创建</strong>和<strong>更新</strong>任务时，希望尽可能少且尽可能准确地更新受影响的bundle，而不是全局，那么了解bundle的范围是十分必要的。在写上一篇<a href="http://kikitamap.com/2018/07/23/CompactCache/"><strong>《紧凑型缓存技术小结》</strong></a>的时候，目的在于在其基础之上探索矢量切片的bundle。</p>
-<p>为了确保单个bundle文件的矢量切片数据的完整性，每级每次至少需要更新一个bundle文件。当矢量切片的数据量不显著的时候，可能每级本身也就一个或几个bundle，那局部更新体现不出它的优势； 当某些等级（例如LOD比较大的级别）矢量切片bundle非常多的时候，如果更新的范围只影响了其中一个，或者几个文件时，局部更新是有必要的。</p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参照栅格切片的 <span class="exturl" data-url="aHR0cDovL2VudGVycHJpc2UuYXJjZ2lzLmNvbS9lbi9zZXJ2ZXIvbGF0ZXN0L3B1Ymxpc2gtc2VydmljZXMvd2luZG93cy9pbnNpZGUtdGhlLWNvbXBhY3QtY2FjaGUtc3RvcmFnZS1mb3JtYXQuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span> 中明确说明的，  “A bundle contains up to 16,384 tiles. ”   那就是 128 × 128 的关系，照搬到矢量切片是否适用呢？ 通过验证，确实如此。</p>
-<p>先上结论，第N级的矢量切片的bundle范围刚好是第N-7级的切片范围，如下图，红线是 level 6 的切片索引，刚好可以作为level 13 的bundle范围：</p>
-<p><img data-src="/images/blogImg/vectorTileBundle_bundlelevel.png"></p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>为了做验证和测试，我用了美国大选的区块数据做实验，这个面数据包含182895条记录，节点较多，很适合做矢量切片。假设，需要更新的切片范围仅仅是密歇根湖的一角：</p>
-<p><img data-src="/images/blogImg/vectorTileBundle_UpdateDetails.png"></p>
-<blockquote>
-<p>PS：上图是完全由 ArcGIS Pro 制作导出的，使用到了 Layout , Extent Indicator; 从制图角度来说，ArcGIS Pro 是个非常好的桌面端应用，可以继承和超越ArcMap。 </p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/08/13/vectorTileBundle/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -893,13 +876,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">157k</span>
+    <span title="Word count total">158k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:31</span>
+    <span title="Reading time total">9:35</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

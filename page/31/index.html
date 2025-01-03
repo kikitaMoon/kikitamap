@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">205</span>
+          <span class="site-state-item-count">207</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,255 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/07/12/BuildingCountor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/07/12/BuildingCountor/" class="post-title-link" itemprop="url">聚焦等值面的创建</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-07-12 12:28:36" itemprop="dateCreated datePublished" datetime="2013-07-12T12:28:36+08:00">2013-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2013/07/12/BuildingCountor/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/07/12/BuildingCountor/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>826</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>&nbsp; &nbsp; 日常我们会碰到有很多根据已知采样点生成等值面、等值线的需求，。由散点采样值估算相应区域，我们一般会想到插值，这样就获得了这个区域的连续表面。</p>
+<p>&nbsp; &nbsp; 在ArcGIS中，插值的方法较多，主要有两个扩展模块的功能可以选用。一般情况下可以选择 Spatial Analyst 工具箱中，IDW，Kriging等方法进行插值。如果有更加复杂的参数设置和更加专业深入的插值分析，可以使用 Geostatistical Analyst，这里暂不赘述。</p>
+<p>&nbsp; &nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_Toolset.jpg">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img data-src="/images/blogImg/BuildingCountor_Toolset2.jpg"></p>
+<p>&nbsp; &nbsp; 这里以IDW插值为例，简述等值面、等值线的生成。</p>
+<br>
+
+<h1 id="一、采样点插值"><a href="#一、采样点插值" class="headerlink" title="一、采样点插值"></a>一、采样点插值</h1><p>例如获取了如下一组点的臭氧浓度的采样值：</p>
+<p><img data-src="/images/blogImg/BuildingCountor_Points.jpg"></p>
+<p>使用 IDW 工具，设置输入数据，插值使用的字段，搜索半径等参数，获得栅格表面。</p>
+<p><img data-src="/images/blogImg/BuildingCountor_IDW.jpg"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/07/12/BuildingCountor/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/07/02/ImportArcpy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/07/02/ImportArcpy/" class="post-title-link" itemprop="url">在ArcGIS Desktop 中导入 Arcpy</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-07-02 16:01:37" itemprop="dateCreated datePublished" datetime="2013-07-02T16:01:37+08:00">2013-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2013/07/02/ImportArcpy/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/07/02/ImportArcpy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>276</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在导入 ArcPy 之后，可以运行随 ArcGIS 安装的标准工具箱中的所有地理处理工具。</p>
+<p><code>import arcpy</code></p>
+<br>
+
+<h1 id="1-导入整个模块"><a href="#1-导入整个模块" class="headerlink" title="1.导入整个模块"></a>1.导入整个模块</h1><p>模块通常是一个包含函数和类的 Python 文件。</p>
+<p>ArcPy 包括数据访问模块 (arcpy.da)、制图模块 (arcpy.mapping)、ArcGIS Spatial Analyst 扩展模块模块 (arcpy.sa) 和 ArcGIS Network Analyst 扩展模块模块 (arcpy.na)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import arcpy.mapping</span><br></pre></td></tr></table></figure>
+
+<p>Python 的核心 os 和 sys 模块，也可使用此命令。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br></pre></td></tr></table></figure>
+
+
+<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/07/02/ImportArcpy/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -578,245 +827,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/05/29/AllPackages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/05/29/AllPackages/" class="post-title-link" itemprop="url">ArcGIS Desktop 各版本产品补丁荟萃</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-05-29 15:52:07" itemprop="dateCreated datePublished" datetime="2013-05-29T15:52:07+08:00">2013-05-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/05/29/AllPackages/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/05/29/AllPackages/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>161</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ArcGIS 的补丁都是可以覆盖安装的，并且可以直接打最新补丁，最新补丁中修复了同版本前面所有补丁修复的问题。</p>
-<br>
-
-<h1 id="ArcGIS-10-1"><a href="#ArcGIS-10-1" class="headerlink" title="ArcGIS 10.1"></a>ArcGIS 10.1</h1><p>最新补丁： SP1</p>
-<p><strong>中文</strong><br><span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L2Rvd25sb2Fkcy9vdGhlcl8vSW5zdGFsbDEwMV9TUDFfQ2hpbmVzZV9PU0MuaHRt">http://downloads.esri.com/support/downloads/other_/Install101_SP1_Chinese_OSC.htm<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>英文</strong><br><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE4OS9tZXRhaWQvMTkxMw==">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/189/metaid/1913<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<h1 id="ArcGIS-10-0"><a href="#ArcGIS-10-0" class="headerlink" title="ArcGIS 10.0"></a>ArcGIS 10.0</h1><p>最新补丁： SP5</p>
-<p><strong>英文</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2013/05/29/AllPackages/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/05/24/TransferArcView33to10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/05/24/TransferArcView33to10/" class="post-title-link" itemprop="url">如何从 ArcView 3.3 版本的工程迁移到 ArcGIS Desktop 10 ？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-05-24 13:38:10" itemprop="dateCreated datePublished" datetime="2013-05-24T13:38:10+08:00">2013-05-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/05/24/TransferArcView33to10/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/05/24/TransferArcView33to10/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>105</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ArcGIS大家族中还有很多老古董，例如 ArcView 3.3，如果需要直接跳跃式的迁移到 ArcGIS Desktop 10，需要怎样做呢？</p>
-<p>1 找到这个功能：<strong>菜单栏 –&gt; Customize–&gt; Customize  Mode， Commands选项卡，搜索【ArcView】</strong></p>
-<p> <img data-src="/images/blogImg/TransferArcView33to10_Customize.png"></p>
-<p> <img data-src="/images/blogImg/TransferArcView33to10_COmmands.jpg"></p>
-<p>2 将菜单 Import from ArcView Project… 拖拽到菜单栏任意位置。</p>
-<p> <img data-src="/images/blogImg/TransferArcView33to10_Import.jpg"></p>
-<p>3 点击这个新菜单 ， Import from ArcView Project… ，弹出窗口，按照提示选择 apr 工程文件即可。</p>
-<p><img data-src="/images/blogImg/TransferArcView33to10_Import2.jpg"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/30/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/32/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/30/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/32/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -838,13 +850,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">157k</span>
+    <span title="Word count total">158k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:31</span>
+    <span title="Reading time total">9:35</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
