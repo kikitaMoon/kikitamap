@@ -10303,24 +10303,32 @@
   <entry>
     <title>Dormant Wonders —— Exploring Yellowstone and Kamchatka with ArcGIS Earth</title>
     <url>/2025/01/03/BBC-volcanos-3-en/</url>
-    <content><![CDATA[<p>Volcanoes are not only sculptors of the Earth but also windows for scientists to study geological activity.</p>
-<p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>Previous Article</strong></a>: In our previous exploration, we embarked on a journey using ArcGIS Earth to uncover the mysteries of volcanoes and familiarize ourselves with its basic operations. Today, let’s dive further into the three-dimensional world of volcanoes and explore the possibilities of combining terrain and data.</p>
-<p>Leaving behind the perilous Fernandina Volcano, we continue onward. Following the lens, we slide northward in the eastern Pacific…</p>
-<h2 id="04-Wolf-Island"><a href="#04-Wolf-Island" class="headerlink" title="04 Wolf Island"></a>04 Wolf Island</h2><p>Wolf Island is a dormant volcano over a million years old, located more than 1,200 kilometers from the nearest continent. It is one of the most remote volcanic islands in the Galápagos Archipelago.</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p>
-<p>Survival on this isolated volcanic island seems to have activated “hell mode.” To adapt to the harsh environment, animals here have evolved rapidly. On this barren island, small finches have evolved into a blood-sucking species—the vampire finch.</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p>
-<p>If you’re interested in tectonic plates, in ArcGIS Earth, you can click <strong>Add Data</strong> and search keywords like “Earth” or “Tectonic.” Among the publicly available resources on ArcGIS Online is <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>. After adding this data to ArcGIS Earth, we can clearly see that the Galápagos Archipelago sits at the intersection of three major tectonic plates: the Nazca, Cocos, and Pacific Plates.</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p>
-<h2 id="05-Aldabra-Atoll"><a href="#05-Aldabra-Atoll" class="headerlink" title="05 Aldabra Atoll"></a>05 Aldabra Atoll</h2><p>Like living organisms, volcanic islands do not exist forever. Once the volcano’s interior becomes dormant and dies, external forces gradually erode it, forming atolls.</p>
-<p>There are hundreds of atolls in tropical oceans, all remnants of volcanoes. The Aldabra Atoll is one of the largest and most pristine atolls in the world, located in the Indian Ocean about 420 kilometers north of Madagascar. It is also known as Turtle Island because it is home to giant tortoises.</p>
-<p>In ArcGIS Earth, the default basemap is the global imagery map—<a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"><strong>Imagery</strong></a>. Users can replace it with other basemaps based on their needs, such as switching to <a href="https://www.arcgis.com/home/item.html?id=620875bf8a1945e799cf8bd5f25784d7"><strong>Ocean</strong></a> to explore the underwater terrain of atolls. In addition to basemaps, ArcGIS Earth’s default elevation layer is <a href="https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer"><strong>Terrain</strong></a>, which provides global elevation data. Users can also add additional elevation layers to highlight terrain features, such as adding <a href="https://www.arcgis.com/home/item.html?id=0c69ba5a5d254118841d43f03aa3e97d"><strong>TopoBathy3D</strong></a> to better visualize underwater terrain.</p>
-<p><img data-src="/images/blogImg/Volcano_2_Aldabra.png"></p>
-<p><strong>Bookmarks</strong> in ArcGIS Earth act as a “geographic favorites” tool, allowing you to save the current scene’s camera position, basemap, terrain, and other settings, enabling quick one-click switching between different scene configurations.</p>
-<p><img data-src="/images/blogImg/Volcano_2_Aldabra_BM.gif"></p>
-<p>From basic navigation to simple geographic observation, we’ve taken our first steps in using ArcGIS Earth. In the next article, we’ll delve deeper into the allure of volcano topography and 3D scenes, unveiling more geological secrets hidden beneath the surface.</p>
-<h2 id="Download-ArcGIS-Earth"><a href="#Download-ArcGIS-Earth" class="headerlink" title="Download ArcGIS Earth"></a>Download ArcGIS Earth</h2><p>ArcGIS Earth is a free tool available for download. It allows you to add many publicly shared free resources from ArcGIS Online, including those from Esri, industry leaders, and individual enthusiasts. The videos featured here were created using this content. While video quality may be compressed for uploading, for the best experience, you’re encouraged to try it out for yourself.</p>
-<p>If you’re interested, here’s where you can find versions for different platforms:<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1lYXJ0aC9kb3dubG9hZHM=">https://www.esri.com/en-us/arcgis/products/arcgis-earth/downloads<i class="fa fa-external-link-alt"></i></span></p>
+    <content><![CDATA[<p>Besides the lava-spewing volcanoes we often see in the news and the underwater volcanoes introduced in the previous article, there are also dormant volcanoes hidden beneath the surface. Their heat erupts as geysers and hot springs.</p>
+<h2 id="06-Yellowstone"><a href="#06-Yellowstone" class="headerlink" title="06 Yellowstone"></a>06 Yellowstone</h2><p>Let’s shift our focus to Yellowstone National Park in the United States. This is a dormant volcano where magma still flows underground. The heated groundwater boils, creating geysers. In some areas, water and sediments mix to form boiling mud.</p>
+<p>This heat provides food for animals. The film features a battle between coyotes and otters, and you might come to admire the “cool-under-fire” otter after watching it.</p>
+<p>In ArcGIS Earth, search for <code>Yellowstone</code> in the top-right corner to locate the park in the heart of North America.</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL3NlYXJjaC5odG1s">ArcGIS Online<i class="fa fa-external-link-alt"></i></span> and <span class="exturl" data-url="aHR0cHM6Ly9saXZpbmdhdGxhcy5hcmNnaXMuY29tL2VuL2Jyb3dzZQ==">Living Atlas<i class="fa fa-external-link-alt"></i></span> offer a wealth of global open geographic data. These resources can be easily accessed in ArcGIS Earth. Click “Add Data” from the toolbar and search for <code>Yellowstone</code> to find many related datasets.</p>
+<p>For instance, you can add a Web Map dataset like “<span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD03ZTNjNjM5NjhkNjg0MTNjYTk4MmQ0YjJlYzUzOTRmYg==">Yellowstone Interactive Map<i class="fa fa-external-link-alt"></i></span>” to explore the park’s boundaries and details.</p>
+<p><img data-src="/images/blogImg/Volcano_3_Yellowstone_1.png"></p>
+<p>In ArcGIS Earth’s Table of Contents, each layer has a right-click menu with many configurable options, such as symbols, labels, and attribute information. Users can experiment with their map styles as needed.</p>
+<p><img data-src="/images/blogImg/Volcano_3_Yellowstone_2.png"></p>
+<p>This dataset includes a geyser layer. Modify the symbols and labels to highlight it, and keep only the necessary data layers by unchecking the rest.</p>
+<p><img data-src="/images/blogImg/Volcano_3_Yellowstone_3.png"></p>
+<p><img data-src="/images/blogImg/Volcano_3_Yellowstone_4.png"></p>
+<h2 id="07-Kamchatka-Peninsula"><a href="#07-Kamchatka-Peninsula" class="headerlink" title="07 Kamchatka Peninsula"></a>07 Kamchatka Peninsula</h2><p>Heading north, we reach the frigid expanse of Russia. In the isolated, ice-covered valleys of the Kamchatka Peninsula in the northwestern Pacific, many geysers spout scalding steam.</p>
+<p>In ArcGIS Earth, add the <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD02OGY4NDRmOWVmZDA0ZGY2YTQ2MzZlMGY0MTBhYzA3Mg==">World Georeference Lines<i class="fa fa-external-link-alt"></i></span> layer from Living Atlas to observe the Kamchatka Peninsula’s location near the Arctic Circle.</p>
+<p>You can also find Russia’s national boundary data in ArcGIS Online - <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD02OGUwMzM4NTNlZTM0ZGYwYTVlZDM1ZmVhODQzY2I1MA==">Russian Country Boundaries<i class="fa fa-external-link-alt"></i></span>. A globe icon indicates data sourced from Living Atlas, which often signifies high-quality data.</p>
+<p><img data-src="/images/blogImg/Volcano_3_Kamchatka_1.png"></p>
+<p><img data-src="/images/blogImg/Volcano_3_Kamchatka_2.png"></p>
+<p>Seeing such scenes in the film reminds one of the magical, secluded landscapes depicted in northern-themed fantasy works.</p>
+<p>The brown bears living on the peninsula might be some of the happiest creatures on Earth. Fresh, nutritious food is delivered annually from the Pacific’s deep waters. Eating salmon isn’t a crime for these bears; in fact, not enjoying the fish, which die naturally after spawning, would be wasteful.</p>
+<p>I randomly explored a few locations with ice lakes in ArcGIS Earth. The magnificent landforms and clear terrain patterns were truly exciting.</p>
+<p><img data-src="/images/blogImg/Volcano_3_Kamchatka_3.png"></p>
+<p>Open the Real-World Time Simulator “Daylight” in ArcGIS Earth to experience the transitions of day, night, and the galaxy of stars.</p>
+<p><img data-src="/images/blogImg/Volcano_3_Kamchatka_4.png"></p>
+<p>Time animation:</p>
+<p><img data-src="/images/blogImg/Volcano_3_Kamchatka_mp4.mp4"></p>
+<p>This concludes the volcano series. Stay tuned for updates on more interesting topics!</p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
