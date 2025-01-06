@@ -389,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/03/18/ScentofaWoman/</loc>
+    <loc>https://kikitamap.com/2018/03/21/importingmodels/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -398,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/03/21/importingmodels/</loc>
+    <loc>https://kikitamap.com/2018/03/18/ScentofaWoman/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -560,7 +560,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2017/01/13/Painting/</loc>
+    <loc>https://kikitamap.com/2017/01/13/Childlike/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -569,7 +569,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2017/01/13/Childlike/</loc>
+    <loc>https://kikitamap.com/2017/01/13/Painting/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -659,7 +659,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
+    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -668,7 +668,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
+    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -830,7 +830,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/08/31/CreatePythonTool1/</loc>
+    <loc>https://kikitamap.com/2015/08/07/Hexagon/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -839,7 +839,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/08/07/Hexagon/</loc>
+    <loc>https://kikitamap.com/2015/08/31/CreatePythonTool1/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1037,7 +1037,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
+    <loc>https://kikitamap.com/2014/12/26/Complete/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1046,7 +1046,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/12/26/Complete/</loc>
+    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1978,14 +1978,14 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
+    <loc>https://kikitamap.com/tags/CAD/</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Performance/</loc>
+    <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2006,6 +2006,13 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/tags/Performance/</loc>
+    <lastmod>2025-01-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/tags/Raster/</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2014,13 +2021,6 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Geoprocessing/</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/CAD/</loc>
     <lastmod>2025-01-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
