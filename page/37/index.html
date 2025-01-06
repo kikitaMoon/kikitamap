@@ -335,129 +335,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/27/SAInterpolation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/08/27/SAInterpolation/" class="post-title-link" itemprop="url">空间分析之插值分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-08-27 09:10:00" itemprop="dateCreated datePublished" datetime="2012-08-27T09:10:00+08:00">2012-08-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/08/27/SAInterpolation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/27/SAInterpolation/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在实际工作中，由于成本的限制、测量工作实施困难大等因素，我们不能对研究区域的每一位置都进行测量（如高程、降雨、化学物质浓度和噪声等级）。这时，我们可以考虑合理选取采样点，然后通过采样点的测量值，使用适当的数学模型，对区域所有位置进行预测，形成测量值表面。插值之所以可称为一种可行的方案，是因为我们假设，空间分布对象都是空间相关的，也就是说，彼此接近的对象往往具有相似的特征。</p>
-<p>ArcGIS的空间分析中，提供了插值（Interpolation）工具集，如下：</p>
-<p><img data-src="/images/blogImg/SAInterpolation_Toolset.png"></p>
-<br>
-
-<h1 id="1-反距离权重法（IDW–Inverse-Distance-Weighted）"><a href="#1-反距离权重法（IDW–Inverse-Distance-Weighted）" class="headerlink" title="1. 反距离权重法（IDW–Inverse Distance Weighted）"></a><strong>1. 反距离权重法（IDW–Inverse Distance Weighted）</strong></h1><p>此方法假定所映射的变量因受到与其采样位置间的距离的影响而减小。</p>
-<p><strong>幂参数：</strong></p>
-<p>IDW主要依赖于反距离的幂值。基于距输出点的距离，幂参数可以控制已知点对内插值的影响。幂参数是一个正实数，默认值为 2，一般在0.5至3之间取值。随着幂值的增大，内插值将逐渐接近最近采样点的值。指定较小的幂值，将对距离较远的周围点产生更大影响，会产生更加平滑的表面。由于反距离权重公式与任何实际物理过程都不关联，因此无法确定特定幂值是否过大。作为常规准则，认为值为 30 的幂是超大幂，因此不建议使用。此外还需牢记一点，如果距离或幂值较大，则可能生成错误结果。</p>
-<p><strong>障碍：</strong></p>
-<p>障碍是一个用作可限制输入采样点搜索的隔断线的折线 (polyline) 数据集。一条折线 (polyline) 可以表示地表中的悬崖、山脊或某种其他中断。仅将那些位于障碍同一侧的输入采样点视为当前待处理像元。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/08/27/SAInterpolation/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/27/SAMultiDimensions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -551,6 +428,129 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2012/08/27/SAMultiDimensions/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/27/SAInterpolation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/08/27/SAInterpolation/" class="post-title-link" itemprop="url">空间分析之插值分析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-08-27 09:10:00" itemprop="dateCreated datePublished" datetime="2012-08-27T09:10:00+08:00">2012-08-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/08/27/SAInterpolation/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/27/SAInterpolation/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在实际工作中，由于成本的限制、测量工作实施困难大等因素，我们不能对研究区域的每一位置都进行测量（如高程、降雨、化学物质浓度和噪声等级）。这时，我们可以考虑合理选取采样点，然后通过采样点的测量值，使用适当的数学模型，对区域所有位置进行预测，形成测量值表面。插值之所以可称为一种可行的方案，是因为我们假设，空间分布对象都是空间相关的，也就是说，彼此接近的对象往往具有相似的特征。</p>
+<p>ArcGIS的空间分析中，提供了插值（Interpolation）工具集，如下：</p>
+<p><img data-src="/images/blogImg/SAInterpolation_Toolset.png"></p>
+<br>
+
+<h1 id="1-反距离权重法（IDW–Inverse-Distance-Weighted）"><a href="#1-反距离权重法（IDW–Inverse-Distance-Weighted）" class="headerlink" title="1. 反距离权重法（IDW–Inverse Distance Weighted）"></a><strong>1. 反距离权重法（IDW–Inverse Distance Weighted）</strong></h1><p>此方法假定所映射的变量因受到与其采样位置间的距离的影响而减小。</p>
+<p><strong>幂参数：</strong></p>
+<p>IDW主要依赖于反距离的幂值。基于距输出点的距离，幂参数可以控制已知点对内插值的影响。幂参数是一个正实数，默认值为 2，一般在0.5至3之间取值。随着幂值的增大，内插值将逐渐接近最近采样点的值。指定较小的幂值，将对距离较远的周围点产生更大影响，会产生更加平滑的表面。由于反距离权重公式与任何实际物理过程都不关联，因此无法确定特定幂值是否过大。作为常规准则，认为值为 30 的幂是超大幂，因此不建议使用。此外还需牢记一点，如果距离或幂值较大，则可能生成错误结果。</p>
+<p><strong>障碍：</strong></p>
+<p>障碍是一个用作可限制输入采样点搜索的隔断线的折线 (polyline) 数据集。一条折线 (polyline) 可以表示地表中的悬崖、山脊或某种其他中断。仅将那些位于障碍同一侧的输入采样点视为当前待处理像元。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/08/27/SAInterpolation/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
