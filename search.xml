@@ -10350,4 +10350,91 @@
         <tag>Basemap</tag>
       </tags>
   </entry>
+  <entry>
+    <title>自动化创建 Digital Cousin（ACDC）笔记</title>
+    <url>/2025/01/09/LearningACDC/</url>
+    <content><![CDATA[<p>前端时间的学习分享契机，遇到了一个有意思主题 “数字表亲（Digital Cousin）”，把幻灯片整理记录一篇学习笔记。<br>论文的全名是<code>Automated Creation of Digital Cousins for Robust Policy Learning</code>，作者是斯坦福大学李飞飞带队的AI研究团队。论文结构清晰、简明扼要，我作为小白读者也可以学到很多知识。</p>
+<p>从我的阅读角度的三个循序渐进的脉络是：</p>
+<ol>
+<li>背景：为什么会提出 Digital Cousin？</li>
+<li>介绍 Digital Cousin 的自动化生产流程（ACDC），以及其中使用的主要AI技术</li>
+<li>针对 Digital Cousin 的机器人策略训练的实验结果和结论</li>
+</ol>
+<h3 id="Why-Digital-Cousin？"><a href="#Why-Digital-Cousin？" class="headerlink" title="Why Digital Cousin？"></a>Why Digital Cousin？</h3><p>数字孪生&#x2F;Digital Twin是个现有概念， Digital Twin 是对真实世界中的物理对象、过程、关系或行为的虚拟表达。Digital Twin 追求的是 1：1 高度仿真还原。</p>
+<p><img data-src="/images/blogImg/LearningACDC_DigitalTwin.png"></p>
+<p>聚焦到机器人策略学习这个行业，Digital Twin 的应用已经非常深入且普遍了，一些大型的工厂车间、仓储物流厂商已经在用 Digital Twin场景中训练自己的机器人了。</p>
+<p><strong>扩展阅读：</strong></p>
+<p>  举个例子，视频中是亚马逊的仓储物流管理车间，视频左侧是 Digital Twin 机器人策略训练的虚拟场景，右侧是现实世界场景。<br>  由 Digital Twin 仿真环境预训练的机器人手臂，可以在实际场景尽可能地完成各种工作。 可以用于提升流水线上的工作效率，和帮助改善人类员工的工作舒适度。</p>
+  <iframe width="748" height="421" src="https://www.youtube.com/embed/-VQLqs6s9y0" title="Amazon Robotics Builds Digital Twins of Warehouses with NVIDIA Omniverse and Isaac Sim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>  这是另外一个例子，台湾和硕科技公司的智能生产和质检机器人，可以执行实际生产线上的非常有挑战性芯片分拣任务。</p>
+  <iframe width="748" height="421" src="https://www.youtube.com/embed/xk1O2o6Fvbo" title="NVIDIA AI &amp; Omniverse: Pegatron Digitalizes AI Smart Factory w/ Isaac Sim, Metropolis, and Omniverse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>  这两个例子的 Digital Twin 及机器人训练都是在 NVIDIA Ominiverse 云平台中进行训练的。通常这样的商业训练环境非常昂贵，而且由于训练场景精细单一，机器人往往是用来执行专业的单项任务。</p>
+<p>基于 Digital Twin 机器人策略训练的两大痛点：高昂的成本，无法支持跨域的泛化能力。研究团队提出了 Digital Cousin 的概念，并为其量身定制了一套自动化生产流程。 Digital Cousin 是对原始物理场景的一个近似虚拟，不苛求一模一样，但追求相似的 几何结构 和 近似的语义呈现。</p>
+<p>例如下图，Digital Cousin 复述了对原场景的抽象，一个三人布艺沙发，一个单人布艺沙发，前面一个方形小茶几；茶几上发了一个木质盒子和一个球。</p>
+<p><img data-src="/images/blogImg/LearningACDC_1.png"></p>
+<p>Digital Twin 可能只有一个正确答案，但是Digital Cousin 就会有无限多个解。 在具体的实验中， Digital Cousin的Candidates 会是通过近似程度定量打分的一个集合。</p>
+<p><img data-src="/images/blogImg/LearningACDC_2.png"></p>
+<h3 id="ACDC-及-AI-技术"><a href="#ACDC-及-AI-技术" class="headerlink" title="ACDC 及 AI 技术"></a>ACDC 及 AI 技术</h3><p>总体上分三步，就是将现实场景的中的一张RGB照片，第一步， 从照片中提取场景信息，第二步，在一个3D模型资源库中匹配符合筛选条件的3D模型，第三步，重组这些找到的单体模型创建数个 Digital Cousin 3D 场景出来。</p>
+<p><img data-src="/images/blogImg/LearningACDC_3.png">
+ </p>
+<h4 id="1-提取"><a href="#1-提取" class="headerlink" title="1 提取"></a>1 提取</h4><p>第一步提取信息，主要为了获取 分割后的场景中对象掩码图片和相关的文本标注，以及深度信息。</p>
+<p>首先将现实场景的照片交给 GPT，结合作者设计的 Prompt 对照片中的部分进行自动标注和文字描述。只有GPT返回的文字描述还远远不够，还需要对图片进一步的加工，对图片进行分割和对象提取，得到图中各个对象的掩码图片。这里使用了 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0lERUEtUmVzZWFyY2gvR3JvdW5kZWQtU0FNLTI=">Grounded SAM v2<i class="fa fa-external-link-alt"></i></span> 这个开源AI图像处理框架，它包含了多个图像处理模型，如 Grounding DINO 和 Segment Anything Model 2。这个框架可以基于文字提示词，对图片，甚至可以对视频中的对象进行识别、自动标注、分割和追踪。GPT 的第二轮工作是将Grounded SAM 2 输出的掩码图片和它对应的标签做筛选同步，得到准确的文字描述和单一对象掩码图片。</p>
+<p>信息提取中的另一个平行分支是进行深度估计。  我们知道，图片的分割标记都是二维工作，但是如果想实现从2D图片到3D场景的飞跃，就必须引入场景深度的计算。这里使用的 AI 模型是 <span class="exturl" data-url="aHR0cHM6Ly9kZXB0aC1hbnl0aGluZy5naXRodWIuaW8v">Depth Anything v2<i class="fa fa-external-link-alt"></i></span>, 这是一个非常犀利的单目深度估算模型。所谓单目&#x2F;Monocular，也就是单一相机或单一照片输入的意思。如果是多个相机机位，深度计算更接近数学问题。但是单目深度计算就是结合了对图片内容理解的估算，正是AI擅长的领域。 Depth Anything v2 得到的就是深度数据集输出，这项研究中采用了 点云的数据形式。</p>
+<h4 id="2-匹配"><a href="#2-匹配" class="headerlink" title="2 匹配"></a>2 匹配</h4><p>拿到提取的对象掩码图片和文字描述，就可以到一个现有的 3D模型资源库中去按图索骥。研究团队用了斯坦福大学的 BEHAVIOR-1K 这个3D模型数据集，但实际论文指出ACDC的工作流不限于使用这一个数据集。</p>
+<p>匹配过程主要分两大步， 定性分类和定量筛选：<br>在第一步定性分类过程中使用了 Open AI 的 开源模型 <span class="exturl" data-url="aHR0cHM6Ly9vcGVuYWkuY29tL2luZGV4L2NsaXAv">CLIP<i class="fa fa-external-link-alt"></i></span>（Contrastive Language-Image Pretraining）； CLIP 是一个基于大量文字标注图片的预训练模型，它是建立了文字和图片连接的优秀模型。文字标签和对象掩码图片交给CLIP ，输出一波相匹配的模型快照，得到符合类别的3D模型集合。<br>下一步是定量筛选， 再介绍一个图像处理模型，DINO v2 (Distillation with No Labels) 是 Facebook&#x2F;Meta 发布的开源模型，它的特色在自监督训练的图片识别模型，不依赖文字标注。<br>例如筛选单人沙发，可以从图片的近似测量指标方面将最匹配的模型过滤出来。 DINO V2 对图片中模型的朝向也可以感知，因此还可以继续在多个选项中选出方向最优的模型。<br><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ZhY2Vib29rcmVzZWFyY2gvZGlub3Yy">DINO v2<i class="fa fa-external-link-alt"></i></span>，除了相似图片对象检索，图像分割等基本功能，它还能实现很多不可思议的工作，例如 Sparse Matching&#x2F;稀疏匹配，深度估算等等。 </p>
+<h4 id="3-生成"><a href="#3-生成" class="headerlink" title="3 生成"></a>3 生成</h4><p>最后一步  结合提取过程生成的 深度估算数据点云，和层层筛选得到的 单个 3D模型， 进行 Digital Cousin 场景的生成。<br>主要实现方法是，将3D模型的中心放置到 点云中对象的几何中心，再去缩放模型比例。并根据模型在照片中和墙壁和地面的邻接关系进行3D模型的摆放。 </p>
+<p><img data-src="/images/blogImg/LearningACDC_4.png"></p>
+<p>最终，在技术上实现了从单张照片到多个 Digital Cousin 场景的自动化生成。</p>
+<h3 id="实验与结论"><a href="#实验与结论" class="headerlink" title="实验与结论"></a>实验与结论</h3><p>Digital Cousin 场景的生成的性能和质量是否满足机器人策略学习的要求？ 这是需要严格实验检验的，这部分不是 ACDC 生产工艺的内容，但是对这套生产工艺的证明至关重要。 研究团队也做了较大篇幅的实验和测试。</p>
+<p>我们简单看一下，主要围绕这4个关键问题进行实验和采集结果。</p>
+<ol>
+<li>ACDC 可以生产高质量的 Digital Cousin 场景吗？ 给定一张RGB图片，Digital Cousin 场景中能否捕捉原始场景中固有的高级语义和空间细节？</li>
+<li>初始设定下，基于 Digital Cousin训练的策略和基于Digital Twin 训练的策略是否相当？</li>
+<li>域外设定下，基于 Digital Cousin 训练的策略是否比基于Digital Twin训练的策略表现更优？</li>
+<li>基于 Digital Cousin 训练的策略是否能够实现零样本模拟到现实的策略迁移？</li>
+</ol>
+<h4 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h4><p>针对每个问题都有专项的试验来检验：</p>
+<ul>
+<li><p>第一项实验 Real to Sim 从现实到虚拟，从一张照片得到多个Digital Cousin 场景，这个实验结果直观上可见语义和空间细节都还原的很好，并且生成过程有多项测量参数可以支持评估。回答第一个问题。</p>
+<p><img data-src="/images/blogImg/LearningACDC_5.png"></p>
+</li>
+<li><p>第二项实验 Sim to Sim 从虚拟到虚拟，用于回答第2和3问题。 也就是对比在相同初始条件下，Digital Cousin 训练的策略是否比 Digital Twin 相匹配？ 并且进一步对比域外分布情况下，Digital Cousin是不是可以更稳健而胜出？<br>这里有三个现实任务，开柜门，开抽屉，放碗。 横轴是 DINO EmbeddingDistance 表示场景间的差异， 实验目的是测量随着差异的增加，机器人策略的成功比率。通过图表明显可以看到，靠右侧差异较大的场景中，通过Digital Cousin 训练的策略更加稳健，成功率更高。<br>实验中的具体任务结果动图， 柜子形状或比例发生变化的时候，Digital Twin 训练的策略的机械手臂无法打开柜门或抽屉。</p>
+<p><img data-src="/images/blogImg/LearningACDC_6.png"></p>
+</li>
+<li><p>第三项实验，用于回答第四个问题  基于 Digital Cousin 训练的策略是否能够实现零样本模拟到现实的策略迁移？<br>这个问题至关重要，是理论走向现实的重要检验。 研究团队使用一个真实的 宜家衣柜和它的Digital Twin，生产了一系列 Digtial Cousin 场景，再基础之上分别进行策略训练。 然后让真实的机械手臂去打开现实世界的柜门，Cousin获得了优异的成绩。 </p>
+<video autoplay muted loop controls>
+  <source src="/images/blogImg/LearningACDC_7.mp4" type="video/mp4">
+</video>
+</li>
+<li><p>最后一项综合实验，从拍照到生成场景训练到实际场景测试，机器人也出色的完成了任务。</p>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><strong>结论：</strong></p>
+<p>Digital Cousin 可以从一张真实世界RGB照片自动化创建。在这些 Digital Cousin 场景之上训练的策略比在 Digital Twin 场景上训练的策略更加鲁稳健，同时具有相当的域内性能和更优秀的跨域泛化能力，并实现了零样本模拟到现实的策略迁移。</p>
+<p><strong>已知限制：</strong></p>
+<ol>
+<li>ACDC创建的场景的多样性受到模型资产库的限制。</li>
+<li>ACDC是在几个AI大模型的基础之上创建的，相应的继承了这些限制。</li>
+<li>ACDC上训练的机器人策略还有很大提升空间，可从策略训练的新技术如 Diffusion 中受益。</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li>论文：<span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzI0MTAuMDc0MDg=">https://arxiv.org/abs/2410.07408<i class="fa fa-external-link-alt"></i></span></li>
+<li>博客：<span class="exturl" data-url="aHR0cHM6Ly9kaWdpdGFsLWNvdXNpbnMuZ2l0aHViLmlvLw==">https://digital-cousins.github.io/<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>3D</tag>
+        <tag>AI</tag>
+        <tag>Policy Training</tag>
+        <tag>Digital Twin</tag>
+        <tag>GPT</tag>
+        <tag>DINO</tag>
+        <tag>CLIP</tag>
+      </tags>
+  </entry>
 </search>

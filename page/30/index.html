@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">207</span>
+          <span class="site-state-item-count">208</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,144 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/12/05/GeometryErrorinshapefileGDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/12/05/GeometryErrorinshapefileGDB/" class="post-title-link" itemprop="url">shapefile与GDB中不能允许存在的几何错误</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-12-05 11:36:17" itemprop="dateCreated datePublished" datetime="2013-12-05T11:36:17+08:00">2013-12-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2013/12/05/GeometryErrorinshapefileGDB/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/12/05/GeometryErrorinshapefileGDB/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>482</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>每种软件都有自己的数据规范，ArcGIS也不例外，当数据不满足ArcGIS的规范时，就会遇到各种无响应和崩溃。</p>
+<p>有关数据几何错误总是问题相对较多的部分。其中，shapefile作为一种开放的格式，除了ArcGIS程序可以读写，也可以按照数据规范在非ArcGIS环境中生产。后者生产的数据通常包含这样那样的问题，这些问题都是几何错误的范畴。</p>
+<p>帮助原文说的精辟：</p>
+<blockquote>
+<p>The shapefile is an open format to which many software packages write. Unfortunately, some of these software packages—sometimes due to bugs, sometimes due to lack of knowledge—do not follow the documented specification of the shapefile format.</p>
+</blockquote>
+<p>简单罗列下ArcGIS中不能允许的几何错误类型：</p>
+<ul>
+<li><p><strong>短线段&#x2F;Short segment</strong><br>Some segments are shorter than allowed by the system units of the spatial reference associated with the geometry.</p>
+</li>
+<li><p><strong>空几何&#x2F;Null geometry</strong><br>The feature has no geometry or nothing in the SHAPE field.</p>
+</li>
+<li><p><strong>不正确的环顺序&#x2F;Incorrect ring ordering</strong><br>The polygon is topologically simple, but its rings may not be oriented correctly (outer rings—clockwise, inner rings—counterclockwise).</p>
+</li>
+<li><p><strong>不正确的线段方向&#x2F;Incorrect segment orientation</strong><br>Individual segments are not consistently oriented. The “to” point of seg i should be incident on the “from” point of seg i+1.</p>
+</li>
+<li><p><strong>自相交&#x2F;Self intersections</strong><br>A polygon must not intersect itself.</p>
+</li>
+<li><p><strong>非封闭环&#x2F;Unclosed rings</strong><br>The last segment in a ring must have its “to” point incident on the “from” point of the first segment.</p>
+</li>
+<li><p><strong>空部分&#x2F;Empty parts</strong><br>The geometry has multiple parts and one of them is empty (has no geometry).</p>
+</li>
+<li><p><strong>重复折点&#x2F;Duplicate vertex</strong><br>The geometry has two or more vertices with identical coordinates.</p>
+</li>
+<li><p><strong>属性不匹配&#x2F;Mismatched attributes</strong><br>The Z or M coordinate of a line segment’s endpoint does not match the Z or M coordinate of the coincident endpoint on the next segment.</p>
+</li>
+<li><p><strong>不连续部分&#x2F;Discontinuous parts</strong><br>One of the geometry’s part is made up of disconnected or discontinuous parts.</p>
+</li>
+<li><p><strong>空Z值&#x2F;Empty Z values</strong><br>The geometry has one or more vertex with empty Z value (NaN, for example).</p>
+</li>
+</ul>
+<p>以上的错误，可以用使用工具 Check Geometry 进行检查，工具会生成有关几何错误的报表。使用 Repaired Geometry 工具进行修复。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -703,131 +841,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/07/22/ConvertDMS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/07/22/ConvertDMS/" class="post-title-link" itemprop="url">将度-分-秒值转换为十进制度</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-07-22 12:21:29" itemprop="dateCreated datePublished" datetime="2013-07-22T12:21:29+08:00">2013-07-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/07/22/ConvertDMS/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/07/22/ConvertDMS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>161</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在ArcMap中，在表中新建一个字段，用于存储新的十进制度值，使用字段计算器和 VB 脚本实现。</p>
-<p>如下示例，其中，假设 Latitude 是表中存储 DMS 纬度值字段的名称，经纬度数据中的度分秒三个数据是以空格分隔。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Dim Degrees</span><br><span class="line">Dim Minutes</span><br><span class="line">Dim Seconds</span><br><span class="line">Dim DMS</span><br><span class="line">Dim DD</span><br><span class="line"></span><br><span class="line">DMS = Split([Latitude])</span><br><span class="line">Degrees = CDbl(DMS(0))</span><br><span class="line">Minutes = CDbl(DMS(1))</span><br><span class="line">Seconds = CDbl(DMS(2))</span><br><span class="line">If Degrees &lt; 0 Then</span><br><span class="line">   DD = -(Seconds/3600) - (Minutes/60) + Degrees</span><br><span class="line">Else</span><br><span class="line">   DD = (Seconds/3600) + (Minutes/60) + Degrees</span><br><span class="line">End If</span><br></pre></td></tr></table></figure>
-
-<p>PS：使用到的VBScript 函数：</p>
-<p>（1）<strong>Split</strong>：</p>
-<pre><code>Split(expression[,delimiter[,count[,compare]]])
-</code></pre>
-<p>（2）<strong>CDbl</strong>：</p>
-<p>CDbl 函数可把表达式转换为双精度（Double）类型。</p>
-<p>结果示例：</p>
-<p><img data-src="/images/blogImg/ConvertDMS.jpg"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2013/07/22/ConvertDMS/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/29/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><span class="page-number current">30</span><a class="page-number" href="/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/31/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -851,13 +864,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">158k</span>
+    <span title="Word count total">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:35</span>
+    <span title="Reading time total">9:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

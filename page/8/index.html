@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">207</span>
+          <span class="site-state-item-count">208</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,165 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/22/textureinCE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/03/22/textureinCE/" class="post-title-link" itemprop="url">CityEngine中纹理贴图之道(一)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-03-22 17:39:33" itemprop="dateCreated datePublished" datetime="2018-03-22T17:39:33+08:00">2018-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/03/22/textureinCE/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/22/textureinCE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>854</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>​        </p>
+<p>​        经常看到官微、公众号的各种推送，了解到很多轰动一时的大片和电游的视觉制作都有CityEngine 助力过。CityEngine 在影娱视觉行业早已硕果累累，而对于GIS大众，CityEngine 算是刚从幕后走到了台前，从神秘娱乐圈走近了烟火人间。这几年来，这个不姓“Arc”的非主流产品在不断地推陈出新，吸引着慕名围观的用户去了解。3D模型的纹理贴图问题通常是建模中的高频问题，作为前排围观群众之一，我今天就用CityEngine做一面“墙”娱乐一下吧。</p>
+<blockquote>
+<p>环境： Esri City Engine 2017.1</p>
+</blockquote>
+<p>​        在 CityEngine中的 <code>shape</code> 对象具有<code>material </code>属性，这一属性可以控制模型的纹理贴图、阴影效果、外观等。CityEngine 支持的纹理图片的格式有：**.bmp、.gif、.jpg&#x2F;.jpeg、.png、.tif&#x2F;.tiff**。 CityEngine贴图支持6个纹理通道，它们通过特定的关键字来表达，如下：</p>
+<table>
+<thead>
+<tr>
+<th>uv-set</th>
+<th>Texture Layer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>colormap</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bumpmap</td>
+</tr>
+<tr>
+<td>2</td>
+<td>dirtmap</td>
+</tr>
+<tr>
+<td>3</td>
+<td>specularmap</td>
+</tr>
+<tr>
+<td>4</td>
+<td>opacitymap</td>
+</tr>
+<tr>
+<td>5</td>
+<td>normalmap</td>
+</tr>
+</tbody></table>
+<p><strong>下面我通过几个实例来说明下它们的用途：</strong></p>
+<p><img data-src="/images/blogImg/textureinCE_1.png"></p>
+<p>​        基于共同的基础脚本向下进行，这里不再解释，相信你一看即懂。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    MyTestforBaseTexure.cga</span></span><br><span class="line"><span class="comment"> * Created: 21 Mar 2018 08:26:37 GMT</span></span><br><span class="line"><span class="comment"> * Author:  Xiaoyan Mu</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2017.1&quot;</span></span><br><span class="line">attr height = <span class="number">6</span></span><br><span class="line">wall_tex        = <span class="string">&quot;facades/textures/brickwall.jpg&quot;</span></span><br><span class="line">dirt_tex        = <span class="string">&quot;facades/textures/dirtmap.15.tif&quot;</span></span><br><span class="line">graffiti_tex    = <span class="string">&quot;facades/kiktia/Graffiti.jpg&quot;</span></span><br><span class="line"><span class="title class_">Lot</span> --&gt; <span class="title function_">extrude</span>(height) <span class="title class_">Building</span></span><br><span class="line"><span class="title class_">Building</span> --&gt; <span class="title function_">comp</span>(<span class="params">f</span>) &#123;side : <span class="title class_">Sidefacade</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="material-colormap"><a href="#material-colormap" class="headerlink" title="material.colormap"></a>material.colormap</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/22/textureinCE/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -689,167 +848,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/09/ProNamedUserforPortalUse/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/03/09/ProNamedUserforPortalUse/" class="post-title-link" itemprop="url">如何部署通过Portal管理的ArcGIS Pro Named User许可？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-03-09 11:50:45" itemprop="dateCreated datePublished" datetime="2018-03-09T11:50:45+08:00">2018-03-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/03/09/ProNamedUserforPortalUse/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/09/ProNamedUserforPortalUse/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在开始如下部署之前，一定要注意下<strong>版本对应</strong>的情况，否则会部署失败：</p>
-<table>
-<thead>
-<tr>
-<th>版本</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>Portal 10.6</td>
-<td>Portal 10.5.1</td>
-<td>Portal 10.5</td>
-<td>Portal10.4.1</td>
-</tr>
-<tr>
-<td>Pro 2.1</td>
-<td>LM 10.6</td>
-<td>不支持</td>
-<td>不支持</td>
-<td>不支持</td>
-</tr>
-<tr>
-<td>Pro 2.0</td>
-<td>LM 10.6</td>
-<td>LM 10.5.1、10.6</td>
-<td>LM 10.5.1、10.6</td>
-<td>不支持</td>
-</tr>
-<tr>
-<td>Pro 1.4</td>
-<td>LM 10.6</td>
-<td>LM 10.5.1、10.6</td>
-<td>LM 10.5、10.5.1、10.6</td>
-<td>LM 10.4.1</td>
-</tr>
-</tbody></table>
-<p><em>LM : License Manager,  Portal: Portal for ArcGIS;   Pro: ArcGIS Pro</em> </p>
-<br>
-
-<p>如果您购买并已经部署了 Portal for ArcGIS，搭建了您的组织门户， 并且您希望在内网环境中通过 Named User 方式使用 ArcGIS Pro，那么您可以选择通过Portal for ArcGIS为组织成员配置Named User许可的方式。</p>
-<h2 id="1-为组织配置-ArcGIS-Pro-许可"><a href="#1-为组织配置-ArcGIS-Pro-许可" class="headerlink" title="1 为组织配置 ArcGIS Pro 许可"></a>1 为组织配置 ArcGIS Pro 许可</h2><p><strong>1)</strong> 首先您需要确定哪个组织门户将用于管理ArcGIS Pro的许可（这个指定的组织门户称为“许可门户”）， 尤其当您的组织有多个门户的时候，请确保您指定的门户是您想要用来管理许可的那个门户。此种许可模式，需要安装ArcGIS License Server Administrator 程序。</p>
-<p><strong>2)</strong> 完成安装后，打开 ArcGIS License Server Administrator，并单击“计算机 ID…” 按钮。</p>
-<p><img data-src="http://images.esrichina.com.cn/article/20170310/dbb2b70dea49a6649e5fed410bf1dc28.png"></p>
-<p><strong>3)</strong> 复制并保存计算机标识符对话框中的 MAC 地址 </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/03/09/ProNamedUserforPortalUse/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -873,13 +871,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">158k</span>
+    <span title="Word count total">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:35</span>
+    <span title="Reading time total">9:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

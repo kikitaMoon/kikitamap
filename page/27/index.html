@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">207</span>
+          <span class="site-state-item-count">208</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,135 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/08/05/ArcGlobeCacheManagement/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/08/05/ArcGlobeCacheManagement/" class="post-title-link" itemprop="url">ArcGlobe 缓存管理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-08-05 11:26:08" itemprop="dateCreated datePublished" datetime="2014-08-05T11:26:08+08:00">2014-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/08/05/ArcGlobeCacheManagement/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/08/05/ArcGlobeCacheManagement/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><span style="font-family:Microsoft YaHei; font-size:14px">ArcGlobe拥有缓存机制，因此可以应对大量3D数据的可视化，下面就总结下有关缓存的知识点。</span></p>
+<span style="font-family:Microsoft YaHei; font-size:14px">
+
+</span>
+
+<p><span style="font-family:Microsoft YaHei; font-size:14px">首先，需要了解，ArcGlobe具有两种缓存机制：内存缓存，硬盘缓存。</span></p>
+<span style="font-family:Microsoft YaHei; font-size:14px">
+
+</span>
+
+<p><span style="font-family:'Microsoft YaHei'"><strong><span style="font-size:24px; color:#cc0000">内存缓存&nbsp;</span></strong><span style="font-size:14px">指的是分配可供 ArcGlobe 使用的物理内存 (RAM) 大小。要获得最佳性能，可设置对每个所使用的数据类型所分配的内存大小。ArcGlobe 通过设置内存缓存来改善 3D 视图的交互性能，可针对每个 ArcGlobe 文档（.3dd 文件）配置特定的内存值。</span></span></p>
+<p><span style="font-family:'Microsoft YaHei'"><span style="font-size:14px"><img data-src="http://img.blog.csdn.net/20140805102306496?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhTW9vbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center"></span></span></p>
+<p></p>
+<p><span style="font-family:'Microsoft YaHei'"><span style="font-size:14px"><img data-src="http://img.blog.csdn.net/20140805110536867?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQva2lraXRhTW9vbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast"></span></span></p>
+<p></p>
+<p><span style="font-family:'Microsoft YaHei'"><span style="font-size:14px"></span></span></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/08/05/ArcGlobeCacheManagement/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -701,178 +830,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/03/03/Landset8_ArcGIS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/03/03/Landset8_ArcGIS/" class="post-title-link" itemprop="url">Landset 8 与 ArcGIS</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-03-03 17:24:14" itemprop="dateCreated datePublished" datetime="2014-03-03T17:24:14+08:00">2014-03-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/03/03/Landset8_ArcGIS/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/03/03/Landset8_ArcGIS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>312</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>如果现在使用的 ArcGIS 10.2 版本，如果需要向镶嵌数据集中添加 Landset 8 的数据，需要安装一个补丁：<strong>ArcGIS 10.2 for (Desktop, Engine, Server) Landsat 8 Patch</strong>。</p>
-<p><strong>下载地址</strong>：<span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzY2L21ldGFpZC8yMDEy">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/66/metaid/2012<i class="fa fa-external-link-alt"></i></span></p>
-<p>如果使用的是，ArcGIS 10.2.1，无需任何补丁，可以直接向镶嵌数据集中添加 Landset 8 的数据。</p>
-<p><img data-src="/images/blogImg/Landset8_ArcGIS_AddRaster.jpg"></p>
-<p><img data-src="/images/blogImg/Landset8_ArcGIS_Meta.jpg"></p>
-<br>
-
-<br>
-
-<p><strong>Landsset 8 常用的波段合成应用：</strong></p>
-<table>
-<thead>
-<tr>
-<th>应用</th>
-<th>波段</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Natural Color</td>
-<td>4 3 2</td>
-</tr>
-<tr>
-<td>False Color (urban)</td>
-<td>7 6 4</td>
-</tr>
-<tr>
-<td>Color Infrared (vegetation)</td>
-<td>5 4 3</td>
-</tr>
-<tr>
-<td>Agriculture</td>
-<td>6 5 2</td>
-</tr>
-<tr>
-<td>Atmospheric Penetration</td>
-<td>7 6 5</td>
-</tr>
-<tr>
-<td>Healthy Vegetation</td>
-<td>5 6 2</td>
-</tr>
-<tr>
-<td>Land&#x2F;Water</td>
-<td>5 6 4</td>
-</tr>
-<tr>
-<td>Natural With Atmospheric Removal</td>
-<td>7 5 3</td>
-</tr>
-<tr>
-<td>Shortwave Infrared</td>
-<td>7 5 4</td>
-</tr>
-<tr>
-<td>Vegetation Analysis</td>
-<td>6 5 4</td>
-</tr>
-</tbody></table>
-<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/03/03/Landset8_ArcGIS/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/26/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/28/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -896,13 +853,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">158k</span>
+    <span title="Word count total">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:35</span>
+    <span title="Reading time total">9:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

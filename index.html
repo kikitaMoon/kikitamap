@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">207</span>
+          <span class="site-state-item-count">208</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,132 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2025/01/09/LearningACDC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/01/09/LearningACDC/" class="post-title-link" itemprop="url">自动化创建 Digital Cousin（ACDC）笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-01-09 11:55:44" itemprop="dateCreated datePublished" datetime="2025-01-09T11:55:44+08:00">2025-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/01/09/LearningACDC/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/01/09/LearningACDC/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>10 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>前端时间的学习分享契机，遇到了一个有意思主题 “数字表亲（Digital Cousin）”，把幻灯片整理记录一篇学习笔记。<br>论文的全名是<code>Automated Creation of Digital Cousins for Robust Policy Learning</code>，作者是斯坦福大学李飞飞带队的AI研究团队。论文结构清晰、简明扼要，我作为小白读者也可以学到很多知识。</p>
+<p>从我的阅读角度的三个循序渐进的脉络是：</p>
+<ol>
+<li>背景：为什么会提出 Digital Cousin？</li>
+<li>介绍 Digital Cousin 的自动化生产流程（ACDC），以及其中使用的主要AI技术</li>
+<li>针对 Digital Cousin 的机器人策略训练的实验结果和结论</li>
+</ol>
+<h3 id="Why-Digital-Cousin？"><a href="#Why-Digital-Cousin？" class="headerlink" title="Why Digital Cousin？"></a>Why Digital Cousin？</h3><p>数字孪生&#x2F;Digital Twin是个现有概念， Digital Twin 是对真实世界中的物理对象、过程、关系或行为的虚拟表达。Digital Twin 追求的是 1：1 高度仿真还原。</p>
+<p><img data-src="/images/blogImg/LearningACDC_DigitalTwin.png"></p>
+<p>聚焦到机器人策略学习这个行业，Digital Twin 的应用已经非常深入且普遍了，一些大型的工厂车间、仓储物流厂商已经在用 Digital Twin场景中训练自己的机器人了。</p>
+<p><strong>扩展阅读：</strong></p>
+<p>  举个例子，视频中是亚马逊的仓储物流管理车间，视频左侧是 Digital Twin 机器人策略训练的虚拟场景，右侧是现实世界场景。<br>  由 Digital Twin 仿真环境预训练的机器人手臂，可以在实际场景尽可能地完成各种工作。 可以用于提升流水线上的工作效率，和帮助改善人类员工的工作舒适度。</p>
+  <iframe width="748" height="421" src="https://www.youtube.com/embed/-VQLqs6s9y0" title="Amazon Robotics Builds Digital Twins of Warehouses with NVIDIA Omniverse and Isaac Sim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/01/09/LearningACDC/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -692,128 +818,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1-en/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/25/BBC-Volcanos-1-en/" class="post-title-link" itemprop="url">Exploring the Footprints of BBC Documentaries in ArcGIS Earth</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-12-25 16:10:11" itemprop="dateCreated datePublished" datetime="2024-12-25T16:10:11+08:00">2024-12-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/12/25/BBC-Volcanos-1-en/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/25/BBC-Volcanos-1-en/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>585</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>The BBC’s documentaries are almost all masterpieces, and of course, I am an avid fan—especially of the Planet series. The wallpaper-grade visuals and the narration full of memorable quotes bring brilliance to days spent indoors. </p>
-<p>In early 2021, the BBC released <em>A Perfect Planet</em>, a documentary that took four years to produce. Filmed across six continents and 31 countries, it spans four episodes, illustrating the wondrous forces shaping Earth—volcanoes, the sun, weather, and the ocean—while maintaining its delicate balance. The final segment examines humanity’s impact on our planet.</p>
-<p>My child was particularly curious, repeatedly asking me where these filming locations were. That’s also the question I wanted to explore, so I decided to dive deeper. This article focuses on the filming locations featured in the first episode, <em>Volcanoes</em>, exploring the terrains and landscapes together. If you have a projector and a blank wall at home, the immersive effect is even better.</p>
-<p>Across Earth’s surface, there are more than 1,500 active volcanoes. Without volcanoes, Earth wouldn’t have oceans, land, an atmosphere, or even life itself.</p>
-<h2 id="01-Kilauea-Volcano"><a href="#01-Kilauea-Volcano" class="headerlink" title="01 Kilauea Volcano"></a>01 Kilauea Volcano</h2><p>Accompanied by the spectacular eruption footage and Sir David Attenborough’s familiar voice, the journey begins with <strong>Kilauea Volcano</strong> in Hawaii, one of the most active and massive volcanoes in the world.</p>
-<p>Finding this volcano’s location is simple, but if you want to view it from a “God’s eye view” or a “drone perspective,” <strong>ArcGIS Earth</strong> is an excellent choice. It’s free to download, beginner-friendly, and even suitable for kids.</p>
-<p>ArcGIS Earth provides high-resolution global basemaps and includes global elevation services to support realistic terrain visualization. Its GeoSearch feature allows you to type in a location name and fly directly to the recommended spot. By adjusting terrain exaggeration, you can enhance the contrast of terrain undulations to closely study the shape of the crater.</p>
-<p>When my child asked where the volcano is, exploring the 3D map made it easier to explain terms like Hawaii, Pacific Ocean, archipelago, southeastern region, and crater. Switching between basemaps offers diverse views of the terrain.</p>
-<p><img data-src="/images/blogImg/Volcano_1_Kilauea_1.png"><br><img data-src="/images/blogImg/Volcano_1_Kilauea_2.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/12/25/BBC-Volcanos-1-en/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -837,13 +841,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">158k</span>
+    <span title="Word count total">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:35</span>
+    <span title="Reading time total">9:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

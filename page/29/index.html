@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">207</span>
+          <span class="site-state-item-count">208</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,130 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/11/ArcGISDesktopVSExcel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/11/ArcGISDesktopVSExcel/" class="post-title-link" itemprop="url">ArcGIS Desktop 与 Excel</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-02-11 11:35:40" itemprop="dateCreated datePublished" datetime="2014-02-11T11:35:40+08:00">2014-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/02/11/ArcGISDesktopVSExcel/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/02/11/ArcGISDesktopVSExcel/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>690</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。</p>
+<h2 id="ArcGIS-Desktop-中访问-Excel-数据"><a href="#ArcGIS-Desktop-中访问-Excel-数据" class="headerlink" title="ArcGIS Desktop 中访问 Excel 数据"></a>ArcGIS Desktop 中访问 Excel 数据</h2><p>Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览这种表，并可将这种表作为地理处理工具的输入数据。</p>
+<p>通过 ArcGIS 进行访问Excel表时，每个工作表在 ArcGIS 中都是一个单独的表，名称末尾带有美元符号 $ 标识，但是这个$并不是表名的一部分。如果工作表的表名中包含空格，那表名称周围会括有单引号。</p>
+<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
+<h2 id="对于ArcGIS-Desktop-对-office-版本的支持情况"><a href="#对于ArcGIS-Desktop-对-office-版本的支持情况" class="headerlink" title="对于ArcGIS Desktop 对 office 版本的支持情况"></a>对于ArcGIS Desktop 对 office 版本的支持情况</h2><p>ArcGIS 支持 ：</p>
+<ul>
+<li>Excel 2003 以及更早版本的 .xls 文件；</li>
+<li>Excel 2007 的 .xlsx 文件。</li>
+</ul>
+<p>为什么要分开说呢？</p>
+<p>*.xls 文件可以直接在ArcGIS中以只读的形式打开，例如直接在ArcMap中添加数据、在ArcMap中添加XY数据显示为点、在ArcCatalog中进行查看等等。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/02/11/ArcGISDesktopVSExcel/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -696,144 +820,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/12/05/GeometryErrorinshapefileGDB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/12/05/GeometryErrorinshapefileGDB/" class="post-title-link" itemprop="url">shapefile与GDB中不能允许存在的几何错误</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-12-05 11:36:17" itemprop="dateCreated datePublished" datetime="2013-12-05T11:36:17+08:00">2013-12-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/12/05/GeometryErrorinshapefileGDB/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/12/05/GeometryErrorinshapefileGDB/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>482</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>每种软件都有自己的数据规范，ArcGIS也不例外，当数据不满足ArcGIS的规范时，就会遇到各种无响应和崩溃。</p>
-<p>有关数据几何错误总是问题相对较多的部分。其中，shapefile作为一种开放的格式，除了ArcGIS程序可以读写，也可以按照数据规范在非ArcGIS环境中生产。后者生产的数据通常包含这样那样的问题，这些问题都是几何错误的范畴。</p>
-<p>帮助原文说的精辟：</p>
-<blockquote>
-<p>The shapefile is an open format to which many software packages write. Unfortunately, some of these software packages—sometimes due to bugs, sometimes due to lack of knowledge—do not follow the documented specification of the shapefile format.</p>
-</blockquote>
-<p>简单罗列下ArcGIS中不能允许的几何错误类型：</p>
-<ul>
-<li><p><strong>短线段&#x2F;Short segment</strong><br>Some segments are shorter than allowed by the system units of the spatial reference associated with the geometry.</p>
-</li>
-<li><p><strong>空几何&#x2F;Null geometry</strong><br>The feature has no geometry or nothing in the SHAPE field.</p>
-</li>
-<li><p><strong>不正确的环顺序&#x2F;Incorrect ring ordering</strong><br>The polygon is topologically simple, but its rings may not be oriented correctly (outer rings—clockwise, inner rings—counterclockwise).</p>
-</li>
-<li><p><strong>不正确的线段方向&#x2F;Incorrect segment orientation</strong><br>Individual segments are not consistently oriented. The “to” point of seg i should be incident on the “from” point of seg i+1.</p>
-</li>
-<li><p><strong>自相交&#x2F;Self intersections</strong><br>A polygon must not intersect itself.</p>
-</li>
-<li><p><strong>非封闭环&#x2F;Unclosed rings</strong><br>The last segment in a ring must have its “to” point incident on the “from” point of the first segment.</p>
-</li>
-<li><p><strong>空部分&#x2F;Empty parts</strong><br>The geometry has multiple parts and one of them is empty (has no geometry).</p>
-</li>
-<li><p><strong>重复折点&#x2F;Duplicate vertex</strong><br>The geometry has two or more vertices with identical coordinates.</p>
-</li>
-<li><p><strong>属性不匹配&#x2F;Mismatched attributes</strong><br>The Z or M coordinate of a line segment’s endpoint does not match the Z or M coordinate of the coincident endpoint on the next segment.</p>
-</li>
-<li><p><strong>不连续部分&#x2F;Discontinuous parts</strong><br>One of the geometry’s part is made up of disconnected or discontinuous parts.</p>
-</li>
-<li><p><strong>空Z值&#x2F;Empty Z values</strong><br>The geometry has one or more vertex with empty Z value (NaN, for example).</p>
-</li>
-</ul>
-<p>以上的错误，可以用使用工具 Check Geometry 进行检查，工具会生成有关几何错误的报表。使用 Repaired Geometry 工具进行修复。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/28/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/30/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -857,13 +843,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">158k</span>
+    <span title="Word count total">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:35</span>
+    <span title="Reading time total">9:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

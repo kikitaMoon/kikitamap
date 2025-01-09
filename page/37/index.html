@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">207</span>
+          <span class="site-state-item-count">208</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,128 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/11/17/ArcSceneArcGlobe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/11/17/ArcSceneArcGlobe/" class="post-title-link" itemprop="url">了解 ArcScene 与 ArcGlobe</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-11-17 12:13:13" itemprop="dateCreated datePublished" datetime="2012-11-17T12:13:13+08:00">2012-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/11/17/ArcSceneArcGlobe/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/11/17/ArcSceneArcGlobe/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>383</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ArcGIS 中，ArcScene 与 ArcGLobe 是两种3D数据可视化以及分析的组件或者说环境，它们二者有什么样的区别，如何根据自己的应用去选择呢？<br>以下是对这二者的对比信息总结：</p>
+<h1 id="1-许可"><a href="#1-许可" class="headerlink" title="1. 许可"></a>1. 许可</h1><p>都需要 3D Analyst License 才能启动。</p>
+<h1 id="2-坐标系统"><a href="#2-坐标系统" class="headerlink" title="2. 坐标系统"></a>2. 坐标系统</h1><p>ArcScene - 使用第一个加入ArcScene的数据的坐标系统，当不同坐标系的数据加入时，进行动态投影，这点同ArcMap。通常使用平面坐标系（投影坐标系）。<br>ArcGlobe - WGS 1984 Cube Projection *，当不同坐标系的数据加入时，进行动态投影。</p>
+<ul>
+<li>那神马是立方体投影（cube projection）？<br>也就是将地球投影到各面都是正方形的六面体上。如下图：</li>
+</ul>
+<p><img data-src="/images/blogImg/ArcSceneArcGlobe.gif"></p>
+<p>需要说明，这种投影，经线和纬线都是直线；在纬度 +45° 和 -45° 之间，东南西北方向是准确的，比例尺是正确的；在极面上，由中心确定的方向是真实的。<br>但是这种投影不适合制图，仅适用于ArcGlobe。</p>
+<h1 id="3-内存管理与缓存机制"><a href="#3-内存管理与缓存机制" class="headerlink" title="3. 内存管理与缓存机制"></a>3. 内存管理与缓存机制</h1><p>ArcScene - 将所有数据加载到内存中，必要的时候使用虚拟内存。也因此，ArcScene通常用来展示小场景、小数据量。<br>ArcGlobe - 通常专用于超大型数据集，缓存过程中会建立索引并将所有数据组织为各个切片和细节层次。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/11/17/ArcSceneArcGlobe/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -694,147 +816,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/08/23/SAProximity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/08/23/SAProximity/" class="post-title-link" itemprop="url">空间分析之邻域分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-08-23 16:49:00" itemprop="dateCreated datePublished" datetime="2012-08-23T16:49:00+08:00">2012-08-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/08/23/SAProximity/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/08/23/SAProximity/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>693</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ArcGIS 的空间分析扩展中，提供了这样一组邻域分析工具：</p>
-<p><img data-src="/images/blogImg/SAProximity_Toolset.png"></p>
-<br>
-
-<h1 id="1-块统计（Block-Statistics）"><a href="#1-块统计（Block-Statistics）" class="headerlink" title="1. 块统计（Block Statistics）"></a><strong>1. 块统计（Block Statistics）</strong></h1><p>分块统计，按照指定邻域类型计算区域统计值，输出区域为指定邻域类型的外接矩形。</p>
-<p>以下为邻域的形式：</p>
-<ul>
-<li>Nbr<strong>Annulus</strong>({innerRadius}, {outerRadius}, {CELL | MAP})</li>
-<li>Nbr<strong>Circle</strong>({radius}, {CELL | MAP}</li>
-<li>Nbr<strong>Rectangle</strong>({width}, {height}, {CELL | MAP})</li>
-<li>Nbr<strong>Wedge</strong>({radius}, {start_angle}, {end_angle}, {CELL | MAP})</li>
-<li>Nbr<strong>Irregular</strong>(kernel_file)</li>
-<li>Nbr<strong>Weight</strong>(kernel_file)</li>
-</ul>
-<p>Irregular与Weight邻域类型需要指定核文件（ .txt 文件）。</p>
-<p>可以进行统计的计算类型：</p>
-<ul>
-<li><strong>MEAN</strong>&#x2F;平均值；</li>
-<li><strong>MAJORITY</strong>&#x2F;众数（出现次数最多的值）；</li>
-<li><strong>MAXIMUM</strong>&#x2F;最大值；</li>
-<li><strong>MEDIAN</strong>&#x2F;中值；</li>
-<li><strong>MINIMUM</strong>&#x2F;最小值；</li>
-<li><strong>MINORITY</strong>&#x2F;少数（出现次数最少的值）；</li>
-<li><strong>RANGE</strong>&#x2F;范围（最大值和最小值之差）。</li>
-<li><strong>STD</strong>&#x2F;标准差。</li>
-<li><strong>SUM</strong>&#x2F;总和。</li>
-<li><strong>VARIETY</strong>&#x2F;变异度（唯一值的数量）。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/08/23/SAProximity/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/36/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/38/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -858,13 +839,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">158k</span>
+    <span title="Word count total">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:35</span>
+    <span title="Reading time total">9:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>

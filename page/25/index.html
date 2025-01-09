@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">207</span>
+          <span class="site-state-item-count">208</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,128 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/10/28/MDOverviews/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/10/28/MDOverviews/" class="post-title-link" itemprop="url">镶嵌数据集工具小结（三）概视图/Overviews</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-10-28 12:26:31" itemprop="dateCreated datePublished" datetime="2014-10-28T12:26:31+08:00">2014-10-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/10/28/MDOverviews/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/10/28/MDOverviews/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>10 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="了解概视图"><a href="#了解概视图" class="headerlink" title="了解概视图"></a>了解概视图</h2><p>定义&#x2F;创建概视图类工具**</p>
+<p><img data-src="/images/blogImg/MDOverviews_Toolset.png"></p>
+<p>这一贴，接着说镶嵌数据集的概视图（Overview），如果你对栅格数据集的金字塔有所了解，那就能立即理解概视图的作用。概视图实际上是对镶嵌数据集显示上的”抽稀“，通过重采样生成多层低分辨率的栅格，用与不同比例尺下显示镶嵌数据集。无论是金字塔还是概视图，它们的目的都是为了提高栅格数据的显示速度和减少CPU的运算，从而提升体验。</p>
+<p>ArcGIS的帮助文档中有这样一幅图，可以很好的说明数据源、金字塔、概视图之间的关系：</p>
+<p><img data-src="/images/blogImg/MDOverviews_Relations.png"></p>
+<p>如果不创建概视图，那么在显示镶嵌数据集的时候，ArcMap会以动态方式对整个数据集进行处理，这样可想而知，一个庞大的镶嵌数据集，会消耗大量系统资源，甚至可能使资源消耗殆尽。没有概视图，每缩放或者挪动镶嵌数据集，ArcMap都动态运算显示的区域，这是个效率很低的事情。有时有朋友遇到，加入的镶嵌数据集是漆黑一片，那么很可能是没有创建概视图。</p>
+<p>如果我们尚未对栅格数据构建金字塔和统计数据，可以使用工具 <strong>Build Pyramids And Statistics</strong> 对镶嵌数据集内的栅格数据批量创建金字塔和概视图，然后再创建概视图。栅格数据的金字塔会减少镶嵌数据集需要创建的概视图数据量。如果加入镶嵌数据集的栅格数据是下面的两种情形，推荐优先创建栅格金字塔再创建镶嵌数据集概视图：（1）可以接合没有重叠区的，也就是可以不受镶嵌方法影像的（2）参数和镶嵌方法不需要更改的，需要动态处理的栅格数据。</p>
+<p>用于生成概视图的工具有两种： Define Overviews 和 Build Overviews。</p>
+<p>除了上面的两个工具之外，我们在向镶嵌数据集中添加栅格数据时，也可以勾选创建概视图，这样会使用默认设置构建概视图。如果我们不需要对Footprint做修改的时候，可以在添加栅格数据时勾选这个选项直接创建概视图。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/10/28/MDOverviews/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -704,129 +826,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/09/16/Building3DAnimation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/09/16/Building3DAnimation/" class="post-title-link" itemprop="url">ArcGIS 构建3D动画方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-09-16 15:43:44" itemprop="dateCreated datePublished" datetime="2014-09-16T15:43:44+08:00">2014-09-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/09/16/Building3DAnimation/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/09/16/Building3DAnimation/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="Ⅰ-以动画表现视图（View）"><a href="#Ⅰ-以动画表现视图（View）" class="headerlink" title="Ⅰ 以动画表现视图（View）"></a><strong>Ⅰ 以动画表现视图（View）</strong></h2><p><strong>1 捕获透视图（Capturing perspective views）</strong></p>
-<p>使用“动画”工具条中的“捕获视图”工具 捕获视图 可以捕获照相机视图，这些视图作为关键帧，保存在某个照相机轨迹或地图视图轨迹中。</p>
-<p>生成的轨迹将成为关键帧之间的连续插值，从而创建平滑的动画。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_Toolbar.png"></p>
-<br>
-
-<p><strong>2 录制导航（Recording Navigation）</strong></p>
-<p>简单录制功能是通过使用与动画控制对话框中的视频播放器类似的控件来实现的。单击录制按钮录制导航。</p>
-<p><img data-src="/images/blogImg/Building3DAnimation_Navi.jpg"></p>
-<p>录制导航时，可使用 ArcScene 或 ArcGlobe 中的飞行工具飞行 来创建照相机轨迹。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/09/16/Building3DAnimation/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/24/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/26/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -850,13 +849,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">158k</span>
+    <span title="Word count total">161k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">9:35</span>
+    <span title="Reading time total">9:46</span>
   </span>
 </div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
