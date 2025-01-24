@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,268 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/23/CompactCache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/23/CompactCache/" class="post-title-link" itemprop="url">紧凑型缓存技术小结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-07-23 12:49:48" itemprop="dateCreated datePublished" datetime="2018-07-23T12:49:48+08:00">2018-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/07/23/CompactCache/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/23/CompactCache/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Tiling-Scheme"><a href="#Tiling-Scheme" class="headerlink" title="Tiling Scheme"></a>Tiling Scheme</h2><p>每个缓存服务的切片目录中都会包含一个 <strong>Conf.xml</strong>，也是就是tile scheme 文件了。</p>
+<p>这个文件包含了很多有关切片设置的信息：</p>
+<ul>
+<li>Spatial reference information</li>
+<li>Tile origin</li>
+<li>Tile width&#x2F;height</li>
+<li>DPI</li>
+<li>LODs (Levels of detail - scales)</li>
+<li>Tile Image format</li>
+<li>Compression quality</li>
+<li>Antialiasing settings</li>
+<li>Storage method</li>
+</ul>
+<h2 id="Version-Issue"><a href="#Version-Issue" class="headerlink" title="Version Issue"></a>Version Issue</h2><p>紧凑型缓存的存储格式为**.bundle** 。但有时我们会看到缓存目录中包含**.bundlx** 这样的文件，这说明这些缓存是ArcGIS 10.2.2 或以下版本创建的。从 ArcGIS 10.3 开始，紧凑型缓存做了些改进， .bundlx（tile index information） 文件被包含到了 .bundle 文件中 ，从而进一步降低了文件的数量。</p>
+<p>你可以在缓存服务的tiling scheme “<strong>Conf.xml</strong>“ 中查看确认：</p>
+<p><em>10.3 or later (Compact cache V1)</em></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">CacheStorageInfo</span> <span class="attr">xsi:type</span>=<span class="string">&#x27;typens:CacheStorageInfo&#x27;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">StorageFormat</span>&gt;</span>esriMapCacheStorageModeCompact<span class="tag">&lt;/<span class="name">StorageFormat</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">PacketSize</span>&gt;</span>128<span class="tag">&lt;/<span class="name">PacketSize</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">CacheStorageInfo</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>10.2.2 or former (Compact cache V2)</em></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/23/CompactCache/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/20/lovelyGit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/20/lovelyGit/" class="post-title-link" itemprop="url">Contributing to Our Github Project</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-07-20 17:47:40" itemprop="dateCreated datePublished" datetime="2018-07-20T17:47:40+08:00">2018-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/07/20/lovelyGit/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/20/lovelyGit/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>692</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这是一篇日记。</p>
+<p>最近，终于把年初我和<span class="exturl" data-url="aHR0cHM6Ly9tYWtlbGluZy5naXRodWIuaW8v">马老师<i class="fa fa-external-link-alt"></i></span>的脑洞项目 <a target="_blank" rel="noopener" href="https://github.com/makeling/PartiallyUpateArcGISVectorTilesTools"><strong>局部更新矢量切片</strong></a> 放在了大型程序员G友交流社区，开始出 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcw==">release<i class="fa fa-external-link-alt"></i></span>了…… </p>
+<p>在项目的开始，这个需求来自于用户的真实需求，如下是正经的背景信息：</p>
+<blockquote>
+<p>矢量切片是Esri在新版本中推出的一项亮点新技术，通过ArcGIS Pro中的Create Vector Tile Service工具生成切片包，再通过Portal发布成 Vector Tile Service，在前端支持各种应用，采用统一的接口进行调用，实现了一体化的平台应用解决方案。矢量切片技术充分利用GPU的渲染能力，以全新方式在设备、浏览器中以矢量的方式展现缓存地图。这项技术解决了传统基于栅格缓存切片展现地图存在的诸多问题：如设备分辨率对地图渲染效果的影响，缓存创建后无法再动态更改样式，生成缓存切片的周期过长，对硬件的需求过大等等。</p>
+<p>众所周知，矢量切片包的生成速度相对于传统的栅格切片包具有指数极的性能提升，这也是体现矢量切片优越性的一个重要方面。对于一个常规数据量在100MB-10GB级的数据，全部生成一次矢量切片包的速度在分钟级。可能正是因为这个原因，截至目前最新版本（ArcGIS Pro 2.2），Esri仍未提供局部更新矢量切片包的功能。虽然矢量切片生成速度很快，但是到了TB级别的大数据来说，生成一次完整的切片包也是需要相当长的时间的，如果仅是更新了局部的小范围数据，那基于更新范围自动化更新矢量切片就是一个非常有实际应用价值的需求。 正是在这样的背景下，我们发起了创建自动化局部更新矢量切片工具的项目。</p>
+<p>—— @马老师</p>
+</blockquote>
+<p>既然是两个人的项目，又会涉及很多版本的更新同步问题，<em>Why not Github</em> ？</p>
+<p>我们一共设计了5个Python工具，用于扩展ArcGIS Pro的功能，分别实现原始矢量切片包的创建，局部矢量切片包的创建，以及矢量切片包的更新，矢量切片服务的更新，托管在阿里云平台的矢量切片服务的更新。</p>
+<p>截止到今天的版本 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMS4xLjA=">Partially Upate ArcGIS Vector Tiles Toolbox 1.1.0<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>Mark：</strong></p>
+<p>后续还有很多有待优化的关键点：</p>
+<ul>
+<li>Bundle空间范围的精确计算</li>
+<li>LOD值的自动计算</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/20/lovelyGit/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -566,257 +828,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/04/10/pythonInCE/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/04/04/Parthenon/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/04/04/Parthenon/" class="post-title-link" itemprop="url">Parthenon Temple</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-04-04 12:00:00" itemprop="dateCreated datePublished" datetime="2018-04-04T12:00:00+08:00">2018-04-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Visual-Musing/" itemprop="url" rel="index"><span itemprop="name">Visual Musing</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/04/04/Parthenon/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/04/Parthenon/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>173</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>摄于 2014-5-9, Acropolis, Athens, Greece</p>
-</blockquote>
-<p>CityEngine的教程中刚好有个Parthenon Temple 的 Demo</p>
-<p><img data-src="/images/blogImg/Parthenon_ParthenonModel.png"></p>
-<p>不禁会想起在雅典卫城里它的断壁残垣，晒晒我们的合影</p>
-<p>不知道几年过去，修复工作又向前推进了多少</p>
-<p>那些带有编号的石头是不是已经归位了呢</p>
-<p><img data-src="/images/blogImg/Parthenon_Athens.jpg"></p>
-<p>整个卫城中我最喜欢的是上图中最后一张的“厄瑞克忒翁神庙”，据说用于供奉雅典娜、波塞冬和英雄厄瑞克忒翁。</p>
-<p>神庙一侧的女神柱像精致优美，即使经过了这么多的时光，都可以感受到雕刻师的精湛技艺。</p>
-<p><img data-src="/images/blogImg/Parthenon_IMG_3545.jpg" alt="厄瑞克忒翁神庙"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/04/04/Parthenon/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/30/textureinCE2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/03/30/textureinCE2/" class="post-title-link" itemprop="url">CityEngine中纹理贴图之道(二)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-03-30 14:54:44" itemprop="dateCreated datePublished" datetime="2018-03-30T14:54:44+08:00">2018-03-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/03/30/textureinCE2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/30/textureinCE2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>486</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>​        接着<a href="http://kikitamap.com/2018/03/22/textureinCE/">上一篇</a>。</p>
-<p>​       <img data-src="/images/blogImg/textureinCE_6.png"></p>
-<p>​        为了让脚本看起来更连贯，无需跳转上一篇，我们从头开始。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    MyTestforBaseTexure.cga</span></span><br><span class="line"><span class="comment"> * Created: 30 Mar 2018 08:16:37 GMT</span></span><br><span class="line"><span class="comment"> * Author:  Xiaoyan Mu</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2017.1&quot;</span></span><br><span class="line">attr height = <span class="number">10</span></span><br><span class="line">attr groundfloor_height = <span class="number">4</span></span><br><span class="line">attr floor_height = <span class="number">3.5</span></span><br><span class="line">attr tile_width = <span class="number">3.5</span></span><br><span class="line"></span><br><span class="line">wall_tex        = <span class="string">&quot;facades/textures/brickwall.jpg&quot;</span></span><br><span class="line">dirt_tex        = <span class="string">&quot;facades/textures/dirtmap.15.tif&quot;</span></span><br><span class="line">graffiti_tex    = <span class="string">&quot;facades/textures/Graffiti.jpg&quot;</span></span><br><span class="line">window_tex      = <span class="string">&quot;facades/textures/window.5.tif&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Lot</span> --&gt; <span class="title function_">extrude</span>(height) <span class="title class_">Building</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Building</span> --&gt; <span class="title function_">comp</span>(<span class="params">f</span>) &#123;front : <span class="title class_">Sidefacade</span>&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>​        假设我希望在这面墙上“凿”出窗户，就需要将<code>Sidefacade</code>进行细化切割。贴纹理时也要注意一下新的技巧，也就是在细分表面之前先定义纹理UV，细分之后再用上一篇中提到的贴纹理的方法应用到<code>Wall</code>，这样就可以得到连续的墙体贴图。这样的做的原因在于，CE中的shape都是被不断迭代替换的，如果不在细分之前定义UV，<code>Sidefacade</code>对象在细分之后已经消亡了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"># <span class="title class_">Sidefacade</span> is modified</span><br><span class="line"></span><br><span class="line"><span class="title class_">Sidefacade</span> --&gt;  </span><br><span class="line">    # <span class="title class_">Setup</span> texturing</span><br><span class="line">    <span class="title function_">setupProjection</span>(<span class="number">1</span>, scope.<span class="property">xy</span>, <span class="number">1.5</span>, <span class="number">1</span>) </span><br><span class="line">    <span class="title function_">setupProjection</span>(<span class="number">2</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>, scope.<span class="property">sy</span>)</span><br><span class="line">    # <span class="title class_">Divide</span> <span class="title class_">Sidefacade</span></span><br><span class="line"> 	<span class="title function_">split</span>(<span class="params">y</span>)&#123; <span class="attr">groundfloor_height</span>: <span class="title class_">Wall</span> | &#123;~floor_height : <span class="title class_">Floor</span>&#125;* &#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Floor</span> --&gt;</span><br><span class="line">	<span class="title function_">split</span>(<span class="params">x</span>)&#123; <span class="number">1</span> : <span class="title class_">Wall</span> | &#123; ~tile_width : <span class="title class_">Tile</span> &#125;* | <span class="number">1</span> : <span class="title class_">Wall</span> &#125;            </span><br><span class="line"><span class="title class_">Tile</span> --&gt;</span><br><span class="line">	<span class="title function_">split</span>(<span class="params">x</span>)&#123; ~<span class="number">1</span> : <span class="title class_">Wall</span> |  <span class="number">2</span> : <span class="title function_">split</span>(<span class="params">y</span>)&#123; ~<span class="number">1</span>: <span class="title class_">Wall</span> | <span class="number">1.5</span>: <span class="title class_">Window</span> | ~<span class="number">1</span>: <span class="title class_">Wall</span> &#125; | ~<span class="number">1</span> : <span class="title class_">Wall</span> &#125;	</span><br><span class="line"></span><br><span class="line"><span class="title class_">Wall</span> --&gt;</span><br><span class="line">    # <span class="title class_">Apply</span> the texture         </span><br><span class="line">    <span class="title function_">set</span>(material.<span class="property">bumpmap</span>,wall_tex)</span><br><span class="line">    <span class="title function_">set</span>(material.<span class="property">dirtmap</span>, dirt_tex)</span><br><span class="line">    <span class="title function_">projectUV</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="title function_">projectUV</span>(<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line"><span class="title class_">Window</span> --&gt;</span><br><span class="line">    <span class="title function_">offset</span>(<span class="number">0.05</span>) </span><br><span class="line">    <span class="title function_">comp</span>(<span class="params">f</span>) &#123; <span class="attr">inside</span>: <span class="title class_">WondowInner</span> | <span class="attr">border</span>: <span class="title class_">WondowFrame</span> &#125;</span><br><span class="line">    <span class="title class_">WondowInner</span> --&gt;</span><br><span class="line">	  <span class="title function_">setupProjection</span>(<span class="number">0</span>, scope.<span class="property">xy</span>, scope.<span class="property">sx</span>,  scope.<span class="property">sy</span>) </span><br><span class="line">	  <span class="title function_">texture</span>(window_tex)</span><br><span class="line">	<span class="title function_">projectUV</span>(<span class="number">0</span>)      </span><br><span class="line">      <span class="title class_">WondowFrame</span> --&gt;</span><br><span class="line">      <span class="title function_">extrude</span>(<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="material-opacitymap"><a href="#material-opacitymap" class="headerlink" title="material.opacitymap"></a>material.opacitymap</h2><p><code>material.opacitymap</code> 通道可以用于控制纹理的透明度。</p>
-<p><img data-src="/images/blogImg/textureinCE_7.png"></p>
-<p>继续上面的例子，如果希望做出透明的窗户效果，可以将Window的代码替换为如下的样子。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/03/30/textureinCE2/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

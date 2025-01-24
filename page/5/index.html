@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,256 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/05/12/Icecream_Part4-Adcanced-Routing_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/05/12/Icecream_Part4-Adcanced-Routing_2/" class="post-title-link" itemprop="url">HERE MAP API - Part4 Advanced Routing - 2</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-05-12 13:32:37" itemprop="dateCreated datePublished" datetime="2019-05-12T13:32:37+08:00">2019-05-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/05/12/Icecream_Part4-Adcanced-Routing_2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/12/Icecream_Part4-Adcanced-Routing_2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>967</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在上一篇中，尝试给出三条备选路线方案，只是看看是不够的，还需要做些交互式的操作支持。</p>
+<h3 id="1-Visual-Tweaks"><a href="#1-Visual-Tweaks" class="headerlink" title="1 Visual Tweaks"></a>1 Visual Tweaks</h3><p>首先，这里我们做点小小的视觉调整，让路线和位置更漂亮一点。例如：</p>
+<p>给路线的加上半透明效果，在<code>drawRoute()</code>中增加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> routeLine = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Polyline</span>(strip, &#123;</span><br><span class="line">  <span class="attr">style</span>: &#123; <span class="attr">strokeColor</span>: <span class="string">&#x27;rgba(0, 85, 170, 0.5)&#x27;</span>, <span class="attr">lineWidth</span>: <span class="number">3</span> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>再给配送的起点、终点，快递员的当前位置赋予不同的显示符号，在<code>map.js</code>中修改<code>addMarker()</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">HEREMap</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">addMarker</span> = <span class="keyword">function</span> (<span class="params">coordinates, icon</span>) &#123;</span><br><span class="line">  <span class="comment">// Add an markerOptions object</span></span><br><span class="line">  <span class="keyword">var</span> markerOptions = &#123;&#125;</span><br><span class="line">  <span class="comment">// three different icons for origin, destination and the user&#x27;s current position</span></span><br><span class="line">  <span class="keyword">var</span> icons = &#123;</span><br><span class="line">    <span class="attr">iceCream</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/marker-gelato.svg&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">26</span>, <span class="number">34</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">14</span>, <span class="number">34</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">origin</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/origin.png&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">32</span>, <span class="number">32</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">12</span>, <span class="number">36</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">destination</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/destination.png&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">32</span>, <span class="number">32</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">12</span>, <span class="number">36</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (icons[icon]) &#123;</span><br><span class="line">    markerOptions = &#123;</span><br><span class="line">      <span class="attr">icon</span>: <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Icon</span>(icons[icon].<span class="property">url</span>, icons[icon].<span class="property">options</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates, markerOptions)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">map</span>.<span class="title function_">addObject</span>(marker)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> marker</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-Route-Selection"><a href="#2-Route-Selection" class="headerlink" title="2  Route Selection"></a>2  Route Selection</h3><p>在显示的三条路线中，允许用户选择一条作为最佳选项，那么我们需要在onSuccess()中增加一个回调函数来实现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> routeLineGroup = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Group</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">route</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> routeLine = <span class="title function_">drawRoute</span>(route)</span><br><span class="line">      routeLineGroup.<span class="title function_">addObject</span>(routeLine)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">route</span>: route,</span><br><span class="line">        <span class="attr">routeLine</span>: routeLine</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    map.<span class="title function_">addObject</span>(routeLineGroup)</span><br><span class="line">    map.<span class="title function_">setViewBounds</span>(routeLineGroup.<span class="title function_">getBounds</span>())</span><br><span class="line"></span><br><span class="line">    <span class="title function_">onRouteSelection</span>(routes[<span class="number">0</span>])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/05/12/Icecream_Part4-Adcanced-Routing_2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/06/Icecream_Part4_Advanced_Routing_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/03/06/Icecream_Part4_Advanced_Routing_1/" class="post-title-link" itemprop="url">HERE MAP API - Part4 Advanced Routing - 1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-03-06 13:18:30" itemprop="dateCreated datePublished" datetime="2019-03-06T13:18:30+08:00">2019-03-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/03/06/Icecream_Part4_Advanced_Routing_1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/06/Icecream_Part4_Advanced_Routing_1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>680</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 Part 3 中我们了解到如何调用 HERE Routing API 实现两点间路径规划，以及如何从当前位置出发规划路径。</p>
+<p>这个部分继续来看看，如何展示多条路线及其信息，并允许用户交互选择。</p>
+<h3 id="Pre-session-重构代码"><a href="#Pre-session-重构代码" class="headerlink" title="Pre-session: 重构代码"></a>Pre-session: 重构代码</h3><p>这一部分不是改进功能，而是整理思绪。磨刀不误砍柴工，放之四海而皆准。</p>
+<p>冰淇凌小网页的功能不断增多，代码也随之膨胀，我们要时不时地整理收纳一下，避免自己在找乐子的路上备受打击。</p>
+<p>在 Scripts 文件夹中，新建：</p>
+<ul>
+<li>map.js  用于存放和<strong>底图</strong>及<strong>绘制路线</strong>相关的逻辑；</li>
+<li>utils.js  用于存放<strong>辅助功能</strong>，例如，将 latlog 坐标转化成 WayPointString 以供 Routing Service 使用。</li>
+</ul>
+<p>代码与Part 3 类似，但是因为做了重构，需要注意其中的调用关系及 html页面中的加载顺序。</p>
+<p><em>complete code</em>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzFfcmVmYWN0b3I=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Multiple-Routes"><a href="#Multiple-Routes" class="headerlink" title="Multiple Routes"></a>Multiple Routes</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/03/06/Icecream_Part4_Advanced_Routing_1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -552,261 +802,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/03/05/Icecream_Part1_Basemap_Setup/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/11/11/qiniuIssue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/11/11/qiniuIssue/" class="post-title-link" itemprop="url">解决七牛云存储bucket无法访问问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-11-11 08:56:07" itemprop="dateCreated datePublished" datetime="2018-11-11T08:56:07+08:00">2018-11-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/11/11/qiniuIssue/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/11/qiniuIssue/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>770</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>因为工作的事情，最近忙于切换节奏适应新环境，有一个月没来 kikitaMap “巡检”了。果然昨天发现了小故障，七牛云存储的存储空间的临时域名失效了，之上的我的图床也就挂了。涉及到的对象：<a href="https://kikitamap.com/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</a> 、<a href="http://kikitamap.com/categories/%E7%9B%B8%E6%9C%BA%E9%87%8C/">Visual Musing</a> 中的全部图片和 <a href="https://kikitamap.com/categories/%E6%9C%A8%E5%B7%A5%E5%BC%80%E7%89%A9/">Tech Notes</a> 的小部分博客中图片。Just too bad …</p>
-<h2 id="解决方法建议"><a href="#解决方法建议" class="headerlink" title="解决方法建议"></a>解决方法建议</h2><p>这种情况下只能发工单联系技术支持了，七牛的技术支持回复比较及时，给出了解决方案，如下：</p>
-<blockquote>
-<p>有两种方式来获取文件：</p>
-<ol>
-<li>您需要先新建一个同区域存储空间，会分配一个新的测试域名到新空间。<br>通过qshell batchcopy 到有域名的同区域空间然后再进行qdownload下载操作<br>1）<code>qshell listbucket 原bucket名 list.txt</code><br>​       （list出全部文件，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2xpc3RidWNrZXQubWQ=">listbucket的文档<i class="fa fa-external-link-alt"></i></span>）</li>
-</ol>
-<p>2）<code>cat list.txt | awk &#39;&#123;print $1&#125;&#39; &gt;list_final.txt</code><br>​       （用awk获取list结果的第一列）<br>3）<code>qshell batchcopy 原bucket名 新bucket名 list_final.txt</code><br>​       （复制到新bucket的文件和原bucket文件名一致，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL2JhdGNoY29weS5tZA==">batchcopy的文档<i class="fa fa-external-link-alt"></i></span>）<br>4）<code>qshell qdownload newfilelist.txt</code><br>​      （newfilelist.txt为下载的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Fpbml1L3FzaGVsbC9ibG9iL21hc3Rlci9kb2NzL3Fkb3dubG9hZC5tZA==">配置文档<i class="fa fa-external-link-alt"></i></span>）</p>
-</blockquote>
-<blockquote>
-<p>qshell安装包及文档请参考<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGw=">https://developer.qiniu.com/kodo/tools/1302/qshell<i class="fa fa-external-link-alt"></i></span></p>
-<p>如果您不熟悉命令行工具的安装使用，也可以结合文档最后提供的视频教程<br> <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMi9xc2hlbGwjOQ==">https://developer.qiniu.com/kodo/tools/1302/qshell#9<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>使用工具qrsctl<br><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIucWluaXUuY29tL2tvZG8vdG9vbHMvMTMwMC9xcnNjdGw=">https://developer.qiniu.com/kodo/tools/1300/qrsctl<i class="fa fa-external-link-alt"></i></span><br><code>qrsctl get &lt;bucket&gt; &lt;file&gt; &lt;file&gt;</code></li>
-</ol>
-</blockquote>
-<h2 id="实践过程"><a href="#实践过程" class="headerlink" title="实践过程"></a>实践过程</h2><p>选择了第一种方式，问题解决，因为看起来像是批量的。</p>
-<p>按照提示下载的zip包类似 qshell-v2.2.0.zip 这样的名字，里面包含了Windows，Linux，Mac各操作系统使用的程序。</p>
-<p>我以Mac为例，使用Mac自带的 Commandline 访问解压之后的文件夹 qshell-v2.2.0。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/11/11/qiniuIssue/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/09/27/partialUpdateVTPKv3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/09/27/partialUpdateVTPKv3/" class="post-title-link" itemprop="url">矢量切片局部更新工具改进与工作收尾</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-09-27 19:56:08" itemprop="dateCreated datePublished" datetime="2018-09-27T19:56:08+08:00">2018-09-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/09/27/partialUpdateVTPKv3/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/27/partialUpdateVTPKv3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在<a href="http://kikitamap.com/2018/08/13/vectorTileBundle/">上一篇博客</a>中提到工具还有投影坐标系支持和切片方案（.xml）自动获取的问题尚未解决，更新这篇的目的在于说明问题已经找到了workaround，并且新的版本已经在上周五（9.21）发布了。</p>
-<h2 id="问题诊断过程"><a href="#问题诊断过程" class="headerlink" title="问题诊断过程"></a>问题诊断过程</h2><p>这两个问题其实本质上是一个问题。</p>
-<p>我们知道，当需要生成矢量切片的地图的坐标系不是 3857（web mercator）时，ArcGIS Pro 提供的 Create Vector Tile Package &#x2F; Index 工具可以自动生成与地图的坐标系统一致的切片方案（.xml）文件，默认放置于 C:\Users\当前用户\AppData\Local\ESRI\Geoprocessing 下。<br>这是个极好的功能，但是通过python调用此工具时，这个功能是没有提供接口的。此处的疑惑，也咨询了Esri US 的工程师，确实arcpy没有提供像工具UI中的自动计算功能。</p>
-<p>在最初的版本中，我尝试使用arcpy.GenerateMapServerCacheTilingScheme_server() 来生成xml文件，可以应对地理坐标系的地图。也是这个过程中遇到了切片原点传参失败<a href="http://kikitamap.com/2018/02/05/AlterXMLScheme/">这个坑</a>。<br>投影坐标系的切片原点不像是地理坐标系一样简单粗暴，不同的投影方法都会导致不同的原点坐标，我想过将常用坐标系枚举出来，可是从工具的通用角度来讲，不是个好事。最佳的解决方法还是想办法生成相同的xml，至少可以获取工具生成的xml。</p>
-<p>在上个版本的局部更新矢量切片工具中，我和马老师还自命名了“Advanced Vector Tile Package”的矢量切片包，我们在矢量切片包中还打包塞入了切片方案和切片索引面。这样，局部工具在更新这种包时，可以自动解析原包获取xml和index。但是，需要用户事先使用我们定制的 Create Advanced Vector Tile Package 工具来创建矢量切片包。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>考虑到用户在更新矢量切片之前，已经做过该地图的矢量切片，那么在User那个目录下已经有了对应的xml文件，那么我只要代码中获取了地图的坐标系，然后按照xml的命名规则顺藤摸瓜并顺手牵羊即可。<br>现实总是比想象骨感。ArcGIS Pro 的 arcpy 中提供的 Map 对象竟然没有提供查询其坐标系统的属性或方法…… 测试基于ArcGIS Pro 2.2.1，写这篇时的最新版本。相信新的版本早晚会有的。好在我还是找到了一个workaround：从map的defaultCamera属性中获取，如下图左边最下部分所示。（现在没有测试环境，图出自讨论时的聊天记录，将就看吧）<br><img data-src="/images/blogImg/partialUpdateVTPKv3_defaultCamera.jpg"></p>
-<p>使用这个思路之后，解决了本文开头提到的问题，但是要求用户本机user目录下事先有相关的xml文件，没有的话需要打开创建矢量切片工具自动生产一次。</p>
-<p>工具的相关代码都进行了更新，采用了新的逻辑，目前可以支持矢量切片工具自身支持的全部坐标系统。并同时保留了，上个版本的局部更新工具中可以自动解析 Advanced Vector Tile Package 功能。<br><img data-src="/images/blogImg/partialUpdateVTPKv3_AdvancedSupport.jpg"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/09/27/partialUpdateVTPKv3/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

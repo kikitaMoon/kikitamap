@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,252 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/17/GeographicTransformation1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/01/17/GeographicTransformation1/" class="post-title-link" itemprop="url">ArcGIS中的地理坐标系转换方法参数（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-01-17 18:00:00" itemprop="dateCreated datePublished" datetime="2014-01-17T18:00:00+08:00">2014-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/01/17/GeographicTransformation1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/17/GeographicTransformation1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>852</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>地理坐标系变换是数据处理过程中常遇到的问题，今天就说下这方面的问题。</p>
+<p>如果遇到这种情景：两份数据有不同的坐标系，想叠加在一起显示，作图或显示精度要求不高。</p>
+<p>这种情况使用 ArcMap 的动态投影即可，ArcMap 的内部动投影机制会解决地理坐标系变换的问题。数据在显示的过程中，会实时的被转换，但不改变数据本身。</p>
+<p>如果我们需要进行地理坐标系转换，我们知道 ArcGIS Desktop 中提供了 Project 工具。</p>
+<p>此工具界面上有个至关重要的参数：<strong>Geographic Transformation</strong>。我们发现它的后面赫然写着。依照使用其他工具的经验，这种打了 Optional 标志的参数，不就是可填可不填的意思吗？</p>
+<p>但是，它真的让你随便的可填可不填吗？ Naive！ 图样图森破！ 这个参数的填写与否，完全是受前面两个参数决定的，主要三种情景吧。</p>
+<br>
+
+<h2 id="情景1："><a href="#情景1：" class="headerlink" title="情景1："></a>情景1：</h2><p>不涉及到地理坐标系变换的坐标变换，这个参数完全不需要，而不是 optional 哦。</p>
+<p>例如：从 GCS_Xian_1980 进行投影变换，转换为 Xian_1980_3_Degree_GK_CM_120E 投影坐标系。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/01/17/GeographicTransformation1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/06/RasterSupportinCityEngine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/01/06/RasterSupportinCityEngine/" class="post-title-link" itemprop="url">CityEngine支持多少种栅格数据？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-01-06 11:11:29" itemprop="dateCreated datePublished" datetime="2014-01-06T11:11:29+08:00">2014-01-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/01/06/RasterSupportinCityEngine/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/06/RasterSupportinCityEngine/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>482</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>&nbsp; &nbsp; 许多用户会问 CityEinge 到底支持多少种栅格数据作为底图数据？</p>
+<p>&nbsp; &nbsp; CityEngine目前的帮助文档略显单薄，作为工具书查看是很好的，但是作为知识类资料就不如ArcGIS Desktop的帮助文档完整饱满。因此像“栅格数据支持列表”这种归纳性的文档当然现在还是没有……</p>
+<p>&nbsp; &nbsp; 只能从软件界面自身去寻找了，就把这页贴出来，方便大家参考。从以下这个长长的下列表中可以了解CityEngine支持的类型：</p>
+<p>（png，jpg，tif，jpeg，img，data，ico，xpm，dds，tga，psp，tiff，vbs，sid，mpeg，jsl，xbm，sit，bmp，mpg，dat，com，hqx，cur，dll，bin，emf，exe，gif，xyz，sgi）</p>
+<p><img data-src="/images/blogImg/RasterSupportinCityEngine.jpg"></p>
+<p>&nbsp; &nbsp;CityEngine在显示栅格数据时，对数据有一定的要求，不满足要求时可能会出现不显示等情况。</p>
+<p>&nbsp; &nbsp;CityEngine使用了OpenGL技术用于3D模型&#x2F;场景的显示，当显示模型的时候，会将所有的texture数据输入到显存（不是内存哦！）显存的大小在机器中通常是不大的（256M~1.5G，或者更大一点吧），因此CE对输入的栅格数据是要求的。</p>
+<p>&nbsp; &nbsp; 为了获取最佳的效果，如下几点要注意哦~</p>
+<p>（1）显卡驱动一定要安装至最新版本！</p>
+<p>（2）Texture图层尽量选择 8-bit 的，terrain 图层中的Heightmap也可以是32-bit的。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/01/06/RasterSupportinCityEngine/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -573,257 +819,6 @@
 <p><img data-src="/images/blogImg/Beijing1954ToWGS1984_2.png"></p>
 <p><img data-src="/images/blogImg/Beijing1954ToWGS1984_3.png"></p>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/09/11/CityEngineWebViewerIIS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/09/11/CityEngineWebViewerIIS/" class="post-title-link" itemprop="url">CityEngine Web Viewer IIS 部署</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-09-11 12:43:49" itemprop="dateCreated datePublished" datetime="2013-09-11T12:43:49+08:00">2013-09-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/09/11/CityEngineWebViewerIIS/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/09/11/CityEngineWebViewerIIS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>123</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>中文原文链接：</p>
-<p><span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYXJjZ2lzX2FsbC9hcnRpY2xlL2RldGFpbHMvODM2MzcyOA==">http://blog.csdn.net/arcgis_all/article/details/8363728<i class="fa fa-external-link-alt"></i></span></p>
-<p>esri原文链接：</p>
-<p><span class="exturl" data-url="aHR0cDovL3d3dy5hcmNnaXMuY29tL2hvbWUvaXRlbS5odG1sP2lkPTM4ZmVkZTM5MzVhNDQwZTQ5Y2YzMTZkY2FlNmFhZTQ3">http://www.arcgis.com/home/item.html?id=38fede3935a440e49cf316dcae6aae47<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<p>重点提出来，方便配置：</p>
-<p>（1）先找到 webviewer 文件夹，在CE工作空间下ce.lib 文件夹下；</p>
-<p>（2）将 webviewer 文件夹丢到 wwwroot 文件夹下；</p>
-<p>（3）计算机管理中，webviewer目录中，双击打开右边的窗口中选中MIME类型，添加类型，如下图：</p>
-<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2013/09/11/CityEngineWebViewerIIS/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/08/06/ArcGISLMSilentAuthorization/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/08/06/ArcGISLMSilentAuthorization/" class="post-title-link" itemprop="url">ArcGIS License Manager 静默授权命令摘录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-08-06 17:31:21" itemprop="dateCreated datePublished" datetime="2013-08-06T17:31:21+08:00">2013-08-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/08/06/ArcGISLMSilentAuthorization/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/08/06/ArcGISLMSilentAuthorization/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>265</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在命令行中，将目录更改为许可管理器安装位置。Windows 上的默认位置是 <code>C:\Program Files (x86)\ArcGIS\License10.1\bin</code>。</p>
-<p>在命令的末尾添加 <code>-verbose</code>，可以在命令窗口中显示进度和错误消息。</p>
-<br>
-
-
-<p><strong>以静默方式授权：</strong></p>
-<p><code>softwareauthorizationls.exe -s -lif -ver10.1 &quot;c:\temp\&lt;*.prvs&gt;&quot; </code></p>
-<p>当离线授权时，此命令还可以与 ***.resps** 文件结合使用。当授权单机版 Desktop 或 Engine 许可时，可使用 *.prvc 和 *.respc。</p>
-<p>为离线授权创建一个 <strong>.txt</strong> 授权文件：</p>
-<p><code>softwareauthorizationls.exe -s -lif -ver 10.1 &quot;C:\Temp\&lt;.prvs&gt;&quot; -out &quot;C:\Temp\authorize.txt&quot; </code></p>
-<br>
-
-
-<p><strong>以静默方式取消授权：</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2013/08/06/ArcGISLMSilentAuthorization/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

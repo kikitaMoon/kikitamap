@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,262 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/09/FeatureHeatMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/06/09/FeatureHeatMap/" class="post-title-link" itemprop="url">羽化效果的HeatMap</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-06-09 11:07:58" itemprop="dateCreated datePublished" datetime="2015-06-09T11:07:58+08:00">2015-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/06/09/FeatureHeatMap/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/09/FeatureHeatMap/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>261</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>用采样点制作热力图是个非常常见的需求。热力图可以给地图的阅读者直观的信息，下面就看看如何在 ArcGIS Pro 中做一个漂亮的HeatMap。</p>
+<p><em>PS: 这是通过点密度插值生成的栅格的静态表达方式，区别于 ArcGIS Pro 自带的动态HeatMap的渲染器哦。</em></p>
+<br>
+
+<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>准备好采样点数据，当然是量大更优。我这里用了全球地震点数据，大约有 21W+ 的数据量。像这一类的数据可以从一些提供公开数据的网站获取，例如 <span class="exturl" data-url="aHR0cDovL2VhcnRocXVha2UudXNncy5nb3YvZWFydGhxdWFrZXMvZmVlZC92MS4wL2Nzdi5waHA=">USGS<i class="fa fa-external-link-alt"></i></span> 。</p>
+<p><img data-src="/images/blogImg/FeatureHeatMap_Points.png"></p>
+<br>
+
+<br>
+
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>使用 ArcGIS 中的密度分析工具可以从点数据直接生成密度栅格，工具位于 ArcToolbox —— Spatial Analyst —— Density 工具集下。这里我采用了 Kernel Density 。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/06/09/FeatureHeatMap/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/05/RunnerRoutes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/06/05/RunnerRoutes/" class="post-title-link" itemprop="url">为Runner做一张有质感的图</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-06-05 12:52:33" itemprop="dateCreated datePublished" datetime="2015-06-05T12:52:33+08:00">2015-06-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/06/05/RunnerRoutes/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/05/RunnerRoutes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>404</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>如今，通过 GPS 我们可以轻松采集到自己的足迹，Runner们用各种手机App记录跑步路线也再平常不过。如果我们有大量的足迹信息，也可以试试 ArcGIS Pro 的渲染能力，来看看自己的 Favourite 线路如何分布。</p>
+<br>
+
+<p>我在 ArcGIS Online 上 down 到了某位 Runner 的足迹信息，当然大家也可以用自己的，gpx，txt，kml 等常见的 GPS Tracklog 文件都是可以直接导入成为 ArcGIS 支持的格式。根据文件格式的不同，你可能会需要 GPX to Feature ， Add XY Event layer， KML to Layer ，Points to Line 等这些工具的辅助，得到路线数据，表示路线的线数据当然越多越好。</p>
+<br>
+
+
+
+
+<p>ArcGIS Pro 的符号化中增加了符号的透明效果，这一点完胜 ArcMap 的渲染效果。你想问ArcMap什么效果？如下，好像有点惨不忍睹：</p>
+<p><img data-src="/images/blogImg/RunnerRoutes_ArcMap.png"></p>
+<br>
+
+
+
+<p>由于ArcGIS Pro 中的新增的符号透明不是图层的整体透明，而是每个Feature的符号透明，就会产生色彩叠加的效果。直观上说，就是符号叠加越密集的位置，色彩会越深，给人以渐变色彩的热力图的感受。</p>
+<br>
+
+<p>#<strong>怎么做？</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/06/05/RunnerRoutes/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -558,265 +814,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2015/05/08/LackofPackonLinux/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/05/08/LinuxArcGISServerDeployment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/05/08/LinuxArcGISServerDeployment/" class="post-title-link" itemprop="url">Linux 下安装 ArcGIS Server 前的准备工作备忘录</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-05-08 16:55:01" itemprop="dateCreated datePublished" datetime="2015-05-08T16:55:01+08:00">2015-05-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/05/08/LinuxArcGISServerDeployment/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/08/LinuxArcGISServerDeployment/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>495</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p><strong>安装环境： ArcGIS for Server Linux 10.2.2 ， Redhat 6</strong></p>
-</blockquote>
-<p>因为是在网络虚拟机中安装部署，首先需要一个远程Linux的客户端，这里使用 putty，可以在官方的 <span class="exturl" data-url="aHR0cDovL3d3dy5wdXR0eS5vcmcv">www.putty.org<i class="fa fa-external-link-alt"></i></span> 下载，但是貌似网站被墙了，我也放了一份在<span class="exturl" data-url="aHR0cDovL2Rvd25sb2FkLmNzZG4ubmV0L2RldGFpbC9raWtpdGFtb29uLzg2NzU1MzE=">我的资源<i class="fa fa-external-link-alt"></i></span>中。</p>
-<p><strong>1） 运行 putty.exe ,登陆linux服务器</strong>：</p>
-<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Putty.png"></p>
-<p><strong>2） 输入用户名密码，登入服务器：</strong></p>
-<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_Login.png"></p>
-<p><strong>3） 查询主机的 IP 地址：</strong></p>
-<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_IP.png"></p>
-<p><strong>4） 查询 hostname：</strong></p>
-<p><img data-src="/images/blogImg/LinuxArcGISServerDeployment_hostname.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/05/08/LinuxArcGISServerDeployment/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/04/21/MappingASCIIRaster/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/04/21/MappingASCIIRaster/" class="post-title-link" itemprop="url">ASCII 栅格的显示</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-04-21 18:25:39" itemprop="dateCreated datePublished" datetime="2015-04-21T18:25:39+08:00">2015-04-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/04/21/MappingASCIIRaster/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/04/21/MappingASCIIRaster/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>218</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>今天刚好有人问到一个有关 ASCII 栅格数据的问题，这里梳理下，用最简单的方式极速理解。</p>
-<br>
-
-<blockquote>
-<p><strong>什么是ASCII栅格？</strong>      就是用ASCII文本记录的栅格数据……</p>
-<p><strong>怎么得到ASCII栅格？</strong>   比如使用工具 Raster to ASCII……</p>
-</blockquote>
-<br>
-
-<br>
-
-
-
-
-
-
-<p>一般在 ASCII 栅格的文件头中我们会看到这几行：</p>
-<p><img data-src="/images/blogImg/MappingASCIIRaster_TXT.png"></p>
-<p><strong>ncols</strong>  和 <strong>nrows</strong>   表示这份数据的行列数，这份数据是10×10。</p>
-<p><strong>xllcorner</strong> 和 <strong>yllcorner</strong> 表示的就是栅格的左下角（low left）角点的坐标。</p>
-<p><strong>cellsize</strong> 也就是像元大小，表示每个正方形单元的尺寸。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/04/21/MappingASCIIRaster/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

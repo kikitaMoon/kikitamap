@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,133 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/03/11/HmSDK_MapRendering/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/03/11/HmSDK_MapRendering/" class="post-title-link" itemprop="url">HERE mSDK - Map Rendering</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-03-11 01:17:23" itemprop="dateCreated datePublished" datetime="2020-03-11T01:17:23+08:00">2020-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/03/11/HmSDK_MapRendering/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/11/HmSDK_MapRendering/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>500</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>通过上一个<a href="http://kikitamap.com/2020/03/09/HmSDK_QuickStart/">入门篇</a>，相信你已经对 HERE mSDK 有了一定的印象。<br>作为一个地图SDK，最基础最重要的功能首先是地图渲染， 那么今天我们仍然以 HERE mSDK （Premium Edition）为例一起了解下。在 HERE Location Services 中有一个 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbiNtYXBzX3NlY3Rpb24=">Interactive Maps Service<i class="fa fa-external-link-alt"></i></span>，用于访问服务器端预渲染的瓦片服务&#x2F;tile map， 这就是今天要用到的原料。</p>
+<p>Let’s get our hands dirty ！<br>今天这篇我们先从最基础的 Map Rendering 和 Map Schemes 开始。 <code>AndroidXMapFragment</code> 类提供了交互式地图体验支持， 例如缩放、平移等等。<code>AndroidXMapFragment</code>初始化之后，可以通过<code>Map map = mapFragment.getMap();</code> 获取 <code>Map</code> 。<br><code>Map</code> 类中提供了很多 map attributes 帮助开发者确定地图的展示方式，例如：map center，zoom level,  tilt, orientation, map projection, map animation …… </p>
+<blockquote>
+<p>详见开发文档：<a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-premium/dev_guide/topics/maps.html"><strong>Map</strong></a></p>
+</blockquote>
+<p>HERE Interactive Maps 提供了很多样式的地图外观（Map Scheme）可供选择，以满足不同审美和专题的需求。简而言之，地图数据是一套，皮肤可有很多种。 </p>
+<blockquote>
+<p>在开发者文档中，有一页图文可供参考：<a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-premium/dev_guide/topics/map-schemes.html"><strong>Map Scheme</strong></a></p>
+</blockquote>
+<p>HERE 在 Github上有官方的示例代码库，这篇的相关示例可以在这个连接中找到：<a target="_blank" rel="noopener" href="https://github.com/heremaps/here-android-sdk-examples/tree/master/map-attribute"><strong>Map Attribute</strong></a></p>
+<p>我在这个工程中稍作修改，增加了 Satallite Mode 和 Night Mode，  因为后者是最近备受欢迎的一种渲染方式，这么好看的地图不做在样例里觉得有点可惜。 Night Mode 一方面可以作为夜晚时段的地图展示，另一方面可以作为设备暗色主题搭配的地图显示。<br>另外，这个示例工程中，还包含了公交&#x2F;Transit 主题地图的展示（None&#x2F;公交站&#x2F;公交线路），以及路况&#x2F;Realtime Traffic Service 的展示 （Traffic Flow &#x2F; Incident）。</p>
+<p>Happy testing ^^</p>
+<p><img data-src="/images/blogImg/HmSDK_MapRendering.jpg"></p>
+<p>如下是在 Nexus 10 模拟器中的录屏:</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/11/HmSDK_MapRendering/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -459,6 +586,117 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/01/06/SnowySerenity/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/01/06/SnowySerenity/" class="post-title-link" itemprop="url">大雪</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-01-06 10:13:07" itemprop="dateCreated datePublished" datetime="2020-01-06T10:13:07+08:00">2020-01-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Visual-Musing/" itemprop="url" rel="index"><span itemprop="name">Visual Musing</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/01/06/SnowySerenity/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/01/06/SnowySerenity/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>29</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>烟台，2020.01.06</p>
+</blockquote>
+<p>大雪之后，银装素裹，2020这一年的冬天格外寂静，雪地上没有脚印</p>
+<p><img data-src="/images/blogImg/XJL_SnowySerenity.jpg"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/06/27/wlanNetworks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -561,256 +799,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/06/27/wlanNetworks/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/05/12/Icecream_Part4-Adcanced-Routing_2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/05/12/Icecream_Part4-Adcanced-Routing_2/" class="post-title-link" itemprop="url">HERE MAP API - Part4 Advanced Routing - 2</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2019-05-12 13:32:37" itemprop="dateCreated datePublished" datetime="2019-05-12T13:32:37+08:00">2019-05-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/05/12/Icecream_Part4-Adcanced-Routing_2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/12/Icecream_Part4-Adcanced-Routing_2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>967</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在上一篇中，尝试给出三条备选路线方案，只是看看是不够的，还需要做些交互式的操作支持。</p>
-<h3 id="1-Visual-Tweaks"><a href="#1-Visual-Tweaks" class="headerlink" title="1 Visual Tweaks"></a>1 Visual Tweaks</h3><p>首先，这里我们做点小小的视觉调整，让路线和位置更漂亮一点。例如：</p>
-<p>给路线的加上半透明效果，在<code>drawRoute()</code>中增加：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> routeLine = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Polyline</span>(strip, &#123;</span><br><span class="line">  <span class="attr">style</span>: &#123; <span class="attr">strokeColor</span>: <span class="string">&#x27;rgba(0, 85, 170, 0.5)&#x27;</span>, <span class="attr">lineWidth</span>: <span class="number">3</span> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>再给配送的起点、终点，快递员的当前位置赋予不同的显示符号，在<code>map.js</code>中修改<code>addMarker()</code>：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">HEREMap</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">addMarker</span> = <span class="keyword">function</span> (<span class="params">coordinates, icon</span>) &#123;</span><br><span class="line">  <span class="comment">// Add an markerOptions object</span></span><br><span class="line">  <span class="keyword">var</span> markerOptions = &#123;&#125;</span><br><span class="line">  <span class="comment">// three different icons for origin, destination and the user&#x27;s current position</span></span><br><span class="line">  <span class="keyword">var</span> icons = &#123;</span><br><span class="line">    <span class="attr">iceCream</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/marker-gelato.svg&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">26</span>, <span class="number">34</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">14</span>, <span class="number">34</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">origin</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/origin.png&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">32</span>, <span class="number">32</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">12</span>, <span class="number">36</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">destination</span>: &#123;</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;./images/destination.png&#x27;</span>,</span><br><span class="line">      <span class="attr">options</span>: &#123;</span><br><span class="line">        <span class="attr">size</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Size</span>(<span class="number">32</span>, <span class="number">32</span>),</span><br><span class="line">        <span class="attr">anchor</span>: <span class="keyword">new</span> H.<span class="property">math</span>.<span class="title class_">Point</span>(<span class="number">12</span>, <span class="number">36</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (icons[icon]) &#123;</span><br><span class="line">    markerOptions = &#123;</span><br><span class="line">      <span class="attr">icon</span>: <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Icon</span>(icons[icon].<span class="property">url</span>, icons[icon].<span class="property">options</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> marker = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Marker</span>(coordinates, markerOptions)</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">map</span>.<span class="title function_">addObject</span>(marker)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> marker</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-Route-Selection"><a href="#2-Route-Selection" class="headerlink" title="2  Route Selection"></a>2  Route Selection</h3><p>在显示的三条路线中，允许用户选择一条作为最佳选项，那么我们需要在onSuccess()中增加一个回调函数来实现。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> routeLineGroup = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Group</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>.<span class="title function_">map</span>(<span class="keyword">function</span> (<span class="params">route</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> routeLine = <span class="title function_">drawRoute</span>(route)</span><br><span class="line">      routeLineGroup.<span class="title function_">addObject</span>(routeLine)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">route</span>: route,</span><br><span class="line">        <span class="attr">routeLine</span>: routeLine</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    map.<span class="title function_">addObject</span>(routeLineGroup)</span><br><span class="line">    map.<span class="title function_">setViewBounds</span>(routeLineGroup.<span class="title function_">getBounds</span>())</span><br><span class="line"></span><br><span class="line">    <span class="title function_">onRouteSelection</span>(routes[<span class="number">0</span>])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/05/12/Icecream_Part4-Adcanced-Routing_2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/06/Icecream_Part4_Advanced_Routing_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/03/06/Icecream_Part4_Advanced_Routing_1/" class="post-title-link" itemprop="url">HERE MAP API - Part4 Advanced Routing - 1</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2019-03-06 13:18:30" itemprop="dateCreated datePublished" datetime="2019-03-06T13:18:30+08:00">2019-03-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/03/06/Icecream_Part4_Advanced_Routing_1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/06/Icecream_Part4_Advanced_Routing_1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>680</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在 Part 3 中我们了解到如何调用 HERE Routing API 实现两点间路径规划，以及如何从当前位置出发规划路径。</p>
-<p>这个部分继续来看看，如何展示多条路线及其信息，并允许用户交互选择。</p>
-<h3 id="Pre-session-重构代码"><a href="#Pre-session-重构代码" class="headerlink" title="Pre-session: 重构代码"></a>Pre-session: 重构代码</h3><p>这一部分不是改进功能，而是整理思绪。磨刀不误砍柴工，放之四海而皆准。</p>
-<p>冰淇凌小网页的功能不断增多，代码也随之膨胀，我们要时不时地整理收纳一下，避免自己在找乐子的路上备受打击。</p>
-<p>在 Scripts 文件夹中，新建：</p>
-<ul>
-<li>map.js  用于存放和<strong>底图</strong>及<strong>绘制路线</strong>相关的逻辑；</li>
-<li>utils.js  用于存放<strong>辅助功能</strong>，例如，将 latlog 坐标转化成 WayPointString 以供 Routing Service 使用。</li>
-</ul>
-<p>代码与Part 3 类似，但是因为做了重构，需要注意其中的调用关系及 html页面中的加载顺序。</p>
-<p><em>complete code</em>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzFfcmVmYWN0b3I=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="Multiple-Routes"><a href="#Multiple-Routes" class="headerlink" title="Multiple Routes"></a>Multiple Routes</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/03/06/Icecream_Part4_Advanced_Routing_1/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

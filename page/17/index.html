@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,253 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/12/21/TroubleshootingShapefile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/12/21/TroubleshootingShapefile/" class="post-title-link" itemprop="url">Troubleshooting：Shapefile 乱码与字符截断问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-12-21 13:00:00" itemprop="dateCreated datePublished" datetime="2015-12-21T13:00:00+08:00">2015-12-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/12/21/TroubleshootingShapefile/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/21/TroubleshootingShapefile/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Shapefile是上个世纪90年代的数据格式，但是由于它开放易用至今仍然倍受欢迎，最近与shapefile编码相关的问题此起彼伏连绵不绝，整理下几个高频问题共享之。</p>
+<br>
+
+<h2 id="为什么我的shapefile在ArcGIS-10-3中打开乱码？"><a href="#为什么我的shapefile在ArcGIS-10-3中打开乱码？" class="headerlink" title="为什么我的shapefile在ArcGIS 10.3中打开乱码？"></a><strong>为什么我的shapefile在ArcGIS 10.3中打开乱码？</strong></h2><br>
+
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a><em>原因</em></h3><p>这个问题的根本原因就是读取文件使用的编码类型和文件实际存储的编码类型不一致。</p>
+<p>Shapefile文件的头文件（dBase Header）中，一般会包含shapefile使用的编码类型的信息，这个信息成为 <strong>LDID</strong> （ Language Driver ID），这样在使用应用程序打开 shapefile 的时候，应用程序就知道用何种编码类型去正确读取它，而不会发生乱码。 在 ArcGIS Desktop 生产的 shapefile 数据中通常会包含这项信息。在Shapefile的子文件中，有时我们还会发现同名 ***.cpg** 文件，文件中也存储了编码信息，用记事本打开，看到例如 utf-8。</p>
+<p>二者被ArcGIS 识别的优先顺序是，<strong>LDID 优先于 CPG文件</strong>。也就是如果头文件中没有约定读shapefile的编码类型时，如果这时刚好有个CPG文件，那么ArcGIS就会使用这里的编码类型读取。</p>
+<p>我们知道 shapefile 是个开放格式，只要你了解了数据规范，完全可以脱离ArcGIS自己生产出来。在Windows中文语言设置下，假设你自己写代码或者使用第三方的程序生产了shapefile，例如MapGIS，默认使用 <strong>CP936（GBK）</strong>编码存储，但是无论粗心大意还是有意为之没有在数据头文件中约定“我用了936！”。如果是 ArcGIS 10.2 和之前的版本，那么没问题，ArcGIS 默认就是以这种方式识别，没有乱码。可是拿到 <strong>ArcGIS 10.2.1 ，ArcGIS 10.2.2，ArcGIS 10.3.x</strong> 这几个版本中发现乱！码！了！<strong>在缺失 LDID 和 CPG时，这几个版本默认使用 UTF-8 来读取 shapefile，这样必然乱码了。</strong></p>
+<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/21/TroubleshootingShapefile/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/12/06/IterationinArcGISforDesktop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/12/06/IterationinArcGISforDesktop/" class="post-title-link" itemprop="url">如何在ArcGIS for Desktop中实现批量任务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-12-06 13:00:00" itemprop="dateCreated datePublished" datetime="2015-12-06T13:00:00+08:00">2015-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/12/06/IterationinArcGISforDesktop/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/06/IterationinArcGISforDesktop/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>ModelBuilder</strong> 是 ArcGIS for Desktop 产品中最可爱的功能之一，它可以尽可能免代码地将我们从重复劳动中解放出来。使用 ModelBuilder 的过程常常被比喻为“搭积木”，我们只需要拿着 ArcGIS for Desktop 中为我们提供的“积木”去搭建满足于自己的特定工作流模型。</p>
+<p>再打个比方，我们要实现的某个功能比作是自己做面包。首先要准备食材，例如面粉、牛奶、鸡蛋、黄油、糖、盐、酵母，类比为 <strong>地理数据</strong>； 食材齐备了，就可以顺序开始和面、发酵、烘焙，这些工作由特定的器具承担，例如各种烘焙工具、烤箱，就好比ArcGIS提供的 <strong>工具</strong>，例如 ArcToolbox中的工具们； 面包制作过程中可以根据自己口味，规定发酵时间、控制糖和盐的多少等，这就类比为工具的自定义 <strong>参数</strong> 。</p>
+<p>如果自己享受整个烘焙的过程，不厌其烦地面面俱到，那大可维持现状；可是如果你觉得做面包是个体力活，你只是想吃到自家面包，而希望把做面包的过程“外包”出去，那么面包机的市场就来了。这篇blog就和大家说说如何制作“面包机”。</p>
+<br>
+
+<h2 id="1-明确需求"><a href="#1-明确需求" class="headerlink" title="1 明确需求"></a>1 明确需求</h2><p>我们从一个简单常见的实例开始……</p>
+<p><strong>需求</strong>：现有一些表示各种研究对象的地理数据，小明希望把所有研究数据变换到需要的坐标系统，并且全部裁剪至研究范围。</p>
+<p>如果只有一份数据，小明会不假思索的找到 ArcToolbox中的 Project和Clip工具，顺序执行即可解决问题；如果是3+份数据，小明可能会想，该做个工具了。</p>
+<br>
+
+<h2 id="2-构建工作流"><a href="#2-构建工作流" class="headerlink" title="2 构建工作流"></a>2 构建工作流</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/12/06/IterationinArcGISforDesktop/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -402,7 +649,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>365</span>
+      <span>335</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -420,23 +667,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tL3poLWNuLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事” ……</p>
+          <h3 id="我的地图故事"><a href="#我的地图故事" class="headerlink" title="我的地图故事"></a>我的地图故事</h3><p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事……”。</p>
 <p>国庆假期将至，放点有趣的东西。如果喜欢分享，又想记录自己的过往，动手试试不错哦。</p>
-<br>
-![](/images/blogImg/TriptoGreece_Overview.png)
+<p>我把自己的一次行程做成了地图故事：</p>
+<ul>
+<li><strong><span class="exturl" data-url="aHR0cDovL2tpa2l0YW1vb24ubWFwcy5hcmNnaXMuY29tL2FwcHMvTWFwVG91ci8/YXBwaWQ9MmNjYmUwM2VjZGZhNGQwZmFmODAxMjYxNDYzNzQyNjE=">Trip to Greece<i class="fa fa-external-link-alt"></i></span></strong> 。</li>
+</ul>
+<p>如下这里也可以翻看：</p>
+<iframe style="width: 100%;" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://arcg.is/18aaPT0"></iframe>
 
-<br>
 
 
-
-<p><strong>如何制作故事地图 ?</strong>    我把链接搬运过来，<a target="_blank" rel="noopener" href="http://storymaps.arcgis.com/zh-cn/how-to/"><strong>点吧</strong></a></p>
+<h3 id="如何制作故事地图"><a href="#如何制作故事地图" class="headerlink" title="如何制作故事地图 ?"></a><strong>如何制作故事地图 ?</strong></h3><p> <strong><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1zdG9yeW1hcHMvb3ZlcnZpZXc=">点这里<i class="fa fa-external-link-alt"></i></span></strong></p>
 <p>地图故事中有好多应用程序模板可选，即使不懂技术也能hold住，只需要选个要讲的“<strong>故事类型</strong>”。</p>
-<p><img data-src="/images/blogImg/TriptoGreece_StoryMap.png"></p>
-<br>
-
-
-<p>比如选择 <strong>Story Map Tour</strong>，这也有**<span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tL3poLWNuL2FwcC1saXN0L21hcC10b3VyL3R1dG9yaWFsLw==">攻略<i class="fa fa-external-link-alt"></i></span>**，点这里。其实不看攻略也没关系。</p>
-<p>在 <strong>Story Map Tour Builder</strong>  中可以选择上传自己的照片，ArcGIS Online 会自动管理。如果照片是带有GPS信息的 Geo-tagged 照片，那太好了，上传之后就自动定位了。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2015/09/30/TriptoGreece/#more" rel="contents">
@@ -564,257 +807,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2015/09/27/ExplorerData/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/10/CreatePythonTool3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/09/10/CreatePythonTool3/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（三）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-09-10 14:42:04" itemprop="dateCreated datePublished" datetime="2015-09-10T14:42:04+08:00">2015-09-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/09/10/CreatePythonTool3/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/10/CreatePythonTool3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>从 ArcGIS 10.1 版本开始，我们可以创建 <strong>python工具箱</strong> 来自定义脚本工具，这种工具箱相比较上一篇提到的标准工具箱。有着独特的优势，具体二者的区别总结过，看<a href="http://kikitamap.com/2015/08/31/CreatePythonTool1/">这一篇</a>。</p>
-<br>
-
-<h2 id="认识-Python工具箱"><a href="#认识-Python工具箱" class="headerlink" title="认识 Python工具箱"></a><strong>认识 Python工具箱</strong></h2><p>Python 工具箱 (.pyt) 是一个简单的文本文件，可以在任何文本编辑器中或者任何 Python IDE 中创建、查看和编辑。要确保 ArcGIS 正确识别 Python 工具箱，工具箱类的名称必须是 **<code>Toolbox</code>**。在 <strong><code>Toolbox</code></strong> 类的 <strong><code>__init__</code></strong> 方法中定义工具箱的属性，这些属性包括 alias、label 和 description，我们可以按照 <strong><span class="exturl" data-url="aHR0cDovL2Rlc2t0b3AuYXJjZ2lzLmNvbS9lbi9kZXNrdG9wL2xhdGVzdC9hbmFseXplL2NyZWF0aW5nLXRvb2xzL2EtdGVtcGxhdGUtZm9yLXB5dGhvbi10b29sYm94ZXMuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span></strong> 中的模板构建 Python 工具箱模板。</p>
-<p>如下代码中创建了包含一个工具（名为 Tool）的 Python 工具箱：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> arcpy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Toolbox</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the toolbox (the name of the toolbox is the name of the</span></span><br><span class="line"><span class="string">        .pyt file).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Toolbox&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.alias = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># List of tool classes associated with this toolbox</span></span><br><span class="line">        <span class="variable language_">self</span>.tools = [Tool]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Tool</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define the tool (tool name is the name of the class).&quot;&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.label = <span class="string">&quot;Tool&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.description = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="variable language_">self</span>.canRunInBackground = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getParameterInfo</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Define parameter definitions&quot;&quot;&quot;</span></span><br><span class="line">        params = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> params</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isLicensed</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Set whether tool is licensed to execute.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateParameters</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the values and properties of parameters before internal</span></span><br><span class="line"><span class="string">        validation is performed.  This method is called whenever a parameter</span></span><br><span class="line"><span class="string">        has been changed.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">updateMessages</span>(<span class="params">self, parameters</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Modify the messages created by internal validation for each tool</span></span><br><span class="line"><span class="string">        parameter.  This method is called after internal validation.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">execute</span>(<span class="params">self, parameters, messages</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;The source code of the tool.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
-
-<br>
-
-<br>
-
-<h2 id="动手做做"><a href="#动手做做" class="headerlink" title="动手做做"></a><strong>动手做做</strong></h2><p>下面我就依据这个模板，写一个简单的脚本工具箱。需求是批量裁剪，我希望我只提供一个文件夹或者数据库等这样的<strong>工作空间</strong>和一个<strong>裁剪区域面</strong>，就可以批量完成工作空间内全部数据的裁剪工作，并且无视栅格还是矢量，一并裁剪。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/09/10/CreatePythonTool3/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/02/CreatePythonTool2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/09/02/CreatePythonTool2/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（二）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-09-02 22:19:20" itemprop="dateCreated datePublished" datetime="2015-09-02T22:19:20+08:00">2015-09-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/09/02/CreatePythonTool2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/02/CreatePythonTool2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>上一篇中我们了解到有两种方式在 ArcGIS 中创建 Python工具，这一篇就来看看如何在标准工具箱中创建脚本工具。</p>
-<br>
-
-<p>ArcGIS Help 中脚本工具的帮助过于枯燥，在这里，我以一个具体的实例来总结构建脚本工具的过程，我要实现的需求是做个快速实现羽化边界效果的小工具，预期得到如下的效果：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool2_Result.png"></p>
-<p>上面效果在ArcMap中完全可以手工运行几个工具实现，但是过程稍微繁琐，那么需求来了，如何做个自定的一键生成羽化边界的小工具？</p>
-<br>
-
-
-<br>
-
-<h2 id="1-准备Python脚本文件"><a href="#1-准备Python脚本文件" class="headerlink" title="1 准备Python脚本文件"></a>1 准备Python脚本文件</h2><p>第一步，先写好脚本工具的核心 —— python脚本文件。</p>
-<br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/09/02/CreatePythonTool2/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

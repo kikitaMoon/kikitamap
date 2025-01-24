@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,256 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/07/09/SetupPythonModule/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/07/09/SetupPythonModule/" class="post-title-link" itemprop="url">发布和安装python自定义模块</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-07-09 13:00:00" itemprop="dateCreated datePublished" datetime="2015-07-09T13:00:00+08:00">2015-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/07/09/SetupPythonModule/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/07/09/SetupPythonModule/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>435</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>这一篇说下如何发布和安装python自定义模块，版本：Python 2.7 。</p>
+<br>
+
+<h1 id="1-创建setup-py"><a href="#1-创建setup-py" class="headerlink" title="1.创建setup.py"></a>1.创建setup.py</h1><p>现在如果已经写好一个python文件，为了尽量简明，创建一个新的文件夹，把自己py文件放进去。接着在这个文件夹中创建一个名为 setup.py 的文件，用来表示模块的元数据，文件的内容类似下面这个样子。除了手工创建，有很多python编辑器也可以更简便的来创建这个文件，例如 pycharm。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">&#x27;nesterprint&#x27;</span>,</span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span>,</span><br><span class="line">    packages=[<span class="string">&#x27;&#x27;</span>],</span><br><span class="line">    url=<span class="string">&#x27;http://blog.csdn.net/kikitaMoon&#x27;</span>,</span><br><span class="line">    license=<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    author=<span class="string">&#x27;kikita&#x27;</span>,</span><br><span class="line">    author_email=<span class="string">&#x27;kikitamoopn@gmail.com&#x27;</span>,</span><br><span class="line">    description=<span class="string">&#x27;My Test&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h1 id="2-打包发布"><a href="#2-打包发布" class="headerlink" title="2. 打包发布"></a>2. 打包发布</h1><p>使用Window自带的命令窗口，转到上一步创建的文件夹目录，输入命令，<strong>python setup.py sdist</strong>：</p>
+<p><img data-src="/images/blogImg/SetupPythonModule_setup.png"></p>
+<p>通过上面的状态信息知道，产生了下面的结果：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/07/09/SetupPythonModule/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/07/09/UploadCodetoPyPI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/07/09/UploadCodetoPyPI/" class="post-title-link" itemprop="url">上传代码到PyPI</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-07-09 12:26:05" itemprop="dateCreated datePublished" datetime="2015-07-09T12:26:05+08:00">2015-07-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/07/09/UploadCodetoPyPI/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/07/09/UploadCodetoPyPI/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>383</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我们可以把自己的代码，尤其是期待分享的得意代码，上传分享到第三方Python模块的“集中营” —— **<span class="exturl" data-url="aHR0cHM6Ly9weXBpLnB5dGhvbi5vcmcv">PyPI<i class="fa fa-external-link-alt"></i></span>**，如果没有账号，可以注册个先。</p>
+<br>
+
+<h2 id="1-准备发布"><a href="#1-准备发布" class="headerlink" title="1  准备发布"></a>1  准备发布</h2><p>像在本地发布安装一样，先新建一个文件夹，然后将自己的py文件放进去，然后再这个文件夹中创建一个  <code>setup.py</code> 的文件，内容如下面的样子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.core <span class="keyword">import</span> setup</span><br><span class="line"></span><br><span class="line">setup(</span><br><span class="line">    name=<span class="string">&#x27;nesterprint&#x27;</span>,</span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span>,</span><br><span class="line">    packages=[<span class="string">&#x27;&#x27;</span>],</span><br><span class="line">    url=<span class="string">&#x27;http://blog.csdn.net/kikitaMoon&#x27;</span>,</span><br><span class="line">    license=<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    author=<span class="string">&#x27;kikita&#x27;</span>,</span><br><span class="line">    author_email=<span class="string">&#x27;kikitamoopn@gmail.com&#x27;</span>,</span><br><span class="line">    description=<span class="string">&#x27;My Test&#x27;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<br>
+
+<h2 id="2-注册登录"><a href="#2-注册登录" class="headerlink" title="2 注册登录"></a>2 注册登录</h2><p>使用命令行窗口，跳转到要发布的py所在的文件夹目录，首先进行注册登录，让命令行上传工具知道我的PyPI账户和密码。输入命令：**<code>python setup.py register</code>**，选择 1，输入账户和密码，并且保存登录信息，下次上传可以跳过这个步骤。</p>
+<p><img data-src="/images/blogImg/UploadCodetoPyPI_Login.png"></p>
+<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/07/09/UploadCodetoPyPI/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -563,262 +813,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2015/06/10/DeployAGSLMonLinux/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/09/FeatureHeatMap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/06/09/FeatureHeatMap/" class="post-title-link" itemprop="url">羽化效果的HeatMap</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-06-09 11:07:58" itemprop="dateCreated datePublished" datetime="2015-06-09T11:07:58+08:00">2015-06-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/06/09/FeatureHeatMap/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/09/FeatureHeatMap/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>261</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>用采样点制作热力图是个非常常见的需求。热力图可以给地图的阅读者直观的信息，下面就看看如何在 ArcGIS Pro 中做一个漂亮的HeatMap。</p>
-<p><em>PS: 这是通过点密度插值生成的栅格的静态表达方式，区别于 ArcGIS Pro 自带的动态HeatMap的渲染器哦。</em></p>
-<br>
-
-<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>准备好采样点数据，当然是量大更优。我这里用了全球地震点数据，大约有 21W+ 的数据量。像这一类的数据可以从一些提供公开数据的网站获取，例如 <span class="exturl" data-url="aHR0cDovL2VhcnRocXVha2UudXNncy5nb3YvZWFydGhxdWFrZXMvZmVlZC92MS4wL2Nzdi5waHA=">USGS<i class="fa fa-external-link-alt"></i></span> 。</p>
-<p><img data-src="/images/blogImg/FeatureHeatMap_Points.png"></p>
-<br>
-
-<br>
-
-<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>使用 ArcGIS 中的密度分析工具可以从点数据直接生成密度栅格，工具位于 ArcToolbox —— Spatial Analyst —— Density 工具集下。这里我采用了 Kernel Density 。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/06/09/FeatureHeatMap/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/05/RunnerRoutes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/06/05/RunnerRoutes/" class="post-title-link" itemprop="url">为Runner做一张有质感的图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-06-05 12:52:33" itemprop="dateCreated datePublished" datetime="2015-06-05T12:52:33+08:00">2015-06-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/06/05/RunnerRoutes/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/05/RunnerRoutes/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>404</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>如今，通过 GPS 我们可以轻松采集到自己的足迹，Runner们用各种手机App记录跑步路线也再平常不过。如果我们有大量的足迹信息，也可以试试 ArcGIS Pro 的渲染能力，来看看自己的 Favourite 线路如何分布。</p>
-<br>
-
-<p>我在 ArcGIS Online 上 down 到了某位 Runner 的足迹信息，当然大家也可以用自己的，gpx，txt，kml 等常见的 GPS Tracklog 文件都是可以直接导入成为 ArcGIS 支持的格式。根据文件格式的不同，你可能会需要 GPX to Feature ， Add XY Event layer， KML to Layer ，Points to Line 等这些工具的辅助，得到路线数据，表示路线的线数据当然越多越好。</p>
-<br>
-
-
-
-
-<p>ArcGIS Pro 的符号化中增加了符号的透明效果，这一点完胜 ArcMap 的渲染效果。你想问ArcMap什么效果？如下，好像有点惨不忍睹：</p>
-<p><img data-src="/images/blogImg/RunnerRoutes_ArcMap.png"></p>
-<br>
-
-
-
-<p>由于ArcGIS Pro 中的新增的符号透明不是图层的整体透明，而是每个Feature的符号透明，就会产生色彩叠加的效果。直观上说，就是符号叠加越密集的位置，色彩会越深，给人以渐变色彩的热力图的感受。</p>
-<br>
-
-<p>#<strong>怎么做？</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/06/05/RunnerRoutes/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

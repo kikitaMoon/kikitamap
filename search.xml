@@ -6905,45 +6905,23 @@
   <entry>
     <title>给自己做个地图故事——Trip to Greece</title>
     <url>/2015/09/30/TriptoGreece/</url>
-    <content><![CDATA[<p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tL3poLWNuLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事” ……</p>
+    <content><![CDATA[<h3 id="我的地图故事"><a href="#我的地图故事" class="headerlink" title="我的地图故事"></a>我的地图故事</h3><p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事……”。</p>
 <p>国庆假期将至，放点有趣的东西。如果喜欢分享，又想记录自己的过往，动手试试不错哦。</p>
-<br>
-![](/images/blogImg/TriptoGreece_Overview.png)
+<p>我把自己的一次行程做成了地图故事：</p>
+<ul>
+<li><strong><span class="exturl" data-url="aHR0cDovL2tpa2l0YW1vb24ubWFwcy5hcmNnaXMuY29tL2FwcHMvTWFwVG91ci8/YXBwaWQ9MmNjYmUwM2VjZGZhNGQwZmFmODAxMjYxNDYzNzQyNjE=">Trip to Greece<i class="fa fa-external-link-alt"></i></span></strong> 。</li>
+</ul>
+<p>如下这里也可以翻看：</p>
+<iframe style="width: 100%;"  height="600"  frameborder="0"    scrolling="no"   marginheight="0"  marginwidth="0" src="https://arcg.is/18aaPT0"></iframe>
 
-<br>
 
 
-
-<p><strong>如何制作故事地图 ?</strong>    我把链接搬运过来，<a href="http://storymaps.arcgis.com/zh-cn/how-to/"><strong>点吧</strong></a></p>
+<h3 id="如何制作故事地图"><a href="#如何制作故事地图" class="headerlink" title="如何制作故事地图 ?"></a><strong>如何制作故事地图 ?</strong></h3><p> <strong><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1zdG9yeW1hcHMvb3ZlcnZpZXc=">点这里<i class="fa fa-external-link-alt"></i></span></strong></p>
 <p>地图故事中有好多应用程序模板可选，即使不懂技术也能hold住，只需要选个要讲的“<strong>故事类型</strong>”。</p>
-<p><img data-src="/images/blogImg/TriptoGreece_StoryMap.png"></p>
-<br>
-
-
-<p>比如选择 <strong>Story Map Tour</strong>，这也有**<span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tL3poLWNuL2FwcC1saXN0L21hcC10b3VyL3R1dG9yaWFsLw==">攻略<i class="fa fa-external-link-alt"></i></span>**，点这里。其实不看攻略也没关系。</p>
+<p>比如选择 <strong>Story Map Tour</strong>，这也有 **<span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1zdG9yeW1hcHMvcmVzb3VyY2Vz">攻略<i class="fa fa-external-link-alt"></i></span>**，点这里。其实不看攻略也没关系。</p>
 <p>在 <strong>Story Map Tour Builder</strong>  中可以选择上传自己的照片，ArcGIS Online 会自动管理。如果照片是带有GPS信息的 Geo-tagged 照片，那太好了，上传之后就自动定位了。</p>
-<br>
-
-
-<p>我把自己的一次行程做成了地图故事 <a href="http://kikitamoon.maps.arcgis.com/apps/MapTour/?appid=2ccbe03ecdfa4d0faf80126146374261"><strong>Trip to Greece</strong></a>。</p>
-<p>短链接：[<em><span class="exturl" data-url="aHR0cDovL2FyY2cuaXMvMUxMWTZmbQ==">http://arcg.is/1LLY6fm<i class="fa fa-external-link-alt"></i></span></em></p>
-<iframe width="720"   height="600"  frameborder="0"    scrolling="no"   marginheight="0"  marginwidth="0" 
- src="http://kikitamoon.maps.arcgis.com/apps/MapTour/index.html?appid=2ccbe03ecdfa4d0faf80126146374261"></iframe>
-
-
-<br>
-
-<br>
-
-<br>
-
-<p>上面的与技术好像都不沾边，下面的可能沾点边……</p>
-<br>
-
-<p>打开ArcGIS Online 上<strong>我的组织</strong>，查看<strong>我的内容</strong>，我们看到这个地图故事的应用一共有这样几个内容：</p>
+<p>打开ArcGIS Online 上 <strong>我的组织</strong>，查看 <strong>我的内容</strong>，我们看到这个地图故事的应用一共有这样几个内容：</p>
 <p><img data-src="/images/blogImg/TriptoGreece_MyContent.png"></p>
-<br>
-
 <p>照片对应的点信息是通过 Feature Layer 维护的，所以在一开的时候选择上传照片时，要给 Feature Service 起个名字。</p>
 <p><img data-src="/images/blogImg/TriptoGreece_FeatureService.png"></p>
 ]]></content>
@@ -7563,7 +7541,7 @@
       </categories>
   </entry>
   <entry>
-    <title>海</title>
+    <title>地中海的海</title>
     <url>/2016/05/24/theBlueSea/</url>
     <content><![CDATA[<blockquote>
 <p>摄于 2014-5-4, Paros Island,  Greece</p>
@@ -7582,7 +7560,9 @@
     <content><![CDATA[<blockquote>
 <p>摄于 2014-5-8，Akrotori, Santorini, Greece</p>
 </blockquote>
-<p><img data-src="/images/blogImg/XJL_IMG_5106.jpg"></p>
+<p>火红的悬崖与湛蓝的海水相映，着眼之处皆为壮丽宏大</p>
+<p><img data-src="/images/blogImg/XJL_RedBeach_1.jpg"></p>
+<p><img data-src="/images/blogImg/XJL_RedBeach_2.jpg"></p>
 ]]></content>
       <categories>
         <category>Visual Musing</category>
@@ -7677,14 +7657,11 @@
     <title>Trip To HngKong</title>
     <url>/2016/09/02/TripToHngKong/</url>
     <content><![CDATA[<blockquote>
-<p>2016年6月 海港与童心</p>
+<p>June 2016, Hong Kong</p>
 </blockquote>
-<iframe width="720"   height="600"  frameborder="0"    scrolling="no"   marginheight="0"  marginwidth="0" 
- src="http://kikitamoon.maps.arcgis.com/apps/MapTour/index.html?appid=6e14b73f21414cf6823c607be05cd916"></iframe>
+<p><a href="http://kikitamoon.maps.arcgis.com/apps/MapTour/index.html?appid=6e14b73f21414cf6823c607be05cd916"><strong>地图故事：海港与童心</strong></a></p>
+<iframe style="width:100%"   height="600"  frameborder="0"    scrolling="no"   marginheight="0"  marginwidth="0" src="https://arcg.is/1SS4zm1"></iframe>
 
-
-<p>详情访问：<span class="exturl" data-url="aHR0cDovL2tpa2l0YW1vb24ubWFwcy5hcmNnaXMuY29tL2FwcHMvTWFwVG91ci9pbmRleC5odG1sP2FwcGlkPTZlMTRiNzNmMjE0MTRjZjY4MjNjNjA3YmUwNWNkOTE2">kikitamoon.maps.arcgis.com<i class="fa fa-external-link-alt"></i></span></p>
-<p><img data-src="/images/blogImg/XJL_TripToHongkong.jpg"></p>
 ]]></content>
       <categories>
         <category>Visual Musing</category>
@@ -10436,5 +10413,31 @@
         <tag>DINO</tag>
         <tag>CLIP</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>天苍苍野茫茫</title>
+    <url>/2021/07/25/VerdantExpanse/</url>
+    <content><![CDATA[<blockquote>
+<p>摄于 内蒙古，2021.7.21</p>
+</blockquote>
+<p>无尽的碧绿，苍茫辽阔。<br>脱离了城市的缰绳，旷野驰骋任逍遥。</p>
+<p><img data-src="/images/blogImg/XJL_VerdantExpanse_1.jpg"><br><img data-src="/images/blogImg/XJL_VerdantExpanse_2.jpg"><br><img data-src="/images/blogImg/XJL_VerdantExpanse_3.jpg"><br><img data-src="/images/blogImg/XJL_VerdantExpanse_4.jpg"></p>
+]]></content>
+      <categories>
+        <category>Visual Musing</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>大雪</title>
+    <url>/2020/01/06/SnowySerenity/</url>
+    <content><![CDATA[<blockquote>
+<p>烟台，2020.01.06</p>
+</blockquote>
+<p>大雪之后，银装素裹，2020这一年的冬天格外寂静，雪地上没有脚印</p>
+<p><img data-src="/images/blogImg/XJL_SnowySerenity.jpg"></p>
+]]></content>
+      <categories>
+        <category>Visual Musing</category>
+      </categories>
   </entry>
 </search>

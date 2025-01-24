@@ -2,6 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kikitamap.com/2021/07/25/VerdantExpanse/</loc>
+    
+    <lastmod>2025-01-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2020/01/06/SnowySerenity/</loc>
+    
+    <lastmod>2025-01-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2016/09/02/TripToHngKong/</loc>
+    
+    <lastmod>2025-01-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2016/05/24/theBlueSea/</loc>
+    
+    <lastmod>2025-01-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
+    
+    <lastmod>2025-01-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2015/09/30/TriptoGreece/</loc>
+    
+    <lastmod>2025-01-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/2025/01/09/LearningACDC/</loc>
     
     <lastmod>2025-01-09</lastmod>
@@ -614,15 +668,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/09/02/TripToHngKong/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2016/08/31/ArcGISProPython/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -650,15 +695,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/05/24/theBlueSea/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2016/04/28/ParallelPython/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -669,15 +705,6 @@
   
   <url>
     <loc>https://kikitamap.com/2016/04/14/ForMyself/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2016/04/08/RedBeach/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -795,15 +822,6 @@
   
   <url>
     <loc>https://kikitamap.com/2015/11/27/CanNotConnectAGSLM/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2015/09/30/TriptoGreece/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1966,7 +1984,7 @@
 
   <url>
     <loc>https://kikitamap.com/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1974,364 +1992,364 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Geodata/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Mapping/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/CAD/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Coordinate-System/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/ArcPad/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Deployment/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Performance/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Raster/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Geoprocessing/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Spatial-Analyst/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/3D/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/CityEngine/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Python/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/License/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Spatial-Statistics/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/ArcGIS-Pro/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Linux/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/ArcGIS-Enterprise/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Web/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Map-Story/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/CGA/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Visual-Studio/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Certification/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Webmaster/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Github/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Vector-Tiles/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Cloud-Storage/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HERE-Map/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HLS/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Javascript/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Routing/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Network/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Positioning/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Mobile-SDK/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Android/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HERE-Platform/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Visualization/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/HERE-Data-Hub/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Data-Management/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/ArcGIS-Earth/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/BBC/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Tutorials/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Jump-start/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Bookmark/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Terrain/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Basemap/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/AI/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Policy-Training/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/Digital-Twin/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/GPT/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/DINO/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/tags/CLIP/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -2340,21 +2358,21 @@
   
   <url>
     <loc>https://kikitamap.com/categories/Tech-Notes/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/categories/Visual-Musing/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://kikitamap.com/categories/Inner-Thoughts/</loc>
-    <lastmod>2025-01-09</lastmod>
+    <lastmod>2025-01-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

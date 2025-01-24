@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,255 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/08/HowPointtoRasterWorks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/08/HowPointtoRasterWorks/" class="post-title-link" itemprop="url">Point to Raster 工作原理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-08 08:58:00" itemprop="dateCreated datePublished" datetime="2012-02-08T08:58:00+08:00">2012-02-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/02/08/HowPointtoRasterWorks/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/08/HowPointtoRasterWorks/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>612</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>点在栅格中，表示为一个像元。通常，如果有两个或更多个点落入某像元范围内，ArcGIS 在为像元赋值时会随机选择这些点中的一个点。但在使用“Point to Raster”工具时，可选择像元值分配类型（频率最高、求和、平均值、标准差、最大值、最小值、范围、数目）。具有值的像元数有可能少于要转换的点数。</p>
+<p><img data-src="/images/blogImg/HowPointtoRasterWorks_Tool.gif"></p>
+<p><strong>工具说明：</strong></p>
+<p>A．可以将包含点或多点要素的任意要素类（地理数据库、shapefile 或 coverage）转换为栅格数据集。</p>
+<p>B．输入字段类型决定输出栅格的类型。如果字段是整型，则输出栅格也是整型；如果字段是浮点型，则输出栅格也是浮点型。</p>
+<p>C．如果输入字段包含字符串值，则输出栅格将包含一个整数值字段和一个字符串字段。</p>
+<p>D．Priority Field仅与像元分配类型的 MOST_FREQUENT 选项一起使用。如果一个像元中存在多个点，优先级高的值被采用，如果优先级相同的，属性值出现频率最高的被采用，如果优先级和出现频率全都相同，采取FID最小的。如下图情况所示：</p>
+<p><img data-src="/images/blogImg/HowPointtoRasterWorks_RasterValue.gif"></p>
+<p>若要素位于单元边界，则遵循<strong>边界规则</strong>。</p>
+<ul>
+<li>下图举例说明了要素恰巧落在单元边界上时适用的规则。</li>
+<li>如果要素落在单元边界上，则使用它上面的单元；如果它上面没有单元，则使用下面的单元。 </li>
+<li>如果左侧有一个单元，则使用此单元；如果没有，则使用右侧的单元。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/08/HowPointtoRasterWorks/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/ArcGISforAutoCAD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/ArcGISforAutoCAD/" class="post-title-link" itemprop="url">ArcGIS for AutoCAD 小结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:42:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:42:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/02/07/ArcGISforAutoCAD/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/ArcGISforAutoCAD/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>749</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="一、-简介"><a href="#一、-简介" class="headerlink" title="一、 简介"></a><strong>一、 简介</strong></h2><p> ArcGIS for AutoCAD是Esri提供的一个针对AutoCAD免费插件。此插件可以使AutoCAD作为ArcGIS Server的客户端加载服务；并且可以作为GIS结构编辑器来组织CAD数据，从而作为直接可用的GIS 要素类；给CAD数据定义坐标系，可以被ArcGIS产品识别。</p>
+<br>
+
+<h2 id="二、-系统要求"><a href="#二、-系统要求" class="headerlink" title="二、 系统要求"></a><strong>二、 系统要求</strong></h2><p>这里基于ArcGIS for AutoCAD 250版本。 </p>
+<p> <strong>版本:</strong> </p>
+<p>AutoCAD 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p>AutoCAD Map 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p>AutoCAD Civil 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p><strong>操作系统:</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/ArcGISforAutoCAD/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -556,270 +805,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2012/02/07/GeodatabaseBasic/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/Aboutshapefile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/02/07/Aboutshapefile/" class="post-title-link" itemprop="url">有关shape文件的说明</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-02-07 14:04:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:04:00+08:00">2012-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/02/07/Aboutshapefile/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/Aboutshapefile/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>548</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>shapefile 是存储地理信息的简单文件格式，但是工作中，常会接到用户的很多问题，这里把常见的汇总下。</p>
-<p><strong>一、shape 文件到底可以多大？</strong></p>
-<p>shapefile 的每个文件都不能超过 2 GB。也就是说，存储数据的 .dbf 与.shp 分别不能超过 2GB。但是，所有文件的总大小可以超过 2 GB。</p>
-<p><strong>二、 shape 文件是怎么构成的？</strong></p>
-<p>shape 文件用 ArcGIS 查看仅显示一个文件，但是用 windows 资源管理器查看就可能看到以下文件。</p>
-<ul>
-<li>.shp - 存储要素几何的主文件；必需文件。</li>
-<li>.shx - 存储要素几何索引的索引文件；必需文件。</li>
-<li>.dbf - 存储要素属性信息的 dBASE 表；必需文件。</li>
-<li>.prj - 存储坐标系信息的文件；由 ArcGIS 使用。</li>
-<li>.xml - ArcGIS 的元数据 - 用于存储 shapefile 的相关信息。</li>
-<li>.sbn 和 .sbx - 存储要素空间索引的文件。</li>
-<li>.fbn 和 .fbx - 存储只读 shapefile 的要素空间索引的文件。</li>
-<li>.ain 和 .aih - 存储某个表中或专题属性表中活动字段属性索引的文件。</li>
-<li>.atx - .atx 文件针对各个 shapefile 或在 ArcCatalog 中创建的 dBASE属性索引而创建。</li>
-<li>.ixs - 读&#x2F;写 shapefile 的地理编码索引。</li>
-<li>.mxs - 读&#x2F;写 shapefile（ODB 格式）的地理编码索引。</li>
-<li>.cpg - 可选文件，指定用于标识要使用的字符集的代码页。</li>
-<li>强烈建议，对shape操作时，在 ArcGIS 中进行。</li>
-</ul>
-<p><strong>三、 shape 中创建字段注意什么？</strong></p>
-<p>不能对现有字段修改，可以新建字段包括自定义数据类型；字段名长度不要超过10，超过会被截断。</p>
-<p>新建字段时，有三个参数可供设置：</p>
-<ul>
-<li>precision（精度）—— 数字字段中可存储的位数；</li>
-<li>scale（标度）—— 浮点或双精度类型字段中数值的小数点右侧的位数；</li>
-<li>length（长度）—— 字符型字段的文本字段的长度。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/02/07/Aboutshapefile/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/virtualmemory/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/02/07/virtualmemory/" class="post-title-link" itemprop="url">认识虚拟内存与分页文件</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-02-07 14:00:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:00:00+08:00">2012-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/02/07/virtualmemory/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/virtualmemory/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>2k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>7 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>如果计算机缺少运行程序或操作所需的RAM，则 Windows 使用虚拟内存进行补偿。</p>
-<p>查看RAM数量：</p>
-<p><img data-src="/images/blogImg/virtualmemory.gif"></p>
-<p>注意：某些情况下，Windows会报告计算机上安装的内存数量以及可以使用的内存数量。如果使用的是32位版本的Windows，则可用内存的数量可能低于安装的内存总量。</p>
-<p>虚拟内存将计算机的RAM和硬盘上的临时空间组合在一起。当RAM运行速度缓慢时，虚拟内存将数据从RAM移动到称为分页文件的空间中。将数据移入与移出分页文件可以释放RAM，以便计算机可以完成工作。</p>
-<p>一般而言，计算机的RAM越多，程序运行得越快。如果计算机的速度由于缺少RAM而降低，则可以尝试增加虚拟内存来进行补偿。但是，计算机从RAM读取数据的速度要比从硬盘读取数据的速度快得多，因此增加RAM是更好的方法。</p>
-<p>分页文件：硬盘上一个或者多个隐藏文件 pagefile.sys，Windows用于存储未存入内存的部分程序和数据文件。页面文件和物理内存或随机存取内存（RAM）构成了虚拟内存。Windows会根据需要将数据从页面文件移至内存，或将数据从内存移至页面文件以便为新数据释放内存。也叫“交换文件”。</p>
-<p><strong>错误消息与自定义大小</strong></p>
-<p>如果收到警告虚拟内存不足的错误消息，则需要添加更多的RAM 或增加分页文件的大小，这样才能在计算机上运行程序。Windows 通常会自动管理大小，但是如果默认的大小不能满足您的需要，则可以手动更改虚拟内存的大小。</p>
-<p>如何自定义虚拟内存的大小？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/02/07/virtualmemory/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

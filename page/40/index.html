@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">208</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,278 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/04/10/ArcPad10Synchronization2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/04/10/ArcPad10Synchronization2/" class="post-title-link" itemprop="url">ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（二）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-04-10 09:16:00" itemprop="dateCreated datePublished" datetime="2012-04-10T09:16:00+08:00">2012-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/04/10/ArcPad10Synchronization2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/04/10/ArcPad10Synchronization2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>464</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>继续上个话题，数据准备好了，我们就开始发布服务吧~</p>
+<h1 id="三、发布-ArcGIS-Server-服务"><a href="#三、发布-ArcGIS-Server-服务" class="headerlink" title="三、发布 ArcGIS Server 服务"></a><strong>三、发布 ArcGIS Server 服务</strong></h1><p>在进行到这一步的时候，我遇到过很多问题，有配置的问题，有数据的问题，有自己不够仔细的问题。这里总结下注意事项，帮助大家少走弯路。</p>
+<blockquote>
+<p><strong>TIPS：</strong><br><strong>首先，ArcGIS Server服务器要安装ArcPad扩展，这个扩展在ArcPad安装光盘中有。</strong><br><strong>ArcGIS Desktop 与 ArcPad 版本一定要对应：ArcPad 10.0对应ArcGIS Desktop、ArcGIS Server 10.0（.NET）; ArcPad 8.0对应ArcGIS Desktop、ArcGIS Server 9.3.1（.NET）。</strong><br><strong>必须使用 ArcGIS Server for .NET Framework ，不支持 Java，许可级别必须是 Advanced版。</strong><br><strong>将前面制作的MXD以及通过上一步方法得到的同名apo放置到C盘根目录文件夹下，例如C:&#x2F;MXD。</strong><br><strong>数据尽量使用ArcGIS Tutorial Data，以防止是数据本身问题导致服务发不成，以后调通了，再用自己的数据。</strong><br><strong>发布服务，在你的GIS服务器连接上，右键 Add new Services。而不要直接在你的mxd上右键发布服务。</strong></p>
+</blockquote>
+<p>好，记住了这些，就开始发布服务吧，步骤和以前发布服务的方法几乎没有差异，GO ON……</p>
+<p>添加服务：</p>
+<p><img data-src="/images/blogImg/ArcPad10Synchronization2_AddService.png"></p>
+<p><img data-src="/images/blogImg/ArcPad10Synchronization2_ServiceWizard1.png"></p>
+<p><img data-src="/images/blogImg/ArcPad10Synchronization2_ServiceWizard2.png"></p>
+<p>注意这一步要勾选 <strong>ArcPad</strong>，使得发布的 Map Service 可以被ArcPad所支持：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/04/10/ArcPad10Synchronization2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/04/09/ArcPad10Synchronization1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/04/09/ArcPad10Synchronization1/" class="post-title-link" itemprop="url">ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-04-09 14:13:00" itemprop="dateCreated datePublished" datetime="2012-04-09T14:13:00+08:00">2012-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/04/09/ArcPad10Synchronization1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/04/09/ArcPad10Synchronization1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>713</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在移动设备上，使用ArcPad可以创建、显示、查询、编辑数据。根据工作流模式的不同，我们可以采取不同的数据组织形式。</p>
+<p>首先，先了解下ArcPad 支持哪些数据格式：</p>
+<blockquote>
+<ol>
+<li>ShapeFile；</li>
+<li>ArcPad AXF 文件： 这个文件使用了SQL Server 精简版数据引擎，所以在上一篇中说部署时，需要安装SQL Server Compact for Windows Mobile；</li>
+<li>ArcPad Graphics layer：用XML写的文件，可以储存 annotation, points, lines, and polygons；</li>
+<li>ArcPad Photo layer：用XML写的文件，用于存储引用的照片信息，需要和照片文件放置在同个文件夹中；</li>
+<li>ArcPad StreetMap 文件</li>
+<li>Raster layers，具体支持以下格式:</li>
+</ol>
+<ul>
+<li>JPEG (*.jpg)</li>
+<li>JPEG 2000 (*.jp2)</li>
+<li>MrSID Generation Two, or MG2 (*.sid)</li>
+<li>MrSID Generation Three, or MG3 (*.sid)</li>
+<li>Portable Network Graphics, or PNG (*.png)</li>
+<li>Tagged Image File Format, or TIFF, including GeoTIFF (*.tif)</li>
+<li>Windows Bitmap (*.bmp)</li>
+<li>CADRG raster maps</li>
+</ul>
+</blockquote>
+<br>
+​	
+
+<ul>
+<li>如果想要进行“从0开始”的外业作业方式，可以在ArcPad 中创建快速工程（包含了点、线、面三个shapefile层）。</li>
+<li>如果已有 shapefile 数据，只需将这些数据拷贝到移动设备中，在ArcPad添加数据时引用即可。这与ArcGIS Desktop是一致的。</li>
+<li>如果已有本地Geodatabase数据，这时，也可以使用ArcPad数据管理工具条Check out数据，然后通过check in提交数据。</li>
+<li>如果是企业级的应用，可以与ArcGIS Server 、ArcGIS Desktop 联合使用，使用ArcPad加载已发布的服务，并且进行版本编辑，同步服务器数据。</li>
+</ul>
+<p>以上提到的四种应用的场景，前三种比较好理解，也易于操作。所以最后一种，作为本文的主要总结对象，网上ArcPad的资料相对较少，遂决定梳理一下这种情况下授权、管理、编辑数据的全过程，一共我会分两次与大家分享。</p>
+<p>​	</p>
+<h1 id="一、激活ArcPad-Data-Manager扩展"><a href="#一、激活ArcPad-Data-Manager扩展" class="headerlink" title="一、激活ArcPad Data Manager扩展"></a>一、激活ArcPad Data Manager扩展</h1><p>必须先了解的是ArcPad Data Manger工具条。这个工具条是在PC上安装ArcPad时，自动安装的一个ArcGIS Desktop的扩展。</p>
+<p>既然是扩展，当然首选需要激活，在ArcMap的菜单栏中，Custom – Extensions – 勾选 “ArcPad Data Manager”，如下图：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/04/09/ArcPad10Synchronization1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -557,255 +829,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2012/02/17/GodaddyEmailFailure/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/08/HowPointtoRasterWorks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/02/08/HowPointtoRasterWorks/" class="post-title-link" itemprop="url">Point to Raster 工作原理</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-02-08 08:58:00" itemprop="dateCreated datePublished" datetime="2012-02-08T08:58:00+08:00">2012-02-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/02/08/HowPointtoRasterWorks/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/08/HowPointtoRasterWorks/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>612</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>点在栅格中，表示为一个像元。通常，如果有两个或更多个点落入某像元范围内，ArcGIS 在为像元赋值时会随机选择这些点中的一个点。但在使用“Point to Raster”工具时，可选择像元值分配类型（频率最高、求和、平均值、标准差、最大值、最小值、范围、数目）。具有值的像元数有可能少于要转换的点数。</p>
-<p><img data-src="/images/blogImg/HowPointtoRasterWorks_Tool.gif"></p>
-<p><strong>工具说明：</strong></p>
-<p>A．可以将包含点或多点要素的任意要素类（地理数据库、shapefile 或 coverage）转换为栅格数据集。</p>
-<p>B．输入字段类型决定输出栅格的类型。如果字段是整型，则输出栅格也是整型；如果字段是浮点型，则输出栅格也是浮点型。</p>
-<p>C．如果输入字段包含字符串值，则输出栅格将包含一个整数值字段和一个字符串字段。</p>
-<p>D．Priority Field仅与像元分配类型的 MOST_FREQUENT 选项一起使用。如果一个像元中存在多个点，优先级高的值被采用，如果优先级相同的，属性值出现频率最高的被采用，如果优先级和出现频率全都相同，采取FID最小的。如下图情况所示：</p>
-<p><img data-src="/images/blogImg/HowPointtoRasterWorks_RasterValue.gif"></p>
-<p>若要素位于单元边界，则遵循<strong>边界规则</strong>。</p>
-<ul>
-<li>下图举例说明了要素恰巧落在单元边界上时适用的规则。</li>
-<li>如果要素落在单元边界上，则使用它上面的单元；如果它上面没有单元，则使用下面的单元。 </li>
-<li>如果左侧有一个单元，则使用此单元；如果没有，则使用右侧的单元。</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/02/08/HowPointtoRasterWorks/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/ArcGISforAutoCAD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/02/07/ArcGISforAutoCAD/" class="post-title-link" itemprop="url">ArcGIS for AutoCAD 小结</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-02-07 14:42:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:42:00+08:00">2012-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/02/07/ArcGISforAutoCAD/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/ArcGISforAutoCAD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>749</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="一、-简介"><a href="#一、-简介" class="headerlink" title="一、 简介"></a><strong>一、 简介</strong></h2><p> ArcGIS for AutoCAD是Esri提供的一个针对AutoCAD免费插件。此插件可以使AutoCAD作为ArcGIS Server的客户端加载服务；并且可以作为GIS结构编辑器来组织CAD数据，从而作为直接可用的GIS 要素类；给CAD数据定义坐标系，可以被ArcGIS产品识别。</p>
-<br>
-
-<h2 id="二、-系统要求"><a href="#二、-系统要求" class="headerlink" title="二、 系统要求"></a><strong>二、 系统要求</strong></h2><p>这里基于ArcGIS for AutoCAD 250版本。 </p>
-<p> <strong>版本:</strong> </p>
-<p>AutoCAD 2010&#x2F;2011, 32-bit or 64-bit</p>
-<p>AutoCAD Map 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
-<p>AutoCAD Civil 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
-<p><strong>操作系统:</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/02/07/ArcGISforAutoCAD/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
