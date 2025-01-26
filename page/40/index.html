@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,180 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/05/23/ChineseUTMZone/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/05/23/ChineseUTMZone/" class="post-title-link" itemprop="url">中国UTM分区</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-05-23 11:07:00" itemprop="dateCreated datePublished" datetime="2012-05-23T11:07:00+08:00">2012-05-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/05/23/ChineseUTMZone/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/05/23/ChineseUTMZone/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>359</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>其实UTM和高斯-克吕格投影投影仅仅相差一个参数。高斯-克吕格投影是“等角横切圆柱投影”，投影后中央经线保持长度不变，即比例系数为1；UTM投影是“等角横轴割圆柱投影”，圆柱割地球于南纬80度、北纬84度两条等高圈，投影后两条割线上没有变形，中央经线上长度比0.9996。从计算结果看，两者主要差别在比例因子上，高斯-克吕格投影中央经线上的比例系数为1， UTM投影为0.9996。</p>
+<p>高斯-克吕格投影自0度子午线起每隔经差6度自西向东分带，第1带的中央经度为3°；UTM投影自西经180°起每隔经差6度自西向东分带，第1带的中央经度为-177°，因此高斯-克吕格投影的第1带是UTM的第31带。此外，两投影的东伪偏移都是500公里，高斯-克吕格投影北伪偏移为零，UTM北半球投影北伪偏移为零，南半球则为10000公里。</p>
+<table>
+<thead>
+<tr>
+<th>带号</th>
+<th>中央经线</th>
+<th>经度范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>43</td>
+<td>75E</td>
+<td>72E-78E</td>
+</tr>
+<tr>
+<td>44</td>
+<td>81E</td>
+<td>78E-84E</td>
+</tr>
+<tr>
+<td>45</td>
+<td>87E</td>
+<td>84E-90E</td>
+</tr>
+<tr>
+<td>46</td>
+<td>93E</td>
+<td>90E-96E</td>
+</tr>
+<tr>
+<td>47</td>
+<td>99E</td>
+<td>96E-102E</td>
+</tr>
+<tr>
+<td>48</td>
+<td>105E</td>
+<td>102E-108E</td>
+</tr>
+<tr>
+<td>49</td>
+<td>111E</td>
+<td>108E-114E</td>
+</tr>
+<tr>
+<td>50</td>
+<td>117E</td>
+<td>114E-120E</td>
+</tr>
+<tr>
+<td>51</td>
+<td>123E</td>
+<td>120E-126E</td>
+</tr>
+<tr>
+<td>52</td>
+<td>129E</td>
+<td>126E-132E</td>
+</tr>
+<tr>
+<td>53</td>
+<td>135E</td>
+<td>132E-138E</td>
+</tr>
+</tbody></table>
+<p>补充，方便直观理解，看看中国境内的重要经纬线：</p>
+<p><img data-src="/images/blogImg/ChineseUTMZone_1.gif"><img data-src="/images/blogImg/ChineseUTMZone_2.gif"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -728,131 +902,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/17/GodaddyEmailFailure/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/02/17/GodaddyEmailFailure/" class="post-title-link" itemprop="url">解决Godaddy邮箱无法收信的问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-02-17 16:46:00" itemprop="dateCreated datePublished" datetime="2012-02-17T16:46:00+08:00">2012-02-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/02/17/GodaddyEmailFailure/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/17/GodaddyEmailFailure/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>380</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Godaddy上面有附送免费的邮箱，每申请一个域名，都可以获得赠送一个1G的邮箱，同时空间的话可以获得5个邮箱。这些邮箱可以按照我们自己的意愿来设置域名后缀，这对中小型的外贸企业来说是个不错的选择。尤其是中国大部分的邮件服务器垃圾邮件成灾的时候！ </p>
-<p>我们使用Godaddy附送的邮箱可以尽可能的避免我们的邮件被归类到垃圾邮件！（虽然Godaddy的免费邮箱速度不快，面板也不是太方便。但是结合foxmail可以很好的使用！） </p>
-<p>上次在设置Godaddy邮箱的时候遇到了邮箱可以发送邮件，但是无法收邮件的问题，下面是解决方法，希望可以帮到大家！ </p>
-<p>Godaddy域名附赠邮箱能发送邮件但无法接收邮件解决方法如下： </p>
-<p>1.登录你的Godaddy帐号. </p>
-<p>2.点击 My Account. </p>
-<p>3.点击左侧栏中的 Free Products </p>
-<p>4.在右侧栏中的Products列表点击 Email Account List. </p>
-<p>5.在出现的邮件管理页面中选择Free email addresses for yourdomain.com(yourdomain.com是你的域名)，然后点击右边的 Manage Account. </p>
-<p>6.选择 Domains 标签 </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2012/02/17/GodaddyEmailFailure/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/39/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/41/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/39/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/page/41/">41</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/41/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,128 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2020/03/29/HmSDK_VectorTile-MFs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/03/29/HmSDK_VectorTile-MFs/" class="post-title-link" itemprop="url">HERE mSDK - Vector Tile / Map Feedback</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-03-29 10:13:08" itemprop="dateCreated datePublished" datetime="2020-03-29T10:13:08+08:00">2020-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2020/03/29/HmSDK_VectorTile-MFs/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/03/29/HmSDK_VectorTile-MFs/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a href="http://kikitamap.com/2020/03/11/HmSDK_MapRendering/"><strong>上一篇</strong></a>，我们一起结合  Interactive Maps 了解了HERE Map Service 的地图渲染样式， 在此之外，HERE Mobile SDK 向开发者提供的在线地图产品中，还有 Vector Tile 和 Map Feedback service 值得拥有。</p>
+<p><em>PS：除了SDK产品之外，<a target="_blank" rel="noopener" href="https://developer.here.com/documentation#maps_section"><strong>HERE 在线地图产品</strong></a>中的 RESTful API 产品包括：Vector Tile，Image Map，Map Tile，Weather，Map Feeddback。</em></p>
+<h2 id="Vector-Tile"><a href="#Vector-Tile" class="headerlink" title="Vector Tile"></a>Vector Tile</h2><p>Vector Tile 在 HERE 产品家族中是新进一员，截至此文章的发布日期，仅在 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/android-sdk/dev_guide/topics/custom-map-styles-lite.html"><strong>mSDK Lite 版本</strong></a> 中有支持，目前为 Lite Edition 4.2  。我们静待 mSDK Premium Edition 的 4.x 版本吧，快了。</p>
+<p>这使用这个服务之前，可能我首先需要回答大家的十万个为什么。</p>
+<p>例如，什么是Vector Tile？为什么使用 Vector Tile ？</p>
+<p>Vector Tile 是相较于传统的 raster tile 而言的，可能很多读者会问，地图数据本身不就是vector data 吗？为什么早期的地图服务反而会是 raster tile ？哪种好？ 我该用什么？</p>
+<p>在传统的地图服务生产过程中，后台地图数据是专业复杂的数据格式（如 Oracle Spatial，shapefile，FileGDB，等一切地理数据格式），需要专业的重地图数据编辑器才能读写（如商用专业的ArcGIS Desktop&#x2F;Pro，免费的QGIS等）。当我们希望通过B&#x2F;S服务的形式提供在线地图时，对浏览器要求不高、支持友好的png，jpg，tiff等图片就成了解决方案。 将地图在服务器端按预定义的切片结构&#x2F;caching scheme 进行预渲染，然后，进行大量切片缓存工作。 在浏览器请求地图服务时，推送不同层级的图片（Raster Tile）就成了传统地图服务器的日常，其性能的保障都是依赖分布式高可用的服务器配置。例如，HERE 提供覆盖全球的地图服务（在Developer Portal可以查看具体的 <a target="_blank" rel="noopener" href="https://developer.here.com/documentation/map-tile/dev_guide/topics/coverage-map.html"><strong>map coverage level</strong></a>，就是由部署在AWS全球6个数据中心上支持的。 </p>
+<p>自 <a target="_blank" rel="noopener" href="https://github.com/mapbox/vector-tile-spec/"><strong>Mapbox</strong></a> 提出更智慧的 vector tile ，这种切片格式早已备受各大GIS、LBS厂商的青睐。vector tile 采用了与 raster tile 类似的 caching scheme，只是每片tile的内容从raster 变成了vector。 我们想象一下，如果表示几条路的一片512px×512px 的tile，用raster格式，那就需要几个512×512 的矩阵表示，而用vector格式，只需要包含数对坐标和位移的串表示。 因此，vector tile 在尺寸上有明显优势，从而传输性能就高了。这是因为这个特性，vector tile 允许用户在客户端自定义 vector style ，例如路或点状地物的颜色和符号， 不像 raster tile 是预渲染的镜像，已经是静态结果，渲染样式不能被客户端修改。</p>
+<p>如果提到vector 和 raster 哪个好？ 我想答案可能不是绝对唯一的。如果从传输性能和客户端简单符号的自定义的角度，一定是vector tile更优； 但如果从地图渲染丰富度、复杂度的支持角度，raster tile 还是占有一席之地。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/29/HmSDK_VectorTile-MFs/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -689,140 +811,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/06/27/wlanNetworks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/06/27/wlanNetworks/" class="post-title-link" itemprop="url">WiFi Network Positioning</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2019-06-27 14:17:00" itemprop="dateCreated datePublished" datetime="2019-06-27T14:17:00+08:00">2019-06-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/06/27/wlanNetworks/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/27/wlanNetworks/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>639</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在设备开启WiFi之后，会对周边 WiFi Access Point (AP)进行扫描，并将这些可见WiFi名称推给用户供选择。这是几乎是我们的PC和手机的日常。 除了连接WiFi登录Internet 之外，实际上，我们还可以通过 WiFi AP进行定位。</p>
-<p>定位和地图一直是紧密联系的，无论是面向消费者的第一人称应用，还是关于管理者的追踪需求。各大LBS厂商，早就提供了各种定位功能，尤其HERE，Positioning 历史可以追溯到 Nokia年代，包括基于 GPS，WiFi network，Cell Signal，Bluetooth 等各种信号源的定位能力。</p>
-<br>
-
-<h1 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h1><ul>
-<li><p>除了Mobile Hotspot、WiFi Egg，大多数情况下 AP不会经常的移动， 这就为WiFi定位的基础参照位置信息；</p>
-</li>
-<li><p>理论上，每一个 AP 都有全球唯一标识符— mac地址；当然也不排除有重复mac的问题，至于如何去重和更新后端数据库就是 another story，这里不展开了；</p>
-</li>
-<li><p>设备WiFi扫描到AP即可同时获取AP的信息，信号的强度，mac地址（BSSID）等，无论是否连接上；</p>
-</li>
-<li><p>根据WiFi信号强度衰减和距离的函数，可以判断设备离AP的距离；如果多个AP存在，那么这多个圆相交的区域就可以判定设备的位置；</p>
-</li>
-</ul>
-<p>从上面的原理可以看出，AP的位置越准确，设备扫描到的AP越多，那么设备的位置越准确。</p>
-<br>
-
-<h1 id="Quick-Testing"><a href="#Quick-Testing" class="headerlink" title="Quick Testing"></a>Quick Testing</h1><p>做个小测试，帮助快速理解。</p>
-<p>假设已经拥有了 HERE Developer 账号和密钥，如果没有，这里 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vP2NyZWF0ZT1GcmVlbWl1bS1CYXNpYyZrZWVwU3RhdGU9dHJ1ZSZzdGVwPWFjY291bnQ=">免费注册<i class="fa fa-external-link-alt"></i></span>。 </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/06/27/wlanNetworks/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,138 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/06/27/wlanNetworks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/06/27/wlanNetworks/" class="post-title-link" itemprop="url">WiFi Network Positioning</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-27 14:17:00" itemprop="dateCreated datePublished" datetime="2019-06-27T14:17:00+08:00">2019-06-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/06/27/wlanNetworks/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/27/wlanNetworks/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>639</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在设备开启WiFi之后，会对周边 WiFi Access Point (AP)进行扫描，并将这些可见WiFi名称推给用户供选择。这是几乎是我们的PC和手机的日常。 除了连接WiFi登录Internet 之外，实际上，我们还可以通过 WiFi AP进行定位。</p>
+<p>定位和地图一直是紧密联系的，无论是面向消费者的第一人称应用，还是关于管理者的追踪需求。各大LBS厂商，早就提供了各种定位功能，尤其HERE，Positioning 历史可以追溯到 Nokia年代，包括基于 GPS，WiFi network，Cell Signal，Bluetooth 等各种信号源的定位能力。</p>
+<br>
+
+<h1 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h1><ul>
+<li><p>除了Mobile Hotspot、WiFi Egg，大多数情况下 AP不会经常的移动， 这就为WiFi定位的基础参照位置信息；</p>
+</li>
+<li><p>理论上，每一个 AP 都有全球唯一标识符— mac地址；当然也不排除有重复mac的问题，至于如何去重和更新后端数据库就是 another story，这里不展开了；</p>
+</li>
+<li><p>设备WiFi扫描到AP即可同时获取AP的信息，信号的强度，mac地址（BSSID）等，无论是否连接上；</p>
+</li>
+<li><p>根据WiFi信号强度衰减和距离的函数，可以判断设备离AP的距离；如果多个AP存在，那么这多个圆相交的区域就可以判定设备的位置；</p>
+</li>
+</ul>
+<p>从上面的原理可以看出，AP的位置越准确，设备扫描到的AP越多，那么设备的位置越准确。</p>
+<br>
+
+<h1 id="Quick-Testing"><a href="#Quick-Testing" class="headerlink" title="Quick Testing"></a>Quick Testing</h1><p>做个小测试，帮助快速理解。</p>
+<p>假设已经拥有了 HERE Developer 账号和密钥，如果没有，这里 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vP2NyZWF0ZT1GcmVlbWl1bS1CYXNpYyZrZWVwU3RhdGU9dHJ1ZSZzdGVwPWFjY291bnQ=">免费注册<i class="fa fa-external-link-alt"></i></span>。 </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/27/wlanNetworks/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -702,130 +834,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2019/03/05/Icecream_Part1_Basemap_Setup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/03/05/Icecream_Part1_Basemap_Setup/" class="post-title-link" itemprop="url">HERE MAP API - Part1 Basemap Setup</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2019-03-05 15:20:58" itemprop="dateCreated datePublished" datetime="2019-03-05T15:20:58+08:00">2019-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/03/05/Icecream_Part1_Basemap_Setup/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/05/Icecream_Part1_Basemap_Setup/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>612</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Quick Start for HERE Map Javascript API</p>
-<p>HERE 官网有一个很有趣的Tutorial， <strong>Who wants ice cream !?</strong> </p>
-<p>如果你注册了HERE Developer 账号，很可能会被推送到这个教程的小广告。</p>
-<p>假设你是冰激凌店的老板，那么用HERE Map 做个交互式的地图小网页，边测试边记录。</p>
-<p><em><strong>Let’s get our hands dirty……</strong></em></p>
-<h3 id="1-准备资源"><a href="#1-准备资源" class="headerlink" title="1. 准备资源"></a>1. 准备资源</h3><p>准备如下结构的目录和文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">WhoWantsIceCream</span><br><span class="line">|--base_map_set_up.html</span><br><span class="line">|--scripts</span><br><span class="line">	|--app.js</span><br><span class="line">|--images</span><br><span class="line">	|--icecream.svg</span><br><span class="line">|--styles</span><br><span class="line">	|--main.css</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-设计页面"><a href="#2-设计页面" class="headerlink" title="2.  设计页面"></a>2.  设计页面</h3><p>HTML 的 <code>head</code> 中引用 HERE Map JS API 以及必要的 CSS；</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/03/05/Icecream_Part1_Basemap_Setup/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

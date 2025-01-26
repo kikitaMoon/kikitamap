@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,129 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/GeodatabaseBasic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2012/02/07/GeodatabaseBasic/" class="post-title-link" itemprop="url">Geodatabase之基础</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2012-02-07 14:25:00" itemprop="dateCreated datePublished" datetime="2012-02-07T14:25:00+08:00">2012-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2012/02/07/GeodatabaseBasic/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/GeodatabaseBasic/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>583</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>2 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Geodatabase是用来表达和管理地理信息的复杂数据模型，是ArcGIS的主要存储数据方式，主要存储了 featureclasses、 rasterdatasets、attributes、具有行为的高级GIS数据对象、 管理空间完整性的规则、要素栅格属性关系工具。</p>
+<p><strong>一、Geodatabase 的种类：</strong></p>
+<p>就其种类呢，无非是三种：File Geodatabase，PersonalGeodatabase，ArcSDEGeodatabase。 </p>
+<p>1、 FileGeodatabase：以文件夹形式存储。每个Dataset作为一个文件存储，最大可达1T。对于PGDB更推荐FGDB。单用户，同一个Dataset 、独立的featureclass或者table，并发只能有一人写操作，可以多人读操作。支持跨平台。</p>
+<p>2、PersonalGeodatabase：所有的Dataset都存储在MicrosoftAccess数据文件中,最大大小不超过2 GB。单用户，一个人写多人读。仅支持Windows。</p>
+<p>3、ArcSDEGeodatabase：储存在关系数据库中，可使用 Oracle,MicrosoftSQL Server, IBM DB2, IBM Informix,PostgreSQL。这些多用户的数据库要求使用ArcSDE，不限制大小和用户的数量。平台支持：Windows, UNIX,Linux。</p>
+<p><strong>二、Geodatabase中的Dateset</strong></p>
+<p>Geodatabase 中包含基本的dataset，包括：feature classes、 rasterdatasets、attributes。还包含高级地理数据类型：coordinate systems, coordinateresolution, feature classes,topologies, networks, raster catalogs,relationships, domains。</p>
+<p><strong>1、Table</strong></p>
+<p>用于存储属性等。字段类型包含：Numbers（长整型、短整型、单精度、双精度）、Text、Date（日期时间型）、BLOBs（二进制大对象，例如Symbol、CAD几何要素）、GlobalID（全局标识符）、XML。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2012/02/07/GeodatabaseBasic/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -710,125 +833,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2012/02/07/importKMLKMZ/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2012/02/07/importKMLKMZ/" class="post-title-link" itemprop="url">KML/KMZ到ArcGIS完全转化</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2012-02-07 13:50:13" itemprop="dateCreated datePublished" datetime="2012-02-07T13:50:13+08:00">2012-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2012/02/07/importKMLKMZ/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2012/02/07/importKMLKMZ/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>250</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在ArcGIS中，做KML（Keyhole Markup Language）的导入，我们可以使用两种方法：一是ArcToolbox中的转换工具；二是数据互操作扩展。本文将以ArcToolbox中的工具为例来导入KML或KMZ。当然如果没有数据互操作扩展的用户，第一种方法也是首选。 在ArcToolbox中有转换工具（Conversion Tools）下的由KML转出（From KML）下的KML转图层（KML to Layer）。 </p>
-<p><img data-src="/images/blogImg/importKMLKMZ_Toolset.png"></p>
-<p>此工具将会把KML或KMZ文件的数据，转换到FileGDB中的数据集中，数据的展现符号化等信息存储在同名的图层文件（.lyr）中。 </p>
-<p><img data-src="/images/blogImg/importKMLKMZ_Tool.png"></p>
-<p>注意：此工具中，仅需要选择一个目的文件夹，GDB和lyr文件都会自行创建。 其实到这里，KML文件中包含的信息已经进入ArcGIS的怀抱了。 如果有特殊需要，就Export下，可以得到shape。 </p>
-<p><img data-src="/images/blogImg/importKMLKMZ_Shapefile.gif"></p>
-<p>另外，ArcGIS 提供了导出成KML、KMZ的工具：       </p>
-<ul>
-<li>图层转KML（Layer to KML）       </li>
-<li>地图转KML（Map to KML）</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/41/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><span class="page-number current">42</span>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/41/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/43/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

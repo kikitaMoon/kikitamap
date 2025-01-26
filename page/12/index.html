@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,131 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2017/02/07/VSpublishFailure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2017/02/07/VSpublishFailure/" class="post-title-link" itemprop="url">VS部署应用程序失败'找不到SignTool.exe'</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-02-07 09:08:44" itemprop="dateCreated datePublished" datetime="2017-02-07T09:08:44+08:00">2017-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2017/02/07/VSpublishFailure/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/07/VSpublishFailure/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>180</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在使用 Visual Studio 2015 部署应用的时候遇到一个问题，在进行publish之后又提示错误：“An error occurred while signing: SignTool.exe not found.”。</p>
+<p><img data-src="/images/blogImg/VSpublishFailure_Error.jpg"></p>
+<p>查了下官方的技术文档，解决方法如下：</p>
+<p>先确认下自己的机器是否安装了 signtool.exe, 如果安装了则位于：</p>
+<pre><code>`%programfiles(x86)%\Microsoft SDKs\Windows\v7.0A\Bin   for x64 system`
+`%programfiles%\Microsoft SDKs\Windows\v7.0A\Bin        for x86 system`
+</code></pre>
+<p>signtool.exe 是 Windows平台SDK的一部分，如果在上面的路径中没有发现这个文件，那就需要安装下。 <span class="exturl" data-url="aHR0cHM6Ly9tc2RuLm1pY3Jvc29mdC5jb20vZW4tdXMvbGlicmFyeS84czliOXlhei5hc3B4">signtool.exe 是什么？<i class="fa fa-external-link-alt"></i></span></p>
+<p>方法很简单，重新执行VS的安装程序，选择Custom模式，补充安装 <code>ClickOnce Publishing Tools</code> 。</p>
+<p><img data-src="/images/blogImg/VSpublishFailure_Setup.png"></p>
+<p>安装完成后，问题解决。</p>
+<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/02/07/VSpublishFailure/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -675,133 +800,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/10/17/UsingArcGISPythonAPI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/10/17/UsingArcGISPythonAPI/" class="post-title-link" itemprop="url">部署 ArcGIS Python API</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2016-10-17 08:03:35" itemprop="dateCreated datePublished" datetime="2016-10-17T08:03:35+08:00">2016-10-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2016/10/17/UsingArcGISPythonAPI/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/17/UsingArcGISPythonAPI/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>512</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>UPDATE 2017-1-3  ArcGIS Python API V1.0</p>
-</blockquote>
-<h1 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h1><h2 id="1-获取并安装Conda"><a href="#1-获取并安装Conda" class="headerlink" title="1 获取并安装Conda"></a>1 获取并安装Conda</h2><p>下载安装 Anaconda for Python（python 3.5），<span class="exturl" data-url="aHR0cHM6Ly93d3cuY29udGludXVtLmlvL2Rvd25sb2Fkcw==">下载地址<i class="fa fa-external-link-alt"></i></span>。 如果机器上已经安装过ArcGIS Pro 1.3及以上版本，那么Conda已经被自动安装了，直接执行“Python Command Prompt”即可继续下一步。</p>
-<p><em>就更新这天的测试结果看，ArcGIS Pro 1.4 Alpha4 版本自带的conda环境为：4.0.11， 手动可以下载到的最高版本为 4.2.0.</em></p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[arcgispro-py3] C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3&gt;conda info</span><br><span class="line">Current conda install:</span><br><span class="line"></span><br><span class="line">             platform : win-64</span><br><span class="line">        conda version : 4.0.11</span><br><span class="line">  conda-build version : not installed</span><br><span class="line">       python version : 3.5.2.final.0</span><br><span class="line">     requests version : 2.11.1</span><br><span class="line">     root environment : C:\Program Files\ArcGIS\Pro\bin\Python  (writable)</span><br><span class="line">  default environment : C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3</span><br><span class="line">     envs directories : C:\Program Files\ArcGIS\Pro\bin\Python\envs</span><br><span class="line">        package cache : C:\Program Files\ArcGIS\Pro\bin\Python\pkgs</span><br><span class="line">         channel URLs : https://conda.anaconda.org/esri/win-64/</span><br><span class="line">                        https://conda.anaconda.org/esri/noarch/</span><br><span class="line">                        https://repo.continuum.io/pkgs/free/win-64/</span><br><span class="line">                        https://repo.continuum.io/pkgs/free/noarch/</span><br><span class="line">                        https://repo.continuum.io/pkgs/pro/win-64/</span><br><span class="line">                        https://repo.continuum.io/pkgs/pro/noarch/</span><br><span class="line">          config file : C:\Program Files\ArcGIS\Pro\bin\Python\.condarc</span><br><span class="line">    is foreign system : False</span><br></pre></td></tr></table></figure>
-
-<br>
-
-
-<h2 id="2-安装arcgis包"><a href="#2-安装arcgis包" class="headerlink" title="2 安装arcgis包"></a>2 安装arcgis包</h2><p>在Python Command Prompt，执行如下命令下载安装 ArcGIS Python API 到Conda环境。</p>
-<p><code>conda install -c esri arcgis</code></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/10/17/UsingArcGISPythonAPI/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/13/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/13/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

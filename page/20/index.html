@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,133 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/06/10/DeployAGSLMonLinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/06/10/DeployAGSLMonLinux/" class="post-title-link" itemprop="url">在Linux上安装ArcGIS许可管理器备忘录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-06-10 13:00:00" itemprop="dateCreated datePublished" datetime="2015-06-10T13:00:00+08:00">2015-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/06/10/DeployAGSLMonLinux/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/10/DeployAGSLMonLinux/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>830</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>这篇文章中使用的环境信息：</p>
+<p>Red Hat Enterprise Linux Server release 6.4<br>Red Hat Enterprise Linux Server release 5.8<br>ArcGIS License Manager 10.2.2<br>Xmanager 5</p>
+</blockquote>
+<br>
+
+<h4 id="★-安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点-这里-。"><a href="#★-安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点-这里-。" class="headerlink" title="**★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 这里**。"></a>**★ 安装之前一定要了解系统要求，这一步很重要，这里不啰嗦，详情点 <span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4yLyMvQXJjR0lTXzEwXzJfZm9yX0Rlc2t0b3AvMDE1MTAwMDAwMDAyMDAwMDAwLw==">这里**<i class="fa fa-external-link-alt"></i></span>。</h4><br>
+
+
+<h1 id="1-准备安装文件"><a href="#1-准备安装文件" class="headerlink" title="1. 准备安装文件"></a>1. 准备安装文件</h1><p>我的Linux服务器是虚拟机，没有光驱，选择ftp上传安装文件。一般在各种linux的发行版中，默认带有的ftp软件是vsftp。</p>
+<p>检查vsftpd软件是否安装， <strong># rpm -qa|grep vsftp</strong><br>启动 vsftp 服务，**# service vsftpd start**</p>
+<p><img data-src="/images/blogImg/DeployAGSLMonLinux_vsftp.png"></p>
+<p>使用ftp客户端上传 ArcGIS License Manager （LM）安装包。如果上传的 iso 镜像文件之后使用 mount 命令挂载，其实也可以仅将光盘中 LicenseManager 目录下的 linux 文件夹上传，此文件夹为 LM 的Linux安装包。</p>
+<p>包含如下几个文件（夹）：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/06/10/DeployAGSLMonLinux/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -711,133 +838,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/05/08/LackofPackonLinux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/05/08/LackofPackonLinux/" class="post-title-link" itemprop="url">解决Linux系统中缺少Xvfb包的问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-05-08 21:19:05" itemprop="dateCreated datePublished" datetime="2015-05-08T21:19:05+08:00">2015-05-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/05/08/LackofPackonLinux/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/08/LackofPackonLinux/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>231</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>上一篇文中写了在 Linux上安装 ArcGIS Server前的准备工作，最后一步是环境检测，只有所有项都通过才可以安装 ArcGIS Server。</p>
-<p>不幸的是，第一次其实没有通过环境监测，提示系统中缺少了Xvfb包，具体的检测结果如下：</p>
-<p><img data-src="/images/blogImg/LackofPackonLinux_Xvfb.png"></p>
-<p>检测报告中提示了解决方法，参考技术文章 <span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4va25vd2xlZGdlYmFzZS90ZWNoYXJ0aWNsZXMvZGV0YWlsLzQwODYw">40860<i class="fa fa-external-link-alt"></i></span>：</p>
-<p>但是这篇文章只告诉我们缺包了，需要安装一个Xvfb包，没有说明包的获取与安装过程等，下面我就bala一下喽。</p>
-<br>
-<br>
-
-<h1 id="1-下载Xvfb包到主机"><a href="#1-下载Xvfb包到主机" class="headerlink" title="1 . 下载Xvfb包到主机"></a>1 . 下载Xvfb包到主机</h1><p>用 <strong>wget</strong> 命令下载xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm包到主机。</p>
-<blockquote>
-<p><strong>wget <span class="exturl" data-url="aHR0cDovL3ZhdWx0LmNlbnRvcy5vcmcvNi4yL29zL3g4Nl82NC9QYWNrYWdlcy94b3JnLXgxMS1zZXJ2ZXItWHZmYi0xLjEwLjQtNi5lbDYueDg2XzY0LnJwbQ==">http://vault.centos.org/6.2/os/x86_64/Packages/xorg-x11-server-Xvfb-1.10.4-6.el6.x86_64.rpm<i class="fa fa-external-link-alt"></i></span></strong></p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/05/08/LackofPackonLinux/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/21/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/21/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,130 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/13/shapefileCodePage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/02/13/shapefileCodePage/" class="post-title-link" itemprop="url">shapefile与字符集编码设置</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-02-13 13:38:36" itemprop="dateCreated datePublished" datetime="2014-02-13T13:38:36+08:00">2014-02-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/02/13/shapefileCodePage/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/02/13/shapefileCodePage/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>940</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 ArcGIS Desktop&nbsp;(ArcMap, ArcCatalog, and ArcToolbox)中，有编码页转换功能（CODE PAGE CONVERSION），可以读写多种字符编码的 shapefile 和 dBASE 表。 在系统注册表中，编码页转换功能（CODE PAGE CONVERSION）命名为 ‘dbfDefault’，可以修改这个值。 </p>
+<p>在&nbsp;ArcGIS 10.2.1 之前，可以直接按照 ‘dbfDefault’ 设置方法 到注册表中修改。 </p>
+<p>在&nbsp;ArcGIS Desktop 10.2.1 以及以后的版本，shapefile (.DBF) 的编码页的默认设置为&nbsp;UTF-8 (UNICODE) 。</p>
+<br>
+
+<hr>
+<p>更新内容（2014.8.1）</p>
+<p>ArcGIS Desktop 10.2.1 和 10.2.2 版本下需要修改编码行为，先打补丁，然后再按照 <strong>‘dbfDefault’ 设置方法</strong> 到注册表中修改。**</p>
+<p><strong>10.2.1</strong>：  <span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE2MC9tZXRhaWQvMjA5MA==">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/160/metaid/2090<i class="fa fa-external-link-alt"></i></span> </p>
+<p><strong>10.2.2</strong>：  <span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzY3L21ldGFpZC8yMDg5">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/67/metaid/2089<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/02/13/shapefileCodePage/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -705,131 +829,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/01/19/GeographicTransformation2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/01/19/GeographicTransformation2/" class="post-title-link" itemprop="url">ArcGIS中的地理坐标系转换方法参数（二）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-01-19 10:37:38" itemprop="dateCreated datePublished" datetime="2014-01-19T10:37:38+08:00">2014-01-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/01/19/GeographicTransformation2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/01/19/GeographicTransformation2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>899</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p> 上篇博客说的是 Project 工具中 Geographic Transformation 参数什么情况下是必填的。</p>
-<p> 另外，Project 是矢量数据的坐标系变换工具，如果数据源是栅格数据，需要使用 Project Rater 工具。</p>
-<p>&nbsp;这篇博客主要写一下，有关自定义地理变换方法。</p>
-<p>ArcGIS 中提供地理变换方法主要有这几种：Geocentric_Translation、Molodensky、Molodensky_Abridged、Position_Vector、Coordinate_Frame、Molodensky_Badekas、NADCON、HARN、NTV2、Longitude_Rotation、Unit_Change 和 Geographic_2D_Offset。可使用“创建自定义地理变换（Create Custom Geographic Transformation）”工具来创建转换方法。地理坐标系包含了基于椭圆体的基准面，因此地理变换会更改基础椭圆体。在基准面间进行变换的方法很多，这些方法具有不同的精度和范围。</p>
-<p>地理变换是针对地理坐标系的，也就是经纬度坐标进行转换，如果输入数据的坐标系中还包含了平面坐标系（投影），在使用 Project 工具的过程中会自动做相应的投影变换，转到地理坐标系，地理变换后，如果需要再转为相应的投影坐标系。</p>
-<p><img data-src="/images/blogImg/GeographicTransformation2_Method.png"></p>
-<p><strong>PS：</strong></p>
-<p>所有的自定义地理变换文件都将存储为扩展名为 .gtf 的文件，并存储在用户 Application Data 文件夹下的 <code>ESRI\&amp;lt;ArcGIS product&amp;gt;\ArcToolbox\CustomTransformations</code> 文件夹中。自定义变换文件不能进行编辑。它们为二进制文件，用来储存版本和字符串长度信息，如果在ArcGIS之外进行自行编辑，可能会被损坏。</p>
-<p>下面我们来看看常用的转换方法吧，帮助中有介绍，我下面来个精简整理版的：</p>
-<p><strong>1）Geocentric_Translation</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/01/19/GeographicTransformation2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/28/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/30/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/28/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/30/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">211</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -203,6 +203,143 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/20/RegressionAnalysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/03/20/RegressionAnalysis/" class="post-title-link" itemprop="url">空间统计（四）回归分析探索</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-03-20 12:01:54" itemprop="dateCreated datePublished" datetime="2015-03-20T12:01:54+08:00">2015-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/03/20/RegressionAnalysis/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/03/20/RegressionAnalysis/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在上一篇文章中，我提到的这些工具都是用于研究数据有什么样的空间模式，哪里聚类？哪里是热点？哪里有冷点？哪里有异常值？等等，总之研究的是“生米煮成熟饭”的结果状态。</p>
+<p>而“空间关系建模”工具箱中的工具，更倾向于研究 Why？ 例如，为什么会出现这种情况？ 或者说什么导致了这种情况。这时我们就可以使用工具进行回归分析，如：普通最小二成法（OLS） 和 地理加权回归（GWR）。</p>
+<br>
+<br>
+
+
+<p>你可能会问，<strong>为什么要进行回归分析？</strong>帮助文档中回归分析基础这一章写的最好，比较贴近读者，而不是冰冷的字典，我把回归分析的应用示例搬过来帮助理解，以下内容整理自<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjL25hLzAwNXAwMDAwMDAyMzAwMDAwMC8=">帮助文档<i class="fa fa-external-link-alt"></i></span>。</p>
+<ol>
+<li><p>对某一现象建模，以更好地了解该现象并有可能基于对该现象的了解来影响政策的制定以及决定采取何种相应措施。基本目标是测量一个或多个变量的变化对另一变量变化的影响程度。示例：了解某些特定濒危鸟类的主要栖息地特征（例如：降水、食物源、植被、天敌），以协助通过立法来保护该物种。（<strong>更好地了解</strong>）</p>
+</li>
+<li><p>对某种现象建模以预测其他地点或其他时间的数值。基本目标是构建一个持续、准确的预测模型。示例：如果已知人口增长情况和典型的天气状况，那么明年的用电量将会是多少？（ <strong>建模预测</strong>）</p>
+</li>
+<li><p>您还可以使用回归分析来深入探索某些假设情况。假设您正在对住宅区的犯罪活动进行建模，以更好地了解犯罪活动并希望实施可能阻止犯罪活动的策略。开始分析时，您很可能有很多问题或想要检验的假设情况：（ <strong>探索检验假设</strong>）</p>
+</li>
+</ol>
+<ul>
+<li>“破窗理论”表明公共财产的破坏（涂鸦、被毁坏的建筑物等）可招致其他犯罪行为。破坏财产行为与入室盗窃之间是否存在正关系？</li>
+<li>非法使用毒品与盗窃行为之间存在某种关系吗（吸毒成瘾的人有可能通过偷取财物来维持他们吸毒的习惯吗）？</li>
+<li>窃贼恃强凌弱吗？老人或女性户主家庭居多的住宅区内发生盗窃的可能性更高吗？</li>
+<li>是住在富有的小区内更容易遭受盗窃，还是住在贫穷的小区内更容易遭受盗窃？<br>您可以通过回归分析来探索这些关系并解答您的问题。</li>
+</ul>
+<p>总之，通过回归分析，我们可以对空间关系进行建模、检查和探究；回归分析还可帮助我们解释所观测到的空间模式背后的诸多因素。</p>
+<p>在所有的回归方法中，OLS 最为著名。而且，它也是所有空间回归分析的正确起点。它可以尝试了解或预测（早逝&#x2F;降雨）的变量或过程提供一个全局模型；而且，它可创建一个回归方程来表示该过程。地理加权回归 (GWR) 是若干空间回归方法中的一种，被越来越多地用于地理及其他学科。通过对数据集中的各要素拟合回归方程，GWR 为您要尝试了解&#x2F;预测的变量或过程提供了一个局部模型。若使用得当，这些方法可提供强大且可靠的统计数据，以对线性关系进行检查和估计。</p>
+<p>例如如下是两个变量之间存在正、负关系以及无关系的情况：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/20/RegressionAnalysis/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -704,132 +841,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/02/26/MeasuringGeographicDistributions/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/02/26/MeasuringGeographicDistributions/" class="post-title-link" itemprop="url">空间统计（一）度量地理分布</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-02-26 17:50:36" itemprop="dateCreated datePublished" datetime="2015-02-26T17:50:36+08:00">2015-02-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/02/26/MeasuringGeographicDistributions/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/02/26/MeasuringGeographicDistributions/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>2.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>9 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><em>Updated: 2017-10-11</em></p>
-<br>
-
-<p>ArcGIS Desktop 中有一个包含了一系列用于研究空间分布&#x2F;spatial distribution、空间模式&#x2F;spatial pattern、空间关系&#x2F;spatial relationship的统计的工具箱 —— Spatial Statistics Toolbox。  这与普通的统计方法不同，空间统计将许多地理空间的概念融入到统计算法逻辑中，例如：邻域&#x2F;proximity，面积&#x2F;area，连通性&#x2F;connectivity等。</p>
-<p>本篇总结一下有关 度量地理分布&#x2F;Measuring Geographic Distributions工具集中提供的功能。</p>
-<p><img data-src="/images/blogImg/MeasuringGeographicDistributions_Toolset.png"></p>
-<p>这些工具用于研究要素的空间分布特征，下面一个一个来看：</p>
-<br>
-
-<h1 id="Central-Feature"><a href="#Central-Feature" class="headerlink" title="Central Feature"></a>Central Feature</h1><p>中心要素（Central Feature）这个工具可用于寻找一组要素中处于最中心位置的要素，这一组要素可以是点、线、面。<br>算法：测量每个要素与其他要素之间两两的距离，然后求和，和值最小的要素即判定为central feature。</p>
-<p>可解决的问题，例如：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/02/26/MeasuringGeographicDistributions/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/21/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/23/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/21/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/23/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
