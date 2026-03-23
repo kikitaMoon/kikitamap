@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">212</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,116 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/08/31/ArcGISProPython/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/08/31/ArcGISProPython/" class="post-title-link" itemprop="url">在ArcGIS Pro 1.3之外运行arcpy独立脚本</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-08-31 09:06:23" itemprop="dateCreated datePublished" datetime="2016-08-31T09:06:23+08:00">2016-08-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/08/31/ArcGISProPython/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/08/31/ArcGISProPython/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>ArcGIS Pro像ArcMap一样，其中也嵌入了Python。 不同在于ArcGIS Pro采用了python较新的版本3.4，ArcMap仍然沿用2.x版本。 ArcGIS Pro 1.3版本开始Python环境有点小变化，为了方便包管理esri开始采用Conda。 并且不像开始 ArcGIS Pro 1.1，1.2 版本，需要单独安装Python for ArcGIS Pro，在1.3版本python包随ArcGIS Pro一同自行安装。</p>
+<p>文档的原文摘过来能更好的理解esri采用Conda的意图：</p>
+<blockquote>
+<p>Python has a rich ecosystem of preexisting packages that can be leveraged within ArcGIS, but managing which packages are installed on a system can be a complex and time-consuming task, especially when working on multiple projects or trying to share code with others.</p>
+<p>To leverage this versatility, the Python community has created methods to easily create projects in multiple versions of Python and simplifies the process of installing nearly all publicly available Python packages. Conda is the most popular and widely used Python package manager.</p>
+</blockquote>
+<p>看到这里，你也也许和我有一样的疑问，<strong>啥是Conda？</strong> 点 <a target="_blank" rel="noopener" href="http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm"><strong>这里</strong></a> 。这页文档是esri刚更新的内容，需要在英文语言版本文档中才能找到。</p>
+<br>
+
+<h1 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h1><p>这些改变，对于习惯在 ArcGIS Pro 内部的脚本命令行中执行脚本的用户并没有多大影响。 但是如果已经习惯了在ArcGIS Pro 之外独立执行脚本，那如下的改变要注意下了。</p>
+<p>ArcGIS Pro 的Python包不再是ArcMap默认安装的位置 <code>C:\Python27</code> ，而是安装在 <code>ArcGIS Pro的安装目录\bin\Python</code> 。</p>
+<p>ArcGIS Pro 采用了的Conda环境为 <strong>arcgispro-py3</strong>，有几个方式可以访问这个环境。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/08/31/ArcGISProPython/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +378,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>630</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -395,21 +490,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>658</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -520,21 +600,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>35</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -632,21 +697,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -689,145 +739,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/04/14/ForMyself/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2016/04/14/ForMyself/" class="post-title-link" itemprop="url">留着</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2016-04-14 20:26:07" itemprop="dateCreated datePublished" datetime="2016-04-14T20:26:07+08:00">2016-04-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Inner-Thoughts/" itemprop="url" rel="index"><span itemprop="name">Inner Thoughts</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2016/04/14/ForMyself/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/14/ForMyself/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>138</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>看到几个句子，认同，留着</p>
-<blockquote>
-<p>Love yourself, because you are unique and wonderful in your own way.</p>
-</blockquote>
-<blockquote>
-<p>You don’t have to win every argument. Agree to disagree.</p>
-</blockquote>
-<blockquote>
-<p>What other people think of you is none of your business.</p>
-</blockquote>
-<blockquote>
-<p>Life is too short to waste time hating anyone. So, get rid of those ill feelings.</p>
-</blockquote>
-<blockquote>
-<p>No one is in charge of your happiness except you.</p>
-</blockquote>
-<blockquote>
-<p>Forget issues of the past. Don’t remind your partner with her&#x2F;his mistakes of the past.</p>
-</blockquote>
-<blockquote>
-<p>Don’t compare your life to others. You have no idea what their journey is all about.</p>
-</blockquote>
-<blockquote>
-<p>Don’t have negative thoughts or things you cannot control. Instead invest your energy in the positive present moment.</p>
-</blockquote>
-<p>道理简单深刻，能够持久地实践才是真的懂了</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/04/14/ForMyself/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -840,26 +751,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 

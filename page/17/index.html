@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">212</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,119 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2016/02/02/RasterNodata/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2016/02/02/RasterNodata/" class="post-title-link" itemprop="url">为影像数据去除无效值</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2016-02-02 12:00:00" itemprop="dateCreated datePublished" datetime="2016-02-02T12:00:00+08:00">2016-02-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2016/02/02/RasterNodata/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/02/02/RasterNodata/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在使用栅格数据时，黑边和白边问题比较困扰我们，╮(╯-╰)╭ ，丑丑地如下所示：</p>
+<p><img data-src="/images/blogImg/RasterNodata_Raw.png"></p>
+<p>那如何处理这些问题呢？方法不是唯一的，我把 ArcMap 中最常用的几种方式列举一下，帮你给数据“化妆”，或者更确切的说是“整容”：</p>
+<br>
+
+<br>
+
+<h2 id="Option-1-栅格计算器"><a href="#Option-1-栅格计算器" class="headerlink" title="Option 1  栅格计算器"></a>Option 1  栅格计算器</h2><p>在去黑边之前最先需要了解的是黑边的像元值是什么？ 可以使用 Identify 工具查查看。  例如这份数据是 0。</p>
+<p><img data-src="/images/blogImg/RasterNodata_Identify.png"></p>
+<blockquote>
+<p>这时，你也许会想到设置图层背景值的色彩可以吧？</p>
+<p><img data-src="/images/blogImg/RasterNodata_Symbol.png"></p>
+<p>如果仅为了显示使用，是可以解决问题的，但传统意义上的去黑边，我们一般理解成栅格数据的处理，也就是从存储上修改特定值（本例中是 0）值为 Nodata。</p>
+</blockquote>
+<p>单波段数据处理起来常常相对容易些，最常用的工具就是 <strong>栅格计算器&#x2F;Raster Calculator</strong> 了。Raster Calculator 可以通过输入的Python语法的表达式，对当前数据框内的栅格图层进运算。它是个非常实用的栅格数据处理工具，如果你想 Dive In ，点 <a target="_blank" rel="noopener" href="http://desktop.arcgis.com/zh-cn/desktop/latest/tools/spatial-analyst-toolbox/how-raster-calculator-works.htm"><strong>这里</strong></a>了解 Raster Calculator 的工作原理。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/02/02/RasterNodata/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +381,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>995</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -405,21 +503,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -528,21 +611,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -652,21 +720,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -716,132 +769,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/30/TriptoGreece/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/09/30/TriptoGreece/" class="post-title-link" itemprop="url">给自己做个地图故事——Trip to Greece</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-09-30 18:23:16" itemprop="dateCreated datePublished" datetime="2015-09-30T18:23:16+08:00">2015-09-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Visual-Musing/" itemprop="url" rel="index"><span itemprop="name">Visual Musing</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/09/30/TriptoGreece/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/30/TriptoGreece/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>335</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="我的地图故事"><a href="#我的地图故事" class="headerlink" title="我的地图故事"></a>我的地图故事</h3><p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事……”。</p>
-<p>国庆假期将至，放点有趣的东西。如果喜欢分享，又想记录自己的过往，动手试试不错哦。</p>
-<p>我把自己的一次行程做成了地图故事：</p>
-<ul>
-<li><strong><span class="exturl" data-url="aHR0cDovL2tpa2l0YW1vb24ubWFwcy5hcmNnaXMuY29tL2FwcHMvTWFwVG91ci8/YXBwaWQ9MmNjYmUwM2VjZGZhNGQwZmFmODAxMjYxNDYzNzQyNjE=">Trip to Greece<i class="fa fa-external-link-alt"></i></span></strong> 。</li>
-</ul>
-<p>如下这里也可以翻看：</p>
-<iframe style="width: 100%;" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://arcg.is/18aaPT0"></iframe>
-
-
-
-<h3 id="如何制作故事地图"><a href="#如何制作故事地图" class="headerlink" title="如何制作故事地图 ?"></a><strong>如何制作故事地图 ?</strong></h3><p> <strong><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1zdG9yeW1hcHMvb3ZlcnZpZXc=">点这里<i class="fa fa-external-link-alt"></i></span></strong></p>
-<p>地图故事中有好多应用程序模板可选，即使不懂技术也能hold住，只需要选个要讲的“<strong>故事类型</strong>”。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/09/30/TriptoGreece/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/16/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/18/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -854,26 +781,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 
