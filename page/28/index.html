@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">212</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,116 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/07/29/AboutClippingRaster/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/07/29/AboutClippingRaster/" class="post-title-link" itemprop="url">使用矢量面裁剪栅格数据的对齐问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-07-29 11:19:31" itemprop="dateCreated datePublished" datetime="2014-07-29T11:19:31+08:00">2014-07-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/07/29/AboutClippingRaster/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/07/29/AboutClippingRaster/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近凑巧有几个比较多的栅格裁剪问题，整理如下：</p>
+<p>我们只有由于栅格与矢量数据的存储模型不相同，这就导致栅格数据的像元无法与矢量数据的点等同，从而导致裁切后的对齐问题，放大数据我们就能发现，如下图可以说明：（其中黑白色为栅格数据，每个正方形代表一个像元，红色区域为矢量面数据。）</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_1.jpg"></p>
+<p>我们按照默认设置运行 Raster工具箱中的 Clip 工具，看看结果，蓝色的栅格部分：</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_2.jpg"></p>
+<p>发现，栅格数据裁剪完，并不是需要的矢量数据范围，而是矢量数据压盖的最小栅格数据范围。</p>
+<p>如果我们需要得到的栅格，是矢量数据的范围，该如何做呢？</p>
+<p><strong>【旧版本】如果正在使用的是10.1以及更早期的版本：</strong></p>
+<ol>
+<li>首先将作为裁剪范围的矢量面（Feature）转为图形（Graphic），在ArcMap中，在面图层上右键，使用 Convert &nbsp;Features to Graphics… 菜单，如下图：</li>
+</ol>
+<p>（Graphic 被选中状态下，周围是有几个小方块的，与 Feature 被选中的亮蓝色不同哦…）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/07/29/AboutClippingRaster/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +378,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>818</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -392,21 +487,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>120</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -518,21 +598,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>2.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>8 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -640,21 +705,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>312</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -748,126 +798,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/02/27/LimitsofShapefile/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/02/27/LimitsofShapefile/" class="post-title-link" itemprop="url">Shapefile 的局限性</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-02-27 11:10:06" itemprop="dateCreated datePublished" datetime="2014-02-27T11:10:06+08:00">2014-02-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/02/27/LimitsofShapefile/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/02/27/LimitsofShapefile/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>660</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Shapefile 是一种开放的非拓扑的简单几何数据类型，深受数据处理人员的喜爱。 Shapefile 利用 dBASE 文件格式（.dbf 文件）来存储属性，dBase这种上世纪80年代的数据格式，现在基本淡出舞台。 虽然Shapefile有万般好，但是，今天还是要来说说shapefile的局限性，也就是使用限制有什么，以便合理的选择使用Shapefile数据。</p>
-<h1 id="1-文件容量限制："><a href="#1-文件容量限制：" class="headerlink" title="1. 文件容量限制："></a><strong>1. 文件容量限制：</strong></h1><p>Shapefile 每个子文件都有大小最大不能超过 2 GB ，以点要素为例，最多约能存储 7000 万个。</p>
-<h1 id="2-不支持高级对象："><a href="#2-不支持高级对象：" class="headerlink" title="2. 不支持高级对象："></a><strong>2. 不支持高级对象：</strong></h1><p>Shapefile不支持注记要素类、关系类、拓扑关系、属性域和子类、坐标精度和分辨率等。</p>
-<p>不支持通过参数定义的曲线（也称为圆弧曲线）。</p>
-<h1 id="3-字段存储限制："><a href="#3-字段存储限制：" class="headerlink" title="3. 字段存储限制："></a><strong>3. 字段存储限制：</strong></h1><p>Shapefile无法存储：空值，无法向上舍入数字，对 Unicode 字符串的支持不足，字段名称最长只能为 10 个字符，且在同一字段中无法同时存储日期和时间。</p>
-<p>Shapefile支持的最大字段数为 255。若超出此上限，当转换为 shapefile 时只会转换前 255 个字段。</p>
-<p>dBASE 文件不支持类型 blob、guid、全局 ID、坐标 ID 或栅格字段类型。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/02/27/LimitsofShapefile/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/27/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/29/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -880,26 +810,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 

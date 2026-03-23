@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">212</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,121 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/31/RegressionAnalysisResult/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/03/31/RegressionAnalysisResult/" class="post-title-link" itemprop="url">空间统计（五）诊断回归分析结果</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-03-31 14:52:06" itemprop="dateCreated datePublished" datetime="2015-03-31T14:52:06+08:00">2015-03-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/03/31/RegressionAnalysisResult/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/03/31/RegressionAnalysisResult/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>为了理解、解释、预测某个问题，我们会进行回归分析。上一篇中提到了回归模型中的因变量和解释变量的概念，用一组解释变量来建模解释因变量，但事实上，选择一组优质的解释变量并不是那么容易。通常我们会根据一些常识、理论基础、某些研究、专家的意见、参考文献等等选择一组解释变量，来进行解释变量的筛选。在ArcGIS Desktop中，当我们使用 普通最小二乘法（OLS）执行回归分析的时候，工具会进行诊断测试，提供一个汇总报告，帮助我们诊断回归分析的质量。这篇文章咱们就围绕这个话题展开——回归分析的结果诊断。</p>
+<br>
+
+
+<br>
+
+<h1 id="六项检查"><a href="#六项检查" class="headerlink" title="六项检查"></a>六项检查</h1><br>
+> [帮助文档](http://resources.arcgis.com/en/help/main/10.2/index.html#//005p00000053000000)中也有相关的内容，但是觉得相对还是比较晦涩，我就结合Esri Global UC的视频介绍一下。内容不尽相同，但是对学习回归分析是有帮助的。
+
+<br>
+
+
+<br>
+
+
+<h2 id="Check-1-解释变量与因变量具有预期的关系否？"><a href="#Check-1-解释变量与因变量具有预期的关系否？" class="headerlink" title="Check #1  解释变量与因变量具有预期的关系否？"></a>Check #1  解释变量与因变量具有预期的关系否？</h2><p><img data-src="/images/blogImg/RegressionAnalysisResult_Check1.png"></p>
+<p>每个解释变量都会有一个系数，系数具有+&#x2F;-号，来表示解释变量与因变量的关系。从工具的得到的报告中，我们看到的系数的正负，每个解释变量应该是我们期望的关系。如果有非常不符合逻辑的系数，我们就应该考虑剔除它了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/03/31/RegressionAnalysisResult/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +383,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>7 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -405,21 +505,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>3.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>13 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -527,21 +612,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>354</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -652,21 +722,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.9k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>7 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -718,129 +773,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/03/05/AnalysisPatternsA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/03/05/AnalysisPatternsA/" class="post-title-link" itemprop="url">空间统计（二）分析模式 A</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-03-05 11:15:56" itemprop="dateCreated datePublished" datetime="2015-03-05T11:15:56+08:00">2015-03-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/03/05/AnalysisPatternsA/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/03/05/AnalysisPatternsA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.6k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>有时对于数据量较大的地理数据，我们希望通过一定的统计方法将空间模式量化，从而获知这些地理数据在空间上是聚合的、还是离散的、还是随机的等。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsA_Toolset.png" alt="分析模式工具集"></p>
-<p>在了解如上工具之前，有一些空间统计学的基本知识还是要先搞明白，磨刀不误砍柴工，那就开始吧。</p>
-<br>
-
-<h1 id="零假设、P值、Z得分、置信度"><a href="#零假设、P值、Z得分、置信度" class="headerlink" title="零假设、P值、Z得分、置信度"></a>零假设、P值、Z得分、置信度</h1><p>分析模式工具集中的工具都采用“推论统计学”，先确定一个<strong>零假设</strong>，也就是假设要素或与要素相关的值都表现为空间随机模式—— **Complete Spatial Randomness (CSR)**；然后再计算一个 p值，用来表示零假设的正确概率。分析模式工具集中的工具都会返回 <strong>P值（P-Value）</strong>和 <strong>Z得分（Z-Score）</strong>，这是我们拒绝前面的零假设的依据，也就是我们观测的要素表现出显著性聚类或离散模式，而不是随机模式。</p>
-<p>什么是 P 值？ 什么是 Z 得分？</p>
-<p><strong>P值</strong> 就是概率值，它表示观测到的空间模式是由某随机过程创建而成的概率，或者我们简单的理解成是观测到的空间模式是随机空间模式的概率。P 值越小，也就是观测到的空间模式是随机空间模式的可能性越小，也就是我们越可以拒绝开始的零假设。</p>
-<p><strong>Z得分</strong> 表示标准差的倍数。例如，如果工具返回的 z 得分为 +2.5，我们就会说，结果是 2.5 倍标准差。如下所示，z 得分和 p 值都与标准正态分布相关联。</p>
-<p><img data-src="/images/blogImg/AnalysisPatternsA_Normal.png" alt="正态分布"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/03/05/AnalysisPatternsA/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/21/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/23/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -853,26 +785,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 

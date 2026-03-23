@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">212</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,114 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/10/17/MDFootprint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2014/10/17/MDFootprint/" class="post-title-link" itemprop="url">镶嵌数据集工具小结（二）镶嵌数据轮廓线与边界</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-10-17 12:57:34" itemprop="dateCreated datePublished" datetime="2014-10-17T12:57:34+08:00">2014-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2014/10/17/MDFootprint/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/10/17/MDFootprint/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>上一篇帖子说明了如何创建镶嵌数据集、添加栅格数据，以及相关的常用参数配置。</p>
+<p>下面再接着说如何根据自己的各种需要来修改镶嵌数据集，这一贴的主题主要是如何创建、修改镶嵌数据集的轮廓线和边界。</p>
+<p><strong>修改镶嵌数据轮廓线、边界类工具</strong></p>
+<p><img data-src="/images/blogImg/MDFootprint_Toolset.png"></p>
+<p>当镶嵌数据集创建好之后，我们将其加入到 &nbsp;ArcMap 中后发现，镶嵌数据集是以类似图层组的形式加入的，包含了至少三个图层，分别为：<strong>Boundary</strong>、<strong>Footprint</strong> 和 <strong>Image</strong>。</p>
+<p><img data-src="/images/blogImg/MDFootprint_toc.png"></p>
+<p>在使用开头列出的那些工具之前，我们需要对上图的几个图层有所了解，了解的过程中自然会发现这些工具的用武之地。</p>
+<p><strong>Image（影像）</strong></p>
+<p>影像图层用于控制镶嵌数据集的动态镶嵌影像的渲染。如果你在ArcMap中显示过单张影像，那会发现这个图层其实看起来和单张影像差别不大。也就是镶嵌数据集将散列在磁盘上的多张栅格数据，动态拼接成了一整张栅格。对影像图层属性做出的修改不会影响镶嵌数据集，仅影响镶嵌数据集在显示时的渲染方式。</p>
+<p><strong>Footprint（轮廓线）</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2014/10/17/MDFootprint/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +376,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>2.4k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>9 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -398,21 +491,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>664</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -521,21 +599,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.4k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -645,21 +708,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -704,130 +752,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2014/09/15/DiveinPathDistanceAnalyst3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2014/09/15/DiveinPathDistanceAnalyst3/" class="post-title-link" itemprop="url">深入路径距离分析（三）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2014-09-15 12:56:17" itemprop="dateCreated datePublished" datetime="2014-09-15T12:56:17+08:00">2014-09-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2014/09/15/DiveinPathDistanceAnalyst3/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/09/15/DiveinPathDistanceAnalyst3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.3k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>路径分析不仅可以考虑到水平方向的影响因子，而且可以考虑到垂直方向的影响因子，例如前面开车的例子中，水平方向的影响因子是风向，垂直方向的影响因子就是路面的起伏状况。</p>
-<p><strong>垂直系数</strong></p>
-<p>垂直系数越大，移动的难度也就越大。确定从一个像元行进到另一个像元时遇到的垂直系数（VF）与确定水平系数（HF）相似。这里需要引入一个概念，垂直相对移动角度（VRMA），垂直相对移动角度（VRMA）是“起始”像元与“目标”像元形成的斜率的角度，斜率&#x3D;垂直增量&#x2F;水平增量。VRMA 以度为单位进行指定。VRMA 的值范围为 -90 到 +90 度。</p>
-<p>路径距离分析工具中，提供了几种算法，<strong>BINARY、LINEAR、SYM_LINEAR、INVERSE_LINEAR、SYM_INVERSE_LINEAR、COS、SEC、COS_SEC、SEC_COS、TABLE</strong>：</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_VerticalFactor.png"></p>
-<br>
-
-<p><strong>（1）Binary——二元垂直系数</strong></p>
-<p>当 VRMA 大于切削角下限且小于切削角上限时，在两个像元之间移动的 VF 设置为与零系数相关联的值。如果 VRMA 大于切削角上限或者小于<span style="font-family: 'Microsoft YaHei';font-size:14px;">切削角下限</span>，则 VF 设置为无穷大。工具默认的切削角为正负30度。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_Binary.gif"></p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst3_BInary2.jpg"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2014/09/15/DiveinPathDistanceAnalyst3/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/25/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/27/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -840,26 +764,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 
