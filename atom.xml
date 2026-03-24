@@ -6,7 +6,7 @@
   <link href="https://kikitamap.com/atom.xml" rel="self"/>
   
   <link href="https://kikitamap.com/"/>
-  <updated>2026-03-23T14:31:26.513Z</updated>
+  <updated>2026-03-24T01:53:44.779Z</updated>
   <id>https://kikitamap.com/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI Daily News - 2026年3月24日</title>
+    <link href="https://kikitamap.com/2026/03/24/ai-daily-news/"/>
+    <id>https://kikitamap.com/2026/03/24/ai-daily-news/</id>
+    <published>2026-03-24T00:00:00.000Z</published>
+    <updated>2026-03-24T01:53:44.779Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>每天 AI 行业重大新闻简报，来源涵盖 OpenAI、Google、Anthropic、NVIDIA 等核心玩家。</p></blockquote><h2 id="🚀-大模型-产品"><a href="#🚀-大模型-产品" class="headerlink" title="🚀 大模型 &amp; 产品"></a>🚀 大模型 &amp; 产品</h2><h3 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h3><p><strong>ChatGPT 新一代模型 GPT-4.5 延迟发布</strong><br>Sam Altman 透露 GPT-4.5 版本的发布时间将从原定的 2026 年第一季度推迟到第二季度。延迟的主要原因包括：确保模型的可靠性和安全性，以及处理训练过程中发现的一些对齐问题。Altman 表示”质量比速度更重要”，并承诺将带来”令人惊叹”的改进。</p><p><strong>SearchGPT 搜索引擎 Beta 测试扩大</strong><br>OpenAI 的 AI 搜索引擎 SearchGPT 现在已向所有 Plus 订阅用户开放 Beta 测试。该搜索引擎结合了 GPT-4 的理解能力和实时网络检索，能够提供带来源引用的详细回答。用户反馈显示，在复杂研究任务中表现优于传统搜索引擎。</p><hr><h3 id="Anthropic"><a href="#Anthropic" class="headerlink" title="Anthropic"></a>Anthropic</h3><p><strong>Claude 4 即将发布，或支持 MCP 协议</strong><br>Anthropic 暗示 Claude 4 将在未来几周内发布。有迹象表明新版本将原生支持 Model Context Protocol (MCP)，这将允许 Claude 直接与外部工具和数据库交互。Anthropic 还在招聘暗示构建”Agentic AI”系统的工程师。</p><p><strong>Claude 企业版推出私有模型选项</strong><br>Anthropic 发布了 Claude Enterprise 的重大更新，企业客户现在可以部署完全私有的 Claude 实例，数据完全保存在自己的基础设施上。这一举措直接针对关注数据隐私的大型企业客户。</p><hr><h3 id="Google-DeepMind"><a href="#Google-DeepMind" class="headerlink" title="Google &amp; DeepMind"></a>Google &amp; DeepMind</h3><p><strong>Gemini 2.5 Pro 开放API，免费额度大幅提升</strong><br>Google 宣布 Gemini 2.5 Pro API 免费额度从每月 50 万 tokens 提升到 200 万 tokens，付费价格也下调 40%。此举被业界视为对 OpenAI 和 Anthropic 的价格战回应。</p><p><strong>DeepMind 公布 AlphaFold 3 最新进展</strong><br>DeepMind 展示了 AlphaFold 3 的最新版本，现在能够预测蛋白质与其他生物分子（DNA、RNA、小分子）的复合物结构，准确率比前代提升 35%。这一突破对药物研发具有重大意义。</p><hr><h2 id="💰-融资-商业"><a href="#💰-融资-商业" class="headerlink" title="💰 融资 &amp; 商业"></a>💰 融资 &amp; 商业</h2><p><strong>Anthropic 获得 4 亿美元 D 轮融资</strong><br>Anthropic 完成 4 亿美元 D 轮融资，估值达到 180 亿美元。此轮融资由 Salesforce Ventures 领投，Google、NVIDIA 等现有投资者跟投。资金将用于扩大 Claude 的企业市场占有率和安全研究。</p><p><strong>Mistral AI 获 6.4 亿美元融资，估值 60 亿美元</strong><br>法国 AI 创业公司 Mistral AI 完成 6.4 亿美元融资，正式踏入独角兽行列。本轮融资由 General Catalyst 领投，Nvidia 和 Salesforce 参投。Mistral 将推出面向企业的 Mistral Enterprise 解决方案。</p><p><strong>Character.AI 因监管压力寻求出售</strong><br>据报道，Character.AI 正在与多家大型科技公司洽谈收购事宜。知情人士称，监管机构对其青少年用户安全问题表示关切，公司可能面临重大合规压力。Google 和 Anthropic 都被列为潜在买家。</p><hr><h2 id="🖥️-硬件-基础设施"><a href="#🖥️-硬件-基础设施" class="headerlink" title="🖥️ 硬件 &amp; 基础设施"></a>🖥️ 硬件 &amp; 基础设施</h2><p><strong>NVIDIA Blackwell GPU 2026 年出货预期下调</strong><br>JP Morgan 发布报告，下调 NVIDIA Blackwell GPU 出货预期。2025 年预计出货 520 万片，但 2026 年将降至 180 万片。不过，NVIDIA 新一代 Rubin GPU 预计 2026 年出货 570 万片，整体 AI GPU 出货量仍将保持增长。</p><p><strong>NVIDIA 推出 Blackwell Ultra GB300 AI 服务器</strong><br>NVIDIA 在 GDC 2026 上正式发布 Blackwell Ultra（GB300）AI 服务器平台。相比前代 B200，GB300 在 AI 训练性能上提升 50%，推理性能提升 80%。主要云服务商已下单，预计 2026 年下半年开始交付。</p><p><strong>AMD MI350X 挑战 NVIDIA，推理性能提升 2.6 倍</strong><br>AMD 正式发布 Instinct MI350X GPU，声称在 Llama 3.1 405B 模型推理任务中，性能是 H100 的 2.6 倍。MI350X 配备 288GB HBM3E 内存（vs Blackwell 的 192GB），在大型模型部署场景中具有成本优势。AMD 宣称 MI350X 集群三年总拥有成本（TCO）约为 620 万美元，而 NVIDIA B200 约为 880 万美元。</p><p><strong>NVIDIA 恢复中国特供芯片生产</strong><br>NVIDIA 宣布恢复 H20 芯片的生产和出货，这是符合美国出口管制专门为中国市场设计的 AI 芯片。尽管性能受到限制，中国市场对 H20 的需求依然强劲。</p><hr><h2 id="🔧-工具-开源"><a href="#🔧-工具-开源" class="headerlink" title="🔧 工具 &amp; 开源"></a>🔧 工具 &amp; 开源</h2><p><strong>Meta 发布 Llama 4 开源许可条款调整</strong><br>Meta 宣布调整 Llama 4 的开源许可条款，商业用户年收入超过 500 万美元需获得特别许可。此举引发了开源社区的争议，批评者认为这违反了开源精神。</p><p><strong>Hugging Face 推出企业级 AI 部署平台</strong><br>Hugging Face 发布 Inference Endpoints Enterprise，提供一键式私有模型部署方案。支持所有主流开源模型，企业可完全控制数据流向，定价从每月 99 美元起。</p><hr><h2 id="📊-行业趋势"><a href="#📊-行业趋势" class="headerlink" title="📊 行业趋势"></a>📊 行业趋势</h2><p><strong>欧洲央行：AI 提高生产力，但需大规模投资</strong><br>欧洲央行（ECB）发布研究报告，指出 AI 技术的生产力提升效应”即将到来”，但需要企业进行”大规模”投资才能实现。报告预计 AI 将在未来 3-5 年内显著推动欧洲经济增长。</p><p><strong>Gartner 预测：2027 年 AI 代理将处理 40% 企业工作流</strong><br>Gartner 发布了 AI 领域的最新预测：到 2027 年，AI 代理（Agent）将自动化处理 40% 的企业工作流。目前这一比例仅为 5%。Gartner 建议企业现在开始构建 AI 代理基础设施。</p><hr><h2 id="🔥-争议-焦点"><a href="#🔥-争议-焦点" class="headerlink" title="🔥 争议 &amp; 焦点"></a>🔥 争议 &amp; 焦点</h2><p><strong>Character.AI 面临青少年安全调查</strong><br>美国联邦贸易委员会（FTC）对 Character.AI 展开调查，重点关注其聊天机器人对青少年用户的影响。调查显示，部分角色扮演机器人可能产生不当内容，公司面临重大整改压力。</p><p><strong>OpenAI 版权诉讼升级，5 家出版社联合起诉</strong><br>继《纽约时报》之后，5 家大型出版社联合对 OpenAI 提起版权诉讼，指控 ChatGPT 在训练过程中使用了受版权保护的书籍内容。OpenAI 回应称其使用属于”合理使用”范畴。</p><hr><blockquote><p>📌 明天见！如果你喜欢这份新闻简报，欢迎分享给更多 AI 爱好者。</p></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;每天 AI 行业重大新闻简报，来源涵盖 OpenAI、Google、Anthropic、NVIDIA 等核心玩家。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;🚀-大模型-产品&quot;&gt;&lt;a href=&quot;#🚀-大模型-产品&quot; class=&quot;headerlink&quot; title=&quot;🚀 大模型 &amp;amp; 产品&quot;&gt;&lt;/a&gt;🚀 大模型 &amp;amp; 产品&lt;/h2&gt;&lt;h3 id=&quot;OpenAI&quot;&gt;&lt;a href=&quot;#OpenAI&quot; class=&quot;headerlink&quot; title=&quot;OpenAI&quot;&gt;&lt;/a&gt;OpenAI&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;ChatGPT 新一代模型 GPT-4.5 延迟发布&lt;/strong&gt;&lt;br&gt;Sam Altman 透露 GPT-4.5 版本的发布时间将从原定的 2026 年第一季度推迟到第二季度。延迟的主要原因包括：确保模型的可靠性和安全性，以及处理训练过程中发现的一些对齐问题。Altman 表示”质量比速度更重要”，并承诺将带来”令人惊叹”的改进。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SearchGPT 搜索引擎 Beta 测试扩大&lt;/strong&gt;&lt;br&gt;OpenAI 的 AI 搜索引擎 SearchGPT 现在已向所有 Plus 订阅用户开放 Beta 测试。该搜索引擎结合了 GPT-4 的理解能力和实时网络检索，能够提供带来源引用的详细回答。用户反馈显示，在复杂研究任务中表现优于传统搜索引擎。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;Anthropic&quot;&gt;&lt;a href=&quot;#Anthropic&quot; class=&quot;headerlink&quot; title=&quot;Anthropic&quot;&gt;&lt;/a&gt;Anthropic&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Claude 4 即将发布，或支持 MCP 协议&lt;/strong&gt;&lt;br&gt;Anthropic 暗示 Claude 4 将在未来几周内发布。有迹象表明新版本将原生支持 Model Context Protocol (MCP)，这将允许 Claude 直接与外部工具和数据库交互。Anthropic 还在招聘暗示构建”Agentic AI”系统的工程师。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claude 企业版推出私有模型选项&lt;/strong&gt;&lt;br&gt;Anthropic 发布了 Claude Enterprise 的重大更新，企业客户现在可以部署完全私有的 Claude 实例，数据完全保存在自己的基础设施上。这一举措直接针对关注数据隐私的大型企业客户。&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="AI" scheme="https://kikitamap.com/categories/AI/"/>
+    
+    
+    <category term="AI" scheme="https://kikitamap.com/tags/AI/"/>
+    
+    <category term="OpenAI" scheme="https://kikitamap.com/tags/OpenAI/"/>
+    
+    <category term="News" scheme="https://kikitamap.com/tags/News/"/>
+    
+    <category term="Anthropic" scheme="https://kikitamap.com/tags/Anthropic/"/>
+    
+    <category term="NVIDIA" scheme="https://kikitamap.com/tags/NVIDIA/"/>
+    
+  </entry>
   
   <entry>
     <title>2026-03-23-ai-daily-news</title>
@@ -725,29 +762,6 @@
     <category term="Mobile SDK" scheme="https://kikitamap.com/tags/Mobile-SDK/"/>
     
     <category term="Android" scheme="https://kikitamap.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>the Shade</title>
-    <link href="https://kikitamap.com/2020/03/05/theShade/"/>
-    <id>https://kikitamap.com/2020/03/05/theShade/</id>
-    <published>2020-03-04T16:15:57.000Z</published>
-    <updated>2024-12-24T03:31:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>又是很久没来更新，以至于kikitamap.com这个域名因为没有续费而已经停用接近两周；要不是今晚忽然想写点什么，还不知道什么时候我才能发现。</p><p>工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了你的休息时间，反而又要”熬夜“ ？事情不能明天做吗？ 我总是无言以对，我这种矫情的时间独占需求，估计她不会理解，只好安抚她说马上就睡。大概，也不是所有人都有与自己独处的强需求。</p><p>我喜欢拍照，拍各种自认为有趣的东西，因此手机空间经常告急，只好翻一翻，删除一些不喜欢的或是没有什么内容的。忽然发现了这张很久前拍的。</p><p><img data-src="/images/blogImg/SSN_theShade_20160403_TJWQ.jpg"></p><p>当时的场景是我在等人，刚好从站的位置，看到自己的影子叠在橱窗里的模特身上，感觉很有点意思，就顺手拍了下来。世间熙熙攘攘，我们大多数都是追寻成为模特壳子的样子；住在壳子里面的人的样子呢？ta们是同一个吗？</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;又是很久没来更新，以至于kikitamap.com这个域名因为没有续费而已经停用接近两周；要不是今晚忽然想写点什么，还不知道什么时候我才能发现。&lt;/p&gt;
-&lt;p&gt;工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了</summary>
-      
-    
-    
-    
-    <category term="Inner Thoughts" scheme="https://kikitamap.com/categories/Inner-Thoughts/"/>
-    
     
   </entry>
   
