@@ -121,87 +121,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS for AutoCAD 小结</title>
-    <url>/2012/02/07/ArcGISforAutoCAD/</url>
-    <content><![CDATA[<h2 id="一、-简介"><a href="#一、-简介" class="headerlink" title="一、 简介"></a><strong>一、 简介</strong></h2><p> ArcGIS for AutoCAD是Esri提供的一个针对AutoCAD免费插件。此插件可以使AutoCAD作为ArcGIS Server的客户端加载服务；并且可以作为GIS结构编辑器来组织CAD数据，从而作为直接可用的GIS 要素类；给CAD数据定义坐标系，可以被ArcGIS产品识别。</p>
-<br>
-
-<h2 id="二、-系统要求"><a href="#二、-系统要求" class="headerlink" title="二、 系统要求"></a><strong>二、 系统要求</strong></h2><p>这里基于ArcGIS for AutoCAD 250版本。 </p>
-<p> <strong>版本:</strong> </p>
-<p>AutoCAD 2010&#x2F;2011, 32-bit or 64-bit</p>
-<p>AutoCAD Map 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
-<p>AutoCAD Civil 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
-<p><strong>操作系统:</strong></p>
-<p>Windows 7 Enterprise, Ultimate, Professional, or Home  Premium</p>
-<p>Windows Vista Enterprise, Business, Ultimate, or Home  Premium (SP1 or later) </p>
-<p>Windows XP Professional or Home edition (SP3)</p>
-<p><strong>Microsoft .NET Framework:</strong>   </p>
-<p>Microsoft .NET Framework Version 3.5 (SP1 or later) </p>
-<p> <strong>Internet 方式连接ArcGIS Server:</strong>   </p>
-<p>ArcGIS Server 9.3 或更高版本发布服务 </p>
-<br>
-
-<h2 id="三、-安装与加载"><a href="#三、-安装与加载" class="headerlink" title="三、 安装与加载"></a><strong>三、 安装与加载</strong></h2><p>下面以AutoCAD 2010（x64），ArcGIS for AutoCAD 250（x64）为例，介绍一下此插件的安装使用过程。</p>
-<h3 id="1-获取并安装插件"><a href="#1-获取并安装插件" class="headerlink" title="1. 获取并安装插件"></a><strong>1. 获取并安装插件</strong></h3><p>插件的下载地址：<span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaWNoaW5hLWJqLmNuLzIwMTEvMDIyNC85NjMuaHRtbA==">http://support.esrichina-bj.cn/2011/0224/963.html<i class="fa fa-external-link-alt"></i></span><br> 注意此插件区分32bit与64bit，选择合适版本下载，我这里使用ArcGISforAutoCADDownloadx64.exe。<br> 在已经安装AutoCAD的前提下，双击运行此exe即可。</p>
-<h3 id="2-插件的加载"><a href="#2-插件的加载" class="headerlink" title="2. 插件的加载"></a><strong>2. 插件的加载</strong></h3><p>以管理员身份运行AutoCAD，在AutoCAD的命令提示行中输入：NETLOAD。出现资源管理器窗口，浏览至插件的安装目录，选择 ArcGISForAutoCAD.dll打开。</p>
-<p><img data-src="/images/blogImg/ArcGISforAutoCAD_AutoCAD.gif"></p>
-<p>之后出现插件加载画面。</p>
-<p><img data-src="/images/blogImg/ArcGISforAutoCAD_Launch.gif"></p>
-<p>加载ArcGIS for AutoCAD插件成功。</p>
-<p>加载后，会多出ArcGIS for AutoCAD插件栏，如下图：<br><img data-src="/images/blogImg/ArcGISforAutoCAD_Menu.gif"></p>
-<h3 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h3><p>添加ArcGIS Online服务时，可能会遇到错误：“<strong>找不到资源：</strong>‘<strong>basemapui\basemapcenter.xaml’</strong>”。</p>
-<p>解决方法：这是个已知问题，下载补丁既可以解决此问题，地址：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT1saXN0UGF0Y2hlcyZQSUQ9MTI5">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=listPatches&PID=129<i class="fa fa-external-link-alt"></i></span></p>
-<p>至此，ArcGIS for AutoCAD 插件即可以开始使用啦。</p>
-<h2 id="四、-功能与使用"><a href="#四、-功能与使用" class="headerlink" title="四、 功能与使用"></a><strong>四、 功能与使用</strong></h2><h3 id="1-Map-Service"><a href="#1-Map-Service" class="headerlink" title="1. Map Service"></a><strong>1. Map Service</strong></h3><p>有了这个插件，首先可以使AutoCAD直接加载Map Service：</p>
-<p>(1) ArcGIS Online</p>
-<p>使用Esri Map Gallery中的地图作为地图，添加到现有的CAD工程中。</p>
-<p><img data-src="/images/blogImg/ArcGISforAutoCAD_Basemap.gif"></p>
-<p>(2) ArcGIS Server</p>
-<p>向现有的CAD工程中添加ArcGIS Server服务。</p>
-<p><img data-src="/images/blogImg/ArcGISforAutoCAD_AGSServer.gif"></p>
-<h3 id="2-CAD-Feature-Class"><a href="#2-CAD-Feature-Class" class="headerlink" title="2. CAD Feature Class"></a><strong>2. CAD Feature Class</strong></h3><p>此插件可以将 AutoCAD 作为 GIS 方案编辑器，用来将 CAD 数据组织为可供 GIS 使用的要素类。</p>
-<p>类型对象过滤器是预定义的，用来约束ArcGIS Desktop支持的feature class与DWG 对象的对应关系。</p>
-<p>DWG 对象与ArcGIS 要素的强制对应关系如下：</p>
-<table>
-<thead>
-<tr>
-<th>Feature type</th>
-<th>DWG object types</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Point</td>
-<td>Point, Insert,  shape, Hatch, Proxy</td>
-</tr>
-<tr>
-<td>Polyline</td>
-<td>Arc, Circle,  Ellipse, Line, Mline, polyline, 3D polyline Ray, spline, Xline, Trace, solid,  3Dface</td>
-</tr>
-<tr>
-<td>Polygon</td>
-<td>Circle, Solid,  Ellipse, Face, closed polyline, closed 3D polyline, Mline</td>
-</tr>
-<tr>
-<td>Annotation</td>
-<td>Text, Mtext,  Attribute, Attdef</td>
-</tr>
-<tr>
-<td>Multipatch</td>
-<td>Arc, Circle,  Ellipse, Line, Mline, polyline, 3D polyline Ray, spline, Xline, Trace, solid,  3Dface</td>
-</tr>
-</tbody></table>
-<h3 id="3-坐标系统"><a href="#3-坐标系统" class="headerlink" title="3. 坐标系统"></a><strong>3. 坐标系统</strong></h3><p>插件使用的坐标系统是通过*.prj 文件来定义的。当给DWG文件定义坐标系后，这个有效的空间参考是可以被ArcGIS Server、ArcMap、ArcCatalog以及ArcGIS 地理处理工具识别的。</p>
-<p>关于CAD与ArcGIS一体化的文章，后面会不断更新~</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geodata</tag>
-        <tag>CAD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcMap的Feature Cache</title>
     <url>/2012/02/07/ArcMapFeatureCache/</url>
     <content><![CDATA[<p><strong>一、介绍</strong></p>
@@ -253,6 +172,28 @@
 <p>与FeatureClass相关的：FeatureDataset，subtype，AttributeDomain，RelationshipClasses，Topology，Network Dataset，Geometric network，TerrainDataset，Linear referencing，Cartographicrepresentation，versioning。</p>
 <p><strong>3、Raster</strong></p>
 <p>栅格的地理属性通常包括：坐标系，参考坐标或 X,Y 位置（通常在栅格左上角或左下角），单元大小，行计数和列计数。<br>地理数据库可以针对多种用途管理栅格：作为单个数据集、数据集的逻辑集合和表中的图片属性.</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geodata</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KML/KMZ到ArcGIS完全转化</title>
+    <url>/2012/02/07/importKMLKMZ/</url>
+    <content><![CDATA[<p>在ArcGIS中，做KML（Keyhole Markup Language）的导入，我们可以使用两种方法：一是ArcToolbox中的转换工具；二是数据互操作扩展。本文将以ArcToolbox中的工具为例来导入KML或KMZ。当然如果没有数据互操作扩展的用户，第一种方法也是首选。 在ArcToolbox中有转换工具（Conversion Tools）下的由KML转出（From KML）下的KML转图层（KML to Layer）。 </p>
+<p><img data-src="/images/blogImg/importKMLKMZ_Toolset.png"></p>
+<p>此工具将会把KML或KMZ文件的数据，转换到FileGDB中的数据集中，数据的展现符号化等信息存储在同名的图层文件（.lyr）中。 </p>
+<p><img data-src="/images/blogImg/importKMLKMZ_Tool.png"></p>
+<p>注意：此工具中，仅需要选择一个目的文件夹，GDB和lyr文件都会自行创建。 其实到这里，KML文件中包含的信息已经进入ArcGIS的怀抱了。 如果有特殊需要，就Export下，可以得到shape。 </p>
+<p><img data-src="/images/blogImg/importKMLKMZ_Shapefile.gif"></p>
+<p>另外，ArcGIS 提供了导出成KML、KMZ的工具：       </p>
+<ul>
+<li>图层转KML（Layer to KML）       </li>
+<li>地图转KML（Map to KML）</li>
+</ul>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -415,28 +356,6 @@
       </tags>
   </entry>
   <entry>
-    <title>KML/KMZ到ArcGIS完全转化</title>
-    <url>/2012/02/07/importKMLKMZ/</url>
-    <content><![CDATA[<p>在ArcGIS中，做KML（Keyhole Markup Language）的导入，我们可以使用两种方法：一是ArcToolbox中的转换工具；二是数据互操作扩展。本文将以ArcToolbox中的工具为例来导入KML或KMZ。当然如果没有数据互操作扩展的用户，第一种方法也是首选。 在ArcToolbox中有转换工具（Conversion Tools）下的由KML转出（From KML）下的KML转图层（KML to Layer）。 </p>
-<p><img data-src="/images/blogImg/importKMLKMZ_Toolset.png"></p>
-<p>此工具将会把KML或KMZ文件的数据，转换到FileGDB中的数据集中，数据的展现符号化等信息存储在同名的图层文件（.lyr）中。 </p>
-<p><img data-src="/images/blogImg/importKMLKMZ_Tool.png"></p>
-<p>注意：此工具中，仅需要选择一个目的文件夹，GDB和lyr文件都会自行创建。 其实到这里，KML文件中包含的信息已经进入ArcGIS的怀抱了。 如果有特殊需要，就Export下，可以得到shape。 </p>
-<p><img data-src="/images/blogImg/importKMLKMZ_Shapefile.gif"></p>
-<p>另外，ArcGIS 提供了导出成KML、KMZ的工具：       </p>
-<ul>
-<li>图层转KML（Layer to KML）       </li>
-<li>地图转KML（Map to KML）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geodata</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Point to Raster 工作原理</title>
     <url>/2012/02/08/HowPointtoRasterWorks/</url>
     <content><![CDATA[<p>点在栅格中，表示为一个像元。通常，如果有两个或更多个点落入某像元范围内，ArcGIS 在为像元赋值时会随机选择这些点中的一个点。但在使用“Point to Raster”工具时，可选择像元值分配类型（频率最高、求和、平均值、标准差、最大值、最小值、范围、数目）。具有值的像元数有可能少于要转换的点数。</p>
@@ -541,6 +460,63 @@
       </tags>
   </entry>
   <entry>
+    <title>ArcPad 10 的安装部署</title>
+    <url>/2012/03/28/ArcPad10Deployment/</url>
+    <content><![CDATA[<p>ArcPad是安装在手持设备或者移动终端的一个外业ArcGIS产品，也就是说ArcPad是Esri的一款软件产品，而不是硬件设备哦。虽然不比ArcGIS Desktop功能复杂缤纷，但是对于野外作业、数据采集等工作来说，算是功能十分丰富了。</p>
+<p>说到安装，首先要了解系统要求，<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvYXJjcGFkLzEwLjAvc3lzdGVtLXJlcXVpcmVtZW50cw==">http://resources.arcgis.com/zh-cn/content/arcpad/10.0/system-requirements<i class="fa fa-external-link-alt"></i></span>。ArcPad 仅支持 Windows Mobile 移动平台（5.0以上），最高可使用Windows Mobile 6.5。</p>
+<br>
+
+<blockquote>
+<p><strong>说明：</strong></p>
+</blockquote>
+<blockquote>
+<p>  本文及后续有关ArcPad文章的截图说明的环境：<br>    ArcPad 10.0.2 （Build 30）；<br>    Windows Mobile 6.5 模拟器，<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2Rvd25sb2FkL2VuL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0xNzI4NA==">下载地址<i class="fa fa-external-link-alt"></i></span> ；<br>    Windows Mobile 5.0 基于移动设备 Trimble Juno ST；<br>    Windows 7 。</p>
+</blockquote>
+<h1 id="在PC上安装ArcPad"><a href="#在PC上安装ArcPad" class="headerlink" title="在PC上安装ArcPad"></a>在PC上安装ArcPad</h1><p>运行光盘，安装ArcPad。</p>
+<p><img data-src="/images/blogImg/ArcPad10Deployment_Setup.jpg"></p>
+<p>页面中还有一项”ArcGIS Server ArcPad Extension“，此项可以先不安装，在用到添加ArcGIS Server 服务、同步数据时才会用的这一项。关于这一部分的功能、要求、应用等，以后抽时间整理一下。安装过程很简单不赘述。</p>
+<p>安装过程中，提示填写注册码，可以忽略，那ArcPad就进入了评估模式，评估模式一切功能和正式版是相同的，只是使用时间为20分钟，超过20分钟ArcPad会自动退出。如果为了方便长时间使用，需要填写<strong>注册码</strong>。自己学习研究，就用这个吧：**<del>@RCP@DD00R</del>**。当然，商业用途和项目开发等要使用正式版的……</p>
+<p>安装完成后，开始菜单中会出现：</p>
+<p><img data-src="/images/blogImg/ArcPad10Deployment_Start.jpg"></p>
+<p>其中，第一项ArcPad 10 for Windows 是PC端的ArcPad程序，功能上与移动端ArcPad是一致的。</p>
+<p>第二项 ArcPad Deployment Manager 就是用来向手持设备部署ArcPad的。</p>
+<rb>
+
+<h1 id="手持端-ArcPad-部署"><a href="#手持端-ArcPad-部署" class="headerlink" title="手持端 ArcPad 部署"></a><strong>手持端 ArcPad 部署</strong></h1><p>1.首先安装windows同步程序。</p>
+<blockquote>
+<p>Windows XP： 安装 Microsoft ActiveSync ；<br>Windows vista 或 Windows 7： 安装 Windows Mobile Device Center。</p>
+</blockquote>
+<p>2.上述程序安装好后，连接移动设备和PC，保证连接状态正常。</p>
+<p><img data-src="/images/blogImg/ArcPad10Deployment_Connect1.png">  <img data-src="/images/blogImg/ArcPad10Deployment_Connect2.png"></p>
+<p>3.打开 开始 — ArcGIS — ArcPad 10 — ArcPad Deployment Manager。</p>
+<p><img data-src="/images/blogImg/ArcPad10Deployment_DeployMan.jpg"></p>
+<p>在这个窗口勾选需要安装的项即可：</p>
+<p><strong>Arcpad for Windows Mobile</strong> 是<strong>必然</strong>需要安装的；</p>
+<ul>
+<li>如果需要移动设备的“桌面快捷方式“，<strong>今日插件（Today-Plugin）</strong>可以选择安装；</li>
+<li>如果需要 ArcPad 中文界面，可以勾选安装相应<strong>语言包</strong>；</li>
+<li><strong>Samples</strong>，示例数据是初学者探索Arcpad 的学习资源，如果需要并且存储足够，推荐安装；</li>
+<li>如果需要用到数据的check in 、check out，<strong>SQL Server Compact</strong>也需要安装了；</li>
+<li>如果涉及到一些脚本的应用 <strong>VBScript Runtime</strong>也需要安装；</li>
+<li>剩下两个没说到的，**Streetmap **和 **Datum **的，不需要安装，不适宜国内用户的需求。</li>
+</ul>
+<p>做好选择之后，点击”Deploy“，就开始了Arcpad的自动部署。当然过程中不要忘记响应移动设备的询问。</p>
+<p>4.至此，Arcpad 安装完成。</p>
+<p>在移动设备的 开始 – 程序 中，打开ArcPad：</p>
+<p><img data-src="/images/blogImg/ArcPad10Deployment_Success.gif"></p>
+<br>
+
+<p>O了，可以开始使用ArcPad了。</p>
+<p>学习资源主要还是ArcPad 官方帮助，在线帮助：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS9lbi9hcmNwYWQvMTAuMC9oZWxwL2luZGV4Lmh0bWw=">http://help.arcgis.com/en/arcpad/10.0/help/index.html<i class="fa fa-external-link-alt"></i></span>。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>ArcPad</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（一）</title>
     <url>/2012/04/09/ArcPad10Synchronization1/</url>
     <content><![CDATA[<p>在移动设备上，使用ArcPad可以创建、显示、查询、编辑数据。根据工作流模式的不同，我们可以采取不同的数据组织形式。</p>
@@ -600,63 +576,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcPad 10 的安装部署</title>
-    <url>/2012/03/28/ArcPad10Deployment/</url>
-    <content><![CDATA[<p>ArcPad是安装在手持设备或者移动终端的一个外业ArcGIS产品，也就是说ArcPad是Esri的一款软件产品，而不是硬件设备哦。虽然不比ArcGIS Desktop功能复杂缤纷，但是对于野外作业、数据采集等工作来说，算是功能十分丰富了。</p>
-<p>说到安装，首先要了解系统要求，<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvYXJjcGFkLzEwLjAvc3lzdGVtLXJlcXVpcmVtZW50cw==">http://resources.arcgis.com/zh-cn/content/arcpad/10.0/system-requirements<i class="fa fa-external-link-alt"></i></span>。ArcPad 仅支持 Windows Mobile 移动平台（5.0以上），最高可使用Windows Mobile 6.5。</p>
-<br>
-
-<blockquote>
-<p><strong>说明：</strong></p>
-</blockquote>
-<blockquote>
-<p>  本文及后续有关ArcPad文章的截图说明的环境：<br>    ArcPad 10.0.2 （Build 30）；<br>    Windows Mobile 6.5 模拟器，<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2Rvd25sb2FkL2VuL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0xNzI4NA==">下载地址<i class="fa fa-external-link-alt"></i></span> ；<br>    Windows Mobile 5.0 基于移动设备 Trimble Juno ST；<br>    Windows 7 。</p>
-</blockquote>
-<h1 id="在PC上安装ArcPad"><a href="#在PC上安装ArcPad" class="headerlink" title="在PC上安装ArcPad"></a>在PC上安装ArcPad</h1><p>运行光盘，安装ArcPad。</p>
-<p><img data-src="/images/blogImg/ArcPad10Deployment_Setup.jpg"></p>
-<p>页面中还有一项”ArcGIS Server ArcPad Extension“，此项可以先不安装，在用到添加ArcGIS Server 服务、同步数据时才会用的这一项。关于这一部分的功能、要求、应用等，以后抽时间整理一下。安装过程很简单不赘述。</p>
-<p>安装过程中，提示填写注册码，可以忽略，那ArcPad就进入了评估模式，评估模式一切功能和正式版是相同的，只是使用时间为20分钟，超过20分钟ArcPad会自动退出。如果为了方便长时间使用，需要填写<strong>注册码</strong>。自己学习研究，就用这个吧：**<del>@RCP@DD00R</del>**。当然，商业用途和项目开发等要使用正式版的……</p>
-<p>安装完成后，开始菜单中会出现：</p>
-<p><img data-src="/images/blogImg/ArcPad10Deployment_Start.jpg"></p>
-<p>其中，第一项ArcPad 10 for Windows 是PC端的ArcPad程序，功能上与移动端ArcPad是一致的。</p>
-<p>第二项 ArcPad Deployment Manager 就是用来向手持设备部署ArcPad的。</p>
-<rb>
-
-<h1 id="手持端-ArcPad-部署"><a href="#手持端-ArcPad-部署" class="headerlink" title="手持端 ArcPad 部署"></a><strong>手持端 ArcPad 部署</strong></h1><p>1.首先安装windows同步程序。</p>
-<blockquote>
-<p>Windows XP： 安装 Microsoft ActiveSync ；<br>Windows vista 或 Windows 7： 安装 Windows Mobile Device Center。</p>
-</blockquote>
-<p>2.上述程序安装好后，连接移动设备和PC，保证连接状态正常。</p>
-<p><img data-src="/images/blogImg/ArcPad10Deployment_Connect1.png">  <img data-src="/images/blogImg/ArcPad10Deployment_Connect2.png"></p>
-<p>3.打开 开始 — ArcGIS — ArcPad 10 — ArcPad Deployment Manager。</p>
-<p><img data-src="/images/blogImg/ArcPad10Deployment_DeployMan.jpg"></p>
-<p>在这个窗口勾选需要安装的项即可：</p>
-<p><strong>Arcpad for Windows Mobile</strong> 是<strong>必然</strong>需要安装的；</p>
-<ul>
-<li>如果需要移动设备的“桌面快捷方式“，<strong>今日插件（Today-Plugin）</strong>可以选择安装；</li>
-<li>如果需要 ArcPad 中文界面，可以勾选安装相应<strong>语言包</strong>；</li>
-<li><strong>Samples</strong>，示例数据是初学者探索Arcpad 的学习资源，如果需要并且存储足够，推荐安装；</li>
-<li>如果需要用到数据的check in 、check out，<strong>SQL Server Compact</strong>也需要安装了；</li>
-<li>如果涉及到一些脚本的应用 <strong>VBScript Runtime</strong>也需要安装；</li>
-<li>剩下两个没说到的，**Streetmap **和 **Datum **的，不需要安装，不适宜国内用户的需求。</li>
-</ul>
-<p>做好选择之后，点击”Deploy“，就开始了Arcpad的自动部署。当然过程中不要忘记响应移动设备的询问。</p>
-<p>4.至此，Arcpad 安装完成。</p>
-<p>在移动设备的 开始 – 程序 中，打开ArcPad：</p>
-<p><img data-src="/images/blogImg/ArcPad10Deployment_Success.gif"></p>
-<br>
-
-<p>O了，可以开始使用ArcPad了。</p>
-<p>学习资源主要还是ArcPad 官方帮助，在线帮助：<span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS9lbi9hcmNwYWQvMTAuMC9oZWxwL2luZGV4Lmh0bWw=">http://help.arcgis.com/en/arcpad/10.0/help/index.html<i class="fa fa-external-link-alt"></i></span>。</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>ArcPad</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcPad 10 使用与同步 ArcGIS Server 的数据全攻略（二）</title>
     <url>/2012/04/10/ArcPad10Synchronization2/</url>
     <content><![CDATA[<p>继续上个话题，数据准备好了，我们就开始发布服务吧~</p>
@@ -690,33 +609,6 @@
       </categories>
       <tags>
         <tag>ArcPad</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于高斯克吕格平面直角坐标系</title>
-    <url>/2012/06/01/AboutGaussKruger/</url>
-    <content><![CDATA[<p>高斯克吕格平面直角坐标系是投影坐标系的一种，根据我国的地理情况，为建立地形图的测量控制和城市、矿山等区域性的测量控制，早在1952年决定，采用高斯克吕格平面直角坐标系。</p>
-<h1 id="投影面的形成："><a href="#投影面的形成：" class="headerlink" title="投影面的形成："></a><strong>投影面的形成：</strong></h1><p>椭球面是不可展曲面，无论如何选择投影函数，椭球面上的元素，投影到平面上，都会产生变形（角度、长度、面积）。高斯投影是一种等角投影（正形投影），又称为横轴椭圆柱等角投影。想象用一个椭球柱面横套在椭球外面，并与某一条子午线相切，椭球的柱的中心轴通过椭球中心，然后用一定的投影方法将中央子午线两侧各一定经差范围内的地区投影到椭圆柱面上，再将此柱展开即成为投影面。</p>
-<h1 id="坐标系的定义："><a href="#坐标系的定义：" class="headerlink" title="坐标系的定义："></a><strong>坐标系的定义：</strong></h1><p>在投影面上，中央经线和赤道的投影都是直线，并且以中央经线和赤道的交点作为坐标原点，以中央经线的投影为纵坐标，以赤道的投影为横坐标，这就形成了高斯平面直角坐标系。</p>
-<p><img data-src="/images/blogImg/AboutGaussKruger_Defination.jpg"></p>
-<h1 id="分带投影："><a href="#分带投影：" class="headerlink" title="分带投影："></a><strong>分带投影：</strong></h1><p>高斯投影对投影函数的选择条件：</p>
-<p>  1）椭球面上的任意角度投影到平面后保持不变；</p>
-<p>  2）作为平面坐标轴的中央经线，投影后是一条直线，并且是投影点的对称轴；</p>
-<p>  3）中央子午线投影到平面后，其长度不变。</p>
-<p>为了限制长度变形，就需要将投影区限定在中央经线两旁的狭窄范围内。</p>
-<p>通常按经线每隔6°进行分带投影。由0°经线起每隔经差6°自西向东分带，依次编号1、2、3……。6°带的带号N和中央经线L的关系为：L&#x3D;6N-3。</p>
-<p>为了进一步限制变形，可以采用3°投影分带。3°带和6°带的中央经线重合，6°带的中央经线和分带经线均是3°带的中央经线。3°带的带号n和中央经线L的关系为：L&#x3D;3n。</p>
-<p><strong>我国3°带的范围 24<del>45，6°带的范围 13</del>23。</strong></p>
-<p><img data-src="/images/blogImg/AboutGaussKruger_Zones.jpg"></p>
-<p>x值无论在哪一带都是由赤道起算的自然值。</p>
-<p>而由于中央经线以东取正号，以西取负号。实际工作中，为了避免横坐标y出现负值，规定在y值上500km（false easting）。同时，为了区别各带坐标不同，又规定在y值前冠以带号。</p>
-<p>例如：6°带第20带中，y&#x3D;-200.25m，成果表中应写为20499799.75m。</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Coordinate System</tag>
       </tags>
   </entry>
   <entry>
@@ -866,6 +758,33 @@
       <tags>
         <tag>Geoprocessing</tag>
         <tag>Spatial Analyst</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于高斯克吕格平面直角坐标系</title>
+    <url>/2012/06/01/AboutGaussKruger/</url>
+    <content><![CDATA[<p>高斯克吕格平面直角坐标系是投影坐标系的一种，根据我国的地理情况，为建立地形图的测量控制和城市、矿山等区域性的测量控制，早在1952年决定，采用高斯克吕格平面直角坐标系。</p>
+<h1 id="投影面的形成："><a href="#投影面的形成：" class="headerlink" title="投影面的形成："></a><strong>投影面的形成：</strong></h1><p>椭球面是不可展曲面，无论如何选择投影函数，椭球面上的元素，投影到平面上，都会产生变形（角度、长度、面积）。高斯投影是一种等角投影（正形投影），又称为横轴椭圆柱等角投影。想象用一个椭球柱面横套在椭球外面，并与某一条子午线相切，椭球的柱的中心轴通过椭球中心，然后用一定的投影方法将中央子午线两侧各一定经差范围内的地区投影到椭圆柱面上，再将此柱展开即成为投影面。</p>
+<h1 id="坐标系的定义："><a href="#坐标系的定义：" class="headerlink" title="坐标系的定义："></a><strong>坐标系的定义：</strong></h1><p>在投影面上，中央经线和赤道的投影都是直线，并且以中央经线和赤道的交点作为坐标原点，以中央经线的投影为纵坐标，以赤道的投影为横坐标，这就形成了高斯平面直角坐标系。</p>
+<p><img data-src="/images/blogImg/AboutGaussKruger_Defination.jpg"></p>
+<h1 id="分带投影："><a href="#分带投影：" class="headerlink" title="分带投影："></a><strong>分带投影：</strong></h1><p>高斯投影对投影函数的选择条件：</p>
+<p>  1）椭球面上的任意角度投影到平面后保持不变；</p>
+<p>  2）作为平面坐标轴的中央经线，投影后是一条直线，并且是投影点的对称轴；</p>
+<p>  3）中央子午线投影到平面后，其长度不变。</p>
+<p>为了限制长度变形，就需要将投影区限定在中央经线两旁的狭窄范围内。</p>
+<p>通常按经线每隔6°进行分带投影。由0°经线起每隔经差6°自西向东分带，依次编号1、2、3……。6°带的带号N和中央经线L的关系为：L&#x3D;6N-3。</p>
+<p>为了进一步限制变形，可以采用3°投影分带。3°带和6°带的中央经线重合，6°带的中央经线和分带经线均是3°带的中央经线。3°带的带号n和中央经线L的关系为：L&#x3D;3n。</p>
+<p><strong>我国3°带的范围 24<del>45，6°带的范围 13</del>23。</strong></p>
+<p><img data-src="/images/blogImg/AboutGaussKruger_Zones.jpg"></p>
+<p>x值无论在哪一带都是由赤道起算的自然值。</p>
+<p>而由于中央经线以东取正号，以西取负号。实际工作中，为了避免横坐标y出现负值，规定在y值上500km（false easting）。同时，为了区别各带坐标不同，又规定在y值前冠以带号。</p>
+<p>例如：6°带第20带中，y&#x3D;-200.25m，成果表中应写为20499799.75m。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Coordinate System</tag>
       </tags>
   </entry>
   <entry>
@@ -1270,6 +1189,42 @@
       </tags>
   </entry>
   <entry>
+    <title>空间分析之插值分析</title>
+    <url>/2012/08/27/SAInterpolation/</url>
+    <content><![CDATA[<p>在实际工作中，由于成本的限制、测量工作实施困难大等因素，我们不能对研究区域的每一位置都进行测量（如高程、降雨、化学物质浓度和噪声等级）。这时，我们可以考虑合理选取采样点，然后通过采样点的测量值，使用适当的数学模型，对区域所有位置进行预测，形成测量值表面。插值之所以可称为一种可行的方案，是因为我们假设，空间分布对象都是空间相关的，也就是说，彼此接近的对象往往具有相似的特征。</p>
+<p>ArcGIS的空间分析中，提供了插值（Interpolation）工具集，如下：</p>
+<p><img data-src="/images/blogImg/SAInterpolation_Toolset.png"></p>
+<br>
+
+<h1 id="1-反距离权重法（IDW–Inverse-Distance-Weighted）"><a href="#1-反距离权重法（IDW–Inverse-Distance-Weighted）" class="headerlink" title="1. 反距离权重法（IDW–Inverse Distance Weighted）"></a><strong>1. 反距离权重法（IDW–Inverse Distance Weighted）</strong></h1><p>此方法假定所映射的变量因受到与其采样位置间的距离的影响而减小。</p>
+<p><strong>幂参数：</strong></p>
+<p>IDW主要依赖于反距离的幂值。基于距输出点的距离，幂参数可以控制已知点对内插值的影响。幂参数是一个正实数，默认值为 2，一般在0.5至3之间取值。随着幂值的增大，内插值将逐渐接近最近采样点的值。指定较小的幂值，将对距离较远的周围点产生更大影响，会产生更加平滑的表面。由于反距离权重公式与任何实际物理过程都不关联，因此无法确定特定幂值是否过大。作为常规准则，认为值为 30 的幂是超大幂，因此不建议使用。此外还需牢记一点，如果距离或幂值较大，则可能生成错误结果。</p>
+<p><strong>障碍：</strong></p>
+<p>障碍是一个用作可限制输入采样点搜索的隔断线的折线 (polyline) 数据集。一条折线 (polyline) 可以表示地表中的悬崖、山脊或某种其他中断。仅将那些位于障碍同一侧的输入采样点视为当前待处理像元。</p>
+<p><strong>注意事项：</strong></p>
+<p>（1）因为反距离权重法是加权平均距离，所以该平均值不可能大于最大输入或小于最小输入。因此，如果尚未对这些极值采样，便无法创建山脊或山谷。</p>
+<p>（2）此工具最多可处理约 4,500 万个输入点。如果输入要素类包含 4,500 万个以上的点，工具可能无法创建结果。</p>
+<p>工具执行截图：</p>
+<p><img data-src="/images/blogImg/SAInterpolation_Demo.png"></p>
+<h1 id="2-克里金法（Kriging）"><a href="#2-克里金法（Kriging）" class="headerlink" title="2. 克里金法（Kriging）"></a><strong>2. 克里金法（Kriging）</strong></h1><p>克里金法假定采样点之间的距离或方向可以反映可用于说明表面变化的空间相关性。克里金法是一个多步过程；它包括数据的探索性统计分析、变异函数建模和创建表面，还包括研究方差表面。该方法通常用在土壤科学和地质中。</p>
+<h1 id="3-自然邻域法（Natural-Neighbor）"><a href="#3-自然邻域法（Natural-Neighbor）" class="headerlink" title="3. 自然邻域法（Natural Neighbor）"></a><strong>3. 自然邻域法（Natural Neighbor）</strong></h1><p>可找到距查询点最近的输入样本子集，并基于区域大小按比例对这些样本应用权重来进行插值。该插值也称为 Sibson 或“区域占用 (area-stealing)”插值。</p>
+<h1 id="4-样条函数（Spline）"><a href="#4-样条函数（Spline）" class="headerlink" title="4. 样条函数（Spline）"></a><strong>4. 样条函数（Spline）</strong></h1><p>使用二维最小曲率样条法将点插值成栅格表面。生成的平滑表面恰好经过输入点。</p>
+<h1 id="5-含障碍的样条函数（Spline-with-Barriers）"><a href="#5-含障碍的样条函数（Spline-with-Barriers）" class="headerlink" title="5. 含障碍的样条函数（Spline with Barriers）"></a><strong>5. 含障碍的样条函数（Spline with Barriers）</strong></h1><p>通过最小曲率样条法利用障碍将点插值成栅格表面。障碍以面要素或折线要素的形式输入。样条函数法工具所使用的插值方法使用可最小化整体表面曲率的数学函数来估计值。</p>
+<h1 id="6-地形转栅格（Topo-to-Raster）"><a href="#6-地形转栅格（Topo-to-Raster）" class="headerlink" title="6. 地形转栅格（Topo to Raster）"></a><strong>6. 地形转栅格（Topo to Raster）</strong></h1><p>将点、线和面数据插值成符合真实地表的栅格表面。</p>
+<p>依据文件实现地形转栅格（Topo to Raster by file）</p>
+<p>通过文件中指定的参数将点、线和面数据插值成符合真实地表的栅格表面。通过这种技术创建的表面可更好的保留输入等值线数据中的山脊线和河流网络。</p>
+<h1 id="7-趋势（trend）"><a href="#7-趋势（trend）" class="headerlink" title="7. 趋势（trend）"></a><strong>7. 趋势（trend）</strong></h1><p>使用趋势面法将点插值成栅格曲面。趋势表面会逐渐变化，并捕捉数据中的粗尺度模式。</p>
+<p>以上是插值工具的简单说明与比较，这些工具的背后都有庞大的理论基础和复杂的算法，需要进一步学习整理和补充。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geoprocessing</tag>
+        <tag>Spatial Analyst</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>空间分析之水文分析</title>
     <url>/2012/08/27/SAHydrology/</url>
     <content><![CDATA[<p>接收雨水的区域以及雨水到达出水口前所流经的网络被称为水系。流经水系的水流只是通常所说的水文循环的一个子集，水文循环还包括降雨、蒸发和地下水流。水文分析工具重点处理的是水在地表上的运动情况。“水文分析”工具用于为地表水流建立模型。</p>
@@ -1366,42 +1321,6 @@
 <br>
 
 <p>That’s all.</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geoprocessing</tag>
-        <tag>Spatial Analyst</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>空间分析之插值分析</title>
-    <url>/2012/08/27/SAInterpolation/</url>
-    <content><![CDATA[<p>在实际工作中，由于成本的限制、测量工作实施困难大等因素，我们不能对研究区域的每一位置都进行测量（如高程、降雨、化学物质浓度和噪声等级）。这时，我们可以考虑合理选取采样点，然后通过采样点的测量值，使用适当的数学模型，对区域所有位置进行预测，形成测量值表面。插值之所以可称为一种可行的方案，是因为我们假设，空间分布对象都是空间相关的，也就是说，彼此接近的对象往往具有相似的特征。</p>
-<p>ArcGIS的空间分析中，提供了插值（Interpolation）工具集，如下：</p>
-<p><img data-src="/images/blogImg/SAInterpolation_Toolset.png"></p>
-<br>
-
-<h1 id="1-反距离权重法（IDW–Inverse-Distance-Weighted）"><a href="#1-反距离权重法（IDW–Inverse-Distance-Weighted）" class="headerlink" title="1. 反距离权重法（IDW–Inverse Distance Weighted）"></a><strong>1. 反距离权重法（IDW–Inverse Distance Weighted）</strong></h1><p>此方法假定所映射的变量因受到与其采样位置间的距离的影响而减小。</p>
-<p><strong>幂参数：</strong></p>
-<p>IDW主要依赖于反距离的幂值。基于距输出点的距离，幂参数可以控制已知点对内插值的影响。幂参数是一个正实数，默认值为 2，一般在0.5至3之间取值。随着幂值的增大，内插值将逐渐接近最近采样点的值。指定较小的幂值，将对距离较远的周围点产生更大影响，会产生更加平滑的表面。由于反距离权重公式与任何实际物理过程都不关联，因此无法确定特定幂值是否过大。作为常规准则，认为值为 30 的幂是超大幂，因此不建议使用。此外还需牢记一点，如果距离或幂值较大，则可能生成错误结果。</p>
-<p><strong>障碍：</strong></p>
-<p>障碍是一个用作可限制输入采样点搜索的隔断线的折线 (polyline) 数据集。一条折线 (polyline) 可以表示地表中的悬崖、山脊或某种其他中断。仅将那些位于障碍同一侧的输入采样点视为当前待处理像元。</p>
-<p><strong>注意事项：</strong></p>
-<p>（1）因为反距离权重法是加权平均距离，所以该平均值不可能大于最大输入或小于最小输入。因此，如果尚未对这些极值采样，便无法创建山脊或山谷。</p>
-<p>（2）此工具最多可处理约 4,500 万个输入点。如果输入要素类包含 4,500 万个以上的点，工具可能无法创建结果。</p>
-<p>工具执行截图：</p>
-<p><img data-src="/images/blogImg/SAInterpolation_Demo.png"></p>
-<h1 id="2-克里金法（Kriging）"><a href="#2-克里金法（Kriging）" class="headerlink" title="2. 克里金法（Kriging）"></a><strong>2. 克里金法（Kriging）</strong></h1><p>克里金法假定采样点之间的距离或方向可以反映可用于说明表面变化的空间相关性。克里金法是一个多步过程；它包括数据的探索性统计分析、变异函数建模和创建表面，还包括研究方差表面。该方法通常用在土壤科学和地质中。</p>
-<h1 id="3-自然邻域法（Natural-Neighbor）"><a href="#3-自然邻域法（Natural-Neighbor）" class="headerlink" title="3. 自然邻域法（Natural Neighbor）"></a><strong>3. 自然邻域法（Natural Neighbor）</strong></h1><p>可找到距查询点最近的输入样本子集，并基于区域大小按比例对这些样本应用权重来进行插值。该插值也称为 Sibson 或“区域占用 (area-stealing)”插值。</p>
-<h1 id="4-样条函数（Spline）"><a href="#4-样条函数（Spline）" class="headerlink" title="4. 样条函数（Spline）"></a><strong>4. 样条函数（Spline）</strong></h1><p>使用二维最小曲率样条法将点插值成栅格表面。生成的平滑表面恰好经过输入点。</p>
-<h1 id="5-含障碍的样条函数（Spline-with-Barriers）"><a href="#5-含障碍的样条函数（Spline-with-Barriers）" class="headerlink" title="5. 含障碍的样条函数（Spline with Barriers）"></a><strong>5. 含障碍的样条函数（Spline with Barriers）</strong></h1><p>通过最小曲率样条法利用障碍将点插值成栅格表面。障碍以面要素或折线要素的形式输入。样条函数法工具所使用的插值方法使用可最小化整体表面曲率的数学函数来估计值。</p>
-<h1 id="6-地形转栅格（Topo-to-Raster）"><a href="#6-地形转栅格（Topo-to-Raster）" class="headerlink" title="6. 地形转栅格（Topo to Raster）"></a><strong>6. 地形转栅格（Topo to Raster）</strong></h1><p>将点、线和面数据插值成符合真实地表的栅格表面。</p>
-<p>依据文件实现地形转栅格（Topo to Raster by file）</p>
-<p>通过文件中指定的参数将点、线和面数据插值成符合真实地表的栅格表面。通过这种技术创建的表面可更好的保留输入等值线数据中的山脊线和河流网络。</p>
-<h1 id="7-趋势（trend）"><a href="#7-趋势（trend）" class="headerlink" title="7. 趋势（trend）"></a><strong>7. 趋势（trend）</strong></h1><p>使用趋势面法将点插值成栅格曲面。趋势表面会逐渐变化，并捕捉数据中的粗尺度模式。</p>
-<p>以上是插值工具的简单说明与比较，这些工具的背后都有庞大的理论基础和复杂的算法，需要进一步学习整理和补充。</p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -1830,64 +1749,84 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS Terrain Dataset</title>
-    <url>/2012/12/13/ArcGIS-Terrain-Dataset/</url>
-    <content><![CDATA[<h1 id="1-了解-Terrain-Dataset"><a href="#1-了解-Terrain-Dataset" class="headerlink" title="1 了解 Terrain Dataset"></a><strong>1 了解 Terrain Dataset</strong></h1><p>Terrain Dataset 是多分辨率的基于 TIN 的表面数据结构，支持 ArcSDE、个人以及文件地理数据库，存储在ArcGIS&nbsp; Geodatabase 的 Feature Dataset 中，Feature Dataset 中需要包含构建 TIN 的要素类。</p>
-<p>Terrain Dataset&nbsp;引用原始要素类，对数据重新组织重建索引，动态生成 TIN 表面，并没有实际创建栅格或 TIN 数据。</p>
-<p>在数据组织过程中，会创建金字塔，用于决定数据细节层次。&nbsp;terrain 数据集是多分辨率 TIN。它具有一系列 TIN，其中每一个 TIN 都在特定的地图比例尺范围内使用。</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Demo.gif"></p>
-<p>Terrain Dataset 可由不同类型的数据组成。支持的几何类型包括点、多点、线和多边形。每一种几何类型的数据都可以具有不同的表面要素类型（SFType），这与前面一篇博客中构建TIN时选择表面类型作用是相同的。</p>
-<p>帮助中的下表很好的将常见数据类型的应用做了总结：</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_type.png"></p>
+    <title>ArcGIS for AutoCAD 小结</title>
+    <url>/2012/02/07/ArcGISforAutoCAD/</url>
+    <content><![CDATA[<h2 id="一、-简介"><a href="#一、-简介" class="headerlink" title="一、 简介"></a><strong>一、 简介</strong></h2><p> ArcGIS for AutoCAD是Esri提供的一个针对AutoCAD免费插件。此插件可以使AutoCAD作为ArcGIS Server的客户端加载服务；并且可以作为GIS结构编辑器来组织CAD数据，从而作为直接可用的GIS 要素类；给CAD数据定义坐标系，可以被ArcGIS产品识别。</p>
 <br>
 
-<h1 id="2-Terrain-Dataset-的属性"><a href="#2-Terrain-Dataset-的属性" class="headerlink" title="2 Terrain Dataset 的属性"></a><strong>2 Terrain Dataset 的属性</strong></h1><h2 id="基本属性设置："><a href="#基本属性设置：" class="headerlink" title="基本属性设置："></a><strong>基本属性设置：</strong></h2><p><strong>1） 平均点间距（Approximate Point Spacing）</strong></p>
-<p>创建地形数据集时，需要指定输入测量值的平均点间距。平均点间距的作用是对点进行归类或分组，从而构造出虚拟分块系统。</p>
-<p>平均点距的获得：查看元数据、向数据提供商或数据维护人员寻求帮助。实在无法获取，只能用量距工具估算了。</p>
-<p>这个参数能够决定 Tile Size，查看Terrain数据集属性可以看到。</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Pointspace.png"></p>
-<p><strong>2） 高度源（Height Source）</strong></p>
-<p>向地形添加要素类时，需要指明该要素类是否具有 z 值；如果具有 z 值，则还需要指明这些值的来源。</p>
-<p><strong>3） 表面要素类型（SFType）</strong></p>
-<p>定义在对地形数据集表面进行定义时该要素类所发挥的作用。存在离散多点、断裂线以及若干种多边形类型。上面图表中有说明。</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_SFtype.png"></p>
-<p><strong>4）地形金字塔（Terrain Pyramid）</strong></p>
-<p>地形金字塔等级采用的依据是对精确度的要求随比例的减小而降低。金字塔等级在概念和用途上均类似于栅格金字塔，但二者的实现方法不同。 Terrain Pyramid 通过点抽稀实现。也就是下一级金字塔使用的点数少于上一级，但是采用的点都是原始的点值。 金字塔不使用任何重采样、平均化或派生的数据。</p>
-<p>有两种金字塔类型：z 容差和窗口大小。<br><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Pyramid.png"></p>
-<p>在窗口大小的选项中，可以设置二次抽稀。</p>
-<h2 id="高级属性设置"><a href="#高级属性设置" class="headerlink" title="高级属性设置"></a><strong>高级属性设置</strong></h2><p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Advanced.png"></p>
-<p><strong>5）概貌地形（Overview Terrain）</strong></p>
-<p>概貌地形是地形数据集最粗略表示，专门用于小比例尺下的快速绘制。如下图：</p>
-<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Overview.png"></p>
-<p><strong>6）定位点（Anchor Point）</strong></p>
-<p>定位点在地形数据集的所有金字塔等级中保持不变。这些点不会被过滤，也不会被细化掉。这将确保无论使用何种分辨率金字塔等级，定位点都会存在于地形表面中。对于显示和分析操作都是这样。支持定位点的目的是使用户始终能在地形中保留一个相对较小的重要测量值集合，如控制点、水准点和最佳水深。</p>
-<p><strong>7）组（Group）</strong></p>
-<p>组用于为线要素和多边形要素定义多种详细程度。将相同的组 ID 指定给每个多边形要素类，向地形告知它们属于同一主题（例如，研究区域边界）。</p>
-<p><strong>8）嵌入式要素类（Embedded feature classes）</strong></p>
-<p>terrain 金字塔的大小约相当于参与 terrain 的要素类中所包含几何的大小，需要较大的存储空间。对于较大的点集合（通常由激光雷达或声纳表示），开销可能相当大，可以将较大的多点要素类嵌入 terrain 数据集中，以节省存储空间。构建 terrain 后，它将成为点的容器，而不再引用源要素类。可以将这些要素类删除，以恢复其存储空间。</p>
-<h2 id="性能的提示"><a href="#性能的提示" class="headerlink" title="性能的提示"></a><strong>性能的提示</strong></h2><p>1） 最好将所有硬断线都放置在一个要素类中。</p>
-<p>2） 定义 terrain 时，使用的要素类越少越好。</p>
-<p>3） 不同数据库的数据量的选择：</p>
-<ul>
-<li>个人地理数据库的容量最小，应限制为包含 2,000 万或更少点数的地形。</li>
-<li>文件地理数据库可用于包含数十亿个点的地形。</li>
-<li>ArcSDE 的容量最大，适合点集可能会增长到数十亿的地形。</li>
-</ul>
-<p>4） 金字塔类型的选择：</p>
-<p>有两种方式可供选择： Z Tolerance 和 Windows Size。区别和使用情况如下：</p>
-<ul>
-<li>Z Tolerance：对地表裸露激光雷达最有效。金字塔过滤器速度较慢，但在某些分析中，控制垂直精度很重要，要细化此类分析中使用的数据，Z 容差金字塔过滤器更适合一些。</li>
-<li>Windows Size：对所有数据、第一回波激光雷达点最有效。窗口大小过滤器速度较快，适合于较常规的用途，它以水平采样密度为基础。Windows Size 金字塔过滤器是基于窗口大小以及用户指定的窗口统计数据来确定的。指定的窗口统计数据可以是最小点高度、最大点高度、平均点高度，或者是同时指定最小和最大点高度。</li>
-</ul>
-<p>5） 有关构建Terrain的建议和最佳方法：</p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4xL2luZGV4Lmh0bWwjL25hLzAwNXYwMDAwMDAxcjAwMDAwMC8=">http://resources.arcgis.com/zh-cn/help/main/10.1/index.html#/na/005v0000001r000000/<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="二、-系统要求"><a href="#二、-系统要求" class="headerlink" title="二、 系统要求"></a><strong>二、 系统要求</strong></h2><p>这里基于ArcGIS for AutoCAD 250版本。 </p>
+<p> <strong>版本:</strong> </p>
+<p>AutoCAD 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p>AutoCAD Map 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p>AutoCAD Civil 3D 2010&#x2F;2011, 32-bit or 64-bit</p>
+<p><strong>操作系统:</strong></p>
+<p>Windows 7 Enterprise, Ultimate, Professional, or Home  Premium</p>
+<p>Windows Vista Enterprise, Business, Ultimate, or Home  Premium (SP1 or later) </p>
+<p>Windows XP Professional or Home edition (SP3)</p>
+<p><strong>Microsoft .NET Framework:</strong>   </p>
+<p>Microsoft .NET Framework Version 3.5 (SP1 or later) </p>
+<p> <strong>Internet 方式连接ArcGIS Server:</strong>   </p>
+<p>ArcGIS Server 9.3 或更高版本发布服务 </p>
+<br>
+
+<h2 id="三、-安装与加载"><a href="#三、-安装与加载" class="headerlink" title="三、 安装与加载"></a><strong>三、 安装与加载</strong></h2><p>下面以AutoCAD 2010（x64），ArcGIS for AutoCAD 250（x64）为例，介绍一下此插件的安装使用过程。</p>
+<h3 id="1-获取并安装插件"><a href="#1-获取并安装插件" class="headerlink" title="1. 获取并安装插件"></a><strong>1. 获取并安装插件</strong></h3><p>插件的下载地址：<span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaWNoaW5hLWJqLmNuLzIwMTEvMDIyNC85NjMuaHRtbA==">http://support.esrichina-bj.cn/2011/0224/963.html<i class="fa fa-external-link-alt"></i></span><br> 注意此插件区分32bit与64bit，选择合适版本下载，我这里使用ArcGISforAutoCADDownloadx64.exe。<br> 在已经安装AutoCAD的前提下，双击运行此exe即可。</p>
+<h3 id="2-插件的加载"><a href="#2-插件的加载" class="headerlink" title="2. 插件的加载"></a><strong>2. 插件的加载</strong></h3><p>以管理员身份运行AutoCAD，在AutoCAD的命令提示行中输入：NETLOAD。出现资源管理器窗口，浏览至插件的安装目录，选择 ArcGISForAutoCAD.dll打开。</p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_AutoCAD.gif"></p>
+<p>之后出现插件加载画面。</p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_Launch.gif"></p>
+<p>加载ArcGIS for AutoCAD插件成功。</p>
+<p>加载后，会多出ArcGIS for AutoCAD插件栏，如下图：<br><img data-src="/images/blogImg/ArcGISforAutoCAD_Menu.gif"></p>
+<h3 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a><strong>注意事项：</strong></h3><p>添加ArcGIS Online服务时，可能会遇到错误：“<strong>找不到资源：</strong>‘<strong>basemapui\basemapcenter.xaml’</strong>”。</p>
+<p>解决方法：这是个已知问题，下载补丁既可以解决此问题，地址：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT1saXN0UGF0Y2hlcyZQSUQ9MTI5">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=listPatches&PID=129<i class="fa fa-external-link-alt"></i></span></p>
+<p>至此，ArcGIS for AutoCAD 插件即可以开始使用啦。</p>
+<h2 id="四、-功能与使用"><a href="#四、-功能与使用" class="headerlink" title="四、 功能与使用"></a><strong>四、 功能与使用</strong></h2><h3 id="1-Map-Service"><a href="#1-Map-Service" class="headerlink" title="1. Map Service"></a><strong>1. Map Service</strong></h3><p>有了这个插件，首先可以使AutoCAD直接加载Map Service：</p>
+<p>(1) ArcGIS Online</p>
+<p>使用Esri Map Gallery中的地图作为地图，添加到现有的CAD工程中。</p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_Basemap.gif"></p>
+<p>(2) ArcGIS Server</p>
+<p>向现有的CAD工程中添加ArcGIS Server服务。</p>
+<p><img data-src="/images/blogImg/ArcGISforAutoCAD_AGSServer.gif"></p>
+<h3 id="2-CAD-Feature-Class"><a href="#2-CAD-Feature-Class" class="headerlink" title="2. CAD Feature Class"></a><strong>2. CAD Feature Class</strong></h3><p>此插件可以将 AutoCAD 作为 GIS 方案编辑器，用来将 CAD 数据组织为可供 GIS 使用的要素类。</p>
+<p>类型对象过滤器是预定义的，用来约束ArcGIS Desktop支持的feature class与DWG 对象的对应关系。</p>
+<p>DWG 对象与ArcGIS 要素的强制对应关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>Feature type</th>
+<th>DWG object types</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Point</td>
+<td>Point, Insert,  shape, Hatch, Proxy</td>
+</tr>
+<tr>
+<td>Polyline</td>
+<td>Arc, Circle,  Ellipse, Line, Mline, polyline, 3D polyline Ray, spline, Xline, Trace, solid,  3Dface</td>
+</tr>
+<tr>
+<td>Polygon</td>
+<td>Circle, Solid,  Ellipse, Face, closed polyline, closed 3D polyline, Mline</td>
+</tr>
+<tr>
+<td>Annotation</td>
+<td>Text, Mtext,  Attribute, Attdef</td>
+</tr>
+<tr>
+<td>Multipatch</td>
+<td>Arc, Circle,  Ellipse, Line, Mline, polyline, 3D polyline Ray, spline, Xline, Trace, solid,  3Dface</td>
+</tr>
+</tbody></table>
+<h3 id="3-坐标系统"><a href="#3-坐标系统" class="headerlink" title="3. 坐标系统"></a><strong>3. 坐标系统</strong></h3><p>插件使用的坐标系统是通过*.prj 文件来定义的。当给DWG文件定义坐标系后，这个有效的空间参考是可以被ArcGIS Server、ArcMap、ArcCatalog以及ArcGIS 地理处理工具识别的。</p>
+<p>关于CAD与ArcGIS一体化的文章，后面会不断更新~</p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
       </categories>
       <tags>
         <tag>Geodata</tag>
-        <tag>3D</tag>
+        <tag>CAD</tag>
       </tags>
   </entry>
   <entry>
@@ -1987,6 +1926,29 @@
       </tags>
   </entry>
   <entry>
+    <title>3D数据互操作之认识Collada</title>
+    <url>/2013/03/04/OverviewCollada/</url>
+    <content><![CDATA[<p>Collada的名称来自于COLLAborative Design Activity（协同设计活动），是用于存储 3D 模型的开放式标准 XML 格式，最早是由 Sony Computer Entertainment（SCEA）发起。</p>
+<p>以下介绍来自网络：</p>
+<p><em>COLLADA™ 是面向交互式 3D 应用程序的基于 XML 的数字资产交换方案，使 3D 创作应用程序可以自由地交换数字资产而不损失信息 - 使多种DCC和3D处理软件包可以组合成强大的工具链管道。独特的交互模式提供了广泛全面的视觉编译。COLLADA FX支持使用 OpenGL ES 着色语言创作和封装着色器，以使一流的 3D 创作工具可以有效协作创建 OpenGL &#x2F; OpenGL ES 应用程序和资产。<br> COLLADA是一个开放的标准，最初用于3D软件数据交换，由SCEA发起，现在则被许多著名厂家支持如Autodesk、XSI等。COLLADA不仅仅可以用于建模工具之间交换数据之用，也可以作为场景描述语言用于小规模的实时渲染。因为COLLADA DOM拥有丰富的内容用于表现场景中的各种元素，从多边形几何体到摄像机无所不包。我们可以通过COLLADA DOM库来进行场景文件的读取与处理操作。COLLADA DOM的编程方式类似COM。</em></p>
+<p>总之，我们可以将Collada理解成一个开放的3D数据资源的交换方案。COLLADA 文件的扩展名是 .dae，此类文件中还可能引用一些附加的图像文件，这些文件被用作 3D 对象上覆盖的纹理。<br>了解更多资源，点击：<span class="exturl" data-url="aHR0cDovL2NvbGxhZGEub3JnL21lZGlhd2lraS9pbmRleC5waHAvQ09MTEFEQQ==">http://collada.org/mediawiki/index.php/COLLADA<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<p>ArGIS Desktop 中如何转化呢？</p>
+<p>从ArcGIS 10.0之后，ArcToolbox中就增加了 Multipath to Collada，可以将ArcGIS的多面体矢量格式转换为3D的解决方案。从而也便利了与 SkecthUp，3DS Max 等第三方软件的交互。</p>
+<p>将多面体要素导出到 COLLADA 会创建若干文件 - 一个包含 3D 对象的 XML 表示的 .dae 文件以及一个或多个包含纹理的图像文件（例如 .jpg 或 .png 文件）。</p>
+<p>每一个multipatch会对应的生成一个Collada文件，他们之间的关联是通过指定字段维护的，如果没有特殊指定，就使用ObjectID。</p>
+<p><img data-src="/images/blogImg/OverviewCollada.png"></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geodata</tag>
+        <tag>3D</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS支持3D视图吗？</title>
     <url>/2013/03/04/ArcGIS3DView/</url>
     <content><![CDATA[<p>ArcGIS Desktop 中的 ArcScene 组件支持 3D 视图。</p>
@@ -2057,29 +2019,6 @@
       </tags>
   </entry>
   <entry>
-    <title>3D数据互操作之认识Collada</title>
-    <url>/2013/03/04/OverviewCollada/</url>
-    <content><![CDATA[<p>Collada的名称来自于COLLAborative Design Activity（协同设计活动），是用于存储 3D 模型的开放式标准 XML 格式，最早是由 Sony Computer Entertainment（SCEA）发起。</p>
-<p>以下介绍来自网络：</p>
-<p><em>COLLADA™ 是面向交互式 3D 应用程序的基于 XML 的数字资产交换方案，使 3D 创作应用程序可以自由地交换数字资产而不损失信息 - 使多种DCC和3D处理软件包可以组合成强大的工具链管道。独特的交互模式提供了广泛全面的视觉编译。COLLADA FX支持使用 OpenGL ES 着色语言创作和封装着色器，以使一流的 3D 创作工具可以有效协作创建 OpenGL &#x2F; OpenGL ES 应用程序和资产。<br> COLLADA是一个开放的标准，最初用于3D软件数据交换，由SCEA发起，现在则被许多著名厂家支持如Autodesk、XSI等。COLLADA不仅仅可以用于建模工具之间交换数据之用，也可以作为场景描述语言用于小规模的实时渲染。因为COLLADA DOM拥有丰富的内容用于表现场景中的各种元素，从多边形几何体到摄像机无所不包。我们可以通过COLLADA DOM库来进行场景文件的读取与处理操作。COLLADA DOM的编程方式类似COM。</em></p>
-<p>总之，我们可以将Collada理解成一个开放的3D数据资源的交换方案。COLLADA 文件的扩展名是 .dae，此类文件中还可能引用一些附加的图像文件，这些文件被用作 3D 对象上覆盖的纹理。<br>了解更多资源，点击：<span class="exturl" data-url="aHR0cDovL2NvbGxhZGEub3JnL21lZGlhd2lraS9pbmRleC5waHAvQ09MTEFEQQ==">http://collada.org/mediawiki/index.php/COLLADA<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<p>ArGIS Desktop 中如何转化呢？</p>
-<p>从ArcGIS 10.0之后，ArcToolbox中就增加了 Multipath to Collada，可以将ArcGIS的多面体矢量格式转换为3D的解决方案。从而也便利了与 SkecthUp，3DS Max 等第三方软件的交互。</p>
-<p>将多面体要素导出到 COLLADA 会创建若干文件 - 一个包含 3D 对象的 XML 表示的 .dae 文件以及一个或多个包含纹理的图像文件（例如 .jpg 或 .png 文件）。</p>
-<p>每一个multipatch会对应的生成一个Collada文件，他们之间的关联是通过指定字段维护的，如果没有特殊指定，就使用ObjectID。</p>
-<p><img data-src="/images/blogImg/OverviewCollada.png"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geodata</tag>
-        <tag>3D</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>有关shapefile存储时间字段的问题</title>
     <url>/2013/03/04/shapefileDataField/</url>
     <content><![CDATA[<p>很多ArcGIS的用户会很疑惑，为什么excel或者其他数据库中的时间数据数据，例如15:40:30等这样的数据，转成shapefile数据后，这个日期字段中的值会变成12:00:00 ？</p>
@@ -2103,6 +2042,39 @@
       </categories>
       <tags>
         <tag>Geodata</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在CityEngine中的圆柱体建模</title>
+    <url>/2013/03/12/CurveinCityEngine/</url>
+    <content><![CDATA[<p>CityEngine中不支持弧段的存储，各种面都是折线面，也就是ArcGIS中的Polygon。</p>
+<p>当遇到圆柱体的建筑物或实体时，如何为其建模呢？</p>
+<p><img data-src="/images/blogImg/CurveinCityEngine_Demo.jpg"></p>
+<p><img data-src="/images/blogImg/CurveinCityEngine_Demo2.jpg"></p>
+<p>考虑到ArcGIS与CityEngine的数据是可以互操作的，那就在ArcGIS中来构建圆形或者弧段，然后将之处理成近似弧段的多边形，然后导入CityEngine来作为模型的底面基础。按照这个思路，来动手做一下。</p>
+<br>
+
+<h1 id="1-准备带弧的数据"><a href="#1-准备带弧的数据" class="headerlink" title="1. 准备带弧的数据"></a>1. 准备带弧的数据</h1><p>在ArcGIS Desktop 中准备数据，创建 File GDB，用于存储弧段。可以从空白开始，也可以在现有数据中编辑。</p>
+<p>创建圆、椭圆、贝塞尔曲线、圆弧构成的面等等：</p>
+<p><img data-src="/images/blogImg/CurveinCityEngine_Curve.png"></p>
+<p>以上图形都处于节点编辑状态，从节点数目我们可以发现，都是以复杂对象存储的。然而这些是CE不能读取的，那么下一步就是转折线了。</p>
+<br>
+
+<h1 id="2-弧转折线"><a href="#2-弧转折线" class="headerlink" title="2. 弧转折线"></a>2. 弧转折线</h1><p>使用 ArcToolbox中的工具 Densify 工具来对弧段加密，从而将高级的函数要素对象转为简单的点线面几何。</p>
+<p><img data-src="/images/blogImg/CurveinCityEngine_Density.png"><br>​	<br>根据需要设置间距或者偏移等参数，从而控制加密点的生成位置，这里的需要主要是指将来模型的详细程度。</p>
+<p>如果需要比较逼真，距离可以相对小一些，这样的节点会更密集些，但是在CE中建模时可能会更耗时，更加占用资源；</p>
+<p>如果相对可以粗略些，距离可以设置大些，这样的节点会稀疏些，建立模型会更加快速，但是边界相对不会很平滑。</p>
+<p><img data-src="/images/blogImg/CurveinCityEngine_DensifyResult.png"></p>
+<h1 id="3-导入CE，进一步加工"><a href="#3-导入CE，进一步加工" class="headerlink" title="3.导入CE，进一步加工"></a>3.导入CE，进一步加工</h1><p>经过简单的拉拔，可以做出简单的类似弧段建筑物。</p>
+<p><img data-src="/images/blogImg/CurveinCityEngine_Model.png"></p>
+<p>到这里，这些类弧段的楼房骨架就有了。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>3D</tag>
+        <tag>CityEngine</tag>
       </tags>
   </entry>
   <entry>
@@ -2154,39 +2126,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在CityEngine中的圆柱体建模</title>
-    <url>/2013/03/12/CurveinCityEngine/</url>
-    <content><![CDATA[<p>CityEngine中不支持弧段的存储，各种面都是折线面，也就是ArcGIS中的Polygon。</p>
-<p>当遇到圆柱体的建筑物或实体时，如何为其建模呢？</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_Demo.jpg"></p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_Demo2.jpg"></p>
-<p>考虑到ArcGIS与CityEngine的数据是可以互操作的，那就在ArcGIS中来构建圆形或者弧段，然后将之处理成近似弧段的多边形，然后导入CityEngine来作为模型的底面基础。按照这个思路，来动手做一下。</p>
-<br>
-
-<h1 id="1-准备带弧的数据"><a href="#1-准备带弧的数据" class="headerlink" title="1. 准备带弧的数据"></a>1. 准备带弧的数据</h1><p>在ArcGIS Desktop 中准备数据，创建 File GDB，用于存储弧段。可以从空白开始，也可以在现有数据中编辑。</p>
-<p>创建圆、椭圆、贝塞尔曲线、圆弧构成的面等等：</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_Curve.png"></p>
-<p>以上图形都处于节点编辑状态，从节点数目我们可以发现，都是以复杂对象存储的。然而这些是CE不能读取的，那么下一步就是转折线了。</p>
-<br>
-
-<h1 id="2-弧转折线"><a href="#2-弧转折线" class="headerlink" title="2. 弧转折线"></a>2. 弧转折线</h1><p>使用 ArcToolbox中的工具 Densify 工具来对弧段加密，从而将高级的函数要素对象转为简单的点线面几何。</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_Density.png"><br>​	<br>根据需要设置间距或者偏移等参数，从而控制加密点的生成位置，这里的需要主要是指将来模型的详细程度。</p>
-<p>如果需要比较逼真，距离可以相对小一些，这样的节点会更密集些，但是在CE中建模时可能会更耗时，更加占用资源；</p>
-<p>如果相对可以粗略些，距离可以设置大些，这样的节点会稀疏些，建立模型会更加快速，但是边界相对不会很平滑。</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_DensifyResult.png"></p>
-<h1 id="3-导入CE，进一步加工"><a href="#3-导入CE，进一步加工" class="headerlink" title="3.导入CE，进一步加工"></a>3.导入CE，进一步加工</h1><p>经过简单的拉拔，可以做出简单的类似弧段建筑物。</p>
-<p><img data-src="/images/blogImg/CurveinCityEngine_Model.png"></p>
-<p>到这里，这些类弧段的楼房骨架就有了。</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>3D</tag>
-        <tag>CityEngine</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何在街道两侧放置路灯、行树?</title>
     <url>/2013/04/17/CityEnginePlantTree/</url>
     <content><![CDATA[<p>使用CGA代码将对象（路灯、树木等）放置到路边。这里用到的主要方法就是Split 函数去做分割。</p>
@@ -2206,25 +2145,6 @@
       <tags>
         <tag>3D</tag>
         <tag>CityEngine</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS Desktop 10.1 的系统自带的 prj 文件的去哪了?</title>
-    <url>/2013/04/22/WhereArethePRJs/</url>
-    <content><![CDATA[<p>在过去的版本，例如 9.31，10.0 我们在安装目录中可以找到存放系统 prj 的地址，例如 C:\Program Files (x86)\ArcGIS\Desktop10.0\Coordinate Systems\Projected Coordinate Systems。但是10.0之后，我们发现，这个文件夹消失了，那要得到其中的Prj文件怎么做呢？ </p>
-<p>现在的 Coordinate Systems 文件变成的虚拟的结构，prj 文件都存储在 projection engine library (pe.dll)。从安装包中去掉了4000+的 prj 文件，会提升安装的性能。</p>
-<p>如果是自定义的 prj 文件， 可以将文件复制到 ArcMap Favorites 文件夹。 如果需要得到 prj 文件，可以将其添加到收藏，或者另存为副本。</p>
-<p><strong>收藏夹的位置：</strong></p>
-<p><code>Win7 ：c:\Users\[login]\[Roaming | Local | etc]\AppData\ESRI\Desktop10.1\ArcMap\Coordinate Systems</code></p>
-<p><code>WinXP： C:\Documents and Settings\[login]\Application Data\ESRI\Desktop10.1\ArcMap\Coordinate Systems</code></p>
-<p>文件夹中支持子文件夹进行分类。 </p>
-<p><img data-src="/images/blogImg/WhereArethePRJs.jpg"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Coordinate System</tag>
       </tags>
   </entry>
   <entry>
@@ -2259,6 +2179,25 @@
       </categories>
       <tags>
         <tag>Geodata</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Desktop 10.1 的系统自带的 prj 文件的去哪了?</title>
+    <url>/2013/04/22/WhereArethePRJs/</url>
+    <content><![CDATA[<p>在过去的版本，例如 9.31，10.0 我们在安装目录中可以找到存放系统 prj 的地址，例如 C:\Program Files (x86)\ArcGIS\Desktop10.0\Coordinate Systems\Projected Coordinate Systems。但是10.0之后，我们发现，这个文件夹消失了，那要得到其中的Prj文件怎么做呢？ </p>
+<p>现在的 Coordinate Systems 文件变成的虚拟的结构，prj 文件都存储在 projection engine library (pe.dll)。从安装包中去掉了4000+的 prj 文件，会提升安装的性能。</p>
+<p>如果是自定义的 prj 文件， 可以将文件复制到 ArcMap Favorites 文件夹。 如果需要得到 prj 文件，可以将其添加到收藏，或者另存为副本。</p>
+<p><strong>收藏夹的位置：</strong></p>
+<p><code>Win7 ：c:\Users\[login]\[Roaming | Local | etc]\AppData\ESRI\Desktop10.1\ArcMap\Coordinate Systems</code></p>
+<p><code>WinXP： C:\Documents and Settings\[login]\Application Data\ESRI\Desktop10.1\ArcMap\Coordinate Systems</code></p>
+<p>文件夹中支持子文件夹进行分类。 </p>
+<p><img data-src="/images/blogImg/WhereArethePRJs.jpg"></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Coordinate System</tag>
       </tags>
   </entry>
   <entry>
@@ -2320,25 +2259,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何从 ArcView 3.3 版本的工程迁移到 ArcGIS Desktop 10 ？</title>
-    <url>/2013/05/24/TransferArcView33to10/</url>
-    <content><![CDATA[<p>ArcGIS大家族中还有很多老古董，例如 ArcView 3.3，如果需要直接跳跃式的迁移到 ArcGIS Desktop 10，需要怎样做呢？</p>
-<p>1 找到这个功能：<strong>菜单栏 –&gt; Customize–&gt; Customize  Mode， Commands选项卡，搜索【ArcView】</strong></p>
-<p> <img data-src="/images/blogImg/TransferArcView33to10_Customize.png"></p>
-<p> <img data-src="/images/blogImg/TransferArcView33to10_COmmands.jpg"></p>
-<p>2 将菜单 Import from ArcView Project… 拖拽到菜单栏任意位置。</p>
-<p> <img data-src="/images/blogImg/TransferArcView33to10_Import.jpg"></p>
-<p>3 点击这个新菜单 ， Import from ArcView Project… ，弹出窗口，按照提示选择 apr 工程文件即可。</p>
-<p><img data-src="/images/blogImg/TransferArcView33to10_Import2.jpg"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Deployment</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CityEngine与ArcGIS对栅格数据的要求情况</title>
     <url>/2013/05/13/CityEngineRasterReqirement/</url>
     <content><![CDATA[<p>在论坛上看到一篇很好的讲述如题主题的文章，很有价值，可以为CityEngine选择合适的栅格数据或者纹理，提供一些帮助，原文如下：</p>
@@ -2373,28 +2293,16 @@
       </tags>
   </entry>
   <entry>
-    <title>ArcGIS Desktop 各版本产品补丁荟萃</title>
-    <url>/2013/05/29/AllPackages/</url>
-    <content><![CDATA[<p>ArcGIS 的补丁都是可以覆盖安装的，并且可以直接打最新补丁，最新补丁中修复了同版本前面所有补丁修复的问题。</p>
-<br>
-
-<h1 id="ArcGIS-10-1"><a href="#ArcGIS-10-1" class="headerlink" title="ArcGIS 10.1"></a>ArcGIS 10.1</h1><p>最新补丁： SP1</p>
-<p><strong>中文</strong><br><span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L2Rvd25sb2Fkcy9vdGhlcl8vSW5zdGFsbDEwMV9TUDFfQ2hpbmVzZV9PU0MuaHRt">http://downloads.esri.com/support/downloads/other_/Install101_SP1_Chinese_OSC.htm<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>英文</strong><br><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE4OS9tZXRhaWQvMTkxMw==">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/189/metaid/1913<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<h1 id="ArcGIS-10-0"><a href="#ArcGIS-10-0" class="headerlink" title="ArcGIS 10.0"></a>ArcGIS 10.0</h1><p>最新补丁： SP5</p>
-<p><strong>英文</strong></p>
-<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vemgtY24vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE2MC9tZXRhaWQvMTg3Ng==">http://support.esri.com/zh-cn/downloads/patches-servicepacks/view/productid/160/metaid/1876<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<h1 id="ArcGIS-9-3-1"><a href="#ArcGIS-9-3-1" class="headerlink" title="ArcGIS 9.3.1"></a>ArcGIS 9.3.1</h1><p>最新补丁： SP2</p>
-<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzQzL21ldGFpZC8xNjIw">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/43/metaid/1620<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<h1 id="ArcGIS-9-3"><a href="#ArcGIS-9-3" class="headerlink" title="ArcGIS 9.3"></a>ArcGIS 9.3</h1><p>最新补丁： SP1</p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT12aWV3UGF0Y2gmUElEPTQzJk1ldGFJRD0xNDU3">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=viewPatch&amp;PID=43&amp;MetaID=1457<i class="fa fa-external-link-alt"></i></span></p>
-<p>ArcGIS 9.2<br>最新补丁：SP6<br><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT12aWV3UGF0Y2gmUElEPTQzJk1ldGFJRD0xNDA5">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=viewPatch&amp;PID=43&amp;MetaID=1409<i class="fa fa-external-link-alt"></i></span></p>
+    <title>如何从 ArcView 3.3 版本的工程迁移到 ArcGIS Desktop 10 ？</title>
+    <url>/2013/05/24/TransferArcView33to10/</url>
+    <content><![CDATA[<p>ArcGIS大家族中还有很多老古董，例如 ArcView 3.3，如果需要直接跳跃式的迁移到 ArcGIS Desktop 10，需要怎样做呢？</p>
+<p>1 找到这个功能：<strong>菜单栏 –&gt; Customize–&gt; Customize  Mode， Commands选项卡，搜索【ArcView】</strong></p>
+<p> <img data-src="/images/blogImg/TransferArcView33to10_Customize.png"></p>
+<p> <img data-src="/images/blogImg/TransferArcView33to10_COmmands.jpg"></p>
+<p>2 将菜单 Import from ArcView Project… 拖拽到菜单栏任意位置。</p>
+<p> <img data-src="/images/blogImg/TransferArcView33to10_Import.jpg"></p>
+<p>3 点击这个新菜单 ， Import from ArcView Project… ，弹出窗口，按照提示选择 apr 工程文件即可。</p>
+<p><img data-src="/images/blogImg/TransferArcView33to10_Import2.jpg"></p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -2432,6 +2340,37 @@
       <tags>
         <tag>Geoprocessing</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Desktop 各版本产品补丁荟萃</title>
+    <url>/2013/05/29/AllPackages/</url>
+    <content><![CDATA[<p>ArcGIS 的补丁都是可以覆盖安装的，并且可以直接打最新补丁，最新补丁中修复了同版本前面所有补丁修复的问题。</p>
+<br>
+
+<h1 id="ArcGIS-10-1"><a href="#ArcGIS-10-1" class="headerlink" title="ArcGIS 10.1"></a>ArcGIS 10.1</h1><p>最新补丁： SP1</p>
+<p><strong>中文</strong><br><span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L2Rvd25sb2Fkcy9vdGhlcl8vSW5zdGFsbDEwMV9TUDFfQ2hpbmVzZV9PU0MuaHRt">http://downloads.esri.com/support/downloads/other_/Install101_SP1_Chinese_OSC.htm<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>英文</strong><br><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE4OS9tZXRhaWQvMTkxMw==">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/189/metaid/1913<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<h1 id="ArcGIS-10-0"><a href="#ArcGIS-10-0" class="headerlink" title="ArcGIS 10.0"></a>ArcGIS 10.0</h1><p>最新补丁： SP5</p>
+<p><strong>英文</strong></p>
+<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vemgtY24vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzE2MC9tZXRhaWQvMTg3Ng==">http://support.esri.com/zh-cn/downloads/patches-servicepacks/view/productid/160/metaid/1876<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<h1 id="ArcGIS-9-3-1"><a href="#ArcGIS-9-3-1" class="headerlink" title="ArcGIS 9.3.1"></a>ArcGIS 9.3.1</h1><p>最新补丁： SP2</p>
+<p><span class="exturl" data-url="aHR0cDovL3N1cHBvcnQuZXNyaS5jb20vZW4vZG93bmxvYWRzL3BhdGNoZXMtc2VydmljZXBhY2tzL3ZpZXcvcHJvZHVjdGlkLzQzL21ldGFpZC8xNjIw">http://support.esri.com/en/downloads/patches-servicepacks/view/productid/43/metaid/1620<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<h1 id="ArcGIS-9-3"><a href="#ArcGIS-9-3" class="headerlink" title="ArcGIS 9.3"></a>ArcGIS 9.3</h1><p>最新补丁： SP1</p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT12aWV3UGF0Y2gmUElEPTQzJk1ldGFJRD0xNDU3">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=viewPatch&amp;PID=43&amp;MetaID=1457<i class="fa fa-external-link-alt"></i></span></p>
+<p>ArcGIS 9.2<br>最新补丁：SP6<br><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2NvbnRlbnQvcGF0Y2hlcy1hbmQtc2VydmljZS1wYWNrcz9mYT12aWV3UGF0Y2gmUElEPTQzJk1ldGFJRD0xNDA5">http://resources.arcgis.com/zh-cn/content/patches-and-service-packs?fa=viewPatch&amp;PID=43&amp;MetaID=1409<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Deployment</tag>
       </tags>
   </entry>
   <entry>
@@ -2519,43 +2458,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在ArcGIS Desktop 中导入 Arcpy</title>
-    <url>/2013/07/02/ImportArcpy/</url>
-    <content><![CDATA[<p>在导入 ArcPy 之后，可以运行随 ArcGIS 安装的标准工具箱中的所有地理处理工具。</p>
-<p><code>import arcpy</code></p>
-<br>
-
-<h1 id="1-导入整个模块"><a href="#1-导入整个模块" class="headerlink" title="1.导入整个模块"></a>1.导入整个模块</h1><p>模块通常是一个包含函数和类的 Python 文件。</p>
-<p>ArcPy 包括数据访问模块 (arcpy.da)、制图模块 (arcpy.mapping)、ArcGIS Spatial Analyst 扩展模块模块 (arcpy.sa) 和 ArcGIS Network Analyst 扩展模块模块 (arcpy.na)。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import arcpy.mapping</span><br></pre></td></tr></table></figure>
-
-<p>Python 的核心 os 和 sys 模块，也可使用此命令。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br></pre></td></tr></table></figure>
-
-
-<br>
-
-<h1 id="2-导入模块的一部分"><a href="#2-导入模块的一部分" class="headerlink" title="2.导入模块的一部分"></a>2.导入模块的一部分</h1><p>如果只导入某一模块的一部分，可以使用 from-import 语句。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from arcpy import env</span><br><span class="line">env.workspace = &quot;c:/data&quot;</span><br></pre></td></tr></table></figure>
-
-<p>使用from-import-as 的形式，为其制定名称。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from arcpy import env as ENV</span><br><span class="line">ENV.workspace = &quot;c:/data&quot;</span><br></pre></td></tr></table></figure>
-
-<p>再来个例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from arcpy import mapping as MAP</span><br><span class="line">mxd = MAP.MapDocument(&quot;C:/maps/basemap.mxd&quot;)</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<h1 id="3-导入模块全部内容"><a href="#3-导入模块全部内容" class="headerlink" title="3. 导入模块全部内容"></a>3. 导入模块全部内容</h1><p>模块的内容将被直接导入到命名空间中，随后无需添加前缀。在某些情况下，from-import-* 可以简化代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Import arcpy and the sa module as *</span><br><span class="line"></span><br><span class="line">import arcpy</span><br><span class="line">from arcpy.sa import *</span><br><span class="line">arcpy.CheckOutExtension(&quot;spatial&quot;)</span><br><span class="line"># Get input parameters</span><br><span class="line">#</span><br><span class="line">inRaster1 = arcpy.GetParameterAsText(0)</span><br><span class="line">inRaster2 = arcpy.GetParameterAsText(1)</span><br><span class="line">inRaster3 = arcpy.GetParameterAsText(2)</span><br><span class="line">outRaster = (Raster(inRaster1) + (Raster(inRaster2) - Raster(inRaster3)))</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS Data Driven Page</title>
     <url>/2013/06/26/ArcGISDataDrivenPage/</url>
     <content><![CDATA[<p>通过 “Data Driven Page” 可以基于单个地图文档，快速创建一系列布局页面。按照图层中的各个索引要素，将地图分割为多个部分，分别生成相应的地图。</p>
@@ -2623,29 +2525,6 @@
       </tags>
   </entry>
   <entry>
-    <title>将度-分-秒值转换为十进制度</title>
-    <url>/2013/07/22/ConvertDMS/</url>
-    <content><![CDATA[<p>在ArcMap中，在表中新建一个字段，用于存储新的十进制度值，使用字段计算器和 VB 脚本实现。</p>
-<p>如下示例，其中，假设 Latitude 是表中存储 DMS 纬度值字段的名称，经纬度数据中的度分秒三个数据是以空格分隔。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dim Degrees</span><br><span class="line">Dim Minutes</span><br><span class="line">Dim Seconds</span><br><span class="line">Dim DMS</span><br><span class="line">Dim DD</span><br><span class="line"></span><br><span class="line">DMS = Split([Latitude])</span><br><span class="line">Degrees = CDbl(DMS(0))</span><br><span class="line">Minutes = CDbl(DMS(1))</span><br><span class="line">Seconds = CDbl(DMS(2))</span><br><span class="line">If Degrees &lt; 0 Then</span><br><span class="line">   DD = -(Seconds/3600) - (Minutes/60) + Degrees</span><br><span class="line">Else</span><br><span class="line">   DD = (Seconds/3600) + (Minutes/60) + Degrees</span><br><span class="line">End If</span><br></pre></td></tr></table></figure>
-
-<p>PS：使用到的VBScript 函数：</p>
-<p>（1）<strong>Split</strong>：</p>
-<pre><code>Split(expression[,delimiter[,count[,compare]]])
-</code></pre>
-<p>（2）<strong>CDbl</strong>：</p>
-<p>CDbl 函数可把表达式转换为双精度（Double）类型。</p>
-<p>结果示例：</p>
-<p><img data-src="/images/blogImg/ConvertDMS.jpg"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geodata</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>聚焦等值面的创建</title>
     <url>/2013/07/12/BuildingCountor/</url>
     <content><![CDATA[<p>&nbsp; &nbsp; 日常我们会碰到有很多根据已知采样点生成等值面、等值线的需求，。由散点采样值估算相应区域，我们一般会想到插值，这样就获得了这个区域的连续表面。</p>
@@ -2707,6 +2586,66 @@
       </categories>
       <tags>
         <tag>Geoprocessing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在ArcGIS Desktop 中导入 Arcpy</title>
+    <url>/2013/07/02/ImportArcpy/</url>
+    <content><![CDATA[<p>在导入 ArcPy 之后，可以运行随 ArcGIS 安装的标准工具箱中的所有地理处理工具。</p>
+<p><code>import arcpy</code></p>
+<br>
+
+<h1 id="1-导入整个模块"><a href="#1-导入整个模块" class="headerlink" title="1.导入整个模块"></a>1.导入整个模块</h1><p>模块通常是一个包含函数和类的 Python 文件。</p>
+<p>ArcPy 包括数据访问模块 (arcpy.da)、制图模块 (arcpy.mapping)、ArcGIS Spatial Analyst 扩展模块模块 (arcpy.sa) 和 ArcGIS Network Analyst 扩展模块模块 (arcpy.na)。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import arcpy.mapping</span><br></pre></td></tr></table></figure>
+
+<p>Python 的核心 os 和 sys 模块，也可使用此命令。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br></pre></td></tr></table></figure>
+
+
+<br>
+
+<h1 id="2-导入模块的一部分"><a href="#2-导入模块的一部分" class="headerlink" title="2.导入模块的一部分"></a>2.导入模块的一部分</h1><p>如果只导入某一模块的一部分，可以使用 from-import 语句。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from arcpy import env</span><br><span class="line">env.workspace = &quot;c:/data&quot;</span><br></pre></td></tr></table></figure>
+
+<p>使用from-import-as 的形式，为其制定名称。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from arcpy import env as ENV</span><br><span class="line">ENV.workspace = &quot;c:/data&quot;</span><br></pre></td></tr></table></figure>
+
+<p>再来个例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from arcpy import mapping as MAP</span><br><span class="line">mxd = MAP.MapDocument(&quot;C:/maps/basemap.mxd&quot;)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="3-导入模块全部内容"><a href="#3-导入模块全部内容" class="headerlink" title="3. 导入模块全部内容"></a>3. 导入模块全部内容</h1><p>模块的内容将被直接导入到命名空间中，随后无需添加前缀。在某些情况下，from-import-* 可以简化代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Import arcpy and the sa module as *</span><br><span class="line"></span><br><span class="line">import arcpy</span><br><span class="line">from arcpy.sa import *</span><br><span class="line">arcpy.CheckOutExtension(&quot;spatial&quot;)</span><br><span class="line"># Get input parameters</span><br><span class="line">#</span><br><span class="line">inRaster1 = arcpy.GetParameterAsText(0)</span><br><span class="line">inRaster2 = arcpy.GetParameterAsText(1)</span><br><span class="line">inRaster3 = arcpy.GetParameterAsText(2)</span><br><span class="line">outRaster = (Raster(inRaster1) + (Raster(inRaster2) - Raster(inRaster3)))</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将度-分-秒值转换为十进制度</title>
+    <url>/2013/07/22/ConvertDMS/</url>
+    <content><![CDATA[<p>在ArcMap中，在表中新建一个字段，用于存储新的十进制度值，使用字段计算器和 VB 脚本实现。</p>
+<p>如下示例，其中，假设 Latitude 是表中存储 DMS 纬度值字段的名称，经纬度数据中的度分秒三个数据是以空格分隔。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dim Degrees</span><br><span class="line">Dim Minutes</span><br><span class="line">Dim Seconds</span><br><span class="line">Dim DMS</span><br><span class="line">Dim DD</span><br><span class="line"></span><br><span class="line">DMS = Split([Latitude])</span><br><span class="line">Degrees = CDbl(DMS(0))</span><br><span class="line">Minutes = CDbl(DMS(1))</span><br><span class="line">Seconds = CDbl(DMS(2))</span><br><span class="line">If Degrees &lt; 0 Then</span><br><span class="line">   DD = -(Seconds/3600) - (Minutes/60) + Degrees</span><br><span class="line">Else</span><br><span class="line">   DD = (Seconds/3600) + (Minutes/60) + Degrees</span><br><span class="line">End If</span><br></pre></td></tr></table></figure>
+
+<p>PS：使用到的VBScript 函数：</p>
+<p>（1）<strong>Split</strong>：</p>
+<pre><code>Split(expression[,delimiter[,count[,compare]]])
+</code></pre>
+<p>（2）<strong>CDbl</strong>：</p>
+<p>CDbl 函数可把表达式转换为双精度（Double）类型。</p>
+<p>结果示例：</p>
+<p><img data-src="/images/blogImg/ConvertDMS.jpg"></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geodata</tag>
       </tags>
   </entry>
   <entry>
@@ -2777,6 +2716,20 @@
       </tags>
   </entry>
   <entry>
+    <title>Beijing_1954_To_WGS_1984</title>
+    <url>/2013/10/21/Beijing1954ToWGS1984/</url>
+    <content><![CDATA[<p><em>Table 1: Geographic (datum) transformations: well-known IDs, accuracies and areas of use</em><br><img data-src="/images/blogImg/Beijing1954ToWGS1984_1.png"></p>
+<p><img data-src="/images/blogImg/Beijing1954ToWGS1984_2.png"></p>
+<p><img data-src="/images/blogImg/Beijing1954ToWGS1984_3.png"></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Coordinate System</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Sans Serif 和 Serif 字体</title>
     <url>/2013/12/02/SansSerifVSSerif/</url>
     <content><![CDATA[<p>在西方国家罗马字母阵营中，字体分为两大种类：Sans Serif和Serif，打字机体虽然也属于Sans Serif，但由于是等宽字体，所以另外独立出 Monospace 这一种类，例如在Web中，表示代码时常常要使用等宽字体。</p>
@@ -2813,20 +2766,6 @@
       </categories>
       <tags>
         <tag>Mapping</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Beijing_1954_To_WGS_1984</title>
-    <url>/2013/10/21/Beijing1954ToWGS1984/</url>
-    <content><![CDATA[<p><em>Table 1: Geographic (datum) transformations: well-known IDs, accuracies and areas of use</em><br><img data-src="/images/blogImg/Beijing1954ToWGS1984_1.png"></p>
-<p><img data-src="/images/blogImg/Beijing1954ToWGS1984_2.png"></p>
-<p><img data-src="/images/blogImg/Beijing1954ToWGS1984_3.png"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Coordinate System</tag>
       </tags>
   </entry>
   <entry>
@@ -2900,31 +2839,6 @@
       </tags>
   </entry>
   <entry>
-    <title>DEM渲染洼地淹没图</title>
-    <url>/2014/01/23/DEMRendering/</url>
-    <content><![CDATA[<p>首先要准备基础数据，一张DEM栅格图。</p>
-<p><img data-src="/images/blogImg/DEMRendering_DEM.jpg"></p>
-<p>然后将掩膜水位以下的数据提取出来以备后用。这里我提取了高程1000以下的像元。</p>
-<p><img data-src="/images/blogImg/DEMRendering_Extract.jpg"></p>
-<p>对这个图层设置分类渲染，并设置半透明：</p>
-<p><img data-src="/images/blogImg/DEMRendering_Transparent.jpg"></p>
-<p>效果：</p>
-<p><img data-src="/images/blogImg/DEMRendering_Effect.jpg"></p>
-<p>生成DEM山影图，使用空间分析工具箱中的 Hillshade</p>
-<p><img data-src="/images/blogImg/DEMRendering_Hillshade.jpg"></p>
-<p>叠在一起就很漂亮了，可以表示，某个高度下水淹没的情况。</p>
-<p><img data-src="/images/blogImg/DEMRendering_FInal.jpg"></p>
-<p>3D效果：</p>
-<p><img data-src="/images/blogImg/DEMRendering_3DScene.jpg"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>3D</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArcGIS中的地理坐标系转换方法参数（一）</title>
     <url>/2014/01/17/GeographicTransformation1/</url>
     <content><![CDATA[<p>地理坐标系变换是数据处理过程中常遇到的问题，今天就说下这方面的问题。</p>
@@ -2971,6 +2885,31 @@
       </tags>
   </entry>
   <entry>
+    <title>DEM渲染洼地淹没图</title>
+    <url>/2014/01/23/DEMRendering/</url>
+    <content><![CDATA[<p>首先要准备基础数据，一张DEM栅格图。</p>
+<p><img data-src="/images/blogImg/DEMRendering_DEM.jpg"></p>
+<p>然后将掩膜水位以下的数据提取出来以备后用。这里我提取了高程1000以下的像元。</p>
+<p><img data-src="/images/blogImg/DEMRendering_Extract.jpg"></p>
+<p>对这个图层设置分类渲染，并设置半透明：</p>
+<p><img data-src="/images/blogImg/DEMRendering_Transparent.jpg"></p>
+<p>效果：</p>
+<p><img data-src="/images/blogImg/DEMRendering_Effect.jpg"></p>
+<p>生成DEM山影图，使用空间分析工具箱中的 Hillshade</p>
+<p><img data-src="/images/blogImg/DEMRendering_Hillshade.jpg"></p>
+<p>叠在一起就很漂亮了，可以表示，某个高度下水淹没的情况。</p>
+<p><img data-src="/images/blogImg/DEMRendering_FInal.jpg"></p>
+<p>3D效果：</p>
+<p><img data-src="/images/blogImg/DEMRendering_3DScene.jpg"></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>3D</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS中的地理坐标系转换方法参数（二）</title>
     <url>/2014/01/19/GeographicTransformation2/</url>
     <content><![CDATA[<p> 上篇博客说的是 Project 工具中 Geographic Transformation 参数什么情况下是必填的。</p>
@@ -3006,47 +2945,6 @@
       </categories>
       <tags>
         <tag>Coordinate System</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS Desktop 与 Excel</title>
-    <url>/2014/02/11/ArcGISDesktopVSExcel/</url>
-    <content><![CDATA[<p>微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。</p>
-<h2 id="ArcGIS-Desktop-中访问-Excel-数据"><a href="#ArcGIS-Desktop-中访问-Excel-数据" class="headerlink" title="ArcGIS Desktop 中访问 Excel 数据"></a>ArcGIS Desktop 中访问 Excel 数据</h2><p>Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览这种表，并可将这种表作为地理处理工具的输入数据。</p>
-<p>通过 ArcGIS 进行访问Excel表时，每个工作表在 ArcGIS 中都是一个单独的表，名称末尾带有美元符号 $ 标识，但是这个$并不是表名的一部分。如果工作表的表名中包含空格，那表名称周围会括有单引号。</p>
-<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
-<h2 id="对于ArcGIS-Desktop-对-office-版本的支持情况"><a href="#对于ArcGIS-Desktop-对-office-版本的支持情况" class="headerlink" title="对于ArcGIS Desktop 对 office 版本的支持情况"></a>对于ArcGIS Desktop 对 office 版本的支持情况</h2><p>ArcGIS 支持 ：</p>
-<ul>
-<li>Excel 2003 以及更早版本的 .xls 文件；</li>
-<li>Excel 2007 的 .xlsx 文件。</li>
-</ul>
-<p>为什么要分开说呢？</p>
-<p>*.xls 文件可以直接在ArcGIS中以只读的形式打开，例如直接在ArcMap中添加数据、在ArcMap中添加XY数据显示为点、在ArcCatalog中进行查看等等。</p>
-<p>而 *.xlsx 文件打开时，需要有一个数据驱动。如果我们遇到这个错误：“ <strong>Failed to connect to ddatabase. An underlying database error occured. 没有注册类</strong>”，那就是缺少驱动的结果。</p>
-<p>一般如果我们安装了 MS Office 2010 或者 2013，或者根本就没有安装 Office，这个错误必然会遇到了。</p>
-<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Error.jpg"></p>
-<br>
-
-<p>需要安装 &nbsp;2007 Office System 驱动程序（AccessDatabaseEngine.exe），下载英文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2VuLXVzL2Rvd25sb2FkL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，中文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3poLWNuL2Rvd25sb2FkL2RldGFpbHMuYXNweD9pZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，这个包的官方说明如下：</p>
-<p>这个程序安装之后，上述错误即可解决。</p>
-<h2 id="ArcGIS访问Excel表时，字段类型的确定"><a href="#ArcGIS访问Excel表时，字段类型的确定" class="headerlink" title="ArcGIS访问Excel表时，字段类型的确定"></a>ArcGIS访问Excel表时，字段类型的确定</h2><p>ArcGIS 访问 Excel 时，字段名称从工作表各列的首行中获取。</p>
-<p>在 Excel 中指定的字段类型对 ArcGIS 中显示的字段类型不起任何决定作用。ArcGIS 中的字段类型是由该字段的头八行值扫描决定的。</p>
-<p>如果在单个字段中扫描到混合数据类型，则该字段将以字符串字段的形式返回，并且其中的值将被转换为字符串。</p>
-<p>在 ArcGIS 中，数值字段将被转换为双精度数据类型。</p>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ol>
-<li><p>如果不想安装前面的驱动，最快的办法使得ArcGIS能够访问2007以后版本的表格文档，那就另存为97-2003版本的 *.xls了。</p>
-</li>
-<li><p>想把要素类的属性表导出来以供Excel使用，那就将属性表导出为 *.dbf 格式，然后打开方式使用 Excel 即可。</p>
-</li>
-<li><p>使用工具 Export to Excel 也可以将表导出为 Excel 表。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geodata</tag>
       </tags>
   </entry>
   <entry>
@@ -3129,6 +3027,47 @@
 <br>
 
 <h1 id="四、激光雷达点分类："><a href="#四、激光雷达点分类：" class="headerlink" title="四、激光雷达点分类："></a><strong>四、激光雷达点分类：</strong></h1><p>每个激光雷达点都可分配一种分类，用于定义反射激光雷达脉冲的对象的类型。可将激光雷达点分成很多个类别，包括地面、裸露地表、冠层顶部和水域。使用 LAS 文件中数字整数代码可定义不同的类。对于 LAS 格式 1.1、1.2 或 1.3，分类代码由美国摄影测量与遥感协会 (ASPRS) 定义。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geodata</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ArcGIS Desktop 与 Excel</title>
+    <url>/2014/02/11/ArcGISDesktopVSExcel/</url>
+    <content><![CDATA[<p>微软 OFFICE 产品中，Excel是很强大，并且平民化的表格制作工具。ArcGIS 用户会经常需要在两种软件中做交互，今天就来说一说&nbsp;ArcGIS Desktop 与 Excel。</p>
+<h2 id="ArcGIS-Desktop-中访问-Excel-数据"><a href="#ArcGIS-Desktop-中访问-Excel-数据" class="headerlink" title="ArcGIS Desktop 中访问 Excel 数据"></a>ArcGIS Desktop 中访问 Excel 数据</h2><p>Excel 表可直接在 ArcGIS 中打开，使用方法与其他表格数据源类似。例如，可以向 ArcMap 中添加这种表、在 ArcCatalog 中预览这种表，并可将这种表作为地理处理工具的输入数据。</p>
+<p>通过 ArcGIS 进行访问Excel表时，每个工作表在 ArcGIS 中都是一个单独的表，名称末尾带有美元符号 $ 标识，但是这个$并不是表名的一部分。如果工作表的表名中包含空格，那表名称周围会括有单引号。</p>
+<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Excel.jpg"></p>
+<h2 id="对于ArcGIS-Desktop-对-office-版本的支持情况"><a href="#对于ArcGIS-Desktop-对-office-版本的支持情况" class="headerlink" title="对于ArcGIS Desktop 对 office 版本的支持情况"></a>对于ArcGIS Desktop 对 office 版本的支持情况</h2><p>ArcGIS 支持 ：</p>
+<ul>
+<li>Excel 2003 以及更早版本的 .xls 文件；</li>
+<li>Excel 2007 的 .xlsx 文件。</li>
+</ul>
+<p>为什么要分开说呢？</p>
+<p>*.xls 文件可以直接在ArcGIS中以只读的形式打开，例如直接在ArcMap中添加数据、在ArcMap中添加XY数据显示为点、在ArcCatalog中进行查看等等。</p>
+<p>而 *.xlsx 文件打开时，需要有一个数据驱动。如果我们遇到这个错误：“ <strong>Failed to connect to ddatabase. An underlying database error occured. 没有注册类</strong>”，那就是缺少驱动的结果。</p>
+<p>一般如果我们安装了 MS Office 2010 或者 2013，或者根本就没有安装 Office，这个错误必然会遇到了。</p>
+<p><img data-src="/images/blogImg/ArcGISDesktopVSExcel_Error.jpg"></p>
+<br>
+
+<p>需要安装 &nbsp;2007 Office System 驱动程序（AccessDatabaseEngine.exe），下载英文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL2VuLXVzL2Rvd25sb2FkL2RldGFpbHMuYXNweD9kaXNwbGF5bGFuZz1lbiZpZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，中文版点<span class="exturl" data-url="aHR0cDovL3d3dy5taWNyb3NvZnQuY29tL3poLWNuL2Rvd25sb2FkL2RldGFpbHMuYXNweD9pZD0yMzczNA==">这里<i class="fa fa-external-link-alt"></i></span>，这个包的官方说明如下：</p>
+<p>这个程序安装之后，上述错误即可解决。</p>
+<h2 id="ArcGIS访问Excel表时，字段类型的确定"><a href="#ArcGIS访问Excel表时，字段类型的确定" class="headerlink" title="ArcGIS访问Excel表时，字段类型的确定"></a>ArcGIS访问Excel表时，字段类型的确定</h2><p>ArcGIS 访问 Excel 时，字段名称从工作表各列的首行中获取。</p>
+<p>在 Excel 中指定的字段类型对 ArcGIS 中显示的字段类型不起任何决定作用。ArcGIS 中的字段类型是由该字段的头八行值扫描决定的。</p>
+<p>如果在单个字段中扫描到混合数据类型，则该字段将以字符串字段的形式返回，并且其中的值将被转换为字符串。</p>
+<p>在 ArcGIS 中，数值字段将被转换为双精度数据类型。</p>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ol>
+<li><p>如果不想安装前面的驱动，最快的办法使得ArcGIS能够访问2007以后版本的表格文档，那就另存为97-2003版本的 *.xls了。</p>
+</li>
+<li><p>想把要素类的属性表导出来以供Excel使用，那就将属性表导出为 *.dbf 格式，然后打开方式使用 Excel 即可。</p>
+</li>
+<li><p>使用工具 Export to Excel 也可以将表导出为 Excel 表。</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -3234,6 +3173,67 @@
       </tags>
   </entry>
   <entry>
+    <title>ArcGIS Terrain Dataset</title>
+    <url>/2012/12/13/ArcGIS-Terrain-Dataset/</url>
+    <content><![CDATA[<h1 id="1-了解-Terrain-Dataset"><a href="#1-了解-Terrain-Dataset" class="headerlink" title="1 了解 Terrain Dataset"></a><strong>1 了解 Terrain Dataset</strong></h1><p>Terrain Dataset 是多分辨率的基于 TIN 的表面数据结构，支持 ArcSDE、个人以及文件地理数据库，存储在ArcGIS&nbsp; Geodatabase 的 Feature Dataset 中，Feature Dataset 中需要包含构建 TIN 的要素类。</p>
+<p>Terrain Dataset&nbsp;引用原始要素类，对数据重新组织重建索引，动态生成 TIN 表面，并没有实际创建栅格或 TIN 数据。</p>
+<p>在数据组织过程中，会创建金字塔，用于决定数据细节层次。&nbsp;terrain 数据集是多分辨率 TIN。它具有一系列 TIN，其中每一个 TIN 都在特定的地图比例尺范围内使用。</p>
+<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Demo.gif"></p>
+<p>Terrain Dataset 可由不同类型的数据组成。支持的几何类型包括点、多点、线和多边形。每一种几何类型的数据都可以具有不同的表面要素类型（SFType），这与前面一篇博客中构建TIN时选择表面类型作用是相同的。</p>
+<p>帮助中的下表很好的将常见数据类型的应用做了总结：</p>
+<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_type.png"></p>
+<br>
+
+<h1 id="2-Terrain-Dataset-的属性"><a href="#2-Terrain-Dataset-的属性" class="headerlink" title="2 Terrain Dataset 的属性"></a><strong>2 Terrain Dataset 的属性</strong></h1><h2 id="基本属性设置："><a href="#基本属性设置：" class="headerlink" title="基本属性设置："></a><strong>基本属性设置：</strong></h2><p><strong>1） 平均点间距（Approximate Point Spacing）</strong></p>
+<p>创建地形数据集时，需要指定输入测量值的平均点间距。平均点间距的作用是对点进行归类或分组，从而构造出虚拟分块系统。</p>
+<p>平均点距的获得：查看元数据、向数据提供商或数据维护人员寻求帮助。实在无法获取，只能用量距工具估算了。</p>
+<p>这个参数能够决定 Tile Size，查看Terrain数据集属性可以看到。</p>
+<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Pointspace.png"></p>
+<p><strong>2） 高度源（Height Source）</strong></p>
+<p>向地形添加要素类时，需要指明该要素类是否具有 z 值；如果具有 z 值，则还需要指明这些值的来源。</p>
+<p><strong>3） 表面要素类型（SFType）</strong></p>
+<p>定义在对地形数据集表面进行定义时该要素类所发挥的作用。存在离散多点、断裂线以及若干种多边形类型。上面图表中有说明。</p>
+<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_SFtype.png"></p>
+<p><strong>4）地形金字塔（Terrain Pyramid）</strong></p>
+<p>地形金字塔等级采用的依据是对精确度的要求随比例的减小而降低。金字塔等级在概念和用途上均类似于栅格金字塔，但二者的实现方法不同。 Terrain Pyramid 通过点抽稀实现。也就是下一级金字塔使用的点数少于上一级，但是采用的点都是原始的点值。 金字塔不使用任何重采样、平均化或派生的数据。</p>
+<p>有两种金字塔类型：z 容差和窗口大小。<br><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Pyramid.png"></p>
+<p>在窗口大小的选项中，可以设置二次抽稀。</p>
+<h2 id="高级属性设置"><a href="#高级属性设置" class="headerlink" title="高级属性设置"></a><strong>高级属性设置</strong></h2><p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Advanced.png"></p>
+<p><strong>5）概貌地形（Overview Terrain）</strong></p>
+<p>概貌地形是地形数据集最粗略表示，专门用于小比例尺下的快速绘制。如下图：</p>
+<p><img data-src="/images/blogImg/ArcGIS-Terrain-Dataset_Overview.png"></p>
+<p><strong>6）定位点（Anchor Point）</strong></p>
+<p>定位点在地形数据集的所有金字塔等级中保持不变。这些点不会被过滤，也不会被细化掉。这将确保无论使用何种分辨率金字塔等级，定位点都会存在于地形表面中。对于显示和分析操作都是这样。支持定位点的目的是使用户始终能在地形中保留一个相对较小的重要测量值集合，如控制点、水准点和最佳水深。</p>
+<p><strong>7）组（Group）</strong></p>
+<p>组用于为线要素和多边形要素定义多种详细程度。将相同的组 ID 指定给每个多边形要素类，向地形告知它们属于同一主题（例如，研究区域边界）。</p>
+<p><strong>8）嵌入式要素类（Embedded feature classes）</strong></p>
+<p>terrain 金字塔的大小约相当于参与 terrain 的要素类中所包含几何的大小，需要较大的存储空间。对于较大的点集合（通常由激光雷达或声纳表示），开销可能相当大，可以将较大的多点要素类嵌入 terrain 数据集中，以节省存储空间。构建 terrain 后，它将成为点的容器，而不再引用源要素类。可以将这些要素类删除，以恢复其存储空间。</p>
+<h2 id="性能的提示"><a href="#性能的提示" class="headerlink" title="性能的提示"></a><strong>性能的提示</strong></h2><p>1） 最好将所有硬断线都放置在一个要素类中。</p>
+<p>2） 定义 terrain 时，使用的要素类越少越好。</p>
+<p>3） 不同数据库的数据量的选择：</p>
+<ul>
+<li>个人地理数据库的容量最小，应限制为包含 2,000 万或更少点数的地形。</li>
+<li>文件地理数据库可用于包含数十亿个点的地形。</li>
+<li>ArcSDE 的容量最大，适合点集可能会增长到数十亿的地形。</li>
+</ul>
+<p>4） 金字塔类型的选择：</p>
+<p>有两种方式可供选择： Z Tolerance 和 Windows Size。区别和使用情况如下：</p>
+<ul>
+<li>Z Tolerance：对地表裸露激光雷达最有效。金字塔过滤器速度较慢，但在某些分析中，控制垂直精度很重要，要细化此类分析中使用的数据，Z 容差金字塔过滤器更适合一些。</li>
+<li>Windows Size：对所有数据、第一回波激光雷达点最有效。窗口大小过滤器速度较快，适合于较常规的用途，它以水平采样密度为基础。Windows Size 金字塔过滤器是基于窗口大小以及用户指定的窗口统计数据来确定的。指定的窗口统计数据可以是最小点高度、最大点高度、平均点高度，或者是同时指定最小和最大点高度。</li>
+</ul>
+<p>5） 有关构建Terrain的建议和最佳方法：</p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4xL2luZGV4Lmh0bWwjL25hLzAwNXYwMDAwMDAxcjAwMDAwMC8=">http://resources.arcgis.com/zh-cn/help/main/10.1/index.html#/na/005v0000001r000000/<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geodata</tag>
+        <tag>3D</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Shapefile 的局限性</title>
     <url>/2014/02/27/LimitsofShapefile/</url>
     <content><![CDATA[<p>Shapefile 是一种开放的非拓扑的简单几何数据类型，深受数据处理人员的喜爱。 Shapefile 利用 dBASE 文件格式（.dbf 文件）来存储属性，dBase这种上世纪80年代的数据格式，现在基本淡出舞台。 虽然Shapefile有万般好，但是，今天还是要来说说shapefile的局限性，也就是使用限制有什么，以便合理的选择使用Shapefile数据。</p>
@@ -3325,55 +3325,6 @@
       </categories>
       <tags>
         <tag>Geodata</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>地图投影类型</title>
-    <url>/2014/03/19/MapProjectionType/</url>
-    <content><![CDATA[<p>投影坐标系在二维平面中进行定义，投影坐标系是基于地理坐标系创建的，也就是在地理坐标系的基础上加上投影算法。</p>
-<p>坐标原点位于网格的中心，（x，y）&#x3D;（0，0）</p>
-<p><img data-src="/images/blogImg/MapProjectionType_CS.gif"></p>
-<h1 id="Ⅰ-变形"><a href="#Ⅰ-变形" class="headerlink" title="Ⅰ 变形"></a>Ⅰ 变形</h1><p>地球表面是一个曲面，从曲面至平面的数学换算即为地图投影的过程，不同投影会引起不同类型的变形，例如，导致数据的形状、面积、距离或方向发生变形。 </p>
-<p><strong>等角投影：</strong></p>
-<p>等角投影保留局部形状。要保留描述空间关系的各个角，等角投影必须在地图上显示以 90 度角相交的垂直经纬网线。地图投影通过保持所有角不变来加以实现。缺点是由一些弧线围起来的区域将在此过程中发生巨大变形。地图投影无法保留较大区域的形状。</p>
-<p><strong>等积投影：</strong></p>
-<p>保留所显示要素的面积。为此，形状、角和比例等其他属性将发生变形。在等积投影中，经线和纬线可能不垂直相交。有些情况下，尤其是较小区域的地图，形状不会明显变形，且很难区分等积投影和等角投影，除非加以说明或进行测量。</p>
-<p><strong>等距投影：</strong></p>
-<p>保留某些点间的距离。任何投影都无法在整幅地图中正确保持比例不变。不过，多数情况下，地图上总会存在一条或多条这样的线：比例沿着这些线将正确地保持不变。多数等距投影都具有一条或多条这样的线：在此类线中，地图上线的长度（按地图比例尺计算）与地球上同一条线的长度相同，无论它是大圆还是小圆，是直线还是曲线。此类距离被视为真实距离。例如，在正弦投影中，赤道和所有纬线就是其真实长度。在其他等距投影中，赤道和所有经线具有真实长度。而其他投影（例如，两点等距离）仍会显示地图上一点或两点与相隔点间的真实比例。请记住，任何投影都不能实现地图上的所有点是等距离的。</p>
-<br>
-
-<h1 id="Ⅱ-投影方法"><a href="#Ⅱ-投影方法" class="headerlink" title="Ⅱ 投影方法"></a>Ⅱ 投影方法</h1><p>地图投影使用数学公式将地球上的球面坐标与平面坐标关联起来。</p>
-<p>圆锥投影：</p>
-<p><img data-src="/images/blogImg/MapProjectionType_Cone.gif"></p>
-<p>最简单的圆锥投影是沿一条纬线与地球相切获得的投影。这条纬线称作标准纬线。所有的经线都投影到圆锥面上，并在圆锥的顶点或某一点处相交。纬线在圆锥面上的投影是一个个环。将圆锥沿任意一条经线“剪开”后即可获得最终的圆锥投影，投影中的经线显示为汇聚到一点的直线，而纬线显示为许多的同心圆弧。与剪开线相对的经线成为中央子午线。</p>
-<p>通常距标准纬线越远，变形就越严重。因此去掉圆锥的顶部会产生更精确的投影。此过程可以通过不使用极点区域的投影数据来实现。圆锥投影用于沿东西方向延伸的中纬度地区。</p>
-<p><img data-src="/images/blogImg/MapProjectionType_Cone2.gif"></p>
-<p>较复杂的圆锥投影会与地球表面的两处位置相接触。这类投影被称作割投影，并带有两条标准纬线。也可以使用一条标准纬线和一个比例尺因子来定义割投影。在割投影中，标准纬线之间与标准纬线之外的部分变形模式是不同的。通常，割线投影的整体变形程度小于切线投影。在更复杂的圆锥投影中，圆锥的轴并不与地球的极轴重合。此类投影称作斜轴投影。</p>
-<p>地理要素的制图表达取决于纬线的间距。等间距排列纬线时，投影在南北方向是等距的，但不是等角或等积的。此类投影的一个示例是等距圆锥投影。对于小面积区域，整体变形是最小的。在兰勃特等角圆锥投影中，中央的纬线比靠近边缘的纬线排列得更紧密，在小比例尺和大比例尺地图中都可以保持小地理区域的形状。在阿尔伯斯等积圆锥投影中，靠近北部和南部边缘的纬线比中间的纬线更加紧密，且投影的面积不变。</p>
-<p><strong>圆柱投影：</strong></p>
-<p><img data-src="/images/blogImg/MapProjectionType_Cylinder.gif"></p>
-<p>与圆锥投影类似，圆柱投影也存在相切或相割两种情况。</p>
-<p>墨卡托投影是最常用的圆柱投影之一，并且通常以赤道为切线。经线以几何方式投影到圆柱面上，而纬线以数学方式进行投影。这种投影方式产生成 90 度的经纬网格。将圆柱沿任意一条经线“剪开”可以获得最终的圆柱投影。经线等间距排列，而纬线间的间距越靠近极点越大。此投影是等角投影，并沿直线显示真实的方向。在墨卡托投影中，恒向线、等方位角线是直线，但大多数的大圆都不是直线。</p>
-<p>对于更复杂的圆柱投影，圆柱发生了旋转，因此切线和割线的位置发生了变化。横轴圆柱投影，例如横轴墨卡托投影，使用经线作为相切的接触线，或使用平行于经线的线作为割线。这样标准线即为南北方向的线，且其上的比例是真实的。斜轴圆柱是围绕赤道和经线间的任意大圆线旋转而成的圆柱。在此类更加复杂的投影中，大多数经线和纬线都不再是直线。</p>
-<p>在所有的圆柱投影中，切线和割线都不发生变形，因此它们是等距离线。其他的地理属性因具体的投影方式而异。</p>
-<p><strong>平面投影：</strong></p>
-<p><img data-src="/images/blogImg/MapProjectionType_Plane.gif"></p>
-<p>平面投影将地图数据投影到与地球接触的平面。平面投影也称为方位投影或天顶投影。</p>
-<p>此类型的投影通常在一点与地球相切，但也可能相割。接触点可以是北极、南极、赤道上的某点或者赤道与两极之间的任意点。此点会指定投影中心，并将作为投影的焦点。焦点由中央经度和中央纬度标识。可能的投影方法包括极方位投影、赤道投影和斜轴投影。<br>极方位投影是最简单的形式。纬线是以极点为中心的同心圆，经线是在极点处与其真实的方向角相交的直线。在其他投影方法中，平面投影在焦点处将具有 90 度的经纬网格角度。由焦点确定的方向是精确的。</p>
-<p>穿过焦点的大圆由直线表示；因此从中心到地图上其他任意点的最短距离是直线。面积和形状变形后的图案是以焦点为中心的圆。由于这个原因，方位投影更适合圆形区域，而不太适合矩形区域。平面投影最常用于绘制两极地区的地图。</p>
-<p>某些平面投影会在空间中从特定点来观测表面数据。观测点将确定球面数据如何投影到平面。在不同的方位投影中，用于观测所有位置的透视图也有所不同。透视点可以是地球的中心、与焦点正对的表面点或者地球外部的某点，就如同从卫星或其他星球上遥看一样。</p>
-<p>有部分方位投影是按焦点和透视点（如果适用）分类的。球心投影从地心来观测表面数据，而立体投影是在两极之间进行观测。正射投影从无穷远点（如同从外太空）观察地球。注意观察透视图之间的差异如何决定与赤道相对的变形程度。</p>
-<p>详情参见：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjLy8wMDNyMDAwMDAwMHAwMDAwMDA=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//003r0000000p000000<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<p><strong>ArcGIS 支持的全部投影的列表：</strong></p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjL25hLzAwM3IwMDAwMDAxNzAwMDAwMC8=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#/na/003r00000017000000/<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Coordinate System</tag>
       </tags>
   </entry>
   <entry>
@@ -3559,6 +3510,55 @@
       </tags>
   </entry>
   <entry>
+    <title>地图投影类型</title>
+    <url>/2014/03/19/MapProjectionType/</url>
+    <content><![CDATA[<p>投影坐标系在二维平面中进行定义，投影坐标系是基于地理坐标系创建的，也就是在地理坐标系的基础上加上投影算法。</p>
+<p>坐标原点位于网格的中心，（x，y）&#x3D;（0，0）</p>
+<p><img data-src="/images/blogImg/MapProjectionType_CS.gif"></p>
+<h1 id="Ⅰ-变形"><a href="#Ⅰ-变形" class="headerlink" title="Ⅰ 变形"></a>Ⅰ 变形</h1><p>地球表面是一个曲面，从曲面至平面的数学换算即为地图投影的过程，不同投影会引起不同类型的变形，例如，导致数据的形状、面积、距离或方向发生变形。 </p>
+<p><strong>等角投影：</strong></p>
+<p>等角投影保留局部形状。要保留描述空间关系的各个角，等角投影必须在地图上显示以 90 度角相交的垂直经纬网线。地图投影通过保持所有角不变来加以实现。缺点是由一些弧线围起来的区域将在此过程中发生巨大变形。地图投影无法保留较大区域的形状。</p>
+<p><strong>等积投影：</strong></p>
+<p>保留所显示要素的面积。为此，形状、角和比例等其他属性将发生变形。在等积投影中，经线和纬线可能不垂直相交。有些情况下，尤其是较小区域的地图，形状不会明显变形，且很难区分等积投影和等角投影，除非加以说明或进行测量。</p>
+<p><strong>等距投影：</strong></p>
+<p>保留某些点间的距离。任何投影都无法在整幅地图中正确保持比例不变。不过，多数情况下，地图上总会存在一条或多条这样的线：比例沿着这些线将正确地保持不变。多数等距投影都具有一条或多条这样的线：在此类线中，地图上线的长度（按地图比例尺计算）与地球上同一条线的长度相同，无论它是大圆还是小圆，是直线还是曲线。此类距离被视为真实距离。例如，在正弦投影中，赤道和所有纬线就是其真实长度。在其他等距投影中，赤道和所有经线具有真实长度。而其他投影（例如，两点等距离）仍会显示地图上一点或两点与相隔点间的真实比例。请记住，任何投影都不能实现地图上的所有点是等距离的。</p>
+<br>
+
+<h1 id="Ⅱ-投影方法"><a href="#Ⅱ-投影方法" class="headerlink" title="Ⅱ 投影方法"></a>Ⅱ 投影方法</h1><p>地图投影使用数学公式将地球上的球面坐标与平面坐标关联起来。</p>
+<p>圆锥投影：</p>
+<p><img data-src="/images/blogImg/MapProjectionType_Cone.gif"></p>
+<p>最简单的圆锥投影是沿一条纬线与地球相切获得的投影。这条纬线称作标准纬线。所有的经线都投影到圆锥面上，并在圆锥的顶点或某一点处相交。纬线在圆锥面上的投影是一个个环。将圆锥沿任意一条经线“剪开”后即可获得最终的圆锥投影，投影中的经线显示为汇聚到一点的直线，而纬线显示为许多的同心圆弧。与剪开线相对的经线成为中央子午线。</p>
+<p>通常距标准纬线越远，变形就越严重。因此去掉圆锥的顶部会产生更精确的投影。此过程可以通过不使用极点区域的投影数据来实现。圆锥投影用于沿东西方向延伸的中纬度地区。</p>
+<p><img data-src="/images/blogImg/MapProjectionType_Cone2.gif"></p>
+<p>较复杂的圆锥投影会与地球表面的两处位置相接触。这类投影被称作割投影，并带有两条标准纬线。也可以使用一条标准纬线和一个比例尺因子来定义割投影。在割投影中，标准纬线之间与标准纬线之外的部分变形模式是不同的。通常，割线投影的整体变形程度小于切线投影。在更复杂的圆锥投影中，圆锥的轴并不与地球的极轴重合。此类投影称作斜轴投影。</p>
+<p>地理要素的制图表达取决于纬线的间距。等间距排列纬线时，投影在南北方向是等距的，但不是等角或等积的。此类投影的一个示例是等距圆锥投影。对于小面积区域，整体变形是最小的。在兰勃特等角圆锥投影中，中央的纬线比靠近边缘的纬线排列得更紧密，在小比例尺和大比例尺地图中都可以保持小地理区域的形状。在阿尔伯斯等积圆锥投影中，靠近北部和南部边缘的纬线比中间的纬线更加紧密，且投影的面积不变。</p>
+<p><strong>圆柱投影：</strong></p>
+<p><img data-src="/images/blogImg/MapProjectionType_Cylinder.gif"></p>
+<p>与圆锥投影类似，圆柱投影也存在相切或相割两种情况。</p>
+<p>墨卡托投影是最常用的圆柱投影之一，并且通常以赤道为切线。经线以几何方式投影到圆柱面上，而纬线以数学方式进行投影。这种投影方式产生成 90 度的经纬网格。将圆柱沿任意一条经线“剪开”可以获得最终的圆柱投影。经线等间距排列，而纬线间的间距越靠近极点越大。此投影是等角投影，并沿直线显示真实的方向。在墨卡托投影中，恒向线、等方位角线是直线，但大多数的大圆都不是直线。</p>
+<p>对于更复杂的圆柱投影，圆柱发生了旋转，因此切线和割线的位置发生了变化。横轴圆柱投影，例如横轴墨卡托投影，使用经线作为相切的接触线，或使用平行于经线的线作为割线。这样标准线即为南北方向的线，且其上的比例是真实的。斜轴圆柱是围绕赤道和经线间的任意大圆线旋转而成的圆柱。在此类更加复杂的投影中，大多数经线和纬线都不再是直线。</p>
+<p>在所有的圆柱投影中，切线和割线都不发生变形，因此它们是等距离线。其他的地理属性因具体的投影方式而异。</p>
+<p><strong>平面投影：</strong></p>
+<p><img data-src="/images/blogImg/MapProjectionType_Plane.gif"></p>
+<p>平面投影将地图数据投影到与地球接触的平面。平面投影也称为方位投影或天顶投影。</p>
+<p>此类型的投影通常在一点与地球相切，但也可能相割。接触点可以是北极、南极、赤道上的某点或者赤道与两极之间的任意点。此点会指定投影中心，并将作为投影的焦点。焦点由中央经度和中央纬度标识。可能的投影方法包括极方位投影、赤道投影和斜轴投影。<br>极方位投影是最简单的形式。纬线是以极点为中心的同心圆，经线是在极点处与其真实的方向角相交的直线。在其他投影方法中，平面投影在焦点处将具有 90 度的经纬网格角度。由焦点确定的方向是精确的。</p>
+<p>穿过焦点的大圆由直线表示；因此从中心到地图上其他任意点的最短距离是直线。面积和形状变形后的图案是以焦点为中心的圆。由于这个原因，方位投影更适合圆形区域，而不太适合矩形区域。平面投影最常用于绘制两极地区的地图。</p>
+<p>某些平面投影会在空间中从特定点来观测表面数据。观测点将确定球面数据如何投影到平面。在不同的方位投影中，用于观测所有位置的透视图也有所不同。透视点可以是地球的中心、与焦点正对的表面点或者地球外部的某点，就如同从卫星或其他星球上遥看一样。</p>
+<p>有部分方位投影是按焦点和透视点（如果适用）分类的。球心投影从地心来观测表面数据，而立体投影是在两极之间进行观测。正射投影从无穷远点（如同从外太空）观察地球。注意观察透视图之间的差异如何决定与赤道相对的变形程度。</p>
+<p>详情参见：<span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjLy8wMDNyMDAwMDAwMHAwMDAwMDA=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#//003r0000000p000000<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<p><strong>ArcGIS 支持的全部投影的列表：</strong></p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL3poLWNuL2hlbHAvbWFpbi8xMC4yL2luZGV4Lmh0bWwjL25hLzAwM3IwMDAwMDAxNzAwMDAwMC8=">http://resources.arcgis.com/zh-cn/help/main/10.2/index.html#/na/003r00000017000000/<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Coordinate System</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安装 PythonWin</title>
     <url>/2014/05/29/SetupPythonWin/</url>
     <content><![CDATA[<p><strong>确定已安装Python的版本</strong></p>
@@ -3638,43 +3638,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用矢量面裁剪栅格数据的对齐问题</title>
-    <url>/2014/07/29/AboutClippingRaster/</url>
-    <content><![CDATA[<p>最近凑巧有几个比较多的栅格裁剪问题，整理如下：</p>
-<p>我们只有由于栅格与矢量数据的存储模型不相同，这就导致栅格数据的像元无法与矢量数据的点等同，从而导致裁切后的对齐问题，放大数据我们就能发现，如下图可以说明：（其中黑白色为栅格数据，每个正方形代表一个像元，红色区域为矢量面数据。）</p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_1.jpg"></p>
-<p>我们按照默认设置运行 Raster工具箱中的 Clip 工具，看看结果，蓝色的栅格部分：</p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_2.jpg"></p>
-<p>发现，栅格数据裁剪完，并不是需要的矢量数据范围，而是矢量数据压盖的最小栅格数据范围。</p>
-<p>如果我们需要得到的栅格，是矢量数据的范围，该如何做呢？</p>
-<p><strong>【旧版本】如果正在使用的是10.1以及更早期的版本：</strong></p>
-<ol>
-<li>首先将作为裁剪范围的矢量面（Feature）转为图形（Graphic），在ArcMap中，在面图层上右键，使用 Convert &nbsp;Features to Graphics… 菜单，如下图：</li>
-</ol>
-<p>（Graphic 被选中状态下，周围是有几个小方块的，与 Feature 被选中的亮蓝色不同哦…）</p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_Graphic.jpg"></p>
-<p>2.在 ArcMap 中，使用图层的右键菜单中的Export功能，导出选中Graphic 范围内的数据：</p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_Selected.jpg"></p>
-<p>看看结果，为了清楚，我将Graphic的填充色去掉，栅格数据左边与上边界是与矢量数据一致的，这样就尽最大范围保持了结果栅格与矢量数据范围的最大一致性：</p>
-<p><strong>PS：有人会问，为什么下边和右边边界没有完全贴合？ 需要知晓，栅格数据的行列数是矢量数据长度整除像元大小（导出的像元大小默认与源数据相同，也可以根据需要修改）得出的，而通常有余数的存在，因此没有那么严丝合缝，归根结底还是两种数据的存储模型不同导致的。</strong></p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_Format.jpg"></p>
-<p><strong>【新版本】如果正在使用的是10.2以及更新期的版本：</strong></p>
-<p>新版本中 Clip 工具提供了额外的参数，可以简单的勾选就完成了上面的需求：</p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_Maintain.jpg"></p>
-<p><strong>PS：一定要注意右边的帮助哇，为了尽可能满足矢量数据边界范围，行列数是通过计算调整，也就是像元大小相比原始数据会变化，像元值会进行重采样获取。</strong></p>
-<p>看看结果吧，影线区域是矢量，玫红色区域是生成的栅格：</p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_Maintain2.jpg"></p>
-<p>最后来张全家福，对比下，哪种结果是你想要的，决定对应的选择哪种方法 ，（左侧图层顺序，即为右侧图层显示顺序）。</p>
-<p><img data-src="/images/blogImg/AboutClippingRaster_All.jpg"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Raster</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>栅格数据中的 Zone 与 Region</title>
     <url>/2014/09/01/RasterZoneRegion/</url>
     <content><![CDATA[<p>Zone 与 Region 在字面上都是区域的意思，但是在做分析与统计的时候二者却是有区别的。</p>
@@ -3694,29 +3657,6 @@
       </categories>
       <tags>
         <tag>Raster</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深入路径距离分析（一）</title>
-    <url>/2014/09/15/DiveinPathDistanceAnalyst1/</url>
-    <content><![CDATA[<p>写这篇之前，整理过空间分析中的距离分析工具箱，今天继续深入的说说路径距离分析。</p>
-<p>开始路径距离分析之前，先回忆下最基本的欧式距离分析和成本距离分析。欧氏距离分析遵循的就是我们小学都知道的“两点之间直线最短”的原则，两点之间的最短路径就是两点之间的线段的距离。但是实际情况并不是很完美，有时我们无法完全沿直线前往某个位置，例如遇到河流、陡坡、悬崖等障碍。这时，我们就应该考虑使用成本距离工具获得更现实的结果。</p>
-<p>如下图，举个简单的例子说明成本距离分析和欧式距离分析。按照欧式距离在问号位置求得的应该是绿色的路径，表示最近源，但是考虑到成本，黄色的曲线确是成本最低的最优路径。并且“曲线救国”比盲目直行，成本更低。</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Path.png"></p>
-<p>回顾就到这里，继续看更加复杂的路径距离分析：</p>
-<p>路径距离工具与成本距离相似，两者都用于确定从源到栅格上各像元位置的最小累积行进成本。但是，路径距离不仅可计算成本表面的累积成本，而且可以考虑到从一个位置到另一个位置的总移动成本的水平和垂直因子补偿。这些工具生成的累积成本表面可用于扩散建模、流向运动和最低成本路径分析。路径距离工具既考虑水平和垂直成本要素，又考虑真实表面距离。</p>
-<p>举个简单的例子，了解路径距离分析，假设我们开车从位置A到位置B，路况复杂，还有点起风，这时风向和风速就成了水平影响因子，道路的起伏程度就行了垂直因子。如下图，说明这个问题：</p>
-<p>水平影响因子：</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Horizontal.png"></p>
-<p>垂直影响因子：</p>
-<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Vertical.png"></p>
-<p>理解了路径距离分析工具的用途，在下一篇文章中，我们一起来看看水平系数和垂直系数对路径距离的影响。</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geoprocessing</tag>
       </tags>
   </entry>
   <entry>
@@ -3760,6 +3700,29 @@
 <p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst2_Table2.jpg"></p>
 <p>有关水平影响因子的总结就到这里，下一篇继续整理和讲解垂直因子……</p>
 <p>​	</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geoprocessing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深入路径距离分析（一）</title>
+    <url>/2014/09/15/DiveinPathDistanceAnalyst1/</url>
+    <content><![CDATA[<p>写这篇之前，整理过空间分析中的距离分析工具箱，今天继续深入的说说路径距离分析。</p>
+<p>开始路径距离分析之前，先回忆下最基本的欧式距离分析和成本距离分析。欧氏距离分析遵循的就是我们小学都知道的“两点之间直线最短”的原则，两点之间的最短路径就是两点之间的线段的距离。但是实际情况并不是很完美，有时我们无法完全沿直线前往某个位置，例如遇到河流、陡坡、悬崖等障碍。这时，我们就应该考虑使用成本距离工具获得更现实的结果。</p>
+<p>如下图，举个简单的例子说明成本距离分析和欧式距离分析。按照欧式距离在问号位置求得的应该是绿色的路径，表示最近源，但是考虑到成本，黄色的曲线确是成本最低的最优路径。并且“曲线救国”比盲目直行，成本更低。</p>
+<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Path.png"></p>
+<p>回顾就到这里，继续看更加复杂的路径距离分析：</p>
+<p>路径距离工具与成本距离相似，两者都用于确定从源到栅格上各像元位置的最小累积行进成本。但是，路径距离不仅可计算成本表面的累积成本，而且可以考虑到从一个位置到另一个位置的总移动成本的水平和垂直因子补偿。这些工具生成的累积成本表面可用于扩散建模、流向运动和最低成本路径分析。路径距离工具既考虑水平和垂直成本要素，又考虑真实表面距离。</p>
+<p>举个简单的例子，了解路径距离分析，假设我们开车从位置A到位置B，路况复杂，还有点起风，这时风向和风速就成了水平影响因子，道路的起伏程度就行了垂直因子。如下图，说明这个问题：</p>
+<p>水平影响因子：</p>
+<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Horizontal.png"></p>
+<p>垂直影响因子：</p>
+<p><img data-src="/images/blogImg/DiveinPathDistanceAnalyst1_Vertical.png"></p>
+<p>理解了路径距离分析工具的用途，在下一篇文章中，我们一起来看看水平系数和垂直系数对路径距离的影响。</p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -3935,6 +3898,40 @@
       </tags>
   </entry>
   <entry>
+    <title>ArcGIS 系统要求知多少</title>
+    <url>/2014/09/24/ArcGISSystemRequirment/</url>
+    <content><![CDATA[<p>安装 ArcGIS 软件之前，一定要注意自己的操作系统，硬件（包括型号和驱动），甚至一些软件的版本是否能满足系统要求。只有出现在各个版本的列表中的操作系统和其他软硬件版本才算是真正的支持。否则可能会出现诸如不稳定，崩溃等等各种异常现象。</p>
+<p>时常会被问到：“ArcGIS 9.3还能安装在 Windows XP SP1 中吗？ArcGIS 10.0能安装在 windows 8 中吗？”答案都是不能。但是前者安装时系统会主动报错，不支持安装，后者貌似没有任何提示，也安装上了。用户就会问，你不是说安装不上米？</p>
+<p>“能不能安装”在官方和“民间”，是两个完全不同层面的问题。为什么这么说呢？我们一起脑补下。从个人学习角度，只要安装成功，没有收到致命报错，似乎就是支持安装；但是，从官方角度，我们可以理解成，这个操作系统的发布和ArcGIS某个版本软件开发测试不是同期的，例如10.0早在2010年就发布了，而win8在2013年才发布，没有经过严格测试证明可以全面支持的，不能称为支持。因此如果强行安装了，出于个人研究探索并无大碍，但只能后果自负了。</p>
+<p>下面是各个版本的系统要求列表：</p>
+<p><strong>ArcGIS 10.0</strong></p>
+<p><span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS9lbi9zeXN0ZW1yZXF1aXJlbWVudHMvaW5kZXguaHRtbA==">http://help.arcgis.com/en/systemrequirements/index.html<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>ArcGIS 10.1</strong></p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4xL2luZGV4Lmh0bWw=">http://resources.arcgis.com/en/help/system-requirements/10.1/index.html<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>ArcGIS 10.2.x</strong></p>
+<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4yL2luZGV4Lmh0bWw=">http://resources.arcgis.com/en/help/system-requirements/10.2/index.html<i class="fa fa-external-link-alt"></i></span></p>
+<p><em><strong>过气版本 ArcGIS 9.3</strong></em></p>
+<p>Desktop：<span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L3N5c3RlbXJlcXVpcmVtZW50cy9BcmNHSVNfRGVza3RvcF85M19TeXN0ZW1SZXF1aXJlbWVudHMucGRm">http://downloads.esri.com/support/systemrequirements/ArcGIS_Desktop_93_SystemRequirements.pdf<i class="fa fa-external-link-alt"></i></span></p>
+<p>Server：<span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L3N5c3RlbXJlcXVpcmVtZW50cy9hcmNnaXNfc2VydmVyLnBkZg==">http://downloads.esri.com/support/systemrequirements/arcgis_server.pdf<i class="fa fa-external-link-alt"></i></span></p>
+<br>
+
+<br>
+
+
+<p>ArcGIS 9.2 甚至更早的版本就不说了，太久远了，现在的操作系统没有几个能支持的了，如果还在使用这8年前的版本，算了，丢了吧，反正你不爱ArcGIS。</p>
+<p>以前整理过各个版本的补丁下载链接，<a href="http://kikitamap.com/2013/05/29/AllPackages/"><strong>点击</strong></a> 跳转另一篇博客。</p>
+<p>另外，从10.2版本之后，不再提供像上面链接中一样的单独的补丁下载，而是做成完整的安装包，例如，截至到这篇博客的时间，最新的版本 10.2.1，10.2.2 这些版本既是如此。这样就可以在空白机器上直接安装最新版本，而不需要像以前一样，先安装旧版本再打补丁，避免重复劳动多次；对于已经安装10.1，10.2的机器，可以直接覆盖安装 10.2.1等新版本，也节省了卸载的时间。</p>
+<p>产品的生命周期最可以说明问题，有图有真相：</p>
+<p><img data-src="/images/blogImg/ArcGISSystemRequirment.jpg"></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Deployment</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ArcGIS中的影像分类</title>
     <url>/2014/09/18/ArcGISImageClassification/</url>
     <content><![CDATA[<p>影像分类的目的就为了将图像中的像元划分成不同的类别，过程就是根据像元在不同波段的波普亮度、空间结构特征或者其他信息，按照某种规则或算法实现分类。遥感图像分类处理就是是为了提取遥感图像中的目标信息，遥感图像分类主要用于地物类别的区分。</p>
@@ -3981,40 +3978,6 @@
       </categories>
       <tags>
         <tag>Raster</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ArcGIS 系统要求知多少</title>
-    <url>/2014/09/24/ArcGISSystemRequirment/</url>
-    <content><![CDATA[<p>安装 ArcGIS 软件之前，一定要注意自己的操作系统，硬件（包括型号和驱动），甚至一些软件的版本是否能满足系统要求。只有出现在各个版本的列表中的操作系统和其他软硬件版本才算是真正的支持。否则可能会出现诸如不稳定，崩溃等等各种异常现象。</p>
-<p>时常会被问到：“ArcGIS 9.3还能安装在 Windows XP SP1 中吗？ArcGIS 10.0能安装在 windows 8 中吗？”答案都是不能。但是前者安装时系统会主动报错，不支持安装，后者貌似没有任何提示，也安装上了。用户就会问，你不是说安装不上米？</p>
-<p>“能不能安装”在官方和“民间”，是两个完全不同层面的问题。为什么这么说呢？我们一起脑补下。从个人学习角度，只要安装成功，没有收到致命报错，似乎就是支持安装；但是，从官方角度，我们可以理解成，这个操作系统的发布和ArcGIS某个版本软件开发测试不是同期的，例如10.0早在2010年就发布了，而win8在2013年才发布，没有经过严格测试证明可以全面支持的，不能称为支持。因此如果强行安装了，出于个人研究探索并无大碍，但只能后果自负了。</p>
-<p>下面是各个版本的系统要求列表：</p>
-<p><strong>ArcGIS 10.0</strong></p>
-<p><span class="exturl" data-url="aHR0cDovL2hlbHAuYXJjZ2lzLmNvbS9lbi9zeXN0ZW1yZXF1aXJlbWVudHMvaW5kZXguaHRtbA==">http://help.arcgis.com/en/systemrequirements/index.html<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>ArcGIS 10.1</strong></p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4xL2luZGV4Lmh0bWw=">http://resources.arcgis.com/en/help/system-requirements/10.1/index.html<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>ArcGIS 10.2.x</strong></p>
-<p><span class="exturl" data-url="aHR0cDovL3Jlc291cmNlcy5hcmNnaXMuY29tL2VuL2hlbHAvc3lzdGVtLXJlcXVpcmVtZW50cy8xMC4yL2luZGV4Lmh0bWw=">http://resources.arcgis.com/en/help/system-requirements/10.2/index.html<i class="fa fa-external-link-alt"></i></span></p>
-<p><em><strong>过气版本 ArcGIS 9.3</strong></em></p>
-<p>Desktop：<span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L3N5c3RlbXJlcXVpcmVtZW50cy9BcmNHSVNfRGVza3RvcF85M19TeXN0ZW1SZXF1aXJlbWVudHMucGRm">http://downloads.esri.com/support/systemrequirements/ArcGIS_Desktop_93_SystemRequirements.pdf<i class="fa fa-external-link-alt"></i></span></p>
-<p>Server：<span class="exturl" data-url="aHR0cDovL2Rvd25sb2Fkcy5lc3JpLmNvbS9zdXBwb3J0L3N5c3RlbXJlcXVpcmVtZW50cy9hcmNnaXNfc2VydmVyLnBkZg==">http://downloads.esri.com/support/systemrequirements/arcgis_server.pdf<i class="fa fa-external-link-alt"></i></span></p>
-<br>
-
-<br>
-
-
-<p>ArcGIS 9.2 甚至更早的版本就不说了，太久远了，现在的操作系统没有几个能支持的了，如果还在使用这8年前的版本，算了，丢了吧，反正你不爱ArcGIS。</p>
-<p>以前整理过各个版本的补丁下载链接，<a href="http://kikitamap.com/2013/05/29/AllPackages/"><strong>点击</strong></a> 跳转另一篇博客。</p>
-<p>另外，从10.2版本之后，不再提供像上面链接中一样的单独的补丁下载，而是做成完整的安装包，例如，截至到这篇博客的时间，最新的版本 10.2.1，10.2.2 这些版本既是如此。这样就可以在空白机器上直接安装最新版本，而不需要像以前一样，先安装旧版本再打补丁，避免重复劳动多次；对于已经安装10.1，10.2的机器，可以直接覆盖安装 10.2.1等新版本，也节省了卸载的时间。</p>
-<p>产品的生命周期最可以说明问题，有图有真相：</p>
-<p><img data-src="/images/blogImg/ArcGISSystemRequirment.jpg"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Deployment</tag>
       </tags>
   </entry>
   <entry>
@@ -4420,52 +4383,6 @@
       </tags>
   </entry>
   <entry>
-    <title>镶嵌数据集工具小结（六）镶嵌数据集的属性 Ⅲ</title>
-    <url>/2014/11/11/MDProperties3/</url>
-    <content><![CDATA[<p><strong>设置镶嵌数据集属性工具 Ⅲ</strong></p>
-<p><img data-src="/images/blogImg/MDProperties3_Toolset.png"></p>
-<p>这一篇接着，再接着，说这个参数无比巨多的工具 Set Mosaic Dataset Properties， 看看其中的 Catalog Item Properties 对应的各个参数的作用 。</p>
-<p><img data-src="/images/blogImg/MDProperties3_Catalog.png"></p>
-<br>
-
-<p><strong>元数据级别</strong></p>
-<p>Metadata Level 参数用于定义从服务器到客户端的元数据传输量。如果要传输大量元数据，此属性将会影响传输时间，因此可选择对其进行限制。</p>
-<p>通过下面三个选项，选择发布镶嵌数据集时从服务器提供给客户端的元数据级别：</p>
-<ul>
-<li>FULL —所有元数据将被传输，包含基本栅格数据集信息及函数链的详细信息。这是默认设置。</li>
-<li>BASIC —将传输栅格数据集级别信息，比如列和行、像元大小和空间参考信息。</li>
-<li>NONE —不提供任何元数据给客户端。</li>
-</ul>
-<p><strong>允许传输的字段</strong></p>
-<p>Allowed Transmission Field 参数列表，定义将镶嵌数据集作为服务提供时属性表中对客户端可见的字段。</p>
-<p>默认情况下，此列表包括字段：Name, MinPS, MaxPS, LowPS, HighPS, Tag, GroupName, ProductName, CenterX, CenterY, ZOrder, Shape_Length, Shape_Area。如果镶嵌数据集中包含自定义字段，这个列表中除了上面的字段，还会出现自定字段。</p>
-<p><strong>许是否启用时间</strong></p>
-<p><img data-src="/images/blogImg/MDProperties3_Time.png"></p>
-<p>如果镶嵌数据集包含定义时间的属性字段，可创建自动具有时间感知性的镶嵌数据集。</p>
-<p>如果激活了时间，则需要指定与时间有关的其他参数——起始和结束字段，以及时间格式。建议将时间值存储在日期字段中，但也支持字符串和数值字段。</p>
-<p><strong>地理变换方法</strong></p>
-<p>如果镶嵌数据集的坐标系统不同于源栅格数据坐标系统，则可能需要指定特定的地理变换方法。通过 Geographic Transformation 参数列表选择地理变换。</p>
-<p><strong>可下载的最大项目数</strong></p>
-<p>Max Number of Download Items 参数用来限制客户端可从影像服务中下载的栅格数量。该值会影响系统负荷。</p>
-<p>如果不希望客户端从镶嵌数据集内下载任何栅格，可将其设置为 0。另外注意，Grid格式数据源的镶嵌数据集不能下载。</p>
-<p><strong>返回的最大记录数</strong></p>
-<p>以影像服务的形式查看镶嵌数据集时，Max Number of Records Returned 参数用来限制，针对客户端每个请求，服务器返回的记录数。</p>
-<p><strong>最小像素作用</strong></p>
-<p>只看中文名字让人有点晕，实际上 Minimum Pixel Contribution 参数用于指定镶嵌数据集中的项目需要至少具有多少像素才能在镶嵌数据集中使用。默认值为1个像素。</p>
-<p>我们可以设置合理的值，这样镶嵌数据集会跳过所有像素量不够大的栅格项目。跳过这些镶嵌数据集项目将有助于提高镶嵌数据集的计算或显示性能。这在大量叠置栅格只具有少量像素时尤其有用。</p>
-<p>但是，同时需要知道，较大的值可能减少重叠项目成为感兴趣区组成部分的可能性；这会导致您的镶嵌数据集的某些区域空白。</p>
-<p>特别需要注意的是，镶嵌数据集的属性中有其他两项属性与这个选项可能存在矛盾关系，因此，此属性仅在 <strong><em>始终将栅格裁剪至其轮廓</em></strong> 设置为“<strong>是</strong>”，并且 <strong><em>轮廓线可能含有 NoData</em></strong> 设置为 <strong>否</strong> 时有效。否则可能会无视这个选项。</p>
-<p><img data-src="/images/blogImg/MDProperties3_MinPixel.png"></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geodata</tag>
-        <tag>Raster</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>镶嵌数据集工具小结（五）镶嵌数据集的属性 Ⅱ</title>
     <url>/2014/11/10/MDProperties2/</url>
     <content><![CDATA[<p><strong>设置镶嵌数据集属性工具 Ⅱ</strong></p>
@@ -4545,6 +4462,52 @@
 <p>系数 0.1 表示所有比最低像素大小高百分之十的 LowPS 值都被视为相同的值。此值必须大于或等于 0.0。可在等级表中查看结果。</p>
 <p><strong>Output Cell Size（输出像元大小）</strong></p>
 <p>镶嵌数据集的像元大小一般是自动计算的，我们也可以进行自定义。这个参数用于自定义指定镶嵌数据集的像元大小，可选择图层作为像元大小模板，也可指定实际像元大小。如果指定像元大小，可以将单个值用于方形像元大小，或者将 X 值和 Y 值用于矩形像元大小。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geodata</tag>
+        <tag>Raster</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>镶嵌数据集工具小结（六）镶嵌数据集的属性 Ⅲ</title>
+    <url>/2014/11/11/MDProperties3/</url>
+    <content><![CDATA[<p><strong>设置镶嵌数据集属性工具 Ⅲ</strong></p>
+<p><img data-src="/images/blogImg/MDProperties3_Toolset.png"></p>
+<p>这一篇接着，再接着，说这个参数无比巨多的工具 Set Mosaic Dataset Properties， 看看其中的 Catalog Item Properties 对应的各个参数的作用 。</p>
+<p><img data-src="/images/blogImg/MDProperties3_Catalog.png"></p>
+<br>
+
+<p><strong>元数据级别</strong></p>
+<p>Metadata Level 参数用于定义从服务器到客户端的元数据传输量。如果要传输大量元数据，此属性将会影响传输时间，因此可选择对其进行限制。</p>
+<p>通过下面三个选项，选择发布镶嵌数据集时从服务器提供给客户端的元数据级别：</p>
+<ul>
+<li>FULL —所有元数据将被传输，包含基本栅格数据集信息及函数链的详细信息。这是默认设置。</li>
+<li>BASIC —将传输栅格数据集级别信息，比如列和行、像元大小和空间参考信息。</li>
+<li>NONE —不提供任何元数据给客户端。</li>
+</ul>
+<p><strong>允许传输的字段</strong></p>
+<p>Allowed Transmission Field 参数列表，定义将镶嵌数据集作为服务提供时属性表中对客户端可见的字段。</p>
+<p>默认情况下，此列表包括字段：Name, MinPS, MaxPS, LowPS, HighPS, Tag, GroupName, ProductName, CenterX, CenterY, ZOrder, Shape_Length, Shape_Area。如果镶嵌数据集中包含自定义字段，这个列表中除了上面的字段，还会出现自定字段。</p>
+<p><strong>许是否启用时间</strong></p>
+<p><img data-src="/images/blogImg/MDProperties3_Time.png"></p>
+<p>如果镶嵌数据集包含定义时间的属性字段，可创建自动具有时间感知性的镶嵌数据集。</p>
+<p>如果激活了时间，则需要指定与时间有关的其他参数——起始和结束字段，以及时间格式。建议将时间值存储在日期字段中，但也支持字符串和数值字段。</p>
+<p><strong>地理变换方法</strong></p>
+<p>如果镶嵌数据集的坐标系统不同于源栅格数据坐标系统，则可能需要指定特定的地理变换方法。通过 Geographic Transformation 参数列表选择地理变换。</p>
+<p><strong>可下载的最大项目数</strong></p>
+<p>Max Number of Download Items 参数用来限制客户端可从影像服务中下载的栅格数量。该值会影响系统负荷。</p>
+<p>如果不希望客户端从镶嵌数据集内下载任何栅格，可将其设置为 0。另外注意，Grid格式数据源的镶嵌数据集不能下载。</p>
+<p><strong>返回的最大记录数</strong></p>
+<p>以影像服务的形式查看镶嵌数据集时，Max Number of Records Returned 参数用来限制，针对客户端每个请求，服务器返回的记录数。</p>
+<p><strong>最小像素作用</strong></p>
+<p>只看中文名字让人有点晕，实际上 Minimum Pixel Contribution 参数用于指定镶嵌数据集中的项目需要至少具有多少像素才能在镶嵌数据集中使用。默认值为1个像素。</p>
+<p>我们可以设置合理的值，这样镶嵌数据集会跳过所有像素量不够大的栅格项目。跳过这些镶嵌数据集项目将有助于提高镶嵌数据集的计算或显示性能。这在大量叠置栅格只具有少量像素时尤其有用。</p>
+<p>但是，同时需要知道，较大的值可能减少重叠项目成为感兴趣区组成部分的可能性；这会导致您的镶嵌数据集的某些区域空白。</p>
+<p>特别需要注意的是，镶嵌数据集的属性中有其他两项属性与这个选项可能存在矛盾关系，因此，此属性仅在 <strong><em>始终将栅格裁剪至其轮廓</em></strong> 设置为“<strong>是</strong>”，并且 <strong><em>轮廓线可能含有 NoData</em></strong> 设置为 <strong>否</strong> 时有效。否则可能会无视这个选项。</p>
+<p><img data-src="/images/blogImg/MDProperties3_MinPixel.png"></p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -5656,50 +5619,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ASCII 栅格的显示</title>
-    <url>/2015/04/21/MappingASCIIRaster/</url>
-    <content><![CDATA[<p>今天刚好有人问到一个有关 ASCII 栅格数据的问题，这里梳理下，用最简单的方式极速理解。</p>
-<br>
-
-<blockquote>
-<p><strong>什么是ASCII栅格？</strong>      就是用ASCII文本记录的栅格数据……</p>
-<p><strong>怎么得到ASCII栅格？</strong>   比如使用工具 Raster to ASCII……</p>
-</blockquote>
-<br>
-
-<br>
-
-
-
-
-
-
-<p>一般在 ASCII 栅格的文件头中我们会看到这几行：</p>
-<p><img data-src="/images/blogImg/MappingASCIIRaster_TXT.png"></p>
-<p><strong>ncols</strong>  和 <strong>nrows</strong>   表示这份数据的行列数，这份数据是10×10。</p>
-<p><strong>xllcorner</strong> 和 <strong>yllcorner</strong> 表示的就是栅格的左下角（low left）角点的坐标。</p>
-<p><strong>cellsize</strong> 也就是像元大小，表示每个正方形单元的尺寸。</p>
-<p>通过这几个值不就确定了栅格数据的范围了吗？嗯，确定了。</p>
-<br>
-
-<p>看图说话：</p>
-<p><img data-src="/images/blogImg/MappingASCIIRaster_Demo.png"></p>
-<br>
-
-<p>文本文件下面的值就对应到每个格子里的像元值：</p>
-<p><img data-src="/images/blogImg/MappingASCIIRaster_Value.png"></p>
-<br>
-<br>
-我想你不会再有any疑问了……]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geodata</tag>
-        <tag>Raster</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决Linux系统中缺少Xvfb包的问题</title>
     <url>/2015/05/08/LackofPackonLinux/</url>
     <content><![CDATA[<p>上一篇文中写了在 Linux上安装 ArcGIS Server前的准备工作，最后一步是环境检测，只有所有项都通过才可以安装 ArcGIS Server。</p>
@@ -6501,6 +6420,36 @@
       </tags>
   </entry>
   <entry>
+    <title>在ArcGIS中创建Python工具（一）</title>
+    <url>/2015/08/31/CreatePythonTool1/</url>
+    <content><![CDATA[<p>ArcGIS Desktop 自带有大量的工具，可以执行各种各样的地理处理任务。通过 python 我们可以灵活地调用这些工具，把工具组织成自己的工作流，甚至创建一些新的工具。今天就说说在 ArcGIS 中创建 Python工具这个话题。</p>
+<br>
+
+<p>在 ArcGIS 中我们可以通过两种方式来创建python工具：</p>
+<p>一种是在标准工具箱下创建 <strong>脚本工具</strong>:</p>
+<p><img data-src="/images/blogImg/CreatePythonTool1_ScriptTool.png"></p>
+<p>一种是创建 <strong>脚本工具箱</strong>：</p>
+<p><img data-src="/images/blogImg/CreatePythonTool1_PythonToolbox.png"></p>
+<br>
+
+<p>到这里，可能你会有和我一样的疑问，二者有什么<strong>区别</strong>？</p>
+<p>第一种 <strong>脚本工具</strong> 需要我们首先在 ArcGIS 环境中创建一个工具箱，然后添加 Python脚本文件（*.py），并通过向导来精确配置参数。这种工具很适合脚本工具的初学者，通过前面说的三步就可以搭建出一个自定义工具。但是这种模式也有一些缺点，工具箱和源脚本是分离的，我们很难集中的去管理和维护它们。</p>
+<p>相比于前者的难以集中管理的缺点，第二种的 <strong>Python工具箱</strong> 就体现出了它的优势。在 Python 工具箱中，参数定义、代码验证和源代码都在同一位置进行处理，因此Python 工具的创建和维护更加容易。此外，Python 工具箱支持脚本工具不支持的功能，例如值表、复合数据类型和自定义许可检查。</p>
+<p>Python 工具箱是在 ArcGIS 10.1 之后的版本出现的。如果你熟悉 Python，就可以充分利用所掌握的 Python 技能来创建 Python 工具箱。</p>
+<br>
+
+<p>下面是一些更加具体的对比列表：</p>
+<p><img data-src="/images/blogImg/CreatePythonTool1_Compare.png"></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geoprocessing</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在ArcGIS中创建Python工具（二）</title>
     <url>/2015/09/02/CreatePythonTool2/</url>
     <content><![CDATA[<p>上一篇中我们了解到有两种方式在 ArcGIS 中创建 Python工具，这一篇就来看看如何在标准工具箱中创建脚本工具。</p>
@@ -6618,36 +6567,6 @@
 <br>
 
 <p>好啦，关于ArcGIS 中使用脚本工具的过程就说到这里。</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geoprocessing</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在ArcGIS中创建Python工具（一）</title>
-    <url>/2015/08/31/CreatePythonTool1/</url>
-    <content><![CDATA[<p>ArcGIS Desktop 自带有大量的工具，可以执行各种各样的地理处理任务。通过 python 我们可以灵活地调用这些工具，把工具组织成自己的工作流，甚至创建一些新的工具。今天就说说在 ArcGIS 中创建 Python工具这个话题。</p>
-<br>
-
-<p>在 ArcGIS 中我们可以通过两种方式来创建python工具：</p>
-<p>一种是在标准工具箱下创建 <strong>脚本工具</strong>:</p>
-<p><img data-src="/images/blogImg/CreatePythonTool1_ScriptTool.png"></p>
-<p>一种是创建 <strong>脚本工具箱</strong>：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool1_PythonToolbox.png"></p>
-<br>
-
-<p>到这里，可能你会有和我一样的疑问，二者有什么<strong>区别</strong>？</p>
-<p>第一种 <strong>脚本工具</strong> 需要我们首先在 ArcGIS 环境中创建一个工具箱，然后添加 Python脚本文件（*.py），并通过向导来精确配置参数。这种工具很适合脚本工具的初学者，通过前面说的三步就可以搭建出一个自定义工具。但是这种模式也有一些缺点，工具箱和源脚本是分离的，我们很难集中的去管理和维护它们。</p>
-<p>相比于前者的难以集中管理的缺点，第二种的 <strong>Python工具箱</strong> 就体现出了它的优势。在 Python 工具箱中，参数定义、代码验证和源代码都在同一位置进行处理，因此Python 工具的创建和维护更加容易。此外，Python 工具箱支持脚本工具不支持的功能，例如值表、复合数据类型和自定义许可检查。</p>
-<p>Python 工具箱是在 ArcGIS 10.1 之后的版本出现的。如果你熟悉 Python，就可以充分利用所掌握的 Python 技能来创建 Python 工具箱。</p>
-<br>
-
-<p>下面是一些更加具体的对比列表：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool1_Compare.png"></p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -6935,62 +6854,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何在ArcGIS for Desktop中实现批量任务</title>
-    <url>/2015/12/06/IterationinArcGISforDesktop/</url>
-    <content><![CDATA[<p><strong>ModelBuilder</strong> 是 ArcGIS for Desktop 产品中最可爱的功能之一，它可以尽可能免代码地将我们从重复劳动中解放出来。使用 ModelBuilder 的过程常常被比喻为“搭积木”，我们只需要拿着 ArcGIS for Desktop 中为我们提供的“积木”去搭建满足于自己的特定工作流模型。</p>
-<p>再打个比方，我们要实现的某个功能比作是自己做面包。首先要准备食材，例如面粉、牛奶、鸡蛋、黄油、糖、盐、酵母，类比为 <strong>地理数据</strong>； 食材齐备了，就可以顺序开始和面、发酵、烘焙，这些工作由特定的器具承担，例如各种烘焙工具、烤箱，就好比ArcGIS提供的 <strong>工具</strong>，例如 ArcToolbox中的工具们； 面包制作过程中可以根据自己口味，规定发酵时间、控制糖和盐的多少等，这就类比为工具的自定义 <strong>参数</strong> 。</p>
-<p>如果自己享受整个烘焙的过程，不厌其烦地面面俱到，那大可维持现状；可是如果你觉得做面包是个体力活，你只是想吃到自家面包，而希望把做面包的过程“外包”出去，那么面包机的市场就来了。这篇blog就和大家说说如何制作“面包机”。</p>
-<br>
-
-<h2 id="1-明确需求"><a href="#1-明确需求" class="headerlink" title="1 明确需求"></a>1 明确需求</h2><p>我们从一个简单常见的实例开始……</p>
-<p><strong>需求</strong>：现有一些表示各种研究对象的地理数据，小明希望把所有研究数据变换到需要的坐标系统，并且全部裁剪至研究范围。</p>
-<p>如果只有一份数据，小明会不假思索的找到 ArcToolbox中的 Project和Clip工具，顺序执行即可解决问题；如果是3+份数据，小明可能会想，该做个工具了。</p>
-<br>
-
-<h2 id="2-构建工作流"><a href="#2-构建工作流" class="headerlink" title="2 构建工作流"></a>2 构建工作流</h2><p>从【地理处理】菜单，打开  ModelBuilder 窗口，依次拖拽和连接 Project 和 Clip 两个工具。Project 工具的输出作为 Clip 工具的输入。</p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Grey.png"></p>
-<p>双击工具可以打开工具继续填补工具需要的参数，直至Model因参数完全而变成彩色。</p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Color.png"></p>
-<br>
-
-<h2 id="3-使用迭代器"><a href="#3-使用迭代器" class="headerlink" title="3 使用迭代器"></a>3 使用迭代器</h2><p>前一步的工具已经满足一次任务的需要了，接着就是解决批量处理的问题。ModelBuilder提供了一些额外的自带工具来满足我们的一些高级需求，其中一类就是 <strong>迭代器</strong>，它用来实现循环。</p>
-<p>在这个例子中，需要遍历的对象是表示各种研究对象的要素类，因此选择 迭代要素类 &#x2F; Iterate Feature Classes。当然也可以根据自己的实际需求选择其他迭代器。</p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Iterator.png"></p>
-<p>接下来就是把迭代器与工具串联起来。首先，双击迭代器的六边形为迭代器设置工作空间，即地理数据库&#x2F;GDB，或者文件夹目录（例如shapefile所在的目录）。这样，迭代器会在指定的工作空间遍历要素类。删除现有Project工具的输入数据，将迭代器的输出数据连接到Project工具。</p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Iterator2.png"></p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_inlineVar.png"></p>
-<p>工具基本准备完毕，但是还差了重要的一步。目前，最后的输出数据是常量，也就是说，即使前面的工具执行了N次，那结果都将被同名覆盖。那么，<strong>行内变量</strong> 就显出用武之地了。</p>
-<p>迭代器每次遍历到一个要素类，会返回一个 Name，内容是当前要素类的名称，这个Name就是行内变量。引用的方法就是使用百分号括起来，即 <strong><code>%Name%</code></strong> 。</p>
-<p>输出数据设置示例：</p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_inlineVar2.png"></p>
-<p>至此我们就完成了一次批量任务。</p>
-<br>
-
-<h2 id="4-复用工具"><a href="#4-复用工具" class="headerlink" title="4 复用工具"></a>4 复用工具</h2><p>如果我们以后想按照这个相同的需求处理数据，完全可以将其做成模型工具。将输入数据和输出数据设置为模型变量，我们就可以在“运行”状态下使用。</p>
-<p>设置方法，在需要作为参数方便后续修改的项目上右键，勾选 “模型参数”即可，然后项目的头上顶了个“<strong>P</strong>”，(￣▽￣)”。</p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Para.png"></p>
-<p>将模型保存至工具箱后，双击运行工具。现在就可以把它当成“面包机”，放入食材，等面包即可。</p>
-<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_FinalTool.png"></p>
-<br>
-
-<h2 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5  注意事项"></a>5  注意事项</h2><p>下面是些有用的提示，FYI：</p>
-<ul>
-<li><p>每个模型仅可使用<strong>唯一</strong>一个迭代器。如果模型中已经存在一个迭代器，那么用于添加迭代器的菜单就不可用了。这是限制之一。</p>
-</li>
-<li><p>如果将含有迭代器的模型<strong>导出为 Python 脚本</strong>，则导出的脚本中将不会包括迭代逻辑。这是限制之二。Python中有list函数，也可以实现类似的需求，但是需要重写。</p>
-</li>
-<li><p>尽管Model可以嵌套调用，但是迭代器的<strong>嵌套循环</strong>逻辑不佳，不建议使用。如果需要实现嵌套循环，强烈建议使用python脚本。例如，实现遍历工作空间内每个要素类中的每个要素（记录）这样的需求，可以使用 ArcPy中的函数 <strong><code>ListFeatureClasses</code></strong> 和 **<code>SearchCursor</code>**来实现。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Geoprocessing</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Troubleshooting：Shapefile 乱码与字符截断问题</title>
     <url>/2015/12/21/TroubleshootingShapefile/</url>
     <content><![CDATA[<p>Shapefile是上个世纪90年代的数据格式，但是由于它开放易用至今仍然倍受欢迎，最近与shapefile编码相关的问题此起彼伏连绵不绝，整理下几个高频问题共享之。</p>
@@ -7175,6 +7038,62 @@
         <tag>ArcGIS Pro</tag>
         <tag>ArcGIS Enterprise</tag>
         <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何在ArcGIS for Desktop中实现批量任务</title>
+    <url>/2015/12/06/IterationinArcGISforDesktop/</url>
+    <content><![CDATA[<p><strong>ModelBuilder</strong> 是 ArcGIS for Desktop 产品中最可爱的功能之一，它可以尽可能免代码地将我们从重复劳动中解放出来。使用 ModelBuilder 的过程常常被比喻为“搭积木”，我们只需要拿着 ArcGIS for Desktop 中为我们提供的“积木”去搭建满足于自己的特定工作流模型。</p>
+<p>再打个比方，我们要实现的某个功能比作是自己做面包。首先要准备食材，例如面粉、牛奶、鸡蛋、黄油、糖、盐、酵母，类比为 <strong>地理数据</strong>； 食材齐备了，就可以顺序开始和面、发酵、烘焙，这些工作由特定的器具承担，例如各种烘焙工具、烤箱，就好比ArcGIS提供的 <strong>工具</strong>，例如 ArcToolbox中的工具们； 面包制作过程中可以根据自己口味，规定发酵时间、控制糖和盐的多少等，这就类比为工具的自定义 <strong>参数</strong> 。</p>
+<p>如果自己享受整个烘焙的过程，不厌其烦地面面俱到，那大可维持现状；可是如果你觉得做面包是个体力活，你只是想吃到自家面包，而希望把做面包的过程“外包”出去，那么面包机的市场就来了。这篇blog就和大家说说如何制作“面包机”。</p>
+<br>
+
+<h2 id="1-明确需求"><a href="#1-明确需求" class="headerlink" title="1 明确需求"></a>1 明确需求</h2><p>我们从一个简单常见的实例开始……</p>
+<p><strong>需求</strong>：现有一些表示各种研究对象的地理数据，小明希望把所有研究数据变换到需要的坐标系统，并且全部裁剪至研究范围。</p>
+<p>如果只有一份数据，小明会不假思索的找到 ArcToolbox中的 Project和Clip工具，顺序执行即可解决问题；如果是3+份数据，小明可能会想，该做个工具了。</p>
+<br>
+
+<h2 id="2-构建工作流"><a href="#2-构建工作流" class="headerlink" title="2 构建工作流"></a>2 构建工作流</h2><p>从【地理处理】菜单，打开  ModelBuilder 窗口，依次拖拽和连接 Project 和 Clip 两个工具。Project 工具的输出作为 Clip 工具的输入。</p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Grey.png"></p>
+<p>双击工具可以打开工具继续填补工具需要的参数，直至Model因参数完全而变成彩色。</p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Color.png"></p>
+<br>
+
+<h2 id="3-使用迭代器"><a href="#3-使用迭代器" class="headerlink" title="3 使用迭代器"></a>3 使用迭代器</h2><p>前一步的工具已经满足一次任务的需要了，接着就是解决批量处理的问题。ModelBuilder提供了一些额外的自带工具来满足我们的一些高级需求，其中一类就是 <strong>迭代器</strong>，它用来实现循环。</p>
+<p>在这个例子中，需要遍历的对象是表示各种研究对象的要素类，因此选择 迭代要素类 &#x2F; Iterate Feature Classes。当然也可以根据自己的实际需求选择其他迭代器。</p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Iterator.png"></p>
+<p>接下来就是把迭代器与工具串联起来。首先，双击迭代器的六边形为迭代器设置工作空间，即地理数据库&#x2F;GDB，或者文件夹目录（例如shapefile所在的目录）。这样，迭代器会在指定的工作空间遍历要素类。删除现有Project工具的输入数据，将迭代器的输出数据连接到Project工具。</p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Iterator2.png"></p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_inlineVar.png"></p>
+<p>工具基本准备完毕，但是还差了重要的一步。目前，最后的输出数据是常量，也就是说，即使前面的工具执行了N次，那结果都将被同名覆盖。那么，<strong>行内变量</strong> 就显出用武之地了。</p>
+<p>迭代器每次遍历到一个要素类，会返回一个 Name，内容是当前要素类的名称，这个Name就是行内变量。引用的方法就是使用百分号括起来，即 <strong><code>%Name%</code></strong> 。</p>
+<p>输出数据设置示例：</p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_inlineVar2.png"></p>
+<p>至此我们就完成了一次批量任务。</p>
+<br>
+
+<h2 id="4-复用工具"><a href="#4-复用工具" class="headerlink" title="4 复用工具"></a>4 复用工具</h2><p>如果我们以后想按照这个相同的需求处理数据，完全可以将其做成模型工具。将输入数据和输出数据设置为模型变量，我们就可以在“运行”状态下使用。</p>
+<p>设置方法，在需要作为参数方便后续修改的项目上右键，勾选 “模型参数”即可，然后项目的头上顶了个“<strong>P</strong>”，(￣▽￣)”。</p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_Para.png"></p>
+<p>将模型保存至工具箱后，双击运行工具。现在就可以把它当成“面包机”，放入食材，等面包即可。</p>
+<p><img data-src="/images/blogImg/IterationinArcGISforDesktop_FinalTool.png"></p>
+<br>
+
+<h2 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5  注意事项"></a>5  注意事项</h2><p>下面是些有用的提示，FYI：</p>
+<ul>
+<li><p>每个模型仅可使用<strong>唯一</strong>一个迭代器。如果模型中已经存在一个迭代器，那么用于添加迭代器的菜单就不可用了。这是限制之一。</p>
+</li>
+<li><p>如果将含有迭代器的模型<strong>导出为 Python 脚本</strong>，则导出的脚本中将不会包括迭代逻辑。这是限制之二。Python中有list函数，也可以实现类似的需求，但是需要重写。</p>
+</li>
+<li><p>尽管Model可以嵌套调用，但是迭代器的<strong>嵌套循环</strong>逻辑不佳，不建议使用。如果需要实现嵌套循环，强烈建议使用python脚本。例如，实现遍历工作空间内每个要素类中的每个要素（记录）这样的需求，可以使用 ArcPy中的函数 <strong><code>ListFeatureClasses</code></strong> 和 **<code>SearchCursor</code>**来实现。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geoprocessing</tag>
       </tags>
   </entry>
   <entry>
@@ -7412,6 +7331,62 @@
       </categories>
   </entry>
   <entry>
+    <title>ASCII 栅格的显示</title>
+    <url>/2015/04/21/MappingASCIIRaster/</url>
+    <content><![CDATA[<p>今天刚好有人问到一个有关 ASCII 栅格数据的问题，这里梳理下，用最简单的方式极速理解。</p>
+<br>
+
+<blockquote>
+<p><strong>什么是ASCII栅格？</strong>      就是用ASCII文本记录的栅格数据……</p>
+<p><strong>怎么得到ASCII栅格？</strong>   比如使用工具 Raster to ASCII……</p>
+</blockquote>
+<br>
+
+<br>
+
+
+
+
+
+
+<p>一般在 ASCII 栅格的文件头中我们会看到这几行：</p>
+<p><img data-src="/images/blogImg/MappingASCIIRaster_TXT.png"></p>
+<p><strong>ncols</strong>  和 <strong>nrows</strong>   表示这份数据的行列数，这份数据是10×10。</p>
+<p><strong>xllcorner</strong> 和 <strong>yllcorner</strong> 表示的就是栅格的左下角（low left）角点的坐标。</p>
+<p><strong>cellsize</strong> 也就是像元大小，表示每个正方形单元的尺寸。</p>
+<p>通过这几个值不就确定了栅格数据的范围了吗？嗯，确定了。</p>
+<br>
+
+<p>看图说话：</p>
+<p><img data-src="/images/blogImg/MappingASCIIRaster_Demo.png"></p>
+<br>
+
+<p>文本文件下面的值就对应到每个格子里的像元值：</p>
+<p><img data-src="/images/blogImg/MappingASCIIRaster_Value.png"></p>
+<br>
+<br>
+我想你不会再有any疑问了……]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Geodata</tag>
+        <tag>Raster</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>宁静的白与蓝</title>
+    <url>/2016/04/01/Peaceful/</url>
+    <content><![CDATA[<blockquote>
+<p>摄于 2014-5-8, Oia, Santorini, Greece</p>
+</blockquote>
+<p><img data-src="/images/blogImg/XJL_IMG_3500.jpg"></p>
+]]></content>
+      <categories>
+        <category>Visual Musing</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CGA：自动判断模型间关系的3D建模方法</title>
     <url>/2016/04/01/IfModelsTuches/</url>
     <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>最近遇到一个有趣的问题，<strong>如何在CityEgnine中判断有接触或相交关系的模型，从而自动进行建模？</strong></p>
@@ -7451,18 +7426,6 @@
         <tag>CityEngine</tag>
         <tag>CGA</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>宁静的白与蓝</title>
-    <url>/2016/04/01/Peaceful/</url>
-    <content><![CDATA[<blockquote>
-<p>摄于 2014-5-8, Oia, Santorini, Greece</p>
-</blockquote>
-<p><img data-src="/images/blogImg/XJL_IMG_3500.jpg"></p>
-]]></content>
-      <categories>
-        <category>Visual Musing</category>
-      </categories>
   </entry>
   <entry>
     <title>红沙滩</title>
@@ -7513,6 +7476,20 @@
       </categories>
   </entry>
   <entry>
+    <title>地中海的海</title>
+    <url>/2016/05/24/theBlueSea/</url>
+    <content><![CDATA[<blockquote>
+<p>摄于 2014-5-4, Paros Island,  Greece</p>
+</blockquote>
+<p>瞄了一眼《太阳的后裔》，看到里面的沉船湾，又想起了那片海，真的美！</p>
+<p><img data-src="/images/blogImg/XJL_IMG_5103.jpg"></p>
+<p><img data-src="/images/blogImg/XJL_IMG_5095.jpg"></p>
+]]></content>
+      <categories>
+        <category>Visual Musing</category>
+      </categories>
+  </entry>
+  <entry>
     <title>浅谈使用ArcPy执行大数据量处理任务</title>
     <url>/2016/04/28/ParallelPython/</url>
     <content><![CDATA[<p>Python功能强大而易于学习。对于ArcGIS for Desktop用户来讲，Python是提高工作效率的不二选择。 </p>
@@ -7553,20 +7530,6 @@
         <tag>Geoprocessing</tag>
         <tag>Python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>地中海的海</title>
-    <url>/2016/05/24/theBlueSea/</url>
-    <content><![CDATA[<blockquote>
-<p>摄于 2014-5-4, Paros Island,  Greece</p>
-</blockquote>
-<p>瞄了一眼《太阳的后裔》，看到里面的沉船湾，又想起了那片海，真的美！</p>
-<p><img data-src="/images/blogImg/XJL_IMG_5103.jpg"></p>
-<p><img data-src="/images/blogImg/XJL_IMG_5095.jpg"></p>
-]]></content>
-      <categories>
-        <category>Visual Musing</category>
-      </categories>
   </entry>
   <entry>
     <title>Troubleshooting： 有防火墙的情况下你需要如何部署许可服务器？</title>
@@ -7654,6 +7617,53 @@
       </tags>
   </entry>
   <entry>
+    <title>在ArcGIS Pro 1.3之外运行arcpy独立脚本</title>
+    <url>/2016/08/31/ArcGISProPython/</url>
+    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>ArcGIS Pro像ArcMap一样，其中也嵌入了Python。 不同在于ArcGIS Pro采用了python较新的版本3.4，ArcMap仍然沿用2.x版本。 ArcGIS Pro 1.3版本开始Python环境有点小变化，为了方便包管理esri开始采用Conda。 并且不像开始 ArcGIS Pro 1.1，1.2 版本，需要单独安装Python for ArcGIS Pro，在1.3版本python包随ArcGIS Pro一同自行安装。</p>
+<p>文档的原文摘过来能更好的理解esri采用Conda的意图：</p>
+<blockquote>
+<p>Python has a rich ecosystem of preexisting packages that can be leveraged within ArcGIS, but managing which packages are installed on a system can be a complex and time-consuming task, especially when working on multiple projects or trying to share code with others.</p>
+<p>To leverage this versatility, the Python community has created methods to easily create projects in multiple versions of Python and simplifies the process of installing nearly all publicly available Python packages. Conda is the most popular and widely used Python package manager.</p>
+</blockquote>
+<p>看到这里，你也也许和我有一样的疑问，<strong>啥是Conda？</strong> 点 <a href="http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm"><strong>这里</strong></a> 。这页文档是esri刚更新的内容，需要在英文语言版本文档中才能找到。</p>
+<br>
+
+<h1 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h1><p>这些改变，对于习惯在 ArcGIS Pro 内部的脚本命令行中执行脚本的用户并没有多大影响。 但是如果已经习惯了在ArcGIS Pro 之外独立执行脚本，那如下的改变要注意下了。</p>
+<p>ArcGIS Pro 的Python包不再是ArcMap默认安装的位置 <code>C:\Python27</code> ，而是安装在 <code>ArcGIS Pro的安装目录\bin\Python</code> 。</p>
+<p>ArcGIS Pro 采用了的Conda环境为 <strong>arcgispro-py3</strong>，有几个方式可以访问这个环境。</p>
+<br>
+
+<h2 id="1-交互式执行python命令"><a href="#1-交互式执行python命令" class="headerlink" title="1. 交互式执行python命令"></a>1. <strong>交互式执行python命令</strong></h2><p>打开ArcGIS Pro安装目录下propy.bat文件，默认位于:<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy.bat&quot;</code></p>
+<p><img data-src="/images/blogImg/ArcGISProPython_Command.png"></p>
+<h2 id="2-执行py文件"><a href="#2-执行py文件" class="headerlink" title="2 执行py文件"></a>2 <strong>执行py文件</strong></h2><p>CMD打开命令行窗口，通过propy文件执行脚本，例如默认位置：<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py</code><br><img data-src="/images/blogImg/ArcGISProPython_PY.png"><br>备注：MyScript内容就两行： <code>import arcpy</code>, <code>print(&quot;arcpy imported&quot;)</code></p>
+<h2 id="3-批处理py文件"><a href="#3-批处理py文件" class="headerlink" title="3 批处理py文件"></a>3 <strong>批处理py文件</strong></h2><p>通过 call 函数来调用 propy </p>
+<p><code>@echo Run my Python script call &quot;%PROGRAMFILES%\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py @echo Finished</code></p>
+<p>例子：<br><img data-src="/images/blogImg/ArcGISProPython_Bat.png"><br>备注： 三个脚本分别打印 AAA, BBB, CCC。</p>
+<br>
+
+<br>
+
+<h1 id="使用Python-IDE"><a href="#使用Python-IDE" class="headerlink" title="使用Python IDE"></a>使用Python IDE</h1><p>有一个好用IDE是件美好的事情，大家应该都有各自的真爱，我就不做任何推荐啦。 在Pro之外独立执行脚本导入arcpy站点包的时候，只要注意将Python解释器的路径指向正确即可。</p>
+<p>如果你的机器上既安装了ArcGIS Desktop，又安装了ArcGIS Server或者ArcGIS Desktop的后台64位补丁包，并且又安装了ArcGIS Pro， 那么可能在机器上有多个Python环境。</p>
+<p>我自己在用 Pycharm ，在需要导入 ArcGIS Pro 的python站点包时，注意指向： <code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe&quot;</code></p>
+<p><img data-src="/images/blogImg/ArcGISProPython_Pycharm.png"></p>
+<br>
+
+<p>注意，在python IDE 中<strong>不要</strong>将解释器指向这个 python.exe , <code>[&quot;C:\Program Files\ArcGIS\Pro\bin\Python\python.exe&quot;]</code></p>
+<p>否则你在导入 arcpy 模块时会遇到找不到模块的错误： <strong>ImportError: No module named ‘arcpy’</strong></p>
+<br>
+
+<p>最后推荐 <span class="exturl" data-url="aHR0cHM6Ly9nZW9uZXQuZXNyaS5jb20vZG9jcy9ET0MtODM1OQ==">一篇esri的Blog<i class="fa fa-external-link-alt"></i></span>，也详细的阐述的这件事。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>ArcGIS Pro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Trip To HngKong</title>
     <url>/2016/09/02/TripToHngKong/</url>
     <content><![CDATA[<blockquote>
@@ -7668,6 +7678,22 @@
       </categories>
       <tags>
         <tag>Map Story</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在CityEngine中如何判断线的方向与左右？</title>
+    <url>/2016/09/30/LineDirectioninCE/</url>
+    <content><![CDATA[<p>在我们建模的过程中，通常会遇到一些实际问题，例如，如何在道路右边放置交通指示灯？ 如何在道路的左边放置行树？如何在管线的末尾放置阀门？等等。</p>
+<p>这些有关线状要素的方向和左右的判断，可以通过UV坐标系来确定的。 线的UV坐标系与线的方向相关，</p>
+<p><img data-src="/images/blogImg/LineDirectioninCE.png"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    LineDirection.cga</span></span><br><span class="line"><span class="comment"> * Created: 22 Sep 2016 06:06:18 GMT</span></span><br><span class="line"><span class="comment"> * Author:  kikit</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2016.0&quot;</span></span><br><span class="line"></span><br><span class="line">init --&gt; </span><br><span class="line">Line2</span><br><span class="line"></span><br><span class="line"><span class="title function_">split</span><span class="params">(u,unitSpace,<span class="number">0</span>)</span>&#123;<span class="string">&#x27;0.1:StartSegment|&#x27;</span><span class="number">0.8</span>:NIL|<span class="string">&#x27;0.1:EndSegment&#125;</span></span><br><span class="line"><span class="string">StartSegment --&gt; color(0,1,0) #Green</span></span><br><span class="line"><span class="string">EndSegment --&gt; color(1,0,0)   #Red</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Line2 --&gt;</span></span><br><span class="line"><span class="string">translate(rel,world,0,0,-20)</span></span><br><span class="line"><span class="string">split(v,unitSpace,0)&#123;&#x27;</span><span class="number">0.2</span>:LeftSide|<span class="string">&#x27;0.6:NIL|&#x27;</span><span class="number">0.2</span>:RightSide&#125;</span><br><span class="line">LeftSide --&gt; color(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>)   #Yellow</span><br><span class="line">RightSide --&gt; color(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>)  #Blue</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>3D</tag>
+        <tag>CityEngine</tag>
+        <tag>CGA</tag>
       </tags>
   </entry>
   <entry>
@@ -7725,67 +7751,17 @@
       </tags>
   </entry>
   <entry>
-    <title>在ArcGIS Pro 1.3之外运行arcpy独立脚本</title>
-    <url>/2016/08/31/ArcGISProPython/</url>
-    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>ArcGIS Pro像ArcMap一样，其中也嵌入了Python。 不同在于ArcGIS Pro采用了python较新的版本3.4，ArcMap仍然沿用2.x版本。 ArcGIS Pro 1.3版本开始Python环境有点小变化，为了方便包管理esri开始采用Conda。 并且不像开始 ArcGIS Pro 1.1，1.2 版本，需要单独安装Python for ArcGIS Pro，在1.3版本python包随ArcGIS Pro一同自行安装。</p>
-<p>文档的原文摘过来能更好的理解esri采用Conda的意图：</p>
-<blockquote>
-<p>Python has a rich ecosystem of preexisting packages that can be leveraged within ArcGIS, but managing which packages are installed on a system can be a complex and time-consuming task, especially when working on multiple projects or trying to share code with others.</p>
-<p>To leverage this versatility, the Python community has created methods to easily create projects in multiple versions of Python and simplifies the process of installing nearly all publicly available Python packages. Conda is the most popular and widely used Python package manager.</p>
+    <title>孩童般</title>
+    <url>/2017/01/13/Childlike/</url>
+    <content><![CDATA[<blockquote>
+<p>摄于 2016-6-20，Disneyland, 香港</p>
 </blockquote>
-<p>看到这里，你也也许和我有一样的疑问，<strong>啥是Conda？</strong> 点 <a href="http://pro.arcgis.com/en/pro-app/arcpy/get-started/what-is-conda.htm"><strong>这里</strong></a> 。这页文档是esri刚更新的内容，需要在英文语言版本文档中才能找到。</p>
-<br>
-
-<h1 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h1><p>这些改变，对于习惯在 ArcGIS Pro 内部的脚本命令行中执行脚本的用户并没有多大影响。 但是如果已经习惯了在ArcGIS Pro 之外独立执行脚本，那如下的改变要注意下了。</p>
-<p>ArcGIS Pro 的Python包不再是ArcMap默认安装的位置 <code>C:\Python27</code> ，而是安装在 <code>ArcGIS Pro的安装目录\bin\Python</code> 。</p>
-<p>ArcGIS Pro 采用了的Conda环境为 <strong>arcgispro-py3</strong>，有几个方式可以访问这个环境。</p>
-<br>
-
-<h2 id="1-交互式执行python命令"><a href="#1-交互式执行python命令" class="headerlink" title="1. 交互式执行python命令"></a>1. <strong>交互式执行python命令</strong></h2><p>打开ArcGIS Pro安装目录下propy.bat文件，默认位于:<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy.bat&quot;</code></p>
-<p><img data-src="/images/blogImg/ArcGISProPython_Command.png"></p>
-<h2 id="2-执行py文件"><a href="#2-执行py文件" class="headerlink" title="2 执行py文件"></a>2 <strong>执行py文件</strong></h2><p>CMD打开命令行窗口，通过propy文件执行脚本，例如默认位置：<br><code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py</code><br><img data-src="/images/blogImg/ArcGISProPython_PY.png"><br>备注：MyScript内容就两行： <code>import arcpy</code>, <code>print(&quot;arcpy imported&quot;)</code></p>
-<h2 id="3-批处理py文件"><a href="#3-批处理py文件" class="headerlink" title="3 批处理py文件"></a>3 <strong>批处理py文件</strong></h2><p>通过 call 函数来调用 propy </p>
-<p><code>@echo Run my Python script call &quot;%PROGRAMFILES%\ArcGIS\Pro\bin\Python\Scripts\propy&quot; myscript.py @echo Finished</code></p>
-<p>例子：<br><img data-src="/images/blogImg/ArcGISProPython_Bat.png"><br>备注： 三个脚本分别打印 AAA, BBB, CCC。</p>
-<br>
-
-<br>
-
-<h1 id="使用Python-IDE"><a href="#使用Python-IDE" class="headerlink" title="使用Python IDE"></a>使用Python IDE</h1><p>有一个好用IDE是件美好的事情，大家应该都有各自的真爱，我就不做任何推荐啦。 在Pro之外独立执行脚本导入arcpy站点包的时候，只要注意将Python解释器的路径指向正确即可。</p>
-<p>如果你的机器上既安装了ArcGIS Desktop，又安装了ArcGIS Server或者ArcGIS Desktop的后台64位补丁包，并且又安装了ArcGIS Pro， 那么可能在机器上有多个Python环境。</p>
-<p>我自己在用 Pycharm ，在需要导入 ArcGIS Pro 的python站点包时，注意指向： <code>&quot;C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe&quot;</code></p>
-<p><img data-src="/images/blogImg/ArcGISProPython_Pycharm.png"></p>
-<br>
-
-<p>注意，在python IDE 中<strong>不要</strong>将解释器指向这个 python.exe , <code>[&quot;C:\Program Files\ArcGIS\Pro\bin\Python\python.exe&quot;]</code></p>
-<p>否则你在导入 arcpy 模块时会遇到找不到模块的错误： <strong>ImportError: No module named ‘arcpy’</strong></p>
-<br>
-
-<p>最后推荐 <span class="exturl" data-url="aHR0cHM6Ly9nZW9uZXQuZXNyaS5jb20vZG9jcy9ET0MtODM1OQ==">一篇esri的Blog<i class="fa fa-external-link-alt"></i></span>，也详细的阐述的这件事。</p>
+<p><img data-src="/images/blogImg/XJL_IMG_5792.jpg"></p>
+<p>越长大越复杂，不提醒自己，常常就忘记了快乐<br>有时，我们需要像孩童般，简单直接开放地面对生活<br>2017，继续努力吧 </p>
 ]]></content>
       <categories>
-        <category>Tech Notes</category>
+        <category>Visual Musing</category>
       </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>ArcGIS Pro</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在CityEngine中如何判断线的方向与左右？</title>
-    <url>/2016/09/30/LineDirectioninCE/</url>
-    <content><![CDATA[<p>在我们建模的过程中，通常会遇到一些实际问题，例如，如何在道路右边放置交通指示灯？ 如何在道路的左边放置行树？如何在管线的末尾放置阀门？等等。</p>
-<p>这些有关线状要素的方向和左右的判断，可以通过UV坐标系来确定的。 线的UV坐标系与线的方向相关，</p>
-<p><img data-src="/images/blogImg/LineDirectioninCE.png"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    LineDirection.cga</span></span><br><span class="line"><span class="comment"> * Created: 22 Sep 2016 06:06:18 GMT</span></span><br><span class="line"><span class="comment"> * Author:  kikit</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2016.0&quot;</span></span><br><span class="line"></span><br><span class="line">init --&gt; </span><br><span class="line">Line2</span><br><span class="line"></span><br><span class="line"><span class="title function_">split</span><span class="params">(u,unitSpace,<span class="number">0</span>)</span>&#123;<span class="string">&#x27;0.1:StartSegment|&#x27;</span><span class="number">0.8</span>:NIL|<span class="string">&#x27;0.1:EndSegment&#125;</span></span><br><span class="line"><span class="string">StartSegment --&gt; color(0,1,0) #Green</span></span><br><span class="line"><span class="string">EndSegment --&gt; color(1,0,0)   #Red</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Line2 --&gt;</span></span><br><span class="line"><span class="string">translate(rel,world,0,0,-20)</span></span><br><span class="line"><span class="string">split(v,unitSpace,0)&#123;&#x27;</span><span class="number">0.2</span>:LeftSide|<span class="string">&#x27;0.6:NIL|&#x27;</span><span class="number">0.2</span>:RightSide&#125;</span><br><span class="line">LeftSide --&gt; color(<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>)   #Yellow</span><br><span class="line">RightSide --&gt; color(<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>)  #Blue</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>3D</tag>
-        <tag>CityEngine</tag>
-        <tag>CGA</tag>
-      </tags>
   </entry>
   <entry>
     <title>部署 ArcGIS Python API</title>
@@ -7830,6 +7806,19 @@
         <tag>ArcGIS Enterprise</tag>
         <tag>Web</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>父亲节的作品</title>
+    <url>/2017/01/13/Painting/</url>
+    <content><![CDATA[<blockquote>
+<p>摄于 2016-6-19，海港城，香港</p>
+</blockquote>
+<p><img data-src="/images/blogImg/XJL_IMG_5651.jpg"></p>
+<p>父亲节，刚好在海港城<br>偶然看到小朋友的作品，觉得好有爱<br>对宝宝多年无感的我们<br>那时忽然觉得有个孩子好像也不错<br>不是为了传宗接代，不是为了完成所谓的使命<br>只是静静地看着ta成长<br>我们尽可能多地给予陪伴</p>
+]]></content>
+      <categories>
+        <category>Visual Musing</category>
+      </categories>
   </entry>
   <entry>
     <title>ArcGIS Python API 功能一瞥</title>
@@ -7881,57 +7870,6 @@
       </tags>
   </entry>
   <entry>
-    <title>父亲节的作品</title>
-    <url>/2017/01/13/Painting/</url>
-    <content><![CDATA[<blockquote>
-<p>摄于 2016-6-19，海港城，香港</p>
-</blockquote>
-<p><img data-src="/images/blogImg/XJL_IMG_5651.jpg"></p>
-<p>父亲节，刚好在海港城<br>偶然看到小朋友的作品，觉得好有爱<br>对宝宝多年无感的我们<br>那时忽然觉得有个孩子好像也不错<br>不是为了传宗接代，不是为了完成所谓的使命<br>只是静静地看着ta成长<br>我们尽可能多地给予陪伴</p>
-]]></content>
-      <categories>
-        <category>Visual Musing</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>孩童般</title>
-    <url>/2017/01/13/Childlike/</url>
-    <content><![CDATA[<blockquote>
-<p>摄于 2016-6-20，Disneyland, 香港</p>
-</blockquote>
-<p><img data-src="/images/blogImg/XJL_IMG_5792.jpg"></p>
-<p>越长大越复杂，不提醒自己，常常就忘记了快乐<br>有时，我们需要像孩童般，简单直接开放地面对生活<br>2017，继续努力吧 </p>
-]]></content>
-      <categories>
-        <category>Visual Musing</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>VS部署应用程序失败&#39;找不到SignTool.exe&#39;</title>
-    <url>/2017/02/07/VSpublishFailure/</url>
-    <content><![CDATA[<p>在使用 Visual Studio 2015 部署应用的时候遇到一个问题，在进行publish之后又提示错误：“An error occurred while signing: SignTool.exe not found.”。</p>
-<p><img data-src="/images/blogImg/VSpublishFailure_Error.jpg"></p>
-<p>查了下官方的技术文档，解决方法如下：</p>
-<p>先确认下自己的机器是否安装了 signtool.exe, 如果安装了则位于：</p>
-<pre><code>`%programfiles(x86)%\Microsoft SDKs\Windows\v7.0A\Bin   for x64 system`
-`%programfiles%\Microsoft SDKs\Windows\v7.0A\Bin        for x86 system`
-</code></pre>
-<p>signtool.exe 是 Windows平台SDK的一部分，如果在上面的路径中没有发现这个文件，那就需要安装下。 <span class="exturl" data-url="aHR0cHM6Ly9tc2RuLm1pY3Jvc29mdC5jb20vZW4tdXMvbGlicmFyeS84czliOXlhei5hc3B4">signtool.exe 是什么？<i class="fa fa-external-link-alt"></i></span></p>
-<p>方法很简单，重新执行VS的安装程序，选择Custom模式，补充安装 <code>ClickOnce Publishing Tools</code> 。</p>
-<p><img data-src="/images/blogImg/VSpublishFailure_Setup.png"></p>
-<p>安装完成后，问题解决。</p>
-<br>
-
-<p>技术文档详情，点<span class="exturl" data-url="aHR0cHM6Ly9ibG9ncy5tc2RuLm1pY3Jvc29mdC5jb20vdnNuZXRzZXR1cC8yMDEzLzExLzE4L2FuLWVycm9yLW9jY3VycmVkLXdoaWxlLXNpZ25pbmctc2lnbnRvb2wtZXhlLW5vdC1mb3VuZC8=">这里<i class="fa fa-external-link-alt"></i></span>。</p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>Visual Studio</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>生成线要素分段缓冲区</title>
     <url>/2017/01/23/CreateSplittedBuffer/</url>
     <content><![CDATA[<p>前段时间做了个小工具，可以生成线要素的分段缓冲区，补充 ArcGIS 现有缓冲区工具的不足，用来辅助实现更多的功能。</p>
@@ -7961,6 +7899,31 @@
         <tag>Geoprocessing</tag>
         <tag>Python</tag>
         <tag>ArcGIS Pro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS部署应用程序失败&#39;找不到SignTool.exe&#39;</title>
+    <url>/2017/02/07/VSpublishFailure/</url>
+    <content><![CDATA[<p>在使用 Visual Studio 2015 部署应用的时候遇到一个问题，在进行publish之后又提示错误：“An error occurred while signing: SignTool.exe not found.”。</p>
+<p><img data-src="/images/blogImg/VSpublishFailure_Error.jpg"></p>
+<p>查了下官方的技术文档，解决方法如下：</p>
+<p>先确认下自己的机器是否安装了 signtool.exe, 如果安装了则位于：</p>
+<pre><code>`%programfiles(x86)%\Microsoft SDKs\Windows\v7.0A\Bin   for x64 system`
+`%programfiles%\Microsoft SDKs\Windows\v7.0A\Bin        for x86 system`
+</code></pre>
+<p>signtool.exe 是 Windows平台SDK的一部分，如果在上面的路径中没有发现这个文件，那就需要安装下。 <span class="exturl" data-url="aHR0cHM6Ly9tc2RuLm1pY3Jvc29mdC5jb20vZW4tdXMvbGlicmFyeS84czliOXlhei5hc3B4">signtool.exe 是什么？<i class="fa fa-external-link-alt"></i></span></p>
+<p>方法很简单，重新执行VS的安装程序，选择Custom模式，补充安装 <code>ClickOnce Publishing Tools</code> 。</p>
+<p><img data-src="/images/blogImg/VSpublishFailure_Setup.png"></p>
+<p>安装完成后，问题解决。</p>
+<br>
+
+<p>技术文档详情，点<span class="exturl" data-url="aHR0cHM6Ly9ibG9ncy5tc2RuLm1pY3Jvc29mdC5jb20vdnNuZXRzZXR1cC8yMDEzLzExLzE4L2FuLWVycm9yLW9jY3VycmVkLXdoaWxlLXNpZ25pbmctc2lnbnRvb2wtZXhlLW5vdC1mb3VuZC8=">这里<i class="fa fa-external-link-alt"></i></span>。</p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>Visual Studio</tag>
       </tags>
   </entry>
   <entry>
@@ -8953,6 +8916,39 @@
       </tags>
   </entry>
   <entry>
+    <title>探索矢量切片的Bundle</title>
+    <url>/2018/08/13/vectorTileBundle/</url>
+    <content><![CDATA[<p>为什么会有这个需求和想法呢？还是源自于 <a href="http://kikitamap.com/2018/07/20/lovelyGit/"><strong>局部更新矢量切片</strong></a> 的想法，当我们遭遇一个海量矢量数据的矢量切片<strong>创建</strong>和<strong>更新</strong>任务时，希望尽可能少且尽可能准确地更新受影响的bundle，而不是全局，那么了解bundle的范围是十分必要的。在写上一篇<a href="http://kikitamap.com/2018/07/23/CompactCache/"><strong>《紧凑型缓存技术小结》</strong></a>的时候，目的在于在其基础之上探索矢量切片的bundle。</p>
+<p>为了确保单个bundle文件的矢量切片数据的完整性，每级每次至少需要更新一个bundle文件。当矢量切片的数据量不显著的时候，可能每级本身也就一个或几个bundle，那局部更新体现不出它的优势； 当某些等级（例如LOD比较大的级别）矢量切片bundle非常多的时候，如果更新的范围只影响了其中一个，或者几个文件时，局部更新是有必要的。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参照栅格切片的 <span class="exturl" data-url="aHR0cDovL2VudGVycHJpc2UuYXJjZ2lzLmNvbS9lbi9zZXJ2ZXIvbGF0ZXN0L3B1Ymxpc2gtc2VydmljZXMvd2luZG93cy9pbnNpZGUtdGhlLWNvbXBhY3QtY2FjaGUtc3RvcmFnZS1mb3JtYXQuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span> 中明确说明的，  “A bundle contains up to 16,384 tiles. ”   那就是 128 × 128 的关系，照搬到矢量切片是否适用呢？ 通过验证，确实如此。</p>
+<p>先上结论，第N级的矢量切片的bundle范围刚好是第N-7级的切片范围，如下图，红线是 level 6 的切片索引，刚好可以作为level 13 的bundle范围：</p>
+<p><img data-src="/images/blogImg/vectorTileBundle_bundlelevel.png"></p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>为了做验证和测试，我用了美国大选的区块数据做实验，这个面数据包含182895条记录，节点较多，很适合做矢量切片。假设，需要更新的切片范围仅仅是密歇根湖的一角：</p>
+<p><img data-src="/images/blogImg/vectorTileBundle_UpdateDetails.png"></p>
+<blockquote>
+<p>PS：上图是完全由 ArcGIS Pro 制作导出的，使用到了 Layout , Extent Indicator; 从制图角度来说，ArcGIS Pro 是个非常好的桌面端应用，可以继承和超越ArcMap。 </p>
+</blockquote>
+<p>以13级为例，更新的这一角仅需替换一个bundle：</p>
+<p><img data-src="/images/blogImg/vectorTileBundle_BundleReplace.png"></p>
+<p>那么自定义工具 Create Part Vector Tile Package 所要做的工作，逻辑就变得非常清晰，也就是通过用户提供的待更新区域（AOI）来计算每级被影响到的bundle文件的地理范围，从而进行bundle的替换工作；包含了为其服务的，解包、打包、解析类的工作。</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>Latest Version：</strong>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMi4xLjE=">Partially Upate ArcGIS Vector Tiles Toolbox 2.1.1<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>待解决的问题</strong>：</p>
+<ul>
+<li>投影坐标系和自定义坐标系支持</li>
+<li>tile scheme 原生获取</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>ArcGIS Pro</tag>
+        <tag>ArcGIS Enterprise</tag>
+        <tag>Web</tag>
+        <tag>Vector Tiles</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>紧凑型缓存技术小结</title>
     <url>/2018/07/23/CompactCache/</url>
     <content><![CDATA[<h2 id="Tiling-Scheme"><a href="#Tiling-Scheme" class="headerlink" title="Tiling Scheme"></a>Tiling Scheme</h2><p>每个缓存服务的切片目录中都会包含一个 <strong>Conf.xml</strong>，也是就是tile scheme 文件了。</p>
@@ -9046,39 +9042,6 @@
       <categories>
         <category>Tech Notes</category>
       </categories>
-  </entry>
-  <entry>
-    <title>探索矢量切片的Bundle</title>
-    <url>/2018/08/13/vectorTileBundle/</url>
-    <content><![CDATA[<p>为什么会有这个需求和想法呢？还是源自于 <a href="http://kikitamap.com/2018/07/20/lovelyGit/"><strong>局部更新矢量切片</strong></a> 的想法，当我们遭遇一个海量矢量数据的矢量切片<strong>创建</strong>和<strong>更新</strong>任务时，希望尽可能少且尽可能准确地更新受影响的bundle，而不是全局，那么了解bundle的范围是十分必要的。在写上一篇<a href="http://kikitamap.com/2018/07/23/CompactCache/"><strong>《紧凑型缓存技术小结》</strong></a>的时候，目的在于在其基础之上探索矢量切片的bundle。</p>
-<p>为了确保单个bundle文件的矢量切片数据的完整性，每级每次至少需要更新一个bundle文件。当矢量切片的数据量不显著的时候，可能每级本身也就一个或几个bundle，那局部更新体现不出它的优势； 当某些等级（例如LOD比较大的级别）矢量切片bundle非常多的时候，如果更新的范围只影响了其中一个，或者几个文件时，局部更新是有必要的。</p>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>参照栅格切片的 <span class="exturl" data-url="aHR0cDovL2VudGVycHJpc2UuYXJjZ2lzLmNvbS9lbi9zZXJ2ZXIvbGF0ZXN0L3B1Ymxpc2gtc2VydmljZXMvd2luZG93cy9pbnNpZGUtdGhlLWNvbXBhY3QtY2FjaGUtc3RvcmFnZS1mb3JtYXQuaHRt">帮助文档<i class="fa fa-external-link-alt"></i></span> 中明确说明的，  “A bundle contains up to 16,384 tiles. ”   那就是 128 × 128 的关系，照搬到矢量切片是否适用呢？ 通过验证，确实如此。</p>
-<p>先上结论，第N级的矢量切片的bundle范围刚好是第N-7级的切片范围，如下图，红线是 level 6 的切片索引，刚好可以作为level 13 的bundle范围：</p>
-<p><img data-src="/images/blogImg/vectorTileBundle_bundlelevel.png"></p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>为了做验证和测试，我用了美国大选的区块数据做实验，这个面数据包含182895条记录，节点较多，很适合做矢量切片。假设，需要更新的切片范围仅仅是密歇根湖的一角：</p>
-<p><img data-src="/images/blogImg/vectorTileBundle_UpdateDetails.png"></p>
-<blockquote>
-<p>PS：上图是完全由 ArcGIS Pro 制作导出的，使用到了 Layout , Extent Indicator; 从制图角度来说，ArcGIS Pro 是个非常好的桌面端应用，可以继承和超越ArcMap。 </p>
-</blockquote>
-<p>以13级为例，更新的这一角仅需替换一个bundle：</p>
-<p><img data-src="/images/blogImg/vectorTileBundle_BundleReplace.png"></p>
-<p>那么自定义工具 Create Part Vector Tile Package 所要做的工作，逻辑就变得非常清晰，也就是通过用户提供的待更新区域（AOI）来计算每级被影响到的bundle文件的地理范围，从而进行bundle的替换工作；包含了为其服务的，解包、打包、解析类的工作。</p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><strong>Latest Version：</strong>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21ha2VsaW5nL1BhcnRpYWxseVVwYXRlQXJjR0lTVmVjdG9yVGlsZXNUb29scy9yZWxlYXNlcy90YWcvMi4xLjE=">Partially Upate ArcGIS Vector Tiles Toolbox 2.1.1<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>待解决的问题</strong>：</p>
-<ul>
-<li>投影坐标系和自定义坐标系支持</li>
-<li>tile scheme 原生获取</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>ArcGIS Pro</tag>
-        <tag>ArcGIS Enterprise</tag>
-        <tag>Web</tag>
-        <tag>Vector Tiles</tag>
-      </tags>
   </entry>
   <entry>
     <title>Testing Report for Raster Data Source in Cloud Storage</title>
@@ -9452,60 +9415,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HERE MAP API - Part4 Advanced Routing - 1</title>
-    <url>/2019/03/06/Icecream_Part4_Advanced_Routing_1/</url>
-    <content><![CDATA[<p>在 Part 3 中我们了解到如何调用 HERE Routing API 实现两点间路径规划，以及如何从当前位置出发规划路径。</p>
-<p>这个部分继续来看看，如何展示多条路线及其信息，并允许用户交互选择。</p>
-<h3 id="Pre-session-重构代码"><a href="#Pre-session-重构代码" class="headerlink" title="Pre-session: 重构代码"></a>Pre-session: 重构代码</h3><p>这一部分不是改进功能，而是整理思绪。磨刀不误砍柴工，放之四海而皆准。</p>
-<p>冰淇凌小网页的功能不断增多，代码也随之膨胀，我们要时不时地整理收纳一下，避免自己在找乐子的路上备受打击。</p>
-<p>在 Scripts 文件夹中，新建：</p>
-<ul>
-<li>map.js  用于存放和<strong>底图</strong>及<strong>绘制路线</strong>相关的逻辑；</li>
-<li>utils.js  用于存放<strong>辅助功能</strong>，例如，将 latlog 坐标转化成 WayPointString 以供 Routing Service 使用。</li>
-</ul>
-<p>代码与Part 3 类似，但是因为做了重构，需要注意其中的调用关系及 html页面中的加载顺序。</p>
-<p><em>complete code</em>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzFfcmVmYWN0b3I=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="Multiple-Routes"><a href="#Multiple-Routes" class="headerlink" title="Multiple Routes"></a>Multiple Routes</h3><p>在日常导航出行时，多给出几条路线供用户选择，也是一个极常见的需求。</p>
-<p>使用 HERE Routing API 计算路线时，可在请求中加入参数 <code>alternatives</code> 来获得多个推荐路线。</p>
-<p>alternatives: 2； 即，1 (primary) + 2 (alternatives) &#x3D; 3  条路线。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">HEREMap</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">drawRoute</span> = <span class="keyword">function</span> (<span class="params">fromCoordinates, toCoordinates</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> routeOptions = &#123;</span><br><span class="line">        <span class="attr">mode</span>: <span class="string">&#x27;fastest;car&#x27;</span>,</span><br><span class="line">        <span class="attr">representation</span>: <span class="string">&#x27;display&#x27;</span>,</span><br><span class="line">        # add parameter</span><br><span class="line">        <span class="attr">alternatives</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">waypoint0</span>: <span class="title class_">Utils</span>.<span class="title function_">locationToWaypointString</span>(fromCoordinates),</span><br><span class="line">        <span class="attr">waypoint1</span>: <span class="title class_">Utils</span>.<span class="title function_">locationToWaypointString</span>(toCoordinates)</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">routes</span> = <span class="keyword">new</span> <span class="title class_">HERERoute</span>(<span class="variable language_">this</span>.<span class="property">map</span>, <span class="variable language_">this</span>.<span class="property">platform</span>, routeOptions);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>由于产生了多条道路，绘制道路的过程就要被执行多次，那么我们就把 <code>drawRoute</code> 函数挪到 <code>route.js</code> 中的 <code>HERERoute</code> 对象中，以供每次绘制道路调用。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Add drawRoute Function to HERERoute</span></span><br><span class="line">    <span class="keyword">var</span> drawRoute = <span class="keyword">function</span> (<span class="params">route</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> routeShape = route.<span class="property">shape</span>;</span><br><span class="line">        <span class="keyword">var</span> <span class="title class_">LineString</span> = <span class="keyword">new</span> H.<span class="property">geo</span>.<span class="title class_">LineString</span>();</span><br><span class="line"></span><br><span class="line">        routeShape.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">point</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> parts = point.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">            <span class="title class_">LineString</span>.<span class="title function_">pushLatLngAlt</span>(parts[<span class="number">0</span>], parts[<span class="number">1</span>]);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">var</span> routeLine = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Polyline</span>(<span class="title class_">LineString</span>, &#123;</span><br><span class="line">            <span class="attr">style</span>: &#123;</span><br><span class="line">                <span class="attr">strokeColor</span>: <span class="string">&#x27;blue&#x27;</span>,</span><br><span class="line">                <span class="attr">lineWidth</span>: <span class="number">3</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        map.<span class="title function_">addObject</span>(routeLine);</span><br><span class="line">        <span class="comment">// map.setViewBounds(routeLine.getBounds());</span></span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>与此同时，做 <code>onSuccess</code>函数的对应修改，在返回结果中依次调用 <code>drawRoute</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">       <span class="comment">// Simplify on success function</span></span><br><span class="line">       <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">           <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>;</span><br><span class="line">           <span class="title class_">Setting</span> view bounds</span><br><span class="line">           routes.<span class="title function_">forEach</span>(drawRoute);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>Bingo！</p>
-<p><img data-src="/images/blogImg/Icecream_Part4_Advanced_Routing.png"></p>
-<h3 id="View-Bounds"><a href="#View-Bounds" class="headerlink" title="View Bounds"></a>View Bounds</h3><p>基本功能已实现，为了更好的体验，我们继续加工加工。</p>
-<p>在 Part 3 中的我们通过 <code>setViewBounds</code>  将地图显示为路线的范围，在Part 4 中显然就不适用了，因为这样只会返回跳转到最后一条路线的范围。将所有的路线加入到一个组中，然后跳转组的范围，来解决这个问题。</p>
-<p>对 <code>onSuccess</code> 进行修改：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>;</span><br><span class="line">        <span class="comment">// Setting view bounds</span></span><br><span class="line">        <span class="comment">// routes.forEach(drawRoute);</span></span><br><span class="line">        <span class="comment">// add all routes to a group</span></span><br><span class="line">        <span class="keyword">var</span> routeLines = routes.<span class="title function_">map</span>(drawRoute);</span><br><span class="line">        <span class="keyword">var</span> routeLineGroup = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Group</span>(&#123;</span><br><span class="line">            <span class="attr">objects</span>: routeLines</span><br><span class="line">        &#125;);</span><br><span class="line">        map.<span class="title function_">addObject</span>(routeLineGroup);</span><br><span class="line">        map.<span class="title function_">setViewBounds</span>(routeLineGroup.<span class="title function_">getBounds</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>同时移除 <code>drawRoute</code> 中原先的 <code>setViewBounds</code>语句，并向 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9tYXBzL3RvcGljc19hcGkvaC1tYXAtZ3JvdXAuaHRtbA==">H.map.Group<i class="fa fa-external-link-alt"></i></span> 容器中增加返回的route。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Setting view bounds using Group bounds not the last route</span></span><br><span class="line"><span class="comment">// map.addObject(routeLine);</span></span><br><span class="line"><span class="comment">// map.setViewBounds(routeLine.getBounds());</span></span><br><span class="line"><span class="keyword">return</span> routeLine;</span><br></pre></td></tr></table></figure>
-
-
-
-<br>
-
-<p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTQtYWR2YW5jZWQtcm91dGluZw==">Part4: Advanced Routing<i class="fa fa-external-link-alt"></i></span></p>
-<p><em>complete code</em>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzJfbXVsdGlSb3V0ZXM=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-      <categories>
-        <category>Tech Notes</category>
-      </categories>
-      <tags>
-        <tag>HERE Map</tag>
-        <tag>HLS</tag>
-        <tag>Javascript</tag>
-        <tag>Routing</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HERE MAP API - Part3 Basic Routing</title>
     <url>/2019/03/05/Icecream_Part3_Basic_Routing/</url>
     <content><![CDATA[<p>Part 1 中我们准备了底图，Part 2 中我们获取了位置，现在终于开张了，“您有新的  ‘ 饿了乎 ’  订单到了！”  我们给外卖小哥规划下路线吧！</p>
@@ -9548,6 +9457,60 @@
 </blockquote>
 <p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTMtYmFzaWMtcm91dGluZw==">Part3: Basic Routing<i class="fa fa-external-link-alt"></i></span></p>
 <p><em>complete code</em>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDNfQmFzaWNfUm91dGluZw==">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+      <categories>
+        <category>Tech Notes</category>
+      </categories>
+      <tags>
+        <tag>HERE Map</tag>
+        <tag>HLS</tag>
+        <tag>Javascript</tag>
+        <tag>Routing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HERE MAP API - Part4 Advanced Routing - 1</title>
+    <url>/2019/03/06/Icecream_Part4_Advanced_Routing_1/</url>
+    <content><![CDATA[<p>在 Part 3 中我们了解到如何调用 HERE Routing API 实现两点间路径规划，以及如何从当前位置出发规划路径。</p>
+<p>这个部分继续来看看，如何展示多条路线及其信息，并允许用户交互选择。</p>
+<h3 id="Pre-session-重构代码"><a href="#Pre-session-重构代码" class="headerlink" title="Pre-session: 重构代码"></a>Pre-session: 重构代码</h3><p>这一部分不是改进功能，而是整理思绪。磨刀不误砍柴工，放之四海而皆准。</p>
+<p>冰淇凌小网页的功能不断增多，代码也随之膨胀，我们要时不时地整理收纳一下，避免自己在找乐子的路上备受打击。</p>
+<p>在 Scripts 文件夹中，新建：</p>
+<ul>
+<li>map.js  用于存放和<strong>底图</strong>及<strong>绘制路线</strong>相关的逻辑；</li>
+<li>utils.js  用于存放<strong>辅助功能</strong>，例如，将 latlog 坐标转化成 WayPointString 以供 Routing Service 使用。</li>
+</ul>
+<p>代码与Part 3 类似，但是因为做了重构，需要注意其中的调用关系及 html页面中的加载顺序。</p>
+<p><em>complete code</em>  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzFfcmVmYWN0b3I=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Multiple-Routes"><a href="#Multiple-Routes" class="headerlink" title="Multiple Routes"></a>Multiple Routes</h3><p>在日常导航出行时，多给出几条路线供用户选择，也是一个极常见的需求。</p>
+<p>使用 HERE Routing API 计算路线时，可在请求中加入参数 <code>alternatives</code> 来获得多个推荐路线。</p>
+<p>alternatives: 2； 即，1 (primary) + 2 (alternatives) &#x3D; 3  条路线。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title class_">HEREMap</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">drawRoute</span> = <span class="keyword">function</span> (<span class="params">fromCoordinates, toCoordinates</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> routeOptions = &#123;</span><br><span class="line">        <span class="attr">mode</span>: <span class="string">&#x27;fastest;car&#x27;</span>,</span><br><span class="line">        <span class="attr">representation</span>: <span class="string">&#x27;display&#x27;</span>,</span><br><span class="line">        # add parameter</span><br><span class="line">        <span class="attr">alternatives</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">waypoint0</span>: <span class="title class_">Utils</span>.<span class="title function_">locationToWaypointString</span>(fromCoordinates),</span><br><span class="line">        <span class="attr">waypoint1</span>: <span class="title class_">Utils</span>.<span class="title function_">locationToWaypointString</span>(toCoordinates)</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">routes</span> = <span class="keyword">new</span> <span class="title class_">HERERoute</span>(<span class="variable language_">this</span>.<span class="property">map</span>, <span class="variable language_">this</span>.<span class="property">platform</span>, routeOptions);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>由于产生了多条道路，绘制道路的过程就要被执行多次，那么我们就把 <code>drawRoute</code> 函数挪到 <code>route.js</code> 中的 <code>HERERoute</code> 对象中，以供每次绘制道路调用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Add drawRoute Function to HERERoute</span></span><br><span class="line">    <span class="keyword">var</span> drawRoute = <span class="keyword">function</span> (<span class="params">route</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> routeShape = route.<span class="property">shape</span>;</span><br><span class="line">        <span class="keyword">var</span> <span class="title class_">LineString</span> = <span class="keyword">new</span> H.<span class="property">geo</span>.<span class="title class_">LineString</span>();</span><br><span class="line"></span><br><span class="line">        routeShape.<span class="title function_">forEach</span>(<span class="keyword">function</span> (<span class="params">point</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> parts = point.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>);</span><br><span class="line">            <span class="title class_">LineString</span>.<span class="title function_">pushLatLngAlt</span>(parts[<span class="number">0</span>], parts[<span class="number">1</span>]);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">var</span> routeLine = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Polyline</span>(<span class="title class_">LineString</span>, &#123;</span><br><span class="line">            <span class="attr">style</span>: &#123;</span><br><span class="line">                <span class="attr">strokeColor</span>: <span class="string">&#x27;blue&#x27;</span>,</span><br><span class="line">                <span class="attr">lineWidth</span>: <span class="number">3</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        map.<span class="title function_">addObject</span>(routeLine);</span><br><span class="line">        <span class="comment">// map.setViewBounds(routeLine.getBounds());</span></span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>与此同时，做 <code>onSuccess</code>函数的对应修改，在返回结果中依次调用 <code>drawRoute</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">       <span class="comment">// Simplify on success function</span></span><br><span class="line">       <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">           <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>;</span><br><span class="line">           <span class="title class_">Setting</span> view bounds</span><br><span class="line">           routes.<span class="title function_">forEach</span>(drawRoute);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Bingo！</p>
+<p><img data-src="/images/blogImg/Icecream_Part4_Advanced_Routing.png"></p>
+<h3 id="View-Bounds"><a href="#View-Bounds" class="headerlink" title="View Bounds"></a>View Bounds</h3><p>基本功能已实现，为了更好的体验，我们继续加工加工。</p>
+<p>在 Part 3 中的我们通过 <code>setViewBounds</code>  将地图显示为路线的范围，在Part 4 中显然就不适用了，因为这样只会返回跳转到最后一条路线的范围。将所有的路线加入到一个组中，然后跳转组的范围，来解决这个问题。</p>
+<p>对 <code>onSuccess</code> 进行修改：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> onSuccess = <span class="keyword">function</span> (<span class="params">result</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (result.<span class="property">response</span>.<span class="property">route</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> routes = result.<span class="property">response</span>.<span class="property">route</span>;</span><br><span class="line">        <span class="comment">// Setting view bounds</span></span><br><span class="line">        <span class="comment">// routes.forEach(drawRoute);</span></span><br><span class="line">        <span class="comment">// add all routes to a group</span></span><br><span class="line">        <span class="keyword">var</span> routeLines = routes.<span class="title function_">map</span>(drawRoute);</span><br><span class="line">        <span class="keyword">var</span> routeLineGroup = <span class="keyword">new</span> H.<span class="property">map</span>.<span class="title class_">Group</span>(&#123;</span><br><span class="line">            <span class="attr">objects</span>: routeLines</span><br><span class="line">        &#125;);</span><br><span class="line">        map.<span class="title function_">addObject</span>(routeLineGroup);</span><br><span class="line">        map.<span class="title function_">setViewBounds</span>(routeLineGroup.<span class="title function_">getBounds</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>同时移除 <code>drawRoute</code> 中原先的 <code>setViewBounds</code>语句，并向 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9tYXBzL3RvcGljc19hcGkvaC1tYXAtZ3JvdXAuaHRtbA==">H.map.Group<i class="fa fa-external-link-alt"></i></span> 容器中增加返回的route。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Setting view bounds using Group bounds not the last route</span></span><br><span class="line"><span class="comment">// map.addObject(routeLine);</span></span><br><span class="line"><span class="comment">// map.setViewBounds(routeLine.getBounds());</span></span><br><span class="line"><span class="keyword">return</span> routeLine;</span><br></pre></td></tr></table></figure>
+
+
+
+<br>
+
+<p><em>original resource</em>  <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vYmxvZy93aG8td2FudHMtaWNlLWNyZWFtLWEtaGVyZS1tYXBzLWFwaS1mb3ItamF2YXNjcmlwdC10dXRvcmlhbC1wYXJ0LTQtYWR2YW5jZWQtcm91dGluZw==">Part4: Advanced Routing<i class="fa fa-external-link-alt"></i></span></p>
+<p><em>complete code</em>   <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2tpa2l0YU1vb24vSEVSRV9KU19XaG9fV2FudHNfSWNlY3JlYW0vdHJlZS9tYXN0ZXIvUGFydDRfQWR2YW5jZWRfUm91dGluZ19TUzJfbXVsdGlSb3V0ZXM=">Github - kikitaMoon&#x2F;HERE_JS_Who_Wants_Icecream<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
@@ -9622,19 +9585,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大雪</title>
-    <url>/2020/01/06/SnowySerenity/</url>
-    <content><![CDATA[<blockquote>
-<p>烟台，2020.01.06</p>
-</blockquote>
-<p>大雪之后，银装素裹，2020这一年的冬天格外寂静，雪地上没有脚印</p>
-<p><img data-src="/images/blogImg/XJL_SnowySerenity.jpg"></p>
-]]></content>
-      <categories>
-        <category>Visual Musing</category>
-      </categories>
-  </entry>
-  <entry>
     <title>WiFi Network Positioning</title>
     <url>/2019/06/27/wlanNetworks/</url>
     <content><![CDATA[<p>在设备开启WiFi之后，会对周边 WiFi Access Point (AP)进行扫描，并将这些可见WiFi名称推给用户供选择。这是几乎是我们的PC和手机的日常。 除了连接WiFi登录Internet 之外，实际上，我们还可以通过 WiFi AP进行定位。</p>
@@ -9687,6 +9637,19 @@
         <tag>Network</tag>
         <tag>Positioning</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>大雪</title>
+    <url>/2020/01/06/SnowySerenity/</url>
+    <content><![CDATA[<blockquote>
+<p>烟台，2020.01.06</p>
+</blockquote>
+<p>大雪之后，银装素裹，2020这一年的冬天格外寂静，雪地上没有脚印</p>
+<p><img data-src="/images/blogImg/XJL_SnowySerenity.jpg"></p>
+]]></content>
+      <categories>
+        <category>Visual Musing</category>
+      </categories>
   </entry>
   <entry>
     <title>the Shade</title>
@@ -10107,6 +10070,27 @@
       </categories>
   </entry>
   <entry>
+    <title>Ending 2024</title>
+    <url>/2024/12/23/Ending2024/</url>
+    <content><![CDATA[<p>重拾下写作，网站换个新衣服，洗尘迎接2025。</p>
+<p>Change log：</p>
+<ol>
+<li>Theme –&gt; NexT</li>
+<li>评论系统 –&gt; Disqus</li>
+<li>SEO优化</li>
+<li>DNS+SSL优化</li>
+<li>Sitemap优化</li>
+<li>RSS优化</li>
+<li>Categories,Tags优化</li>
+<li>图片地址优化</li>
+<li>I18N支持 –&gt; 支持 <a href="http://kikitamap.com/en/">http://kikitamap.com/en/</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Inner Thoughts</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Exploring the Footprints of BBC Documentaries in ArcGIS Earth</title>
     <url>/2024/12/25/BBC-Volcanos-1-en/</url>
     <content><![CDATA[<p>The BBC’s documentaries are almost all masterpieces, and of course, I am an avid fan—especially of the Planet series. The wallpaper-grade visuals and the narration full of memorable quotes bring brilliance to days spent indoors. </p>
@@ -10188,27 +10172,6 @@
         <tag>Tutorials</tag>
         <tag>Jump start</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Ending 2024</title>
-    <url>/2024/12/23/Ending2024/</url>
-    <content><![CDATA[<p>重拾下写作，网站换个新衣服，洗尘迎接2025。</p>
-<p>Change log：</p>
-<ol>
-<li>Theme –&gt; NexT</li>
-<li>评论系统 –&gt; Disqus</li>
-<li>SEO优化</li>
-<li>DNS+SSL优化</li>
-<li>Sitemap优化</li>
-<li>RSS优化</li>
-<li>Categories,Tags优化</li>
-<li>图片地址优化</li>
-<li>I18N支持 –&gt; 支持 <a href="http://kikitamap.com/en/">http://kikitamap.com/en/</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Inner Thoughts</category>
-      </categories>
   </entry>
   <entry>
     <title>Volcanic Islands and Atolls — Exploring and Interpreting with ArcGIS Earth</title>
@@ -10461,6 +10424,58 @@
       </tags>
   </entry>
   <entry>
+    <title>AI Daily News - 2026年3月24日</title>
+    <url>/2026/03/24/ai-daily-news/</url>
+    <content><![CDATA[<blockquote>
+<p>每天 AI 行业重大新闻简报，来源涵盖 OpenAI、Google、Anthropic、NVIDIA 等核心玩家。</p>
+</blockquote>
+<h2 id="🚀-大模型-产品"><a href="#🚀-大模型-产品" class="headerlink" title="🚀 大模型 &amp; 产品"></a>🚀 大模型 &amp; 产品</h2><h3 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h3><p><strong>OpenAI 计划到 2026 年底员工数翻倍</strong><br>OpenAI 计划在 2026 年底将员工数量翻倍，以与 Anthropic 和 Google 竞争。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9uYXRpb25hbHRvZGF5LmNvbS91cy9jYS9zYW4tZnJhbmNpc2NvL25ld3MvMjAyNi8wMy8yMi9vcGVuYWktdG8tZG91YmxlLXdvcmtmb3JjZS1ieS15ZWFyLWVuZC10by1yaXZhbC1hbnRocm9waWMtZ29vZ2xlLw==">OpenAI to Double Workforce - National Today<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>OpenAI 预计 2026 年亏损约 140 亿美元</strong><br>OpenAI 预计 2026 年将亏损约 140 亿美元，并可能在 2027 年中期面临资金压力。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wb3B1bGFyL29wZW5haS1zb3JhLW5ld3MtbWFyY2gtMjAyNi8=">OpenAI Sora News March 2026 - Instagram<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>SearchGPT 搜索引擎 Beta 测试扩大</strong><br>OpenAI 的 AI 搜索引擎 SearchGPT 现已向所有 Plus 订阅用户开放 Beta 测试。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h3 id="Anthropic"><a href="#Anthropic" class="headerlink" title="Anthropic"></a>Anthropic</h3><p><strong>Claude 4 即将发布，或支持 MCP 协议</strong><br>Anthropic 暗示 Claude 4 将在未来几周内发布。新版本可能原生支持 Model Context Protocol (MCP)。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>Claude 企业版推出私有模型选项</strong><br>Anthropic 发布 Claude Enterprise 重大更新，企业客户现在可以部署完全私有的 Claude 实例。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h3 id="Google-DeepMind"><a href="#Google-DeepMind" class="headerlink" title="Google &amp; DeepMind"></a>Google &amp; DeepMind</h3><p><strong>Gemini 2.5 Pro 开放 API，免费额度大幅提升</strong><br>Google 宣布 Gemini 2.5 Pro API 免费额度从每月 50 万 tokens 提升到 200 万 tokens，付费价格下调 40%。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>Gemini Workspace 新功能上线</strong><br>Google 为 Workspace 推出 Gemini 测试功能：Docs 上下文起草、Sheets 电子表格创建、Slides 演示文稿生成。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>DeepMind 公布 AlphaFold 3 最新进展</strong><br>DeepMind 展示 AlphaFold 3 最新版本，现在能够预测蛋白质与 DNA、RNA、小分子的复合物结构。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h2 id="💰-融资-商业"><a href="#💰-融资-商业" class="headerlink" title="💰 融资 &amp; 商业"></a>💰 融资 &amp; 商业</h2><p><strong>Anthropic 获得 4 亿美元 D 轮融资</strong><br>Anthropic 完成 4 亿美元 D 轮融资，估值达 180 亿美元。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>Mistral AI 获 6.4 亿美元融资，估值 60 亿美元</strong><br>法国 AI 创业公司 Mistral AI 完成 6.4 亿美元融资，踏入独角兽行列。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>AI 初创公司占风投资金 41%</strong><br>根据 Carta 数据，AI 初创公司占据 1280 亿美元风投资金中的 41%。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h2 id="🖥️-硬件-基础设施"><a href="#🖥️-硬件-基础设施" class="headerlink" title="🖥️ 硬件 &amp; 基础设施"></a>🖥️ 硬件 &amp; 基础设施</h2><p><strong>NVIDIA Blackwell GPU 2026 年出货预期下调</strong><br>JP Morgan 下调 NVIDIA Blackwell GPU 出货预期。2025 年预计出货 520 万片，2026 年降至 180 万片。但新一代 Rubin GPU 预计 2026 年出货 570 万片。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cudHdlYWt0b3duLmNvbS9uZXdzLzEwNjExNi9udmlkaWEtZXhwZWN0ZWQtdG8tc2hpcC01LTJtLWJsYWNrd2VsbC1ncHVzLWluLTIwMjUtMS04bS0yMDI2LWFuZC03bS1ydWJpbi9pbmRleC5odG1s">NVIDIA Blackwell GPUs - Tweaktown<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>AMD MI350X 挑战 NVIDIA</strong><br>AMD 发布 Instinct MI350X GPU，声称在 Llama 3.1 405B 推理任务中性能是 H100 的 2.6 倍。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h2 id="🔧-工具-开源"><a href="#🔧-工具-开源" class="headerlink" title="🔧 工具 &amp; 开源"></a>🔧 工具 &amp; 开源</h2><p><strong>Perplexity 推出 Agent API</strong><br>Perplexity 发布 Agent API，OpenAI 推出 Skills 功能和小型 GPT-5.4 模型。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
+<p><strong>Meta 推迟新 AI 模型 “avocado” 发布</strong><br>因性能问题，Meta 推迟代号为 “avocado” 的新 AI 模型发布。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cubnl0aW1lcy5jb20vMjAyNi8wMy8xMi90ZWNobm9sb2d5L21ldGEtYXZvY2Fkby1haS1tb2RlbC1kZWxheWVkLmh0bWw=">Meta Avocado AI Model Delayed - NYT<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h2 id="📊-行业趋势"><a href="#📊-行业趋势" class="headerlink" title="📊 行业趋势"></a>📊 行业趋势</h2><p><strong>AI 代理将成为企业工作流主力</strong><br>行业预测显示，AI 代理将在未来几年显著改变企业工作流程。</p>
+<p><strong>Anthropic Institute 与供应链风险标签争议</strong><br>Anthropic 的 Institute 推出引发讨论，供应链风险标签问题成为关注焦点。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
+<hr>
+<h2 id="📰-相关报道"><a href="#📰-相关报道" class="headerlink" title="📰 相关报道"></a>📰 相关报道</h2><ul>
+<li><strong>NYT: AI Agents 的应用</strong> (March 19, 2026)</li>
+<li><strong>NYT: 年轻程序员与 AI 焦虑</strong> (March 19, 2026)</li>
+<li><strong>NYT: 白宫 AI 政策</strong> (March 20, 2026)</li>
+<li><strong>NYT: 五角大楼与 Anthropic 合同争议</strong> (March 17, 2026)</li>
+</ul>
+<hr>
+<blockquote>
+<p>📌 明天见！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>News</tag>
+        <tag>OpenAI</tag>
+        <tag>Anthropic</tag>
+        <tag>NVIDIA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2026-03-23-ai-daily-news</title>
     <url>/2026/03/23/ai-daily-news/</url>
     <content><![CDATA[<h1 id="AI-News-Report"><a href="#AI-News-Report" class="headerlink" title="AI News Report"></a>AI News Report</h1><p><strong>Date:</strong> 2026-03-23</p>
@@ -10514,60 +10529,53 @@
       </categories>
       <tags>
         <tag>AI</tag>
-        <tag>Claude</tag>
         <tag>OpenAI</tag>
+        <tag>Claude</tag>
       </tags>
   </entry>
   <entry>
-    <title>AI Daily News - 2026年3月24日</title>
-    <url>/2026/03/24/ai-daily-news/</url>
-    <content><![CDATA[<blockquote>
-<p>每天 AI 行业重大新闻简报，来源涵盖 OpenAI、Google、Anthropic、NVIDIA 等核心玩家。</p>
-</blockquote>
-<h2 id="🚀-大模型-产品"><a href="#🚀-大模型-产品" class="headerlink" title="🚀 大模型 &amp; 产品"></a>🚀 大模型 &amp; 产品</h2><h3 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h3><p><strong>OpenAI 计划到 2026 年底员工数翻倍</strong><br>OpenAI 计划在 2026 年底将员工数量翻倍，以与 Anthropic 和 Google 竞争。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9uYXRpb25hbHRvZGF5LmNvbS91cy9jYS9zYW4tZnJhbmNpc2NvL25ld3MvMjAyNi8wMy8yMi9vcGVuYWktdG8tZG91YmxlLXdvcmtmb3JjZS1ieS15ZWFyLWVuZC10by1yaXZhbC1hbnRocm9waWMtZ29vZ2xlLw==">OpenAI to Double Workforce - National Today<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>OpenAI 预计 2026 年亏损约 140 亿美元</strong><br>OpenAI 预计 2026 年将亏损约 140 亿美元，并可能在 2027 年中期面临资金压力。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wb3B1bGFyL29wZW5haS1zb3JhLW5ld3MtbWFyY2gtMjAyNi8=">OpenAI Sora News March 2026 - Instagram<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>SearchGPT 搜索引擎 Beta 测试扩大</strong><br>OpenAI 的 AI 搜索引擎 SearchGPT 现已向所有 Plus 订阅用户开放 Beta 测试。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
+    <title>2026-03-25-ai-daily-news</title>
+    <url>/2026/03/25/ai-daily-news/</url>
+    <content><![CDATA[<h1 id="AI-News-Report"><a href="#AI-News-Report" class="headerlink" title="AI News Report"></a>AI News Report</h1><p><strong>Date:</strong> 2026-03-25</p>
 <hr>
-<h3 id="Anthropic"><a href="#Anthropic" class="headerlink" title="Anthropic"></a>Anthropic</h3><p><strong>Claude 4 即将发布，或支持 MCP 协议</strong><br>Anthropic 暗示 Claude 4 将在未来几周内发布。新版本可能原生支持 Model Context Protocol (MCP)。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>Claude 企业版推出私有模型选项</strong><br>Anthropic 发布 Claude Enterprise 重大更新，企业客户现在可以部署完全私有的 Claude 实例。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
-<hr>
-<h3 id="Google-DeepMind"><a href="#Google-DeepMind" class="headerlink" title="Google &amp; DeepMind"></a>Google &amp; DeepMind</h3><p><strong>Gemini 2.5 Pro 开放 API，免费额度大幅提升</strong><br>Google 宣布 Gemini 2.5 Pro API 免费额度从每月 50 万 tokens 提升到 200 万 tokens，付费价格下调 40%。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>Gemini Workspace 新功能上线</strong><br>Google 为 Workspace 推出 Gemini 测试功能：Docs 上下文起草、Sheets 电子表格创建、Slides 演示文稿生成。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>DeepMind 公布 AlphaFold 3 最新进展</strong><br>DeepMind 展示 AlphaFold 3 最新版本，现在能够预测蛋白质与 DNA、RNA、小分子的复合物结构。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
-<hr>
-<h2 id="💰-融资-商业"><a href="#💰-融资-商业" class="headerlink" title="💰 融资 &amp; 商业"></a>💰 融资 &amp; 商业</h2><p><strong>Anthropic 获得 4 亿美元 D 轮融资</strong><br>Anthropic 完成 4 亿美元 D 轮融资，估值达 180 亿美元。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>Mistral AI 获 6.4 亿美元融资，估值 60 亿美元</strong><br>法国 AI 创业公司 Mistral AI 完成 6.4 亿美元融资，踏入独角兽行列。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>AI 初创公司占风投资金 41%</strong><br>根据 Carta 数据，AI 初创公司占据 1280 亿美元风投资金中的 41%。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p>
-<hr>
-<h2 id="🖥️-硬件-基础设施"><a href="#🖥️-硬件-基础设施" class="headerlink" title="🖥️ 硬件 &amp; 基础设施"></a>🖥️ 硬件 &amp; 基础设施</h2><p><strong>NVIDIA Blackwell GPU 2026 年出货预期下调</strong><br>JP Morgan 下调 NVIDIA Blackwell GPU 出货预期。2025 年预计出货 520 万片，2026 年降至 180 万片。但新一代 Rubin GPU 预计 2026 年出货 570 万片。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cudHdlYWt0b3duLmNvbS9uZXdzLzEwNjExNi9udmlkaWEtZXhwZWN0ZWQtdG8tc2hpcC01LTJtLWJsYWNrd2VsbC1ncHVzLWluLTIwMjUtMS04bS0yMDI2LWFuZC03bS1ydWJpbi9pbmRleC5odG1s">NVIDIA Blackwell GPUs - Tweaktown<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>AMD MI350X 挑战 NVIDIA</strong><br>AMD 发布 Instinct MI350X GPU，声称在 Llama 3.1 405B 推理任务中性能是 H100 的 2.6 倍。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p>
-<hr>
-<h2 id="🔧-工具-开源"><a href="#🔧-工具-开源" class="headerlink" title="🔧 工具 &amp; 开源"></a>🔧 工具 &amp; 开源</h2><p><strong>Perplexity 推出 Agent API</strong><br>Perplexity 发布 Agent API，OpenAI 推出 Skills 功能和小型 GPT-5.4 模型。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
-<p><strong>Meta 推迟新 AI 模型 “avocado” 发布</strong><br>因性能问题，Meta 推迟代号为 “avocado” 的新 AI 模型发布。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cubnl0aW1lcy5jb20vMjAyNi8wMy8xMi90ZWNobm9sb2d5L21ldGEtYXZvY2Fkby1haS1tb2RlbC1kZWxheWVkLmh0bWw=">Meta Avocado AI Model Delayed - NYT<i class="fa fa-external-link-alt"></i></span></p>
-<hr>
-<h2 id="📊-行业趋势"><a href="#📊-行业趋势" class="headerlink" title="📊 行业趋势"></a>📊 行业趋势</h2><p><strong>AI 代理将成为企业工作流主力</strong><br>行业预测显示，AI 代理将在未来几年显著改变企业工作流程。</p>
-<p><strong>Anthropic Institute 与供应链风险标签争议</strong><br>Anthropic 的 Institute 推出引发讨论，供应链风险标签问题成为关注焦点。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p>
-<hr>
-<h2 id="📰-相关报道"><a href="#📰-相关报道" class="headerlink" title="📰 相关报道"></a>📰 相关报道</h2><ul>
-<li><strong>NYT: AI Agents 的应用</strong> (March 19, 2026)</li>
-<li><strong>NYT: 年轻程序员与 AI 焦虑</strong> (March 19, 2026)</li>
-<li><strong>NYT: 白宫 AI 政策</strong> (March 20, 2026)</li>
-<li><strong>NYT: 五角大楼与 Anthropic 合同争议</strong> (March 17, 2026)</li>
+<h2 id="Top-News"><a href="#Top-News" class="headerlink" title="Top News"></a>Top News</h2><h3 id="1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities"><a href="#1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities" class="headerlink" title="1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities"></a>1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities</h3><ul>
+<li><strong>Source:</strong> OpenAI Blog</li>
+<li><strong>Summary:</strong> OpenAI released a preview of GPT-5, featuring significantly improved reasoning capabilities and multimodal understanding. The new model demonstrates enhanced problem-solving skills and more natural conversational flow.</li>
+</ul>
+<h3 id="2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures"><a href="#2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures" class="headerlink" title="2. Anthropic Releases Claude 4 with Improved Safety Measures"></a>2. Anthropic Releases Claude 4 with Improved Safety Measures</h3><ul>
+<li><strong>Source:</strong> Anthropic Press</li>
+<li><strong>Summary:</strong> Anthropic unveiled Claude 4, focusing on enhanced safety alignment and reduced hallucination rates. The new version includes improved coding capabilities and longer context window support.</li>
+</ul>
+<h3 id="3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance"><a href="#3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance" class="headerlink" title="3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance"></a>3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance</h3><ul>
+<li><strong>Source:</strong> Google AI Blog</li>
+<li><strong>Summary:</strong> Google released Gemini Ultra 2.0, showcasing competitive performance in reasoning benchmarks and native multimodal capabilities. The model integrates tightly with Google Workspace.</li>
+</ul>
+<h3 id="4-Meta-Open-Sources-Llama-4-to-Strengthen-AI-Community"><a href="#4-Meta-Open-Sources-Llama-4-to-Strengthen-AI-Community" class="headerlink" title="4. Meta Open-Sources Llama 4 to Strengthen AI Community"></a>4. Meta Open-Sources Llama 4 to Strengthen AI Community</h3><ul>
+<li><strong>Source:</strong> Meta AI Blog</li>
+<li><strong>Summary:</strong> Meta released Llama 4 under open-source license, enabling broader research participation. The model shows strong performance on coding and mathematical tasks.</li>
+</ul>
+<h3 id="5-AI-Regulation-EU-AI-Act-Implementation-Begins"><a href="#5-AI-Regulation-EU-AI-Act-Implementation-Begins" class="headerlink" title="5. AI Regulation: EU AI Act Implementation Begins"></a>5. AI Regulation: EU AI Act Implementation Begins</h3><ul>
+<li><strong>Source:</strong> European Commission</li>
+<li><strong>Summary:</strong> The EU AI Act enters its first implementation phase, requiring AI providers to comply with transparency and risk assessment requirements for high-risk AI systems.</li>
 </ul>
 <hr>
-<blockquote>
-<p>📌 明天见！</p>
-</blockquote>
+<h2 id="Industry-Highlights"><a href="#Industry-Highlights" class="headerlink" title="Industry Highlights"></a>Industry Highlights</h2><ul>
+<li><strong>AI Code Assistants Gain Enterprise Traction:</strong> GitHub Copilot, Claude Code, and Cursor see massive enterprise adoption as coding workflows transform.</li>
+<li><strong>Multimodal AI Becomes Standard:</strong> All major models now support text, image, audio, and video processing natively.</li>
+<li><strong>AI Hardware Race Heats Up:</strong> NVIDIA announces new AI accelerator chips; AMD challenges with competitive alternatives.</li>
+<li><strong>Autonomous Agents Move to Production:</strong> AI agents handling complex multi-step tasks become commercially viable.</li>
+<li><strong>Edge AI Gains Momentum:</strong> On-device AI processing becomes more capable with efficient model architectures.</li>
+</ul>
+<hr>
+<p><em>Report generated on 2026-03-25</em></p>
 ]]></content>
       <categories>
-        <category>AI</category>
+        <category>Tech Notes</category>
       </categories>
       <tags>
         <tag>AI</tag>
         <tag>OpenAI</tag>
-        <tag>News</tag>
-        <tag>Anthropic</tag>
-        <tag>NVIDIA</tag>
+        <tag>Claude</tag>
       </tags>
   </entry>
   <entry>
@@ -10660,48 +10668,40 @@
       </tags>
   </entry>
   <entry>
-    <title>2026-03-25-ai-daily-news</title>
-    <url>/2026/03/25/ai-daily-news/</url>
-    <content><![CDATA[<h1 id="AI-News-Report"><a href="#AI-News-Report" class="headerlink" title="AI News Report"></a>AI News Report</h1><p><strong>Date:</strong> 2026-03-25</p>
-<hr>
-<h2 id="Top-News"><a href="#Top-News" class="headerlink" title="Top News"></a>Top News</h2><h3 id="1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities"><a href="#1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities" class="headerlink" title="1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities"></a>1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities</h3><ul>
-<li><strong>Source:</strong> OpenAI Blog</li>
-<li><strong>Summary:</strong> OpenAI released a preview of GPT-5, featuring significantly improved reasoning capabilities and multimodal understanding. The new model demonstrates enhanced problem-solving skills and more natural conversational flow.</li>
-</ul>
-<h3 id="2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures"><a href="#2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures" class="headerlink" title="2. Anthropic Releases Claude 4 with Improved Safety Measures"></a>2. Anthropic Releases Claude 4 with Improved Safety Measures</h3><ul>
-<li><strong>Source:</strong> Anthropic Press</li>
-<li><strong>Summary:</strong> Anthropic unveiled Claude 4, focusing on enhanced safety alignment and reduced hallucination rates. The new version includes improved coding capabilities and longer context window support.</li>
-</ul>
-<h3 id="3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance"><a href="#3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance" class="headerlink" title="3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance"></a>3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance</h3><ul>
-<li><strong>Source:</strong> Google AI Blog</li>
-<li><strong>Summary:</strong> Google released Gemini Ultra 2.0, showcasing competitive performance in reasoning benchmarks and native multimodal capabilities. The model integrates tightly with Google Workspace.</li>
-</ul>
-<h3 id="4-Meta-Open-Sources-Llama-4-to-Strengthen-AI-Community"><a href="#4-Meta-Open-Sources-Llama-4-to-Strengthen-AI-Community" class="headerlink" title="4. Meta Open-Sources Llama 4 to Strengthen AI Community"></a>4. Meta Open-Sources Llama 4 to Strengthen AI Community</h3><ul>
-<li><strong>Source:</strong> Meta AI Blog</li>
-<li><strong>Summary:</strong> Meta released Llama 4 under open-source license, enabling broader research participation. The model shows strong performance on coding and mathematical tasks.</li>
-</ul>
-<h3 id="5-AI-Regulation-EU-AI-Act-Implementation-Begins"><a href="#5-AI-Regulation-EU-AI-Act-Implementation-Begins" class="headerlink" title="5. AI Regulation: EU AI Act Implementation Begins"></a>5. AI Regulation: EU AI Act Implementation Begins</h3><ul>
-<li><strong>Source:</strong> European Commission</li>
-<li><strong>Summary:</strong> The EU AI Act enters its first implementation phase, requiring AI providers to comply with transparency and risk assessment requirements for high-risk AI systems.</li>
-</ul>
-<hr>
-<h2 id="Industry-Highlights"><a href="#Industry-Highlights" class="headerlink" title="Industry Highlights"></a>Industry Highlights</h2><ul>
-<li><strong>AI Code Assistants Gain Enterprise Traction:</strong> GitHub Copilot, Claude Code, and Cursor see massive enterprise adoption as coding workflows transform.</li>
-<li><strong>Multimodal AI Becomes Standard:</strong> All major models now support text, image, audio, and video processing natively.</li>
-<li><strong>AI Hardware Race Heats Up:</strong> NVIDIA announces new AI accelerator chips; AMD challenges with competitive alternatives.</li>
-<li><strong>Autonomous Agents Move to Production:</strong> AI agents handling complex multi-step tasks become commercially viable.</li>
-<li><strong>Edge AI Gains Momentum:</strong> On-device AI processing becomes more capable with efficient model architectures.</li>
-</ul>
-<hr>
-<p><em>Report generated on 2026-03-25</em></p>
+    <title>使用矢量面裁剪栅格数据的对齐问题</title>
+    <url>/2014/07/29/AboutClippingRaster/</url>
+    <content><![CDATA[<p>最近凑巧有几个比较多的栅格裁剪问题，整理如下：</p>
+<p>我们只有由于栅格与矢量数据的存储模型不相同，这就导致栅格数据的像元无法与矢量数据的点等同，从而导致裁切后的对齐问题，放大数据我们就能发现，如下图可以说明：（其中黑白色为栅格数据，每个正方形代表一个像元，红色区域为矢量面数据。）</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_1.jpg"></p>
+<p>我们按照默认设置运行 Raster工具箱中的 Clip 工具，看看结果，蓝色的栅格部分：</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_2.jpg"></p>
+<p>发现，栅格数据裁剪完，并不是需要的矢量数据范围，而是矢量数据压盖的最小栅格数据范围。</p>
+<p>如果我们需要得到的栅格，是矢量数据的范围，该如何做呢？</p>
+<p><strong>【旧版本】如果正在使用的是10.1以及更早期的版本：</strong></p>
+<ol>
+<li>首先将作为裁剪范围的矢量面（Feature）转为图形（Graphic），在ArcMap中，在面图层上右键，使用 Convert &nbsp;Features to Graphics… 菜单，如下图：</li>
+</ol>
+<p>（Graphic 被选中状态下，周围是有几个小方块的，与 Feature 被选中的亮蓝色不同哦…）</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Graphic.jpg"></p>
+<p>2.在 ArcMap 中，使用图层的右键菜单中的Export功能，导出选中Graphic 范围内的数据：</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Selected.jpg"></p>
+<p>看看结果，为了清楚，我将Graphic的填充色去掉，栅格数据左边与上边界是与矢量数据一致的，这样就尽最大范围保持了结果栅格与矢量数据范围的最大一致性：</p>
+<p><strong>PS：有人会问，为什么下边和右边边界没有完全贴合？ 需要知晓，栅格数据的行列数是矢量数据长度整除像元大小（导出的像元大小默认与源数据相同，也可以根据需要修改）得出的，而通常有余数的存在，因此没有那么严丝合缝，归根结底还是两种数据的存储模型不同导致的。</strong></p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Format.jpg"></p>
+<p><strong>【新版本】如果正在使用的是10.2以及更新期的版本：</strong></p>
+<p>新版本中 Clip 工具提供了额外的参数，可以简单的勾选就完成了上面的需求：</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Maintain.jpg"></p>
+<p><strong>PS：一定要注意右边的帮助哇，为了尽可能满足矢量数据边界范围，行列数是通过计算调整，也就是像元大小相比原始数据会变化，像元值会进行重采样获取。</strong></p>
+<p>看看结果吧，影线区域是矢量，玫红色区域是生成的栅格：</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_Maintain2.jpg"></p>
+<p>最后来张全家福，对比下，哪种结果是你想要的，决定对应的选择哪种方法 ，（左侧图层顺序，即为右侧图层显示顺序）。</p>
+<p><img data-src="/images/blogImg/AboutClippingRaster_All.jpg"></p>
 ]]></content>
       <categories>
         <category>Tech Notes</category>
       </categories>
       <tags>
-        <tag>AI</tag>
-        <tag>Claude</tag>
-        <tag>OpenAI</tag>
+        <tag>Raster</tag>
       </tags>
   </entry>
 </search>
