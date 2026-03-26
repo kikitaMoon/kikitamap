@@ -254,15 +254,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/02/07/Aboutshapefile/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2012/02/07/AnchorPointinMaplex/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -290,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/02/07/ArcPad8Overview/</loc>
+    <loc>https://kikitamap.com/2012/02/07/ArcMapFeatureCache/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -299,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/02/07/ArcMapFeatureCache/</loc>
+    <loc>https://kikitamap.com/2012/02/07/ArcPad8Overview/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -335,6 +326,15 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/2012/02/07/Aboutshapefile/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/2012/02/08/HowPointtoRasterWorks/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/02/17/GodaddyEmailFailure/</loc>
+    <loc>https://kikitamap.com/2012/02/28/ArcMapExportPDF/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -353,7 +353,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/02/28/ArcMapExportPDF/</loc>
+    <loc>https://kikitamap.com/2012/02/17/GodaddyEmailFailure/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -398,15 +398,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/06/01/SurveyBasic/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2012/06/01/AboutGaussKruger/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -416,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/08/10/SADistance/</loc>
+    <loc>https://kikitamap.com/2012/06/01/SurveyBasic/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -434,7 +425,25 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/2012/08/10/SADistance/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/2012/08/19/SAGeneral/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2012/08/20/SASurface/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -488,15 +497,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2012/08/20/SASurface/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2012/11/17/3DSupportedSurface/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -534,15 +534,6 @@
   
   <url>
     <loc>https://kikitamap.com/2012/11/21/3DConversionTool/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2012/12/06/AboutTIN/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -650,7 +641,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/04/17/CityEnginePlantTree/</loc>
+    <loc>https://kikitamap.com/2013/04/18/FileGDBlimits/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -659,7 +650,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/04/18/FileGDBlimits/</loc>
+    <loc>https://kikitamap.com/2013/04/17/CityEnginePlantTree/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -686,16 +677,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/05/13/CityEngineRasterReqirement/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2013/05/21/FeatureEnvelopPython/</loc>
+    <loc>https://kikitamap.com/2012/12/06/AboutTIN/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -740,6 +722,15 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/2013/05/21/FeatureEnvelopPython/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/2013/06/26/ArcGISDataDrivenPage/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -758,7 +749,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/07/12/BuildingCountor/</loc>
+    <loc>https://kikitamap.com/2013/07/22/ConvertDMS/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -767,7 +758,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2013/07/22/ConvertDMS/</loc>
+    <loc>https://kikitamap.com/2013/07/12/BuildingCountor/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -848,7 +839,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/02/11/3DVisibility/</loc>
+    <loc>https://kikitamap.com/2014/01/23/DEMRendering/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -866,25 +857,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/01/23/DEMRendering/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2014/02/11/LASDatasetOverview/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2014/02/13/shapefileCodePage/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -902,6 +875,24 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/2014/02/13/shapefileCodePage/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2014/02/11/3DVisibility/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/2014/03/03/Landset8_ArcGIS/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -911,7 +902,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/05/29/SetupPythonWin/</loc>
+    <loc>https://kikitamap.com/2014/03/19/MapProjectionType/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -920,7 +911,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/06/25/BackgroundGeoprocessing/</loc>
+    <loc>https://kikitamap.com/2014/05/29/SetupPythonWin/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -956,16 +947,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/03/19/MapProjectionType/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2014/09/15/DiveinPathDistanceAnalyst2/</loc>
+    <loc>https://kikitamap.com/2014/06/25/BackgroundGeoprocessing/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -992,7 +974,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/09/18/ArcGISImageClassification/</loc>
+    <loc>https://kikitamap.com/2014/09/15/DiveinPathDistanceAnalyst2/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1001,7 +983,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/09/24/ArcGISSystemRequirment/</loc>
+    <loc>https://kikitamap.com/2014/09/18/ArcGISImageClassification/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1019,7 +1001,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/10/14/MDCreateMD/</loc>
+    <loc>https://kikitamap.com/2014/09/24/ArcGISSystemRequirment/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1037,7 +1019,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/10/28/MDOverviews/</loc>
+    <loc>https://kikitamap.com/2014/10/14/MDCreateMD/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1046,7 +1028,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/10/29/MDProperties/</loc>
+    <loc>https://kikitamap.com/2014/10/28/MDOverviews/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1091,6 +1073,15 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/2014/10/29/MDProperties/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/2014/11/20/MDColorBalance2/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -1109,7 +1100,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/12/09/MDAnalyzeRepairMD/</loc>
+    <loc>https://kikitamap.com/2013/05/13/CityEngineRasterReqirement/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1118,7 +1109,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/12/25/MeasureDistances/</loc>
+    <loc>https://kikitamap.com/2014/12/09/MDAnalyzeRepairMD/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1136,7 +1127,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
+    <loc>https://kikitamap.com/2014/12/25/MeasureDistances/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1145,7 +1136,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/03/05/AnalysisPatternsA/</loc>
+    <loc>https://kikitamap.com/2015/01/12/ParallelProcessing/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1172,6 +1163,24 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/2015/03/05/AnalysisPatternsA/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2014/12/04/MDFunctionChain/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/2015/03/06/ArcGISPro60DayFreetrial/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -1181,7 +1190,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/03/17/MappingCluster/</loc>
+    <loc>https://kikitamap.com/2015/03/20/RegressionAnalysis/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1190,7 +1199,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/03/20/RegressionAnalysis/</loc>
+    <loc>https://kikitamap.com/2015/03/17/MappingCluster/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1217,7 +1226,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/04/21/MappingASCIIRaster/</loc>
+    <loc>https://kikitamap.com/2015/05/08/LackofPackonLinux/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1226,7 +1235,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/05/08/LackofPackonLinux/</loc>
+    <loc>https://kikitamap.com/2015/04/21/MappingASCIIRaster/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1343,7 +1352,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/09/02/CreatePythonTool2/</loc>
+    <loc>https://kikitamap.com/2015/08/31/CreatePythonTool1/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1352,7 +1361,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2014/12/04/MDFunctionChain/</loc>
+    <loc>https://kikitamap.com/2015/09/02/CreatePythonTool2/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1370,24 +1379,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/09/27/ExplorerData/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2015/11/27/CanNotConnectAGSLM/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2015/12/06/IterationinArcGISforDesktop/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -1397,7 +1388,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/12/21/TroubleshootingShapefile/</loc>
+    <loc>https://kikitamap.com/2015/09/27/ExplorerData/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1415,7 +1406,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/02/02/RasterNodata/</loc>
+    <loc>https://kikitamap.com/2015/12/21/TroubleshootingShapefile/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1424,7 +1415,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/03/01/HelloHexo/</loc>
+    <loc>https://kikitamap.com/2016/02/02/RasterNodata/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1443,6 +1434,15 @@
   
   <url>
     <loc>https://kikitamap.com/2016/03/21/SplitLine/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2016/03/01/HelloHexo/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1550,7 +1550,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/10/17/UsingArcGISPythonAPI/</loc>
+    <loc>https://kikitamap.com/2016/09/30/LineDirectioninCE/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1559,7 +1559,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2016/09/30/LineDirectioninCE/</loc>
+    <loc>https://kikitamap.com/2016/10/17/UsingArcGISPythonAPI/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1667,15 +1667,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2015/08/31/CreatePythonTool1/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2018/03/09/ProNamedUserforPortalUse/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -1712,7 +1703,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/02/05/AlterXMLScheme/</loc>
+    <loc>https://kikitamap.com/2018/02/26/sitebuilding/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1721,7 +1712,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/02/26/sitebuilding/</loc>
+    <loc>https://kikitamap.com/2018/02/05/AlterXMLScheme/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1739,7 +1730,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/03/15/osm2ce/</loc>
+    <loc>https://kikitamap.com/2018/03/18/ScentofaWoman/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1748,7 +1739,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/03/18/ScentofaWoman/</loc>
+    <loc>https://kikitamap.com/2018/03/15/osm2ce/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1784,15 +1775,6 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/04/10/pythonInCE/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/2018/04/04/Parthenon/</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -1802,34 +1784,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/07/20/lovelyGit/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2018/08/13/vectorTileBundle/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2018/07/23/CompactCache/</loc>
-    
-    <lastmod>2024-12-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/2018/07/13/CELeafshape/</loc>
+    <loc>https://kikitamap.com/2018/04/10/pythonInCE/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1847,7 +1802,25 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2018/08/30/cloudStorageImageService/</loc>
+    <loc>https://kikitamap.com/2018/07/13/CELeafshape/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2018/07/20/lovelyGit/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2018/07/23/CompactCache/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1857,6 +1830,24 @@
   
   <url>
     <loc>https://kikitamap.com/2018/08/15/cloudStorage4MD/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2018/08/13/vectorTileBundle/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/2018/08/30/cloudStorageImageService/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1901,7 +1892,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2019/03/06/Icecream_Part4_Advanced_Routing_1/</loc>
+    <loc>https://kikitamap.com/2019/03/05/Icecream_Part3_Basic_Routing/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1910,7 +1901,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2019/03/05/Icecream_Part3_Basic_Routing/</loc>
+    <loc>https://kikitamap.com/2019/03/06/Icecream_Part4_Advanced_Routing_1/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1964,7 +1955,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2020/03/29/HmSDK_VectorTile-MFs/</loc>
+    <loc>https://kikitamap.com/2020/04/19/HmSDK_Positioning/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -1973,7 +1964,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/2020/04/19/HmSDK_Positioning/</loc>
+    <loc>https://kikitamap.com/2020/03/29/HmSDK_VectorTile-MFs/</loc>
     
     <lastmod>2024-12-24</lastmod>
     
@@ -2009,6 +2000,15 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/2015/11/27/CanNotConnectAGSLM/</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/categories/index.html</loc>
     
     <lastmod>2024-12-20</lastmod>
@@ -2036,13 +2036,6 @@
 
   
   <url>
-    <loc>https://kikitamap.com/tags/Geodata/</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://kikitamap.com/tags/Mapping/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -2064,7 +2057,7 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/ArcPad/</loc>
+    <loc>https://kikitamap.com/tags/Geodata/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2072,6 +2065,13 @@
   
   <url>
     <loc>https://kikitamap.com/tags/Performance/</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/ArcPad/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2120,14 +2120,14 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Python/</loc>
+    <loc>https://kikitamap.com/tags/License/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/License/</loc>
+    <loc>https://kikitamap.com/tags/Python/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2169,14 +2169,14 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/Map-Story/</loc>
+    <loc>https://kikitamap.com/tags/CGA/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/tags/CGA/</loc>
+    <loc>https://kikitamap.com/tags/Map-Story/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2365,6 +2365,20 @@
   </url>
   
   <url>
+    <loc>https://kikitamap.com/tags/Claude/</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://kikitamap.com/tags/OpenAI/</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://kikitamap.com/tags/Policy-Training/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -2394,20 +2408,6 @@
   
   <url>
     <loc>https://kikitamap.com/tags/CLIP/</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/Claude/</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://kikitamap.com/tags/OpenAI/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2479,14 +2479,14 @@
   </url>
   
   <url>
-    <loc>https://kikitamap.com/categories/Visual-Musing/</loc>
+    <loc>https://kikitamap.com/categories/Inner-Thoughts/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://kikitamap.com/categories/Inner-Thoughts/</loc>
+    <loc>https://kikitamap.com/categories/Visual-Musing/</loc>
     <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
