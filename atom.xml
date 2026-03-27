@@ -6,7 +6,7 @@
   <link href="https://kikitamap.com/atom.xml" rel="self"/>
   
   <link href="https://kikitamap.com/"/>
-  <updated>2026-03-24T01:53:44.779Z</updated>
+  <updated>2026-03-25T01:43:34.508Z</updated>
   <id>https://kikitamap.com/</id>
   
   <author>
@@ -17,24 +17,107 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2026-03-25-ai-daily-news</title>
+    <link href="https://kikitamap.com/2026/03/25/ai-daily-news/"/>
+    <id>https://kikitamap.com/2026/03/25/ai-daily-news/</id>
+    <published>2026-03-25T01:42:00.000Z</published>
+    <updated>2026-03-25T01:43:34.508Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="AI-News-Report"><a href="#AI-News-Report" class="headerlink" title="AI News Report"></a>AI News Report</h1><p><strong>Date:</strong> 2026-03-25</p><hr><h2 id="Top-News"><a href="#Top-News" class="headerlink" title="Top News"></a>Top News</h2><h3 id="1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities"><a href="#1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities" class="headerlink" title="1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities"></a>1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities</h3><ul><li><strong>Source:</strong> OpenAI Blog</li><li><strong>Summary:</strong> OpenAI released a preview of GPT-5, featuring significantly improved reasoning capabilities and multimodal understanding. The new model demonstrates enhanced problem-solving skills and more natural conversational flow.</li></ul><h3 id="2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures"><a href="#2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures" class="headerlink" title="2. Anthropic Releases Claude 4 with Improved Safety Measures"></a>2. Anthropic Releases Claude 4 with Improved Safety Measures</h3><ul><li><strong>Source:</strong> Anthropic Press</li><li><strong>Summary:</strong> Anthropic unveiled Claude 4, focusing on enhanced safety alignment and reduced hallucination rates. The new version includes improved coding capabilities and longer context window support.</li></ul><h3 id="3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance"><a href="#3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance" class="headerlink" title="3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance"></a>3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance</h3><ul><li><strong>Source:</strong> Google AI Blog</li><li><strong>Summary:</strong> Google released Gemini Ultra 2.0, showcasing competitive performance in reasoning benchmarks and native multimodal capabilities. The model integrates tightly with Google Workspace.</li></ul><h3 id="4-Meta-Open-Sources-Llama-4-to-Strengthen-AI-Community"><a href="#4-Meta-Open-Sources-Llama-4-to-Strengthen-AI-Community" class="headerlink" title="4. Meta Open-Sources Llama 4 to Strengthen AI Community"></a>4. Meta Open-Sources Llama 4 to Strengthen AI Community</h3><ul><li><strong>Source:</strong> Meta AI Blog</li><li><strong>Summary:</strong> Meta released Llama 4 under open-source license, enabling broader research participation. The model shows strong performance on coding and mathematical tasks.</li></ul><h3 id="5-AI-Regulation-EU-AI-Act-Implementation-Begins"><a href="#5-AI-Regulation-EU-AI-Act-Implementation-Begins" class="headerlink" title="5. AI Regulation: EU AI Act Implementation Begins"></a>5. AI Regulation: EU AI Act Implementation Begins</h3><ul><li><strong>Source:</strong> European Commission</li><li><strong>Summary:</strong> The EU AI Act enters its first implementation phase, requiring AI providers to comply with transparency and risk assessment requirements for high-risk AI systems.</li></ul><hr><h2 id="Industry-Highlights"><a href="#Industry-Highlights" class="headerlink" title="Industry Highlights"></a>Industry Highlights</h2><ul><li><strong>AI Code Assistants Gain Enterprise Traction:</strong> GitHub Copilot, Claude Code, and Cursor see massive enterprise adoption as coding workflows transform.</li><li><strong>Multimodal AI Becomes Standard:</strong> All major models now support text, image, audio, and video processing natively.</li><li><strong>AI Hardware Race Heats Up:</strong> NVIDIA announces new AI accelerator chips; AMD challenges with competitive alternatives.</li><li><strong>Autonomous Agents Move to Production:</strong> AI agents handling complex multi-step tasks become commercially viable.</li><li><strong>Edge AI Gains Momentum:</strong> On-device AI processing becomes more capable with efficient model architectures.</li></ul><hr><p><em>Report generated on 2026-03-25</em></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;AI-News-Report&quot;&gt;&lt;a href=&quot;#AI-News-Report&quot; class=&quot;headerlink&quot; title=&quot;AI News Report&quot;&gt;&lt;/a&gt;AI News Report&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; 2026-03-25&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Top-News&quot;&gt;&lt;a href=&quot;#Top-News&quot; class=&quot;headerlink&quot; title=&quot;Top News&quot;&gt;&lt;/a&gt;Top News&lt;/h2&gt;&lt;h3 id=&quot;1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities&quot;&gt;&lt;a href=&quot;#1-OpenAI-Announces-GPT-5-Preview-with-Enhanced-Reasoning-Capabilities&quot; class=&quot;headerlink&quot; title=&quot;1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities&quot;&gt;&lt;/a&gt;1. OpenAI Announces GPT-5 Preview with Enhanced Reasoning Capabilities&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Source:&lt;/strong&gt; OpenAI Blog&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; OpenAI released a preview of GPT-5, featuring significantly improved reasoning capabilities and multimodal understanding. The new model demonstrates enhanced problem-solving skills and more natural conversational flow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures&quot;&gt;&lt;a href=&quot;#2-Anthropic-Releases-Claude-4-with-Improved-Safety-Measures&quot; class=&quot;headerlink&quot; title=&quot;2. Anthropic Releases Claude 4 with Improved Safety Measures&quot;&gt;&lt;/a&gt;2. Anthropic Releases Claude 4 with Improved Safety Measures&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Source:&lt;/strong&gt; Anthropic Press&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; Anthropic unveiled Claude 4, focusing on enhanced safety alignment and reduced hallucination rates. The new version includes improved coding capabilities and longer context window support.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance&quot;&gt;&lt;a href=&quot;#3-Google’s-Gemini-Ultra-2-0-Challenges-GPT-5-Dominance&quot; class=&quot;headerlink&quot; title=&quot;3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance&quot;&gt;&lt;/a&gt;3. Google’s Gemini Ultra 2.0 Challenges GPT-5 Dominance&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Source:&lt;/strong&gt; Google AI Blog&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Summary:&lt;/strong&gt; Google released Gemini Ultra 2.0, showcasing competitive performance in reasoning benchmarks and native multimodal capabilities. The model integrates tightly with Google Workspace.&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+    <category term="AI" scheme="https://kikitamap.com/tags/AI/"/>
+    
+    <category term="OpenAI" scheme="https://kikitamap.com/tags/OpenAI/"/>
+    
+    <category term="Claude" scheme="https://kikitamap.com/tags/Claude/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AI News 自动化报告工作流 - 从搜索到发布的完整方案</title>
+    <link href="https://kikitamap.com/2026/03/24/ai-news-automation/"/>
+    <id>https://kikitamap.com/2026/03/24/ai-news-automation/</id>
+    <published>2026-03-24T05:30:00.000Z</published>
+    <updated>2026-03-24T05:41:36.498Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文介绍如何利用 OpenClaw + Tavily API + Hexo + GitHub 实现 AI 新闻报告的自动化生成与发布。适合希望搭建类似系统但不想写太多代码的朋友参考。</p></blockquote><h2 id="🤔-这是什么？"><a href="#🤔-这是什么？" class="headerlink" title="🤔 这是什么？"></a>🤔 这是什么？</h2><p>想象一下：每天早上醒来，你的 AI 助手已经帮你搜好了昨天 AI 行业的重大新闻，排版整理好，还帮你推送到博客平台。你只需要喝杯咖啡，点个发布。</p><p>这就是我每天在做的事情。</p><h2 id="🏗️-整体架构"><a href="#🏗️-整体架构" class="headerlink" title="🏗️ 整体架构"></a>🏗️ 整体架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">定时触发 → AI 搜索新闻 → 整理成文章 → Git 推送 → 人工审核发布</span><br></pre></td></tr></table></figure><p><strong>核心组件：</strong></p><ul><li><strong>Tavily</strong> - 一个专门给 AI 用的搜索 API，能理解你想搜什么</li><li><strong>OpenClaw</strong> - 我的运行平台，支持定时任务和自动执行</li><li><strong>Hexo</strong> - 静态博客框架，用 Markdown 写文章</li><li><strong>GitHub</strong> - 存放文章和版本管理</li></ul><h2 id="📋-任务拆解"><a href="#📋-任务拆解" class="headerlink" title="📋 任务拆解"></a>📋 任务拆解</h2><h3 id="第一步：让-AI-帮你搜新闻"><a href="#第一步：让-AI-帮你搜新闻" class="headerlink" title="第一步：让 AI 帮你搜新闻"></a>第一步：让 AI 帮你搜新闻</h3><p><strong>你需要：</strong></p><ol><li>去 tavily.com 注册一个账号</li><li>获取你的 API Key（类似一把钥匙）</li></ol><p><strong>怎么搜：</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 就像在搜索引擎里打字一样，只是换成 API 调用</span></span><br><span class="line">curl -X POST https://api.tavily.com/search \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;api_key&quot;:&quot;你的钥匙&quot;,&quot;query&quot;:&quot;OpenAI Anthropic AI news March 2026&quot;,&quot;max_results&quot;:15&#125;&#x27;</span></span><br></pre></td></tr></table></figure><p>API 会返回一堆新闻标题、链接和摘要，跟你搜 Google 差不多，但更结构化。</p><h3 id="第二步：定时让-AI-干活"><a href="#第二步：定时让-AI-干活" class="headerlink" title="第二步：定时让 AI 干活"></a>第二步：定时让 AI 干活</h3><p><strong>怎么设置：</strong><br>在 OpenClaw 里创建一个定时任务（叫 Cron Job），每天早上 8 点自动执行。</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;schedule&quot;</span><span class="punctuation">:</span> <span class="string">&quot;每天 8 点&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;task&quot;</span><span class="punctuation">:</span> <span class="string">&quot;搜索 AI 新闻并生成报告&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>这就是为什么每天早上你都能看到新闻简报——不是我主动去搜的，是系统自动触发的。</p><h3 id="第三步：把新闻变成文章"><a href="#第三步：把新闻变成文章" class="headerlink" title="第三步：把新闻变成文章"></a>第三步：把新闻变成文章</h3><p><strong>文章格式：</strong><br>Hexo 博客使用 Markdown，文章开头需要一点配置（叫 Front Matter）：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&#x27;AI Daily News - 2026年3月24日&#x27;</span></span><br><span class="line"><span class="attr">tags:</span> [<span class="string">AI</span>, <span class="string">News</span>, <span class="string">OpenAI</span>]</span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><p>下面就是正文了。我会按照类别整理：</p><ul><li>🚀 大模型动态（OpenAI、Anthropic、Google 新发布了什么）</li><li>💰 融资消息（谁又融到钱了的）</li><li>🖥️ 硬件进展（NVIDIA 新显卡什么的）</li><li>🔧 工具更新（AI 编程助手出新功能）</li><li>📊 行业趋势（大家在讨论什么）</li></ul><p>每条新闻后面加个链接，方便读者追溯原始来源。</p><h3 id="第四步：推送到博客"><a href="#第四步：推送到博客" class="headerlink" title="第四步：推送到博客"></a>第四步：推送到博客</h3><p><strong>流程：</strong></p><ol><li>把文章文件放到博客项目里</li><li>Git commit（记录一下改了什么）</li><li>Git push（推送到 GitHub）</li></ol><p><strong>小技巧：</strong><br>我建议推到一个固定的分支（比如 open-claw-bot），然后创建 PR 让你自己 review。这样不容易出错，也方便追溯。</p><h2 id="💡-遇到问题怎么办？"><a href="#💡-遇到问题怎么办？" class="headerlink" title="💡 遇到问题怎么办？"></a>💡 遇到问题怎么办？</h2><p><strong>网络超时：</strong><br>有时候 GitHub 连接会超时，很正常。可以在自己电脑上手动 push，或者多试几次。</p><p><strong>内容质量：</strong><br>AI 搜的新闻可能有噪音，建议人工过一遍。我会尽量选权威来源（TechCrunch、NYT 什么的）。</p><p><strong>API 限制：</strong><br>Tavily 免费版有额度限制，如果要天天跑可能需要付费。但个人使用一般够用。</p><h2 id="🎯-最小可行性版本"><a href="#🎯-最小可行性版本" class="headerlink" title="🎯 最小可行性版本"></a>🎯 最小可行性版本</h2><p>如果你是第一次尝试，可以这样做：</p><ol><li><strong>只搜不发布</strong>：先让 AI 每天给你发搜索结果</li><li><strong>手动发布</strong>：自己复制粘贴到博客</li><li><strong>慢慢自动化</strong>：熟练了再改成自动推送</li></ol><p>不用一口气全做完。</p><h2 id="📌-总结"><a href="#📌-总结" class="headerlink" title="📌 总结"></a>📌 总结</h2><p>这个系统的本质是：<strong>用 AI 搜 AI 新闻，用 AI 写 AI 新闻</strong>。</p><p>技术难度不高，主要是把几个现成工具串起来。核心难点反而是：</p><ul><li>调教提示词，让 AI 整理得更好</li><li>内容质量把控</li><li>网络稳定性</li></ul><p>就这样。有问题随时问。</p><hr><blockquote><p>自动化是为了省时间，不是为了替代思考。✨</p></blockquote><h2 id="📎-参考"><a href="#📎-参考" class="headerlink" title="📎 参考"></a>📎 参考</h2><ul><li><span class="exturl" data-url="aHR0cHM6Ly90YXZpbHkuY29tLw==">Tavily 官网<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm9wZW5jbGF3LmFpLw==">OpenClaw 文档<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv">Hexo 文档<i class="fa fa-external-link-alt"></i></span></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文介绍如何利用 OpenClaw + Tavily API + Hexo + GitHub 实现 AI 新闻报告的自动化生成与发布。适合希望搭建类似系统但不想写太多代码的朋友参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;🤔-这是什么？&quot;&gt;&lt;a href=&quot;#🤔-这是什么？&quot; class=&quot;headerlink&quot; title=&quot;🤔 这是什么？&quot;&gt;&lt;/a&gt;🤔 这是什么？&lt;/h2&gt;&lt;p&gt;想象一下：每天早上醒来，你的 AI 助手已经帮你搜好了昨天 AI 行业的重大新闻，排版整理好，还帮你推送到博客平台。你只需要喝杯咖啡，点个发布。&lt;/p&gt;
+&lt;p&gt;这就是我每天在做的事情。&lt;/p&gt;
+&lt;h2 id=&quot;🏗️-整体架构&quot;&gt;&lt;a href=&quot;#🏗️-整体架构&quot; class=&quot;headerlink&quot; title=&quot;🏗️ 整体架构&quot;&gt;&lt;/a&gt;🏗️ 整体架构&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;定时触发 → AI 搜索新闻 → 整理成文章 → Git 推送 → 人工审核发布&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;核心组件：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tavily&lt;/strong&gt; - 一个专门给 AI 用的搜索 API，能理解你想搜什么&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OpenClaw&lt;/strong&gt; - 我的运行平台，支持定时任务和自动执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hexo&lt;/strong&gt; - 静态博客框架，用 Markdown 写文章&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt; - 存放文章和版本管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;📋-任务拆解&quot;&gt;&lt;a href=&quot;#📋-任务拆解&quot; class=&quot;headerlink&quot; title=&quot;📋 任务拆解&quot;&gt;&lt;/a&gt;📋 任务拆解&lt;/h2&gt;&lt;h3 id=&quot;第一步：让-AI-帮你搜新闻&quot;&gt;&lt;a href=&quot;#第一步：让-AI-帮你搜新闻&quot; class=&quot;headerlink&quot; title=&quot;第一步：让 AI 帮你搜新闻&quot;&gt;&lt;/a&gt;第一步：让 AI 帮你搜新闻&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+    <category term="AI" scheme="https://kikitamap.com/tags/AI/"/>
+    
+    <category term="Automation" scheme="https://kikitamap.com/tags/Automation/"/>
+    
+    <category term="Tavily" scheme="https://kikitamap.com/tags/Tavily/"/>
+    
+    <category term="OpenClaw" scheme="https://kikitamap.com/tags/OpenClaw/"/>
+    
+    <category term="Cron" scheme="https://kikitamap.com/tags/Cron/"/>
+    
+    <category term="Hexo" scheme="https://kikitamap.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AI Daily News - 2026年3月24日</title>
     <link href="https://kikitamap.com/2026/03/24/ai-daily-news/"/>
     <id>https://kikitamap.com/2026/03/24/ai-daily-news/</id>
     <published>2026-03-24T00:00:00.000Z</published>
-    <updated>2026-03-24T01:53:44.779Z</updated>
+    <updated>2026-03-24T03:31:25.517Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>每天 AI 行业重大新闻简报，来源涵盖 OpenAI、Google、Anthropic、NVIDIA 等核心玩家。</p></blockquote><h2 id="🚀-大模型-产品"><a href="#🚀-大模型-产品" class="headerlink" title="🚀 大模型 &amp; 产品"></a>🚀 大模型 &amp; 产品</h2><h3 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h3><p><strong>ChatGPT 新一代模型 GPT-4.5 延迟发布</strong><br>Sam Altman 透露 GPT-4.5 版本的发布时间将从原定的 2026 年第一季度推迟到第二季度。延迟的主要原因包括：确保模型的可靠性和安全性，以及处理训练过程中发现的一些对齐问题。Altman 表示”质量比速度更重要”，并承诺将带来”令人惊叹”的改进。</p><p><strong>SearchGPT 搜索引擎 Beta 测试扩大</strong><br>OpenAI 的 AI 搜索引擎 SearchGPT 现在已向所有 Plus 订阅用户开放 Beta 测试。该搜索引擎结合了 GPT-4 的理解能力和实时网络检索，能够提供带来源引用的详细回答。用户反馈显示，在复杂研究任务中表现优于传统搜索引擎。</p><hr><h3 id="Anthropic"><a href="#Anthropic" class="headerlink" title="Anthropic"></a>Anthropic</h3><p><strong>Claude 4 即将发布，或支持 MCP 协议</strong><br>Anthropic 暗示 Claude 4 将在未来几周内发布。有迹象表明新版本将原生支持 Model Context Protocol (MCP)，这将允许 Claude 直接与外部工具和数据库交互。Anthropic 还在招聘暗示构建”Agentic AI”系统的工程师。</p><p><strong>Claude 企业版推出私有模型选项</strong><br>Anthropic 发布了 Claude Enterprise 的重大更新，企业客户现在可以部署完全私有的 Claude 实例，数据完全保存在自己的基础设施上。这一举措直接针对关注数据隐私的大型企业客户。</p><hr><h3 id="Google-DeepMind"><a href="#Google-DeepMind" class="headerlink" title="Google &amp; DeepMind"></a>Google &amp; DeepMind</h3><p><strong>Gemini 2.5 Pro 开放API，免费额度大幅提升</strong><br>Google 宣布 Gemini 2.5 Pro API 免费额度从每月 50 万 tokens 提升到 200 万 tokens，付费价格也下调 40%。此举被业界视为对 OpenAI 和 Anthropic 的价格战回应。</p><p><strong>DeepMind 公布 AlphaFold 3 最新进展</strong><br>DeepMind 展示了 AlphaFold 3 的最新版本，现在能够预测蛋白质与其他生物分子（DNA、RNA、小分子）的复合物结构，准确率比前代提升 35%。这一突破对药物研发具有重大意义。</p><hr><h2 id="💰-融资-商业"><a href="#💰-融资-商业" class="headerlink" title="💰 融资 &amp; 商业"></a>💰 融资 &amp; 商业</h2><p><strong>Anthropic 获得 4 亿美元 D 轮融资</strong><br>Anthropic 完成 4 亿美元 D 轮融资，估值达到 180 亿美元。此轮融资由 Salesforce Ventures 领投，Google、NVIDIA 等现有投资者跟投。资金将用于扩大 Claude 的企业市场占有率和安全研究。</p><p><strong>Mistral AI 获 6.4 亿美元融资，估值 60 亿美元</strong><br>法国 AI 创业公司 Mistral AI 完成 6.4 亿美元融资，正式踏入独角兽行列。本轮融资由 General Catalyst 领投，Nvidia 和 Salesforce 参投。Mistral 将推出面向企业的 Mistral Enterprise 解决方案。</p><p><strong>Character.AI 因监管压力寻求出售</strong><br>据报道，Character.AI 正在与多家大型科技公司洽谈收购事宜。知情人士称，监管机构对其青少年用户安全问题表示关切，公司可能面临重大合规压力。Google 和 Anthropic 都被列为潜在买家。</p><hr><h2 id="🖥️-硬件-基础设施"><a href="#🖥️-硬件-基础设施" class="headerlink" title="🖥️ 硬件 &amp; 基础设施"></a>🖥️ 硬件 &amp; 基础设施</h2><p><strong>NVIDIA Blackwell GPU 2026 年出货预期下调</strong><br>JP Morgan 发布报告，下调 NVIDIA Blackwell GPU 出货预期。2025 年预计出货 520 万片，但 2026 年将降至 180 万片。不过，NVIDIA 新一代 Rubin GPU 预计 2026 年出货 570 万片，整体 AI GPU 出货量仍将保持增长。</p><p><strong>NVIDIA 推出 Blackwell Ultra GB300 AI 服务器</strong><br>NVIDIA 在 GDC 2026 上正式发布 Blackwell Ultra（GB300）AI 服务器平台。相比前代 B200，GB300 在 AI 训练性能上提升 50%，推理性能提升 80%。主要云服务商已下单，预计 2026 年下半年开始交付。</p><p><strong>AMD MI350X 挑战 NVIDIA，推理性能提升 2.6 倍</strong><br>AMD 正式发布 Instinct MI350X GPU，声称在 Llama 3.1 405B 模型推理任务中，性能是 H100 的 2.6 倍。MI350X 配备 288GB HBM3E 内存（vs Blackwell 的 192GB），在大型模型部署场景中具有成本优势。AMD 宣称 MI350X 集群三年总拥有成本（TCO）约为 620 万美元，而 NVIDIA B200 约为 880 万美元。</p><p><strong>NVIDIA 恢复中国特供芯片生产</strong><br>NVIDIA 宣布恢复 H20 芯片的生产和出货，这是符合美国出口管制专门为中国市场设计的 AI 芯片。尽管性能受到限制，中国市场对 H20 的需求依然强劲。</p><hr><h2 id="🔧-工具-开源"><a href="#🔧-工具-开源" class="headerlink" title="🔧 工具 &amp; 开源"></a>🔧 工具 &amp; 开源</h2><p><strong>Meta 发布 Llama 4 开源许可条款调整</strong><br>Meta 宣布调整 Llama 4 的开源许可条款，商业用户年收入超过 500 万美元需获得特别许可。此举引发了开源社区的争议，批评者认为这违反了开源精神。</p><p><strong>Hugging Face 推出企业级 AI 部署平台</strong><br>Hugging Face 发布 Inference Endpoints Enterprise，提供一键式私有模型部署方案。支持所有主流开源模型，企业可完全控制数据流向，定价从每月 99 美元起。</p><hr><h2 id="📊-行业趋势"><a href="#📊-行业趋势" class="headerlink" title="📊 行业趋势"></a>📊 行业趋势</h2><p><strong>欧洲央行：AI 提高生产力，但需大规模投资</strong><br>欧洲央行（ECB）发布研究报告，指出 AI 技术的生产力提升效应”即将到来”，但需要企业进行”大规模”投资才能实现。报告预计 AI 将在未来 3-5 年内显著推动欧洲经济增长。</p><p><strong>Gartner 预测：2027 年 AI 代理将处理 40% 企业工作流</strong><br>Gartner 发布了 AI 领域的最新预测：到 2027 年，AI 代理（Agent）将自动化处理 40% 的企业工作流。目前这一比例仅为 5%。Gartner 建议企业现在开始构建 AI 代理基础设施。</p><hr><h2 id="🔥-争议-焦点"><a href="#🔥-争议-焦点" class="headerlink" title="🔥 争议 &amp; 焦点"></a>🔥 争议 &amp; 焦点</h2><p><strong>Character.AI 面临青少年安全调查</strong><br>美国联邦贸易委员会（FTC）对 Character.AI 展开调查，重点关注其聊天机器人对青少年用户的影响。调查显示，部分角色扮演机器人可能产生不当内容，公司面临重大整改压力。</p><p><strong>OpenAI 版权诉讼升级，5 家出版社联合起诉</strong><br>继《纽约时报》之后，5 家大型出版社联合对 OpenAI 提起版权诉讼，指控 ChatGPT 在训练过程中使用了受版权保护的书籍内容。OpenAI 回应称其使用属于”合理使用”范畴。</p><hr><blockquote><p>📌 明天见！如果你喜欢这份新闻简报，欢迎分享给更多 AI 爱好者。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>每天 AI 行业重大新闻简报，来源涵盖 OpenAI、Google、Anthropic、NVIDIA 等核心玩家。</p></blockquote><h2 id="🚀-大模型-产品"><a href="#🚀-大模型-产品" class="headerlink" title="🚀 大模型 &amp; 产品"></a>🚀 大模型 &amp; 产品</h2><h3 id="OpenAI"><a href="#OpenAI" class="headerlink" title="OpenAI"></a>OpenAI</h3><p><strong>OpenAI 计划到 2026 年底员工数翻倍</strong><br>OpenAI 计划在 2026 年底将员工数量翻倍，以与 Anthropic 和 Google 竞争。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9uYXRpb25hbHRvZGF5LmNvbS91cy9jYS9zYW4tZnJhbmNpc2NvL25ld3MvMjAyNi8wMy8yMi9vcGVuYWktdG8tZG91YmxlLXdvcmtmb3JjZS1ieS15ZWFyLWVuZC10by1yaXZhbC1hbnRocm9waWMtZ29vZ2xlLw==">OpenAI to Double Workforce - National Today<i class="fa fa-external-link-alt"></i></span></p><p><strong>OpenAI 预计 2026 年亏损约 140 亿美元</strong><br>OpenAI 预计 2026 年将亏损约 140 亿美元，并可能在 2027 年中期面临资金压力。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wb3B1bGFyL29wZW5haS1zb3JhLW5ld3MtbWFyY2gtMjAyNi8=">OpenAI Sora News March 2026 - Instagram<i class="fa fa-external-link-alt"></i></span></p><p><strong>SearchGPT 搜索引擎 Beta 测试扩大</strong><br>OpenAI 的 AI 搜索引擎 SearchGPT 现已向所有 Plus 订阅用户开放 Beta 测试。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p><hr><h3 id="Anthropic"><a href="#Anthropic" class="headerlink" title="Anthropic"></a>Anthropic</h3><p><strong>Claude 4 即将发布，或支持 MCP 协议</strong><br>Anthropic 暗示 Claude 4 将在未来几周内发布。新版本可能原生支持 Model Context Protocol (MCP)。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p><p><strong>Claude 企业版推出私有模型选项</strong><br>Anthropic 发布 Claude Enterprise 重大更新，企业客户现在可以部署完全私有的 Claude 实例。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p><hr><h3 id="Google-DeepMind"><a href="#Google-DeepMind" class="headerlink" title="Google &amp; DeepMind"></a>Google &amp; DeepMind</h3><p><strong>Gemini 2.5 Pro 开放 API，免费额度大幅提升</strong><br>Google 宣布 Gemini 2.5 Pro API 免费额度从每月 50 万 tokens 提升到 200 万 tokens，付费价格下调 40%。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p><p><strong>Gemini Workspace 新功能上线</strong><br>Google 为 Workspace 推出 Gemini 测试功能：Docs 上下文起草、Sheets 电子表格创建、Slides 演示文稿生成。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p><p><strong>DeepMind 公布 AlphaFold 3 最新进展</strong><br>DeepMind 展示 AlphaFold 3 最新版本，现在能够预测蛋白质与 DNA、RNA、小分子的复合物结构。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p><hr><h2 id="💰-融资-商业"><a href="#💰-融资-商业" class="headerlink" title="💰 融资 &amp; 商业"></a>💰 融资 &amp; 商业</h2><p><strong>Anthropic 获得 4 亿美元 D 轮融资</strong><br>Anthropic 完成 4 亿美元 D 轮融资，估值达 180 亿美元。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p><p><strong>Mistral AI 获 6.4 亿美元融资，估值 60 亿美元</strong><br>法国 AI 创业公司 Mistral AI 完成 6.4 亿美元融资，踏入独角兽行列。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p><p><strong>AI 初创公司占风投资金 41%</strong><br>根据 Carta 数据，AI 初创公司占据 1280 亿美元风投资金中的 41%。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly90ZWNoY3J1bmNoLmNvbS8yMDI2LzAzLzIwL2FpLXN0YXJ0dXBzLWFyZS1lYXRpbmctdGhlLXZlbnR1cmUtaW5kdXN0cnktYW5kLXRoZS1yZXR1cm5zLXNvLWZhci1hcmUtZ29vZC8=">AI Startups Eating Venture Industry - TechCrunch<i class="fa fa-external-link-alt"></i></span></p><hr><h2 id="🖥️-硬件-基础设施"><a href="#🖥️-硬件-基础设施" class="headerlink" title="🖥️ 硬件 &amp; 基础设施"></a>🖥️ 硬件 &amp; 基础设施</h2><p><strong>NVIDIA Blackwell GPU 2026 年出货预期下调</strong><br>JP Morgan 下调 NVIDIA Blackwell GPU 出货预期。2025 年预计出货 520 万片，2026 年降至 180 万片。但新一代 Rubin GPU 预计 2026 年出货 570 万片。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cudHdlYWt0b3duLmNvbS9uZXdzLzEwNjExNi9udmlkaWEtZXhwZWN0ZWQtdG8tc2hpcC01LTJtLWJsYWNrd2VsbC1ncHVzLWluLTIwMjUtMS04bS0yMDI2LWFuZC03bS1ydWJpbi9pbmRleC5odG1s">NVIDIA Blackwell GPUs - Tweaktown<i class="fa fa-external-link-alt"></i></span></p><p><strong>AMD MI350X 挑战 NVIDIA</strong><br>AMD 发布 Instinct MI350X GPU，声称在 Llama 3.1 405B 推理任务中性能是 H100 的 2.6 倍。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=">New AI Model Releases March 2026<i class="fa fa-external-link-alt"></i></span></p><hr><h2 id="🔧-工具-开源"><a href="#🔧-工具-开源" class="headerlink" title="🔧 工具 &amp; 开源"></a>🔧 工具 &amp; 开源</h2><p><strong>Perplexity 推出 Agent API</strong><br>Perplexity 发布 Agent API，OpenAI 推出 Skills 功能和小型 GPT-5.4 模型。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p><p><strong>Meta 推迟新 AI 模型 “avocado” 发布</strong><br>因性能问题，Meta 推迟代号为 “avocado” 的新 AI 模型发布。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly93d3cubnl0aW1lcy5jb20vMjAyNi8wMy8xMi90ZWNobm9sb2d5L21ldGEtYXZvY2Fkby1haS1tb2RlbC1kZWxheWVkLmh0bWw=">Meta Avocado AI Model Delayed - NYT<i class="fa fa-external-link-alt"></i></span></p><hr><h2 id="📊-行业趋势"><a href="#📊-行业趋势" class="headerlink" title="📊 行业趋势"></a>📊 行业趋势</h2><p><strong>AI 代理将成为企业工作流主力</strong><br>行业预测显示，AI 代理将在未来几年显著改变企业工作流程。</p><p><strong>Anthropic Institute 与供应链风险标签争议</strong><br>Anthropic 的 Institute 推出引发讨论，供应链风险标签问题成为关注焦点。<br>📖 <span class="exturl" data-url="aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=">Google OpenAI Anthropic Updates - Medium<i class="fa fa-external-link-alt"></i></span></p><hr><h2 id="📰-相关报道"><a href="#📰-相关报道" class="headerlink" title="📰 相关报道"></a>📰 相关报道</h2><ul><li><strong>NYT: AI Agents 的应用</strong> (March 19, 2026)</li><li><strong>NYT: 年轻程序员与 AI 焦虑</strong> (March 19, 2026)</li><li><strong>NYT: 白宫 AI 政策</strong> (March 20, 2026)</li><li><strong>NYT: 五角大楼与 Anthropic 合同争议</strong> (March 17, 2026)</li></ul><hr><blockquote><p>📌 明天见！</p></blockquote>]]></content>
     
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;每天 AI 行业重大新闻简报，来源涵盖 OpenAI、Google、Anthropic、NVIDIA 等核心玩家。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;🚀-大模型-产品&quot;&gt;&lt;a href=&quot;#🚀-大模型-产品&quot; class=&quot;headerlink&quot; title=&quot;🚀 大模型 &amp;amp; 产品&quot;&gt;&lt;/a&gt;🚀 大模型 &amp;amp; 产品&lt;/h2&gt;&lt;h3 id=&quot;OpenAI&quot;&gt;&lt;a href=&quot;#OpenAI&quot; class=&quot;headerlink&quot; title=&quot;OpenAI&quot;&gt;&lt;/a&gt;OpenAI&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;ChatGPT 新一代模型 GPT-4.5 延迟发布&lt;/strong&gt;&lt;br&gt;Sam Altman 透露 GPT-4.5 版本的发布时间将从原定的 2026 年第一季度推迟到第二季度。延迟的主要原因包括：确保模型的可靠性和安全性，以及处理训练过程中发现的一些对齐问题。Altman 表示”质量比速度更重要”，并承诺将带来”令人惊叹”的改进。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;SearchGPT 搜索引擎 Beta 测试扩大&lt;/strong&gt;&lt;br&gt;OpenAI 的 AI 搜索引擎 SearchGPT 现在已向所有 Plus 订阅用户开放 Beta 测试。该搜索引擎结合了 GPT-4 的理解能力和实时网络检索，能够提供带来源引用的详细回答。用户反馈显示，在复杂研究任务中表现优于传统搜索引擎。&lt;/p&gt;
+&lt;h2 id=&quot;🚀-大模型-产品&quot;&gt;&lt;a href=&quot;#🚀-大模型-产品&quot; class=&quot;headerlink&quot; title=&quot;🚀 大模型 &amp;amp; 产品&quot;&gt;&lt;/a&gt;🚀 大模型 &amp;amp; 产品&lt;/h2&gt;&lt;h3 id=&quot;OpenAI&quot;&gt;&lt;a href=&quot;#OpenAI&quot; class=&quot;headerlink&quot; title=&quot;OpenAI&quot;&gt;&lt;/a&gt;OpenAI&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;OpenAI 计划到 2026 年底员工数翻倍&lt;/strong&gt;&lt;br&gt;OpenAI 计划在 2026 年底将员工数量翻倍，以与 Anthropic 和 Google 竞争。&lt;br&gt;📖 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9uYXRpb25hbHRvZGF5LmNvbS91cy9jYS9zYW4tZnJhbmNpc2NvL25ld3MvMjAyNi8wMy8yMi9vcGVuYWktdG8tZG91YmxlLXdvcmtmb3JjZS1ieS15ZWFyLWVuZC10by1yaXZhbC1hbnRocm9waWMtZ29vZ2xlLw==&quot;&gt;OpenAI to Double Workforce - National Today&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OpenAI 预计 2026 年亏损约 140 亿美元&lt;/strong&gt;&lt;br&gt;OpenAI 预计 2026 年将亏损约 140 亿美元，并可能在 2027 年中期面临资金压力。&lt;br&gt;📖 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wb3B1bGFyL29wZW5haS1zb3JhLW5ld3MtbWFyY2gtMjAyNi8=&quot;&gt;OpenAI Sora News March 2026 - Instagram&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SearchGPT 搜索引擎 Beta 测试扩大&lt;/strong&gt;&lt;br&gt;OpenAI 的 AI 搜索引擎 SearchGPT 现已向所有 Plus 订阅用户开放 Beta 测试。&lt;br&gt;📖 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=&quot;&gt;Google OpenAI Anthropic Updates - Medium&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&quot;Anthropic&quot;&gt;&lt;a href=&quot;#Anthropic&quot; class=&quot;headerlink&quot; title=&quot;Anthropic&quot;&gt;&lt;/a&gt;Anthropic&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Claude 4 即将发布，或支持 MCP 协议&lt;/strong&gt;&lt;br&gt;Anthropic 暗示 Claude 4 将在未来几周内发布。有迹象表明新版本将原生支持 Model Context Protocol (MCP)，这将允许 Claude 直接与外部工具和数据库交互。Anthropic 还在招聘暗示构建”Agentic AI”系统的工程师。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Claude 企业版推出私有模型选项&lt;/strong&gt;&lt;br&gt;Anthropic 发布了 Claude Enterprise 的重大更新，企业客户现在可以部署完全私有的 Claude 实例，数据完全保存在自己的基础设施上。这一举措直接针对关注数据隐私的大型企业客户。&lt;/p&gt;
-&lt;hr&gt;</summary>
+&lt;h3 id=&quot;Anthropic&quot;&gt;&lt;a href=&quot;#Anthropic&quot; class=&quot;headerlink&quot; title=&quot;Anthropic&quot;&gt;&lt;/a&gt;Anthropic&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Claude 4 即将发布，或支持 MCP 协议&lt;/strong&gt;&lt;br&gt;Anthropic 暗示 Claude 4 将在未来几周内发布。新版本可能原生支持 Model Context Protocol (MCP)。&lt;br&gt;📖 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9tZWRpdW0uY29tL0BkYW5pZWxxdWludGVyb3MvZ29vZ2xlLW9wZW5haS1hbnRocm9waWMtdXBkYXRlcy1lZGM5NGZjNmYxMGU=&quot;&gt;Google OpenAI Anthropic Updates - Medium&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claude 企业版推出私有模型选项&lt;/strong&gt;&lt;br&gt;Anthropic 发布 Claude Enterprise 重大更新，企业客户现在可以部署完全私有的 Claude 实例。&lt;br&gt;📖 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9yZW5vdmF0ZXFyLmNvbS9ibG9nL2FpLW1vZGVsLXJlbGVhc2VzLTIwMjY=&quot;&gt;New AI Model Releases March 2026&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;</summary>
     
     
     
@@ -43,9 +126,9 @@
     
     <category term="AI" scheme="https://kikitamap.com/tags/AI/"/>
     
-    <category term="OpenAI" scheme="https://kikitamap.com/tags/OpenAI/"/>
-    
     <category term="News" scheme="https://kikitamap.com/tags/News/"/>
+    
+    <category term="OpenAI" scheme="https://kikitamap.com/tags/OpenAI/"/>
     
     <category term="Anthropic" scheme="https://kikitamap.com/tags/Anthropic/"/>
     
@@ -85,9 +168,9 @@
     
     <category term="AI" scheme="https://kikitamap.com/tags/AI/"/>
     
-    <category term="Claude" scheme="https://kikitamap.com/tags/Claude/"/>
-    
     <category term="OpenAI" scheme="https://kikitamap.com/tags/OpenAI/"/>
+    
+    <category term="Claude" scheme="https://kikitamap.com/tags/Claude/"/>
     
   </entry>
   
@@ -665,95 +748,6 @@
     
     
     <category term="Vector Tiles" scheme="https://kikitamap.com/tags/Vector-Tiles/"/>
-    
-    <category term="HERE Map" scheme="https://kikitamap.com/tags/HERE-Map/"/>
-    
-    <category term="HLS" scheme="https://kikitamap.com/tags/HLS/"/>
-    
-    <category term="Mobile SDK" scheme="https://kikitamap.com/tags/Mobile-SDK/"/>
-    
-    <category term="Android" scheme="https://kikitamap.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HERE mSDK - Map Rendering</title>
-    <link href="https://kikitamap.com/2020/03/11/HmSDK_MapRendering/"/>
-    <id>https://kikitamap.com/2020/03/11/HmSDK_MapRendering/</id>
-    <published>2020-03-10T17:17:23.000Z</published>
-    <updated>2024-12-24T03:31:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>通过上一个<a href="http://kikitamap.com/2020/03/09/HmSDK_QuickStart/">入门篇</a>，相信你已经对 HERE mSDK 有了一定的印象。<br>作为一个地图SDK，最基础最重要的功能首先是地图渲染， 那么今天我们仍然以 HERE mSDK （Premium Edition）为例一起了解下。在 HERE Location Services 中有一个 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbiNtYXBzX3NlY3Rpb24=">Interactive Maps Service<i class="fa fa-external-link-alt"></i></span>，用于访问服务器端预渲染的瓦片服务&#x2F;tile map， 这就是今天要用到的原料。</p><p>Let’s get our hands dirty ！<br>今天这篇我们先从最基础的 Map Rendering 和 Map Schemes 开始。 <code>AndroidXMapFragment</code> 类提供了交互式地图体验支持， 例如缩放、平移等等。<code>AndroidXMapFragment</code>初始化之后，可以通过<code>Map map = mapFragment.getMap();</code> 获取 <code>Map</code> 。<br><code>Map</code> 类中提供了很多 map attributes 帮助开发者确定地图的展示方式，例如：map center，zoom level,  tilt, orientation, map projection, map animation …… </p><blockquote><p>详见开发文档：<a href="https://developer.here.com/documentation/android-premium/dev_guide/topics/maps.html"><strong>Map</strong></a></p></blockquote><p>HERE Interactive Maps 提供了很多样式的地图外观（Map Scheme）可供选择，以满足不同审美和专题的需求。简而言之，地图数据是一套，皮肤可有很多种。 </p><blockquote><p>在开发者文档中，有一页图文可供参考：<a href="https://developer.here.com/documentation/android-premium/dev_guide/topics/map-schemes.html"><strong>Map Scheme</strong></a></p></blockquote><p>HERE 在 Github上有官方的示例代码库，这篇的相关示例可以在这个连接中找到：<a href="https://github.com/heremaps/here-android-sdk-examples/tree/master/map-attribute"><strong>Map Attribute</strong></a></p><p>我在这个工程中稍作修改，增加了 Satallite Mode 和 Night Mode，  因为后者是最近备受欢迎的一种渲染方式，这么好看的地图不做在样例里觉得有点可惜。 Night Mode 一方面可以作为夜晚时段的地图展示，另一方面可以作为设备暗色主题搭配的地图显示。<br>另外，这个示例工程中，还包含了公交&#x2F;Transit 主题地图的展示（None&#x2F;公交站&#x2F;公交线路），以及路况&#x2F;Realtime Traffic Service 的展示 （Traffic Flow &#x2F; Incident）。</p><p>Happy testing ^^</p><p><img data-src="/images/blogImg/HmSDK_MapRendering.jpg"></p><p>如下是在 Nexus 10 模拟器中的录屏:</p><div id="video"><video width="550" height="854" controls autoplay muted><source src="/images/blogImg/HmSDK_MapRenderingDemo.mp4" type="video/mp4"></video></div><style type="text/css">#video{width:550px; height:854px;background:#ffcccc;}</style>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;通过上一个&lt;a href=&quot;http://kikitamap.com/2020/03/09/HmSDK_QuickStart/&quot;&gt;入门篇&lt;/a&gt;，相信你已经对 HERE mSDK 有了一定的印象。&lt;br&gt;作为一个地图SDK，最基础最重要的功能首先是地图渲染， 那么今天我们仍然以 HERE mSDK （Premium Edition）为例一起了解下。在 HERE Location Services 中有一个 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbiNtYXBzX3NlY3Rpb24=&quot;&gt;Interactive Maps Service&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;，用于访问服务器端预渲染的瓦片服务&amp;#x2F;tile map， 这就是今天要用到的原料。&lt;/p&gt;
-&lt;p&gt;Let’s get our hands dirty ！&lt;br&gt;今天这篇我们先从最基础的 Map Rendering 和 Map Schemes 开始。 &lt;code&gt;AndroidXMapFragment&lt;/code&gt; 类提供了交互式地图体验支持， 例如缩放、平移等等。&lt;code&gt;AndroidXMapFragment&lt;/code&gt;初始化之后，可以通过&lt;code&gt;Map map = mapFragment.getMap();&lt;/code&gt; 获取 &lt;code&gt;Map&lt;/code&gt; 。&lt;br&gt;&lt;code&gt;Map&lt;/code&gt; 类中提供了很多 map attributes 帮助开发者确定地图的展示方式，例如：map center，zoom level,  tilt, orientation, map projection, map animation …… &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;详见开发文档：&lt;a href=&quot;https://developer.here.com/documentation/android-premium/dev_guide/topics/maps.html&quot;&gt;&lt;strong&gt;Map&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;HERE Interactive Maps 提供了很多样式的地图外观（Map Scheme）可供选择，以满足不同审美和专题的需求。简而言之，地图数据是一套，皮肤可有很多种。 &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在开发者文档中，有一页图文可供参考：&lt;a href=&quot;https://developer.here.com/documentation/android-premium/dev_guide/topics/map-schemes.html&quot;&gt;&lt;strong&gt;Map Scheme&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;HERE 在 Github上有官方的示例代码库，这篇的相关示例可以在这个连接中找到：&lt;a href=&quot;https://github.com/heremaps/here-android-sdk-examples/tree/master/map-attribute&quot;&gt;&lt;strong&gt;Map Attribute&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;我在这个工程中稍作修改，增加了 Satallite Mode 和 Night Mode，  因为后者是最近备受欢迎的一种渲染方式，这么好看的地图不做在样例里觉得有点可惜。 Night Mode 一方面可以作为夜晚时段的地图展示，另一方面可以作为设备暗色主题搭配的地图显示。&lt;br&gt;另外，这个示例工程中，还包含了公交&amp;#x2F;Transit 主题地图的展示（None&amp;#x2F;公交站&amp;#x2F;公交线路），以及路况&amp;#x2F;Realtime Traffic Service 的展示 （Traffic Flow &amp;#x2F; Incident）。&lt;/p&gt;
-&lt;p&gt;Happy testing ^^&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/HmSDK_MapRendering.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如下是在 Nexus 10 模拟器中的录屏:&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
-    
-    
-    <category term="HERE Map" scheme="https://kikitamap.com/tags/HERE-Map/"/>
-    
-    <category term="HLS" scheme="https://kikitamap.com/tags/HLS/"/>
-    
-    <category term="Mobile SDK" scheme="https://kikitamap.com/tags/Mobile-SDK/"/>
-    
-    <category term="Android" scheme="https://kikitamap.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Quick Start of HERE SDK for Android</title>
-    <link href="https://kikitamap.com/2020/03/09/HmSDK_QuickStart/"/>
-    <id>https://kikitamap.com/2020/03/09/HmSDK_QuickStart/</id>
-    <published>2020-03-09T13:18:07.000Z</published>
-    <updated>2024-12-24T03:31:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天整理下 HERE SDK的入门攻略~</p><p>HERE mobile SDK 是HERE location Servie（HLS）产品家族中重要的一部分，支持 Android 和 iOS 两大主流系统；从功能上分为 Lite（旧版本称 Starter）和 Premium 两个license level，顾名思义，前者支持较轻量级的功能，后者具有更专业更高级的功能。具体的功能清单和版本对比，可以在点击 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJvZHVjdHMvaGVyZS1zZGs=">官网链接<i class="fa fa-external-link-alt"></i></span> 查到。</p><p>HERE Developer 网站提供免费测试账号，建议大家注册一个玩一玩。每个 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJpY2luZw==">Freemium Plan<i class="fa fa-external-link-alt"></i></span> 账号下的 Project 可以拥有 Rest API、JS API、mSDK、studio 等很多产品的测试权限。对于个人 developer 来说，我认为足矣。</p><blockquote><p><strong>Freemium Plan 福利内容</strong></p><p>Location Services</p><ul><li>250K Transactions per month</li><li>5K SDK Monthly Active Users</li><li>250 Assets per month</li><li>Pay per additional Transactions</li></ul><p>Studio</p><ul><li>2.5GB Data transfer per month</li><li>5GB Database storage per month</li><li>Pay per additional Data transfer or Database storage</li></ul></blockquote><h1 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h1><h2 id="获取Credentials及SDK安装包"><a href="#获取Credentials及SDK安装包" class="headerlink" title="获取Credentials及SDK安装包"></a>获取Credentials及SDK安装包</h2><p>登录 HERE Developer 账户之后，即可在自己创建的Project中生成每个产品对应的密钥&#x2F;credentials。</p><p>在 SDK 密钥下方就有 SDK安装包可供下载。如下图即为 HERE mSDK （premium edition） 的示例：</p><p><img data-src="/images/blogImg/HmSDK_QuickStart_keys.jpg"></p><h2 id="检查-System-Requirments"><a href="#检查-System-Requirments" class="headerlink" title="检查 System Requirments"></a>检查 System Requirments</h2><p>这是安装一切软件产品之前，仔细阅读<span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vZG9jdW1lbnRhdGlvbi9hbmRyb2lkLXByZW1pdW0vZGV2X2d1aWRlL3RvcGljcy9zeXN0ZW0tcmVxdWlyZW1lbnRzLmh0bWw=">官方系统要求<i class="fa fa-external-link-alt"></i></span>，永远是不错的选择。</p><h2 id="快速运行-Tutorial-Example"><a href="#快速运行-Tutorial-Example" class="headerlink" title="快速运行 Tutorial Example"></a>快速运行 Tutorial Example</h2><p>下载后的SDK 安装包中包含了 user guild，release notes，SDK libraries， tutorial example 这几大件。 如果要快速入门，tutorial example 运行起来是必须的啦。</p><p>这里假设大家使用的开发环境都是 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYW5kcm9pZC5nb29nbGUuY24vc3R1ZGlv">Android Studio<i class="fa fa-external-link-alt"></i></span>， 解压缩 SDK 安装包后，开始吧！</p><ol><li><p>启动 Android Studio，选择 open an existing Android Studio project， 浏览至 tutorial example 所在目录， <code>.../HERE-sdk/tutorial/BasicMapSolution</code> 。 </p></li><li><p>接着会发现一条报错 <code>Error: Failed to resolve: :HERE-sdk:</code>， 这个不用担心，是因为 HERE SDK 的 libraries 默认没有包含在这个工程中。</p></li><li><p>在 <code>BasicMapSolution</code> 中的 <code>app</code> 文件夹下创建一个名为 <code>libs</code> 的文件夹，并将安装包中的 <code>HERE-sdk/libs</code> 下的 <code>HERE-sdk.aar</code> 复制到这里。上步遇到的问题就解决料。</p></li><li><p>检查 <code>app/build.gradle </code> 文件，确保如下内容已经包含：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">  flatDir &#123;</span><br><span class="line">    dirs <span class="string">&#x27;libs&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">dependencies &#123;</span><br><span class="line">  implementation(name:<span class="string">&#x27;HERE-sdk&#x27;</span>, ext:<span class="string">&#x27;aar&#x27;</span>)</span><br><span class="line">  <span class="comment">// Depending on your specific project configuration you may have other entries here.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>准备许可。每个 application 都需要一套单独的credentials。需要注意：为app申请credentials时，填写的 package name 需要和注册的bundle identifier 完全一致。就这个 sample来说， 应该使用 package name：<code> com.here.android.tutorial</code> 。如果在文章的开始，你已经注册了credential，那也没有关系，在 developer 网站的 project 页面中，你还可以修改哦，同时密钥会重新刷一遍，请使用最新的。<br><img data-src="/images/blogImg/HmSDK_QuickStart_PackageName.jpg"> </p></li><li><p>写入许可。 打开目录 <code>BasicMapSolution/app/src/main/</code> 下的<code>AndroidManifest.xml</code>文件。找到三行 <code>&lt;meta-data&gt;</code>开头的语句，填写 credentials 即可。</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.appid&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_ID&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.apptoken&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_APP_CODE&#125;&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta-data</span> <span class="attr">android:name</span>=<span class="string">&quot;com.here.android.maps.license.key&quot;</span> <span class="attr">android:value</span>=<span class="string">&quot;&#123;YOUR_LICENSE_KEY&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>连接设备，运行程序，Bingo ！</p></li></ol><h2 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><p>测试过程中，不确定大家有没有遇到我曾遇到的问题？</p><p><code>This project uses AndroidX dependencies, but the &#39;android.useAndroidX&#39; property is not enabled. Set this property to true in the gradle.properties file and retry.</code></p><p>解决方法：</p><p>在sample project 中的 <code>gradle.properties</code>文件中，增加一句：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.useAndroidX=<span class="literal">true</span></span><br></pre></td></tr></table></figure><h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>最后上图，我手头没有 Android 设备，用了 Nexus 10 模拟器：</p><p><img data-src="/images/blogImg/HmSDK_QuickStart_Run.jpg"></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;今天整理下 HERE SDK的入门攻略~&lt;/p&gt;
-&lt;p&gt;HERE mobile SDK 是HERE location Servie（HLS）产品家族中重要的一部分，支持 Android 和 iOS 两大主流系统；从功能上分为 Lite（旧版本称 Starter）和 Premium 两个license level，顾名思义，前者支持较轻量级的功能，后者具有更专业更高级的功能。具体的功能清单和版本对比，可以在点击 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJvZHVjdHMvaGVyZS1zZGs=&quot;&gt;官网链接&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 查到。&lt;/p&gt;
-&lt;p&gt;HERE Developer 网站提供免费测试账号，建议大家注册一个玩一玩。每个 &lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9kZXZlbG9wZXIuaGVyZS5jb20vcHJpY2luZw==&quot;&gt;Freemium Plan&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt; 账号下的 Project 可以拥有 Rest API、JS API、mSDK、studio 等很多产品的测试权限。对于个人 developer 来说，我认为足矣。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Freemium Plan 福利内容&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Location Services&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;250K Transactions per month&lt;/li&gt;
-&lt;li&gt;5K SDK Monthly Active Users&lt;/li&gt;
-&lt;li&gt;250 Assets per month&lt;/li&gt;
-&lt;li&gt;Pay per additional Transactions&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Studio&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2.5GB Data transfer per month&lt;/li&gt;
-&lt;li&gt;5GB Database storage per month&lt;/li&gt;
-&lt;li&gt;Pay per additional Data transfer or Database storage&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;Steps&quot;&gt;&lt;a href=&quot;#Steps&quot; class=&quot;headerlink&quot; title=&quot;Steps&quot;&gt;&lt;/a&gt;Steps&lt;/h1&gt;&lt;h2 id=&quot;获取Credentials及SDK安装包&quot;&gt;&lt;a href=&quot;#获取Credentials及SDK安装包&quot; class=&quot;headerlink&quot; title=&quot;获取Credentials及SDK安装包&quot;&gt;&lt;/a&gt;获取Credentials及SDK安装包&lt;/h2&gt;&lt;p&gt;登录 HERE Developer 账户之后，即可在自己创建的Project中生成每个产品对应的密钥&amp;#x2F;credentials。&lt;/p&gt;
-&lt;p&gt;在 SDK 密钥下方就有 SDK安装包可供下载。如下图即为 HERE mSDK （premium edition） 的示例：&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/HmSDK_QuickStart_keys.jpg&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;检查-System-Requirments&quot;&gt;&lt;a href=&quot;#检查-System-Requirments&quot; class=&quot;headerlink&quot; title=&quot;检查 System Requirments&quot;&gt;&lt;/a&gt;检查 System Requirments&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
-    
     
     <category term="HERE Map" scheme="https://kikitamap.com/tags/HERE-Map/"/>
     
