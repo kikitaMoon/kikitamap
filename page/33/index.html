@@ -158,18 +158,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,116 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/07/22/ConvertDMS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2013/07/22/ConvertDMS/" class="post-title-link" itemprop="url">将度-分-秒值转换为十进制度</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2013-07-22 12:21:29" itemprop="dateCreated datePublished" datetime="2013-07-22T12:21:29+08:00">2013-07-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2013/07/22/ConvertDMS/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/07/22/ConvertDMS/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在ArcMap中，在表中新建一个字段，用于存储新的十进制度值，使用字段计算器和 VB 脚本实现。</p>
+<p>如下示例，其中，假设 Latitude 是表中存储 DMS 纬度值字段的名称，经纬度数据中的度分秒三个数据是以空格分隔。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Dim Degrees</span><br><span class="line">Dim Minutes</span><br><span class="line">Dim Seconds</span><br><span class="line">Dim DMS</span><br><span class="line">Dim DD</span><br><span class="line"></span><br><span class="line">DMS = Split([Latitude])</span><br><span class="line">Degrees = CDbl(DMS(0))</span><br><span class="line">Minutes = CDbl(DMS(1))</span><br><span class="line">Seconds = CDbl(DMS(2))</span><br><span class="line">If Degrees &lt; 0 Then</span><br><span class="line">   DD = -(Seconds/3600) - (Minutes/60) + Degrees</span><br><span class="line">Else</span><br><span class="line">   DD = (Seconds/3600) + (Minutes/60) + Degrees</span><br><span class="line">End If</span><br></pre></td></tr></table></figure>
+
+<p>PS：使用到的VBScript 函数：</p>
+<p>（1）<strong>Split</strong>：</p>
+<pre><code>Split(expression[,delimiter[,count[,compare]]])
+</code></pre>
+<p>（2）<strong>CDbl</strong>：</p>
+<p>CDbl 函数可把表达式转换为双精度（Double）类型。</p>
+<p>结果示例：</p>
+<p><img data-src="/images/blogImg/ConvertDMS.jpg"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2013/07/22/ConvertDMS/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -624,112 +734,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2013/06/06/sketchupVSArcGIS10/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2013/06/03/ViewPortNo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2013/06/03/ViewPortNo/" class="post-title-link" itemprop="url">查看端口号占用情况</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2013-06-03 17:35:07" itemprop="dateCreated datePublished" datetime="2013-06-03T17:35:07+08:00">2013-06-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2013/06/03/ViewPortNo/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2013/06/03/ViewPortNo/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="1-查看端口占用情况"><a href="#1-查看端口占用情况" class="headerlink" title="1.查看端口占用情况"></a><strong>1.查看端口占用情况</strong></h1><p>使用命令 <strong>netstat -ano</strong> ，检查所有在使用的端口。</p>
-<p><img data-src="/images/blogImg/ViewPortNo_Netstat.png"></p>
-<p>如果查询指定端口，使用：**netstat -aon|findstr &quot;Port No.&quot;**，如下：</p>
-<p>例如，查看49506端口号对应的进程，进程号976：</p>
-<p><img data-src="/images/blogImg/ViewPortNo_Find.jpg"></p>
-<h1 id="2-查看PID-对应的程序"><a href="#2-查看PID-对应的程序" class="headerlink" title="2. 查看PID 对应的程序"></a><strong>2. 查看PID 对应的程序</strong></h1><p>查看具体哪个程序在占用某个端口，使用命令：</p>
-<p><code>netstat -aon|findstr &quot;Port No.&quot;</code></p>
-<p>接着上面的例子，976对应的程序。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2013/06/03/ViewPortNo/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
