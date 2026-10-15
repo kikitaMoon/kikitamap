@@ -1,0 +1,249 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-15T09:58:41.070Z",
+  "item": {
+    "title": "Sandy Vehicles Live",
+    "subtitle": "Live fleet activity and observation tracking"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "dashboard",
+    "showHeader": true,
+    "theme": {
+      "mode": "light",
+      "accent": "coral"
+    },
+    "layout": {
+      "header": {
+        "hidden": false,
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "fleet-kpis"
+          }
+        ]
+      },
+      "left": {
+        "hidden": false,
+        "title": "Map display",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "compass-style-controls",
+            "title": "Compass rose"
+          },
+          {
+            "type": "customMount",
+            "id": "track-display-controls",
+            "title": "Vehicle history"
+          },
+          {
+            "type": "customMount",
+            "id": "vehicle-follow-controls",
+            "title": "Follow vehicle"
+          }
+        ]
+      },
+      "right": {
+        "hidden": false,
+        "title": "Live operations",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "stream-health"
+          },
+          {
+            "type": "customMount",
+            "id": "fleet-breakdown",
+            "title": "Fleet activity"
+          },
+          {
+            "type": "customMount",
+            "id": "vehicle-roster",
+            "title": "Latest vehicle information"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "default-home",
+        "type": "home",
+        "slot": "top-left",
+        "config": {}
+      },
+      {
+        "id": "default-scale-bar",
+        "type": "scaleBar",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "default-legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "default-layer-list",
+        "type": "layerList",
+        "slot": "top-right",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": [
+      {
+        "id": "restore-stream-tracks",
+        "label": "Restore vehicle icons and track history on open",
+        "bundlePath": "./runtime/behaviors/restore-stream-tracks-22e25fabef04bc41.js",
+        "sourceSha256": "22e25fabef04bc411b06c5d9acecfcf2980e506db60bd22e36a994b419d91734",
+        "modulePaths": [],
+        "config": {
+          "layerId": "1a13f00b29d-layer-2"
+        },
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-15T10:06:15.023Z"
+      },
+      {
+        "id": "maritime-map-style",
+        "label": "Maritime map and consistent fleet colors",
+        "bundlePath": "./runtime/behaviors/maritime-map-style-7b5958a27f06a857.js",
+        "sourceSha256": "7b5958a27f06a857f927a7ad554e3284c944a181ec7752139b3fba006e84d1d2",
+        "modulePaths": [
+          "esri/core/reactiveUtils"
+        ],
+        "config": {
+          "layerId": "1a13f00b29d-layer-2",
+          "snow": "#EEE1A8",
+          "pickup": "#D96746",
+          "green": "#72A483",
+          "grey": "#92938C"
+        },
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-15T10:29:14.058Z"
+      },
+      {
+        "id": "live-fleet-monitor",
+        "label": "Maritime fleet metrics and vehicle information",
+        "bundlePath": "./runtime/behaviors/live-fleet-monitor-8b4fec789412ba40.js",
+        "sourceSha256": "8b4fec789412ba40b8e1ca20aab13564946c317bb5124de5741e653945af9aa2",
+        "modulePaths": [],
+        "config": {
+          "layerId": "1a13f00b29d-layer-2",
+          "refreshMs": 2000,
+          "staleSeconds": 30,
+          "snow": "#EEE1A8",
+          "pickup": "#D96746",
+          "green": "#72A483",
+          "grey": "#92938C"
+        },
+        "mounts": [
+          "fleet-kpis",
+          "stream-health",
+          "fleet-breakdown",
+          "vehicle-roster"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [
+          {
+            "id": "inspect-live-vehicle",
+            "trigger": {
+              "type": "feature-click",
+              "layerId": "1a13f00b29d-layer-2"
+            },
+            "actionId": "inspect-live-vehicle"
+          }
+        ],
+        "installedAt": "2026-10-15T10:30:00.018Z"
+      },
+      {
+        "id": "map-display-controls",
+        "label": "Warm maritime compass and history controls",
+        "bundlePath": "./runtime/behaviors/map-display-controls-5292d25fe38d67b1.js",
+        "sourceSha256": "5292d25fe38d67b1ae0a6155919d8341123341a61a1bd7ab6588df7d789f5c3c",
+        "modulePaths": [
+          "esri/core/reactiveUtils"
+        ],
+        "config": {
+          "layerId": "1a13f00b29d-layer-2",
+          "compassStyle": "nautical"
+        },
+        "mounts": [
+          "compass-style-controls",
+          "track-display-controls"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-15T11:25:42.200Z"
+      },
+      {
+        "id": "follow-vehicle-rings",
+        "label": "Follow vehicle with evenly spaced distance rings",
+        "bundlePath": "./runtime/behaviors/follow-vehicle-rings-efe6491b762b07eb.js",
+        "sourceSha256": "efe6491b762b07eb02a1233c30c9273ec58e3273a59250b1b48feb0e714e642c",
+        "modulePaths": [
+          "esri/Graphic",
+          "esri/geometry/operators/geodesicBufferOperator",
+          "esri/layers/GraphicsLayer"
+        ],
+        "config": {
+          "layerId": "1a13f00b29d-layer-2",
+          "ringCount": 6,
+          "intervalMeters": 250,
+          "refreshMs": 1000
+        },
+        "mounts": [
+          "vehicle-follow-controls"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [
+          {
+            "id": "follow-clicked-vehicle",
+            "trigger": {
+              "type": "feature-click",
+              "layerId": "1a13f00b29d-layer-2"
+            },
+            "actionId": "follow-vehicle"
+          }
+        ],
+        "installedAt": "2026-10-15T11:30:39.228Z"
+      }
+    ]
+  },
+  "nova": {
+    "basename": "63c9f1c6-5a6b-4679-b219-e86d19473311",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-fc340014-26e3-4cb6-9012-5ce9bc9fc411",
+      "mapName": "New Conversation",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-15T09:58:41.070Z"
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": []
+  }
+}
