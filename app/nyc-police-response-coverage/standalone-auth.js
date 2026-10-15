@@ -1,4 +1,4 @@
-const config = {"mode":"oauth","appId":"uT4wEOfgVFyzX1TC","portalUrl":"https://www.arcgis.com","redirectUri":"https://kikitamap.com/app/nyc-police-response-coverage"};
+const config = {"mode":"public","appId":"uT4wEOfgVFyzX1TC","portalUrl":"https://www.arcgis.com","redirectUri":"https://kikitamap.com/app/nyc-police-response-coverage"};
 const moduleIds = {"identityManager":"@arcgis/core/identity/IdentityManager.js","oauthInfo":"@arcgis/core/identity/OAuthInfo.js","config":"@arcgis/core/config.js"};
 
 function showFailure(error) {
