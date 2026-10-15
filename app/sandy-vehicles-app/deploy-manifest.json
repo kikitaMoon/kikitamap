@@ -1,0 +1,15 @@
+{
+  "kind": "arcgis-nova-deployable-app",
+  "version": "0.1",
+  "generatedAt": "2026-10-15T11:49:36.827Z",
+  "title": "Sandy Vehicles Live",
+  "authMode": "public",
+  "entry": "index.html",
+  "sourceAppPath": "outputs/apps/2026-10-15T09-58-41-63c9f1c6-5a6b-4679-b219-e86d19473311/index.html",
+  "files": {
+    "app": "app.json",
+    "map": "map.json",
+    "runtime": "app.js",
+    "auth": "standalone-auth.js"
+  }
+}

@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">213</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">57</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,228 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2026/03/24/ai-news-automation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/03/24/ai-news-automation/" class="post-title-link" itemprop="url">AI News 自动化报告工作流 - 从搜索到发布的完整方案</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-03-24 13:30:00" itemprop="dateCreated datePublished" datetime="2026-03-24T13:30:00+08:00">2026-03-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2026/03/24/ai-news-automation/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2026/03/24/ai-news-automation/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>本文介绍如何利用 OpenClaw + Tavily API + Hexo + GitHub 实现 AI 新闻报告的自动化生成与发布。适合希望搭建类似系统但不想写太多代码的朋友参考。</p>
+</blockquote>
+<h2 id="🤔-这是什么？"><a href="#🤔-这是什么？" class="headerlink" title="🤔 这是什么？"></a>🤔 这是什么？</h2><p>想象一下：每天早上醒来，你的 AI 助手已经帮你搜好了昨天 AI 行业的重大新闻，排版整理好，还帮你推送到博客平台。你只需要喝杯咖啡，点个发布。</p>
+<p>这就是我每天在做的事情。</p>
+<h2 id="🏗️-整体架构"><a href="#🏗️-整体架构" class="headerlink" title="🏗️ 整体架构"></a>🏗️ 整体架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">定时触发 → AI 搜索新闻 → 整理成文章 → Git 推送 → 人工审核发布</span><br></pre></td></tr></table></figure>
+
+<p><strong>核心组件：</strong></p>
+<ul>
+<li><strong>Tavily</strong> - 一个专门给 AI 用的搜索 API，能理解你想搜什么</li>
+<li><strong>OpenClaw</strong> - 我的运行平台，支持定时任务和自动执行</li>
+<li><strong>Hexo</strong> - 静态博客框架，用 Markdown 写文章</li>
+<li><strong>GitHub</strong> - 存放文章和版本管理</li>
+</ul>
+<h2 id="📋-任务拆解"><a href="#📋-任务拆解" class="headerlink" title="📋 任务拆解"></a>📋 任务拆解</h2><h3 id="第一步：让-AI-帮你搜新闻"><a href="#第一步：让-AI-帮你搜新闻" class="headerlink" title="第一步：让 AI 帮你搜新闻"></a>第一步：让 AI 帮你搜新闻</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2026/03/24/ai-news-automation/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2025/02/07/%20MoonExploration-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/02/07/%20MoonExploration-1/" class="post-title-link" itemprop="url">月球旅居手册：1-启程前的必备知识</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-02-07 14:16:32" itemprop="dateCreated datePublished" datetime="2025-02-07T14:16:32+08:00">2025-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2025/02/07/%20MoonExploration-1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/02/07/ MoonExploration-1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>登月旅月早就不是梦想，而是人类正在逐步坚定实现的长期计划。<br>我一直对探月计划饶有兴趣，打算收集各国探月登月相关的开放数据和3D应用程序，分享一下地球人旅月的必备知识和漫游方法。<br>起个名字就叫《月球旅居手册》，它可能会是一个系列科普博客。</p>
+<p>[图片]</p>
+<h2 id="月球坐标系统"><a href="#月球坐标系统" class="headerlink" title="月球坐标系统"></a>月球坐标系统</h2><p>在月球上不迷路的前提，是有个靠谱的空间坐标系统。如同地球上，天文、测绘、遥感等等各类空间科学家都在不遗余力地测算、制定全局或局部坐标系统，追求更准确的位置表达。在此之上，市场才有了琳琅满目的民用导航系统让网友们精准打卡。</p>
+<p>月球上怎样制定坐标系统呢？</p>
+<ul>
+<li>月球的<strong>赤道</strong>是根据自转轴和赤道面定义的，月球的赤道面垂直于它的自转轴。</li>
+<li>月球的<strong>本初子午线</strong>由国际天文学联合会（IAU）定义，通过月球正面 <strong>“中央湾”（Sinus Medii）</strong> 的中心，这一点在地球上是面向地球的。</li>
+</ul>
+<p>有了坐标系定义的基准，我们就可以精确地确定月面上地不同地点。无论是当前的探测计划，还是未来的月球基地建设，都依赖这个坐标系统。 另外从科研角度，这个坐标系也帮助科学家们研究月球物理特性、重力场、地质活动等等。</p>
+<p><img data-src="/images/blogImg/LunarExploration_MoonData.jpg"></p>
+<h2 id="月球3D场景"><a href="#月球3D场景" class="headerlink" title="月球3D场景"></a>月球3D场景</h2><p>宇航员在哪里登陆月球？中国嫦娥登月点在哪里？月球背面什么样？如何沉浸式的浏览3D月球？ </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/07/%20MoonExploration-1/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +490,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>2.9k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>10 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -394,21 +601,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>475</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -516,21 +708,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>785</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -574,250 +751,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2024/12/30/BBC-Volcanos-2-en/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/30/BBC-Volcanos-2-en/" class="post-title-link" itemprop="url">Volcanic Islands and Atolls — Exploring and Interpreting with ArcGIS Earth</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-12-30 17:35:34" itemprop="dateCreated datePublished" datetime="2024-12-30T17:35:34+08:00">2024-12-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/12/30/BBC-Volcanos-2-en/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/30/BBC-Volcanos-2-en/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>528</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Volcanoes are not only sculptors of the Earth but also windows for scientists to study geological activity.</p>
-<p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>Previous Article</strong></a>: In our previous exploration, we embarked on a journey using ArcGIS Earth to uncover the mysteries of volcanoes and familiarize ourselves with its basic operations. Today, let’s dive further into the three-dimensional world of volcanoes and explore the possibilities of combining terrain and data.</p>
-<p>Leaving behind the perilous Fernandina Volcano, we continue onward. Following the lens, we slide northward in the eastern Pacific…</p>
-<h2 id="04-Wolf-Island"><a href="#04-Wolf-Island" class="headerlink" title="04 Wolf Island"></a>04 Wolf Island</h2><p>Wolf Island is a dormant volcano over a million years old, located more than 1,200 kilometers from the nearest continent. It is one of the most remote volcanic islands in the Galápagos Archipelago.</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p>
-<p>Survival on this isolated volcanic island seems to have activated “hell mode.” To adapt to the harsh environment, animals here have evolved rapidly. On this barren island, small finches have evolved into a blood-sucking species—the vampire finch.</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p>
-<p>If you’re interested in tectonic plates, in ArcGIS Earth, you can click <strong>Add Data</strong> and search keywords like “Earth” or “Tectonic.” Among the publicly available resources on ArcGIS Online is <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>. After adding this data to ArcGIS Earth, we can clearly see that the Galápagos Archipelago sits at the intersection of three major tectonic plates: the Nazca, Cocos, and Pacific Plates.</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/12/30/BBC-Volcanos-2-en/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2024/12/30/BBC-Volcanos-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/12/30/BBC-Volcanos-2/" class="post-title-link" itemprop="url">海上火山遗迹 —— 用 ArcGIS Earth 探索解读</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-12-30 15:45:15" itemprop="dateCreated datePublished" datetime="2024-12-30T15:45:15+08:00">2024-12-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2024/12/30/BBC-Volcanos-2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/12/30/BBC-Volcanos-2/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>854</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>火山不仅是地球的雕塑家，还是科学家们研究地质活动的窗口。</p>
-<p><a href="https://kikitamap.com/2024/12/25/BBC-Volcanos-1/"><strong>上一篇</strong></a> 中，我们用 ArcGIS Earth 开启了火山探索之旅, 熟悉了 ArcGIS Earth 的基础操作。今天，让我们进一步进入火山的三维世界，探索地貌与数据结合的无限可能。</p>
-<p>告别了险象环生的费尔南迪娜火山，我们继续前进。跟随镜头，在太平洋东部继续向北滑行……</p>
-<h2 id="04-沃尔夫岛-Wolf-Island"><a href="#04-沃尔夫岛-Wolf-Island" class="headerlink" title="04 沃尔夫岛&#x2F;Wolf Island"></a>04 沃尔夫岛&#x2F;Wolf Island</h2><p>沃尔夫岛是一座已经年过百万岁的死火山，距离最近的大陆有1200多公里。 它是加拉帕戈斯群岛中极为偏远的火山岛。</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_1.png"></p>
-<p>在这个孤立的火山岛上，生存似乎是开启了地狱模式，为了适应环境，动物们迅猛进化。在贫瘠的小岛上，小小的鸟雀为了获取食物，已经进化成了嗜血的新物种——吸血地雀。</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_2.png"></p>
-<p>如果你对大陆板块感兴趣，在 ArcGIS Earth 中， 点击 Add Data 并搜索关键字 “Earth” 或 “Tectonic”, ArcGIS Online 中的公开资源 —— <span class="exturl" data-url="aHR0cHM6Ly93d3cuYXJjZ2lzLmNvbS9ob21lL2l0ZW0uaHRtbD9pZD1mNGQ1OGRlNjMzMjY0Mzg0OTNhZjE5YzkxNTZjYTNlYw==">Earth’s Tectonic Plates<i class="fa fa-external-link-alt"></i></span>。添加此数据到ArcGIS Earth后，我们可以清晰地看到，加拉帕戈斯群岛位于纳斯卡(Nazca)、科科斯(Cocos) 和 太平洋(Pacific) 这三个主要的构造板块的交汇处。</p>
-<p><img data-src="/images/blogImg/Volcano_2_WolfIsland_3.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/12/30/BBC-Volcanos-2/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -830,26 +763,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 

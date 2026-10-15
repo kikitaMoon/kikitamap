@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">213</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">57</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,232 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/13/CELeafshape/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/13/CELeafshape/" class="post-title-link" itemprop="url">你知道 CityEngine 中的 Leaf Shape 吗？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-07-13 10:50:36" itemprop="dateCreated datePublished" datetime="2018-07-13T10:50:36+08:00">2018-07-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/07/13/CELeafshape/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/13/CELeafshape/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>CityEngine 的CGA建模过程是个不断迭代繁衍的过程，我们将这个过程想象成一棵树。</p>
+<p>通过 Shapefile，File Geodatabase，AutoCAD DXF 这些矢量数据格式导入CityEngine中的2D基面（Footprint），通常称为 CityEngine <strong>Initial Shape</strong>，这是这棵树的根节点。通过CGA中的命令符 <code>--&gt;</code> ，将一个shape经过各种形状（Geometry）和位置（Pivot，Scope） 的函数操作，生成另一个shape。直到最后，模型建立，最终的shape节点，通常称为 CityEngine <strong>Leaf Shape</strong>。</p>
+<blockquote>
+<p>这个细节的概念，在2013年的开发者大会中提过一次，结合模型层次结构的幻灯片理解下：</p>
+<p><img data-src="/images/blogImg/CELeafShape_2013DS.png"></p>
+<p><img data-src="/images/blogImg/CELeafShape_2013DS2.png"></p>
+<p>完整的幻灯片可以点 <a href="/files/EsriChinaDevSum-2013-EsriCityEngineRuleDev.pdf"><strong>这里</strong></a> 下载。</p>
+</blockquote>
+<p>为什么说是“迭代繁衍”？ 因为除了 Leaf Shape 之外的所有shape 在建模过程中都被紧跟它其后的shape替代而消亡了。</p>
+<p>举例子，在这条规则中，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; function() B </span><br><span class="line">      B  --&gt; function() C </span><br></pre></td></tr></table></figure>
+
+<p>这条规则中 ，A shape 对象已经消亡被B替代，在后续的规则中无法再调用到 A， 如果希望取到与A相同的对象，就需要提前复制出来，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A --&gt; Anew <span class="title function_">function</span><span class="params">()</span> B            <span class="comment">//A被复制而创建了分支</span></span><br><span class="line">      B    --&gt; function() C</span><br><span class="line">      Anew --&gt; function() D</span><br></pre></td></tr></table></figure>
+
+
+
+<p>了解了这些，那么我们可以进一步回答这个问题：“如何将CityEngine规则建模的模型导出成各组件独立存储的模型？”   </p>
+<p>可以的，再导出FileGDB或 Scene Layer Package的时候选中 “<strong>One Feature per Leaf Shape</strong>” 即可。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/13/CELeafshape/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/07/11/CEFreeTrial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/07/11/CEFreeTrial/" class="post-title-link" itemprop="url">如何获取30天试用版 Esri CityEngine ？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-07-11 17:43:04" itemprop="dateCreated datePublished" datetime="2018-07-11T17:43:04+08:00">2018-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2018/07/11/CEFreeTrial/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/11/CEFreeTrial/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Esri CityEngine 是一款面向于大规模城市规划行业的，交互式、沉浸式高级三维建模软件，相比传统建模更加高效省时。 通过CityEngine我们可以基于现实世界的GIS数据，构造城市的现实状态，模拟城市的历史风貌，设计城市的未来蓝图。</p>
+<p>如何申请Esri CityEngine 30天试用？</p>
+<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>访问Esri官方试用地址：<span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2VzcmktY2l0eWVuZ2luZS90cmlhbA==">https://www.esri.com/en-us/arcgis/products/esri-cityengine/trial<i class="fa fa-external-link-alt"></i></span></p>
+<p> 点击“<strong>Start CityEngine Trial</strong>”</p>
+<p><img data-src="/images/blogImg/CEFreeTrial_Start.png"></p>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>创建一个Esri账号，点击“<strong>Create a Public Account</strong>”； 如果已经拥有过 Esri 账号，可以直接登录。</p>
+<blockquote>
+<p>PS：每个邮箱只能申请一次试用。请申请试用时，确保邮箱是第一次注册。</p>
+<p>​         国内不建议使用Facebook和Google账户登录，避免后续登录的麻烦，你懂的。</p>
+</blockquote>
+<p><img data-src="/images/blogImg/CEFreeTrial_SignUp.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/07/11/CEFreeTrial/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +494,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>702</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -396,21 +607,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>173</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -521,21 +717,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>486</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -583,285 +764,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/22/textureinCE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/03/22/textureinCE/" class="post-title-link" itemprop="url">CityEngine中纹理贴图之道(一)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-03-22 17:39:33" itemprop="dateCreated datePublished" datetime="2018-03-22T17:39:33+08:00">2018-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/03/22/textureinCE/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/22/textureinCE/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>854</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>​        </p>
-<p>​        经常看到官微、公众号的各种推送，了解到很多轰动一时的大片和电游的视觉制作都有CityEngine 助力过。CityEngine 在影娱视觉行业早已硕果累累，而对于GIS大众，CityEngine 算是刚从幕后走到了台前，从神秘娱乐圈走近了烟火人间。这几年来，这个不姓“Arc”的非主流产品在不断地推陈出新，吸引着慕名围观的用户去了解。3D模型的纹理贴图问题通常是建模中的高频问题，作为前排围观群众之一，我今天就用CityEngine做一面“墙”娱乐一下吧。</p>
-<blockquote>
-<p>环境： Esri City Engine 2017.1</p>
-</blockquote>
-<p>​        在 CityEngine中的 <code>shape</code> 对象具有<code>material </code>属性，这一属性可以控制模型的纹理贴图、阴影效果、外观等。CityEngine 支持的纹理图片的格式有：**.bmp、.gif、.jpg&#x2F;.jpeg、.png、.tif&#x2F;.tiff**。 CityEngine贴图支持6个纹理通道，它们通过特定的关键字来表达，如下：</p>
-<table>
-<thead>
-<tr>
-<th>uv-set</th>
-<th>Texture Layer</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>colormap</td>
-</tr>
-<tr>
-<td>1</td>
-<td>bumpmap</td>
-</tr>
-<tr>
-<td>2</td>
-<td>dirtmap</td>
-</tr>
-<tr>
-<td>3</td>
-<td>specularmap</td>
-</tr>
-<tr>
-<td>4</td>
-<td>opacitymap</td>
-</tr>
-<tr>
-<td>5</td>
-<td>normalmap</td>
-</tr>
-</tbody></table>
-<p><strong>下面我通过几个实例来说明下它们的用途：</strong></p>
-<p><img data-src="/images/blogImg/textureinCE_1.png"></p>
-<p>​        基于共同的基础脚本向下进行，这里不再解释，相信你一看即懂。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * File:    MyTestforBaseTexure.cga</span></span><br><span class="line"><span class="comment"> * Created: 21 Mar 2018 08:26:37 GMT</span></span><br><span class="line"><span class="comment"> * Author:  Xiaoyan Mu</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">version <span class="string">&quot;2017.1&quot;</span></span><br><span class="line">attr height = <span class="number">6</span></span><br><span class="line">wall_tex        = <span class="string">&quot;facades/textures/brickwall.jpg&quot;</span></span><br><span class="line">dirt_tex        = <span class="string">&quot;facades/textures/dirtmap.15.tif&quot;</span></span><br><span class="line">graffiti_tex    = <span class="string">&quot;facades/kiktia/Graffiti.jpg&quot;</span></span><br><span class="line"><span class="title class_">Lot</span> --&gt; <span class="title function_">extrude</span>(height) <span class="title class_">Building</span></span><br><span class="line"><span class="title class_">Building</span> --&gt; <span class="title function_">comp</span>(<span class="params">f</span>) &#123;side : <span class="title class_">Sidefacade</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="material-colormap"><a href="#material-colormap" class="headerlink" title="material.colormap"></a>material.colormap</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/03/22/textureinCE/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2018/03/21/importingmodels/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/03/21/importingmodels/" class="post-title-link" itemprop="url">导入3D模型至CityEngine</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2018-03-21 11:06:12" itemprop="dateCreated datePublished" datetime="2018-03-21T11:06:12+08:00">2018-03-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2018/03/21/importingmodels/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/21/importingmodels/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>270</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我们可以将2D矢量数据、3D模型格式导入到CityEngine 中使用，前者一般作为CityEngine shape 来使用，后者作为模型来使用。</p>
-<p>OBJ，DAE，FBX这几种模型格式导入时可以作为两种角色来使用，shape 或 static model。这是由导入窗口中的 <code>Import as static model</code> 设置控制的。</p>
-<blockquote>
-<p><strong>Import as static model</strong></p>
-<p>When checked, the file will be imported ‘as is’ and will not be modifiable by cga rules.</p>
-<ul>
-<li>Shapes—Serve as a base for CGA generation. A typical example is footprint data.</li>
-<li>Static models—Can be scaled, rotated, and translated after import but cannot be processed further with CGA.</li>
-</ul>
-</blockquote>
-<p>通过如上说明，我们可以清晰的了解到把模型转为shape或Static Model的差异。 一般实际应用中，我们会把当作“素材”使用的模型小件作为static model用；而把表示基础结构的模型作为shape来使用。</p>
-<p>static model导入之后，仍然可以再转换为shape，操作：菜单栏 Shapes-&gt;Convert  Models to Shapes。成为shapes 之后，就可以通过cga对这个模型的继续进行改造了。</p>
-<p>在如下示例图中了解：</p>
-<p><img data-src="/images/blogImg/importingmodels.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -874,26 +776,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 

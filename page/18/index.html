@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">213</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -169,7 +169,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">57</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -203,6 +203,230 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/11/27/CanNotConnectAGSLM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/11/27/CanNotConnectAGSLM/" class="post-title-link" itemprop="url">“连不上ArcGIS License Manager” 的一点常用诊断方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-11-27 12:00:00" itemprop="dateCreated datePublished" datetime="2015-11-27T12:00:00+08:00">2015-11-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/11/27/CanNotConnectAGSLM/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/27/CanNotConnectAGSLM/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 ArcGIS Desktop 的问题库中，有一类不算做核心技术问题，但却可能会位列“最常见的问题”之一。简言之一句话，”<strong>许可服务器连不上怎么办？！</strong>“ 下面就来演绎下问题的诊断过程。</p>
+<blockquote>
+<p>本文仅适用于客户端 ArcGIS Administrator 访问 ArcGIS License Manager <strong>正式版</strong>许可的问题的诊断，目前适用于 ArcGIS for Desktop 10.x、ArcGIS Engine 10.x、CityEngine 201x 版本的浮动许可诊断问题。博主说，你可能很难找到第二篇与ArcGIS Desktop 正版授权有关的博客了…… <strong>单机版和破解版请绕行。</strong>  </p>
+</blockquote>
+<br>
+
+<h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>ArcGIS License Manager <strong>已经授权完毕且成功</strong>，可用性（Availability）栏目中总计（Total）和可用（Available）的数目正常，服务器状态也运行正常。</p>
+<p><img data-src="/images/blogImg/CanNotConnectAGSLM_LM.png"></p>
+<blockquote>
+<p>图中的过期栏目中的日期可忽略，内部工作使用的正式许可是限定有效日期的。如果你使用的是购买得到的正式版许可，这里会显示 永久（Permanent），也就是许可是永久有效的。</p>
+</blockquote>
+<br>
+
+<p>然而，在通过局域网访问许可服务器的其它机器上的 ArcGIS Administrator 中，连接许可服务器失败。</p>
+<p>常见错误提示： <strong>“机器名或者IP”does not have a valid Licesne Manager. Please enter a valid License Manager Server.</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/11/27/CanNotConnectAGSLM/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/09/30/TriptoGreece/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiaoyan MU">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kikita & Maps">
+      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | kikita & Maps">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2015/09/30/TriptoGreece/" class="post-title-link" itemprop="url">给自己做个地图故事——Trip to Greece</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2015-09-30 18:23:16" itemprop="dateCreated datePublished" datetime="2015-09-30T18:23:16+08:00">2015-09-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Visual-Musing/" itemprop="url" rel="index"><span itemprop="name">Visual Musing</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2015/09/30/TriptoGreece/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/30/TriptoGreece/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="我的地图故事"><a href="#我的地图故事" class="headerlink" title="我的地图故事"></a>我的地图故事</h3><p>Esri 的 <strong><span class="exturl" data-url="aHR0cDovL3N0b3J5bWFwcy5hcmNnaXMuY29tLw==">地图故事<i class="fa fa-external-link-alt"></i></span></strong> 很有意思，用句官媒的广告 “每个人都有要讲述的故事，利用地图的强大功能来讲述您的故事……”。</p>
+<p>国庆假期将至，放点有趣的东西。如果喜欢分享，又想记录自己的过往，动手试试不错哦。</p>
+<p>我把自己的一次行程做成了地图故事：</p>
+<ul>
+<li><strong><span class="exturl" data-url="aHR0cDovL2tpa2l0YW1vb24ubWFwcy5hcmNnaXMuY29tL2FwcHMvTWFwVG91ci8/YXBwaWQ9MmNjYmUwM2VjZGZhNGQwZmFmODAxMjYxNDYzNzQyNjE=">Trip to Greece<i class="fa fa-external-link-alt"></i></span></strong> 。</li>
+</ul>
+<p>如下这里也可以翻看：</p>
+<iframe style="width: 100%;" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://arcg.is/18aaPT0"></iframe>
+
+
+
+<h3 id="如何制作故事地图"><a href="#如何制作故事地图" class="headerlink" title="如何制作故事地图 ?"></a><strong>如何制作故事地图 ?</strong></h3><p> <strong><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXNyaS5jb20vZW4tdXMvYXJjZ2lzL3Byb2R1Y3RzL2FyY2dpcy1zdG9yeW1hcHMvb3ZlcnZpZXc=">点这里<i class="fa fa-external-link-alt"></i></span></strong></p>
+<p>地图故事中有好多应用程序模板可选，即使不懂技术也能hold住，只需要选个要讲的“<strong>故事类型</strong>”。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2015/09/30/TriptoGreece/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -268,21 +492,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>2.7k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>10 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -392,21 +601,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.5k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -517,21 +711,6 @@
   </span>
   
   
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
-    </span>
 </div>
 
         </div>
@@ -579,257 +758,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/08/31/CreatePythonTool1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/08/31/CreatePythonTool1/" class="post-title-link" itemprop="url">在ArcGIS中创建Python工具（一）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-08-31 12:00:00" itemprop="dateCreated datePublished" datetime="2015-08-31T12:00:00+08:00">2015-08-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/08/31/CreatePythonTool1/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/31/CreatePythonTool1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>439</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ArcGIS Desktop 自带有大量的工具，可以执行各种各样的地理处理任务。通过 python 我们可以灵活地调用这些工具，把工具组织成自己的工作流，甚至创建一些新的工具。今天就说说在 ArcGIS 中创建 Python工具这个话题。</p>
-<br>
-
-<p>在 ArcGIS 中我们可以通过两种方式来创建python工具：</p>
-<p>一种是在标准工具箱下创建 <strong>脚本工具</strong>:</p>
-<p><img data-src="/images/blogImg/CreatePythonTool1_ScriptTool.png"></p>
-<p>一种是创建 <strong>脚本工具箱</strong>：</p>
-<p><img data-src="/images/blogImg/CreatePythonTool1_PythonToolbox.png"></p>
-<br>
-
-<p>到这里，可能你会有和我一样的疑问，二者有什么<strong>区别</strong>？</p>
-<p>第一种 <strong>脚本工具</strong> 需要我们首先在 ArcGIS 环境中创建一个工具箱，然后添加 Python脚本文件（*.py），并通过向导来精确配置参数。这种工具很适合脚本工具的初学者，通过前面说的三步就可以搭建出一个自定义工具。但是这种模式也有一些缺点，工具箱和源脚本是分离的，我们很难集中的去管理和维护它们。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/08/31/CreatePythonTool1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kikitamap.com/2015/08/07/Hexagon/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Xiaoyan MU">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kikita & Maps">
-      <meta itemprop="description" content="kikita's Blog | For Tech and Fun">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | kikita & Maps">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2015/08/07/Hexagon/" class="post-title-link" itemprop="url">蜂巢网格</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2015-08-07 18:01:07" itemprop="dateCreated datePublished" datetime="2015-08-07T18:01:07+08:00">2015-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tech-Notes/" itemprop="url" rel="index"><span itemprop="name">Tech Notes</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2015/08/07/Hexagon/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/07/Hexagon/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>297</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>比起死板硬朗的矩形渔网，六边形的蜂巢网格越来越受欢迎。推荐个小工具，实现下面的效果：</p>
-<p><img data-src="/images/blogImg/Hexagon_Done.png"></p>
-<br>
-
-<br>
-
-<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p>准备自己的兴趣区域和需要统计的要素。例如，下面的美国国境面（浅灰色），机场点数据。</p>
-<p><img data-src="/images/blogImg/Hexagon_Airports.png"></p>
-<br>
-
-<br>
-
-<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2015/08/07/Hexagon/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/17/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/19/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -842,26 +770,12 @@
 
   <div class="copyright">
     &copy; 2012 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class=""></i>
     </span>
     <span class="author" itemprop="copyrightHolder">Xiaoyan MU</span>
   </div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Word count total">161k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">9:46</span>
-  </span>
-</div>
   <div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span>
   </div>
 

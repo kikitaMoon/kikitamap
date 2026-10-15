@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-accent="coral">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ArcGIS Nova app</title>
+    <script src="./locale.js"></script>
+    <link rel="stylesheet" href="https://js.arcgis.com/5.1.3/esri/themes/light/main.css" />
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body class="calcite-mode-light">
+    <header class="app-header" id="app-header" hidden>
+      <div class="app-identity">
+        <h1 id="app-title"></h1>
+        <p id="app-subtitle" hidden></p>
+      </div>
+      <section class="app-region app-region-header" id="app-region-header" hidden></section>
+    </header>
+    <main class="app-main">
+      <aside class="app-region app-region-left" id="app-region-left" hidden></aside>
+      <div id="app-view"></div>
+      <aside class="app-region app-region-right" id="app-region-right" hidden></aside>
+    </main>
+    <footer class="app-region app-region-footer" id="app-region-footer" hidden></footer>
+    <p id="app-error" hidden></p>
+    <script type="module" src="https://js.arcgis.com/5.1.3/"></script>
+    <script type="module" src="./standalone-auth.js"></script>
+  </body>
+</html>

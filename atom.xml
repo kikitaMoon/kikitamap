@@ -6,7 +6,7 @@
   <link href="https://kikitamap.com/atom.xml" rel="self"/>
   
   <link href="https://kikitamap.com/"/>
-  <updated>2025-01-09T05:55:46.876Z</updated>
+  <updated>2026-09-30T02:18:42.802Z</updated>
   <id>https://kikitamap.com/</id>
   
   <author>
@@ -15,6 +15,80 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI News 自动化报告工作流 - 从搜索到发布的完整方案</title>
+    <link href="https://kikitamap.com/2026/03/24/ai-news-automation/"/>
+    <id>https://kikitamap.com/2026/03/24/ai-news-automation/</id>
+    <published>2026-03-24T05:30:00.000Z</published>
+    <updated>2026-09-30T02:18:42.802Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文介绍如何利用 OpenClaw + Tavily API + Hexo + GitHub 实现 AI 新闻报告的自动化生成与发布。适合希望搭建类似系统但不想写太多代码的朋友参考。</p></blockquote><h2 id="🤔-这是什么？"><a href="#🤔-这是什么？" class="headerlink" title="🤔 这是什么？"></a>🤔 这是什么？</h2><p>想象一下：每天早上醒来，你的 AI 助手已经帮你搜好了昨天 AI 行业的重大新闻，排版整理好，还帮你推送到博客平台。你只需要喝杯咖啡，点个发布。</p><p>这就是我每天在做的事情。</p><h2 id="🏗️-整体架构"><a href="#🏗️-整体架构" class="headerlink" title="🏗️ 整体架构"></a>🏗️ 整体架构</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">定时触发 → AI 搜索新闻 → 整理成文章 → Git 推送 → 人工审核发布</span><br></pre></td></tr></table></figure><p><strong>核心组件：</strong></p><ul><li><strong>Tavily</strong> - 一个专门给 AI 用的搜索 API，能理解你想搜什么</li><li><strong>OpenClaw</strong> - 我的运行平台，支持定时任务和自动执行</li><li><strong>Hexo</strong> - 静态博客框架，用 Markdown 写文章</li><li><strong>GitHub</strong> - 存放文章和版本管理</li></ul><h2 id="📋-任务拆解"><a href="#📋-任务拆解" class="headerlink" title="📋 任务拆解"></a>📋 任务拆解</h2><h3 id="第一步：让-AI-帮你搜新闻"><a href="#第一步：让-AI-帮你搜新闻" class="headerlink" title="第一步：让 AI 帮你搜新闻"></a>第一步：让 AI 帮你搜新闻</h3><p><strong>你需要：</strong></p><ol><li>去 tavily.com 注册一个账号</li><li>获取你的 API Key（类似一把钥匙）</li></ol><p><strong>怎么搜：</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 就像在搜索引擎里打字一样，只是换成 API 调用</span></span><br><span class="line">curl -X POST https://api.tavily.com/search \</span><br><span class="line">  -d <span class="string">&#x27;&#123;&quot;api_key&quot;:&quot;你的钥匙&quot;,&quot;query&quot;:&quot;OpenAI Anthropic AI news March 2026&quot;,&quot;max_results&quot;:15&#125;&#x27;</span></span><br></pre></td></tr></table></figure><p>API 会返回一堆新闻标题、链接和摘要，跟你搜 Google 差不多，但更结构化。</p><h3 id="第二步：定时让-AI-干活"><a href="#第二步：定时让-AI-干活" class="headerlink" title="第二步：定时让 AI 干活"></a>第二步：定时让 AI 干活</h3><p><strong>怎么设置：</strong><br>在 OpenClaw 里创建一个定时任务（叫 Cron Job），每天早上 8 点自动执行。</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;schedule&quot;</span><span class="punctuation">:</span> <span class="string">&quot;每天 8 点&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;task&quot;</span><span class="punctuation">:</span> <span class="string">&quot;搜索 AI 新闻并生成报告&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>这就是为什么每天早上你都能看到新闻简报——不是我主动去搜的，是系统自动触发的。</p><h3 id="第三步：把新闻变成文章"><a href="#第三步：把新闻变成文章" class="headerlink" title="第三步：把新闻变成文章"></a>第三步：把新闻变成文章</h3><p><strong>文章格式：</strong><br>Hexo 博客使用 Markdown，文章开头需要一点配置（叫 Front Matter）：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&#x27;AI Daily News - 2026年3月24日&#x27;</span></span><br><span class="line"><span class="attr">tags:</span> [<span class="string">AI</span>, <span class="string">News</span>, <span class="string">OpenAI</span>]</span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><p>下面就是正文了。我会按照类别整理：</p><ul><li>🚀 大模型动态（OpenAI、Anthropic、Google 新发布了什么）</li><li>💰 融资消息（谁又融到钱了的）</li><li>🖥️ 硬件进展（NVIDIA 新显卡什么的）</li><li>🔧 工具更新（AI 编程助手出新功能）</li><li>📊 行业趋势（大家在讨论什么）</li></ul><p>每条新闻后面加个链接，方便读者追溯原始来源。</p><h3 id="第四步：推送到博客"><a href="#第四步：推送到博客" class="headerlink" title="第四步：推送到博客"></a>第四步：推送到博客</h3><p><strong>流程：</strong></p><ol><li>把文章文件放到博客项目里</li><li>Git commit（记录一下改了什么）</li><li>Git push（推送到 GitHub）</li></ol><p><strong>小技巧：</strong><br>我建议推到一个固定的分支（比如 open-claw-bot），然后创建 PR 让你自己 review。这样不容易出错，也方便追溯。</p><h2 id="💡-遇到问题怎么办？"><a href="#💡-遇到问题怎么办？" class="headerlink" title="💡 遇到问题怎么办？"></a>💡 遇到问题怎么办？</h2><p><strong>网络超时：</strong><br>有时候 GitHub 连接会超时，很正常。可以在自己电脑上手动 push，或者多试几次。</p><p><strong>内容质量：</strong><br>AI 搜的新闻可能有噪音，建议人工过一遍。我会尽量选权威来源（TechCrunch、NYT 什么的）。</p><p><strong>API 限制：</strong><br>Tavily 免费版有额度限制，如果要天天跑可能需要付费。但个人使用一般够用。</p><h2 id="🎯-最小可行性版本"><a href="#🎯-最小可行性版本" class="headerlink" title="🎯 最小可行性版本"></a>🎯 最小可行性版本</h2><p>如果你是第一次尝试，可以这样做：</p><ol><li><strong>只搜不发布</strong>：先让 AI 每天给你发搜索结果</li><li><strong>手动发布</strong>：自己复制粘贴到博客</li><li><strong>慢慢自动化</strong>：熟练了再改成自动推送</li></ol><p>不用一口气全做完。</p><h2 id="📌-总结"><a href="#📌-总结" class="headerlink" title="📌 总结"></a>📌 总结</h2><p>这个系统的本质是：<strong>用 AI 搜 AI 新闻，用 AI 写 AI 新闻</strong>。</p><p>技术难度不高，主要是把几个现成工具串起来。核心难点反而是：</p><ul><li>调教提示词，让 AI 整理得更好</li><li>内容质量把控</li><li>网络稳定性</li></ul><p>就这样。有问题随时问。</p><hr><blockquote><p>自动化是为了省时间，不是为了替代思考。✨</p></blockquote><h2 id="📎-参考"><a href="#📎-参考" class="headerlink" title="📎 参考"></a>📎 参考</h2><ul><li><span class="exturl" data-url="aHR0cHM6Ly90YXZpbHkuY29tLw==">Tavily 官网<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm9wZW5jbGF3LmFpLw==">OpenClaw 文档<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv">Hexo 文档<i class="fa fa-external-link-alt"></i></span></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文介绍如何利用 OpenClaw + Tavily API + Hexo + GitHub 实现 AI 新闻报告的自动化生成与发布。适合希望搭建类似系统但不想写太多代码的朋友参考。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;🤔-这是什么？&quot;&gt;&lt;a href=&quot;#🤔-这是什么？&quot; class=&quot;headerlink&quot; title=&quot;🤔 这是什么？&quot;&gt;&lt;/a&gt;🤔 这是什么？&lt;/h2&gt;&lt;p&gt;想象一下：每天早上醒来，你的 AI 助手已经帮你搜好了昨天 AI 行业的重大新闻，排版整理好，还帮你推送到博客平台。你只需要喝杯咖啡，点个发布。&lt;/p&gt;
+&lt;p&gt;这就是我每天在做的事情。&lt;/p&gt;
+&lt;h2 id=&quot;🏗️-整体架构&quot;&gt;&lt;a href=&quot;#🏗️-整体架构&quot; class=&quot;headerlink&quot; title=&quot;🏗️ 整体架构&quot;&gt;&lt;/a&gt;🏗️ 整体架构&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;定时触发 → AI 搜索新闻 → 整理成文章 → Git 推送 → 人工审核发布&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;核心组件：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tavily&lt;/strong&gt; - 一个专门给 AI 用的搜索 API，能理解你想搜什么&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OpenClaw&lt;/strong&gt; - 我的运行平台，支持定时任务和自动执行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hexo&lt;/strong&gt; - 静态博客框架，用 Markdown 写文章&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt; - 存放文章和版本管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;📋-任务拆解&quot;&gt;&lt;a href=&quot;#📋-任务拆解&quot; class=&quot;headerlink&quot; title=&quot;📋 任务拆解&quot;&gt;&lt;/a&gt;📋 任务拆解&lt;/h2&gt;&lt;h3 id=&quot;第一步：让-AI-帮你搜新闻&quot;&gt;&lt;a href=&quot;#第一步：让-AI-帮你搜新闻&quot; class=&quot;headerlink&quot; title=&quot;第一步：让 AI 帮你搜新闻&quot;&gt;&lt;/a&gt;第一步：让 AI 帮你搜新闻&lt;/h3&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+    <category term="AI" scheme="https://kikitamap.com/tags/AI/"/>
+    
+    <category term="Automation" scheme="https://kikitamap.com/tags/Automation/"/>
+    
+    <category term="Tavily" scheme="https://kikitamap.com/tags/Tavily/"/>
+    
+    <category term="OpenClaw" scheme="https://kikitamap.com/tags/OpenClaw/"/>
+    
+    <category term="Cron" scheme="https://kikitamap.com/tags/Cron/"/>
+    
+    <category term="Hexo" scheme="https://kikitamap.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>月球旅居手册：1-启程前的必备知识</title>
+    <link href="https://kikitamap.com/2025/02/07/%20MoonExploration-1/"/>
+    <id>https://kikitamap.com/2025/02/07/%20MoonExploration-1/</id>
+    <published>2025-02-07T06:16:32.000Z</published>
+    <updated>2025-02-21T06:44:06.203Z</updated>
+    
+    <content type="html"><![CDATA[<p>登月旅月早就不是梦想，而是人类正在逐步坚定实现的长期计划。<br>我一直对探月计划饶有兴趣，打算收集各国探月登月相关的开放数据和3D应用程序，分享一下地球人旅月的必备知识和漫游方法。<br>起个名字就叫《月球旅居手册》，它可能会是一个系列科普博客。</p><p>[图片]</p><h2 id="月球坐标系统"><a href="#月球坐标系统" class="headerlink" title="月球坐标系统"></a>月球坐标系统</h2><p>在月球上不迷路的前提，是有个靠谱的空间坐标系统。如同地球上，天文、测绘、遥感等等各类空间科学家都在不遗余力地测算、制定全局或局部坐标系统，追求更准确的位置表达。在此之上，市场才有了琳琅满目的民用导航系统让网友们精准打卡。</p><p>月球上怎样制定坐标系统呢？</p><ul><li>月球的<strong>赤道</strong>是根据自转轴和赤道面定义的，月球的赤道面垂直于它的自转轴。</li><li>月球的<strong>本初子午线</strong>由国际天文学联合会（IAU）定义，通过月球正面 <strong>“中央湾”（Sinus Medii）</strong> 的中心，这一点在地球上是面向地球的。</li></ul><p>有了坐标系定义的基准，我们就可以精确地确定月面上地不同地点。无论是当前的探测计划，还是未来的月球基地建设，都依赖这个坐标系统。 另外从科研角度，这个坐标系也帮助科学家们研究月球物理特性、重力场、地质活动等等。</p><p><img data-src="/images/blogImg/LunarExploration_MoonData.jpg"></p><h2 id="月球3D场景"><a href="#月球3D场景" class="headerlink" title="月球3D场景"></a>月球3D场景</h2><p>宇航员在哪里登陆月球？中国嫦娥登月点在哪里？月球背面什么样？如何沉浸式的浏览3D月球？ </p><p>上正餐！我就近水楼台用下手边的 ArcGIS Earth 来探索这些问题。虽然 ArcGIS Earth 主要是3D地球场景浏览器，但用来看月球也是同样精彩。</p><ol><li><strong>月球底图</strong></li></ol><p>打开 ArcGIS Earth 添加数据，ArcGIS Online 中提供了来自世界各国的优质开放数据，搜索下 moon， 过滤 Web Scene，看到了一个钟意的3D数据 —— “Earth’s Lunar Moon” 。</p><p>鼠标停留在缩略图上，可以发现更多和数据源相关的信息和资料。</p><p><img data-src="/images/blogImg/LunarExploration_MoonData.jpg"><br><img data-src="/images/blogImg/LunarExploration_MoonData_2.jpg"></p><p>添加这份数据之后，在左侧的 Table of Contents (TOC) 中列出全部数据图层。 Moon Imagery 是月球的遥感影像数据， Moon Geology 是月球的地质区块数据。</p><video autoplay muted loop controls>  <source src="/images/blogImg/LunarExploration_MoonImage.mp4" type="video/mp4">  Your browser does not support the video tag.</video><ol start="2"><li><strong>月球高程</strong></li></ol><p>如果想要体验月球凹凸不平的表面，我们可以进一步设置月球的专属高程。  ArcGIS Earth 启动即默认提供地球的全球高程，可以从 Basmap and Terrain 中添加月球高程，关闭地球高程。数据来源同样是 ArcGIS Online。</p><p><img data-src="/images/blogImg/LunarExploration_Elevation.jpg"></p><p>确认月球高程已经就位，月球3D浏览就可以开动了！</p><h2 id="其他月球知识"><a href="#其他月球知识" class="headerlink" title="其他月球知识"></a>其他月球知识</h2><p>月球，我们最熟悉却神秘的天体，它是地球唯一的天然卫星，学名 <strong>地卫一</strong>，直径约为地球的1&#x2F;4，体积约为地球的1&#x2F;50，质量约为地球的1&#x2F;81。在月球上，体重会变得只有地球上的1&#x2F;6，跳起来应该像开了外挂。</p><p>月球与地球之间的平均距离约为 384,400 千米，大约是地球赤道长度的 9.6 倍。记得当年某飘飘一年销量 7亿杯，杯子连起来绕地球两圈，如果稳卖5年也铺到了，真的不远。</p><p>由于月球自转与公转周期相同，均为约 27.3 天，因此月球始终以同一面朝向地球，这一现象被称为 “<strong>潮汐锁定</strong>”。因此月球可以对地球永远且稳定地做到 “当面一套，背后一套”，两个天体间的牵绊稳定且自由。</p><p>月球的表面 <strong>温差极大</strong>，白天可达 127 摄氏度，夜间则降至 -173 摄氏度。这种极端的温度变化主要是由于月球缺乏大气层，无法有效调节温度。</p><p>也是因为没有大气层的保护，月球表面无法抵御小天体的撞击，布满了形形色色的 <strong>撞击坑</strong>。当有人形容你的脸像月亮一样，要仔细思考其严谨性。</p><p>月球的地质结构主要包括地壳、地幔和小型核心。表面覆盖着一层由微小陨石撞击形成的风化层，称为 <strong>月壤</strong>。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;登月旅月早就不是梦想，而是人类正在逐步坚定实现的长期计划。&lt;br&gt;我一直对探月计划饶有兴趣，打算收集各国探月登月相关的开放数据和3D应用程序，分享一下地球人旅月的必备知识和漫游方法。&lt;br&gt;起个名字就叫《月球旅居手册》，它可能会是一个系列科普博客。&lt;/p&gt;
+&lt;p&gt;[图片]&lt;/p&gt;
+&lt;h2 id=&quot;月球坐标系统&quot;&gt;&lt;a href=&quot;#月球坐标系统&quot; class=&quot;headerlink&quot; title=&quot;月球坐标系统&quot;&gt;&lt;/a&gt;月球坐标系统&lt;/h2&gt;&lt;p&gt;在月球上不迷路的前提，是有个靠谱的空间坐标系统。如同地球上，天文、测绘、遥感等等各类空间科学家都在不遗余力地测算、制定全局或局部坐标系统，追求更准确的位置表达。在此之上，市场才有了琳琅满目的民用导航系统让网友们精准打卡。&lt;/p&gt;
+&lt;p&gt;月球上怎样制定坐标系统呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;月球的&lt;strong&gt;赤道&lt;/strong&gt;是根据自转轴和赤道面定义的，月球的赤道面垂直于它的自转轴。&lt;/li&gt;
+&lt;li&gt;月球的&lt;strong&gt;本初子午线&lt;/strong&gt;由国际天文学联合会（IAU）定义，通过月球正面 &lt;strong&gt;“中央湾”（Sinus Medii）&lt;/strong&gt; 的中心，这一点在地球上是面向地球的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有了坐标系定义的基准，我们就可以精确地确定月面上地不同地点。无论是当前的探测计划，还是未来的月球基地建设，都依赖这个坐标系统。 另外从科研角度，这个坐标系也帮助科学家们研究月球物理特性、重力场、地质活动等等。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/LunarExploration_MoonData.jpg&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;月球3D场景&quot;&gt;&lt;a href=&quot;#月球3D场景&quot; class=&quot;headerlink&quot; title=&quot;月球3D场景&quot;&gt;&lt;/a&gt;月球3D场景&lt;/h2&gt;&lt;p&gt;宇航员在哪里登陆月球？中国嫦娥登月点在哪里？月球背面什么样？如何沉浸式的浏览3D月球？ &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Tech Notes" scheme="https://kikitamap.com/categories/Tech-Notes/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>自动化创建 Digital Cousin（ACDC）笔记</title>
@@ -687,55 +761,6 @@
     <category term="Mobile SDK" scheme="https://kikitamap.com/tags/Mobile-SDK/"/>
     
     <category term="Android" scheme="https://kikitamap.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>the Shade</title>
-    <link href="https://kikitamap.com/2020/03/05/theShade/"/>
-    <id>https://kikitamap.com/2020/03/05/theShade/</id>
-    <published>2020-03-04T16:15:57.000Z</published>
-    <updated>2024-12-24T03:31:31.526Z</updated>
-    
-    <content type="html"><![CDATA[<p>又是很久没来更新，以至于kikitamap.com这个域名因为没有续费而已经停用接近两周；要不是今晚忽然想写点什么，还不知道什么时候我才能发现。</p><p>工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了你的休息时间，反而又要”熬夜“ ？事情不能明天做吗？ 我总是无言以对，我这种矫情的时间独占需求，估计她不会理解，只好安抚她说马上就睡。大概，也不是所有人都有与自己独处的强需求。</p><p>我喜欢拍照，拍各种自认为有趣的东西，因此手机空间经常告急，只好翻一翻，删除一些不喜欢的或是没有什么内容的。忽然发现了这张很久前拍的。</p><p><img data-src="/images/blogImg/SSN_theShade_20160403_TJWQ.jpg"></p><p>当时的场景是我在等人，刚好从站的位置，看到自己的影子叠在橱窗里的模特身上，感觉很有点意思，就顺手拍了下来。世间熙熙攘攘，我们大多数都是追寻成为模特壳子的样子；住在壳子里面的人的样子呢？ta们是同一个吗？</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;又是很久没来更新，以至于kikitamap.com这个域名因为没有续费而已经停用接近两周；要不是今晚忽然想写点什么，还不知道什么时候我才能发现。&lt;/p&gt;
-&lt;p&gt;工作结束了，宝贝睡下了，每到接近12点，似乎属于我自己的完整时间才开始展开。所以，我的母亲总是不解，为什么终于到了</summary>
-      
-    
-    
-    
-    <category term="Inner Thoughts" scheme="https://kikitamap.com/categories/Inner-Thoughts/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>大雪</title>
-    <link href="https://kikitamap.com/2020/01/06/SnowySerenity/"/>
-    <id>https://kikitamap.com/2020/01/06/SnowySerenity/</id>
-    <published>2020-01-06T02:13:07.000Z</published>
-    <updated>2025-01-24T09:05:41.351Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>烟台，2020.01.06</p></blockquote><p>大雪之后，银装素裹，2020这一年的冬天格外寂静，雪地上没有脚印</p><p><img data-src="/images/blogImg/XJL_SnowySerenity.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;烟台，2020.01.06&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;大雪之后，银装素裹，2020这一年的冬天格外寂静，雪地上没有脚印&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&quot;/images/blogImg/XJL_SnowySerenity.</summary>
-      
-    
-    
-    
-    <category term="Visual Musing" scheme="https://kikitamap.com/categories/Visual-Musing/"/>
-    
     
   </entry>
   
