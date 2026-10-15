@@ -3,7 +3,7 @@
   "version": "0.1",
   "generatedAt": "2026-10-15T12:20:44.481Z",
   "title": "Sandy Vehicles Live",
-  "authMode": "oauth",
+  "authMode": "public",
   "entry": "index.html",
   "sourceAppPath": "outputs/apps/2026-10-15T09-58-41-63c9f1c6-5a6b-4679-b219-e86d19473311/index.html",
   "files": {

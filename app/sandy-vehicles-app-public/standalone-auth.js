@@ -1,4 +1,4 @@
-const config = {"mode":"oauth","appId":"uT4wEOfgVFyzX1TC","portalUrl":"https://www.arcgis.com","redirectUri":"https://kikitamap.com/app/sandy-vehicles-app-public/"};
+const config = {"mode":"public","appId":"uT4wEOfgVFyzX1TC","portalUrl":"https://www.arcgis.com","redirectUri":"https://kikitamap.com/app/sandy-vehicles-app-public/"};
 const moduleIds = {"identityManager":"@arcgis/core/identity/IdentityManager.js","oauthInfo":"@arcgis/core/identity/OAuthInfo.js","config":"@arcgis/core/config.js"};
 
 function showFailure(error) {
