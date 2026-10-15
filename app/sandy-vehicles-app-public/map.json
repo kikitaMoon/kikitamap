@@ -190,20 +190,18 @@
         "opacity": 1,
         "title": "Dark Gray Canvas Base",
         "visibility": true,
-        "itemId": "f8dec62d37504266b0578ce7453b808b",
-        "layerType": "VectorTileLayer",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer",
+        "layerType": "ArcGISTiledMapServiceLayer",
         "minScale": 295828763.7957775,
-        "maxScale": 70.5310735,
-        "styleUrl": "https://www.arcgis.com/sharing/rest/content/items/f8dec62d37504266b0578ce7453b808b/resources/styles/root.json"
+        "maxScale": 70.5310735
       },
       {
         "id": "VectorTile_3591",
         "opacity": 1,
         "title": "Dark Gray Canvas Reference",
         "visibility": true,
-        "itemId": "8bf7f2dffe434dc9a88f39283823ab09",
-        "layerType": "VectorTileLayer",
-        "styleUrl": "https://www.arcgis.com/sharing/rest/content/items/8bf7f2dffe434dc9a88f39283823ab09/resources/styles/root.json",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer",
+        "layerType": "ArcGISTiledMapServiceLayer",
         "isReference": true
       }
     ],
