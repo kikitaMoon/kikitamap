@@ -1,0 +1,199 @@
+{
+  "operationalLayers": [
+    {
+      "id": "1a140272bbb-layer-54",
+      "title": "NYC Police Stations",
+      "url": "https://services6.arcgis.com/yG5s3afENB5iO9fj/arcgis/rest/services/Police_Station_Safety/FeatureServer/0",
+      "itemId": "aaff3e8b131a4851b588d3d96b4ae63c",
+      "layerType": "ArcGISFeatureLayer",
+      "layerDefinition": {
+        "drawingInfo": {
+          "labelingInfo": [
+            {
+              "labelExpression": "[FACNAME]",
+              "labelExpressionInfo": {
+                "expression": "$feature[\"FACNAME\"]"
+              },
+              "maxScale": 0,
+              "minScale": 40000,
+              "repeatLabel": true,
+              "symbol": {
+                "type": "esriTS",
+                "color": [
+                  22,
+                  52,
+                  77,
+                  255
+                ],
+                "font": {
+                  "family": "Avenir Next",
+                  "size": 10
+                },
+                "horizontalAlignment": "center",
+                "kerning": true,
+                "haloColor": [
+                  255,
+                  255,
+                  255,
+                  255
+                ],
+                "haloSize": 1.5,
+                "rotated": false,
+                "text": "",
+                "verticalAlignment": "baseline",
+                "xoffset": 0,
+                "yoffset": 0,
+                "angle": 0
+              }
+            }
+          ],
+          "renderer": {
+            "type": "simple",
+            "symbol": {
+              "type": "esriSMS",
+              "color": [
+                18,
+                75,
+                120,
+                255
+              ],
+              "angle": 0,
+              "xoffset": 0,
+              "yoffset": 0,
+              "size": 9,
+              "style": "esriSMSCircle",
+              "outline": {
+                "type": "esriSLS",
+                "color": [
+                  255,
+                  255,
+                  255,
+                  255
+                ],
+                "width": 1.2,
+                "style": "esriSLSSolid"
+              }
+            }
+          }
+        }
+      },
+      "popupInfo": {
+        "popupElements": [
+          {
+            "type": "fields",
+            "fieldInfos": [
+              {
+                "fieldName": "FACNAME",
+                "isEditable": true,
+                "label": "FACNAME",
+                "visible": true
+              },
+              {
+                "fieldName": "ADDRESS",
+                "isEditable": true,
+                "label": "ADDRESS",
+                "visible": true
+              },
+              {
+                "fieldName": "BORO",
+                "isEditable": true,
+                "label": "BORO",
+                "visible": true
+              },
+              {
+                "fieldName": "ZIPCODE",
+                "isEditable": true,
+                "label": "ZIPCODE",
+                "visible": true
+              },
+              {
+                "fieldName": "FACTYPE",
+                "isEditable": true,
+                "label": "FACTYPE",
+                "visible": true
+              }
+            ]
+          }
+        ],
+        "fieldInfos": [
+          {
+            "fieldName": "FACNAME",
+            "isEditable": true,
+            "label": "FACNAME",
+            "visible": true
+          },
+          {
+            "fieldName": "ADDRESS",
+            "isEditable": true,
+            "label": "ADDRESS",
+            "visible": true
+          },
+          {
+            "fieldName": "BORO",
+            "isEditable": true,
+            "label": "BORO",
+            "visible": true
+          },
+          {
+            "fieldName": "ZIPCODE",
+            "isEditable": true,
+            "label": "ZIPCODE",
+            "visible": true
+          },
+          {
+            "fieldName": "FACTYPE",
+            "isEditable": true,
+            "label": "FACTYPE",
+            "visible": true
+          }
+        ],
+        "title": "{FACNAME}"
+      },
+      "blendMode": "normal"
+    }
+  ],
+  "baseMap": {
+    "baseMapLayers": [
+      {
+        "id": "gray-base-layer",
+        "opacity": 1,
+        "title": "Light Gray Base",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/291da5eab3a0412593b66d384379f89f/resources/styles/root.json"
+      },
+      {
+        "id": "gray-reference-layer",
+        "opacity": 1,
+        "title": "Light Gray Reference",
+        "visibility": true,
+        "layerType": "VectorTileLayer",
+        "styleUrl": "https://cdn.arcgis.com/sharing/rest/content/items/1768e8369a214dfab4e2167d5c5f2454/resources/styles/root.json",
+        "isReference": true
+      }
+    ],
+    "title": "Light Gray Canvas"
+  },
+  "authoringApp": "ArcGIS API for JavaScript",
+  "authoringAppVersion": "5.1",
+  "initialState": {
+    "viewpoint": {
+      "targetGeometry": {
+        "spatialReference": {
+          "latestWkid": 3857,
+          "wkid": 102100
+        },
+        "xmin": -8287767.802645215,
+        "ymin": 4914360.609813301,
+        "xmax": -8183354.822007622,
+        "ymax": 5024124.182430858
+      }
+    }
+  },
+  "spatialReference": {
+    "latestWkid": 3857,
+    "wkid": 102100
+  },
+  "timeZone": "system",
+  "version": "2.37"
+}

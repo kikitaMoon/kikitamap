@@ -1,0 +1,141 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-15T10:47:36.244Z",
+  "item": {
+    "title": "NYC Police Response Coverage",
+    "subtitle": "Explore 10-minute driving coverage from police stations"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "analysis",
+    "showHeader": true,
+    "theme": {
+      "mode": "light",
+      "accent": "default"
+    },
+    "layout": {
+      "right": {
+        "hidden": false,
+        "title": "Response Coverage",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "station-search",
+            "title": "Find a station"
+          },
+          {
+            "type": "customMount",
+            "id": "coverage-results",
+            "title": "10-minute service area"
+          },
+          {
+            "type": "text",
+            "id": "coverage-caveat",
+            "content": "Driving-time estimates, not guaranteed emergency response times. Dispatch delays and emergency-driving privileges are not modeled.",
+            "format": "plain"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "layers",
+        "type": "layerList",
+        "slot": "top-left",
+        "config": {}
+      },
+      {
+        "id": "home",
+        "type": "home",
+        "slot": "top-left",
+        "config": {}
+      },
+      {
+        "id": "scale",
+        "type": "scaleBar",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "default-legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": [
+      {
+        "id": "station-service-area",
+        "label": "Station search and 10-minute driving coverage",
+        "bundlePath": "./runtime/behaviors/station-service-area-a73bee539768cfd1.js",
+        "sourceSha256": "a73bee539768cfd15e680ee4f3b75ba0e6fe560793a1e11aeda4b7f70df324df",
+        "modulePaths": [
+          "esri/Graphic",
+          "esri/portal/Portal",
+          "esri/rest/networkService",
+          "esri/rest/serviceArea",
+          "esri/rest/support/FeatureSet",
+          "esri/rest/support/ServiceAreaParameters"
+        ],
+        "config": {
+          "layerId": "1a140272bbb-layer-54",
+          "nameField": "FACNAME",
+          "addressField": "ADDRESS",
+          "detailFields": [
+            "BORO",
+            "ZIPCODE"
+          ],
+          "minutes": 10,
+          "travelMode": "Driving Time",
+          "resultLayerId": "station-service-area-result"
+        },
+        "mounts": [
+          "station-search",
+          "coverage-results"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [
+          {
+            "id": "station-click",
+            "trigger": {
+              "type": "feature-click",
+              "layerId": "1a140272bbb-layer-54"
+            },
+            "actionId": "select-station"
+          }
+        ],
+        "installedAt": "2026-10-15T15:22:13.786Z"
+      }
+    ]
+  },
+  "nova": {
+    "basename": "c6f2644e-3565-4f44-baed-bd997b949313",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-85447a05-3ebc-45c2-9208-d0e2378db436",
+      "mapName": "New Conversation",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-15T10:47:36.243Z"
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": []
+  }
+}
